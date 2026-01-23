@@ -10,11 +10,10 @@
 pip install -r requirements.txt
 ```
 
-### 3. Configure .env in root folder (see .env.example)
+### 3. Configure .env in root folder
 
 ```
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
-CLAY_API_KEY=your_clay_api_key_here             # Optional: for contact enrichment
 ```
 
 ## Run the App
