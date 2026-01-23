@@ -1,0 +1,13 @@
+# DuPont Tedlar GTM Pipeline Dependencies
+
+# Anthropic SDK for Claude API
+anthropic>=0.40.0
+
+# Firecrawl for web scraping
+firecrawl-py>=1.0.0
+
+# HTTP requests (for simple fetching)
+requests>=2.31.0
+
+# Environment variable management
+python-dotenv>=1.0.0
