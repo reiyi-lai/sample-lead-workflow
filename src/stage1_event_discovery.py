@@ -29,9 +29,7 @@ from prompts import (
 from utils.llm import call_claude_with_web_search, call_claude_json, extract_json_from_response
 
 
-# =============================================================================
 # HELPERS
-# =============================================================================
 
 def sanitize_event_name(name: str) -> str:
     """Convert event name to safe filename."""
@@ -66,9 +64,7 @@ def save_company_results(output_dir: str, event_name: str, result: dict):
         json.dump(result, f, indent=2)
 
 
-# =============================================================================
 # STEP 1.1: EVENT DISCOVERY
-# =============================================================================
 
 def discover_events() -> List[dict]:
     """
@@ -108,9 +104,7 @@ def discover_events() -> List[dict]:
         return []
 
 
-# =============================================================================
 # STEP 1.2: EVENT RELEVANCE SCORING
-# =============================================================================
 
 def score_events(events: List[dict]) -> dict:
     """
@@ -165,9 +159,7 @@ Return the scored events in the format specified in your instructions.
     return response
 
 
-# =============================================================================
 # STEP 1.3: COMPANY DISCOVERY
-# =============================================================================
 
 def discover_companies(qualified_events: List[dict], output_dir: str) -> List[dict]:
     """
@@ -289,9 +281,7 @@ Return the results in the JSON format only, as specified in my instructions.
     return discovery_results
 
 
-# =============================================================================
 # MAIN PIPELINE
-# =============================================================================
 
 def run_stage1_pipeline(
     output_dir: str = "data/events",
@@ -414,9 +404,7 @@ def run_stage1_pipeline(
     return results
 
 
-# =============================================================================
 # CLI ENTRY POINT
-# =============================================================================
 
 if __name__ == "__main__":
     import argparse

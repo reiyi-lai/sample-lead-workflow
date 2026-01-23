@@ -44,9 +44,7 @@ from stage4_outreach_generation import (
 )
 
 
-# =============================================================================
 # RATE LIMITER
-# =============================================================================
 
 class RateLimiter:
     """
@@ -99,9 +97,7 @@ class RateLimiter:
         }
 
 
-# =============================================================================
 # HELPER FUNCTIONS
-# =============================================================================
 
 def load_json(path: Path) -> Optional[dict]:
     """Load JSON file if it exists."""
@@ -152,9 +148,7 @@ def get_company_tier(data_dir: Path, company_name: str) -> Optional[int]:
     return None
 
 
-# =============================================================================
 # PIPELINE ORCHESTRATOR
-# =============================================================================
 
 class PipelineOrchestrator:
     """
@@ -185,9 +179,7 @@ class PipelineOrchestrator:
         # Active tasks for tracking
         self._active_tasks: set = set()
 
-    # =========================================================================
     # EVENT HANDLERS (Callbacks)
-    # =========================================================================
 
     async def on_companies_discovered(self, companies: List[dict]):
         """
@@ -243,9 +235,7 @@ class PipelineOrchestrator:
         print(f"  -> Generated {len(searches)} LinkedIn search URLs")
         print(f"  -> Saved to: {searches_file}")
 
-    # =========================================================================
     # STAGE PROCESSORS
-    # =========================================================================
 
     async def _process_company_stage2(self, company: dict):
         """
@@ -389,9 +379,7 @@ class PipelineOrchestrator:
                 "error": str(e),
             })
 
-    # =========================================================================
     # MAIN ENTRY POINTS
-    # =========================================================================
 
     def _find_companies_needing_stage3(self, unique_companies: List[dict]) -> List[dict]:
         """
@@ -458,9 +446,7 @@ class PipelineOrchestrator:
         (self.data_dir / "companies").mkdir(parents=True, exist_ok=True)
         (self.data_dir / "contacts").mkdir(parents=True, exist_ok=True)
 
-        # =====================================================================
         # STAGE 1: Event Discovery
-        # =====================================================================
         events_file = self.data_dir / "events" / "discovered_events.json"
         scored_file = self.data_dir / "events" / "scored_events.json"
 
@@ -534,10 +520,8 @@ class PipelineOrchestrator:
         unique_companies = deduplicate_companies(discovery_results)
         print(f"  -> {len(unique_companies)} unique companies discovered")
 
-        # =====================================================================
         # STAGE 2 & 3: Process companies with PRIORITY ORDER
         # Priority: Later stages first (finish what's started)
-        # =====================================================================
 
         # Check what work needs to be done at each stage
         needs_stage3 = self._find_companies_needing_stage3(unique_companies)
@@ -574,9 +558,7 @@ class PipelineOrchestrator:
         while self._active_tasks:
             await asyncio.sleep(1)
 
-        # =====================================================================
         # SUMMARY
-        # =====================================================================
         print("\n" + "=" * 70)
         print("PIPELINE COMPLETE")
         print("=" * 70)
@@ -683,9 +665,7 @@ class PipelineOrchestrator:
                 print(f"  - {error['company']} (Stage {error['stage']}): {error['error']}")
 
 
-# =============================================================================
 # CLI ENTRY POINT
-# =============================================================================
 
 def main():
     import argparse

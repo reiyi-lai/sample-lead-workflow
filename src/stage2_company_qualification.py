@@ -30,9 +30,7 @@ from utils.llm import (
     extract_json_from_response,
 )
 
-# =============================================================================
 # ICP SCORING WEIGHTS AND TIERS
-# =============================================================================
 
 ICP_WEIGHTS = {
     "industry_fit": 0.30,
@@ -49,9 +47,7 @@ TIER_THRESHOLDS = {
 }
 
 
-# =============================================================================
 # HELPER FUNCTIONS
-# =============================================================================
 
 def sanitize_company_name(company_name: str) -> str:
     """
@@ -126,9 +122,7 @@ def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, ic
         json.dump(full_scoring, f, indent=2)
 
 
-# =============================================================================
 # STEP 2.1 + 2.2: RESEARCH AND SCORE COMPANY (Two-Turn)
-# =============================================================================
 
 def research_and_score_company(
     company_name: str,
@@ -244,9 +238,7 @@ Return the scores in the JSON format specified."""
     return research_data, scoring_data
 
 
-# =============================================================================
 # STEP 2.3: CALCULATE WEIGHTED ICP SCORE
-# =============================================================================
 
 def calculate_icp_score(scoring_data: dict) -> dict:
     """
@@ -313,9 +305,7 @@ def calculate_icp_score(scoring_data: dict) -> dict:
     }
 
 
-# =============================================================================
 # COMPANY DEDUPLICATION
-# =============================================================================
 
 def deduplicate_companies(discovery_results: List[dict]) -> List[dict]:
     """
@@ -373,9 +363,7 @@ def deduplicate_companies(discovery_results: List[dict]) -> List[dict]:
     return unique_companies
 
 
-# =============================================================================
 # MAIN PIPELINE
-# =============================================================================
 
 def run_stage2_pipeline(
     input_file: str = "data/events/discovered_companies.json",
@@ -528,9 +516,7 @@ def run_stage2_pipeline(
     return results
 
 
-# =============================================================================
 # CLI ENTRY POINT
-# =============================================================================
 
 if __name__ == "__main__":
     import argparse

@@ -23,9 +23,7 @@ from prompts import (
 from constants import MODELS
 
 
-# =============================================================================
 # FILE MANAGEMENT HELPERS
-# =============================================================================
 
 def sanitize_name(name: str) -> str:
     """Convert name to safe folder/filename."""
@@ -97,9 +95,7 @@ def save_outreach(output_dir: str, company_name: str, contact_name: str, outreac
         json.dump(outreach, f, indent=2)
 
 
-# =============================================================================
 # LOAD STAGE 2 & 3 DATA
-# =============================================================================
 
 def load_company_research(base_dir: str, company_name: str) -> Optional[dict]:
     """Load company research from Stage 2."""
@@ -121,9 +117,7 @@ def load_target_roles(base_dir: str, company_name: str) -> Optional[dict]:
     return load_target_roles_json(company_name, base_dir)
 
 
-# =============================================================================
 # STEP 4.1: CONTACT ANALYSIS & ENGAGEMENT STRATEGY
-# =============================================================================
 
 def analyze_contact(
     contact_name: str,
@@ -186,7 +180,7 @@ TARGET ROLES ANALYSIS (from Stage 3):
         response = call_claude_conversation(
             system_prompt=CONTACT_ANALYSIS_SYSTEM_PROMPT,
             messages=[{"role": "user", "content": user_message}],
-            model=MODELS.get("outreach_generation", "claude-sonnet-4-5-20250929"),
+            model=MODELS.get("contact_analysis", "claude-sonnet-4-5-20250929"),
         )
 
         # Parse JSON response (handles markdown code blocks)
@@ -205,9 +199,7 @@ TARGET ROLES ANALYSIS (from Stage 3):
         return None
 
 
-# =============================================================================
 # STEP 4.2: OUTREACH MESSAGE GENERATION
-# =============================================================================
 
 def generate_outreach(
     contact_name: str,
@@ -286,9 +278,7 @@ Please write a personalized {channel} message following the output format.
         return None
 
 
-# =============================================================================
 # SINGLE CONTACT PROCESSING
-# =============================================================================
 
 def process_contact(
     contact_name: str,
@@ -340,9 +330,7 @@ def process_contact(
     return analysis, outreach
 
 
-# =============================================================================
 # BATCH PROCESSING
-# =============================================================================
 
 def run_stage4_outreach_generation(
     contacts: List[Dict[str, str]],
@@ -453,9 +441,7 @@ def run_stage4_outreach_generation(
     return results
 
 
-# =============================================================================
 # CLI FOR TESTING
-# =============================================================================
 
 if __name__ == "__main__":
     import argparse

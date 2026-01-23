@@ -3,9 +3,7 @@
 
 from constants import TEDLAR_CONTEXT
 
-# =============================================================================
 # STAGE 1: EVENT DISCOVERY PROMPTS
-# =============================================================================
 
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
@@ -185,9 +183,7 @@ Format your response as ONLY a JSON object with the following format and nothing
 }}
 """
 
-# =============================================================================
 # STAGE 2: COMPANY RESEARCH & QUALIFICATION PROMPTS
-# =============================================================================
 
 COMPANY_RESEARCH_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
@@ -352,9 +348,7 @@ Return ONLY a JSON object with scores and qualification summary:
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-# =============================================================================
 # STAGE 3: CONTACT FINDING & SCORING PROMPTS
-# =============================================================================
 
 TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
@@ -437,9 +431,7 @@ TASK: Score and prepare personalization hooks for decision-maker contacts.
 [Full prompt to be implemented in Stage 3.4]
 """
 
-# =============================================================================
 # STAGE 4: OUTREACH GENERATION PROMPTS
-# =============================================================================
 
 CONTACT_ANALYSIS_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}

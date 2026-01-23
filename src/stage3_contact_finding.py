@@ -23,9 +23,7 @@ from constants import CLAY_WEBHOOK_URL, MODELS
 from prompts import TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 
-# =============================================================================
 # HELPER FUNCTIONS
-# =============================================================================
 
 def sanitize_company_name(company_name: str) -> str:
     """Convert company name to safe folder name."""
@@ -140,9 +138,7 @@ def load_qualified_companies(
     return companies
 
 
-# =============================================================================
 # STEP 3.1: IDENTIFY TARGET ROLES & ENGAGEMENT STRATEGY
-# =============================================================================
 
 def identify_target_roles(
     company_name: str,
@@ -198,7 +194,7 @@ Return your analysis in the JSON format specified.
     response = call_claude(
         system_prompt=TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT,
         user_message=user_message,
-        model=MODELS.get("contact_scoring", "claude-sonnet-4-5-20250929"),
+        model=MODELS.get("target_role_identification", "claude-sonnet-4-5-20250929"),
         max_tokens=4096,
     )
 
@@ -217,9 +213,7 @@ Return your analysis in the JSON format specified.
     return target_roles_data
 
 
-# =============================================================================
 # STEP 3.2: GENERATE LINKEDIN SALES NAVIGATOR SEARCH URLS
-# =============================================================================
 
 def generate_sales_navigator_url(
     company_name: str,
@@ -297,9 +291,7 @@ def generate_sales_navigator_searches(
     return searches
 
 
-# =============================================================================
 # STEP 3.X (PLACEHOLDER): PUSH COMPANIES TO CLAY WEBHOOK
-# =============================================================================
 # Note: Clay integration kept as placeholder for future use
 # Currently using LinkedIn Sales Navigator for better contact discovery
 
@@ -460,9 +452,7 @@ def process_companies_and_generate_searches(
     return role_results, all_searches
 
 
-# =============================================================================
 # MAIN PIPELINE
-# =============================================================================
 
 def run_stage3_linkedin_search(
     input_file: str = "data/companies/all_qualified_companies.json",
@@ -578,9 +568,7 @@ def run_stage3_linkedin_search(
     return summary
 
 
-# =============================================================================
 # CLI ENTRY POINT
-# =============================================================================
 
 if __name__ == "__main__":
     import argparse

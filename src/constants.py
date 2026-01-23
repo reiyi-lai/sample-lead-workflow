@@ -1,27 +1,20 @@
-# MODEL CONFIGURATION
-# =============================================================================
-# Use appropriate models per task complexity to optimize cost and performance
+# Define models to use for each task based on complexity to optimize cost and performance
 
 MODELS = {
-    # Step 1.1: Event Discovery - needs web search, medium complexity
+    # Stage 1
     "event_discovery": "claude-sonnet-4-5-20250929",
-
-    # Step 1.2: Event Scoring - simple scoring task
     "event_scoring": "claude-haiku-4-5-20251001",
-
-    # Step 1.3: Company Discovery - needs web search, finds exhibitors + likely attendees
     "company_discovery": "claude-sonnet-4-5-20250929",
 
-    # Step 2.1: Company Research - needs web search for detailed research
+    # Stage 2
     "company_research": "claude-sonnet-4-5-20250929",
-
-    # Step 2.2: Company Scoring - LLM scores 1-10 per category (Sonnet for nuanced judgment)
     "company_scoring": "claude-sonnet-4-5-20250929",
 
-    # Step 3.3: Contact Scoring - context understanding
-    "contact_scoring": "claude-sonnet-4-5-20250929",
+    # Stage 3
+    "target_role_identification": "claude-sonnet-4-5-20250929",
 
-    # Step 4.1: Outreach Generation - creative writing
+    # Stage 4
+    "contact_analysis": "claude-sonnet-4-5-20250929",
     "outreach_generation": "claude-sonnet-4-5-20250929",
 }
 
@@ -79,9 +72,8 @@ IDEAL CUSTOMER PROFILE (ICP):
 """
 CLAY_WEBHOOK_URL = "https://api.clay.com/v3/sources/webhook/pull-in-data-from-a-webhook-7015fada-05a6-4365-8523-36a8e05fa1fd"
 
-# Contact search configuration
+# Number of contacts to find per tier
 CONTACTS_PER_TIER = {
     1: 3,  # Tier 1 (High Priority): 3 contacts
     2: 2,  # Tier 2 (Medium Priority): 2 contacts
-    3: 1,  # Tier 3 (Low Priority): 1 contact
 }
