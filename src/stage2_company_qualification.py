@@ -15,11 +15,10 @@ from typing import List, Dict, Optional, Tuple
 # Delay between API calls to avoid rate limits (30k tokens/min)
 STEP_DELAY_SECONDS = 65
 
-# Add src to path for imports
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from constants import MODELS
+from constants import MODELS, ICP_WEIGHTS, COMPANY_SCORING_COMPANY_SCORING_TIER_THRESHOLDS
 from prompts import (
     COMPANY_RESEARCH_SYSTEM_PROMPT,
     COMPANY_SCORING_SYSTEM_PROMPT,
@@ -29,23 +28,6 @@ from utils.llm import (
     call_claude_conversation,
     extract_json_from_response,
 )
-
-# ICP SCORING WEIGHTS AND TIERS
-
-ICP_WEIGHTS = {
-    "industry_fit": 0.30,
-    "size_revenue_fit": 0.25,
-    "strategic_relevance": 0.20,
-    "market_activity": 0.25,
-}
-
-TIER_THRESHOLDS = {
-    "tier_1": 85,  # 85-100: High priority
-    "tier_2": 70,  # 70-84: Medium priority
-    "tier_3": 55,  # 55-69: Low priority
-    # Below 55: Disqualified
-}
-
 
 # HELPER FUNCTIONS
 
@@ -267,13 +249,13 @@ def calculate_icp_score(scoring_data: dict) -> dict:
     )
 
     # Assign tier
-    if weighted_score >= TIER_THRESHOLDS["tier_1"]:
+    if weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_1"]:
         tier = 1
         tier_label = "High Priority"
-    elif weighted_score >= TIER_THRESHOLDS["tier_2"]:
+    elif weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_2"]:
         tier = 2
         tier_label = "Medium Priority"
-    elif weighted_score >= TIER_THRESHOLDS["tier_3"]:
+    elif weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_3"]:
         tier = 3
         tier_label = "Low Priority"
     else:

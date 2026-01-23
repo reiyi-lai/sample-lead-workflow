@@ -423,14 +423,6 @@ IMPORTANT:
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-CONTACT_SCORING_SYSTEM_PROMPT = f"""
-{TEDLAR_CONTEXT}
-
-TASK: Score and prepare personalization hooks for decision-maker contacts.
-
-[Full prompt to be implemented in Stage 3.4]
-"""
-
 # STAGE 4: OUTREACH GENERATION PROMPTS
 
 CONTACT_ANALYSIS_SYSTEM_PROMPT = f"""

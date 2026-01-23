@@ -72,6 +72,22 @@ IDEAL CUSTOMER PROFILE (ICP):
 """
 CLAY_WEBHOOK_URL = "https://api.clay.com/v3/sources/webhook/pull-in-data-from-a-webhook-7015fada-05a6-4365-8523-36a8e05fa1fd"
 
+# ICP scoring weights for Company Qualification in Stage 2
+ICP_WEIGHTS = {
+    "industry_fit": 0.30,
+    "size_revenue_fit": 0.25,
+    "strategic_relevance": 0.20,
+    "market_activity": 0.25,
+}
+
+# Company scoring tier thresholds in Stage 2
+COMPANY_SCORING_TIER_THRESHOLDS = {
+    "tier_1": 85,  # 85-100: High priority
+    "tier_2": 70,  # 70-84: Medium priority
+    "tier_3": 55,  # 55-69: Low priority
+    # Below 55: Disqualified
+}
+
 # Number of contacts to find per tier
 CONTACTS_PER_TIER = {
     1: 3,  # Tier 1 (High Priority): 3 contacts

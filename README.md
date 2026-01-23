@@ -30,16 +30,12 @@ python src/main.py
 Each stage can be run independently, but note that Stages 2-4 depend on output from previous stages. Run Stage 1 first to generate the initial data.
 
 ```bash
-# Stage 1: Event Discovery
 python src/stage1_event_discovery.py
 
-# Stage 2: Company Qualification
 python src/stage2_company_qualification.py
 
-# Stage 3: Target Role Identification
 python src/stage3_contact_finding.py
 
-# Stage 4: Outreach Generation
 python src/stage4_outreach_generation.py
 ```
 
