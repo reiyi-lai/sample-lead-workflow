@@ -3,12 +3,10 @@
 ## Installation & Setup
 
 ### 1. Clone this repository
-```
 
 ### 2. Set up Python environment
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -21,17 +19,15 @@ CLAY_API_KEY=your_clay_api_key_here             # Optional: for contact enrichme
 
 ## Run the App
 
-### Run the full AI workflow
+### Option 1: Run the full AI workflow
 
 ```bash
 python src/main.py
 ```
 
-### Run individual stages
+### Option 2: Run individual stages
 
-Each stage can be run independently:
-
-**Note:** Stages 2-4 depend on output from previous stages. Run Stage 1 first to generate the initial data.
+Each stage can be run independently, but note that Stages 2-4 depend on output from previous stages. Run Stage 1 first to generate the initial data.
 
 ```bash
 # Stage 1: Event Discovery
@@ -55,7 +51,7 @@ npm install
 npm run dev
 ```
 
-View at [http://localhost:3000](http://localhost:3000).
+View dashboard at [http://localhost:3000](http://localhost:3000).
 
 ## Output Data
 
@@ -63,10 +59,6 @@ Pipeline outputs are saved to `data/`:
 
 - `data/events/` — Discovered and scored events
 - `data/companies/{CompanyName}/` — Research, scoring, target roles, and outreach per company
-
-## Documentation
-
-See [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed architecture and data processing documentation.
 
 ## Project Structure
 
@@ -85,3 +77,6 @@ See [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed architecture and data pr
 ├── dashboard/              # Next.js visualization dashboard
 └── data/                   # JSON output produced at each stage)
 ```
+## Documentation
+
+See [DOCUMENTATION.md](./DOCUMENTATION.md) for detailed architecture and data processing documentation.
