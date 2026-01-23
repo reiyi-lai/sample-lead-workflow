@@ -1,7 +1,3 @@
-# constants.py
-# Base context and configuration constants for the DuPont Tedlar GTM pipeline
-
-# =============================================================================
 # MODEL CONFIGURATION
 # =============================================================================
 # Use appropriate models per task complexity to optimize cost and performance
@@ -81,30 +77,6 @@ IDEAL CUSTOMER PROFILE (ICP):
     • High replacement and maintenance costs
     • Need for competitive differentiation in premium segment
 """
-
-# Domains known to require JavaScript rendering (use Firecrawl)
-KNOWN_JS_DOMAINS = [
-    "10times.com",
-    "mapyourshow.com",
-    "expocad.com",
-    "eventbrite.com",
-    "experient-inc.com",
-    "smallworldlabs.com",
-    "a2zinc.net",
-    "compusystems.com",
-]
-
-# Domains known to be static (can use simple fetch)
-KNOWN_STATIC_DOMAINS = [
-    # Most .org association sites
-    # Direct file links (.pdf, .xlsx)
-]
-
-# =============================================================================
-# STAGE 3: CLAY API CONFIGURATION
-# =============================================================================
-
-# Clay webhook URL for sending company data
 CLAY_WEBHOOK_URL = "https://api.clay.com/v3/sources/webhook/pull-in-data-from-a-webhook-7015fada-05a6-4365-8523-36a8e05fa1fd"
 
 # Contact search configuration
