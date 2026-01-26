@@ -10,13 +10,15 @@ A **four-stage AI GTM workflow** that progressively identifies, scores and filte
 
 ## 2. Data Processing Pipeline
 
-![Stage 1: Event Discovery](./images/stage1-vertical-flow.svg)
+Details found in [prompts.py](https://github.com/reiyi-lai/sample-lead-workflow/blob/main/src/prompts.py).
 
-![Stage 2: Company Qualification](./images/stage2-vertical-flow.svg)
+![Stage 1: Event Discovery](./images/stage1-event-discovery.svg)
 
-![Stage 3: Target Roles](./images/stage3-vertical-flow.svg)
+![Stage 2: Company Qualification](./images/stage2-company-qualification.svg)
 
-![Stage 4: Outreach](./images/stage4-vertical-flow.svg)
+![Stage 3: Target Roles](./images/stage3-target-roles.svg)
+
+![Stage 4: Outreach](./images/stage4-outreach.svg)
 
 ## 3. AI Workflow Orchestration
 

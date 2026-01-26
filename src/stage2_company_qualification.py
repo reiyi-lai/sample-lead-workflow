@@ -18,7 +18,7 @@ STEP_DELAY_SECONDS = 65
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from constants import MODELS, ICP_WEIGHTS, COMPANY_SCORING_COMPANY_SCORING_TIER_THRESHOLDS
+from constants import MODELS, ICP_WEIGHTS, COMPANY_SCORING_TIER_THRESHOLDS
 from prompts import (
     COMPANY_RESEARCH_SYSTEM_PROMPT,
     COMPANY_SCORING_SYSTEM_PROMPT,

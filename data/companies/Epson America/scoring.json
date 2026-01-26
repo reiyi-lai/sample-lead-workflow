@@ -1,0 +1,46 @@
+{
+  "company_name": "Epson America, Inc.",
+  "website_url": "https://epson.com/proimaging",
+  "scores": {
+    "industry_fit": {
+      "score": 8,
+      "rationale": "Strong adjacent fit as equipment manufacturer serving Tedlar's target verticals (sign manufacturers, vehicle wrap installers, large-format graphics producers). While not a direct end-user, Epson's entire customer base aligns perfectly with Tedlar's ICP, making them a high-value channel partner opportunity."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "Exceptional fit with $386M-$681M annual revenue, 1,000-1,700 employees, and North America regional headquarters status. Parent company Seiko Epson generates $9.1B globally with 75,000+ employees, providing substantial resources for strategic partnerships."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "Extremely high strategic relevance as channel partner. Epson's value proposition centers on durability, weather resistance, and outdoor graphics performance\u2014exactly where Tedlar excels. Co-marketing opportunity to reach thousands of sign shops and print providers through Epson's reseller network and educational programs."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "Exceptional market activity with consistent presence at ISA Sign Expo (2019, 2023, 2024, 2025) and PRINTING United (2020, 2023, 2024, 2025). Frequent product launches, industry awards, thought leadership sessions, and Certified Solution Centers demonstrate deep industry engagement and influence."
+    }
+  },
+  "qualification_summary": "Epson America represents an EXCELLENT strategic fit as a channel partner rather than direct customer. As the leading large-format printer manufacturer serving sign shops, vehicle wrap installers, and graphics producers, Epson provides high-value access to Tedlar's entire target market through their extensive reseller network and industry influence. Their premium positioning, focus on durability/outdoor performance, and exceptional trade show presence (ISA, PRINTING United) create ideal co-marketing and partnership opportunities to drive Tedlar adoption across the graphics and signage industry.",
+  "icp_qualification": {
+    "weighted_score": 92.0,
+    "tier": 1,
+    "tier_label": "High Priority",
+    "category_scores": {
+      "industry_fit": {
+        "score": 8,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}
