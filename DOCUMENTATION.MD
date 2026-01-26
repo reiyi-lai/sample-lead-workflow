@@ -2,15 +2,9 @@
 
 ## 1. Solution Architecture
 
-Our system is a **four-stage AI workflow** that progressively filters and enriches leads:
+A **four-stage AI GTM workflow** that progressively identifies, scores and filters leads:
 
 ![Pipeline Overview](./images/pipeline-overview.svg)
-
-#### Key Design Decisions
-
-* **Event-driven orchestration**: Completing in-progress work is prioritized over starting new. When Stage 2 finishes, Stage 3 automatically triggers.
-* **Tiered qualification**: Scoring with explicit thresholds ensures resources focus on high-potential leads. Low-scoring companies filtered early.
-* **File-based state**: Each stage produces JSON artifacts. Enables resume from interruption without database dependencies.
 
 ---
 
@@ -32,12 +26,13 @@ Our system is a **four-stage AI workflow** that progressively filters and enrich
 
 ## 3. AI Workflow Orchestration
 
-The pipeline is managed by an `main.py`, the main orchestrator that relies on event triggers with:
+Pipeline is orchestrated by `main.py` that relies on event triggers with:
 
-1. **Priority order:** Later stages processed first—companies closer to completion are finished before starting new ones.
+1. **Priority order:** Later stages processed first such that companies closer to completion are processed through the pipeline before starting new ones.
 2. **Automatic triggers:** Callbacks connect stages (when Stage 2 completes, Stage 3 starts automatically for qualified companies).
 3. **Rate limiting:** Shared limiter tracks API tokens (30k/minute) across all stages.
-4. **Resume capability:** File existence checks allow safe restart after interruption.
+4. **Resume capability:** Each stage produces JSON artifacts, enabling resume from interruption and preventing duplicate reruns.
+5. **Tiered qualification**: Scoring thresholds before proceeding to next stage ensures resources focus on high-potential leads. Low-scoring companies filtered early.
 
 ---
 
