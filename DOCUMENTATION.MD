@@ -10,19 +10,13 @@ A **four-stage AI GTM workflow** that progressively identifies, scores and filte
 
 ## 2. Data Processing Pipeline
 
-<table>
-<tr>
-<td><img src="./images/stage1-vertical-flow.svg" alt="Stage 1: Event Discovery" /></td>
-<td><img src="./images/stage2-vertical-flow.svg" alt="Stage 2: Company Qualification" /></td>
-</tr>
-</table>
+![Stage 1: Event Discovery](./images/stage1-vertical-flow.svg)
 
-<table>
-<tr>
-<td><img src="./images/stage3-vertical-flow.svg" alt="Stage 3: Target Roles" /></td>
-<td><img src="./images/stage4-vertical-flow.svg" alt="Stage 4: Outreach" /></td>
-</tr>
-</table>
+![Stage 2: Company Qualification](./images/stage2-vertical-flow.svg)
+
+![Stage 3: Target Roles](./images/stage3-vertical-flow.svg)
+
+![Stage 4: Outreach](./images/stage4-vertical-flow.svg)
 
 ## 3. AI Workflow Orchestration
 
@@ -50,17 +44,16 @@ data/
 │   ├── discovered_companies.json   # 37 companies from Stage 1.3
 │   └── companies/
 │       └── {EventName}.json        # Companies per event
-├── companies/
-│   ├── tier_1_high_priority.json   # Summary of top companies
-│   ├── all_qualified_companies.json
+├── companies
+│   ├── all_qualified_companies.json # All discovered companies scored against ICP
 │   └── {CompanyName}/
 │       ├── research.json           # Stage 2.1 deep research
 │       ├── scoring.json            # Stage 2.2 ICP scores
 │       ├── target_roles.json       # Stage 3 decision-makers
-│       └── linkedin_searches.json  # Sales Nav search URLs
 └── contacts/
     ├── role_identification_results.json
     ├── linkedin_sales_nav_searches.json
+    ├── clay_push_results.json
     └── {CompanyName}/
         ├── {ContactName}_analysis.json   # Stage 4.1 hooks/angles
         └── {ContactName}_outreach.json   # Stage 4.2 email draft
@@ -69,10 +62,9 @@ data/
 ## 5. Limitations & Future Work
 
 **Current Limitations:**
-- Contact discovery requires manual LinkedIn searches (Clay API integration planned but not implemented yet)
+- Contact discovery generates custom LinkedIn Sales Navigator URL, but workflow doesn't route the actual LinkedIn profiles discovered back for the last stage (ie. personalized outreach to each profile)
 - Rate limits require ~60s min. delays between API calls
 
 **Potential Enhancements:**
-- Integrate Clay API for automated contact enrichment
 - Add email verification step before outreach
 - CRM integration for direct lead export
