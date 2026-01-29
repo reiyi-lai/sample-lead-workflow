@@ -217,158 +217,76 @@ Format your response as ONLY a JSON object with the following format and nothing
 }}
 """
 
-# STAGE 2: COMPANY RESEARCH & QUALIFICATION PROMPTS
+# STAGE 2: COMPANY RESEARCH & SCORING PROMPT (Combined)
 
-COMPANY_RESEARCH_SYSTEM_PROMPT = f"""
+COMPANY_RESEARCH_AND_SCORING_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
 
-TASK: Research this company and synthesize findings to understand their business, priorities, and potential fit with Tedlar.
+TASK: Research this company using web search, then score its fit with Tedlar's ICP.
 
-RESEARCH OBJECTIVES:
-Gather intelligence to answer these key questions:
-
-1. WHAT DOES THIS COMPANY DO?
-   • Core business and value proposition
-   • Main product lines and services (especially related to graphics, signage, films, coatings, panels, wraps)
-   • Target markets and customer segments
-   • Manufacturing or distribution model
-
-2. HOW BIG ARE THEY?
-   • Company scale: revenue estimates, employee count, number of locations
-   • Geographic footprint: local, regional, national, or global presence
-   • Market position: industry leader, emerging player, niche specialist
-
-3. HOW STRATEGICALLY RELEVANT ARE THEY TO TEDLAR?
-   • Do they emphasize product durability, longevity, or outdoor performance?
-   • Quality positioning: premium/high-end vs. value/budget
-   • How important are weather resistance, UV protection, or graffiti resistance to their offerings?
-   • Do they target applications where Tedlar excels (outdoor signage, vehicle wraps, architectural panels)?
-   • Any mentions of product warranty issues, premature degradation, or customer complaints about durability?
-
-4. HOW ACTIVE ARE THEY IN THE MARKET?
-   • Trade show participation (ISA, PRINTING United, FESPA, SEMA, etc.)
-   • Industry association involvement
-   • Recent news: acquisitions, expansions, product launches
-   • Awards, certifications, or industry recognition
+Use web search to research and gather information on the company. Focus your research on the following categories that are relevant to scoring the company's fit with Tedlar's ICP:
 
 RESEARCH APPROACH:
-• Start with the provided website URL to understand their positioning and offerings
-• Use web search to find additional sources: news articles, press releases, LinkedIn, industry databases
-• Prioritize recent information (last 2-3 years) for market activity and strategic direction
-• Look for specific details, not generic descriptions
+• Start with the provided website URL
+• Use web search for news articles, press releases, LinkedIn, industry databases
+• Prioritize recent information (last 2-3 years)
+• Be specific and cite product names, trade shows, news headlines etc.
 
-OUTPUT FORMAT:
-Return ONLY a JSON object with open-ended synthesis:
-{{
-  "company_name": "string",
-  "website_url": "string",
+SCORING CATEGORIES (each 1-10):
+1. INDUSTRY FIT — How closely does the company align with Tedlar's target verticals?
+   • Direct match (sign manufacturing, large-format graphics, vehicle wraps, architectural panels, protective films) → 9-10
+   • Adjacent (general printing, industrial coatings, building materials, automotive aftermarket) → 6-8
+   • Tangential (general manufacturing, distribution only) → 3-5
 
-  "business_overview": "What this company does, their core offerings, target markets, and business model. 2-3 sentences.",
+2. SIZE/REVENUE FIT — Does the company meet the preferred size threshold?
+   • $100M+ revenue, 500+ employees, global → 9-10
+   • $50M-100M, 200-500 employees, national → 7-8
+   • $10M-50M, 50-200 employees, regional → 5-6
+   • <$10M, <50 employees, local → 3-4
 
-  "company_scale": {{
-    "estimated_revenue": "$10M-50M|$50M-100M|$100M-500M|$500M-1B|$1B+|unknown",
-    "estimated_employees": "1-50|50-200|200-1000|1000-5000|5000+|unknown",
-    "scale_synthesis": "Size indicators: geographic presence, confidence level, number of facilities. Cite specific signals found. 2-4 sentences."
-  }},
-
-  "products_and_positioning": "Product lines relevant to Tedlar's markets, positioning (premium vs budget), manufacturing capabilities. 2-4 sentences.",
-
-  "strategic_relevance_to_tedlar": "How relevant this company is to Tedlar's value propositions and why they are a compelling target. 2-3 sentences.",
-
-  "market_activity": "Recent market signals: trade shows, associations, news, awards, growth indicators. Focus on last 2-3 years. 2-4 sentences.",
-}}
-
-IMPORTANT:
-- Write and synthesize what you found, adding bullet points and line breaks as needed
-- If information is sparse in an area, say so explicitly (e.g., "Limited public financial data available")
-- Focus on WHAT YOU ACTUALLY FOUND, not generic assumptions
-- Be specific: cite product names, trade shows attended, actual news headlines
-- This research will be used for ICP scoring and decision-maker targeting, so be thorough
-
-CRITICAL: Return ONLY the JSON object. No text before or after.
-"""
-
-COMPANY_SCORING_SYSTEM_PROMPT = f"""
-{TEDLAR_CONTEXT}
-
-TASK: Based on the research data provided, score this company's fit with DuPont Tedlar's Ideal Customer Profile (ICP).
-
-Rate each category on a scale of 1-10:
-  1-2: Very poor fit
-  3-4: Below average fit
-  5-6: Average/moderate fit
-  7-8: Good fit
-  9-10: Excellent fit
-
-SCORING CATEGORIES:
-
-1. INDUSTRY FIT (1-10)
-   How closely does the company's business align with Tedlar's target verticals?
-
-   Consider:
-   • Direct match: Sign manufacturing, large-format graphics, vehicle wraps,
-     architectural panels, protective film production → 9-10
-   • Adjacent: General printing, industrial coatings, building materials,
-     automotive aftermarket → 6-8
-   • Tangential: General manufacturing, distribution only → 3-5
-   • No fit: Unrelated industry → 1-2
-
-2. SIZE/REVENUE FIT (1-10)
-   Does the company meet the preferred size threshold?
-
-   Consider:
-   • $100M+ revenue, 500+ employees, global presence → 9-10
-   • $50M-100M revenue, 200-500 employees, national presence → 7-8
-   • $10M-50M revenue, 50-200 employees, regional presence → 5-6
-   • <$10M revenue, <50 employees, local only → 3-4
-   • Unknown but signals suggest small → 2-3
-
-3. STRATEGIC RELEVANCE (1-10)
-   How well do Tedlar's value propositions match the company's needs?
-
-   Consider:
-   • Strong focus on durability, UV resistance, outdoor applications → 9-10
+3. STRATEGIC RELEVANCE — How well do Tedlar's value props match their needs?
+   • Strong durability/UV/outdoor focus → 9-10
    • Some outdoor products, quality positioning → 6-8
-   • General products, no specific durability focus → 3-5
-   • Indoor-only or disposable products → 1-2
+   • General products, no durability focus → 3-5
 
-4. MARKET ACTIVITY/SIGNALS (1-10)
-   How active is the company in the target market?
-
-   Consider:
-   • Exhibits at ISA/PRINTING United/FESPA, ISA member, recent product
-     launches in outdoor/graphics space → 9-10
+4. MARKET ACTIVITY — How active in the target market?
+   • Exhibits at ISA/PRINTING United/FESPA, recent outdoor/graphics launches → 9-10
    • Some trade show presence, industry involvement → 6-8
-   • Limited market activity, mostly found via company website → 3-5
-   • No visible market activity or signals → 1-2
+   • Limited activity, mostly website info → 3-5
 
 OUTPUT FORMAT:
-Return ONLY a JSON object with scores and qualification summary:
+Return ONLY a JSON object:
 {{
   "company_name": "string",
   "website_url": "string",
 
   "scores": {{
     "industry_fit": {{
-      "score": 1-10,
-      "rationale": "Brief explanation of score"
+      "score": 8,
+      "rationale": "Evidence-based explanation citing specific products, verticals, or capabilities found during research. 2-3 sentences."
     }},
     "size_revenue_fit": {{
-      "score": 1-10,
-      "rationale": "Brief explanation of score"
+      "score": 7,
+      "rationale": "Evidence-based explanation citing revenue signals, employee count, geographic footprint. 2-3 sentences."
     }},
     "strategic_relevance": {{
-      "score": 1-10,
-      "rationale": "Brief explanation of score"
+      "score": 9,
+      "rationale": "Evidence-based explanation citing durability focus, outdoor applications, quality positioning, pain points. 2-3 sentences."
     }},
     "market_activity": {{
-      "score": 1-10,
-      "rationale": "Brief explanation of score"
+      "score": 8,
+      "rationale": "Evidence-based explanation citing trade shows, recent news, product launches, awards. 2-3 sentences."
     }}
   }},
 
-  "qualification_summary": "2-3 sentence summary of overall ICP fit"
+  "qualification_summary": "2-3 sentence overall assessment of ICP fit and why this company is or isn't a strong prospect for Tedlar.
 }}
+
+IMPORTANT:
+- Each rationale IS the research — cite specific findings (product names, revenue figures, trade shows attended, news headlines)
+- If information is sparse, say so explicitly (e.g., "Limited public financial data available")
+- Focus on WHAT YOU ACTUALLY FOUND, not generic assumptions
+- These rationales replace a separate research report, so be specific and thorough in each one
 
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
@@ -453,19 +371,21 @@ CRITICAL: Return ONLY the JSON object. No text before or after.
 CONTACT_ANALYSIS_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
 
-TASK: Analyze this contact and their company context to develop a personalized engagement strategy.
+TASK: Analyze this target role at a company and develop a personalized engagement strategy.
 
 You will receive:
-- Contact information (name, role title, company)
-- Company research from Stage 2 (business overview, scale, products, pain points, market activity)
+- A target role title and company name
+- Company scoring data from Stage 2 (evidence-rich rationales per scoring category)
 - Target roles analysis from Stage 3 (why this role matters for Tedlar)
 
-Your job is to synthesize this information into a contact-specific engagement strategy.
+NOTE: A specific contact has not been identified yet. Use "[Name]" as a placeholder for the contact's name throughout your output.
+
+Your job is to synthesize this information into a role-specific engagement strategy.
 
 ANALYSIS OBJECTIVES:
 
-1. ROLE MATCH CONFIRMATION
-   - Match the contact's title to the most relevant target role from Stage 3
+1. ROLE CONTEXT
+   - Use the target role data from Stage 3 to understand why this role matters
    - Extract the rationale for why this role is important for Tedlar
 
 2. ENGAGEMENT STRATEGY DEVELOPMENT
@@ -506,7 +426,7 @@ ANALYSIS OBJECTIVES:
 OUTPUT FORMAT:
 Return ONLY a JSON object:
 {{
-  "full_name": "Laura Noll",
+  "full_name": "[Name]",
   "title": "VP of Product Development",
   "company_name": "Epson America, Inc.",
 
@@ -551,7 +471,7 @@ IMPORTANT:
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-OUTREACH_EMAIL_TURN2_MESSAGE = """Based on the engagement strategy you just developed, write a personalized cold outreach email for this contact.
+OUTREACH_EMAIL_SYSTEM_PROMPT = """Based on the engagement strategy you just developed, write a personalized cold outreach email for this contact.
 
 Your job is to write a compelling, personalized email that:
 1. Feels natural and conversational, not salesy
@@ -578,7 +498,7 @@ Return ONLY a JSON object:
 
   "message": {
     "subject": "Quick question about Epson's outdoor film durability",
-    "body": "Hi Laura,\\n\\nI noticed Epson is expanding into architectural films which is really exciting.\\n\\nWe've been working with companies in similar outdoor applications who've drastically reduced warranty claims for their films with our overlaminate. If durability outdoors is something you're focused on, happy to share about one of our product lines that's been working well for similar teams.\\n\\nHappy to send over some case studies if that'd be helpful.\\n\\nBest,\\n[Your name]",
+    "body": "Hi [Name],\\n\\nI noticed Epson is expanding into architectural films which is really exciting.\\n\\nWe've been working with companies in similar outdoor applications who've drastically reduced warranty claims for their films with our overlaminate. If durability outdoors is something you're focused on, happy to share about one of our product lines that's been working well for similar teams.\\n\\nHappy to send over some case studies if that'd be helpful.\\n\\nBest,\\n[Your name]",
     "word_count": 68
   },
 
@@ -591,7 +511,7 @@ Return ONLY a JSON object:
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-OUTREACH_LINKEDIN_TURN2_MESSAGE = """Based on the engagement strategy you just developed, write a personalized LinkedIn connection message for this contact.
+OUTREACH_LINKEDIN_SYSTEM_PROMPT = """Based on the engagement strategy you just developed, write a personalized LinkedIn connection message for this contact.
 
 Your job is to write a compelling, personalized LinkedIn message that:
 1. Feels natural and conversational, not salesy

@@ -8,7 +8,6 @@ MODELS = {
 
     # Stage 2
     "company_research": "claude-sonnet-4-5-20250929",
-    "company_scoring": "claude-sonnet-4-5-20250929",
 
     # Stage 3
     "target_role_identification": "claude-sonnet-4-5-20250929",

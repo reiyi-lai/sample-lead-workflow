@@ -2,15 +2,14 @@
 # Stage 2: Company Research & Qualification Pipeline
 #
 # Flow:
-# 2.1 Company Research (Claude WebSearch) - Gather detailed company info
-# 2.2 Company Scoring (LLM) - Score 1-10 per ICP category
-# 2.3 Python Calculation - Calculate weighted ICP score and assign tier
+# 2.1 Company Research & Scoring (Claude WebSearch) - Research and score in single call
+# 2.2 Python Calculation - Calculate weighted ICP score
 
 import os
 import json
 import time
 from datetime import datetime
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional
 
 # Delay between API calls to avoid rate limits (30k tokens/min)
 STEP_DELAY_SECONDS = 65
@@ -19,15 +18,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from constants import MODELS, ICP_WEIGHTS
-from prompts import (
-    COMPANY_RESEARCH_SYSTEM_PROMPT,
-    COMPANY_SCORING_SYSTEM_PROMPT,
-)
-from utils.llm import (
-    call_claude_with_web_search,
-    call_claude_conversation,
-    extract_json_from_response,
-)
+from prompts import COMPANY_RESEARCH_AND_SCORING_SYSTEM_PROMPT
+from utils.llm import call_claude_with_web_search, extract_json_from_response
 
 # HELPER FUNCTIONS
 
@@ -55,37 +47,27 @@ def get_company_folder(output_dir: str, company_name: str) -> str:
     return os.path.join(output_dir, folder_name)
 
 
-def check_research_exists(output_dir: str, company_name: str) -> bool:
-    """Check if research.json already exists for this company."""
+def check_scoring_exists(output_dir: str, company_name: str) -> bool:
+    """Check if scoring.json already exists for this company."""
     company_folder = get_company_folder(output_dir, company_name)
-    research_file = os.path.join(company_folder, "research.json")
-    return os.path.exists(research_file)
+    scoring_file = os.path.join(company_folder, "scoring.json")
+    return os.path.exists(scoring_file)
 
 
-def load_existing_research(output_dir: str, company_name: str) -> Optional[dict]:
-    """Load existing research.json if it exists."""
+def load_existing_scoring(output_dir: str, company_name: str) -> Optional[dict]:
+    """Load existing scoring.json if it exists."""
     company_folder = get_company_folder(output_dir, company_name)
-    research_file = os.path.join(company_folder, "research.json")
+    scoring_file = os.path.join(company_folder, "scoring.json")
 
-    if not os.path.exists(research_file):
+    if not os.path.exists(scoring_file):
         return None
 
     try:
-        with open(research_file, "r") as f:
+        with open(scoring_file, "r") as f:
             return json.load(f)
     except Exception as e:
-        print(f"    ⚠️  Failed to load existing research: {e}")
+        print(f"    Warning: Failed to load existing scoring: {e}")
         return None
-
-
-def save_research_json(output_dir: str, company_name: str, research_data: dict):
-    """Save research data to company folder."""
-    company_folder = get_company_folder(output_dir, company_name)
-    os.makedirs(company_folder, exist_ok=True)
-
-    research_file = os.path.join(company_folder, "research.json")
-    with open(research_file, "w") as f:
-        json.dump(research_data, f, indent=2)
 
 
 def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, icp_result: dict):
@@ -93,7 +75,6 @@ def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, ic
     company_folder = get_company_folder(output_dir, company_name)
     os.makedirs(company_folder, exist_ok=True)
 
-    # Combine scoring and ICP qualification
     full_scoring = {
         **scoring_data,
         "icp_qualification": icp_result,
@@ -104,19 +85,16 @@ def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, ic
         json.dump(full_scoring, f, indent=2)
 
 
-# STEP 2.1 + 2.2: RESEARCH AND SCORE COMPANY (Two-Turn)
+# STEP 2: RESEARCH AND SCORE COMPANY (Single Call)
 
 def research_and_score_company(
     company_name: str,
     website_url: str,
     output_dir: str = "data/companies",
-) -> Tuple[dict, dict]:
+) -> dict:
     """
-    Research and score a company using two-turn conversation.
-    Skips research if research.json already exists.
-
-    Turn 1: Research the company with web search (Sonnet) - or load existing
-    Turn 2: Score the company based on research (Sonnet)
+    Research and score a company in a single web search call.
+    Skips if scoring.json already exists.
 
     Args:
         company_name: Name of the company
@@ -124,100 +102,43 @@ def research_and_score_company(
         output_dir: Directory for company folders
 
     Returns:
-        Tuple of (research_data, scoring_data)
+        Scoring data dict (with evidence-rich rationales), or dict with "error" key
     """
-    # Check if research already exists
-    if check_research_exists(output_dir, company_name):
-        print(f"\n  [Turn 1] ✓ Research already exists, loading from file...")
-        research_data = load_existing_research(output_dir, company_name)
+    # Check if already processed
+    if check_scoring_exists(output_dir, company_name):
+        print(f"\n  Already scored, loading from file...")
+        scoring_data = load_existing_scoring(output_dir, company_name)
+        if scoring_data:
+            print(f"    -> Loaded existing scoring")
+            return scoring_data
+        print(f"    -> Failed to load, will re-process")
 
-        if research_data:
-            print(f"    -> Loaded existing research")
-        else:
-            print(f"    -> Failed to load, will re-research")
-            research_data = None
-    else:
-        research_data = None
+    print(f"\n  Researching and scoring {company_name}...")
 
-    # Do research if needed
-    if not research_data:
-        print(f"\n  [Turn 1] Researching {company_name}...")
-
-        # Turn 1: Research with web search
-        research_user_message = f"""
-Please research the following company and gather information for ICP qualification:
+    user_message = f"""
+Please research and score the following company for ICP qualification:
 
 Company Name: {company_name}
 Website URL: {website_url}
 
-Return the research results in the JSON format specified in my instructions.
+Return the results in the JSON format specified in your instructions.
 """
 
-        research_response = call_claude_with_web_search(
-            system_prompt=COMPANY_RESEARCH_SYSTEM_PROMPT,
-            user_message=research_user_message,
-            model=MODELS["company_research"],
-            max_tokens=8192,
-        )
-
-        research_data = extract_json_from_response(research_response)
-
-        if isinstance(research_data, dict) and "error" in research_data:
-            print(f"    -> Research failed: {research_data.get('error')}")
-            return research_data, {"error": "Research failed, skipping scoring"}
-
-        print(f"    -> Research complete")
-
-        # Save research to file
-        save_research_json(output_dir, company_name, research_data)
-        print(f"    -> Saved to research.json")
-
-    # Turn 2: Score based on research (two-turn conversation)
-    print(f"  [Turn 2] Scoring {company_name}...")
-
-    # Build conversation for scoring (simulate research was just done)
-    research_user_message = f"""
-Please research the following company and gather information for ICP qualification:
-
-Company Name: {company_name}
-Website URL: {website_url}
-
-Return the research results in the JSON format specified in my instructions.
-"""
-
-    # Reconstruct research response from data
-    research_response = json.dumps(research_data, indent=2)
-
-    # Build conversation history for turn 2
-    messages = [
-        {"role": "user", "content": research_user_message},
-        {"role": "assistant", "content": research_response},
-        {
-            "role": "user",
-            "content": """Based on the research you just conducted, please score this company's fit with DuPont Tedlar's ICP.
-
-Rate each category on a scale of 1-10 as specified in your scoring instructions.
-Return the scores in the JSON format specified."""
-        },
-    ]
-
-    scoring_response = call_claude_conversation(
-        system_prompt=COMPANY_SCORING_SYSTEM_PROMPT,
-        messages=messages,
-        model=MODELS["company_scoring"],
-        max_tokens=4096,
-        enable_web_search=False,
+    response = call_claude_with_web_search(
+        system_prompt=COMPANY_RESEARCH_AND_SCORING_SYSTEM_PROMPT,
+        user_message=user_message,
+        model=MODELS["company_research"],
+        max_tokens=8192,
     )
 
-    scoring_data = extract_json_from_response(scoring_response)
+    scoring_data = extract_json_from_response(response)
 
     if isinstance(scoring_data, dict) and "error" in scoring_data:
-        print(f"    -> Scoring failed: {scoring_data.get('error')}")
-        return research_data, scoring_data
+        print(f"    -> Failed: {scoring_data.get('error')}")
+        return scoring_data
 
-    print(f"    -> Scoring complete")
-
-    return research_data, scoring_data
+    print(f"    -> Research and scoring complete")
+    return scoring_data
 
 
 # STEP 2.3: CALCULATE WEIGHTED ICP SCORE
@@ -390,51 +311,49 @@ def run_stage2_pipeline(
         print(f"\n[{i+1}/{len(unique_companies)}] {company_name}")
         print(f"  URL: {website_url}")
 
-        # Research and score
-        research_data, scoring_data = research_and_score_company(
+        # Research and score (single call)
+        scoring_data = research_and_score_company(
             company_name=company_name,
             website_url=website_url,
             output_dir=output_dir,
         )
 
         # Check for errors
-        if "error" in research_data or "error" in scoring_data:
+        if "error" in scoring_data:
             qualified_results.append({
                 "company_name": company_name,
                 "website_url": website_url,
                 "source_events": company["source_events"],
                 "success": False,
-                "error": research_data.get("error") or scoring_data.get("error"),
+                "error": scoring_data.get("error"),
             })
             continue
 
-        # Calculate weighted ICP score
-        icp_result = calculate_icp_score(scoring_data)
+        # Calculate weighted ICP score (if not already loaded from cache)
+        if "icp_qualification" not in scoring_data:
+            icp_result = calculate_icp_score(scoring_data)
+            print(f"  -> ICP Score: {icp_result['weighted_score']}")
+            save_scoring_json(output_dir, company_name, scoring_data, icp_result)
+            print(f"    -> Saved to scoring.json")
+        else:
+            icp_result = scoring_data["icp_qualification"]
+            print(f"  -> ICP Score: {icp_result['weighted_score']} (cached)")
 
-        print(f"  -> ICP Score: {icp_result['weighted_score']}")
-
-        # Save scoring to company folder
-        save_scoring_json(output_dir, company_name, scoring_data, icp_result)
-        print(f"    -> Saved to scoring.json")
-
-        # Compile full result
-        result = {
+        qualified_results.append({
             "company_name": company_name,
             "website_url": website_url,
             "source_events": company["source_events"],
             "success": True,
-            "research": research_data,
             "scoring": scoring_data,
             "icp_qualification": icp_result,
-        }
-        qualified_results.append(result)
+        })
 
         # Delay between companies to avoid rate limits
         if i < len(unique_companies) - 1:
             print(f"\n  Waiting {STEP_DELAY_SECONDS}s before next company...")
             time.sleep(STEP_DELAY_SECONDS)
 
-    # Per-company files (research.json, scoring.json) already saved during processing
+    # Per-company scoring.json files already saved during processing
     successful = [r for r in qualified_results if r.get("success")]
     failed = [r for r in qualified_results if not r.get("success")]
 
@@ -455,7 +374,6 @@ def run_stage2_pipeline(
     print(f"Successfully scored: {len(successful)}")
     print(f"Failed: {len(failed)}")
     print(f"\nOutputs saved to per-company folders:")
-    print(f"  - {output_dir}/[Company Name]/research.json")
     print(f"  - {output_dir}/[Company Name]/scoring.json")
 
     return results
