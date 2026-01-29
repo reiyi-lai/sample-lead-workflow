@@ -20,7 +20,7 @@ STEP_DELAY_SECONDS = 65  # Wait just over 1 minute between steps
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from constants import MODELS
+from constants import MODELS, EVENT_SCORE_CUTOFF
 from prompts import (
     EVENT_DISCOVERY_SYSTEM_PROMPT,
     EVENT_SCORING_SYSTEM_PROMPT,
@@ -114,7 +114,7 @@ def score_events(events: List[dict]) -> dict:
         events: List of discovered events
 
     Returns:
-        Dict with qualified_events, rejected_events, and summary
+        Dict with scored_events and summary
     """
     print("\n" + "=" * 60)
     print("STEP 1.2: EVENT RELEVANCE SCORING")
@@ -122,7 +122,7 @@ def score_events(events: List[dict]) -> dict:
 
     if not events:
         print("No events to score")
-        return {"qualified_events": [], "rejected_events": [], "summary": {}}
+        return {"scored_events": [], "summary": {"total_events_scored": 0}}
 
     # Build user message with events to score
     events_json = json.dumps(events, indent=2)
@@ -147,21 +147,20 @@ Return the scored events in the format specified in your instructions.
 
     if "error" in response:
         print(f"\nWarning: Failed to parse scoring response: {response.get('error')}")
-        return {"qualified_events": [], "rejected_events": [], "summary": {}}
+        return {"scored_events": [], "summary": {"total_events_scored": 0}}
 
     # Print summary
+    scored_events = response.get("scored_events", [])
     summary = response.get("summary", {})
     print(f"\nScoring Results:")
-    print(f"  Tier 1 (High Priority): {summary.get('tier_1_count', 0)}")
-    print(f"  Tier 2 (Medium): {summary.get('tier_2_count', 0)}")
-    print(f"  Tier 3 (Skipped): {summary.get('tier_3_count', 0)}")
+    print(f"  Total events scored: {summary.get('total_events_scored', len(scored_events))}")
 
     return response
 
 
 # STEP 1.3: COMPANY DISCOVERY
 
-def discover_companies(qualified_events: List[dict], output_dir: str) -> List[dict]:
+def discover_companies(events: List[dict], output_dir: str) -> List[dict]:
     """
     Step 1.3: Discover companies for each qualified event using Claude WebSearch.
 
@@ -172,7 +171,7 @@ def discover_companies(qualified_events: List[dict], output_dir: str) -> List[di
     Already-processed events are skipped (resume-safe).
 
     Args:
-        qualified_events: List of Tier 1 events
+        events: List of qualified events (above score cutoff)
         output_dir: Directory to save company files (creates companies/ subdirectory)
 
     Returns:
@@ -182,7 +181,7 @@ def discover_companies(qualified_events: List[dict], output_dir: str) -> List[di
     print("STEP 1.3: COMPANY DISCOVERY")
     print("=" * 60)
 
-    if not qualified_events:
+    if not events:
         print("No qualified events to research")
         return []
 
@@ -190,12 +189,12 @@ def discover_companies(qualified_events: List[dict], output_dir: str) -> List[di
     skipped_count = 0
     processed_count = 0
 
-    for i, event in enumerate(qualified_events):
+    for i, event in enumerate(events):
         event_name = event.get("event_name", "Unknown")
         event_url = event.get("event_url", "")
-        tier = event.get("tier", "?")
+        score = event.get("overall_score", "?")
 
-        print(f"\n[{i+1}/{len(qualified_events)}] [Tier {tier}] {event_name}")
+        print(f"\n[{i+1}/{len(events)}] [Score: {score}] {event_name}")
 
         # Check if already processed
         existing_result = load_existing_company_results(output_dir, event_name)
@@ -238,7 +237,6 @@ Return the results in the JSON format only, as specified in my instructions.
             result = {
                 "event_name": event_name,
                 "event_url": event_url,
-                "tier": tier,
                 "success": False,
                 "error": result.get("error"),
                 "raw_response": response,
@@ -249,7 +247,6 @@ Return the results in the JSON format only, as specified in my instructions.
             total_likely = result.get("total_likely", 0)
             print(f"  -> Found {len(companies)} companies ({total_confirmed} confirmed, {total_likely} likely)")
 
-            result["tier"] = tier
             result["success"] = True
 
         # Save immediately after processing
@@ -260,7 +257,7 @@ Return the results in the JSON format only, as specified in my instructions.
 
         # Delay between events to avoid rate limits (only if more events to process)
         remaining_to_process = sum(
-            1 for e in qualified_events[i+1:]
+            1 for e in events[i+1:]
             if not load_existing_company_results(output_dir, e.get("event_name", ""))
         )
         if remaining_to_process > 0:
@@ -275,7 +272,7 @@ Return the results in the JSON format only, as specified in my instructions.
     )
     successful_events = sum(1 for r in discovery_results if r.get("success"))
     print(f"\nDiscovery Summary:")
-    print(f"  {total_companies} total companies from {successful_events}/{len(qualified_events)} events")
+    print(f"  {total_companies} total companies from {successful_events}/{len(events)} events")
     print(f"  {skipped_count} events loaded from cache, {processed_count} newly processed")
 
     return discovery_results
@@ -328,14 +325,12 @@ def run_stage1_pipeline(
         print(f"\n[Step 1.2] Checking existing scored events: {scored_file}")
         with open(scored_file, "r") as f:
             scored = json.load(f)
-        qualified_count = len(scored.get("qualified_events", []))
-        rejected_count = len(scored.get("rejected_events", []))
-        # If both are empty but we have events, it was a failed parse - re-run
-        if qualified_count == 0 and rejected_count == 0 and len(events) > 0:
+        scored_count = len(scored.get("scored_events", []))
+        if scored_count == 0 and len(events) > 0:
             print(f"  -> Cached file appears to be from failed parse, re-scoring...")
             scored = None
         else:
-            print(f"  -> Loaded {qualified_count} qualified events (cached)")
+            print(f"  -> Loaded {scored_count} scored events (cached)")
 
     if scored is None:
         scored = score_events(events)
@@ -344,20 +339,23 @@ def run_stage1_pipeline(
             json.dump(scored, f, indent=2)
         print(f"Saved scored events to: {scored_file}")
 
-    # Get Tier 1 events only (highest priority)
-    qualified_events = scored.get("qualified_events", [])
-    tier_1_events = [e for e in qualified_events if e.get("tier") == 1]
+    # Filter to events above score cutoff
+    all_scored_events = scored.get("scored_events", [])
+    qualified_events = [
+        e for e in all_scored_events
+        if (e.get("overall_score") or 0) >= EVENT_SCORE_CUTOFF
+    ]
 
-    print(f"\nFiltered to {len(tier_1_events)} Tier 1 events (from {len(qualified_events)} qualified)")
+    print(f"\nFiltered to {len(qualified_events)} events with score >= {EVENT_SCORE_CUTOFF} (from {len(all_scored_events)} scored)")
 
     # Delay before company discovery (which uses web search)
-    if tier_1_events:
+    if qualified_events:
         print(f"\n Waiting {STEP_DELAY_SECONDS}s to avoid rate limit...")
         time.sleep(STEP_DELAY_SECONDS)
 
-    # Step 1.3: Discover companies (Tier 1 events only)
+    # Step 1.3: Discover companies for qualified events
     # Each event is saved to its own file in companies/ subdirectory
-    discovery_results = discover_companies(tier_1_events, output_dir)
+    discovery_results = discover_companies(qualified_events, output_dir)
 
     # Compile final results (individual company files already saved in discover_companies)
     total_companies = sum(
@@ -372,28 +370,16 @@ def run_stage1_pipeline(
         "summary": {
             "events_discovered": len(events),
             "events_qualified": len(qualified_events),
-            "tier_1_events": len(tier_1_events),
             "events_researched_successfully": sum(1 for r in discovery_results if r.get("success")),
             "total_companies_discovered": total_companies,
         },
-        "output_files": {
-            "discovered_events": events_file,
-            "scored_events": scored_file,
-            "companies_dir": os.path.join(output_dir, "companies"),
-        },
     }
-
-    # Save pipeline summary
-    summary_file = os.path.join(output_dir, "pipeline_summary.json")
-    with open(summary_file, "w") as f:
-        json.dump(results, f, indent=2)
 
     print("\n" + "=" * 60)
     print("PIPELINE COMPLETE")
     print("=" * 60)
     print(f"Events discovered: {results['summary']['events_discovered']}")
-    print(f"Events qualified (Tier 1 & 2): {results['summary']['events_qualified']}")
-    print(f"Tier 1 events (researched): {results['summary']['tier_1_events']}")
+    print(f"Events qualified (score >= {EVENT_SCORE_CUTOFF}): {results['summary']['events_qualified']}")
     print(f"Events researched successfully: {results['summary']['events_researched_successfully']}")
     print(f"Companies discovered: {results['summary']['total_companies_discovered']}")
     print(f"\nOutputs:")

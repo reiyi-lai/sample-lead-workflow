@@ -28,16 +28,8 @@ ICP_WEIGHTS = {
     "market_activity": 0.25,
 }
 
-# Company scoring tier thresholds in Stage 2
-COMPANY_SCORING_TIER_THRESHOLDS = {
-    "tier_1": 85,  # 85-100: High priority
-    "tier_2": 70,  # 70-84: Medium priority
-    "tier_3": 55,  # 55-69: Low priority
-    # Below 55: Disqualified
-}
+# Minimum event score (0-10) to proceed to company discovery (Stage 1.3)
+EVENT_SCORE_CUTOFF = 8
 
-# Number of contacts to find per tier
-CONTACTS_PER_TIER = {
-    1: 3,  # Tier 1 (High Priority): 3 contacts
-    2: 2,  # Tier 2 (Medium Priority): 2 contacts
-}
+# Minimum company ICP score (0-100) to proceed to role identification (Stage 3)
+COMPANY_SCORE_CUTOFF = 70

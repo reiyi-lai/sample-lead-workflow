@@ -18,7 +18,7 @@ STEP_DELAY_SECONDS = 65
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from constants import MODELS, ICP_WEIGHTS, COMPANY_SCORING_TIER_THRESHOLDS
+from constants import MODELS, ICP_WEIGHTS
 from prompts import (
     COMPANY_RESEARCH_SYSTEM_PROMPT,
     COMPANY_SCORING_SYSTEM_PROMPT,
@@ -248,24 +248,8 @@ def calculate_icp_score(scoring_data: dict) -> dict:
         (market_activity * ICP_WEIGHTS["market_activity"] * 10)
     )
 
-    # Assign tier
-    if weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_1"]:
-        tier = 1
-        tier_label = "High Priority"
-    elif weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_2"]:
-        tier = 2
-        tier_label = "Medium Priority"
-    elif weighted_score >= COMPANY_SCORING_TIER_THRESHOLDS["tier_3"]:
-        tier = 3
-        tier_label = "Low Priority"
-    else:
-        tier = 0
-        tier_label = "Disqualified"
-
     return {
         "weighted_score": round(weighted_score, 1),
-        "tier": tier,
-        "tier_label": tier_label,
         "category_scores": {
             "industry_fit": {
                 "score": industry_fit,
@@ -348,7 +332,7 @@ def deduplicate_companies(discovery_results: List[dict]) -> List[dict]:
 # MAIN PIPELINE
 
 def run_stage2_pipeline(
-    input_file: str = "data/events/discovered_companies.json",
+    events_dir: str = "data/events/companies",
     output_dir: str = "data/companies",
     max_companies: Optional[int] = None,
 ) -> dict:
@@ -356,13 +340,15 @@ def run_stage2_pipeline(
     Run the complete Stage 2 Company Qualification Pipeline.
 
     Args:
-        input_file: Path to Stage 1 discovered_companies.json
+        events_dir: Directory containing per-event company JSON files
         output_dir: Directory to save output files
         max_companies: Optional limit on number of companies to process
 
     Returns:
         Dict with all pipeline results
     """
+    import glob
+
     print("\n" + "=" * 60)
     print("STAGE 2: COMPANY RESEARCH & QUALIFICATION PIPELINE")
     print("=" * 60)
@@ -371,10 +357,18 @@ def run_stage2_pipeline(
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
 
-    # Load Stage 1 results
-    print(f"\nLoading companies from: {input_file}")
-    with open(input_file, "r") as f:
-        discovery_results = json.load(f)
+    # Load Stage 1 results from per-event files
+    print(f"\nLoading companies from: {events_dir}/")
+    discovery_results = []
+    for filepath in sorted(glob.glob(os.path.join(events_dir, "*.json"))):
+        try:
+            with open(filepath, "r") as f:
+                data = json.load(f)
+                discovery_results.append(data)
+        except Exception as e:
+            print(f"  Warning: Failed to load {filepath}: {e}")
+
+    print(f"  Loaded {len(discovery_results)} event files")
 
     # Deduplicate companies
     print("\nDeduplicating companies across events...")
@@ -388,7 +382,6 @@ def run_stage2_pipeline(
 
     # Process each company
     qualified_results = []
-    tier_counts = {1: 0, 2: 0, 3: 0, 0: 0}
 
     for i, company in enumerate(unique_companies):
         company_name = company["company_name"]
@@ -417,10 +410,8 @@ def run_stage2_pipeline(
 
         # Calculate weighted ICP score
         icp_result = calculate_icp_score(scoring_data)
-        tier = icp_result["tier"]
-        tier_counts[tier] += 1
 
-        print(f"  -> ICP Score: {icp_result['weighted_score']} ({icp_result['tier_label']})")
+        print(f"  -> ICP Score: {icp_result['weighted_score']}")
 
         # Save scoring to company folder
         save_scoring_json(output_dir, company_name, scoring_data, icp_result)
@@ -443,57 +434,29 @@ def run_stage2_pipeline(
             print(f"\n  Waiting {STEP_DELAY_SECONDS}s before next company...")
             time.sleep(STEP_DELAY_SECONDS)
 
-    # Separate by tier
-    tier_1_companies = [r for r in qualified_results if r.get("success") and r.get("icp_qualification", {}).get("tier") == 1]
-    tier_2_companies = [r for r in qualified_results if r.get("success") and r.get("icp_qualification", {}).get("tier") == 2]
-    tier_3_companies = [r for r in qualified_results if r.get("success") and r.get("icp_qualification", {}).get("tier") == 3]
-    disqualified = [r for r in qualified_results if r.get("success") and r.get("icp_qualification", {}).get("tier") == 0]
+    # Per-company files (research.json, scoring.json) already saved during processing
+    successful = [r for r in qualified_results if r.get("success")]
     failed = [r for r in qualified_results if not r.get("success")]
 
-    # Save results
-    all_results_file = os.path.join(output_dir, "all_qualified_companies.json")
-    with open(all_results_file, "w") as f:
-        json.dump(qualified_results, f, indent=2)
-    print(f"\nSaved all results to: {all_results_file}")
-
-    # Compile summary
     results = {
         "pipeline": "stage2_company_qualification",
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_unique_companies": len(unique_companies),
-            "successfully_processed": len(qualified_results) - len(failed),
+            "successfully_processed": len(successful),
             "failed": len(failed),
-            "tier_1_count": len(tier_1_companies),
-            "tier_2_count": len(tier_2_companies),
-            "tier_3_count": len(tier_3_companies),
-            "disqualified_count": len(disqualified),
-        },
-        "output_files": {
-            "all_companies": all_results_file,
         },
     }
 
-    # Save pipeline summary
-    summary_file = os.path.join(output_dir, "pipeline_summary.json")
-    with open(summary_file, "w") as f:
-        json.dump(results, f, indent=2)
-
     print("\n" + "=" * 60)
-    print("PIPELINE COMPLETE")
+    print("STAGE 2 COMPLETE")
     print("=" * 60)
     print(f"Total companies processed: {len(unique_companies)}")
-    print(f"Successfully qualified: {results['summary']['successfully_processed']}")
-    print(f"  Tier 1 (High Priority): {results['summary']['tier_1_count']}")
-    print(f"  Tier 2 (Medium Priority): {results['summary']['tier_2_count']}")
-    print(f"  Tier 3 (Low Priority): {results['summary']['tier_3_count']}")
-    print(f"  Disqualified: {results['summary']['disqualified_count']}")
-    print(f"Failed: {results['summary']['failed']}")
-    print(f"\nOutputs saved to:")
-    print(f"  - All companies: {output_dir}/all_qualified_companies.json")
-    print(f"  - Per-company folders: {output_dir}/[Company Name]/")
-    print(f"    - research.json (company research data)")
-    print(f"    - scoring.json (ICP scores and qualification)")
+    print(f"Successfully scored: {len(successful)}")
+    print(f"Failed: {len(failed)}")
+    print(f"\nOutputs saved to per-company folders:")
+    print(f"  - {output_dir}/[Company Name]/research.json")
+    print(f"  - {output_dir}/[Company Name]/scoring.json")
 
     return results
 
@@ -505,9 +468,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Run Stage 2: Company Qualification Pipeline")
     parser.add_argument(
-        "--input",
-        default="data/events/discovered_companies.json",
-        help="Input file from Stage 1 (default: data/events/discovered_companies.json)",
+        "--events-dir",
+        default="data/events/companies",
+        help="Directory containing per-event company JSON files (default: data/events/companies)",
     )
     parser.add_argument(
         "--output-dir",
@@ -536,7 +499,7 @@ if __name__ == "__main__":
 
     # Run pipeline
     results = run_stage2_pipeline(
-        input_file=args.input,
+        events_dir=args.events_dir,
         output_dir=args.output_dir,
         max_companies=max_companies,
     )

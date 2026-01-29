@@ -15,7 +15,6 @@ import time
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Optional, Any
-from dataclasses import dataclass, field
 
 # Add src to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -37,11 +36,13 @@ from stage2_company_qualification import (
 from stage3_contact_finding import (
     identify_target_roles,
     generate_sales_navigator_searches,
+    push_company_to_clay,
     extract_domain,
 )
 from stage4_outreach_generation import (
     process_contact,
 )
+from constants import EVENT_SCORE_CUTOFF, COMPANY_SCORE_CUTOFF
 
 
 # RATE LIMITER
@@ -136,15 +137,15 @@ def check_company_stage3_complete(data_dir: Path, company_name: str) -> bool:
     return target_roles_file.exists()
 
 
-def get_company_tier(data_dir: Path, company_name: str) -> Optional[int]:
-    """Get the tier for a company from its scoring.json."""
+def get_company_icp_score(data_dir: Path, company_name: str) -> Optional[float]:
+    """Get the ICP score for a company from its scoring.json."""
     from stage2_company_qualification import sanitize_company_name
     folder_name = sanitize_company_name(company_name)
     scoring_file = data_dir / "companies" / folder_name / "scoring.json"
 
     if scoring_file.exists():
         scoring = load_json(scoring_file)
-        return scoring.get("icp_qualification", {}).get("tier")
+        return scoring.get("icp_qualification", {}).get("weighted_score")
     return None
 
 
@@ -162,11 +163,9 @@ class PipelineOrchestrator:
         self,
         data_dir: str = "data",
         tokens_per_min: int = 30000,
-        target_tiers: List[int] = [1, 2],
     ):
         self.data_dir = Path(data_dir)
         self.rate_limiter = RateLimiter(tokens_per_min=tokens_per_min)
-        self.target_tiers = target_tiers
 
         # Stats tracking
         self.stats = {
@@ -195,31 +194,33 @@ class PipelineOrchestrator:
             self._active_tasks.add(task)
             task.add_done_callback(self._active_tasks.discard)
 
-    async def on_company_scored(self, company_name: str, website_url: str, tier: int, icp_score: float):
+    async def on_company_scored(self, company_name: str, website_url: str, icp_score: float):
         """
         Triggered when Stage 2 completes for a company.
-        If Tier 1 or 2, triggers Stage 3.
+        If score meets cutoff, triggers Stage 3.
         """
-        print(f"\n[Event] Company scored: {company_name} -> Tier {tier} (Score: {icp_score})")
+        print(f"\n[Event] Company scored: {company_name} -> Score: {icp_score}")
 
-        if tier in self.target_tiers:
+        if icp_score >= COMPANY_SCORE_CUTOFF:
             task = asyncio.create_task(
                 self._process_company_stage3(company_name, website_url)
             )
             self._active_tasks.add(task)
             task.add_done_callback(self._active_tasks.discard)
         else:
-            print(f"  -> Skipping Stage 3 (Tier {tier} not in target tiers {self.target_tiers})")
+            print(f"  -> Skipping Stage 3 (Score {icp_score} < cutoff {COMPANY_SCORE_CUTOFF})")
 
     async def on_target_roles_identified(self, company_name: str, website_url: str, target_roles: List[dict]):
         """
         Triggered when Stage 3 completes for a company.
-        Generates LinkedIn Sales Navigator search URLs.
+        Generates LinkedIn Sales Navigator search URLs and pushes to Clay.
         """
         print(f"\n[Event] Target roles identified: {company_name} -> {len(target_roles)} roles")
 
-        # Generate Sales Navigator URLs
         company_domain = extract_domain(website_url)
+        role_titles = [r.get("title", "") for r in target_roles if r.get("title")]
+
+        # Generate Sales Navigator URLs
         searches = generate_sales_navigator_searches(
             company_name=company_name,
             company_domain=company_domain,
@@ -231,6 +232,19 @@ class PipelineOrchestrator:
         folder_name = sanitize_company_name(company_name)
         searches_file = self.data_dir / "companies" / folder_name / "linkedin_searches.json"
         save_json(searches_file, searches)
+
+        # Push to Clay webhook for contact enrichment
+        icp_score = get_company_icp_score(self.data_dir, company_name) or 0
+        clay_result = push_company_to_clay(
+            company_name=company_name,
+            website_url=website_url,
+            recommended_roles=role_titles,
+            icp_score=icp_score,
+        )
+        if clay_result.get("success"):
+            print(f"  -> Pushed to Clay (status {clay_result.get('status_code')})")
+        else:
+            print(f"  -> Clay push failed: {clay_result.get('error')}")
 
         print(f"  -> Generated {len(searches)} LinkedIn search URLs")
         print(f"  -> Saved to: {searches_file}")
@@ -250,16 +264,14 @@ class PipelineOrchestrator:
         # Check if already processed
         if check_company_stage2_complete(self.data_dir, company_name):
             print(f"\n[Stage 2] {company_name} - Already complete, loading...")
-            tier = get_company_tier(self.data_dir, company_name)
-            if tier is not None:
-                # Load scoring to get ICP score
-                from stage2_company_qualification import sanitize_company_name
-                folder_name = sanitize_company_name(company_name)
-                scoring = load_json(self.data_dir / "companies" / folder_name / "scoring.json")
-                icp_score = scoring.get("icp_qualification", {}).get("weighted_score", 0)
+            # Load scoring to get ICP score
+            from stage2_company_qualification import sanitize_company_name
+            folder_name = sanitize_company_name(company_name)
+            scoring = load_json(self.data_dir / "companies" / folder_name / "scoring.json")
+            icp_score = scoring.get("icp_qualification", {}).get("weighted_score", 0) if scoring else 0
 
-                # Trigger next stage
-                await self.on_company_scored(company_name, website_url, tier, icp_score)
+            # Trigger next stage
+            await self.on_company_scored(company_name, website_url, icp_score)
             return
 
         print(f"\n[Stage 2] Processing: {company_name}")
@@ -292,7 +304,6 @@ class PipelineOrchestrator:
 
             # Calculate ICP score
             icp_result = calculate_icp_score(scoring_data)
-            tier = icp_result["tier"]
             icp_score = icp_result["weighted_score"]
 
             # Save scoring with ICP result
@@ -304,10 +315,10 @@ class PipelineOrchestrator:
             )
 
             self.stats["companies_processed_stage2"] += 1
-            print(f"  -> Complete: Tier {tier}, Score {icp_score}")
+            print(f"  -> Complete: Score {icp_score}")
 
             # Trigger next stage
-            await self.on_company_scored(company_name, website_url, tier, icp_score)
+            await self.on_company_scored(company_name, website_url, icp_score)
 
         except Exception as e:
             print(f"  -> Exception: {e}")
@@ -400,9 +411,9 @@ class PipelineOrchestrator:
             if check_company_stage3_complete(self.data_dir, company_name):
                 continue
 
-            # Check tier - only process target tiers
-            tier = get_company_tier(self.data_dir, company_name)
-            if tier not in self.target_tiers:
+            # Check score - only process companies above cutoff
+            icp_score = get_company_icp_score(self.data_dir, company_name)
+            if icp_score is None or icp_score < COMPANY_SCORE_CUTOFF:
                 continue
 
             needs_stage3.append(company)
@@ -439,7 +450,8 @@ class PipelineOrchestrator:
         print(f"Started at: {datetime.now().isoformat()}")
         print(f"Data directory: {self.data_dir}")
         print(f"Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
-        print(f"Target tiers: {self.target_tiers}")
+        print(f"Event score cutoff: {EVENT_SCORE_CUTOFF}")
+        print(f"Company score cutoff: {COMPANY_SCORE_CUTOFF}")
 
         # Ensure directories exist
         (self.data_dir / "events").mkdir(parents=True, exist_ok=True)
@@ -470,15 +482,13 @@ class PipelineOrchestrator:
         if scored_file.exists():
             print(f"\n[Stage 1.2] Checking existing scored events: {scored_file}")
             scored = load_json(scored_file)
-            qualified_count = len(scored.get("qualified_events", []))
-            rejected_count = len(scored.get("rejected_events", []))
+            scored_count = len(scored.get("scored_events", []))
 
-            # If both empty but we have events, it was a failed parse - re-run
-            if qualified_count == 0 and rejected_count == 0 and len(events) > 0:
+            if scored_count == 0 and len(events) > 0:
                 print(f"  -> Cached file appears to be from failed parse, re-scoring...")
                 scored = None
             else:
-                print(f"  -> Loaded {qualified_count} qualified events (cached)")
+                print(f"  -> Loaded {scored_count} scored events (cached)")
 
         if scored is None:
             print(f"\n[Stage 1.2] Scoring {len(events)} events...")
@@ -489,32 +499,32 @@ class PipelineOrchestrator:
 
             save_json(scored_file, scored)
 
-        # Get qualified events
-        qualified_events = scored.get("qualified_events", [])
-        tier_1_events = [e for e in qualified_events if e.get("tier") == 1]
+        # Filter events by score cutoff
+        all_scored = scored.get("scored_events", [])
+        target_events = [e for e in all_scored if e.get("overall_score", 0) >= EVENT_SCORE_CUTOFF]
 
         print(f"\n[Stage 1] Summary:")
         print(f"  -> {len(events)} events discovered")
-        print(f"  -> {len(qualified_events)} qualified (Tier 1 & 2)")
-        print(f"  -> {len(tier_1_events)} Tier 1 events")
+        print(f"  -> {len(all_scored)} scored")
+        print(f"  -> {len(target_events)} events with score >= {EVENT_SCORE_CUTOFF}")
 
-        # Step 1.3: Discover companies for Tier 1 events
-        print(f"\n[Stage 1.3] Discovering companies for {len(tier_1_events)} Tier 1 events...")
+        # Step 1.3: Discover companies for target tier events
+        print(f"\n[Stage 1.3] Discovering companies for {len(target_events)} target events...")
 
-        # Check for existing discovered_companies.json
-        discovered_companies_file = self.data_dir / "events" / "discovered_companies.json"
+        # Check for existing per-event company files
+        events_companies_dir = self.data_dir / "events" / "companies"
+        existing_event_files = list(events_companies_dir.glob("*.json")) if events_companies_dir.exists() else []
 
-        if discovered_companies_file.exists():
-            print(f"  -> Loading existing discovered companies...")
-            discovery_results = load_json(discovered_companies_file)
+        if existing_event_files:
+            print(f"  -> Loading existing per-event company files ({len(existing_event_files)} files)...")
+            discovery_results = [load_json(f) for f in existing_event_files if load_json(f)]
         else:
-            # Run company discovery for each event
+            # Run company discovery for each event (saves per-event files automatically)
             loop = asyncio.get_event_loop()
             discovery_results = await loop.run_in_executor(
                 None,
-                lambda: discover_companies(tier_1_events, str(self.data_dir / "events"))
+                lambda: discover_companies(target_events, str(self.data_dir / "events"))
             )
-            save_json(discovered_companies_file, discovery_results)
 
         # Deduplicate companies
         unique_companies = deduplicate_companies(discovery_results)
@@ -537,15 +547,6 @@ class PipelineOrchestrator:
             for company in needs_stage3:
                 company_name = company.get("company_name", "")
                 website_url = company.get("website_url", "")
-
-                # Load tier and score from existing Stage 2 data
-                tier = get_company_tier(self.data_dir, company_name)
-                from stage2_company_qualification import sanitize_company_name
-                folder_name = sanitize_company_name(company_name)
-                scoring = load_json(self.data_dir / "companies" / folder_name / "scoring.json")
-                icp_score = scoring.get("icp_qualification", {}).get("weighted_score", 0) if scoring else 0
-
-                # Process Stage 3
                 await self._process_company_stage3(company_name, website_url)
 
         # PRIORITY 2: Process Stage 2 (then Stage 3 will auto-trigger via callback)
@@ -594,7 +595,7 @@ class PipelineOrchestrator:
     async def run_from_stage2(self, companies_file: Optional[str] = None):
         """
         Run pipeline starting from Stage 2 (skip event discovery).
-        Uses existing discovered_companies.json or specified file.
+        Uses existing per-event company files from data/events/companies/.
 
         PRIORITY ORDER: Later stages first (finish what's started)
         1. First, process companies needing Stage 3 (already have Stage 2 done)
@@ -609,19 +610,21 @@ class PipelineOrchestrator:
         (self.data_dir / "companies").mkdir(parents=True, exist_ok=True)
         (self.data_dir / "contacts").mkdir(parents=True, exist_ok=True)
 
-        # Load companies
+        # Load companies from per-event files
         if companies_file:
             companies_path = Path(companies_file)
+            if not companies_path.exists():
+                print(f"Error: Companies file not found: {companies_path}")
+                return
+            print(f"Loading companies from: {companies_path}")
+            discovery_results = load_json(companies_path)
         else:
-            companies_path = self.data_dir / "events" / "discovered_companies.json"
-
-        if not companies_path.exists():
-            print(f"Error: Companies file not found: {companies_path}")
-            print("Run the full pipeline first or specify a companies file.")
-            return
-
-        print(f"Loading companies from: {companies_path}")
-        discovery_results = load_json(companies_path)
+            events_companies_dir = self.data_dir / "events" / "companies"
+            if not events_companies_dir.exists() or not list(events_companies_dir.glob("*.json")):
+                print("Error: No per-event company files found. Run the full pipeline first.")
+                return
+            print(f"Loading companies from: {events_companies_dir}")
+            discovery_results = [load_json(f) for f in events_companies_dir.glob("*.json") if load_json(f)]
 
         # Deduplicate
         unique_companies = deduplicate_companies(discovery_results)
@@ -685,13 +688,6 @@ def main():
         help="Rate limit in tokens per minute (default: 30000)",
     )
     parser.add_argument(
-        "--tiers",
-        type=int,
-        nargs="+",
-        default=[1, 2],
-        help="Tiers to process for Stage 3 (default: 1 2)",
-    )
-    parser.add_argument(
         "--from-stage2",
         action="store_true",
         help="Start from Stage 2 (skip event discovery)",
@@ -709,7 +705,6 @@ def main():
     orchestrator = PipelineOrchestrator(
         data_dir=args.data_dir,
         tokens_per_min=args.tokens_per_min,
-        target_tiers=args.tiers,
     )
 
     # Run appropriate pipeline

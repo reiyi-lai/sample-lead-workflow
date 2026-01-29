@@ -128,19 +128,13 @@ At this point, also check if the event is happening in 2026. If it is not, assig
 
 CALCULATE: overall_score = (industry * 0.5) + (exhibitor_quality * 0.3) + (scale_timing * 0.2)
 
-TIER ASSIGNMENT:
-  • Tier 1 (score 8-10): HIGH PRIORITY - Research for company leads
-  • Tier 2 (score 5-7.9): MEDIUM - Research if within budget
-  • Tier 3 (score 0-4.9): SKIP - Do not pursue
-
 OUTPUT FORMAT:
-Return JSON with qualified and rejected events:
+Return JSON with all scored events:
 {{
-  "qualified_events": [
+  "scored_events": [
     {{
       "event_name": "...",
       "event_url": "...",
-      "tier": 1,
       "overall_score": 9.2,
       "scores": {{
         "industry_alignment": 10,
@@ -150,18 +144,7 @@ Return JSON with qualified and rejected events:
       "reasoning": "ISA Sign Expo is the premier signage industry event..."
     }}
   ],
-  "rejected_events": [
-    {{
-      "event_name": "...",
-      "tier": 3,
-      "overall_score": 3.1,
-      "rejection_reason": "B2C consumer electronics show, no relevant exhibitors"
-    }}
-  ],
   "summary": {{
-    "tier_1_count": 3,
-    "tier_2_count": 5,
-    "tier_3_count": 12,
     "total_events_scored": 20
   }}
 }}
@@ -170,7 +153,7 @@ Return JSON with qualified and rejected events:
 COMPANY_DISCOVERY_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
 
-TASK: Identify companies that exhibit at or are very likely to attend the given trade show event.
+TASK: Identify companies that exhibit at or are very likely to attend the given event.
 
 SEARCH STRATEGY:
 Use web search to find companies associated with the event:
@@ -268,11 +251,6 @@ Gather intelligence to answer these key questions:
    • Recent news: acquisitions, expansions, product launches
    • Awards, certifications, or industry recognition
 
-5. WHAT CHALLENGES MIGHT THEY FACE?
-   • Pain points their products/customers might have
-   • Competitive pressures
-   • Market trends affecting their business
-
 RESEARCH APPROACH:
 • Start with the provided website URL to understand their positioning and offerings
 • Use web search to find additional sources: news articles, press releases, LinkedIn, industry databases
@@ -285,23 +263,19 @@ Return ONLY a JSON object with open-ended synthesis:
   "company_name": "string",
   "website_url": "string",
 
-  "business_overview": "Comprehensive description of what this company does, their core offerings, target markets, and business model. 2-3 sentences.",
+  "business_overview": "What this company does, their core offerings, target markets, and business model. 2-3 sentences.",
 
   "company_scale": {{
     "estimated_revenue": "$10M-50M|$50M-100M|$100M-500M|$500M-1B|$1B+|unknown",
     "estimated_employees": "1-50|50-200|200-1000|1000-5000|5000+|unknown",
-    "scale_synthesis": "Synthesis of size indicators including geographic presence (international or domestic), confidence level for estimates, number of facilities/locations. Include signals found (funding rounds, 'Fortune 500', LinkedIn data, news mentions). Be specific about what you found and what's unknown."
+    "scale_synthesis": "Size indicators: geographic presence, confidence level, number of facilities. Cite specific signals found. 2-4 sentences."
   }},
 
-  "products_and_positioning": "Synthesis of their product lines relevant to Tedlar's markets (signage, graphics, films, panels, etc.). Describe their positioning (premium vs budget), manufacturing capabilities etc.",
+  "products_and_positioning": "Product lines relevant to Tedlar's markets, positioning (premium vs budget), manufacturing capabilities. 2-4 sentences.",
 
-  "strategic_relevance_to_tedlar": "How strategically relevant is this company to Tedlar's value propositions and what makes them a strategically compelling target for Tedlar",
+  "strategic_relevance_to_tedlar": "How relevant this company is to Tedlar's value propositions and why they are a compelling target. 2-3 sentences.",
 
-  "market_activity": "Recent market signals: trade show participation, industry association memberships, news/press releases (especially product launches, expansions, acquisitions), awards/recognition, growth indicators. Focus on last 2-3 years.",
-
-  "potential_pain_points": "Based on your research, what challenges or pain points might this company face that Tedlar could address? (e.g., durability issues, warranty claims, outdoor performance challenges, competitive pressures). This should be evidence-based inference from what you found.",
-
-  "additional_insights": "Any other notable findings that don't fit the above categories but are relevant for understanding this company's potential as a Tedlar customer. Could include: key partnerships, expansion plans, technology focus, etc."
+  "market_activity": "Recent market signals: trade shows, associations, news, awards, growth indicators. Focus on last 2-3 years. 2-4 sentences.",
 }}
 
 IMPORTANT:
@@ -577,10 +551,7 @@ IMPORTANT:
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-OUTREACH_EMAIL_SYSTEM_PROMPT = f"""
-{TEDLAR_CONTEXT}
-
-You are an expert cold email writer. Write a personalized outreach email to materials and manufacturing executives based on the engagement strategy.
+OUTREACH_EMAIL_TURN2_MESSAGE = """Based on the engagement strategy you just developed, write a personalized cold outreach email for this contact.
 
 Your job is to write a compelling, personalized email that:
 1. Feels natural and conversational, not salesy
@@ -602,28 +573,25 @@ Writing Guidelines:
 
 OUTPUT FORMAT:
 Return ONLY a JSON object:
-{{
+{
   "channel": "email",
 
-  "message": {{
+  "message": {
     "subject": "Quick question about Epson's outdoor film durability",
     "body": "Hi Laura,\\n\\nI noticed Epson is expanding into architectural films which is really exciting.\\n\\nWe've been working with companies in similar outdoor applications who've drastically reduced warranty claims for their films with our overlaminate. If durability outdoors is something you're focused on, happy to share about one of our product lines that's been working well for similar teams.\\n\\nHappy to send over some case studies if that'd be helpful.\\n\\nBest,\\n[Your name]",
     "word_count": 68
-  }},
+  },
 
-  "personalization_used": {{
+  "personalization_used": {
     "hook": "xxx",
-    "value_prop_emphasized": "xxx",
-  }}
-}}
+    "value_prop_emphasized": "xxx"
+  }
+}
 
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """
 
-OUTREACH_LINKEDIN_SYSTEM_PROMPT = f"""
-{TEDLAR_CONTEXT}
-
-Write a personalized LinkedIn connection message to materials and manufacturing executives based on the engagement strategy.
+OUTREACH_LINKEDIN_TURN2_MESSAGE = """Based on the engagement strategy you just developed, write a personalized LinkedIn connection message for this contact.
 
 Your job is to write a compelling, personalized LinkedIn message that:
 1. Feels natural and conversational, not salesy
@@ -639,21 +607,21 @@ Writing Guidelines:
 
 OUTPUT FORMAT:
 Return ONLY a JSON object:
-{{
+{
   "channel": "linkedin",
 
-  "message_type": "connection_request|inmail", // connection request or inmail
+  "message_type": "connection_request|inmail",
 
-  "message": {{
+  "message": {
     "body": "Hi Laura, noticed Epson is expanding into architectural films which is really exciting! We've been helping companies in similar outdoor applications with durability. Happy to share some case studies if you'd be interested",
     "character_count": 212
-  }},
+  },
 
-  "personalization_used": {{
+  "personalization_used": {
     "hook": "xxx",
-    "value_prop_emphasized": "xxx",
-  }},
-}}
+    "value_prop_emphasized": "xxx"
+  }
+}
 
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """

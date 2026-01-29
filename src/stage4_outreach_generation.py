@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.llm import call_claude_conversation, extract_json_from_response
 from prompts import (
     CONTACT_ANALYSIS_SYSTEM_PROMPT,
-    OUTREACH_EMAIL_SYSTEM_PROMPT,
-    OUTREACH_LINKEDIN_SYSTEM_PROMPT,
+    OUTREACH_EMAIL_TURN2_MESSAGE,
+    OUTREACH_LINKEDIN_TURN2_MESSAGE,
 )
 from constants import MODELS
 
@@ -117,49 +117,69 @@ def load_target_roles(base_dir: str, company_name: str) -> Optional[dict]:
     return load_target_roles_json(company_name, base_dir)
 
 
-# STEP 4.1: CONTACT ANALYSIS & ENGAGEMENT STRATEGY
+# SINGLE CONTACT PROCESSING (Two-Turn Conversation)
+#
+# Turn 1: Contact Analysis & Engagement Strategy
+# Turn 2: Outreach Message Generation (email or LinkedIn based on Turn 1)
 
-def analyze_contact(
+def process_contact(
     contact_name: str,
     title: str,
     company_name: str,
     base_dir: str = "data/companies",
     output_dir: str = "data/contacts",
-) -> Optional[dict]:
+    force_channel: Optional[str] = None,
+) -> Tuple[Optional[dict], Optional[dict]]:
     """
-    Step 4.1: Analyze contact and develop engagement strategy.
+    Process a single contact through analysis and outreach as a two-turn conversation.
+
+    Turn 1: Analyze contact and develop engagement strategy
+    Turn 2: Generate outreach message (channel determined by Turn 1 or force_channel)
 
     Args:
         contact_name: Contact's full name
         title: Contact's job title
         company_name: Company name
-        base_dir: Directory with company research and target roles
-        output_dir: Directory to save analysis
+        base_dir: Directory with company data from Stage 2 & 3
+        output_dir: Directory to save contact analysis and outreach
+        force_channel: Override recommended channel ("email" or "linkedin")
 
     Returns:
-        Analysis dict with engagement strategy or None if failed
+        Tuple of (analysis, outreach) dicts. Either can be None if failed/skipped.
     """
-    # Check if analysis already exists
-    if check_analysis_exists(output_dir, company_name, contact_name):
-        print(f"  [Step 4.1] ✓ Analysis already exists, loading from file...")
-        return load_analysis(output_dir, company_name, contact_name)
+    print(f"\n{'='*60}")
+    print(f"Processing: {contact_name} ({title}) at {company_name}")
+    print(f"{'='*60}")
+
+    # Check if both already exist
+    if check_analysis_exists(output_dir, company_name, contact_name) and \
+       check_outreach_exists(output_dir, company_name, contact_name):
+        print(f"  [Turn 1] ✓ Analysis already exists, loading...")
+        print(f"  [Turn 2] ✓ Outreach already exists, skipping...")
+        analysis = load_analysis(output_dir, company_name, contact_name)
+        return analysis, None
 
     # Load company research from Stage 2
     company_research = load_company_research(base_dir, company_name)
     if not company_research:
-        print(f"  [Step 4.1] ✗ Company research not found for {company_name}")
-        print(f"    Make sure Stage 2 has been run for this company")
-        return None
+        print(f"  ✗ Company research not found for {company_name}")
+        return None, None
 
     # Load target roles from Stage 3
     target_roles = load_target_roles(base_dir, company_name)
     if not target_roles or "target_roles" not in target_roles:
-        print(f"  [Step 4.1] ✗ Target roles not found for {company_name}")
-        print(f"    Make sure Stage 3 has been run for this company")
-        return None
+        print(f"  ✗ Target roles not found for {company_name}")
+        return None, None
 
-    # Prepare user message for LLM
-    user_message = f"""
+    # TURN 1: Contact Analysis
+    # Check if analysis already exists (but outreach doesn't)
+    if check_analysis_exists(output_dir, company_name, contact_name):
+        print(f"  [Turn 1] ✓ Analysis already exists, loading...")
+        analysis = load_analysis(output_dir, company_name, contact_name)
+    else:
+        print(f"  [Turn 1] Analyzing contact...")
+
+        analysis_user_message = f"""
 Based on the instructions provided and context provided below, develop an engagement strategy specific to this contact, providing the output in the JSON format specified above.
 
 CONTACT INFORMATION:
@@ -174,160 +194,82 @@ TARGET ROLES ANALYSIS (from Stage 3):
 {json.dumps(target_roles["target_roles"], indent=2)}
 """
 
-    print(f"  [Step 4.1] Analyzing contact with LLM...")
+        try:
+            response = call_claude_conversation(
+                system_prompt=CONTACT_ANALYSIS_SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": analysis_user_message}],
+                model=MODELS.get("contact_analysis", "claude-sonnet-4-5-20250929"),
+            )
+
+            analysis = extract_json_from_response(response)
+            save_analysis(output_dir, company_name, contact_name, analysis)
+            print(f"  [Turn 1] ✓ Analysis complete")
+            print(f"    Recommended channel: {analysis.get('recommended_channel', 'N/A')}")
+
+        except Exception as e:
+            print(f"  [Turn 1] ✗ Error: {e}")
+            return None, None
+
+    if not analysis:
+        return None, None
+
+    # Check if outreach already exists
+    if check_outreach_exists(output_dir, company_name, contact_name):
+        print(f"  [Turn 2] ✓ Outreach already exists, skipping...")
+        return analysis, None
+
+    # TURN 2: Outreach Generation
+    channel = force_channel or analysis.get("recommended_channel", "email")
+
+    # Select turn 2 message based on channel
+    if channel == "linkedin":
+        turn2_message = OUTREACH_LINKEDIN_TURN2_MESSAGE
+    else:
+        turn2_message = OUTREACH_EMAIL_TURN2_MESSAGE
+
+    print(f"  [Turn 2] Generating {channel} message...")
+
+    # Build two-turn conversation
+    analysis_user_message = f"""
+Based on the instructions provided and context provided below, develop an engagement strategy specific to this contact, providing the output in the JSON format specified above.
+
+CONTACT INFORMATION:
+- Name: {contact_name}
+- Title: {title}
+- Company: {company_name}
+
+COMPANY RESEARCH (from Stage 2):
+{json.dumps(company_research, indent=2)}
+
+TARGET ROLES ANALYSIS (from Stage 3):
+{json.dumps(target_roles["target_roles"], indent=2)}
+"""
+
+    messages = [
+        {"role": "user", "content": analysis_user_message},
+        {"role": "assistant", "content": json.dumps(analysis, indent=2)},
+        {"role": "user", "content": turn2_message},
+    ]
 
     try:
         response = call_claude_conversation(
             system_prompt=CONTACT_ANALYSIS_SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_message}],
-            model=MODELS.get("contact_analysis", "claude-sonnet-4-5-20250929"),
-        )
-
-        # Parse JSON response (handles markdown code blocks)
-        analysis = extract_json_from_response(response)
-
-        # Save analysis
-        save_analysis(output_dir, company_name, contact_name, analysis)
-        print(f"  [Step 4.1] ✓ Analysis complete")
-        print(f"    Recommended channel: {analysis.get('recommended_channel', 'N/A')}")
-
-        return analysis
-
-    except Exception as e:
-        print(f"  [Step 4.1] ✗ Error parsing response: {e}")
-        print(f"  Response preview: {response[:500] if response else 'No response'}")
-        return None
-
-
-# STEP 4.2: OUTREACH MESSAGE GENERATION
-
-def generate_outreach(
-    contact_name: str,
-    company_name: str,
-    output_dir: str = "data/contacts",
-    force_channel: Optional[str] = None,
-) -> Optional[dict]:
-    """
-    Step 4.2: Generate outreach message based on analysis.
-
-    Args:
-        contact_name: Contact's full name
-        company_name: Company name
-        output_dir: Directory to load analysis and save outreach
-        force_channel: Override recommended channel ("email" or "linkedin")
-
-    Returns:
-        Outreach dict with message or None if failed/skipped
-    """
-    # Check if outreach already exists
-    if check_outreach_exists(output_dir, company_name, contact_name):
-        print(f"  [Step 4.2] ✓ Outreach already exists, skipping...")
-        return None
-
-    # Load analysis from Step 4.1
-    analysis = load_analysis(output_dir, company_name, contact_name)
-    if not analysis:
-        print(f"  [Step 4.2] ✗ Analysis not found for {contact_name}")
-        print(f"    Run Step 4.1 first to generate analysis")
-        return None
-
-    # Determine channel (use force_channel if provided, otherwise use recommendation)
-    channel = force_channel or analysis.get("recommended_channel", "email")
-
-    # Select appropriate prompt based on channel
-    if channel == "linkedin":
-        system_prompt = OUTREACH_LINKEDIN_SYSTEM_PROMPT
-    else:
-        system_prompt = OUTREACH_EMAIL_SYSTEM_PROMPT
-
-    # Prepare user message
-    user_message = f"""
-Generate a {channel} message based on this contact analysis:
-
-{json.dumps(analysis, indent=2)}
-
-Please write a personalized {channel} message following the output format.
-"""
-
-    print(f"  [Step 4.2] Generating {channel} message with LLM...")
-
-    try:
-        response = call_claude_conversation(
-            system_prompt=system_prompt,
-            messages=[{"role": "user", "content": user_message}],
+            messages=messages,
             model=MODELS.get("outreach_generation", "claude-sonnet-4-5-20250929"),
         )
 
-        # Parse JSON response (handles markdown code blocks)
         outreach = extract_json_from_response(response)
-
-        # Save outreach
         save_outreach(output_dir, company_name, contact_name, outreach)
-        print(f"  [Step 4.2] ✓ {channel.capitalize()} message generated")
+        print(f"  [Turn 2] ✓ {channel.capitalize()} message generated")
 
-        # Print preview
         if channel == "email" and "message" in outreach:
-            subject = outreach["message"].get("subject", "")
-            print(f"    Subject: {subject}")
+            print(f"    Subject: {outreach['message'].get('subject', '')}")
 
-        return outreach
+        return analysis, outreach
 
     except Exception as e:
-        print(f"  [Step 4.2] ✗ Error parsing response: {e}")
-        print(f"  Response preview: {response[:500] if response else 'No response'}")
-        return None
-
-
-# SINGLE CONTACT PROCESSING
-
-def process_contact(
-    contact_name: str,
-    title: str,
-    company_name: str,
-    base_dir: str = "data/companies",
-    output_dir: str = "data/contacts",
-    force_channel: Optional[str] = None,
-) -> Tuple[Optional[dict], Optional[dict]]:
-    """
-    Process a single contact through both analysis and outreach steps.
-
-    Args:
-        contact_name: Contact's full name
-        title: Contact's job title
-        company_name: Company name
-        base_dir: Directory with company data from Stage 2 & 3
-        output_dir: Directory to save contact analysis and outreach
-        force_channel: Override recommended channel
-
-    Returns:
-        Tuple of (analysis, outreach) dicts. Either can be None if failed/skipped.
-    """
-    print(f"\n{'='*60}")
-    print(f"Processing: {contact_name} ({title}) at {company_name}")
-    print(f"{'='*60}")
-
-    # Step 4.1: Contact Analysis
-    analysis = analyze_contact(
-        contact_name=contact_name,
-        title=title,
-        company_name=company_name,
-        base_dir=base_dir,
-        output_dir=output_dir,
-    )
-
-    if not analysis:
-        print(f"✗ Failed to analyze contact")
-        return None, None
-
-    # Step 4.2: Outreach Generation
-    outreach = generate_outreach(
-        contact_name=contact_name,
-        company_name=company_name,
-        output_dir=output_dir,
-        force_channel=force_channel,
-    )
-
-    return analysis, outreach
+        print(f"  [Turn 2] ✗ Error: {e}")
+        return analysis, None
 
 
 # BATCH PROCESSING

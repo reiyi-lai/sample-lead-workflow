@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from constants import CLAY_WEBHOOK_URL, MODELS
+from constants import CLAY_WEBHOOK_URL, MODELS, COMPANY_SCORE_CUTOFF
 from prompts import TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 
@@ -109,31 +109,52 @@ def extract_domain(website_url: str) -> str:
 
 
 def load_qualified_companies(
-    input_file: str = "data/companies/all_qualified_companies.json",
-    tier_filter: Optional[int] = None,
+    base_dir: str = "data/companies",
 ) -> List[dict]:
     """
-    Load qualified companies from Stage 2 output.
+    Load qualified companies by iterating per-company folders.
+    Reads each company's scoring.json and filters by COMPANY_SCORE_CUTOFF.
 
     Args:
-        input_file: Path to Stage 2 output file
-        tier_filter: If specified, only return companies of this tier (1, 2, or 3)
+        base_dir: Base directory containing company folders
 
     Returns:
         List of company dicts with qualification data
     """
-    with open(input_file, "r") as f:
-        companies = json.load(f)
+    companies = []
 
-    # Filter successful qualifications only
-    companies = [c for c in companies if c.get("success")]
+    if not os.path.isdir(base_dir):
+        return companies
 
-    # Filter by tier if specified
-    if tier_filter is not None:
-        companies = [
-            c for c in companies
-            if c.get("icp_qualification", {}).get("tier") == tier_filter
-        ]
+    for folder in os.listdir(base_dir):
+        folder_path = os.path.join(base_dir, folder)
+        if not os.path.isdir(folder_path):
+            continue
+
+        scoring_file = os.path.join(folder_path, "scoring.json")
+        if not os.path.isfile(scoring_file):
+            continue
+
+        with open(scoring_file, "r") as f:
+            scoring = json.load(f)
+
+        icp = scoring.get("icp_qualification", {})
+        if icp.get("weighted_score", 0) < COMPANY_SCORE_CUTOFF:
+            continue
+
+        # Load research for company_name and website_url
+        research_file = os.path.join(folder_path, "research.json")
+        research = {}
+        if os.path.isfile(research_file):
+            with open(research_file, "r") as f:
+                research = json.load(f)
+
+        companies.append({
+            "company_name": research.get("company_name", folder),
+            "website_url": research.get("website_url", ""),
+            "icp_qualification": icp,
+            "success": True,
+        })
 
     return companies
 
@@ -291,15 +312,13 @@ def generate_sales_navigator_searches(
     return searches
 
 
-# STEP 3.X (PLACEHOLDER): PUSH COMPANIES TO CLAY WEBHOOK
-# Note: Clay integration kept as placeholder for future use
-# Currently using LinkedIn Sales Navigator for better contact discovery
+# STEP 3.2b: PUSH COMPANIES TO CLAY WEBHOOK
+# Runs alongside LinkedIn Sales Navigator search generation
 
 def push_company_to_clay(
     company_name: str,
     website_url: str,
     recommended_roles: List[str],
-    tier: int,
     icp_score: float,
 ) -> dict:
     """
@@ -309,7 +328,6 @@ def push_company_to_clay(
         company_name: Name of the company
         website_url: Company's website URL
         recommended_roles: List of job titles to search for
-        tier: ICP tier (1, 2, or 3)
         icp_score: Weighted ICP score (0-100)
 
     Returns:
@@ -326,7 +344,6 @@ def push_company_to_clay(
         "company_name": company_name,
         "company_domain": company_domain,
         "target_roles": roles_string,
-        "tier": tier,
         "icp_score": icp_score,
     }
 
@@ -380,7 +397,7 @@ def process_companies_and_generate_searches(
         delay_seconds: Delay between LLM requests to avoid rate limits
 
     Returns:
-        Tuple of (role_identification_results, sales_nav_searches)
+        Tuple of (role_results, sales_nav_searches)
     """
     role_results = []
     all_searches = []
@@ -455,10 +472,7 @@ def process_companies_and_generate_searches(
 # MAIN PIPELINE
 
 def run_stage3_linkedin_search(
-    input_file: str = "data/companies/all_qualified_companies.json",
-    output_dir: str = "data/contacts",
     base_dir: str = "data/companies",
-    tier_filter: Optional[int] = 1,
     max_companies: Optional[int] = None,
 ) -> dict:
     """
@@ -469,10 +483,7 @@ def run_stage3_linkedin_search(
     - Step 3.2: Generate LinkedIn Sales Navigator search URLs
 
     Args:
-        input_file: Path to Stage 2 output file
-        output_dir: Directory to save output files
-        base_dir: Base directory for company folders (for research.json)
-        tier_filter: Only process companies of this tier (1, 2, 3, or None for all)
+        base_dir: Base directory for company folders (reads scoring.json per company)
         max_companies: Optional limit on number of companies to process
 
     Returns:
@@ -483,16 +494,10 @@ def run_stage3_linkedin_search(
     print("=" * 60)
     print(f"Started at: {datetime.now().isoformat()}")
 
-    # Create output directory
-    os.makedirs(output_dir, exist_ok=True)
-
-    # Load companies
-    print(f"\nLoading companies from: {input_file}")
-    companies = load_qualified_companies(input_file, tier_filter=tier_filter)
-    print(f"  Found {len(companies)} qualified companies")
-
-    if tier_filter is not None:
-        print(f"  Filtered to Tier {tier_filter} only")
+    # Load companies from per-company folders
+    print(f"\nLoading qualified companies from: {base_dir}")
+    companies = load_qualified_companies(base_dir)
+    print(f"  Found {len(companies)} qualified companies (score >= {COMPANY_SCORE_CUTOFF})")
 
     # Limit if specified
     if max_companies:
@@ -511,17 +516,7 @@ def run_stage3_linkedin_search(
     successful_roles = [r for r in role_results if r["success"]]
     failed_roles = [r for r in role_results if not r["success"]]
 
-    # Save role identification results
-    role_results_file = os.path.join(output_dir, "role_identification_results.json")
-    with open(role_results_file, "w") as f:
-        json.dump(role_results, f, indent=2)
-    print(f"\nSaved role identification results to: {role_results_file}")
-
-    # Save Sales Navigator searches to JSON
-    searches_json_file = os.path.join(output_dir, "linkedin_sales_nav_searches.json")
-    with open(searches_json_file, "w") as f:
-        json.dump(all_searches, f, indent=2)
-    print(f"Saved Sales Navigator searches to: {searches_json_file}")
+    # Per-company files (target_roles.json, linkedin_searches.json) already saved by process_companies_and_generate_searches()
 
     # Create summary
     summary = {
@@ -534,18 +529,9 @@ def run_stage3_linkedin_search(
                 "failed": len(failed_roles),
             },
             "linkedin_searches_generated": len(all_searches),
-            "tier_filter": tier_filter,
-        },
-        "output_files": {
-            "role_identification": role_results_file,
-            "linkedin_searches": searches_json_file,
+            "company_score_cutoff": COMPANY_SCORE_CUTOFF,
         },
     }
-
-    # Save summary
-    summary_file = os.path.join(output_dir, "pipeline_summary.json")
-    with open(summary_file, "w") as f:
-        json.dump(summary, f, indent=2)
 
     print("\n" + "=" * 60)
     print("STAGE 3 COMPLETE")
@@ -556,14 +542,12 @@ def run_stage3_linkedin_search(
     print(f"  Failed: {len(failed_roles)}")
     print(f"\nStep 3.2 - LinkedIn Sales Navigator Searches:")
     print(f"  Total searches generated: {len(all_searches)}")
-    print(f"\nOutputs saved to:")
-    print(f"  - Per-company folders: {base_dir}/[Company Name]/target_roles.json")
-    print(f"  - Role identification results: {role_results_file}")
-    print(f"  - LinkedIn searches: {searches_json_file}")
+    print(f"\nOutputs saved to per-company folders:")
+    print(f"  - {base_dir}/[Company Name]/target_roles.json")
+    print(f"  - {base_dir}/[Company Name]/linkedin_searches.json")
     print(f"\nNext steps:")
-    print(f"  1. Use the JSON file in your dashboard frontend to display clickable search links")
-    print(f"  2. Search on LinkedIn Sales Navigator and export contacts")
-    print(f"  3. Import exported contacts into Stage 4 for outreach personalization")
+    print(f"  1. Use LinkedIn Sales Navigator search URLs to find contacts")
+    print(f"  2. Import exported contacts into Stage 4 for outreach personalization")
 
     return summary
 
@@ -577,26 +561,9 @@ if __name__ == "__main__":
         description="Run Stage 3: Identify Target Roles & Generate LinkedIn Sales Navigator Searches"
     )
     parser.add_argument(
-        "--input",
-        default="data/companies/all_qualified_companies.json",
-        help="Input file from Stage 2 (default: data/companies/all_qualified_companies.json)",
-    )
-    parser.add_argument(
-        "--output-dir",
-        default="data/contacts",
-        help="Directory to save output files (default: data/contacts)",
-    )
-    parser.add_argument(
         "--base-dir",
         default="data/companies",
         help="Base directory for company folders (default: data/companies)",
-    )
-    parser.add_argument(
-        "--tier",
-        type=int,
-        choices=[1, 2, 3],
-        default=1,
-        help="Filter to specific tier (default: 1 for Tier 1 only)",
     )
     parser.add_argument(
         "--max-companies",
@@ -620,9 +587,6 @@ if __name__ == "__main__":
 
     # Run pipeline
     results = run_stage3_linkedin_search(
-        input_file=args.input,
-        output_dir=args.output_dir,
         base_dir=args.base_dir,
-        tier_filter=args.tier,
         max_companies=max_companies,
     )
