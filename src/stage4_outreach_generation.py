@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from utils.llm import call_claude_conversation, extract_json_from_response
 from prompts import (
     CONTACT_ANALYSIS_SYSTEM_PROMPT,
-    OUTREACH_EMAIL_TURN2_MESSAGE,
-    OUTREACH_LINKEDIN_TURN2_MESSAGE,
+    OUTREACH_EMAIL_SYSTEM_PROMPT,
+    OUTREACH_LINKEDIN_SYSTEM_PROMPT,
 )
 from constants import MODELS
 
@@ -97,15 +97,15 @@ def save_outreach(output_dir: str, company_name: str, contact_name: str, outreac
 
 # LOAD STAGE 2 & 3 DATA
 
-def load_company_research(base_dir: str, company_name: str) -> Optional[dict]:
-    """Load company research from Stage 2."""
+def load_company_scoring(base_dir: str, company_name: str) -> Optional[dict]:
+    """Load company scoring data from Stage 2."""
     from stage2_company_qualification import get_company_folder
 
     company_folder = get_company_folder(base_dir, company_name)
-    research_file = os.path.join(company_folder, "research.json")
+    scoring_file = os.path.join(company_folder, "scoring.json")
 
-    if os.path.exists(research_file):
-        with open(research_file, "r") as f:
+    if os.path.exists(scoring_file):
+        with open(scoring_file, "r") as f:
             return json.load(f)
     return None
 
@@ -115,6 +115,155 @@ def load_target_roles(base_dir: str, company_name: str) -> Optional[dict]:
     from stage3_contact_finding import load_target_roles_json
 
     return load_target_roles_json(company_name, base_dir)
+
+
+# ROLE-BASED OUTREACH (Auto-triggered after Stage 3)
+#
+# Generates analysis + outreach for a target role with [Name] placeholder.
+# Files keyed by sanitized role title.
+
+def get_role_file_prefix(role_title: str) -> str:
+    """Get filename prefix for a role (e.g. 'VP of Product Development' -> 'VP_of_Product_Development')."""
+    return sanitize_name(role_title).replace(' ', '_')
+
+
+def check_role_outreach_exists(output_dir: str, company_name: str, role_title: str) -> bool:
+    """Check if role-based outreach already exists."""
+    folder = get_contact_folder(output_dir, company_name)
+    prefix = get_role_file_prefix(role_title)
+    return os.path.exists(os.path.join(folder, f"{prefix}_analysis.json")) and \
+           os.path.exists(os.path.join(folder, f"{prefix}_outreach.json"))
+
+
+def process_role(
+    role_title: str,
+    company_name: str,
+    base_dir: str = "data/companies",
+    output_dir: str = "data/contacts",
+    force_channel: Optional[str] = None,
+) -> Tuple[Optional[dict], Optional[dict]]:
+    """
+    Generate analysis and outreach for a target role (no specific contact).
+
+    Uses [Name] as placeholder. Output files are keyed by role title.
+
+    Args:
+        role_title: Target role title (e.g. "VP of Product Development")
+        company_name: Company name
+        base_dir: Directory with company data from Stage 2 & 3
+        output_dir: Directory to save analysis and outreach
+        force_channel: Override recommended channel
+
+    Returns:
+        Tuple of (analysis, outreach) dicts. Either can be None if failed.
+    """
+    prefix = get_role_file_prefix(role_title)
+
+    print(f"\n  [Stage 4] {role_title} at {company_name}")
+
+    # Check if already exists
+    if check_role_outreach_exists(output_dir, company_name, role_title):
+        print(f"    Already generated, skipping...")
+        folder = get_contact_folder(output_dir, company_name)
+        analysis_file = os.path.join(folder, f"{prefix}_analysis.json")
+        with open(analysis_file, "r") as f:
+            analysis = json.load(f)
+        return analysis, None
+
+    # Load company scoring from Stage 2
+    company_scoring = load_company_scoring(base_dir, company_name)
+    if not company_scoring:
+        print(f"    Scoring not found for {company_name}")
+        return None, None
+
+    # Load target roles from Stage 3
+    target_roles = load_target_roles(base_dir, company_name)
+    if not target_roles or "target_roles" not in target_roles:
+        print(f"    Target roles not found for {company_name}")
+        return None, None
+
+    # TURN 1: Role Analysis
+    print(f"    [Turn 1] Analyzing role...")
+
+    analysis_user_message = f"""
+Based on the instructions provided and context below, develop an engagement strategy for the target role at this company, providing the output in the JSON format specified above.
+
+TARGET ROLE: {role_title}
+COMPANY: {company_name}
+
+COMPANY SCORING DATA (from Stage 2):
+{json.dumps(company_scoring, indent=2)}
+
+TARGET ROLES ANALYSIS (from Stage 3):
+{json.dumps(target_roles["target_roles"], indent=2)}
+"""
+
+    try:
+        response = call_claude_conversation(
+            system_prompt=CONTACT_ANALYSIS_SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": analysis_user_message}],
+            model=MODELS.get("contact_analysis", "claude-sonnet-4-5-20250929"),
+        )
+
+        analysis = extract_json_from_response(response)
+
+        # Save analysis
+        folder = get_contact_folder(output_dir, company_name)
+        os.makedirs(folder, exist_ok=True)
+        analysis_file = os.path.join(folder, f"{prefix}_analysis.json")
+        with open(analysis_file, "w") as f:
+            json.dump(analysis, f, indent=2)
+
+        print(f"    [Turn 1] Analysis complete")
+        print(f"      Recommended channel: {analysis.get('recommended_channel', 'N/A')}")
+
+    except Exception as e:
+        print(f"    [Turn 1] Error: {e}")
+        return None, None
+
+    if not analysis:
+        return None, None
+
+    # TURN 2: Outreach Generation
+    channel = force_channel or analysis.get("recommended_channel", "email")
+
+    if channel == "linkedin":
+        turn2_message = OUTREACH_LINKEDIN_SYSTEM_PROMPT
+    else:
+        turn2_message = OUTREACH_EMAIL_SYSTEM_PROMPT
+
+    print(f"    [Turn 2] Generating {channel} message...")
+
+    messages = [
+        {"role": "user", "content": analysis_user_message},
+        {"role": "assistant", "content": json.dumps(analysis, indent=2)},
+        {"role": "user", "content": turn2_message},
+    ]
+
+    try:
+        response = call_claude_conversation(
+            system_prompt=CONTACT_ANALYSIS_SYSTEM_PROMPT,
+            messages=messages,
+            model=MODELS.get("outreach_generation", "claude-sonnet-4-5-20250929"),
+        )
+
+        outreach = extract_json_from_response(response)
+
+        # Save outreach
+        outreach_file = os.path.join(folder, f"{prefix}_outreach.json")
+        with open(outreach_file, "w") as f:
+            json.dump(outreach, f, indent=2)
+
+        print(f"    [Turn 2] {channel.capitalize()} message generated")
+
+        if channel == "email" and "message" in outreach:
+            print(f"      Subject: {outreach['message'].get('subject', '')}")
+
+        return analysis, outreach
+
+    except Exception as e:
+        print(f"    [Turn 2] Error: {e}")
+        return analysis, None
 
 
 # SINGLE CONTACT PROCESSING (Two-Turn Conversation)
@@ -159,10 +308,10 @@ def process_contact(
         analysis = load_analysis(output_dir, company_name, contact_name)
         return analysis, None
 
-    # Load company research from Stage 2
-    company_research = load_company_research(base_dir, company_name)
+    # Load company scoring from Stage 2
+    company_research = load_company_scoring(base_dir, company_name)
     if not company_research:
-        print(f"  ✗ Company research not found for {company_name}")
+        print(f"  ✗ Company scoring not found for {company_name}")
         return None, None
 
     # Load target roles from Stage 3
@@ -223,9 +372,9 @@ TARGET ROLES ANALYSIS (from Stage 3):
 
     # Select turn 2 message based on channel
     if channel == "linkedin":
-        turn2_message = OUTREACH_LINKEDIN_TURN2_MESSAGE
+        turn2_message = OUTREACH_LINKEDIN_SYSTEM_PROMPT
     else:
-        turn2_message = OUTREACH_EMAIL_TURN2_MESSAGE
+        turn2_message = OUTREACH_EMAIL_SYSTEM_PROMPT
 
     print(f"  [Turn 2] Generating {channel} message...")
 

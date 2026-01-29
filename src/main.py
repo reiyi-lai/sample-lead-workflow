@@ -41,6 +41,7 @@ from stage3_contact_finding import (
 )
 from stage4_outreach_generation import (
     process_contact,
+    process_role,
 )
 from constants import EVENT_SCORE_CUTOFF, COMPANY_SCORE_CUTOFF
 
@@ -116,15 +117,13 @@ def save_json(path: Path, data: Any):
 
 
 def check_company_stage2_complete(data_dir: Path, company_name: str) -> bool:
-    """Check if Stage 2 (research + scoring) is complete for a company."""
+    """Check if Stage 2 (scoring) is complete for a company."""
     from stage2_company_qualification import sanitize_company_name
     folder_name = sanitize_company_name(company_name)
     company_dir = data_dir / "companies" / folder_name
 
-    research_file = company_dir / "research.json"
     scoring_file = company_dir / "scoring.json"
-
-    return research_file.exists() and scoring_file.exists()
+    return scoring_file.exists()
 
 
 def check_company_stage3_complete(data_dir: Path, company_name: str) -> bool:
@@ -249,6 +248,29 @@ class PipelineOrchestrator:
         print(f"  -> Generated {len(searches)} LinkedIn search URLs")
         print(f"  -> Saved to: {searches_file}")
 
+        # Auto-trigger Stage 4: generate outreach for each target role
+        print(f"\n[Stage 4] Auto-generating outreach for {len(target_roles)} roles at {company_name}")
+        for role in target_roles:
+            role_title = role.get("title", "")
+            if not role_title:
+                continue
+
+            await self.rate_limiter.acquire(estimated_tokens=8000)
+
+            loop = asyncio.get_event_loop()
+            await loop.run_in_executor(
+                None,
+                lambda rt=role_title: process_role(
+                    role_title=rt,
+                    company_name=company_name,
+                    base_dir=str(self.data_dir / "companies"),
+                    output_dir=str(self.data_dir / "contacts"),
+                )
+            )
+
+        self.stats.setdefault("roles_outreach_generated", 0)
+        self.stats["roles_outreach_generated"] += len(target_roles)
+
     # STAGE PROCESSORS
 
     async def _process_company_stage2(self, company: dict):
@@ -282,7 +304,7 @@ class PipelineOrchestrator:
 
             # Run research and scoring (synchronous, run in executor)
             loop = asyncio.get_event_loop()
-            research_data, scoring_data = await loop.run_in_executor(
+            scoring_data = await loop.run_in_executor(
                 None,
                 lambda: research_and_score_company(
                     company_name=company_name,
@@ -292,8 +314,8 @@ class PipelineOrchestrator:
             )
 
             # Check for errors
-            if "error" in research_data or "error" in scoring_data:
-                error_msg = research_data.get("error") or scoring_data.get("error")
+            if "error" in scoring_data:
+                error_msg = scoring_data.get("error")
                 print(f"  -> Error: {error_msg}")
                 self.stats["errors"].append({
                     "company": company_name,

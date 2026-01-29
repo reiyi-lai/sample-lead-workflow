@@ -40,19 +40,19 @@ def get_company_folder(company_name: str, base_dir: str = "data/companies") -> s
     return os.path.join(base_dir, folder_name)
 
 
-def load_research_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
-    """Load research.json from company folder."""
+def load_scoring_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
+    """Load scoring.json from company folder."""
     company_folder = get_company_folder(company_name, base_dir)
-    research_file = os.path.join(company_folder, "research.json")
+    scoring_file = os.path.join(company_folder, "scoring.json")
 
-    if not os.path.exists(research_file):
+    if not os.path.exists(scoring_file):
         return None
 
     try:
-        with open(research_file, "r") as f:
+        with open(scoring_file, "r") as f:
             return json.load(f)
     except Exception as e:
-        print(f"    ⚠️  Failed to load research.json: {e}")
+        print(f"    Warning: Failed to load scoring.json: {e}")
         return None
 
 
@@ -142,16 +142,9 @@ def load_qualified_companies(
         if icp.get("weighted_score", 0) < COMPANY_SCORE_CUTOFF:
             continue
 
-        # Load research for company_name and website_url
-        research_file = os.path.join(folder_path, "research.json")
-        research = {}
-        if os.path.isfile(research_file):
-            with open(research_file, "r") as f:
-                research = json.load(f)
-
         companies.append({
-            "company_name": research.get("company_name", folder),
-            "website_url": research.get("website_url", ""),
+            "company_name": scoring.get("company_name", folder),
+            "website_url": scoring.get("website_url", ""),
             "icp_qualification": icp,
             "success": True,
         })
@@ -186,26 +179,26 @@ def identify_target_roles(
         print(f"    ✓ Target roles already exist, loading from file...")
         return existing_roles
 
-    # Load research data
-    research_data = load_research_json(company_name, base_dir)
+    # Load scoring data (contains evidence-rich rationales from research)
+    scoring_data = load_scoring_json(company_name, base_dir)
 
-    if not research_data:
-        print(f"    ✗ No research.json found")
+    if not scoring_data:
+        print(f"    ✗ No scoring.json found")
         return {
-            "error": "No research data found",
+            "error": "No scoring data found",
             "company_name": company_name,
             "website_url": website_url,
         }
 
-    # Build user message with research data
+    # Build user message with scoring data
     user_message = f"""
-Analyze the following company research and identify target decision-makers:
+Analyze the following company scoring data and identify target decision-makers:
 
 Company Name: {company_name}
 Website URL: {website_url}
 
-RESEARCH DATA:
-{json.dumps(research_data, indent=2)}
+COMPANY SCORING DATA:
+{json.dumps(scoring_data, indent=2)}
 
 Based on this research, identify the best roles to target and develop an engagement strategy.
 Return your analysis in the JSON format specified.
