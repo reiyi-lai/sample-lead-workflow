@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CompanyWithDetails } from "@/lib/data";
-import ResearchModal from "./ResearchModal";
 import TargetRolesModal from "./TargetRolesModal";
 import Link from "next/link";
 
@@ -11,14 +10,7 @@ interface CompanyCardProps {
 }
 
 export default function CompanyCard({ company }: CompanyCardProps) {
-  const [showResearch, setShowResearch] = useState(false);
   const [showRoles, setShowRoles] = useState(false);
-
-  const tierColors: Record<number, string> = {
-    1: "bg-green-100 text-green-800",
-    2: "bg-yellow-100 text-yellow-800",
-    3: "bg-gray-100 text-gray-800",
-  };
 
   const draftCount = company.contacts.filter(
     (c) => c.outreach && (!c.outreach.status || c.outreach.status === "draft")
@@ -40,18 +32,22 @@ export default function CompanyCard({ company }: CompanyCardProps) {
           </div>
         </div>
 
-        {/* Tier and Event */}
-        <div className="flex items-center gap-2 mt-2">
-          {company.tier > 0 && (
-            <span
-              className={`px-2 py-1 rounded-full text-xs font-medium ${
-                tierColors[company.tier] || tierColors[3]
-              }`}
-            >
-              Tier {company.tier}
-            </span>
+        {/* Event & Website */}
+        <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
+          <span>{company.event}</span>
+          {company.scoring?.website_url && (
+            <>
+              <span>•</span>
+              <a
+                href={company.scoring.website_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline truncate"
+              >
+                {company.scoring.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+              </a>
+            </>
           )}
-          <span className="text-sm text-gray-500">{company.event}</span>
         </div>
 
         {/* Score Breakdown */}
@@ -98,17 +94,6 @@ export default function CompanyCard({ company }: CompanyCardProps) {
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
             <button
-              onClick={() => setShowResearch(true)}
-              disabled={!company.research}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                company.research
-                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  : "bg-gray-50 text-gray-400 cursor-not-allowed"
-              }`}
-            >
-              Research
-            </button>
-            <button
               onClick={() => setShowRoles(true)}
               disabled={!company.targetRoles}
               className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -132,13 +117,6 @@ export default function CompanyCard({ company }: CompanyCardProps) {
       </div>
 
       {/* Modals */}
-      {showResearch && company.research && (
-        <ResearchModal
-          company={company}
-          onClose={() => setShowResearch(false)}
-        />
-      )}
-
       {showRoles && company.targetRoles && (
         <TargetRolesModal
           company={company}

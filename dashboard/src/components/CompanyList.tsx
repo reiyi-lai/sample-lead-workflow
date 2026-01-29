@@ -12,7 +12,7 @@ interface CompanyListProps {
 export default function CompanyList({ companies, events }: CompanyListProps) {
   const [search, setSearch] = useState("");
   const [eventFilter, setEventFilter] = useState("all");
-  const [tierFilter, setTierFilter] = useState("all");
+  const [scoreFilter, setScoreFilter] = useState("all");
 
   // Filter companies
   const filteredCompanies = companies.filter((company) => {
@@ -26,10 +26,10 @@ export default function CompanyList({ companies, events }: CompanyListProps) {
       return false;
     }
 
-    // Tier filter
-    if (tierFilter !== "all" && company.tier !== parseInt(tierFilter)) {
-      return false;
-    }
+    // Score filter
+    if (scoreFilter === "high" && company.score < 80) return false;
+    if (scoreFilter === "mid" && (company.score < 50 || company.score >= 80)) return false;
+    if (scoreFilter === "low" && company.score >= 50) return false;
 
     return true;
   });
@@ -64,16 +64,16 @@ export default function CompanyList({ companies, events }: CompanyListProps) {
             ))}
           </select>
 
-          {/* Tier Filter */}
+          {/* Score Filter */}
           <select
-            value={tierFilter}
-            onChange={(e) => setTierFilter(e.target.value)}
+            value={scoreFilter}
+            onChange={(e) => setScoreFilter(e.target.value)}
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
           >
-            <option value="all">All Tiers</option>
-            <option value="1">Tier 1</option>
-            <option value="2">Tier 2</option>
-            <option value="3">Tier 3</option>
+            <option value="all">All Scores</option>
+            <option value="high">High (80+)</option>
+            <option value="mid">Mid (50-79)</option>
+            <option value="low">Low (&lt;50)</option>
           </select>
         </div>
       </div>

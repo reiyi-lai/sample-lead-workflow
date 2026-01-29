@@ -8,7 +8,7 @@ interface EventWithCompanies {
   event_url?: string;
   dates?: string;
   location?: string;
-  tier?: number;
+  overall_score?: number;
   companies: Company[];
   totalConfirmed: number;
   totalLikely: number;
@@ -20,38 +20,17 @@ interface EventsListProps {
 
 export default function EventsList({ events }: EventsListProps) {
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
-  const [tierFilter, setTierFilter] = useState("all");
 
-  const filteredEvents = events.filter((event) => {
-    if (tierFilter === "all") return true;
-    return event.tier === parseInt(tierFilter);
-  });
-
-  const tierColors: Record<number, string> = {
-    1: "bg-green-100 text-green-800",
-    2: "bg-yellow-100 text-yellow-800",
-    3: "bg-gray-100 text-gray-800",
-  };
+  // Sort by score (highest first)
+  const sortedEvents = [...events].sort(
+    (a, b) => (b.overall_score || 0) - (a.overall_score || 0)
+  );
 
   return (
     <div>
-      {/* Filter */}
-      <div className="flex items-center justify-end mb-6">
-        <select
-          value={tierFilter}
-          onChange={(e) => setTierFilter(e.target.value)}
-          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-900"
-        >
-          <option value="all">All Tiers</option>
-          <option value="1">Tier 1</option>
-          <option value="2">Tier 2</option>
-          <option value="3">Tier 3</option>
-        </select>
-      </div>
-
       {/* Events */}
       <div className="space-y-4">
-        {filteredEvents.map((event) => {
+        {sortedEvents.map((event) => {
           const isExpanded = expandedEvent === event.event_name;
 
           return (
@@ -68,13 +47,17 @@ export default function EventsList({ events }: EventsListProps) {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    {event.tier && (
+                    {event.overall_score != null && (
                       <span
                         className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          tierColors[event.tier] || tierColors[3]
+                          event.overall_score >= 8
+                            ? "bg-green-100 text-green-800"
+                            : event.overall_score >= 5
+                            ? "bg-yellow-100 text-yellow-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
-                        Tier {event.tier}
+                        {event.overall_score.toFixed(1)}
                       </span>
                     )}
                     <h3 className="font-semibold text-gray-900">
@@ -156,9 +139,9 @@ export default function EventsList({ events }: EventsListProps) {
           );
         })}
 
-        {filteredEvents.length === 0 && (
+        {sortedEvents.length === 0 && (
           <div className="text-center py-12 text-gray-500">
-            No events found matching your filter.
+            No events found.
           </div>
         )}
       </div>

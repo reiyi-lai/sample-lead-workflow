@@ -8,7 +8,7 @@ export default function EventsPage() {
   const eventCompanies = getEventCompanies();
 
   // Combine scored events with their company data
-  const events = (scoredEvents?.qualified_events || []).map((event) => {
+  const events = (scoredEvents?.scored_events || []).map((event) => {
     const companyData = eventCompanies.find(
       (ec) => ec.event_name === event.event_name
     );
