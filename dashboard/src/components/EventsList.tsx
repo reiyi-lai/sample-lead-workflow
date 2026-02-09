@@ -81,14 +81,11 @@ export default function EventsList({ events }: EventsListProps) {
                   <table className="w-full">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                        <th className="w-1/2 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
                           Company
                         </th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
                           Type
-                        </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                          Contacts
                         </th>
                       </tr>
                     </thead>
@@ -106,7 +103,7 @@ export default function EventsList({ events }: EventsListProps) {
                             <td className="px-4 py-3 text-sm text-gray-900">
                               {company.company_name}
                             </td>
-                            <td className="px-4 py-3 text-sm text-gray-500">
+                            <td className="px-4 py-3 text-sm">
                               <span
                                 className={`px-2 py-1 rounded-full text-xs ${
                                   attendanceType === "Confirmed"
@@ -118,9 +115,6 @@ export default function EventsList({ events }: EventsListProps) {
                               >
                                 {attendanceType}
                               </span>
-                            </td>
-                            <td className="px-4 py-3 text-sm text-gray-500">
-                              —
                             </td>
                           </tr>
                         );

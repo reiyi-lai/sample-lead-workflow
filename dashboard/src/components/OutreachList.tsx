@@ -15,15 +15,14 @@ interface OutreachListProps {
 }
 
 export default function OutreachList({ contacts }: OutreachListProps) {
+  const [contactsWithOutreach, setContactsWithOutreach] = useState(
+    () => contacts.filter((c) => c.outreach)
+  );
   const [selectedContact, setSelectedContact] = useState<ContactWithOutreach | null>(null);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [input, setInput] = useState<ContactInput>({ name: "", linkedinUrl: "", email: "" });
   const [saving, setSaving] = useState(false);
-  const [savedIndices, setSavedIndices] = useState<Set<number>>(new Set());
   const [error, setError] = useState("");
-
-  // Filter contacts with outreach
-  const contactsWithOutreach = contacts.filter((c) => c.outreach);
 
   const isPlaceholder = (name: string) => !name || name === "[Name]";
 
@@ -49,7 +48,9 @@ export default function OutreachList({ contacts }: OutreachListProps) {
       const data = await res.json();
 
       if (data.success) {
-        setSavedIndices((prev) => new Set(prev).add(index));
+        setContactsWithOutreach((prev) =>
+          prev.map((c, i) => i === index ? { ...c, name: input.name.trim() } : c)
+        );
         setEditingIndex(null);
         setInput({ name: "", linkedinUrl: "", email: "" });
       } else {
@@ -90,7 +91,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {contactsWithOutreach.map((contact, index) => {
-                const placeholder = isPlaceholder(contact.name) && !savedIndices.has(index);
+                const placeholder = isPlaceholder(contact.name);
 
                 return (
                   <tr key={`${contact.company}-${contact.title}-${index}`} className="hover:bg-gray-50">
@@ -98,11 +99,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                       <div>
                         <p className="font-medium text-gray-900">{contact.title}</p>
                         <p className="text-sm text-gray-500">
-                          {savedIndices.has(index)
-                            ? input.name
-                            : placeholder
-                            ? "No contact assigned"
-                            : contact.name}
+                          {placeholder ? "No contact assigned" : contact.name}
                         </p>
                       </div>
                     </td>
@@ -122,7 +119,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                     </td>
                     <td className="px-4 py-4 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        {placeholder && (
+                        {placeholder ? (
                           <button
                             onClick={() => {
                               setEditingIndex(index);
@@ -132,6 +129,17 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                             className="px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
                           >
                             Add Contact
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              setEditingIndex(index);
+                              setInput({ name: contact.name, linkedinUrl: "", email: "" });
+                              setError("");
+                            }}
+                            className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                          >
+                            Edit Contact
                           </button>
                         )}
                         <button
@@ -172,7 +180,9 @@ export default function OutreachList({ contacts }: OutreachListProps) {
           />
           <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
             <h3 className="text-lg font-bold text-gray-900 mb-1">
-              Add Contact Details
+              {editingIndex !== null && !isPlaceholder(contactsWithOutreach[editingIndex]?.name)
+                ? "Edit Contact Details"
+                : "Add Contact Details"}
             </h3>
             <p className="text-sm text-gray-500 mb-4">
               {contactsWithOutreach[editingIndex]?.title} at{" "}
@@ -189,7 +199,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                   value={input.name}
                   onChange={(e) => setInput({ ...input, name: e.target.value })}
                   placeholder="e.g. Laura Noll"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
               <div>
@@ -201,7 +211,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                   value={input.linkedinUrl}
                   onChange={(e) => setInput({ ...input, linkedinUrl: e.target.value })}
                   placeholder="https://linkedin.com/in/..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
               <div>
@@ -213,7 +223,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                   value={input.email}
                   onChange={(e) => setInput({ ...input, email: e.target.value })}
                   placeholder="laura@company.com"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
 

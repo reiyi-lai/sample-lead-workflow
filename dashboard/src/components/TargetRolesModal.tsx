@@ -182,7 +182,7 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
                           value={input.name}
                           onChange={(e) => updateInput(role.title, "name", e.target.value)}
                           placeholder="e.g. Laura Noll"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                       </div>
                       <div>
@@ -194,7 +194,7 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
                           value={input.linkedinUrl}
                           onChange={(e) => updateInput(role.title, "linkedinUrl", e.target.value)}
                           placeholder="https://linkedin.com/in/..."
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                       </div>
                       <div>
@@ -206,7 +206,7 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
                           value={input.email}
                           onChange={(e) => updateInput(role.title, "email", e.target.value)}
                           placeholder="laura@company.com"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         />
                       </div>
 
