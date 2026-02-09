@@ -1,3 +1,5 @@
+import re
+
 # Define models to use for each task based on complexity to optimize cost and performance
 
 MODELS = {
@@ -32,3 +34,13 @@ EVENT_SCORE_CUTOFF = 8
 
 # Minimum company ICP score (0-100) to proceed to role identification (Stage 3)
 COMPANY_SCORE_CUTOFF = 70
+
+
+def sanitize_name(name: str) -> str:
+    """Convert a name (company, contact, event) to a safe folder/filename.
+    Removes special characters except word chars, spaces, and hyphens,
+    then collapses whitespace.
+    """
+    name = re.sub(r'[^\w\s-]', '', name)
+    name = re.sub(r'\s+', ' ', name)
+    return name.strip()

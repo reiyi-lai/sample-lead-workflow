@@ -1,58 +1,32 @@
-# main.py
 # Event-driven Pipeline Orchestrator for Tedlar GTM Lead Generation
-#
-# Architecture:
-# - Async/await with callbacks for automatic stage triggering
-# - Shared rate limiter across all stages
-# - File-based state for resume capability
-# - Parallel processing where possible (respecting rate limits)
+# Async with callbacks, shared rate limiter, file-based resume capability
 
 import os
 import sys
-import json
 import asyncio
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Optional, Any
+from typing import List
 
-# Add src to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Import stage functions
-from stage1_event_discovery import (
-    discover_events,
-    score_events,
-    discover_companies,
-    sanitize_event_name,
-)
+from stage1_event_discovery import discover_events, score_events, discover_companies
 from stage2_company_qualification import (
-    research_and_score_company,
-    calculate_icp_score,
-    save_scoring_json,
-    get_company_folder,
-    deduplicate_companies,
+    research_and_score_company, calculate_icp_score, save_scoring_json, deduplicate_companies,
 )
 from stage3_contact_finding import (
-    identify_target_roles,
-    generate_sales_navigator_searches,
-    push_company_to_clay,
-    extract_domain,
+    identify_target_roles, generate_sales_navigator_searches, push_company_to_clay, extract_domain,
 )
-from stage4_outreach_generation import (
-    process_contact,
-    process_role,
-)
+from stage4_outreach_generation import process_role
 from constants import EVENT_SCORE_CUTOFF, COMPANY_SCORE_CUTOFF
+from utils.io import load_json, save_json, company_path
 
 
 # RATE LIMITER
 
 class RateLimiter:
-    """
-    Token bucket rate limiter for API calls.
-    Tracks estimated token usage and enforces rate limits.
-    """
+    """Token bucket rate limiter for API calls."""
 
     def __init__(self, tokens_per_min: int = 30000):
         self.tokens_per_min = tokens_per_min
@@ -61,194 +35,74 @@ class RateLimiter:
         self._lock = asyncio.Lock()
 
     async def acquire(self, estimated_tokens: int = 4000):
-        """
-        Wait if necessary, then reserve tokens.
-
-        Args:
-            estimated_tokens: Estimated tokens for the API call
-        """
         async with self._lock:
             while True:
                 now = time.time()
-
-                # Reset window if minute passed
                 if now - self.window_start >= 60:
                     self.tokens_used = 0
                     self.window_start = now
 
-                # Check if we can proceed
                 if self.tokens_used + estimated_tokens <= self.tokens_per_min:
                     self.tokens_used += estimated_tokens
                     return
 
-                # Calculate wait time
-                wait_time = 60 - (now - self.window_start) + 1  # +1 buffer
-                print(f"  [Rate Limit] Waiting {wait_time:.0f}s (used {self.tokens_used}/{self.tokens_per_min} tokens)...")
+                wait_time = 60 - (now - self.window_start) + 1
+                print(f"  [Rate Limit] Waiting {wait_time:.0f}s ({self.tokens_used}/{self.tokens_per_min} tokens used)")
 
-                # Release lock while waiting
                 self._lock.release()
                 await asyncio.sleep(wait_time)
                 await self._lock.acquire()
-
-    def get_usage(self) -> dict:
-        """Get current usage stats."""
-        return {
-            "tokens_used": self.tokens_used,
-            "tokens_per_min": self.tokens_per_min,
-            "window_start": self.window_start,
-        }
-
-
-# HELPER FUNCTIONS
-
-def load_json(path: Path) -> Optional[dict]:
-    """Load JSON file if it exists."""
-    if path.exists():
-        with open(path, "r") as f:
-            return json.load(f)
-    return None
-
-
-def save_json(path: Path, data: Any):
-    """Save data to JSON file."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
-        json.dump(data, f, indent=2)
-
-
-def check_company_stage2_complete(data_dir: Path, company_name: str) -> bool:
-    """Check if Stage 2 (scoring) is complete for a company."""
-    from stage2_company_qualification import sanitize_company_name
-    folder_name = sanitize_company_name(company_name)
-    company_dir = data_dir / "companies" / folder_name
-
-    scoring_file = company_dir / "scoring.json"
-    return scoring_file.exists()
-
-
-def check_company_stage3_complete(data_dir: Path, company_name: str) -> bool:
-    """Check if Stage 3 (target roles) is complete for a company."""
-    from stage2_company_qualification import sanitize_company_name
-    folder_name = sanitize_company_name(company_name)
-    company_dir = data_dir / "companies" / folder_name
-
-    target_roles_file = company_dir / "target_roles.json"
-    return target_roles_file.exists()
-
-
-def get_company_icp_score(data_dir: Path, company_name: str) -> Optional[float]:
-    """Get the ICP score for a company from its scoring.json."""
-    from stage2_company_qualification import sanitize_company_name
-    folder_name = sanitize_company_name(company_name)
-    scoring_file = data_dir / "companies" / folder_name / "scoring.json"
-
-    if scoring_file.exists():
-        scoring = load_json(scoring_file)
-        return scoring.get("icp_qualification", {}).get("weighted_score")
-    return None
 
 
 # PIPELINE ORCHESTRATOR
 
 class PipelineOrchestrator:
-    """
-    Event-driven orchestrator for the Tedlar GTM pipeline.
+    """Event-driven orchestrator. Auto-triggers downstream stages via callbacks."""
 
-    Automatically triggers downstream stages when data becomes available.
-    Respects rate limits and supports resume from interruption.
-    """
-
-    def __init__(
-        self,
-        data_dir: str = "data",
-        tokens_per_min: int = 30000,
-    ):
+    def __init__(self, data_dir: str = "data", tokens_per_min: int = 30000):
         self.data_dir = Path(data_dir)
+        self.companies_dir = self.companies_dir
+        self.contacts_dir = self.contacts_dir
         self.rate_limiter = RateLimiter(tokens_per_min=tokens_per_min)
+        self.stats = {"stage2": 0, "stage3": 0, "stage4_roles": 0, "errors": []}
 
-        # Stats tracking
-        self.stats = {
-            "companies_processed_stage2": 0,
-            "companies_processed_stage3": 0,
-            "contacts_processed_stage4": 0,
-            "errors": [],
-        }
-
-        # Active tasks for tracking
-        self._active_tasks: set = set()
+    def _record_error(self, company: str, stage: int, error):
+        self.stats["errors"].append({"company": company, "stage": stage, "error": str(error)})
 
     # EVENT HANDLERS (Callbacks)
 
-    async def on_companies_discovered(self, companies: List[dict]):
-        """
-        Triggered when Stage 1 discovers companies.
-        Starts Stage 2 for each company.
-        """
-        print(f"\n[Event] Companies discovered: {len(companies)} companies")
-
-        for company in companies:
-            task = asyncio.create_task(
-                self._process_company_stage2(company)
-            )
-            self._active_tasks.add(task)
-            task.add_done_callback(self._active_tasks.discard)
-
     async def on_company_scored(self, company_name: str, website_url: str, icp_score: float):
-        """
-        Triggered when Stage 2 completes for a company.
-        If score meets cutoff, triggers Stage 3.
-        """
-        print(f"\n[Event] Company scored: {company_name} -> Score: {icp_score}")
+        """Stage 2 complete → trigger Stage 3 if score meets cutoff."""
+        print(f"\n[Event] Company scored: {company_name} -> ICP Score: {icp_score}")
 
         if icp_score >= COMPANY_SCORE_CUTOFF:
-            task = asyncio.create_task(
-                self._process_company_stage3(company_name, website_url)
-            )
-            self._active_tasks.add(task)
-            task.add_done_callback(self._active_tasks.discard)
+            await self._process_company_stage3(company_name, website_url)
         else:
-            print(f"  -> Skipping Stage 3 (Score {icp_score} < cutoff {COMPANY_SCORE_CUTOFF})")
+            print(f"  Skipping Stage 3 (score {icp_score} < cutoff {COMPANY_SCORE_CUTOFF})")
 
     async def on_target_roles_identified(self, company_name: str, website_url: str, target_roles: List[dict]):
-        """
-        Triggered when Stage 3 completes for a company.
-        Generates LinkedIn Sales Navigator search URLs and pushes to Clay.
-        """
+        """Stage 3 complete → generate Sales Nav URLs, push to Clay, auto-trigger Stage 4."""
         print(f"\n[Event] Target roles identified: {company_name} -> {len(target_roles)} roles")
 
+        role_titles = [r["title"] for r in target_roles if r.get("title")]
         company_domain = extract_domain(website_url)
-        role_titles = [r.get("title", "") for r in target_roles if r.get("title")]
 
-        # Generate Sales Navigator URLs
-        searches = generate_sales_navigator_searches(
-            company_name=company_name,
-            company_domain=company_domain,
-            target_roles=target_roles,
-        )
+        # Generate and save Sales Navigator URLs
+        searches = generate_sales_navigator_searches(company_name, company_domain, target_roles)
+        save_json(company_path(self.companies_dir, company_name, "linkedin_searches.json"), searches)
+        print(f"  Generated {len(searches)} LinkedIn search URLs")
 
-        # Save searches to company folder
-        from stage2_company_qualification import sanitize_company_name
-        folder_name = sanitize_company_name(company_name)
-        searches_file = self.data_dir / "companies" / folder_name / "linkedin_searches.json"
-        save_json(searches_file, searches)
+        # Push to Clay webhook
+        icp_score_path = company_path(self.companies_dir, company_name, "scoring.json")
+        icp_score = (load_json(icp_score_path) or {}).get("icp_qualification", {}).get("weighted_score", 0)
 
-        # Push to Clay webhook for contact enrichment
-        icp_score = get_company_icp_score(self.data_dir, company_name) or 0
-        clay_result = push_company_to_clay(
-            company_name=company_name,
-            website_url=website_url,
-            recommended_roles=role_titles,
-            icp_score=icp_score,
-        )
+        clay_result = push_company_to_clay(company_name, website_url, role_titles, icp_score)
         if clay_result.get("success"):
-            print(f"  -> Pushed to Clay (status {clay_result.get('status_code')})")
+            print(f"  Pushed to Clay (status {clay_result.get('status_code')})")
         else:
-            print(f"  -> Clay push failed: {clay_result.get('error')}")
+            print(f"  Clay push failed: {clay_result.get('error')}")
 
-        print(f"  -> Generated {len(searches)} LinkedIn search URLs")
-        print(f"  -> Saved to: {searches_file}")
-
-        # Auto-trigger Stage 4: generate outreach for each target role
+        # Auto-trigger Stage 4: outreach for each role
         print(f"\n[Stage 4] Auto-generating outreach for {len(target_roles)} roles at {company_name}")
         for role in target_roles:
             role_title = role.get("title", "")
@@ -256,484 +110,217 @@ class PipelineOrchestrator:
                 continue
 
             await self.rate_limiter.acquire(estimated_tokens=8000)
+            await asyncio.to_thread(process_role, role_title, company_name, base_dir=self.companies_dir, output_dir=self.contacts_dir)
 
-            loop = asyncio.get_event_loop()
-            await loop.run_in_executor(
-                None,
-                lambda rt=role_title: process_role(
-                    role_title=rt,
-                    company_name=company_name,
-                    base_dir=str(self.data_dir / "companies"),
-                    output_dir=str(self.data_dir / "contacts"),
-                )
-            )
-
-        self.stats.setdefault("roles_outreach_generated", 0)
-        self.stats["roles_outreach_generated"] += len(target_roles)
+        self.stats["stage4_roles"] += len(target_roles)
 
     # STAGE PROCESSORS
 
     async def _process_company_stage2(self, company: dict):
-        """
-        Process a single company through Stage 2 (research + scoring).
-        """
+        """Process a single company through Stage 2 (research + scoring)."""
         company_name = company.get("company_name", "")
         website_url = company.get("website_url", "")
-
         if not company_name:
             return
 
-        # Check if already processed
-        if check_company_stage2_complete(self.data_dir, company_name):
-            print(f"\n[Stage 2] {company_name} - Already complete, loading...")
-            # Load scoring to get ICP score
-            from stage2_company_qualification import sanitize_company_name
-            folder_name = sanitize_company_name(company_name)
-            scoring = load_json(self.data_dir / "companies" / folder_name / "scoring.json")
-            icp_score = scoring.get("icp_qualification", {}).get("weighted_score", 0) if scoring else 0
+        scoring_path = company_path(self.companies_dir, company_name, "scoring.json")
 
-            # Trigger next stage
+        # Already processed
+        if os.path.exists(scoring_path):
+            print(f"\n[Stage 2] {company_name} - found in existing data")
+            scoring = load_json(scoring_path)
+            icp_score = (scoring or {}).get("icp_qualification", {}).get("weighted_score", 0)
             await self.on_company_scored(company_name, website_url, icp_score)
             return
 
         print(f"\n[Stage 2] Processing: {company_name}")
 
         try:
-            # Acquire rate limit tokens (research uses ~6000, scoring uses ~3000)
             await self.rate_limiter.acquire(estimated_tokens=10000)
+            scoring_data = await asyncio.to_thread(research_and_score_company, company_name, website_url, self.companies_dir)
 
-            # Run research and scoring (synchronous, run in executor)
-            loop = asyncio.get_event_loop()
-            scoring_data = await loop.run_in_executor(
-                None,
-                lambda: research_and_score_company(
-                    company_name=company_name,
-                    website_url=website_url,
-                    output_dir=str(self.data_dir / "companies"),
-                )
-            )
-
-            # Check for errors
             if "error" in scoring_data:
-                error_msg = scoring_data.get("error")
-                print(f"  -> Error: {error_msg}")
-                self.stats["errors"].append({
-                    "company": company_name,
-                    "stage": 2,
-                    "error": error_msg,
-                })
+                print(f"  Error: {scoring_data.get('error')}")
+                self._record_error(company_name, 2, scoring_data.get("error"))
                 return
 
-            # Calculate ICP score
             icp_result = calculate_icp_score(scoring_data)
-            icp_score = icp_result["weighted_score"]
+            save_scoring_json(self.companies_dir, company_name, scoring_data, icp_result)
 
-            # Save scoring with ICP result
-            save_scoring_json(
-                str(self.data_dir / "companies"),
-                company_name,
-                scoring_data,
-                icp_result,
-            )
+            self.stats["stage2"] += 1
+            print(f"  Complete: ICP Score {icp_result['weighted_score']}")
 
-            self.stats["companies_processed_stage2"] += 1
-            print(f"  -> Complete: Score {icp_score}")
-
-            # Trigger next stage
-            await self.on_company_scored(company_name, website_url, icp_score)
+            await self.on_company_scored(company_name, website_url, icp_result["weighted_score"])
 
         except Exception as e:
-            print(f"  -> Exception: {e}")
-            self.stats["errors"].append({
-                "company": company_name,
-                "stage": 2,
-                "error": str(e),
-            })
+            print(f"  Exception: {e}")
+            self._record_error(company_name, 2, e)
 
     async def _process_company_stage3(self, company_name: str, website_url: str):
-        """
-        Process a single company through Stage 3 (target roles).
-        """
-        # Check if already processed
-        if check_company_stage3_complete(self.data_dir, company_name):
-            print(f"\n[Stage 3] {company_name} - Already complete, loading...")
+        """Process a single company through Stage 3 (target roles)."""
+        roles_path = company_path(self.companies_dir, company_name, "target_roles.json")
 
-            # Load existing target roles
-            from stage2_company_qualification import sanitize_company_name
-            folder_name = sanitize_company_name(company_name)
-            target_roles_data = load_json(
-                self.data_dir / "companies" / folder_name / "target_roles.json"
-            )
-
+        # Already processed
+        if os.path.exists(roles_path):
+            print(f"\n[Stage 3] {company_name} - found in existing data")
+            target_roles_data = load_json(roles_path)
             if target_roles_data:
-                target_roles = target_roles_data.get("target_roles", [])
-                await self.on_target_roles_identified(company_name, website_url, target_roles)
+                await self.on_target_roles_identified(company_name, website_url, target_roles_data.get("target_roles", []))
             return
 
         print(f"\n[Stage 3] Processing: {company_name}")
 
         try:
-            # Acquire rate limit tokens
             await self.rate_limiter.acquire(estimated_tokens=4000)
+            target_roles_data = await asyncio.to_thread(identify_target_roles, company_name, website_url, self.companies_dir)
 
-            # Run target role identification (synchronous, run in executor)
-            loop = asyncio.get_event_loop()
-            target_roles_data = await loop.run_in_executor(
-                None,
-                lambda: identify_target_roles(
-                    company_name=company_name,
-                    website_url=website_url,
-                    base_dir=str(self.data_dir / "companies"),
-                )
-            )
-
-            # Check for errors
             if "error" in target_roles_data:
-                print(f"  -> Error: {target_roles_data.get('error')}")
-                self.stats["errors"].append({
-                    "company": company_name,
-                    "stage": 3,
-                    "error": target_roles_data.get("error"),
-                })
+                print(f"  Error: {target_roles_data.get('error')}")
+                self._record_error(company_name, 3, target_roles_data.get("error"))
                 return
 
             target_roles = target_roles_data.get("target_roles", [])
-            self.stats["companies_processed_stage3"] += 1
-            print(f"  -> Complete: {len(target_roles)} target roles identified")
+            self.stats["stage3"] += 1
+            print(f"  Complete: {len(target_roles)} target roles identified")
 
-            # Trigger next event
             await self.on_target_roles_identified(company_name, website_url, target_roles)
 
         except Exception as e:
-            print(f"  -> Exception: {e}")
-            self.stats["errors"].append({
-                "company": company_name,
-                "stage": 3,
-                "error": str(e),
-            })
+            print(f"  Exception: {e}")
+            self._record_error(company_name, 3, e)
+
+    # WORK QUEUE HELPERS
+
+    def _needs_stage(self, companies: List[dict], stage: int) -> List[dict]:
+        """Find companies needing a specific stage."""
+        result = []
+        for company in companies:
+            name = company.get("company_name", "")
+            if not name:
+                continue
+
+            scoring = load_json(company_path(self.companies_dir, name, "scoring.json"))
+            has_stage3 = os.path.exists(company_path(self.companies_dir, name, "target_roles.json"))
+
+            if stage == 2 and not scoring:
+                result.append(company)
+            elif stage == 3 and scoring and not has_stage3:
+                score = scoring.get("icp_qualification", {}).get("weighted_score", 0)
+                if score >= COMPANY_SCORE_CUTOFF:
+                    result.append(company)
+
+        return result
+
+    async def _process_work_queue(self, unique_companies: List[dict]):
+        """Process companies through stages 2-4 with priority ordering (later stages first)."""
+        needs_stage3 = self._needs_stage(unique_companies, 3)
+        needs_stage2 = self._needs_stage(unique_companies, 2)
+
+        print(f"\n[Work Queue]")
+        print(f"  {len(needs_stage3)} companies need Stage 3 (already have Stage 2)")
+        print(f"  {len(needs_stage2)} companies need Stage 2")
+
+        # Priority 1: Stage 3 first (closest to completion)
+        if needs_stage3:
+            print(f"\n[Priority 1] Processing {len(needs_stage3)} companies through Stage 3...")
+            for company in needs_stage3:
+                await self._process_company_stage3(company.get("company_name", ""), company.get("website_url", ""))
+
+        # Priority 2: Stage 2 (Stage 3 auto-triggers via callback)
+        if needs_stage2:
+            print(f"\n[Priority 2] Processing {len(needs_stage2)} companies through Stage 2 -> 3...")
+            for company in needs_stage2:
+                await self._process_company_stage2(company)
+
+    def _print_summary(self):
+        print(f"\nPIPELINE COMPLETE")
+        print(f"  Stage 2 (scoring): {self.stats['stage2']}")
+        print(f"  Stage 3 (roles): {self.stats['stage3']}")
+        print(f"  Stage 4 (outreach): {self.stats['stage4_roles']} roles")
+        print(f"  Errors: {len(self.stats['errors'])}")
+
+        if self.stats["errors"]:
+            for error in self.stats["errors"][:5]:
+                print(f"    - {error['company']} (Stage {error['stage']}): {error['error']}")
+            if len(self.stats["errors"]) > 5:
+                print(f"    ... and {len(self.stats['errors']) - 5} more")
 
     # MAIN ENTRY POINTS
 
-    def _find_companies_needing_stage3(self, unique_companies: List[dict]) -> List[dict]:
-        """
-        Find companies that have completed Stage 2 but not Stage 3.
-        These should be processed first (finish what's started).
-        """
-        needs_stage3 = []
-        for company in unique_companies:
-            company_name = company.get("company_name", "")
-            if not company_name:
-                continue
-
-            # Has Stage 2 complete?
-            if not check_company_stage2_complete(self.data_dir, company_name):
-                continue
-
-            # Already has Stage 3?
-            if check_company_stage3_complete(self.data_dir, company_name):
-                continue
-
-            # Check score - only process companies above cutoff
-            icp_score = get_company_icp_score(self.data_dir, company_name)
-            if icp_score is None or icp_score < COMPANY_SCORE_CUTOFF:
-                continue
-
-            needs_stage3.append(company)
-
-        return needs_stage3
-
-    def _find_companies_needing_stage2(self, unique_companies: List[dict]) -> List[dict]:
-        """
-        Find companies that have not completed Stage 2.
-        """
-        needs_stage2 = []
-        for company in unique_companies:
-            company_name = company.get("company_name", "")
-            if not company_name:
-                continue
-
-            if not check_company_stage2_complete(self.data_dir, company_name):
-                needs_stage2.append(company)
-
-        return needs_stage2
-
     async def run_full_pipeline(self):
-        """
-        Run the full pipeline from Stage 1 through Stage 3.
-        Stage 4 requires manual contact input and is run separately.
+        """Run full pipeline: Stage 1 (events) -> Stage 2 (scoring) -> Stage 3 (roles) -> Stage 4 (outreach)."""
+        print(f"\nTEDLAR GTM PIPELINE ORCHESTRATOR")
+        print(f"  Data: {self.data_dir} | Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
+        print(f"  Event cutoff: {EVENT_SCORE_CUTOFF} | Company cutoff: {COMPANY_SCORE_CUTOFF}")
 
-        PRIORITY ORDER: Later stages first (finish what's started)
-        1. First, process companies needing Stage 3 (already have Stage 2 done)
-        2. Then, process companies needing Stage 2
-        """
-        print("\n" + "=" * 70)
-        print("TEDLAR GTM PIPELINE ORCHESTRATOR")
-        print("=" * 70)
-        print(f"Started at: {datetime.now().isoformat()}")
-        print(f"Data directory: {self.data_dir}")
-        print(f"Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
-        print(f"Event score cutoff: {EVENT_SCORE_CUTOFF}")
-        print(f"Company score cutoff: {COMPANY_SCORE_CUTOFF}")
+        for subdir in ["events", "companies", "contacts"]:
+            (self.data_dir / subdir).mkdir(parents=True, exist_ok=True)
 
-        # Ensure directories exist
-        (self.data_dir / "events").mkdir(parents=True, exist_ok=True)
-        (self.data_dir / "companies").mkdir(parents=True, exist_ok=True)
-        (self.data_dir / "contacts").mkdir(parents=True, exist_ok=True)
-
-        # STAGE 1: Event Discovery
         events_file = self.data_dir / "events" / "discovered_events.json"
         scored_file = self.data_dir / "events" / "scored_events.json"
 
-        # Step 1.1: Discover events (or load existing)
+        # Step 1.1: Discover events
         if events_file.exists():
-            print(f"\n[Stage 1.1] Loading existing events from: {events_file}")
             events = load_json(events_file)
-            print(f"  -> Loaded {len(events)} events (cached)")
+            print(f"\n[Step 1.1] Event Discovery: {len(events)} events found in existing data")
         else:
-            print(f"\n[Stage 1.1] Discovering events...")
+            print(f"\n[Step 1.1] Event Discovery: searching for trade shows...")
             await self.rate_limiter.acquire(estimated_tokens=8000)
-
-            loop = asyncio.get_event_loop()
-            events = await loop.run_in_executor(None, discover_events)
-
+            events = await asyncio.to_thread(discover_events)
             save_json(events_file, events)
-            print(f"  -> Discovered {len(events)} events")
+            print(f"  Discovered {len(events)} events")
 
-        # Step 1.2: Score events (or load existing)
-        scored = None
-        if scored_file.exists():
-            print(f"\n[Stage 1.2] Checking existing scored events: {scored_file}")
-            scored = load_json(scored_file)
-            scored_count = len(scored.get("scored_events", []))
-
-            if scored_count == 0 and len(events) > 0:
-                print(f"  -> Cached file appears to be from failed parse, re-scoring...")
-                scored = None
-            else:
-                print(f"  -> Loaded {scored_count} scored events (cached)")
-
-        if scored is None:
-            print(f"\n[Stage 1.2] Scoring {len(events)} events...")
+        # Step 1.2: Score events
+        scored = load_json(scored_file)
+        if scored and (scored.get("scored_events") or not events):
+            print(f"\n[Step 1.2] Event Scoring: {len(scored.get('scored_events', []))} scored events found in existing data")
+        else:
+            print(f"\n[Step 1.2] Event Scoring: scoring {len(events)} events...")
             await self.rate_limiter.acquire(estimated_tokens=8000)
-
-            loop = asyncio.get_event_loop()
-            scored = await loop.run_in_executor(None, lambda: score_events(events))
-
+            scored = await asyncio.to_thread(score_events, events)
             save_json(scored_file, scored)
 
-        # Filter events by score cutoff
         all_scored = scored.get("scored_events", [])
         target_events = [e for e in all_scored if e.get("overall_score", 0) >= EVENT_SCORE_CUTOFF]
+        print(f"  {len(target_events)}/{len(all_scored)} events above cutoff ({EVENT_SCORE_CUTOFF})")
 
-        print(f"\n[Stage 1] Summary:")
-        print(f"  -> {len(events)} events discovered")
-        print(f"  -> {len(all_scored)} scored")
-        print(f"  -> {len(target_events)} events with score >= {EVENT_SCORE_CUTOFF}")
-
-        # Step 1.3: Discover companies for target tier events
-        print(f"\n[Stage 1.3] Discovering companies for {len(target_events)} target events...")
-
-        # Check for existing per-event company files
+        # Step 1.3: Discover companies
         events_companies_dir = self.data_dir / "events" / "companies"
         existing_event_files = list(events_companies_dir.glob("*.json")) if events_companies_dir.exists() else []
 
         if existing_event_files:
-            print(f"  -> Loading existing per-event company files ({len(existing_event_files)} files)...")
-            discovery_results = [load_json(f) for f in existing_event_files if load_json(f)]
+            print(f"\n[Step 1.3] Company Discovery: loading {len(existing_event_files)} existing event files...")
+            discovery_results = [d for f in existing_event_files if (d := load_json(f))]
         else:
-            # Run company discovery for each event (saves per-event files automatically)
-            loop = asyncio.get_event_loop()
-            discovery_results = await loop.run_in_executor(
-                None,
-                lambda: discover_companies(target_events, str(self.data_dir / "events"))
-            )
+            print(f"\n[Step 1.3] Company Discovery: searching for companies at {len(target_events)} events...")
+            discovery_results = await asyncio.to_thread(discover_companies, target_events, str(self.data_dir / "events"))
 
-        # Deduplicate companies
         unique_companies = deduplicate_companies(discovery_results)
-        print(f"  -> {len(unique_companies)} unique companies discovered")
+        print(f"  {len(unique_companies)} unique companies discovered")
 
-        # STAGE 2 & 3: Process companies with PRIORITY ORDER
-        # Priority: Later stages first (finish what's started)
+        # Stages 2-4
+        await self._process_work_queue(unique_companies)
+        self._print_summary()
 
-        # Check what work needs to be done at each stage
-        needs_stage3 = self._find_companies_needing_stage3(unique_companies)
-        needs_stage2 = self._find_companies_needing_stage2(unique_companies)
-
-        print(f"\n[Work Queue] Checking existing progress...")
-        print(f"  -> {len(needs_stage3)} companies need Stage 3 (already have Stage 2)")
-        print(f"  -> {len(needs_stage2)} companies need Stage 2")
-
-        # PRIORITY 1: Process Stage 3 first (companies closest to completion)
-        if needs_stage3:
-            print(f"\n[Priority 1] Processing {len(needs_stage3)} companies through Stage 3...")
-            for company in needs_stage3:
-                company_name = company.get("company_name", "")
-                website_url = company.get("website_url", "")
-                await self._process_company_stage3(company_name, website_url)
-
-        # PRIORITY 2: Process Stage 2 (then Stage 3 will auto-trigger via callback)
-        if needs_stage2:
-            print(f"\n[Priority 2] Processing {len(needs_stage2)} companies through Stage 2 -> 3...")
-            for company in needs_stage2:
-                await self._process_company_stage2(company)
-
-        # Wait for any remaining async tasks
-        while self._active_tasks:
-            await asyncio.sleep(1)
-
-        # SUMMARY
-        print("\n" + "=" * 70)
-        print("PIPELINE COMPLETE")
-        print("=" * 70)
-        print(f"Completed at: {datetime.now().isoformat()}")
-        print(f"\nStats:")
-        print(f"  Companies processed (Stage 2): {self.stats['companies_processed_stage2']}")
-        print(f"  Companies processed (Stage 3): {self.stats['companies_processed_stage3']}")
-        print(f"  Errors: {len(self.stats['errors'])}")
-
-        if self.stats["errors"]:
-            print(f"\nErrors:")
-            for error in self.stats["errors"][:5]:
-                print(f"  - {error['company']} (Stage {error['stage']}): {error['error']}")
-            if len(self.stats["errors"]) > 5:
-                print(f"  ... and {len(self.stats['errors']) - 5} more")
-
-        print(f"\nNext steps:")
-        print(f"  1. Review target roles in data/companies/[Company]/target_roles.json")
-        print(f"  2. Use LinkedIn Sales Navigator search URLs to find contacts")
-        print(f"  3. Run Stage 4 for outreach generation with found contacts")
-
-        # Save final summary
-        summary = {
-            "pipeline": "tedlar_gtm_orchestrator",
-            "timestamp": datetime.now().isoformat(),
-            "stats": self.stats,
-            "rate_limiter": self.rate_limiter.get_usage(),
-        }
+        summary = {"pipeline": "tedlar_gtm_orchestrator", "timestamp": datetime.now().isoformat(), "stats": self.stats}
         save_json(self.data_dir / "pipeline_summary.json", summary)
-
         return summary
 
-    async def run_from_stage2(self, companies_file: Optional[str] = None):
-        """
-        Run pipeline starting from Stage 2 (skip event discovery).
-        Uses existing per-event company files from data/events/companies/.
-
-        PRIORITY ORDER: Later stages first (finish what's started)
-        1. First, process companies needing Stage 3 (already have Stage 2 done)
-        2. Then, process companies needing Stage 2
-        """
-        print("\n" + "=" * 70)
-        print("TEDLAR GTM PIPELINE - Starting from Stage 2")
-        print("=" * 70)
-        print(f"Started at: {datetime.now().isoformat()}")
-
-        # Ensure directories exist
-        (self.data_dir / "companies").mkdir(parents=True, exist_ok=True)
-        (self.data_dir / "contacts").mkdir(parents=True, exist_ok=True)
-
-        # Load companies from per-event files
-        if companies_file:
-            companies_path = Path(companies_file)
-            if not companies_path.exists():
-                print(f"Error: Companies file not found: {companies_path}")
-                return
-            print(f"Loading companies from: {companies_path}")
-            discovery_results = load_json(companies_path)
-        else:
-            events_companies_dir = self.data_dir / "events" / "companies"
-            if not events_companies_dir.exists() or not list(events_companies_dir.glob("*.json")):
-                print("Error: No per-event company files found. Run the full pipeline first.")
-                return
-            print(f"Loading companies from: {events_companies_dir}")
-            discovery_results = [load_json(f) for f in events_companies_dir.glob("*.json") if load_json(f)]
-
-        # Deduplicate
-        unique_companies = deduplicate_companies(discovery_results)
-        print(f"  -> {len(unique_companies)} unique companies")
-
-        # Check what work needs to be done at each stage
-        needs_stage3 = self._find_companies_needing_stage3(unique_companies)
-        needs_stage2 = self._find_companies_needing_stage2(unique_companies)
-
-        print(f"\n[Work Queue] Checking existing progress...")
-        print(f"  -> {len(needs_stage3)} companies need Stage 3 (already have Stage 2)")
-        print(f"  -> {len(needs_stage2)} companies need Stage 2")
-
-        # PRIORITY 1: Process Stage 3 first (companies closest to completion)
-        if needs_stage3:
-            print(f"\n[Priority 1] Processing {len(needs_stage3)} companies through Stage 3...")
-            for company in needs_stage3:
-                company_name = company.get("company_name", "")
-                website_url = company.get("website_url", "")
-                await self._process_company_stage3(company_name, website_url)
-
-        # PRIORITY 2: Process Stage 2 (then Stage 3 will auto-trigger via callback)
-        if needs_stage2:
-            print(f"\n[Priority 2] Processing {len(needs_stage2)} companies through Stage 2 -> 3...")
-            for company in needs_stage2:
-                await self._process_company_stage2(company)
-
-        # Wait for any remaining async tasks
-        while self._active_tasks:
-            await asyncio.sleep(1)
-
-        print("\n" + "=" * 70)
-        print("STAGE 2 & 3 COMPLETE")
-        print("=" * 70)
-        print(f"Companies processed (Stage 2): {self.stats['companies_processed_stage2']}")
-        print(f"Companies processed (Stage 3): {self.stats['companies_processed_stage3']}")
-
-        if self.stats["errors"]:
-            print(f"Errors: {len(self.stats['errors'])}")
-            for error in self.stats["errors"][:5]:
-                print(f"  - {error['company']} (Stage {error['stage']}): {error['error']}")
 
 
-# CLI ENTRY POINT
+# CLI
 
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Tedlar GTM Pipeline Orchestrator - Event-driven lead generation"
-    )
-    parser.add_argument(
-        "--data-dir",
-        default="data",
-        help="Base data directory (default: data)",
-    )
-    parser.add_argument(
-        "--tokens-per-min",
-        type=int,
-        default=30000,
-        help="Rate limit in tokens per minute (default: 30000)",
-    )
-    parser.add_argument(
-        "--from-stage2",
-        action="store_true",
-        help="Start from Stage 2 (skip event discovery)",
-    )
-    parser.add_argument(
-        "--companies-file",
-        type=str,
-        default=None,
-        help="Path to companies JSON file (for --from-stage2)",
-    )
+    parser = argparse.ArgumentParser(description="Tedlar GTM Pipeline Orchestrator")
+    parser.add_argument("--data-dir", default="data")
+    parser.add_argument("--tokens-per-min", type=int, default=30000)
 
     args = parser.parse_args()
 
-    # Create orchestrator
-    orchestrator = PipelineOrchestrator(
-        data_dir=args.data_dir,
-        tokens_per_min=args.tokens_per_min,
-    )
-
-    # Run appropriate pipeline
-    if args.from_stage2:
-        asyncio.run(orchestrator.run_from_stage2(args.companies_file))
-    else:
-        asyncio.run(orchestrator.run_full_pipeline())
+    orchestrator = PipelineOrchestrator(data_dir=args.data_dir, tokens_per_min=args.tokens_per_min)
+    asyncio.run(orchestrator.run_full_pipeline())
 
 
 if __name__ == "__main__":

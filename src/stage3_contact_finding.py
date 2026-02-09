@@ -1,137 +1,43 @@
-# stage3_contact_finding.py
-# Stage 3: Decision-Maker/Contact Finding Pipeline
-#
-# Flow:
-# 3.1 Identify Target Roles (LLM) - Analyze research, determine who to contact
-# 3.2 Push to Clay (API) - Send company + target roles to Clay webhook
-# 3.3 Receive Contacts (Webhook) - Clay sends back enriched contacts
-# 3.4 LLM Contact Scoring - Score contacts and add personalization hooks
+# Stage 3: Target Role Identification & LinkedIn Search
+# 3.1 Identify target roles (LLM analysis)
+# 3.2 Generate LinkedIn Sales Navigator URLs + Push to Clay webhook
 
 import os
 import json
-import time
 import requests
 from datetime import datetime
 from typing import List, Optional, Tuple
-from urllib.parse import urlparse
+from urllib.parse import urlparse, quote
 
-# Add src to path for imports
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from constants import CLAY_WEBHOOK_URL, MODELS, COMPANY_SCORE_CUTOFF
 from prompts import TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
-
-# HELPER FUNCTIONS
-
-def sanitize_company_name(company_name: str) -> str:
-    """Convert company name to safe folder name."""
-    import re
-    name = company_name.replace(", Inc.", "").replace(", LLC", "").replace(" Inc.", "").replace(" LLC", "")
-    name = re.sub(r'[^\w\s-]', '', name)
-    name = re.sub(r'\s+', ' ', name)
-    return name.strip()
-
-
-def get_company_folder(company_name: str, base_dir: str = "data/companies") -> str:
-    """Get the folder path for a company."""
-    folder_name = sanitize_company_name(company_name)
-    return os.path.join(base_dir, folder_name)
-
-
-def load_scoring_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
-    """Load scoring.json from company folder."""
-    company_folder = get_company_folder(company_name, base_dir)
-    scoring_file = os.path.join(company_folder, "scoring.json")
-
-    if not os.path.exists(scoring_file):
-        return None
-
-    try:
-        with open(scoring_file, "r") as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"    Warning: Failed to load scoring.json: {e}")
-        return None
-
-
-def save_target_roles_json(company_name: str, target_roles_data: dict, base_dir: str = "data/companies"):
-    """Save target roles analysis to company folder."""
-    company_folder = get_company_folder(company_name, base_dir)
-    os.makedirs(company_folder, exist_ok=True)
-
-    target_roles_file = os.path.join(company_folder, "target_roles.json")
-    with open(target_roles_file, "w") as f:
-        json.dump(target_roles_data, f, indent=2)
+from utils.io import load_json, save_json, company_path
 
 
 def load_target_roles_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
-    """Load target_roles.json if it exists."""
-    company_folder = get_company_folder(company_name, base_dir)
-    target_roles_file = os.path.join(company_folder, "target_roles.json")
-
-    if not os.path.exists(target_roles_file):
-        return None
-
-    try:
-        with open(target_roles_file, "r") as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"    ⚠️  Failed to load target_roles.json: {e}")
-        return None
+    return load_json(company_path(base_dir, company_name, "target_roles.json"))
 
 
 def extract_domain(website_url: str) -> str:
-    """
-    Extract clean domain from website URL.
-
-    Examples:
-        https://www.averydennison.com → averydennison.com
-        http://3m.com/ → 3m.com
-        https://averydennison.com/graphics → averydennison.com
-    """
+    """Extract clean domain from URL (strips www. and path)."""
     if not website_url:
         return ""
-
-    # Parse URL
-    parsed = urlparse(website_url)
-    domain = parsed.netloc or parsed.path
-
-    # Remove www. prefix
-    if domain.startswith("www."):
-        domain = domain[4:]
-
-    # Remove trailing slash
-    domain = domain.rstrip("/")
-
-    return domain
+    domain = urlparse(website_url).netloc or urlparse(website_url).path
+    return domain.removeprefix("www.").rstrip("/")
 
 
-def load_qualified_companies(
-    base_dir: str = "data/companies",
-) -> List[dict]:
-    """
-    Load qualified companies by iterating per-company folders.
-    Reads each company's scoring.json and filters by COMPANY_SCORE_CUTOFF.
-
-    Args:
-        base_dir: Base directory containing company folders
-
-    Returns:
-        List of company dicts with qualification data
-    """
+def load_qualified_companies(base_dir: str = "data/companies") -> List[dict]:
+    """Load companies from per-company folders, filtered by COMPANY_SCORE_CUTOFF."""
     companies = []
-
     if not os.path.isdir(base_dir):
         return companies
 
     for folder in os.listdir(base_dir):
-        folder_path = os.path.join(base_dir, folder)
-        if not os.path.isdir(folder_path):
-            continue
-
-        scoring_file = os.path.join(folder_path, "scoring.json")
+        scoring_file = os.path.join(base_dir, folder, "scoring.json")
         if not os.path.isfile(scoring_file):
             continue
 
@@ -139,447 +45,172 @@ def load_qualified_companies(
             scoring = json.load(f)
 
         icp = scoring.get("icp_qualification", {})
-        if icp.get("weighted_score", 0) < COMPANY_SCORE_CUTOFF:
-            continue
-
-        companies.append({
-            "company_name": scoring.get("company_name", folder),
-            "website_url": scoring.get("website_url", ""),
-            "icp_qualification": icp,
-            "success": True,
-        })
+        if icp.get("weighted_score", 0) >= COMPANY_SCORE_CUTOFF:
+            companies.append({
+                "company_name": scoring.get("company_name", folder),
+                "website_url": scoring.get("website_url", ""),
+                "icp_qualification": icp,
+                "success": True,
+            })
 
     return companies
 
 
-# STEP 3.1: IDENTIFY TARGET ROLES & ENGAGEMENT STRATEGY
+# STEP 3.1: IDENTIFY TARGET ROLES
 
-def identify_target_roles(
-    company_name: str,
-    website_url: str,
-    base_dir: str = "data/companies",
-) -> dict:
-    """
-    Analyze company research and identify target decision-makers and engagement strategy.
-    Skips identification if target_roles.json already exists.
+def identify_target_roles(company_name: str, website_url: str, base_dir: str = "data/companies") -> dict:
+    """Identify target decision-makers from scoring data. Skips if target_roles.json exists."""
+    print(f"\n  [Step 3.1] Target Role Identification for {company_name}")
 
-    Args:
-        company_name: Name of the company
-        website_url: Company's website URL
-        base_dir: Base directory for company folders
+    existing = load_target_roles_json(company_name, base_dir)
+    if existing:
+        print(f"    Target roles found in existing data ({len(existing.get('target_roles', []))} roles)")
+        return existing
 
-    Returns:
-        Dict with target roles, use cases, and engagement strategy
-    """
-    print(f"\n  [Step 3.1] Identifying target roles for {company_name}...")
-
-    # Check if target_roles.json already exists
-    existing_roles = load_target_roles_json(company_name, base_dir)
-    if existing_roles:
-        print(f"    ✓ Target roles already exist, loading from file...")
-        return existing_roles
-
-    # Load scoring data (contains evidence-rich rationales from research)
-    scoring_data = load_scoring_json(company_name, base_dir)
-
+    scoring_data = load_json(company_path(base_dir, company_name, "scoring.json"))
     if not scoring_data:
-        print(f"    ✗ No scoring.json found")
-        return {
-            "error": "No scoring data found",
-            "company_name": company_name,
-            "website_url": website_url,
-        }
+        print(f"    No scoring.json found")
+        return {"error": "No scoring data found", "company_name": company_name, "website_url": website_url}
 
-    # Build user message with scoring data
-    user_message = f"""
-Analyze the following company scoring data and identify target decision-makers:
-
-Company Name: {company_name}
-Website URL: {website_url}
-
-COMPANY SCORING DATA:
-{json.dumps(scoring_data, indent=2)}
-
-Based on this research, identify the best roles to target and develop an engagement strategy.
-Return your analysis in the JSON format specified.
-"""
-
-    # Call Claude to analyze and identify roles
+    print(f"    Analyzing scoring data to identify target decision-makers...")
     response = call_claude(
         system_prompt=TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT,
-        user_message=user_message,
-        model=MODELS.get("target_role_identification", "claude-sonnet-4-5-20250929"),
+        model=MODELS["target_role_identification"],
+        user_message=f"Identify target roles for this company:\n\nCompany: {company_name}\nWebsite: {website_url}\n\nScoring data:\n{json.dumps(scoring_data, indent=2)}",
         max_tokens=4096,
     )
 
     target_roles_data = extract_json_from_response(response)
 
     if isinstance(target_roles_data, dict) and "error" in target_roles_data:
-        print(f"    ✗ Failed to identify roles: {target_roles_data.get('error')}")
+        print(f"    Failed to identify roles: {target_roles_data.get('error')}")
         return target_roles_data
 
-    print(f"    ✓ Identified {len(target_roles_data.get('target_roles', []))} target roles")
-
-    # Save to company folder
-    save_target_roles_json(company_name, target_roles_data, base_dir)
-    print(f"    ✓ Saved to target_roles.json")
+    num_roles = len(target_roles_data.get("target_roles", []))
+    save_json(company_path(base_dir, company_name, "target_roles.json"), target_roles_data)
+    print(f"    Step 3.1 complete: {num_roles} target roles identified")
 
     return target_roles_data
 
 
 # STEP 3.2: GENERATE LINKEDIN SALES NAVIGATOR SEARCH URLS
 
-def generate_sales_navigator_url(
-    company_name: str,
-    company_domain: str,
-    role_title: str,
-) -> str:
-    """
-    Generate a LinkedIn Sales Navigator search URL for a specific role at a company.
-
-    Args:
-        company_name: Name of the company
-        company_domain: Company domain (e.g., "epson.com")
-        role_title: Job title to search for (e.g., "VP of Product Development")
-
-    Returns:
-        LinkedIn Sales Navigator search URL
-    """
-    from urllib.parse import quote
-
-    # Remove " of " from role title
-    clean_title = role_title.replace(" of ", " ").replace(" Of ", " ")
-    clean_title = " ".join(clean_title.split())
-
-    # Encode for URL
-    encoded_title = quote(clean_title)
-    encoded_company = quote(company_name)
-
-    # Sales Navigator URL format
-    # Uses both company name and title keywords for best results
-    base_url = "https://www.linkedin.com/sales/search/people"
-
-    # Simple keyword-based search (works across all Sales Nav versions)
-    search_url = f"{base_url}?keywords={encoded_title}%20{encoded_company}"
-
-    return search_url
+def generate_sales_navigator_url(company_name: str, company_domain: str, role_title: str) -> str:
+    """Generate a Sales Navigator search URL for a role at a company."""
+    clean_title = " ".join(role_title.replace(" of ", " ").replace(" Of ", " ").split())
+    return f"https://www.linkedin.com/sales/search/people?keywords={quote(clean_title)}%20{quote(company_name)}"
 
 
-def generate_sales_navigator_searches(
-    company_name: str,
-    company_domain: str,
-    target_roles: list,
-) -> list:
-    """
-    Generate Sales Navigator search URLs for all target roles at a company.
-
-    Args:
-        company_name: Name of the company
-        company_domain: Company domain
-        target_roles: List of role dicts with 'title' field
-
-    Returns:
-        List of dicts with role info and search URLs
-    """
-    searches = []
-
-    for role in target_roles:
-        title = role.get("title", "")
-        if not title:
-            continue
-
-        search_url = generate_sales_navigator_url(
-            company_name=company_name,
-            company_domain=company_domain,
-            role_title=title,
-        )
-
-        searches.append({
+def generate_sales_navigator_searches(company_name: str, company_domain: str, target_roles: list) -> list:
+    """Generate Sales Navigator search URLs for all target roles."""
+    return [
+        {
             "company_name": company_name,
-            "role_title": title,
+            "role_title": role["title"],
             "priority": role.get("priority", 0),
             "rationale": role.get("rationale", ""),
-            "search_url": search_url,
-        })
-
-    return searches
+            "search_url": generate_sales_navigator_url(company_name, company_domain, role["title"]),
+        }
+        for role in target_roles
+        if role.get("title")
+    ]
 
 
 # STEP 3.2b: PUSH COMPANIES TO CLAY WEBHOOK
-# Runs alongside LinkedIn Sales Navigator search generation
 
-def push_company_to_clay(
-    company_name: str,
-    website_url: str,
-    recommended_roles: List[str],
-    icp_score: float,
-) -> dict:
-    """
-    Push a single company to Clay webhook for people search & enrichment.
-
-    Args:
-        company_name: Name of the company
-        website_url: Company's website URL
-        recommended_roles: List of job titles to search for
-        icp_score: Weighted ICP score (0-100)
-
-    Returns:
-        Response data from Clay webhook
-    """
-    # Extract domain
-    company_domain = extract_domain(website_url)
-
-    # Format roles as comma-separated string for Clay
-    roles_string = ", ".join(recommended_roles)
-
-    # Prepare payload for Clay
+def push_company_to_clay(company_name: str, website_url: str, recommended_roles: List[str], icp_score: float) -> dict:
+    """Push a company to Clay webhook for people search & enrichment."""
     payload = {
         "company_name": company_name,
-        "company_domain": company_domain,
-        "target_roles": roles_string,
+        "company_domain": extract_domain(website_url),
+        "target_roles": ", ".join(recommended_roles),
         "icp_score": icp_score,
     }
 
-    # Send to Clay webhook
     try:
-        response = requests.post(
-            CLAY_WEBHOOK_URL,
-            json=payload,
-            headers={"Content-Type": "application/json"},
-            timeout=30,
-        )
+        response = requests.post(CLAY_WEBHOOK_URL, json=payload, headers={"Content-Type": "application/json"}, timeout=30)
         response.raise_for_status()
 
-        # Clay may return plaintext or JSON - handle both
-        response_data = {}
-        if response.content:
-            try:
-                response_data = response.json()
-            except ValueError:
-                # Clay returns plaintext, not JSON
-                response_data = {"message": response.text}
+        try:
+            response_data = response.json()
+        except ValueError:
+            response_data = {"message": response.text}
 
-        return {
-            "success": True,
-            "company_name": company_name,
-            "company_domain": company_domain,
-            "status_code": response.status_code,
-            "response": response_data,
-        }
+        return {"success": True, "company_name": company_name, "status_code": response.status_code, "response": response_data}
 
     except requests.exceptions.RequestException as e:
-        return {
-            "success": False,
-            "company_name": company_name,
-            "company_domain": company_domain,
-            "error": str(e),
-        }
+        return {"success": False, "company_name": company_name, "error": str(e)}
 
 
-def process_companies_and_generate_searches(
-    companies: List[dict],
-    base_dir: str = "data/companies",
-    delay_seconds: int = 2,
-) -> Tuple[List[dict], List[dict]]:
-    """
-    Process companies: identify target roles, then generate Sales Navigator search URLs.
+# MAIN PIPELINE
 
-    Args:
-        companies: List of company dicts from Stage 2
-        base_dir: Base directory for company folders
-        delay_seconds: Delay between LLM requests to avoid rate limits
+def run_stage3_linkedin_search(base_dir: str = "data/companies", max_companies: Optional[int] = None) -> dict:
+    """Run Stage 3: identify target roles and generate LinkedIn Sales Navigator searches."""
+    print("\nSTAGE 3: IDENTIFY ROLES & GENERATE LINKEDIN SEARCHES\n")
 
-    Returns:
-        Tuple of (role_results, sales_nav_searches)
-    """
-    role_results = []
-    all_searches = []
+    companies = load_qualified_companies(base_dir)
+    print(f"  {len(companies)} qualified companies (score >= {COMPANY_SCORE_CUTOFF})")
+
+    if max_companies:
+        companies = companies[:max_companies]
+        print(f"  Limiting to first {max_companies} companies")
+
+    successful, failed, all_searches = 0, 0, []
 
     for i, company in enumerate(companies):
         company_name = company.get("company_name", "")
         website_url = company.get("website_url", "")
-        icp_qual = company.get("icp_qualification", {})
-        tier = icp_qual.get("tier", 3)
-        icp_score = icp_qual.get("weighted_score", 0)
 
-        print(f"\n[{i+1}/{len(companies)}] {company_name}")
-        print(f"  URL: {website_url}")
-        print(f"  Tier: {tier} (ICP Score: {icp_score})")
+        print(f"\n[{i+1}/{len(companies)}] {company_name} (ICP: {company.get('icp_qualification', {}).get('weighted_score', 0)})")
 
-        # Step 3.1: Identify target roles
-        target_roles_data = identify_target_roles(
-            company_name=company_name,
-            website_url=website_url,
-            base_dir=base_dir,
-        )
+        target_roles_data = identify_target_roles(company_name=company_name, website_url=website_url, base_dir=base_dir)
 
-        role_results.append({
-            "company_name": company_name,
-            "success": "error" not in target_roles_data,
-            "data": target_roles_data,
-        })
-
-        # Check for errors in role identification
         if "error" in target_roles_data:
-            print(f"  ✗ Skipping Sales Nav URL generation due to role identification error")
+            failed += 1
             continue
 
-        # Extract target roles
         target_roles = target_roles_data.get("target_roles", [])
-
-        # Fallback to default roles if none provided
         if not target_roles:
             target_roles = [
                 {"title": "VP of Product Development", "priority": 1, "rationale": "Default role"},
                 {"title": "Director of Innovation", "priority": 2, "rationale": "Default role"},
                 {"title": "Director of Operations", "priority": 3, "rationale": "Default role"},
             ]
-            print(f"  ⚠️  No roles identified, using defaults")
+            print(f"  Warning: No roles identified, using defaults")
 
-        print(f"  [Step 3.2] Generating LinkedIn Sales Navigator URLs for {len(target_roles)} roles...")
-
-        # Step 3.2: Generate Sales Navigator search URLs
-        company_domain = extract_domain(website_url)
-        searches = generate_sales_navigator_searches(
-            company_name=company_name,
-            company_domain=company_domain,
-            target_roles=target_roles,
-        )
-
+        print(f"  [Step 3.2] Generating Sales Navigator URLs for {len(target_roles)} roles...")
+        searches = generate_sales_navigator_searches(company_name, extract_domain(website_url), target_roles)
         all_searches.extend(searches)
+        print(f"  Step 3.2 complete: {len(searches)} search URLs generated")
+        successful += 1
 
-        print(f"  ✓ Generated {len(searches)} Sales Navigator search URLs")
-        for search in searches[:3]:
-            print(f"    - {search['role_title']}")
-        if len(searches) > 3:
-            print(f"    ... and {len(searches) - 3} more")
+    print(f"\nSTAGE 3 COMPLETE: {successful} companies processed, {failed} failed, {len(all_searches)} search URLs\n")
 
-        # Delay between companies (for LLM rate limits)
-        if i < len(companies) - 1:
-            print(f"\n  Waiting {delay_seconds}s before next company...")
-            time.sleep(delay_seconds)
-
-    return role_results, all_searches
-
-
-# MAIN PIPELINE
-
-def run_stage3_linkedin_search(
-    base_dir: str = "data/companies",
-    max_companies: Optional[int] = None,
-) -> dict:
-    """
-    Run Stage 3: Identify target roles and generate LinkedIn Sales Navigator searches.
-
-    Pipeline:
-    - Step 3.1: Identify target roles (LLM analysis)
-    - Step 3.2: Generate LinkedIn Sales Navigator search URLs
-
-    Args:
-        base_dir: Base directory for company folders (reads scoring.json per company)
-        max_companies: Optional limit on number of companies to process
-
-    Returns:
-        Dict with results and summary
-    """
-    print("\n" + "=" * 60)
-    print("STAGE 3: IDENTIFY ROLES & GENERATE LINKEDIN SEARCHES")
-    print("=" * 60)
-    print(f"Started at: {datetime.now().isoformat()}")
-
-    # Load companies from per-company folders
-    print(f"\nLoading qualified companies from: {base_dir}")
-    companies = load_qualified_companies(base_dir)
-    print(f"  Found {len(companies)} qualified companies (score >= {COMPANY_SCORE_CUTOFF})")
-
-    # Limit if specified
-    if max_companies:
-        companies = companies[:max_companies]
-        print(f"  Processing first {max_companies} companies")
-
-    # Process companies: identify roles and generate Sales Nav URLs
-    print(f"\nProcessing {len(companies)} companies...")
-    role_results, all_searches = process_companies_and_generate_searches(
-        companies=companies,
-        base_dir=base_dir,
-        delay_seconds=2,
-    )
-
-    # Calculate summaries
-    successful_roles = [r for r in role_results if r["success"]]
-    failed_roles = [r for r in role_results if not r["success"]]
-
-    # Per-company files (target_roles.json, linkedin_searches.json) already saved by process_companies_and_generate_searches()
-
-    # Create summary
-    summary = {
+    return {
         "pipeline": "stage3_identify_roles_and_generate_linkedin_searches",
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_companies": len(companies),
-            "role_identification": {
-                "successful": len(successful_roles),
-                "failed": len(failed_roles),
-            },
+            "successful": successful,
+            "failed": failed,
             "linkedin_searches_generated": len(all_searches),
-            "company_score_cutoff": COMPANY_SCORE_CUTOFF,
         },
     }
 
-    print("\n" + "=" * 60)
-    print("STAGE 3 COMPLETE")
-    print("=" * 60)
-    print(f"Total companies processed: {len(companies)}")
-    print(f"\nStep 3.1 - Role Identification:")
-    print(f"  Successful: {len(successful_roles)}")
-    print(f"  Failed: {len(failed_roles)}")
-    print(f"\nStep 3.2 - LinkedIn Sales Navigator Searches:")
-    print(f"  Total searches generated: {len(all_searches)}")
-    print(f"\nOutputs saved to per-company folders:")
-    print(f"  - {base_dir}/[Company Name]/target_roles.json")
-    print(f"  - {base_dir}/[Company Name]/linkedin_searches.json")
-    print(f"\nNext steps:")
-    print(f"  1. Use LinkedIn Sales Navigator search URLs to find contacts")
-    print(f"  2. Import exported contacts into Stage 4 for outreach personalization")
-
-    return summary
-
-
-# CLI ENTRY POINT
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Run Stage 3: Identify Target Roles & Generate LinkedIn Sales Navigator Searches"
-    )
-    parser.add_argument(
-        "--base-dir",
-        default="data/companies",
-        help="Base directory for company folders (default: data/companies)",
-    )
-    parser.add_argument(
-        "--max-companies",
-        type=int,
-        default=None,
-        help="Maximum number of companies to process (for testing)",
-    )
-    parser.add_argument(
-        "--test",
-        action="store_true",
-        help="Run in test mode with 1 company",
-    )
+    parser = argparse.ArgumentParser(description="Stage 3: Target Roles & LinkedIn Searches")
+    parser.add_argument("--base-dir", default="data/companies")
+    parser.add_argument("--max-companies", type=int, default=None)
+    parser.add_argument("--test", action="store_true")
 
     args = parser.parse_args()
 
-    # Set up limits
     max_companies = args.max_companies
     if args.test:
         max_companies = 1
         print("Running in TEST mode with 1 company")
 
-    # Run pipeline
-    results = run_stage3_linkedin_search(
-        base_dir=args.base_dir,
-        max_companies=max_companies,
-    )
+    run_stage3_linkedin_search(base_dir=args.base_dir, max_companies=max_companies)

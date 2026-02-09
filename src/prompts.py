@@ -59,7 +59,7 @@ IDEAL CUSTOMER PROFILE (ICP):
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {TEDLAR_CONTEXT}
 
-Based on the context provided above, identify events that companies that match Dupont Tedlar's ICP are likely to attend.
+Based on the context provided above, identify events in 2026 that companies that match Dupont Tedlar's ICP are likely to attend.
 
 SEARCH STRATEGY:
 Use web search to find relevant trade shows and industry events coming up in 2026. Execute searches for:
