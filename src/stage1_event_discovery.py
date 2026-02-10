@@ -18,10 +18,8 @@ from utils.io import load_json, save_json
 
 
 def _event_companies_path(output_dir: str, event_name: str) -> str:
-    """Path to a per-event companies JSON file."""
-    companies_dir = os.path.join(output_dir, "companies")
-    os.makedirs(companies_dir, exist_ok=True)
-    return os.path.join(companies_dir, f"{sanitize_name(event_name)}.json")
+    """Path to a per-event companies JSON file (saved directly in events/)."""
+    return os.path.join(output_dir, f"{sanitize_name(event_name)}.json")
 
 
 def discover_events() -> List[dict]:

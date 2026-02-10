@@ -106,7 +106,7 @@ def deduplicate_companies(discovery_results: List[dict]) -> List[dict]:
 
 
 # MAIN PIPELINE
-def run_stage2_pipeline(events_dir: str = "data/events/companies", output_dir: str = "data/companies", max_companies: Optional[int] = None) -> dict:
+def run_stage2_pipeline(events_dir: str = "data/events", output_dir: str = "data/companies", max_companies: Optional[int] = None) -> dict:
     """Run Stage 2: research, score, and qualify companies from Stage 1."""
     import glob
 
@@ -180,7 +180,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Stage 2: Company Qualification")
-    parser.add_argument("--events-dir", default="data/events/companies")
+    parser.add_argument("--events-dir", default="data/events")
     parser.add_argument("--output-dir", default="data/companies")
     parser.add_argument("--max-companies", type=int, default=None)
     parser.add_argument("--test", action="store_true")

@@ -19,8 +19,9 @@ from prompts import (
 from constants import MODELS, sanitize_name
 
 
-def _contact_path(output_dir: str, company_name: str, prefix: str, suffix: str) -> str:
-    return company_path(output_dir, company_name, f"{prefix}_{suffix}.json")
+def _contact_path(companies_dir: str, company_name: str, prefix: str, suffix: str) -> str:
+    """Generate path for contact files under companies/{company}/contacts/."""
+    return company_path(companies_dir, company_name, f"contacts/{prefix}_{suffix}.json")
 
 
 def _load_company_data(base_dir: str, company_name: str) -> Tuple[Optional[dict], Optional[list]]:
@@ -82,15 +83,15 @@ def _run_two_turn_outreach(analysis_user_message: str, force_channel: Optional[s
     return analysis, outreach
 
 
-def process_role(role_title: str, company_name: str, base_dir: str = "data/companies", output_dir: str = "data/contacts", force_channel: Optional[str] = None) -> Tuple[Optional[dict], Optional[dict]]:
+def process_role(role_title: str, company_name: str, base_dir: str = "data/companies", force_channel: Optional[str] = None) -> Tuple[Optional[dict], Optional[dict]]:
     """Generate analysis and outreach for a target role using [Name] placeholder."""
     prefix = sanitize_name(role_title).replace(" ", "_")
 
     print(f"\n  [Stage 4] Outreach for {role_title} at {company_name}")
 
     # Check existing
-    analysis_path = _contact_path(output_dir, company_name, prefix, "analysis")
-    outreach_path = _contact_path(output_dir, company_name, prefix, "outreach")
+    analysis_path = _contact_path(base_dir, company_name, prefix, "analysis")
+    outreach_path = _contact_path(base_dir, company_name, prefix, "outreach")
 
     if os.path.exists(analysis_path) and os.path.exists(outreach_path):
         print(f"    Outreach found in existing data")
@@ -119,7 +120,6 @@ if __name__ == "__main__":
     parser.add_argument("--role", required=True)
     parser.add_argument("--company", required=True)
     parser.add_argument("--base-dir", default="data/companies")
-    parser.add_argument("--output-dir", default="data/contacts")
     parser.add_argument("--force-channel", choices=["email", "linkedin"])
 
     args = parser.parse_args()
@@ -128,6 +128,5 @@ if __name__ == "__main__":
         role_title=args.role,
         company_name=args.company,
         base_dir=args.base_dir,
-        output_dir=args.output_dir,
         force_channel=args.force_channel,
     )
