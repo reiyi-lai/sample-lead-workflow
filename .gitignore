@@ -35,8 +35,3 @@ env/
 *.swp
 *.swo
 .DS_Store
-
-# Project specific
-data/events/*.json
-data/companies/*.json
-data/contacts/*.json
