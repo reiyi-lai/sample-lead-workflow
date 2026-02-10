@@ -59,12 +59,17 @@ class RateLimiter:
 class PipelineOrchestrator:
     """Event-driven orchestrator. Auto-triggers downstream stages via callbacks."""
 
+    # Concurrency limits for parallel processing
+    MAX_CONCURRENT_STAGE3 = 3  # Companies processed in parallel for target role identification
+    MAX_CONCURRENT_STAGE4 = 3  # Roles processed in parallel for outreach generation
+
     def __init__(self, data_dir: str = "data", tokens_per_min: int = 30000):
         self.data_dir = Path(data_dir)
         self.companies_dir = self.data_dir / "companies"
         self.events_dir = self.data_dir / "events"
         self.rate_limiter = RateLimiter(tokens_per_min=tokens_per_min)
         self.stats = {"stage2": 0, "stage3": 0, "stage4_roles": 0, "errors": []}
+        self._stage4_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE4)
 
     def _record_error(self, company: str, stage: int, error):
         self.stats["errors"].append({"company": company, "stage": stage, "error": str(error)})
@@ -81,7 +86,7 @@ class PipelineOrchestrator:
             print(f"  Skipping Stage 3 (score {icp_score} < cutoff {COMPANY_SCORE_CUTOFF})")
 
     async def on_target_roles_identified(self, company_name: str, website_url: str, target_roles: List[dict]):
-        """Stage 3 complete → generate Sales Nav URLs, push to Clay, auto-trigger Stage 4."""
+        """Stage 3 complete → auto-trigger Stage 4 parallel processing + generate Sales Nav URLs & push to Clay"""
         print(f"\n[Event] Target roles identified: {company_name} -> {len(target_roles)} roles")
 
         role_titles = [r["title"] for r in target_roles if r.get("title")]
@@ -102,19 +107,21 @@ class PipelineOrchestrator:
         else:
             print(f"  Clay push failed: {clay_result.get('error')}")
 
-        # Auto-trigger Stage 4: outreach for each role
-        print(f"\n[Stage 4] Auto-generating outreach for {len(target_roles)} roles at {company_name}")
-        for role in target_roles:
-            role_title = role.get("title", "")
-            if not role_title:
-                continue
+        # Auto-trigger Stage 4: outreach for each role (PARALLEL)
+        valid_roles = [r for r in target_roles if r.get("title")]
+        print(f"\n[Stage 4] Auto-generating outreach for {len(valid_roles)} roles at {company_name} (max {self.MAX_CONCURRENT_STAGE4} concurrent)")
 
-            await self.rate_limiter.acquire(estimated_tokens=8000)
-            await asyncio.to_thread(process_role, role_title, company_name, base_dir=str(self.companies_dir))
-
-        self.stats["stage4_roles"] += len(target_roles)
+        await asyncio.gather(*[self._process_role_stage4(r["title"], company_name) for r in valid_roles])
+        self.stats["stage4_roles"] += len(valid_roles)
 
     # STAGE PROCESSORS
+
+    async def _process_role_stage4(self, role_title: str, company_name: str):
+        """Process a single role through Stage 4 (outreach generation)."""
+        async with self._stage4_semaphore:
+            await self.rate_limiter.acquire(estimated_tokens=8000)
+            await asyncio.to_thread(process_role, role_title, company_name, base_dir=str(self.companies_dir))
+            print(f"    [Stage 4] Completed: {role_title}")
 
     async def _process_company_stage2(self, company: dict):
         """Process a single company through Stage 2 (research + scoring)."""
@@ -220,15 +227,20 @@ class PipelineOrchestrator:
         print(f"  {len(needs_stage3)} companies need Stage 3 (already have Stage 2)")
         print(f"  {len(needs_stage2)} companies need Stage 2")
 
-        # Priority 1: Stage 3 first (closest to completion)
+        # Priority 1: Stage 3 first (closest to completion) - PARALLEL
         if needs_stage3:
-            print(f"\n[Priority 1] Processing {len(needs_stage3)} companies through Stage 3...")
-            for company in needs_stage3:
-                await self._process_company_stage3(company.get("company_name", ""), company.get("website_url", ""))
+            print(f"\n[Priority 1] Processing {len(needs_stage3)} companies through Stage 3 (max {self.MAX_CONCURRENT_STAGE3} concurrent)...")
+            stage3_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE3)
 
-        # Priority 2: Stage 2 (Stage 3 auto-triggers via callback)
+            async def process_stage3_with_semaphore(company: dict):
+                async with stage3_semaphore:
+                    await self._process_company_stage3(company.get("company_name", ""), company.get("website_url", ""))
+
+            await asyncio.gather(*[process_stage3_with_semaphore(c) for c in needs_stage3])
+
+        # Priority 2: Stage 2 (Stage 3 auto-triggers via callback) - Sequential due to web search rate limits
         if needs_stage2:
-            print(f"\n[Priority 2] Processing {len(needs_stage2)} companies through Stage 2 -> 3...")
+            print(f"\n[Priority 2] Processing {len(needs_stage2)} companies through Stage 2 -> 3 (sequential - web search)...")
             for company in needs_stage2:
                 await self._process_company_stage2(company)
 
@@ -285,7 +297,9 @@ class PipelineOrchestrator:
         print(f"  {len(target_events)}/{len(all_scored)} events above cutoff ({EVENT_SCORE_CUTOFF})")
 
         # Step 1.3: Discover companies
-        existing_event_files = [f for f in self.events_dir.glob("*.json") if f.name not in ("discovered_events.json", "scored_events.json")]
+        # Event company files are saved directly in events/ as {event_name}.json
+        excluded_files = {"discovered_events.json", "scored_events.json", "discovered_companies.json", "pipeline_summary.json"}
+        existing_event_files = [f for f in self.events_dir.glob("*.json") if f.name not in excluded_files]
 
         if existing_event_files:
             print(f"\n[Step 1.3] Company Discovery: loading {len(existing_event_files)} existing event files...")

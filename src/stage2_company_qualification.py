@@ -77,7 +77,8 @@ def deduplicate_companies(discovery_results: List[dict]) -> List[dict]:
     unique_companies = []
 
     for event_result in discovery_results:
-        if not event_result.get("success"):
+        # Skip if explicitly failed or has no companies
+        if event_result.get("success") is False or not event_result.get("companies"):
             continue
 
         event_name = event_result.get("event_name", "Unknown Event")

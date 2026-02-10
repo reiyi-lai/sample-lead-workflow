@@ -19,9 +19,9 @@ from prompts import (
 from constants import MODELS, sanitize_name
 
 
-def _contact_path(companies_dir: str, company_name: str, prefix: str, suffix: str) -> str:
-    """Generate path for contact files under companies/{company}/contacts/."""
-    return company_path(companies_dir, company_name, f"contacts/{prefix}_{suffix}.json")
+def _role_path(companies_dir: str, company_name: str, prefix: str, suffix: str) -> str:
+    """Generate path for role outreach files under companies/{company}/roles/."""
+    return company_path(companies_dir, company_name, f"roles/{prefix}_{suffix}.json")
 
 
 def _load_company_data(base_dir: str, company_name: str) -> Tuple[Optional[dict], Optional[list]]:
@@ -90,8 +90,8 @@ def process_role(role_title: str, company_name: str, base_dir: str = "data/compa
     print(f"\n  [Stage 4] Outreach for {role_title} at {company_name}")
 
     # Check existing
-    analysis_path = _contact_path(base_dir, company_name, prefix, "analysis")
-    outreach_path = _contact_path(base_dir, company_name, prefix, "outreach")
+    analysis_path = _role_path(base_dir, company_name, prefix, "analysis")
+    outreach_path = _role_path(base_dir, company_name, prefix, "outreach")
 
     if os.path.exists(analysis_path) and os.path.exists(outreach_path):
         print(f"    Outreach found in existing data")
@@ -117,16 +117,16 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Stage 4: Outreach Generation")
-    parser.add_argument("--role", required=True)
     parser.add_argument("--company", required=True)
+    parser.add_argument("--role", required=True)
     parser.add_argument("--base-dir", default="data/companies")
     parser.add_argument("--force-channel", choices=["email", "linkedin"])
 
     args = parser.parse_args()
 
     process_role(
-        role_title=args.role,
         company_name=args.company,
+        role_title=args.role,
         base_dir=args.base_dir,
         force_channel=args.force_channel,
     )
