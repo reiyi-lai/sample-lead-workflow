@@ -11,9 +11,9 @@ from typing import List
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from stage1_event_discovery import discover_events, score_events, discover_companies
+from stage1_event_discovery import discover_events, score_events
 from stage2_company_qualification import (
-    research_and_score_company, calculate_icp_score, save_scoring_json, deduplicate_companies,
+    research_and_score_company, calculate_icp_score, save_scoring_json,
 )
 from stage3_contact_finding import (
     identify_target_roles, generate_sales_navigator_searches, push_company_to_clay, extract_domain,
@@ -60,6 +60,7 @@ class PipelineOrchestrator:
     """Event-driven orchestrator. Auto-triggers downstream stages via callbacks."""
 
     # Concurrency limits for parallel processing
+    MAX_CONCURRENT_STAGE2 = 2  # Companies processed in parallel for research & scoring
     MAX_CONCURRENT_STAGE3 = 3  # Companies processed in parallel for target role identification
     MAX_CONCURRENT_STAGE4 = 3  # Roles processed in parallel for outreach generation
 
@@ -68,13 +69,49 @@ class PipelineOrchestrator:
         self.companies_dir = self.data_dir / "companies"
         self.events_dir = self.data_dir / "events"
         self.rate_limiter = RateLimiter(tokens_per_min=tokens_per_min)
-        self.stats = {"stage2": 0, "stage3": 0, "stage4_roles": 0, "errors": []}
+        self.stats = {"stage1_events": 0, "stage2": 0, "stage3": 0, "stage4_roles": 0, "errors": []}
+        self._stage2_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE2)
         self._stage4_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE4)
+        # Incremental deduplication: track processed URLs across all events
+        self._seen_urls = {}
+        self._seen_urls_lock = asyncio.Lock()
 
     def _record_error(self, company: str, stage: int, error):
         self.stats["errors"].append({"company": company, "stage": stage, "error": str(error)})
 
     # EVENT HANDLERS (Callbacks)
+
+    async def on_event_companies_discovered(self, event_name: str, companies: List[dict]):
+        """Stage 1.3 complete for an event → trigger Stage 2 for each unique company."""
+        print(f"\n[Event] Companies discovered at {event_name} -> {len(companies)} companies")
+        self.stats["stage1_events"] += 1
+
+        # Incremental deduplication and Stage 2 triggering
+        unique_for_event = []
+        async with self._seen_urls_lock:
+            for company in companies:
+                company_name = company.get("company_name", "")
+                raw_url = company.get("website_url", "").lower().strip().rstrip("/")
+                normalized_url = raw_url.replace("://www.", "://") or f"name:{company_name.lower()}"
+
+                if normalized_url not in self._seen_urls:
+                    self._seen_urls[normalized_url] = company_name
+                    unique_for_event.append(company)
+                else:
+                    print(f"  Skipping duplicate: {company_name} (already seen)")
+
+        if not unique_for_event:
+            print(f"  No new unique companies from {event_name}")
+            return
+
+        print(f"  Processing {len(unique_for_event)} unique companies through Stage 2 (max {self.MAX_CONCURRENT_STAGE2} concurrent)...")
+
+        # Trigger Stage 2 for each unique company (parallel with semaphore)
+        async def process_with_semaphore(company: dict):
+            async with self._stage2_semaphore:
+                await self._process_company_stage2(company)
+
+        await asyncio.gather(*[process_with_semaphore(c) for c in unique_for_event])
 
     async def on_company_scored(self, company_name: str, website_url: str, icp_score: float):
         """Stage 2 complete → trigger Stage 3 if score meets cutoff."""
@@ -115,6 +152,37 @@ class PipelineOrchestrator:
             print(f"  Clay push failed: {clay_result.get('error')}")
 
     # STAGE PROCESSORS
+
+    def _discover_companies_for_event(self, event_name: str, event_url: str) -> dict:
+        """Discover companies for a single event (sync, called via to_thread)."""
+        from prompts import COMPANY_DISCOVERY_SYSTEM_PROMPT
+        from constants import MODELS
+        from utils.llm import call_claude, extract_json_from_response
+
+        response = call_claude(
+            system_prompt=COMPANY_DISCOVERY_SYSTEM_PROMPT,
+            model=MODELS["company_discovery"],
+            user_message=(
+                f"Identify companies at this event:\n\n"
+                f"Event: {event_name}\nURL: {event_url}\n\n"
+                f"Return JSON only."
+            ),
+            max_tokens=16384,
+            enable_web_search=True,
+        )
+
+        result = extract_json_from_response(response)
+
+        if isinstance(result, dict) and "error" in result:
+            print(f"    -> Error: {result['error']}")
+            return {"event_name": event_name, "event_url": event_url, "success": False, "error": result["error"]}
+
+        companies = result.get("companies", [])
+        print(f"    -> {len(companies)} companies found")
+        result["event_name"] = event_name
+        result["event_url"] = event_url
+        result["success"] = True
+        return result
 
     async def _process_role_stage4(self, role_title: str, company_name: str):
         """Process a single role through Stage 4 (outreach generation)."""
@@ -296,23 +364,42 @@ class PipelineOrchestrator:
         target_events = [e for e in all_scored if e.get("overall_score", 0) >= EVENT_SCORE_CUTOFF]
         print(f"  {len(target_events)}/{len(all_scored)} events above cutoff ({EVENT_SCORE_CUTOFF})")
 
-        # Step 1.3: Discover companies
+        # Step 1.3: Discover companies (EVENT-DRIVEN → triggers Stage 2 immediately)
         # Event company files are saved directly in events/ as {event_name}.json
         excluded_files = {"discovered_events.json", "scored_events.json", "discovered_companies.json", "pipeline_summary.json"}
         existing_event_files = [f for f in self.events_dir.glob("*.json") if f.name not in excluded_files]
 
         if existing_event_files:
+            # Resume: load existing event files and trigger Stage 2 for each
             print(f"\n[Step 1.3] Company Discovery: loading {len(existing_event_files)} existing event files...")
-            discovery_results = [d for f in existing_event_files if (d := load_json(f))]
+            for event_file in existing_event_files:
+                event_data = load_json(event_file)
+                if event_data and event_data.get("companies"):
+                    event_name = event_data.get("event_name", event_file.stem)
+                    await self.on_event_companies_discovered(event_name, event_data.get("companies", []))
         else:
-            print(f"\n[Step 1.3] Company Discovery: searching for companies at {len(target_events)} events...")
-            discovery_results = await asyncio.to_thread(discover_companies, target_events, str(self.events_dir))
+            # Fresh run: discover companies for each event and trigger Stage 2 immediately
+            print(f"\n[Step 1.3] Company Discovery: searching for companies at {len(target_events)} events (event-driven)...")
+            for i, event in enumerate(target_events):
+                event_name = event.get("event_name", "Unknown")
+                event_url = event.get("event_url", "")
+                print(f"\n  [{i+1}/{len(target_events)}] Discovering companies at: {event_name}")
 
-        unique_companies = deduplicate_companies(discovery_results)
-        print(f"  {len(unique_companies)} unique companies discovered")
+                await self.rate_limiter.acquire(estimated_tokens=8000)
+                event_result = await asyncio.to_thread(
+                    self._discover_companies_for_event, event_name, event_url
+                )
 
-        # Stages 2-4
-        await self._process_work_queue(unique_companies)
+                if event_result and event_result.get("companies"):
+                    # Save event file
+                    from constants import sanitize_name
+                    event_filepath = self.events_dir / f"{sanitize_name(event_name)}.json"
+                    save_json(event_filepath, event_result)
+
+                    # Trigger Stage 2 immediately for this event's companies
+                    await self.on_event_companies_discovered(event_name, event_result.get("companies", []))
+
+        print(f"\n  Total unique companies processed: {len(self._seen_urls)}")
         self._print_summary()
 
         summary = {"pipeline": "tedlar_gtm_orchestrator", "timestamp": datetime.now().isoformat(), "stats": self.stats}
