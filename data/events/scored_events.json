@@ -1,0 +1,225 @@
+{
+  "scored_events": [
+    {
+      "event_name": "ISA International Sign Expo 2026",
+      "event_url": "https://signexpo.org",
+      "overall_score": 9.8,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 10,
+        "scale_timing": 9.5
+      },
+      "reasoning": "Perfect match for Tedlar ICP. Premier signage industry event with core exhibitor base of sign manufacturers, fabricators, wide-format print companies, and vehicle wrap professionals. Major US event in 2026 with established reputation. Highest priority investment."
+    },
+    {
+      "event_name": "PRINTING United Expo 2026",
+      "event_url": "https://www.printingunited.com",
+      "overall_score": 8.1,
+      "scores": {
+        "industry_alignment": 8,
+        "exhibitor_quality": 8,
+        "scale_timing": 8
+      },
+      "reasoning": "Strong alignment with wide-format graphics segment of Tedlar market. Large-scale B2B printing event with significant representation from wide-format, signage, and graphics converters. September 2026 timing in major US market. Secondary priority after ISA."
+    },
+    {
+      "event_name": "FESPA Global Print Expo 2026",
+      "event_url": "https://www.fespa.com",
+      "overall_score": 7.9,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 8,
+        "scale_timing": 6
+      },
+      "reasoning": "Excellent industry alignment covering signage, wide-format, and vehicle wraps with co-located European Sign Expo and WrapFest. However, Barcelona location limits direct US market access. Strong international alternative but lower priority than US-based events."
+    },
+    {
+      "event_name": "Graphics Pro Expo - Long Beach",
+      "event_url": "https://www.graphics-pro-expo.com",
+      "overall_score": 8.4,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 8,
+        "scale_timing": 8
+      },
+      "reasoning": "Strong regional graphics event with direct signage and vehicle wrap focus (WRAPSCON co-location). West Coast US market, August 2026. Mid-size but well-targeted audience. Good secondary event option."
+    },
+    {
+      "event_name": "Graphics Pro Expo - Cleveland",
+      "event_url": "https://www.graphics-pro-expo.com",
+      "overall_score": 7.8,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 7,
+        "scale_timing": 7
+      },
+      "reasoning": "Regional graphics event with strong signage alignment but smaller scale than Long Beach edition. Midwest market opportunity, September 2026. Useful secondary/regional coverage event."
+    },
+    {
+      "event_name": "Graphics Pro Expo - Charlotte",
+      "event_url": "https://www.graphics-pro-expo.com",
+      "overall_score": 7.6,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 7,
+        "scale_timing": 7
+      },
+      "reasoning": "Regional graphics event with strong signage focus. Southeast market, November 2026. Smallest of the three Graphics Pro events. Useful for regional coverage but lower priority than primary events."
+    },
+    {
+      "event_name": "SEMA Show 2026",
+      "event_url": "https://www.semashow.com",
+      "overall_score": 7.7,
+      "scores": {
+        "industry_alignment": 8,
+        "exhibitor_quality": 8,
+        "scale_timing": 7
+      },
+      "reasoning": "Strong vehicle wrap segment focus but SEMA is broader automotive customization event. While vehicle wraps are core Tedlar vertical, exhibitor base is less concentrated on film/material suppliers than dedicated wrap shows. November 2026. Secondary opportunity."
+    },
+    {
+      "event_name": "Facade Tectonics 2026 World Congress",
+      "event_url": "https://www.facadetectonics.org",
+      "overall_score": 5.9,
+      "scores": {
+        "industry_alignment": 6,
+        "exhibitor_quality": 5,
+        "scale_timing": 6.5
+      },
+      "reasoning": "Relevant to architectural graphics and building wrap segment but appears more academic/professional development focused than B2B supplier marketplace. Pittsburgh venue, September 2026. Adjacency to Tedlar market rather than direct alignment. Lower priority."
+    },
+    {
+      "event_name": "Railway Interior Innovation Summit USA",
+      "event_url": "https://redcabin.de",
+      "overall_score": 6.5,
+      "scores": {
+        "industry_alignment": 7,
+        "exhibitor_quality": 6,
+        "scale_timing": 6.5
+      },
+      "reasoning": "Direct alignment with transit/rail interior vertical where Tedlar films are used for wall protection and durability. However, appears more focused on innovation/technology rather than supplier sourcing. Smaller event scale. May 2026 DC venue. Niche opportunity with moderate relevance."
+    },
+    {
+      "event_name": "InnoTrans 2026",
+      "event_url": "https://www.innotrans.de",
+      "overall_score": 6.3,
+      "scores": {
+        "industry_alignment": 7,
+        "exhibitor_quality": 7,
+        "scale_timing": 5
+      },
+      "reasoning": "Leading international transit/rail event with specific 'Interiors' segment relevant to Tedlar use cases. However, Berlin location limits direct US market access. Large scale but not US-focused. September 2026. Secondary consideration for international expansion only."
+    },
+    {
+      "event_name": "European Sign Expo 2026 (co-located with FESPA)",
+      "event_url": "https://www.fespa.com",
+      "overall_score": 7.7,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 8,
+        "scale_timing": 6
+      },
+      "reasoning": "Perfect industry alignment as Europe's largest signage showcase. Excellent exhibitor quality with signage fabricators and visual communications specialists. Barcelona co-location with FESPA. However, non-US location limits primary market access. May 2026."
+    },
+    {
+      "event_name": "WrapFest 2026 (co-located with FESPA)",
+      "event_url": "https://www.fespa.com",
+      "overall_score": 7.5,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 8,
+        "scale_timing": 6
+      },
+      "reasoning": "Excellent vehicle wrap segment focus with hands-on technical audience and wrap installers. Film suppliers and tool manufacturers are core exhibitors. May 2026 Barcelona. International event; good for EU market but lower priority than US-based wrap events."
+    },
+    {
+      "event_name": "SIGN CHINA 2026 - Shenzhen (Spring Edition)",
+      "event_url": "https://www.signchina-sz.com",
+      "overall_score": 4.2,
+      "scores": {
+        "industry_alignment": 8,
+        "exhibitor_quality": 6,
+        "scale_timing": 2
+      },
+      "reasoning": "Strong signage industry alignment but Shenzhen location outside US primary market. March 2026 timing early in year. While China represents large signage market, Tedlar's primary ICP focus is US-based companies. Lower priority for market entry strategy."
+    },
+    {
+      "event_name": "SIGN CHINA 2026 - Shanghai (Autumn Edition)",
+      "event_url": "https://www.signchinashow.com",
+      "overall_score": 4.3,
+      "scores": {
+        "industry_alignment": 8,
+        "exhibitor_quality": 6,
+        "scale_timing": 2
+      },
+      "reasoning": "Strong signage and vehicle wrap industry coverage but Shanghai location outside primary US market focus. September 2026 timing. Large Asian market opportunity but lower priority given Tedlar's stated US-primary geographic focus."
+    },
+    {
+      "event_name": "HOMETEX Shenzhen 2026",
+      "event_url": "https://www.hometexshenzhen.com",
+      "overall_score": 3.5,
+      "scores": {
+        "industry_alignment": 4,
+        "exhibitor_quality": 4,
+        "scale_timing": 3
+      },
+      "reasoning": "Tangential alignment with wall protection/covering vertical but focused on window treatments, curtains, blinds rather than graffiti-resistant or durability films. Shenzhen venue limits US market access. March 2026. Low priority."
+    },
+    {
+      "event_name": "International Window Coverings Expo (IWCE) 2026",
+      "event_url": "https://www.iwce-vision.com",
+      "overall_score": 4.1,
+      "scores": {
+        "industry_alignment": 4,
+        "exhibitor_quality": 5,
+        "scale_timing": 3.5
+      },
+      "reasoning": "Limited industry alignment focused on interior design and window treatments rather than protective graphics films or signage. Wall protection association is tangential. Raleigh venue, April 2026. Small scale, specialized audience not aligned with core Tedlar ICP."
+    },
+    {
+      "event_name": "The International Surface Event (tise) 2026",
+      "event_url": "https://www.intlsurfaceevent.com",
+      "overall_score": 3.8,
+      "scores": {
+        "industry_alignment": 3,
+        "exhibitor_quality": 4,
+        "scale_timing": 4
+      },
+      "reasoning": "Broad flooring and tile event with wall finishes/surfaces segment. Minimal direct alignment with Tedlar's signage, graphics, vehicle wrap, or specialized protective film markets. Las Vegas venue January 2026. While large scale (650 exhibitors), exhibitor base not targeted to Tedlar ICP."
+    }
+  ],
+  "summary": {
+    "total_events_scored": 17,
+    "tier_1_events_high_priority": [
+      "ISA International Sign Expo 2026 (9.8)",
+      "Graphics Pro Expo - Long Beach (8.4)"
+    ],
+    "tier_2_events_medium_priority": [
+      "PRINTING United Expo 2026 (8.1)",
+      "Graphics Pro Expo - Cleveland (7.8)",
+      "European Sign Expo 2026 (7.7)",
+      "SEMA Show 2026 (7.7)",
+      "Graphics Pro Expo - Charlotte (7.6)",
+      "WrapFest 2026 (7.5)"
+    ],
+    "tier_3_events_lower_priority": [
+      "FESPA Global Print Expo 2026 (7.9)",
+      "Facade Tectonics 2026 (5.9)",
+      "Railway Interior Innovation Summit USA (6.5)",
+      "InnoTrans 2026 (6.3)",
+      "SIGN CHINA 2026 - Shenzhen (4.2)",
+      "SIGN CHINA 2026 - Shanghai (4.3)",
+      "HOMETEX Shenzhen 2026 (3.5)",
+      "International Window Coverings Expo (4.1)",
+      "The International Surface Event (3.8)"
+    ],
+    "strategic_recommendations": {
+      "core_investment": "Focus primary resources on ISA International Sign Expo 2026 (April) as flagship event with highest ICP alignment and exhibitor quality.",
+      "secondary_markets": "Deploy regional presence strategy across Graphics Pro Expo locations (Long Beach, Cleveland, Charlotte) to capture key US signage markets.",
+      "printing_convergence": "Invest in PRINTING United 2026 (September) to reach large-format graphics converters and print industry participants increasingly entering signage markets.",
+      "vehicle_wrap_focus": "Consider SEMA Show (November) for automotive/wrap segment despite broader mandate; supplement with Graphics Pro Expo co-located WRAPSCON.",
+      "international": "Allocate smaller team to FESPA/European Sign Expo (May) for EU market exploration; deprioritize China events given US-primary strategy.",
+      "niche_verticals": "Monitor Railway Interior Summit for transit segment expansion, but deprioritize architectural and wall treatment events as secondary to core signage markets."
+    }
+  }
+}

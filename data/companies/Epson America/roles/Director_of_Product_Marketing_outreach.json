@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "ISA 2026 + complete solution positioning",
+    "body": "Hi [Name],\n\nSaw Epson's messaging around same-day lamination for vehicle wraps\u2014smart positioning against Roland and HP.\n\nCurious if you're exploring protective film partnerships to strengthen that story. We work with printer manufacturers whose customers need graffiti-resistant, weather-durable overlaminates for outdoor graphics. Helps reduce those warranty headaches when prints fail prematurely, even though the ink and printer performed perfectly.\n\nWith ISA coming up, might be worth a quick conversation about how other teams are positioning complete solutions versus just equipment. Happy to share what's working.\n\nWorth a chat?\n\nBest,\n[Your name]",
+    "word_count": 92
+  },
+  "personalization_used": {
+    "hook": "Epson markets same-day lamination and scratch resistance for vehicle wraps, but lacks a validated protective film partner to substantiate these durability claims",
+    "value_prop_emphasized": "Graffiti resistance and weather durability that prevents warranty claims and strengthens competitive positioning"
+  }
+}
