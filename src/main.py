@@ -89,6 +89,13 @@ class PipelineOrchestrator:
         """Stage 3 complete → auto-trigger Stage 4 parallel processing + generate Sales Nav URLs & push to Clay"""
         print(f"\n[Event] Target roles identified: {company_name} -> {len(target_roles)} roles")
 
+        # Auto-trigger Stage 4: outreach for each role (PARALLEL)
+        valid_roles = [r for r in target_roles if r.get("title")]
+        print(f"\n[Stage 4] Auto-generating outreach for {len(valid_roles)} roles at {company_name} (max {self.MAX_CONCURRENT_STAGE4} concurrent)")
+
+        await asyncio.gather(*[self._process_role_stage4(r["title"], company_name) for r in valid_roles])
+        self.stats["stage4_roles"] += len(valid_roles)
+
         role_titles = [r["title"] for r in target_roles if r.get("title")]
         company_domain = extract_domain(website_url)
 
@@ -106,13 +113,6 @@ class PipelineOrchestrator:
             print(f"  Pushed to Clay (status {clay_result.get('status_code')})")
         else:
             print(f"  Clay push failed: {clay_result.get('error')}")
-
-        # Auto-trigger Stage 4: outreach for each role (PARALLEL)
-        valid_roles = [r for r in target_roles if r.get("title")]
-        print(f"\n[Stage 4] Auto-generating outreach for {len(valid_roles)} roles at {company_name} (max {self.MAX_CONCURRENT_STAGE4} concurrent)")
-
-        await asyncio.gather(*[self._process_role_stage4(r["title"], company_name) for r in valid_roles])
-        self.stats["stage4_roles"] += len(valid_roles)
 
     # STAGE PROCESSORS
 
