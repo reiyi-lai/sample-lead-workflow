@@ -62,10 +62,10 @@ export default function EventsList({ events }: EventsListProps) {
     }
 
     const scoreCategories = [
-      { key: "industry_alignment", label: "Industry Alignment", weight: "40%" },
-      { key: "scale_timing", label: "Scale & Timing", weight: "20%" },
+      { key: "industry_alignment", label: "Industry Alignment", weight: "45%" },
+      { key: "scale_timing", label: "Scale & Timing", weight: "25%" },
       { key: "buyer_quality", label: "Buyer Quality", weight: "20%" },
-      { key: "buyer_intent_alignment", label: "Buyer Intent", weight: "15%" },
+      { key: "buyer_intent_alignment", label: "Buyer Intent", weight: "10%" },
     ];
 
     return (
