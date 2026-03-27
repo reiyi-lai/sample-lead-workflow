@@ -1,225 +1,235 @@
 {
   "scored_events": [
     {
-      "event_name": "ISA International Sign Expo 2026",
-      "event_url": "https://signexpo.org",
-      "overall_score": 9.8,
+      "event_name": "NAW Executive Summit 2026",
+      "event_url": "https://www.naw.org/events/executive-summit-2026/",
+      "overall_score": 9.5,
       "scores": {
         "industry_alignment": 10,
-        "exhibitor_quality": 10,
-        "scale_timing": 9.5
+        "exhibitor_quality": 9,
+        "scale_timing": 9
       },
-      "reasoning": "Perfect match for Tedlar ICP. Premier signage industry event with core exhibitor base of sign manufacturers, fabricators, wide-format print companies, and vehicle wrap professionals. Major US event in 2026 with established reputation. Highest priority investment."
+      "reasoning": "Premier event for wholesale distribution industry executives. NAW is the definitive trade association for distributors across all sectors\u2014core InstaLILY ICP. Jan 2026 timing is ideal. High concentration of mid-market/enterprise decision-makers with multi-location operations and digital transformation mandates."
     },
     {
-      "event_name": "PRINTING United Expo 2026",
-      "event_url": "https://www.printingunited.com",
-      "overall_score": 8.1,
+      "event_name": "AHR Expo 2026",
+      "event_url": "https://www.ahrexpo.com/",
+      "overall_score": 8.8,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "World's largest HVACR marketplace with 1,800+ exhibitors and 50,000 attendees. HVAC distribution is core vertical for InstaLILY (commercial equipment distributors). Strong exhibitor base of distributors, manufacturers, and channel partners. Feb 2026 timing perfect. Proven commercial equipment supply chain focus."
+    },
+    {
+      "event_name": "MODEX 2026",
+      "event_url": "https://www.modexshow.com/",
+      "overall_score": 7.6,
       "scores": {
         "industry_alignment": 8,
         "exhibitor_quality": 8,
-        "scale_timing": 8
+        "scale_timing": 6
       },
-      "reasoning": "Strong alignment with wide-format graphics segment of Tedlar market. Large-scale B2B printing event with significant representation from wide-format, signage, and graphics converters. September 2026 timing in major US market. Secondary priority after ISA."
+      "reasoning": "Manufacturing and supply chain decision-makers conference with WMS integration and automation focus. Attracts some distribution operations leaders, but broader manufacturing/logistics audience. March 2026 timing good. Secondary priority vs. pure distribution events due to mixed attendee base."
     },
     {
-      "event_name": "FESPA Global Print Expo 2026",
-      "event_url": "https://www.fespa.com",
-      "overall_score": 7.9,
+      "event_name": "ISA Annual Convention 2026",
+      "event_url": "https://www.isapartners.org/",
+      "overall_score": 9.4,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "Premier event for industrial MROP (Maintenance, Repair, Operations, and Production) supply channel\u2014directly aligned with industrial parts distributors, core InstaLILY vertical. Deep-dive education and networking with distributors, manufacturers, and channel partners. April 2026 timing solid. High concentration of multi-location distributors with complex SKU catalogs."
+    },
+    {
+      "event_name": "MDM SHIFT Conference 2026",
+      "event_url": "https://www.mdm.com/shift2026/",
+      "overall_score": 9.2,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "Explicitly focused on distribution digital transformation, AI applications, and hybrid sales\u2014perfectly aligned with InstaLILY value prop. Co-hosted with NAW ensures quality distribution attendees. May 2026 timing ideal. Directly addresses pain points: sales enablement, data analytics, and AI for distribution operations."
+    },
+    {
+      "event_name": "Field Service East 2026",
+      "event_url": "https://fieldserviceeast.wbresearch.com/",
+      "overall_score": 8.3,
       "scores": {
         "industry_alignment": 9,
         "exhibitor_quality": 8,
-        "scale_timing": 6
+        "scale_timing": 7
       },
-      "reasoning": "Excellent industry alignment covering signage, wide-format, and vehicle wraps with co-located European Sign Expo and WrapFest. However, Barcelona location limits direct US market access. Strong international alternative but lower priority than US-based events."
+      "reasoning": "Dedicated field service and support conference with AI Advisory Lab and technology focus. Field service is core InstaLILY vertical. Targets service operations leaders looking to leverage technology for revenue growth. August 2026 timing good. Workforce development and AI adoption angles directly aligned with InstaLILY positioning."
     },
     {
-      "event_name": "Graphics Pro Expo - Long Beach",
-      "event_url": "https://www.graphics-pro-expo.com",
+      "event_name": "NAW Innovators Summit 2026",
+      "event_url": "https://www.naw.org/events/2026-naw-innovators-summit/",
+      "overall_score": 9.1,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "Technology-focused showcase designed for America's largest distribution companies. NAW backing ensures premium attendee base. Explicitly features AI, digitization, and automation startups\u2014positioning InstaLILY as solution vendor. Sept 2026 timing excellent. High concentration of innovation-seeking distribution executives at scale-up companies."
+    },
+    {
+      "event_name": "STAFDA Annual Convention 2026",
+      "event_url": "https://stafda.org/",
+      "overall_score": 9.0,
+      "scores": {
+        "industry_alignment": 10,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "Specialty Tools & Fasteners Distributors Association with 4,300+ industry leaders. Fastener and specialty hardware distribution is core InstaLILY vertical. 50th annual convention signals prestigious, well-attended event. Construction/industrial supply chain focus. Nov 2026 timing good. High concentration of multi-location distributors with tribal knowledge and manual workflow challenges."
+    },
+    {
+      "event_name": "HARDI Annual Conference 2026",
+      "event_url": "https://hardinet.org/annual-conference",
+      "overall_score": 8.7,
+      "scores": {
+        "industry_alignment": 9,
+        "exhibitor_quality": 9,
+        "scale_timing": 8
+      },
+      "reasoning": "Premier HVACR distribution industry event with 4-day format and dedicated tracks on business growth and organizational development. HVACR distribution is core vertical (commercial equipment). Premium venue (San Diego) and exclusive distributor/manufacturer/vendor mix. Dec 2026 timing acceptable (end of year). Strong signal for mid-market HVAC distributors."
+    },
+    {
+      "event_name": "Home Delivery World 2026",
+      "event_url": "https://www.terrapinn.com/conference/home-delivery-world/",
+      "overall_score": 6.2,
+      "scores": {
+        "industry_alignment": 7,
+        "exhibitor_quality": 6,
+        "scale_timing": 5
+      },
+      "reasoning": "Supply chain and retail logistics conference focused on last-mile delivery and warehouse operations. Tangentially related to distribution operations but heavily weighted toward retail/logistics tech, not traditional B2B distribution. May 2026 timing acceptable. Lower priority vs. core distribution/field service events due to retail/eCommerce focus."
+    },
+    {
+      "event_name": "TPM26 (Trans Pacific Maritime)",
+      "event_url": "https://www.joc.com/",
+      "overall_score": 4.1,
+      "scores": {
+        "industry_alignment": 5,
+        "exhibitor_quality": 4,
+        "scale_timing": 3
+      },
+      "reasoning": "Global container shipping and supply chain conference focused on tariff mitigation and shipper cost reduction. Not aligned with InstaLILY verticals (distribution, field service, industrial parts). Attendees are importers, freight forwarders, and port operators\u2014not distribution decision-makers. March 2026 timing acceptable but low priority."
+    },
+    {
+      "event_name": "Retail Supply Chain Conference (RILA LINK) 2026",
+      "event_url": "https://www.rila.org/",
+      "overall_score": 4.3,
+      "scores": {
+        "industry_alignment": 4,
+        "exhibitor_quality": 5,
+        "scale_timing": 4
+      },
+      "reasoning": "Dedicated to retailers, grocers, and product manufacturers\u2014not B2B distributors or field service providers. Focus is on end-to-end retail supply chain management from CPG and retail perspective. Not aligned with InstaLILY's distribution supply-side focus. Feb 2026 timing good but wrong audience for core verticals."
+    },
+    {
+      "event_name": "American Supply Chain Summit 2026",
+      "event_url": "https://supplychainus.com/",
+      "overall_score": 5.8,
+      "scores": {
+        "industry_alignment": 6,
+        "exhibitor_quality": 6,
+        "scale_timing": 5
+      },
+      "reasoning": "Exclusive platform for 200+ senior supply chain executives with focus on process optimization and digital transformation. May attract some distributor executives, but broader supply chain audience (manufacturers, retailers, logistics providers). April 2026 timing acceptable but TBD specific dates. Lower priority vs. vertical-specific events. Smaller attendee base (200) vs. NAW/STAFDA."
+    },
+    {
+      "event_name": "Reuters Events: Supply Chain USA 2026",
+      "event_url": "https://events.reutersevents.com/supply-chain/usa",
+      "overall_score": 5.6,
+      "scores": {
+        "industry_alignment": 6,
+        "exhibitor_quality": 6,
+        "scale_timing": 5
+      },
+      "reasoning": "500+ senior supply chain executives from retailers, manufacturers, and logistics providers. Mixed audience not specifically tailored to B2B distribution. Focus on resilience, AI, and automation is relevant but attendee base skews retail/manufacturing. May 2026 timing acceptable but TBD dates. Lower priority due to mixed vertical focus."
+    },
+    {
+      "event_name": "World of Concrete 2026",
+      "event_url": "https://www.worldofconcrete.com/",
       "overall_score": 8.4,
       "scores": {
         "industry_alignment": 9,
         "exhibitor_quality": 8,
         "scale_timing": 8
       },
-      "reasoning": "Strong regional graphics event with direct signage and vehicle wrap focus (WRAPSCON co-location). West Coast US market, August 2026. Mid-size but well-targeted audience. Good secondary event option."
+      "reasoning": "Largest commercial construction industry event with 1,400+ exhibitors. Building materials and construction supply distribution is core InstaLILY vertical. Strong exhibitor base includes construction supply distributors. Jan 2026 timing ideal (early year). High concentration of contractors, builders, and supply distributors with complex procurement needs."
     },
     {
-      "event_name": "Graphics Pro Expo - Cleveland",
-      "event_url": "https://www.graphics-pro-expo.com",
-      "overall_score": 7.8,
-      "scores": {
-        "industry_alignment": 9,
-        "exhibitor_quality": 7,
-        "scale_timing": 7
-      },
-      "reasoning": "Regional graphics event with strong signage alignment but smaller scale than Long Beach edition. Midwest market opportunity, September 2026. Useful secondary/regional coverage event."
-    },
-    {
-      "event_name": "Graphics Pro Expo - Charlotte",
-      "event_url": "https://www.graphics-pro-expo.com",
-      "overall_score": 7.6,
-      "scores": {
-        "industry_alignment": 9,
-        "exhibitor_quality": 7,
-        "scale_timing": 7
-      },
-      "reasoning": "Regional graphics event with strong signage focus. Southeast market, November 2026. Smallest of the three Graphics Pro events. Useful for regional coverage but lower priority than primary events."
-    },
-    {
-      "event_name": "SEMA Show 2026",
-      "event_url": "https://www.semashow.com",
-      "overall_score": 7.7,
+      "event_name": "International Builders' Show (IBS) 2026",
+      "event_url": "https://www.buildersshow.com/",
+      "overall_score": 7.1,
       "scores": {
         "industry_alignment": 8,
-        "exhibitor_quality": 8,
-        "scale_timing": 7
+        "exhibitor_quality": 7,
+        "scale_timing": 6
       },
-      "reasoning": "Strong vehicle wrap segment focus but SEMA is broader automotive customization event. While vehicle wraps are core Tedlar vertical, exhibitor base is less concentrated on film/material suppliers than dedicated wrap shows. November 2026. Secondary opportunity."
+      "reasoning": "World's largest light construction show focused on residential construction industry. Building materials distribution tangentially relevant but residential focus is less aligned than commercial/industrial. Feb 2026 timing acceptable but TBD dates. Primary attendees are builders/contractors, not distributors. Secondary priority vs. World of Concrete."
     },
     {
-      "event_name": "Facade Tectonics 2026 World Congress",
-      "event_url": "https://www.facadetectonics.org",
-      "overall_score": 5.9,
-      "scores": {
-        "industry_alignment": 6,
-        "exhibitor_quality": 5,
-        "scale_timing": 6.5
-      },
-      "reasoning": "Relevant to architectural graphics and building wrap segment but appears more academic/professional development focused than B2B supplier marketplace. Pittsburgh venue, September 2026. Adjacency to Tedlar market rather than direct alignment. Lower priority."
-    },
-    {
-      "event_name": "Railway Interior Innovation Summit USA",
-      "event_url": "https://redcabin.de",
+      "event_name": "AGC Annual Convention 2026",
+      "event_url": "https://www.agc.org/",
       "overall_score": 6.5,
       "scores": {
         "industry_alignment": 7,
         "exhibitor_quality": 6,
-        "scale_timing": 6.5
-      },
-      "reasoning": "Direct alignment with transit/rail interior vertical where Tedlar films are used for wall protection and durability. However, appears more focused on innovation/technology rather than supplier sourcing. Smaller event scale. May 2026 DC venue. Niche opportunity with moderate relevance."
-    },
-    {
-      "event_name": "InnoTrans 2026",
-      "event_url": "https://www.innotrans.de",
-      "overall_score": 6.3,
-      "scores": {
-        "industry_alignment": 7,
-        "exhibitor_quality": 7,
-        "scale_timing": 5
-      },
-      "reasoning": "Leading international transit/rail event with specific 'Interiors' segment relevant to Tedlar use cases. However, Berlin location limits direct US market access. Large scale but not US-focused. September 2026. Secondary consideration for international expansion only."
-    },
-    {
-      "event_name": "European Sign Expo 2026 (co-located with FESPA)",
-      "event_url": "https://www.fespa.com",
-      "overall_score": 7.7,
-      "scores": {
-        "industry_alignment": 10,
-        "exhibitor_quality": 8,
         "scale_timing": 6
       },
-      "reasoning": "Perfect industry alignment as Europe's largest signage showcase. Excellent exhibitor quality with signage fabricators and visual communications specialists. Barcelona co-location with FESPA. However, non-US location limits primary market access. May 2026."
+      "reasoning": "Associated General Contractors convention focused on GCs and construction executives. Building materials distribution tangentially present but primary attendees are contractors, not distributors. March 2026 timing acceptable. National-level networking valuable but lower priority vs. vertical-specific distribution events. Secondary audience for InstaLILY."
     },
     {
-      "event_name": "WrapFest 2026 (co-located with FESPA)",
-      "event_url": "https://www.fespa.com",
-      "overall_score": 7.5,
+      "event_name": "Design-Build Conference & Expo 2026",
+      "event_url": "https://dbia.org/",
+      "overall_score": 5.2,
       "scores": {
-        "industry_alignment": 9,
-        "exhibitor_quality": 8,
-        "scale_timing": 6
-      },
-      "reasoning": "Excellent vehicle wrap segment focus with hands-on technical audience and wrap installers. Film suppliers and tool manufacturers are core exhibitors. May 2026 Barcelona. International event; good for EU market but lower priority than US-based wrap events."
-    },
-    {
-      "event_name": "SIGN CHINA 2026 - Shenzhen (Spring Edition)",
-      "event_url": "https://www.signchina-sz.com",
-      "overall_score": 4.2,
-      "scores": {
-        "industry_alignment": 8,
-        "exhibitor_quality": 6,
-        "scale_timing": 2
-      },
-      "reasoning": "Strong signage industry alignment but Shenzhen location outside US primary market. March 2026 timing early in year. While China represents large signage market, Tedlar's primary ICP focus is US-based companies. Lower priority for market entry strategy."
-    },
-    {
-      "event_name": "SIGN CHINA 2026 - Shanghai (Autumn Edition)",
-      "event_url": "https://www.signchinashow.com",
-      "overall_score": 4.3,
-      "scores": {
-        "industry_alignment": 8,
-        "exhibitor_quality": 6,
-        "scale_timing": 2
-      },
-      "reasoning": "Strong signage and vehicle wrap industry coverage but Shanghai location outside primary US market focus. September 2026 timing. Large Asian market opportunity but lower priority given Tedlar's stated US-primary geographic focus."
-    },
-    {
-      "event_name": "HOMETEX Shenzhen 2026",
-      "event_url": "https://www.hometexshenzhen.com",
-      "overall_score": 3.5,
-      "scores": {
-        "industry_alignment": 4,
-        "exhibitor_quality": 4,
-        "scale_timing": 3
-      },
-      "reasoning": "Tangential alignment with wall protection/covering vertical but focused on window treatments, curtains, blinds rather than graffiti-resistant or durability films. Shenzhen venue limits US market access. March 2026. Low priority."
-    },
-    {
-      "event_name": "International Window Coverings Expo (IWCE) 2026",
-      "event_url": "https://www.iwce-vision.com",
-      "overall_score": 4.1,
-      "scores": {
-        "industry_alignment": 4,
+        "industry_alignment": 6,
         "exhibitor_quality": 5,
-        "scale_timing": 3.5
-      },
-      "reasoning": "Limited industry alignment focused on interior design and window treatments rather than protective graphics films or signage. Wall protection association is tangential. Raleigh venue, April 2026. Small scale, specialized audience not aligned with core Tedlar ICP."
-    },
-    {
-      "event_name": "The International Surface Event (tise) 2026",
-      "event_url": "https://www.intlsurfaceevent.com",
-      "overall_score": 3.8,
-      "scores": {
-        "industry_alignment": 3,
-        "exhibitor_quality": 4,
         "scale_timing": 4
       },
-      "reasoning": "Broad flooring and tile event with wall finishes/surfaces segment. Minimal direct alignment with Tedlar's signage, graphics, vehicle wrap, or specialized protective film markets. Las Vegas venue January 2026. While large scale (650 exhibitors), exhibitor base not targeted to Tedlar ICP."
+      "reasoning": "Brings together owners, GCs, architects, and engineers\u2014procurement focus not on supply distribution. Design-build methodology focus is not aligned with distributor operations or field service. Nov 2026 timing acceptable but lower priority. Building materials distribution presence likely minimal. Not optimal use of resources vs. core vertical events."
+    },
+    {
+      "event_name": "NFMT (National Facilities Management & Technology) 2026",
+      "event_url": "https://nfmt.com/",
+      "overall_score": 7.2,
+      "scores": {
+        "industry_alignment": 8,
+        "exhibitor_quality": 7,
+        "scale_timing": 6
+      },
+      "reasoning": "Largest facilities management conference with 400+ providers and 90+ education sessions. Field service and facility management operations overlap with InstaLILY field service vertical (equipment maintenance, repair, technician support). March 2026 timing good. However, facilities management (building/property operations) differs from equipment service operations. Moderate priority."
     }
   ],
   "summary": {
-    "total_events_scored": 17,
-    "tier_1_events_high_priority": [
-      "ISA International Sign Expo 2026 (9.8)",
-      "Graphics Pro Expo - Long Beach (8.4)"
+    "total_events_scored": 19,
+    "tier_1_events_9plus": [
+      "NAW Executive Summit 2026",
+      "ISA Annual Convention 2026",
+      "MDM SHIFT Conference 2026",
+      "NAW Innovators Summit 2026",
+      "STAFDA Annual Convention 2026"
     ],
-    "tier_2_events_medium_priority": [
-      "PRINTING United Expo 2026 (8.1)",
-      "Graphics Pro Expo - Cleveland (7.8)",
-      "European Sign Expo 2026 (7.7)",
-      "SEMA Show 2026 (7.7)",
-      "Graphics Pro Expo - Charlotte (7.6)",
-      "WrapFest 2026 (7.5)"
+    "tier_2_events_8to9": [
+      "AHR Expo 2026",
+      "HARDI Annual Conference 2026",
+      "Field Service East 2026",
+      "World of Concrete 2026"
     ],
-    "tier_3_events_lower_priority": [
-      "FESPA Global Print Expo 2026 (7.9)",
-      "Facade Tectonics 2026 (5.9)",
-      "Railway Interior Innovation Summit USA (6.5)",
-      "InnoTrans 2026 (6.3)",
-      "SIGN CHINA 2026 - Shenzhen (4.2)",
-      "SIGN CHINA 2026 - Shanghai (4.3)",
-      "HOMETEX Shenzhen 2026 (3.5)",
-      "International Window Coverings Expo (4.1)",
-      "The International Surface Event (3.8)"
+    "tier_3_events_7to8": [
+      "MODEX 2026",
+      "International Builders' Show (IBS) 2026",
+      "NFMT (National Facilities Management & Technology) 2026"
     ],
-    "strategic_recommendations": {
-      "core_investment": "Focus primary resources on ISA International Sign Expo 2026 (April) as flagship event with highest ICP alignment and exhibitor quality.",
-      "secondary_markets": "Deploy regional presence strategy across Graphics Pro Expo locations (Long Beach, Cleveland, Charlotte) to capture key US signage markets.",
-      "printing_convergence": "Invest in PRINTING United 2026 (September) to reach large-format graphics converters and print industry participants increasingly entering signage markets.",
-      "vehicle_wrap_focus": "Consider SEMA Show (November) for automotive/wrap segment despite broader mandate; supplement with Graphics Pro Expo co-located WRAPSCON.",
-      "international": "Allocate smaller team to FESPA/European Sign Expo (May) for EU market exploration; deprioritize China events given US-primary strategy.",
-      "niche_verticals": "Monitor Railway Interior Summit for transit segment expansion, but deprioritize architectural and wall treatment events as secondary to core signage markets."
-    }
+    "recommendation": "Focus lead generation and booth investment on Tier 1 events (5 events scoring 9.0+). These represent the core distribution, industrial parts, and fastener verticals with premium attendee bases and explicit digital transformation/AI focus. Secondary focus on Tier 2 events (4 events scoring 8.0-8.9) which cover HVAC, field service, and construction supply segments. Deprioritize Tier 3 and below due to mixed audiences, retail/logistics focus, or weak distributor alignment."
   }
 }
