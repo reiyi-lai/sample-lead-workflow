@@ -182,6 +182,13 @@ At this point, also check if the event is happening in 2026. If it is not, assig
 
 CALCULATE: overall_score = (industry * 0.45) + (scale_timing * 0.25) + (buyer_quality * 0.25) + (buyer_intent * 0.1)
 
+SALES BRIEF REQUIREMENT:
+For each event, also generate a concise "sales_brief" field - a tight, actionable summary for the InstaLILY sales team. This should be 2-3 sentences covering:
+• Why this event fits InstaLILY's ICP (specific verticals/buyer types)
+• Key advantages (timing, decision-maker concentration, solution-seeking intent)
+• Any risks or limitations (event format, competition, targeting precision)
+Keep it punchy and tactical - focus on what sales team needs to know to decide resource allocation.
+
 OUTPUT FORMAT:
 Return JSON with all scored events:
 {{
@@ -208,7 +215,8 @@ Return JSON with all scored events:
           "rationale": "Mix of operational improvement seekers and general industry networking attendees. Conference agenda includes sessions on technology adoption and operational efficiency. Some attendees actively seeking solutions while others attending primarily for industry education and relationship building."
         }}
       }},
-      "reasoning": "HARDI is the premier HVAC distribution industry event with strong ICP alignment..."
+      "reasoning": "HARDI is the premier HVAC distribution industry event with strong ICP alignment...",
+      "sales_brief": "🎯 Priority #1 Event for InstaLILY - HVAC distribution is proven vertical (SRS success). December timing perfect for year-end decisions. 4-day format with ops directors, warehouse managers, procurement leaders = high decision-maker concentration. Operations-focused education tracks indicate active solution-seeking. Risk: Large show format requires pre-booked meetings strategy."
     }}
   ],
   "summary": {{
