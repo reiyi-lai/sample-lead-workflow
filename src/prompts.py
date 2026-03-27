@@ -112,7 +112,6 @@ You can start with this list of major events first, and then continue to conduct
 - Distribution Strategy Summit 2026
 - STAFDA Annual Convention 2026
 - AHR Expo 2026
-- Pool & Spa Patio Expo 2026
 
 FOR EACH EVENT FOUND, EXTRACT:
 - Event name
