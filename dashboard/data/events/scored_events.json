@@ -1,0 +1,439 @@
+{
+  "scored_events": [
+    {
+      "event_name": "NAW Executive Summit 2026",
+      "event_url": "https://www.naw.org/events/executive-summit-2026/",
+      "overall_score": 9.3,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "Perfect alignment with InstaLILY's core ICP. NAW represents the entire wholesale distribution industry across all verticals (industrial, construction, HVAC, electrical, plumbing, fasteners). This is the foundational industry for InstaLILY's customer base and value proposition."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Premier, established annual event with 50+ years of credibility. January 2026 timing is optimal for Q1 enterprise sales cycles. Washington, DC location is accessible to US sales teams. High-profile event guarantees strong attendance from target accounts."
+        },
+        "buyer_quality": {
+          "score": 10,
+          "rationale": "Highest concentration of decision-makers in the distribution industry. CEOs, Presidents, and C-suite executives from largest and fastest-growing distributors. These are the exact personas with budget authority for enterprise AI platform investments."
+        },
+        "buyer_intent_alignment": {
+          "score": 8,
+          "rationale": "Strategy-focused event means attendees are actively evaluating growth initiatives and operational improvements. Strong implicit intent to explore solutions that drive efficiency, scalability, and competitive advantage. Technology vendors and consultants in exhibitor mix indicate solution-seeking environment."
+        }
+      },
+      "reasoning": "NAW Executive Summit is the #1 priority event for InstaLILY. Unmatched concentration of C-suite distribution executives who control budgets for operational transformation. Perfect timing, established credibility, and direct alignment with wholesale distribution as core vertical. Highest ROI potential for enterprise sales efforts."
+    },
+    {
+      "event_name": "NAW Innovators Summit 2026",
+      "event_url": "https://www.naw.org/events/2026-naw-innovators-summit/",
+      "overall_score": 9.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "Exclusively focused on distribution technology and innovation. Perfect vertical alignment with InstaLILY's core market. Event explicitly designed to showcase AI, digitization, automation, and eCommerce solutions for distributors."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Established NAW signature event in September 2026, well-timed for fall enterprise sales cycle. Nashville location is accessible. Private meeting opportunities with major distribution companies create ideal sales engagement structure."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "Curated audience of distribution CEOs, CTOs, VPs of Technology, and innovation directors from America's largest distributors. Higher concentration of tech-decision makers than general distribution events. Decision-makers with explicit mandate to evaluate game-changing technology solutions."
+        },
+        "buyer_intent_alignment": {
+          "score": 9,
+          "rationale": "Highest buyer intent of any event scored. Attendees are explicitly seeking cutting-edge solutions for AI, automation, and digitization. Startup-focused format with private meetings creates direct problem-to-solution conversation opportunity. Active solution-seeking mode."
+        }
+      },
+      "reasoning": "NAW Innovators Summit is InstaLILY's #2 priority event. Specifically designed for technology evaluation in distribution with private meeting opportunities. Highest concentration of innovation-focused decision-makers and explicit solution-seeking intent. Perfect fit for demonstrating InstaWorkers\u2122 as game-changing technology. September timing allows Q4 closing opportunities."
+    },
+    {
+      "event_name": "HARDI Annual Conference 2026",
+      "event_url": "https://hardinet.org/annual-conference",
+      "overall_score": 9.0,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "HVAC distribution is a core InstaLILY vertical with proven customer success (SRS Distribution). HARDI is the flagship event for HVACR distribution industry. Perfect alignment with distribution-heavy, operationally intensive businesses that face complex inventory, multi-location operations, and high-volume SKU challenges."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Premier 4-day annual event with established credibility in HVAC industry. December 2026 timing is excellent for year-end enterprise decisions and Q1 budget allocation. San Diego location is accessible. High-profile event with strong attendance and brand recognition."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "Strong concentration of HVAC distributors, warehouse managers, operations directors, procurement leaders, and branch managers. Mix of C-suite and operational decision-makers with budget authority. Education tracks on Business Growth and Personal Development indicate strategic focus."
+        },
+        "buyer_intent_alignment": {
+          "score": 8,
+          "rationale": "Business growth-focused education tracks suggest attendees actively seeking operational improvements and efficiency solutions. Distribution technology vendors and supply chain optimization providers in exhibitor mix indicate strong solution-seeking environment. Operations-focused audience evaluating tools to improve margins and service."
+        }
+      },
+      "reasoning": "HARDI Annual Conference is top-3 priority event. Proven customer base (SRS Distribution) validates ICP alignment. Highest concentration of HVAC distribution decision-makers in one place. Four-day format and education tracks create extended engagement opportunities. December timing enables year-end budget discussions and Q1 implementation planning."
+    },
+    {
+      "event_name": "ISA Annual Convention 2026 (ISA26)",
+      "event_url": "https://isa26.isapartners.org/",
+      "overall_score": 8.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "Industrial MROP (Maintenance, Repair, Operations, Production) supply is core InstaLILY vertical. ISA represents industrial parts distributors and manufacturers' representatives - exact ICP. High-volume SKU catalogs, tribal knowledge, and complex workflows are core pain points InstaLILY solves."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Premier event for industrial MROP channel with established credibility. April 2026 timing is optimal for spring enterprise sales cycle. Cleveland location accessible to US sales teams. Hands-on, workshop-style format indicates serious attendee investment."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "Strong concentration of industrial distribution executives, operations managers, and procurement professionals. Mix of senior and mid-level decision-makers with budget authority for operational technology. IMRs (manufacturers' representatives) are key influencers and decision-makers."
+        },
+        "buyer_intent_alignment": {
+          "score": 8,
+          "rationale": "Industry 4.0 adaptation focus indicates attendees seeking modern solutions for operations. Workshop-style education suggests hands-on problem-solving orientation. Operations managers and procurement professionals actively evaluating tools to improve efficiency and reduce manual work."
+        }
+      },
+      "reasoning": "ISA Annual Convention is strong #4 priority event. Industrial MROP distribution is core InstaLILY market with unique pain points around tribal knowledge, high-SKU inventory, and multi-step workflows. Hands-on workshop format creates engagement opportunities. April timing is optimal for enterprise sales cycle."
+    },
+    {
+      "event_name": "AHR Expo 2026",
+      "event_url": "https://www.ahrexpo.com/",
+      "overall_score": 8.5,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "World's largest HVACR marketplace with 50,000+ attendees represents core InstaLILY vertical. HVAC distribution is proven customer segment (SRS Distribution, HARDI overlap). Event serves entire HVACR supply chain from manufacturers to distributors to contractors."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Largest HVACR trade show globally with 1,800+ exhibitors and 50,000+ attendees. February 2026 timing is optimal for Q1-Q2 enterprise sales cycles. Las Vegas location accessible. Massive scale provides volume opportunity for lead generation and brand visibility."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "Mix of HVAC distributors, contractors, engineers, facility managers, and building owners. While distributors and wholesalers are present, event also attracts significant contractor and end-user attendance. Concentration of distributor-level decision-makers is moderate rather than concentrated."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Large trade show format attracts mix of product evaluation and general industry networking. HVAC distributors and wholesalers are actively seeking solutions, but show also serves contractors and facilities managers with different pain points. Moderate to high buyer intent for distribution segment."
+        }
+      },
+      "reasoning": "AHR Expo is strong secondary event (priority #5). World's largest HVACR show creates volume opportunity for lead generation. HVAC distribution is proven InstaLILY vertical. February timing aligns with enterprise sales cycles. However, large show format and mixed attendee base (contractors, facility managers) reduces precision targeting compared to distribution-specific events."
+    },
+    {
+      "event_name": "MDM SHIFT 2026",
+      "event_url": "https://www.mdm.com/shift2026/",
+      "overall_score": 8.3,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "Explicitly designed for distribution leaders addressing hybrid sales, digital transformation, data analytics, and AI applications. Perfect alignment with InstaLILY's value proposition. Event is built specifically around the problems InstaLILY solves (digital transformation, AI for distribution, data-driven operations)."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Established event from leading distribution publication (MDM). May 2026 timing is optimal for late spring enterprise decisions. Denver location is accessible. Early bird and NAW member rates indicate strong engagement with distribution professional audience."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "Curated audience of distribution executives, sales leaders, digital transformation leaders, operations directors from wholesale distributors. High concentration of decision-makers with explicit mandate to drive digital and AI transformation. Strong mix of senior and operational decision-makers."
+        },
+        "buyer_intent_alignment": {
+          "score": 9,
+          "rationale": "Highest buyer intent of non-NAW events. Event explicitly focused on change management, digital transformation, and AI adoption. Cohort-based learning tracks indicate attendees actively seeking to implement solutions. Active problem-awareness and solution-seeking mode."
+        }
+      },
+      "reasoning": "MDM SHIFT 2026 is priority #5-6 event. Explicitly focused on digital transformation and AI in distribution - direct alignment with InstaLILY's value proposition. Distribution executives with active transformation mandates. Highest buyer intent outside NAW events. May timing enables Q2 decisions."
+    },
+    {
+      "event_name": "MODEX 2026",
+      "event_url": "https://www.modexshow.com/",
+      "overall_score": 8.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 9,
+          "rationale": "Largest manufacturing and supply chain expo with focus on warehouse operations, logistics, and supply chain technology. Strong alignment with InstaLILY's distribution and 3PL segments. Warehouse automation and supply chain efficiency are adjacent to core InstaLILY use cases (order management, inventory optimization)."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Massive event with 60,000+ expected attendees and 1,000+ exhibitors. April 2026 timing optimal for enterprise sales cycle. Atlanta location is highly accessible. World-class keynote speakers (Home Depot CFO, AI experts) indicate high-profile event with strong industry credibility."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "Strong concentration of logistics managers, supply chain executives, warehouse operators, and 3PL leaders. Mix of senior executives with budget authority for supply chain technology. Distributors and manufacturing operations leaders represent key segments, though event also attracts broader audience."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "200+ educational sessions and keynotes on supply chain optimization indicate active problem-solving orientation. Warehouse and logistics leaders seeking efficiency solutions. However, event focus is broader than distribution operations, so buyer intent varies. Some attendees are information-gathering vs. actively evaluating solutions."
+        }
+      },
+      "reasoning": "MODEX 2026 is secondary priority event (#7). Massive scale provides strong lead volume opportunity. Supply chain and logistics focus aligns with distribution operations segment. April timing optimal. However, broad supply chain focus (automation, robotics, conveyor systems) means lower precision targeting than distribution-specific events. Best for brand awareness and lead volume generation."
+    },
+    {
+      "event_name": "Fastener Fair USA 2026",
+      "event_url": "https://www.fastenerfairusa.com/",
+      "overall_score": 8.0,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "Fastener distribution is core InstaLILY vertical with proven customer success (Copper State Bolt & Nut, National Nail). Event covers entire fastener supply chain from manufacturers to master distributors. High-volume SKU catalogs and complex quoting are core InstaLILY use cases."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Premier North American fastener trade show, well-established in industry. May 2026 timing is good for enterprise sales cycle. Charlotte location is accessible. Smaller regional scale compared to HARDI/AHR, but focused audience reduces wasted effort."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "Strong concentration of fastener distributors, wholesalers, and procurement professionals. Mix of senior (distributors) and operational (purchasers, engineers) decision-makers. Mechanical and design engineers present, though primary buyers are distributors with budget authority."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Trade show format attracts mix of product research and vendor evaluation. Fastener distributors seeking efficiency solutions and new suppliers. Distribution technology vendors in exhibitor mix indicate solution-seeking environment. Moderate to good buyer intent from distributor segment."
+        }
+      },
+      "reasoning": "Fastener Fair USA is priority #8 event. Fastener distribution is proven InstaLILY vertical with existing customers. Two-day format is efficient for sales team resource allocation. May timing optimal. Smaller regional show means lower absolute lead volume but higher precision targeting vs. massive expos. Strong fit for vertical-specific outreach."
+    },
+    {
+      "event_name": "International Fastener Expo 2026 (IFE)",
+      "event_url": "https://fastenershows.com/",
+      "overall_score": 7.9,
+      "scores": {
+        "industry_alignment": {
+          "score": 10,
+          "rationale": "North America's largest fastener event, serving entire fastener supply chain including distributors, importers, and sourcing professionals. Fastener distribution is proven InstaLILY vertical. High-volume SKU inventory and complex sourcing workflows align with InstaLILY use cases."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Most extensive fastener trade show in North America with thousands of attendees. October 2026 timing is good for Q4 enterprise decisions and year-end budget allocation. Phoenix location is accessible. Established event with strong industry credibility."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "Strong concentration of fastener distributors and importers. Also attracts sourcing professionals, aerospace/automotive/military procurement, and hardware retailers. Mix of senior distributors with budget authority and mid-level procurement professionals. Good decision-maker presence but wider audience mix."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Sourcing-focused event means attendees evaluating suppliers and new products. Fastener distributors seeking efficiency improvements and supply chain optimization. Moderate buyer intent for InstaLILY solutions, though some attendees (procurement, military contractors) have different pain points than target ICP."
+        }
+      },
+      "reasoning": "International Fastener Expo is secondary priority (#9). Largest fastener event in North America with strong distributor attendance. October timing enables year-end and Q1 planning. However, event's global sourcing focus attracts broader audience (importers, aerospace/military procurement) beyond core InstaLILY ICP. Better as secondary event for lead volume generation."
+    },
+    {
+      "event_name": "Field Service East 2026",
+      "event_url": "https://fieldserviceeast.wbresearch.com/",
+      "overall_score": 7.7,
+      "scores": {
+        "industry_alignment": {
+          "score": 9,
+          "rationale": "Field service is core InstaLILY vertical with proven use cases (equipment maintenance, repair). Event focused on aftermarket leaders, workforce development, and service revenue optimization. Strong alignment with InstaLILY's field service AI Teammates applications."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Established field service conference with strong vertical focus. August 2026 timing is good for late summer/early fall enterprise decisions. Orlando location accessible. Conference format with AI Advisory Lab indicates engaged attendee base."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "Strong concentration of service directors, aftermarket leaders, field operations managers, and service technician managers. Mix of senior decision-makers and operational leaders with budget authority for field service technology. Good decision-maker quality for service vertical."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Service transformation focus indicates attendees seeking to improve service operations and revenue. AI Advisory Lab specifically signals solution-seeking around AI adoption in field service. However, event broader than just distribution field service (includes all aftermarket leaders). Moderate buyer intent for InstaLILY solutions."
+        }
+      },
+      "reasoning": "Field Service East is priority #10 event. Strong vertical focus on aftermarket and service operations aligns with InstaLILY's field service applications. August timing good for enterprise cycle. However, aftermarket focus is broader than just distribution field service. Best pursued as secondary event targeting service-specific operations leaders."
+    },
+    {
+      "event_name": "STAFDA Annual Convention & Trade Show 2026",
+      "event_url": "https://stafda.org/conventions/",
+      "overall_score": 7.6,
+      "scores": {
+        "industry_alignment": {
+          "score": 9,
+          "rationale": "Specialty tool and safety equipment distribution is adjacent to core InstaLILY verticals (construction supply, industrial distribution). 50th Annual Convention brings together construction/industrial supply chain leaders. High-volume SKU inventory and complex quoting are relevant use cases."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Established 50-year convention with 4,300+ attendees indicates strong industry presence. November 2026 timing is good for year-end budget decisions. Anaheim location accessible. Trade show with 225+ exhibitors provides good engagement opportunity."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "Strong concentration of specialty tool distributors, fastener distributors, and safety equipment distributors. Mix of senior distributors and branch managers with budget authority. Construction supply focus brings relevant decision-makers to table."
+        },
+        "buyer_intent_alignment": {
+          "score": 6,
+          "rationale": "General convention format with educational and social activities indicates mix of business development and networking focus. Construction supply focus means attendees may have different pain points than core industrial distribution. Moderate buyer intent for InstaLILY solutions specific to construction supply operations."
+        }
+      },
+      "reasoning": "STAFDA is secondary priority (#11). Adjacent specialty tool and safety equipment distribution has some ICP overlap. 50-year history and 4,300+ attendees provides scale. November timing good for year-end decisions. However, construction supply and specialty tool focus is somewhat adjacent to core distribution verticals. Best pursued as secondary event for targeted outreach to fastener/safety equipment distributors."
+    },
+    {
+      "event_name": "AED Summit 2026",
+      "event_url": "https://aednet.org/aedsummit/",
+      "overall_score": 7.4,
+      "scores": {
+        "industry_alignment": {
+          "score": 9,
+          "rationale": "Equipment distribution is core InstaLILY vertical with relevant use cases (parts management, service operations). AED Summit serves equipment distributors, dealers, rental companies, and service leaders. High-volume parts catalogs and service optimization align with InstaLILY applications."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Established AED Summit in January 2026, well-timed for Q1 enterprise sales cycle. Dallas location accessible. Trade association backing indicates credible event, though venue TBD suggests potential execution risk."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "Equipment distributors, dealer principals, and rental company executives represent decision-maker level. Service managers and parts managers are operational leaders. Good mix of senior and operational decision-makers in equipment distribution sector."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Equipment distribution focus on supply chain challenges and relationship building indicates some solution-seeking orientation. However, event also focused on tariffs and right-to-repair legislation, which are regulatory concerns. Moderate buyer intent for operational automation solutions."
+        }
+      },
+      "reasoning": "AED Summit is secondary priority (#12). Equipment distribution is relevant vertical with service and parts management use cases. January timing optimal for enterprise sales cycle. However, event's emphasis on tariffs, trade policy, and legislative issues suggests broader business focus beyond operational technology. Service leaders present but lower concentration than specialized field service events."
+    },
+    {
+      "event_name": "ISA Leadership Development Experience 2026",
+      "event_url": "https://www.isapartners.org/education/",
+      "overall_score": 6.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 9,
+          "rationale": "Industrial MROP supply is core InstaLILY vertical. ISA represents industrial distributors and manufacturers' representatives. Event serves industry channel directly aligned with InstaLILY's core market."
+        },
+        "scale_timing": {
+          "score": 6,
+          "rationale": "Leadership development event in October 2026, focused on personal and organizational growth. San Antonio location accessible. However, leadership development focus suggests mid-sized event with narrower attendee scope than annual conventions."
+        },
+        "buyer_quality": {
+          "score": 6,
+          "rationale": "Event explicitly targets emerging leaders, mid-level managers, HR directors, and future executives. Lower concentration of immediate budget-authority decision-makers compared to C-suite/ops director focus. Attendees are developing leaders, not established budget holders."
+        },
+        "buyer_intent_alignment": {
+          "score": 6,
+          "rationale": "Leadership development event means attendees focused on personal growth and organizational development, not immediately evaluating operational technology solutions. HR technology in exhibitor mix suggests different buyer intent. Long sales cycle from emerging leaders to purchase decision."
+        }
+      },
+      "reasoning": "ISA Leadership Development Experience is lower priority (#13). While ISA vertical is core, leadership development focus means attendees are emerging/mid-level managers not immediate budget holders. Better approach is targeting ISA Annual Convention where C-suite and operations directors attend. October timing suboptimal. Long sales cycle expected."
+    },
+    {
+      "event_name": "World of Concrete 2026",
+      "event_url": "https://www.worldofconcrete.com/",
+      "overall_score": 6.5,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Construction and concrete supply is adjacent to core InstaLILY verticals (construction supply distribution, building materials). Event serves concrete contractors, masonry professionals, material suppliers. Some alignment with construction supply and materials distribution segments."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Premier international event for concrete/masonry construction in January 2026, optimal timing for Q1 enterprise sales cycle. Las Vegas location highly accessible. Established event with strong industry presence and hands-on demonstrations indicate quality attendance."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Event audience dominated by concrete contractors, masonry professionals, and project managers - end-users of construction materials. Material suppliers and equipment buyers are present but minority of attendance. Lower concentration of distributor-level decision-makers compared to B2B wholesale events."
+        },
+        "buyer_intent_alignment": {
+          "score": 5,
+          "rationale": "Construction professional focus means attendees primarily seeking materials, equipment, and services for projects. Distributor pain points around operations, quoting, and inventory management are secondary to equipment demonstrations and product research. Limited buyer intent for B2B operational technology solutions."
+        }
+      },
+      "reasoning": "World of Concrete is lower priority event (#14). While construction supply is adjacent to ICP, event audience is heavily weighted toward end-user contractors and professionals rather than distributors. Material suppliers present but not primary audience. January timing is good but precision of targeting is low. Better to focus on distribution-specific events with higher buyer quality."
+    },
+    {
+      "event_name": "NFMT - National Facilities Management & Technology Conference 2026",
+      "event_url": "https://www.nfmt.com/",
+      "overall_score": 6.3,
+      "scores": {
+        "industry_alignment": {
+          "score": 7,
+          "rationale": "Facilities management is adjacent to field service vertical. CMMS, building automation, and maintenance operations are relevant to InstaLILY's service execution use cases. However, FM focus is different from distribution operations focus."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Largest FM conference in US with 90+ education sessions and 400+ providers. March 2026 timing good for enterprise decisions. Charlotte location accessible. Established event with strong industry recognition."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "Facility managers, building engineers, maintenance directors, operations managers have budget authority for facility technology. Institutional FM leaders represent significant budgets. However, focus is internal facility operations not supply/distribution operations."
+        },
+        "buyer_intent_alignment": {
+          "score": 6,
+          "rationale": "FM technology and building systems focus means attendees evaluating CMMS, building automation, and maintenance management platforms. Different technology focus than InstaLILY's distribution and field service solutions. Limited buyer intent for wholesale distribution or field service specific solutions."
+        }
+      },
+      "reasoning": "NFMT is lower priority (#15). Facilities management is adjacent to field service but represents different buyer profile (institutional FM leaders vs. field service distributors). Building automation focus is different from InstaLILY's execution-focused AI Teammates. Better to focus on field service events that serve distributors and equipment service companies."
+    },
+    {
+      "event_name": "Advancing Prefabrication Summit 2026",
+      "event_url": "https://www.advancing-prefabrication.com/",
+      "overall_score": 6.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 7,
+          "rationale": "Prefabrication and modular construction is adjacent to construction supply distribution. Supply chain management and digital transformation focus has some relevance. However, prefab manufacturing focus is different from wholesale distribution operations."
+        },
+        "scale_timing": {
+          "score": 6,
+          "rationale": "End-to-end prefab conference in February 2026, good timing for Q1 decisions. Dallas location accessible. However, niche focus suggests smaller event compared to major distribution conferences. Venue TBD suggests potential execution risk."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Event audience dominated by general contractors, designers, builders, manufacturers, and project owners. Material suppliers present but not primary audience. Limited concentration of wholesale distribution decision-makers focused on operational efficiency."
+        },
+        "buyer_intent_alignment": {
+          "score": 5,
+          "rationale": "Prefab manufacturing and construction technology focus means attendees seeking supply chain solutions for manufacturing operations, not wholesale distribution operations. Supply chain focus is on prefab production, not parts/materials distribution. Limited buyer intent for InstaLILY's distribution-focused solutions."
+        }
+      },
+      "reasoning": "Advancing Prefabrication Summit is lower priority (#16). Prefab manufacturing and modular construction is tangential to core distribution verticals. Event audience is primarily contractors, builders, and manufacturers - different buyer persona than wholesale distributors. February timing good but precision of targeting is very low. Recommend focusing on direct distribution events."
+    },
+    {
+      "event_name": "World of Modular 2026",
+      "event_url": "https://worldofmodular.org/",
+      "overall_score": 6.0,
+      "scores": {
+        "industry_alignment": {
+          "score": 7,
+          "rationale": "Modular/offsite construction and supply chain focus is adjacent to construction supply distribution. Event serves builders, developers, GCs, suppliers, manufacturers. Some alignment with construction supply and materials distribution."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Major event for offsite construction with 2,000+ industry leaders. April 2026 timing optimal for enterprise sales cycle. Las Vegas location highly accessible. Cornerstone event status indicates established credibility and strong attendance."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Event audience dominated by modular builders, developers, GCs, architects, engineers - construction industry professionals. Suppliers and manufacturers present but focus is on construction execution, not wholesale distribution operations. Limited concentration of distributor-level decision-makers."
+        },
+        "buyer_intent_alignment": {
+          "score": 5,
+          "rationale": "Modular construction and manufacturing innovation focus means attendees evaluating construction solutions and manufacturing processes, not wholesale distribution operations. Supply chain focus is on construction supply chain, not parts/materials distribution. Limited buyer intent for B2B distribution operations solutions."
+        }
+      },
+      "reasoning": "World of Modular is lower priority (#17). Modular/offsite construction is adjacent to construction supply but event audience is heavily weighted toward builders, developers, and construction professionals rather than distributors. April timing good but targeting precision is low. Better to focus on established distribution conferences."
+    },
+    {
+      "event_name": "TPM (Trans Pacific Maritime) 2026",
+      "event_url": "https://events.joc.com/tpm",
+      "overall_score": 5.2,
+      "scores": {
+        "industry_alignment": {
+          "score": 6,
+          "rationale": "Global supply chain and logistics focus is tangential to InstaLILY's core distribution verticals. Ocean freight and 3PL operations are adjacent but focus is import/export and maritime logistics, not wholesale distribution of physical goods."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Premier supply chain conference organized by Journal of Commerce indicates credibility. March 2026 timing good for enterprise cycle. Long Beach location accessible. However, global/maritime focus may limit relevance to US wholesale distribution companies."
+        },
+        "buyer_quality": {
+          "score": 6,
+          "rationale": "Fortune 500 supply chain executives, logistics directors, and shipping managers have significant budgets. However, focus is global supply chain operations and ocean freight, not wholesale distribution of physical goods. Different buyer persona than target distribution companies."
+        },
+        "buyer_intent_alignment": {
+          "score": 3,
+          "rationale": "Maritime logistics and ocean freight focus means attendees evaluating global supply chain solutions, visibility platforms, and freight forwarding services. Very different from InstaLILY's focus on operational execution for distributors. Limited buyer intent for distribution operations AI solutions."
+        }
+      },
+      "reasoning": "TPM is lowest priority event (#18). Global maritime logistics focus is tangential to core InstaLILY verticals. Ocean carriers, freight forwarders, and logistics service providers are different buyer personas than wholesale distributors. Supply chain focus is global import/export and freight management, not domestic distribution operations. Recommend deprioritizing unless pursuing 3PL segment specifically."
+    }
+  ],
+  "summary": {
+    "total_events_scored": 18
+  }
+}

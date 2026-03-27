@@ -1,0 +1,383 @@
+{
+  "event_name": "ISA International Sign Expo 2026",
+  "event_url": "https://signexpo.org",
+  "companies": [
+    {
+      "company_name": "Watchfire Signs",
+      "website_url": "https://www.watchfire.com",
+      "source": "confirmed_exhibitor_2026",
+      "source_reasoning": "Watchfire Signs is actively promoting their booth (#1212) at ISA Sign Expo 2026 and offering free passes with a promotional code on their official website.",
+      "source_urls": [
+        "https://www.watchfire.com/isa"
+      ],
+      "booth_number": "1212",
+      "description": "Digital signage and LED display manufacturer",
+      "relevance_indicators": [
+        "outdoor signage",
+        "digital displays",
+        "LED technology"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Avery Dennison",
+      "website_url": "https://graphics.averydennison.com",
+      "source": "past_exhibitor_2024_2025",
+      "source_reasoning": "Avery Dennison exhibited at ISA Sign Expo 2024 (booth #1135) and 2025 (booth #3837), sponsoring The Wrap Experience. They are a major industry player and perennial exhibitor.",
+      "source_urls": [
+        "https://whattheythink.com/news/118726-avery-dennison-announces-2024-isa-booth-schedule-educational-workshops/",
+        "https://graphics.averydennison.com/en/home/promotions/isa.html"
+      ],
+      "booth_number": "",
+      "description": "Graphics and labeling materials manufacturer, vinyl films and overlaminates",
+      "relevance_indicators": [
+        "protective films",
+        "vehicle wraps",
+        "overlaminates",
+        "vinyl graphics"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Epson America",
+      "website_url": "https://www.epson.com",
+      "source": "past_exhibitor_2025",
+      "source_reasoning": "Epson exhibited at ISA Sign Expo 2025 with their 'Seventy5 Candy Company' themed booth, showcasing wide format printers including the SureColor G6070 and S9170.",
+      "source_urls": [
+        "https://keypointintelligence.com/keypoint-blogs/highlights-from-the-isa-international-sign-expo-2025"
+      ],
+      "booth_number": "",
+      "description": "Wide format printer manufacturer - SureColor series",
+      "relevance_indicators": [
+        "large format printing",
+        "signage printing",
+        "solvent printers"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Roland DGA Corporation",
+      "website_url": "https://www.rolanddga.com",
+      "source": "past_exhibitor_2024_2025",
+      "source_reasoning": "Roland DGA exhibited at ISA Sign Expo 2024 and 2025, featuring their VersaObject MO-240 flatbed UV printer and other wide format printing solutions.",
+      "source_urls": [
+        "https://keypointintelligence.com/keypoint-blogs/top-takeaways-from-the-isa-international-sign-expo-2024",
+        "https://keypointintelligence.com/keypoint-blogs/highlights-from-the-isa-international-sign-expo-2025"
+      ],
+      "booth_number": "",
+      "description": "Wide format printer and UV flatbed manufacturer",
+      "relevance_indicators": [
+        "UV printing",
+        "direct to object printing",
+        "signage equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Mimaki USA",
+      "website_url": "https://mimaki.com",
+      "source": "past_exhibitor_2024_2025",
+      "source_reasoning": "Mimaki exhibited at ISA Sign Expo 2024 and 2025, showcasing their UJF Series UV-LED flatbed printers with the Kebab HS option for cylindrical printing.",
+      "source_urls": [
+        "https://keypointintelligence.com/keypoint-blogs/top-takeaways-from-the-isa-international-sign-expo-2024",
+        "https://keypointintelligence.com/keypoint-blogs/highlights-from-the-isa-international-sign-expo-2025"
+      ],
+      "booth_number": "",
+      "description": "Wide format and UV printer manufacturer",
+      "relevance_indicators": [
+        "UV printing",
+        "wide format printing",
+        "direct to object"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "HP Inc.",
+      "website_url": "https://www.hp.com",
+      "source": "past_exhibitor_historical",
+      "source_reasoning": "HP has been a consistent exhibitor at ISA Sign Expo, showcasing their Latex and Scitex wide format printing solutions. They are a major industry player.",
+      "source_urls": [
+        "https://whattheythink.com/articles/73290-isas-sign-expo-goes-beyond-sign-display/"
+      ],
+      "booth_number": "",
+      "description": "Wide format printer manufacturer - Latex and Scitex series",
+      "relevance_indicators": [
+        "large format printing",
+        "latex printing",
+        "UV flatbed"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Mutoh America",
+      "website_url": "https://www.mutoh.com",
+      "source": "past_exhibitor_2025",
+      "source_reasoning": "Mutoh exhibited at ISA Sign Expo 2025, featuring their XpertJet 661UF UV desktop flatbed printer for promotional items and signage applications.",
+      "source_urls": [
+        "https://keypointintelligence.com/keypoint-blogs/highlights-from-the-isa-international-sign-expo-2025"
+      ],
+      "booth_number": "",
+      "description": "Wide format and UV printer manufacturer",
+      "relevance_indicators": [
+        "UV printing",
+        "desktop flatbed",
+        "promotional items"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Grimco",
+      "website_url": "https://www.grimco.com",
+      "source": "past_exhibitor_2024_2025",
+      "source_reasoning": "Grimco is a major sponsor and exhibitor at ISA Sign Expo 2024 and 2025, including sponsoring the ISA Lounge (booth #2237 in 2025). They are one of the largest sign supply distributors.",
+      "source_urls": [
+        "https://signexpo.org/isa-lounge/",
+        "https://connect.grimco.com/blog/electrifying-highlights-and-the-brite-moments-of-isa-2024"
+      ],
+      "booth_number": "",
+      "description": "Sign supply distributor - materials, equipment, and manufactured products",
+      "relevance_indicators": [
+        "protective films",
+        "vinyl materials",
+        "sign substrates",
+        "distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Canon USA",
+      "website_url": "https://www.usa.canon.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Canon exhibited at ISA Sign Expo 2024 in partnership with Grimco, showcasing the Canon Colorado M5 Series printer with UVgel technology.",
+      "source_urls": [
+        "https://connect.grimco.com/blog/electrifying-highlights-and-the-brite-moments-of-isa-2024"
+      ],
+      "booth_number": "",
+      "description": "Wide format printer manufacturer - Colorado series with UVgel technology",
+      "relevance_indicators": [
+        "wide format printing",
+        "UVgel technology",
+        "high speed printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "3M Commercial Solutions",
+      "website_url": "https://www.3m.com",
+      "source": "industry_leader_likely",
+      "source_reasoning": "3M is a major manufacturer of graphic films, overlaminates, and vehicle wrap materials. They are consistently referenced as an industry leader and trainer certifier alongside Avery Dennison.",
+      "source_urls": [
+        "http://signexpo2022.csgcreative.com/feature/the-wrap-experience/"
+      ],
+      "booth_number": "",
+      "description": "Graphics films, overlaminates, and vehicle wrap manufacturer",
+      "relevance_indicators": [
+        "protective films",
+        "vehicle wraps",
+        "overlaminates",
+        "vinyl films"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Briteline (Grimco Brand)",
+      "website_url": "https://www.grimco.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Briteline, Grimco's exclusive brand, had a dedicated booth at ISA Sign Expo 2024 celebrating its 25th anniversary, featuring WrapCAST films and overlaminates.",
+      "source_urls": [
+        "https://connect.grimco.com/blog/electrifying-highlights-and-the-brite-moments-of-isa-2024"
+      ],
+      "booth_number": "",
+      "description": "Vinyl wrap films and overlaminates manufacturer (Grimco exclusive brand)",
+      "relevance_indicators": [
+        "vehicle wraps",
+        "overlaminates",
+        "protective films",
+        "WrapCAST"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Northlight Color",
+      "website_url": "https://www.northlightcolor.com",
+      "source": "past_exhibitor_2025",
+      "source_reasoning": "Northlight Color exhibited in the New Exhibitor Pavilion at ISA Sign Expo 2025, providing printing equipment and supplies including HP, Mimaki, and Epson products.",
+      "source_urls": [
+        "https://signexpo.org/feature/new-exhibitor-pavilion/",
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Distributor of digital printing equipment and supplies",
+      "relevance_indicators": [
+        "printing equipment",
+        "wide format",
+        "distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Viscom Inc.",
+      "website_url": "https://www.viscom.com",
+      "source": "past_exhibitor_2026_listing",
+      "source_reasoning": "Viscom Inc. is listed as an exhibitor for ISA Sign Expo 2026 on 10times.com exhibitor directory, serving the Americas with sales and applications services since 1998.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Sales and applications provider for sign and graphics industry",
+      "relevance_indicators": [
+        "sign equipment",
+        "graphics applications"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Color-Dec",
+      "website_url": "https://www.color-dec.com",
+      "source": "past_exhibitor_2026_listing",
+      "source_reasoning": "Color-Dec is listed as an exhibitor for ISA Sign Expo 2026 on 10times.com, a world-leading company with over 40 years of experience producing equipment and raw materials.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Equipment and raw materials manufacturer for printing industry",
+      "relevance_indicators": [
+        "printing equipment",
+        "raw materials",
+        "manufacturing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Midland Paper Packaging + Supplies",
+      "website_url": "https://www.midlandpaper.com",
+      "source": "past_exhibitor_2026_listing",
+      "source_reasoning": "Midland Paper is listed as an exhibitor for ISA Sign Expo 2026 on 10times.com, one of the largest fine paper and packaging distributors.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Fine paper and packaging distributor",
+      "relevance_indicators": [
+        "substrates",
+        "paper products",
+        "distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "4Ever Products",
+      "website_url": "https://www.4everproducts.com",
+      "source": "past_exhibitor_2026_listing",
+      "source_reasoning": "4Ever Products is listed as an exhibitor for ISA Sign Expo 2026 on 10times.com, a manufacturer of quality outdoor vinyl products based in Georgia.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Manufacturer of outdoor vinyl products",
+      "relevance_indicators": [
+        "vinyl products",
+        "outdoor signage",
+        "durable materials"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Peleman Industries",
+      "website_url": "https://www.peleman.com",
+      "source": "past_exhibitor_2025_2026",
+      "source_reasoning": "Peleman is listed as an exhibitor for ISA Sign Expo 2026 and exhibited at 2025, providing photo printing and presentation solutions for over 40 years.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors",
+        "https://signexpo.org/feature/new-exhibitor-pavilion/"
+      ],
+      "booth_number": "",
+      "description": "Photo printing and presentation covers manufacturer",
+      "relevance_indicators": [
+        "printing solutions",
+        "photo products"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "DNE Global (DNE Laser)",
+      "website_url": "https://www.dnelaser.com",
+      "source": "past_exhibitor_2026_listing",
+      "source_reasoning": "DNE Global (DNE Laser) is listed as an exhibitor for ISA Sign Expo 2026 on 10times.com, a leading global laser provider founded in 2008.",
+      "source_urls": [
+        "https://10times.com/international-sign-expo/exhibitors"
+      ],
+      "booth_number": "",
+      "description": "Laser cutting and engraving equipment manufacturer",
+      "relevance_indicators": [
+        "laser cutting",
+        "sign fabrication",
+        "manufacturing equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Sign Systems & Supplies",
+      "website_url": "https://www.signsystemsinc.com",
+      "source": "past_exhibitor_2025",
+      "source_reasoning": "Sign Systems & Supplies exhibited in the New Exhibitor Pavilion at ISA Sign Expo 2025, producing high quality environmentally friendly signs.",
+      "source_urls": [
+        "https://signexpo.org/feature/new-exhibitor-pavilion/"
+      ],
+      "booth_number": "",
+      "description": "Sign systems manufacturer - braille and tactile signage",
+      "relevance_indicators": [
+        "interior signage",
+        "ADA compliant",
+        "architectural signage"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Agfa Graphics",
+      "website_url": "https://www.agfa.com",
+      "source": "industry_leader_historical",
+      "source_reasoning": "Agfa has historically exhibited at ISA Sign Expo with their Jeti UV wide-format hybrid presses, a major player in the wide format printing industry.",
+      "source_urls": [
+        "https://whattheythink.com/articles/73290-isas-sign-expo-goes-beyond-sign-display/"
+      ],
+      "booth_number": "",
+      "description": "Wide format UV printer manufacturer - Jeti series",
+      "relevance_indicators": [
+        "UV printing",
+        "wide format",
+        "hybrid presses"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Durst Image Technology",
+      "website_url": "https://www.durst-group.com",
+      "source": "industry_leader_historical",
+      "source_reasoning": "Durst has historically exhibited at ISA Sign Expo with their wide format printing solutions including the Rhotex textile printer series.",
+      "source_urls": [
+        "https://whattheythink.com/articles/73290-isas-sign-expo-goes-beyond-sign-display/"
+      ],
+      "booth_number": "",
+      "description": "Wide format and textile printer manufacturer",
+      "relevance_indicators": [
+        "wide format printing",
+        "textile printing",
+        "UV technology"
+      ],
+      "confidence": "likely"
+    }
+  ],
+  "total_confirmed": 1,
+  "total_likely": 20,
+  "sources_searched": [
+    "ISA Sign Expo 2026 official website and MapYourShow platform",
+    "ISA Sign Expo 2025 exhibitor reports and coverage",
+    "ISA Sign Expo 2024 exhibitor reports and coverage",
+    "10times.com exhibitor directory for ISA 2026",
+    "Industry trade publications and exhibitor announcements",
+    "Exhibitor company websites promoting ISA attendance"
+  ],
+  "notes": "The official ISA Sign Expo 2026 exhibitor list is not yet fully published online as of February 2026. The event will take place April 8-10, 2026 at the Orange County Convention Center in Orlando, FL. Based on historical data, ISA Sign Expo typically attracts 570-600 exhibitors and 19,500-20,000 attendees. The companies listed represent confirmed 2026 exhibitor (Watchfire Signs), recent exhibitors from 2024-2025 shows who are highly likely to return, and major industry players with consistent ISA participation. All companies identified are relevant to DuPont Tedlar's graphics and signage protective film applications, including manufacturers of printing equipment, vinyl films, overlaminates, sign materials, and distributors serving the sign and graphics industry.",
+  "success": true
+}

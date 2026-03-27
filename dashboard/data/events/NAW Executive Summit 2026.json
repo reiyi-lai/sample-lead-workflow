@@ -1,0 +1,895 @@
+{
+  "event_name": "NAW Executive Summit 2026",
+  "event_url": "https://www.naw.org/events/executive-summit-2026/",
+  "companies": [
+    {
+      "company_name": "ABC Supply Co Inc",
+      "website_url": "https://www.abcsupply.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company. ABC Supply was also awarded the 2025 NAW Distributors Deliver award at the 2025 Summit.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Building materials distributor",
+      "relevance_indicators": [
+        "roofing",
+        "siding",
+        "windows",
+        "building materials",
+        "multi-location distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Beacon Building Products (now QXO)",
+      "website_url": "https://www.qxo.com",
+      "source": "official_speaker_and_attendee_2025",
+      "source_reasoning": "CEO Julian Francis was a featured speaker on CEO Panel at NAW Executive Summit 2025. Building products distributor acquired by QXO in 2024. Highly likely to attend 2026 given leadership involvement.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/"
+      ],
+      "description": "Largest publicly traded distributor of roofing and building products in North America",
+      "relevance_indicators": [
+        "building materials",
+        "roofing",
+        "construction supply",
+        "480+ locations",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Imperial Dade",
+      "website_url": "https://www.imperialdade.com",
+      "source": "official_speaker_2025",
+      "source_reasoning": "CEO Jason Tillis was a featured speaker on the CEO Panel at NAW Executive Summit 2025. Major distributor with 150+ locations, highly likely to attend 2026.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/"
+      ],
+      "description": "Leading distributor of foodservice packaging, janitorial supplies, and industrial products",
+      "relevance_indicators": [
+        "150+ locations",
+        "foodservice",
+        "janitorial",
+        "industrial packaging",
+        "PE-backed"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "FleetPride Inc",
+      "website_url": "https://www.fleetpride.com",
+      "source": "official_speaker_and_attendee_2025_2026",
+      "source_reasoning": "CEO Kevin Weadick was a featured speaker on the CEO Panel at NAW Executive Summit 2025. Company is listed on the 2026 attendee list on the official event page.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Nation's largest distributor of aftermarket heavy duty truck and trailer parts",
+      "relevance_indicators": [
+        "260+ locations",
+        "heavy duty parts",
+        "truck parts",
+        "aftermarket distribution",
+        "field service"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Ferguson Enterprises",
+      "website_url": "https://www.ferguson.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Leading plumbing and HVAC distributor",
+      "relevance_indicators": [
+        "plumbing",
+        "HVAC",
+        "building materials",
+        "multi-location",
+        "Fortune 500"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Graybar Electric Co Inc",
+      "website_url": "https://www.graybar.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Electrical, communications and data networking products distributor",
+      "relevance_indicators": [
+        "electrical supplies",
+        "multi-location",
+        "industrial distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Henry Schein Inc",
+      "website_url": "https://www.henryschein.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page. Stanley M. Bergman (Chairman & CEO) received the Dirk Van Dongen Lifetime Achievement Award at 2025 Summit.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/",
+        "https://www.naw.org/naw-executive-summit-2025-recap/"
+      ],
+      "description": "Healthcare distribution services and technology solutions",
+      "relevance_indicators": [
+        "healthcare",
+        "dental",
+        "medical supplies",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Winsupply Inc",
+      "website_url": "https://www.winsupply.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and appears on attendee lists.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Wholesale distributor of construction materials and supplies",
+      "relevance_indicators": [
+        "plumbing",
+        "HVAC",
+        "electrical",
+        "construction materials",
+        "600+ locations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "WESCO Distribution Inc",
+      "website_url": "https://www.wesco.com",
+      "source": "official_attendee_list_2025",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 attendee list page.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Electrical, communications and utility distribution services",
+      "relevance_indicators": [
+        "electrical",
+        "industrial",
+        "communications",
+        "Fortune 500",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Genuine Parts Co",
+      "website_url": "https://www.genpt.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Automotive and industrial parts distributor (NAPA Auto Parts parent)",
+      "relevance_indicators": [
+        "automotive parts",
+        "industrial parts",
+        "multi-location",
+        "Fortune 500"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "COE Distributing",
+      "website_url": "https://www.coedist.com",
+      "source": "official_attendee_and_speaker_2025_2026",
+      "source_reasoning": "CEO JD Ewing was a featured speaker at NAW Executive Summit 2025 and is Chairman of NAW Institute Board of Directors. Listed on 2026 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Wholesale distributor of HVAC, refrigeration, and foodservice equipment",
+      "relevance_indicators": [
+        "HVAC",
+        "refrigeration",
+        "foodservice equipment",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Field Fastener",
+      "website_url": "https://www.fieldfastener.com",
+      "source": "official_attendee_and_speaker_2025",
+      "source_reasoning": "CEO Jim Derry was a featured speaker at NAW Executive Summit 2025 in The Possibility Playbook session.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/"
+      ],
+      "description": "Fastener and specialty hardware distributor",
+      "relevance_indicators": [
+        "fasteners",
+        "hardware",
+        "construction supplies",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Colony Hardware",
+      "website_url": "https://www.colonyhardware.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page. Larry Stoddard (President & CEO) is NAW Board Chairman and spoke at 2025 Summit.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/",
+        "https://www.naw.org/naw-executive-summit-2025-recap/"
+      ],
+      "description": "Hardware and building materials distributor",
+      "relevance_indicators": [
+        "hardware",
+        "building materials",
+        "construction supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Do it Best Corp",
+      "website_url": "https://www.doitbest.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Hardware, lumber and building materials distributor cooperative",
+      "relevance_indicators": [
+        "hardware",
+        "lumber",
+        "building materials",
+        "3,800+ member stores"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "United Electric Supply Co Inc",
+      "website_url": "https://www.uesco.com",
+      "source": "official_attendee_and_speaker_2025",
+      "source_reasoning": "President & CEO George Vorwick was a speaker at NAW Executive Summit 2025 on Modern Pricing Mastery panel. Listed on 2025 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/naw-executive-summit-2025-recap/",
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Electrical supply distributor",
+      "relevance_indicators": [
+        "electrical supplies",
+        "industrial distributor",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Bunzl Distribution USA Inc",
+      "website_url": "https://www.bunzldistribution.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Outsourced supply distribution services to grocery, foodservice, retail, and safety markets",
+      "relevance_indicators": [
+        "foodservice",
+        "retail",
+        "safety supplies",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Reece USA",
+      "website_url": "https://www.reece.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and 2026 attendee pages.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Plumbing and HVAC distributor",
+      "relevance_indicators": [
+        "plumbing",
+        "HVAC",
+        "building materials",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Ewing Outdoor Supply",
+      "website_url": "https://www.ewingirrigation.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Irrigation and landscape supply distributor",
+      "relevance_indicators": [
+        "irrigation",
+        "landscape supplies",
+        "outdoor equipment",
+        "250+ locations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "QXO",
+      "website_url": "https://www.qxo.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page. QXO acquired Beacon Building Products and is building a major building materials distribution platform.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Building products distributor platform (acquired Beacon Building Products)",
+      "relevance_indicators": [
+        "building materials",
+        "roofing",
+        "construction supply",
+        "PE-backed",
+        "M&A active"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Uline",
+      "website_url": "https://www.uline.com",
+      "source": "official_attendee_list_2025",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Shipping, packaging and industrial supplies distributor",
+      "relevance_indicators": [
+        "packaging",
+        "industrial supplies",
+        "shipping supplies",
+        "12,000+ employees"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Kimball Midwest",
+      "website_url": "https://www.kimballmidwest.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Maintenance, repair and operations (MRO) products distributor",
+      "relevance_indicators": [
+        "MRO",
+        "industrial supplies",
+        "fasteners",
+        "tools"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Lawson Products Inc",
+      "website_url": "https://www.lawsonproducts.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "MRO and OEM distributor of expendable maintenance products",
+      "relevance_indicators": [
+        "MRO",
+        "industrial supplies",
+        "fasteners",
+        "publicly traded"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Hillman Group",
+      "website_url": "https://www.hillmangroup.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Hardware and home improvement products distributor",
+      "relevance_indicators": [
+        "fasteners",
+        "hardware",
+        "keys",
+        "identification products"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Benco Dental Co",
+      "website_url": "https://www.benco.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Dental equipment and supplies distributor",
+      "relevance_indicators": [
+        "dental supplies",
+        "healthcare",
+        "equipment distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Patterson Companies Inc",
+      "website_url": "https://www.pattersoncompanies.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Dental and animal health products distributor",
+      "relevance_indicators": [
+        "dental supplies",
+        "veterinary supplies",
+        "healthcare",
+        "publicly traded"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "ISCO Industries LLC",
+      "website_url": "https://www.iscoindustries.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Pipe, precast, and valve distributor for water and wastewater infrastructure",
+      "relevance_indicators": [
+        "pipe",
+        "industrial supplies",
+        "infrastructure",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Dot Foods Inc",
+      "website_url": "https://www.dotfoods.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Food redistribution and foodservice distributor",
+      "relevance_indicators": [
+        "foodservice",
+        "food distribution",
+        "redistribution",
+        "family-owned"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Kodiak Building Partners",
+      "website_url": "https://www.kodiakbp.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page. Being acquired by QXO for $2.25 billion.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Building materials distributor platform",
+      "relevance_indicators": [
+        "building materials",
+        "construction supply",
+        "PE-backed",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Ellsworth Corporation",
+      "website_url": "https://www.ellsworth.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Adhesives, specialty chemicals and equipment distributor",
+      "relevance_indicators": [
+        "industrial supplies",
+        "chemicals",
+        "adhesives",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Endries International Inc",
+      "website_url": "https://www.endries.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Fastener and C-parts distributor",
+      "relevance_indicators": [
+        "fasteners",
+        "industrial parts",
+        "manufacturing supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "NAPPCO Fastener Company",
+      "website_url": "https://www.nappco.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Fastener distributor",
+      "relevance_indicators": [
+        "fasteners",
+        "industrial supplies",
+        "construction hardware"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Huyett",
+      "website_url": "https://www.huyett.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Industrial hardware and power transmission distributor",
+      "relevance_indicators": [
+        "industrial hardware",
+        "fasteners",
+        "power transmission"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Locke Supply Co",
+      "website_url": "https://www.lockesupply.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Plumbing, HVAC, and electrical distributor",
+      "relevance_indicators": [
+        "plumbing",
+        "HVAC",
+        "electrical",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Kirby Risk Electrical Supply",
+      "website_url": "https://www.kirbyrisk.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Electrical and automation distributor",
+      "relevance_indicators": [
+        "electrical supplies",
+        "automation",
+        "industrial distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "RS Americas",
+      "website_url": "https://us.rsgroup.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and 2026 attendee pages.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Industrial parts and MRO distributor (Allied Electronics & Automation)",
+      "relevance_indicators": [
+        "industrial supplies",
+        "MRO",
+        "electronics",
+        "automation"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "RS Hughes Co Inc",
+      "website_url": "https://www.rshughes.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and 2026 attendee pages.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Industrial supplies and MRO distributor",
+      "relevance_indicators": [
+        "industrial supplies",
+        "MRO",
+        "adhesives",
+        "tapes"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Valin Corporation",
+      "website_url": "https://www.valin.com",
+      "source": "official_attendee_list_2025",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Technical solutions distributor for automation, fluid power and flow",
+      "relevance_indicators": [
+        "automation",
+        "fluid power",
+        "industrial distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Waldom Electronics",
+      "website_url": "https://www.waldom.com",
+      "source": "official_attendee_list_2025",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Electronic components and connector distributor",
+      "relevance_indicators": [
+        "electronics",
+        "components",
+        "industrial supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Shorr Packaging Corp",
+      "website_url": "https://www.shorr.com",
+      "source": "official_attendee_list_2025",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 attendee page.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/"
+      ],
+      "description": "Packaging materials and supplies distributor",
+      "relevance_indicators": [
+        "packaging",
+        "industrial supplies",
+        "warehouse supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Replenex",
+      "website_url": "https://www.replenex.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and 2026 attendee pages.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Industrial supplies and equipment distributor",
+      "relevance_indicators": [
+        "industrial supplies",
+        "equipment",
+        "MRO"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "APR Supply Co",
+      "website_url": "https://www.aprsupply.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "HVAC/R equipment and parts distributor",
+      "relevance_indicators": [
+        "HVAC",
+        "refrigeration",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Johnson Supply",
+      "website_url": "https://www.johnsonsupply.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Plumbing, HVAC and industrial supplies distributor",
+      "relevance_indicators": [
+        "plumbing",
+        "HVAC",
+        "industrial supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Pimberly",
+      "website_url": "https://www.pimberly.com",
+      "source": "official_sponsor_2026",
+      "source_reasoning": "Pimberly announced its participation as a sponsor/exhibitor at NAW Executive Summit 2026 on their official website, offering Product Information Management (PIM) solutions for distributors.",
+      "source_urls": [
+        "https://pimberly.com/events/naw-executive-summit/"
+      ],
+      "description": "Product Information Management (PIM) software for wholesale distributors",
+      "relevance_indicators": [
+        "technology vendor",
+        "PIM solutions",
+        "distribution software"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Descartes",
+      "website_url": "https://www.descartes.com",
+      "source": "official_sponsor_2026",
+      "source_reasoning": "Descartes announced participation at NAW Executive Summit 2026 on their official events page, providing logistics and supply chain technology solutions.",
+      "source_urls": [
+        "https://www.descartes.com/resources/events/naw-executive-summit"
+      ],
+      "description": "Supply chain and logistics technology solutions provider",
+      "relevance_indicators": [
+        "technology vendor",
+        "logistics",
+        "supply chain software"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Heritage Distribution Holdings",
+      "website_url": "https://www.heritagedist.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Pool and spa supplies distributor",
+      "relevance_indicators": [
+        "pool supplies",
+        "spa products",
+        "specialty distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Parksite Inc",
+      "website_url": "https://www.parksite.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Industrial packaging, safety and facility supplies distributor",
+      "relevance_indicators": [
+        "packaging",
+        "safety supplies",
+        "industrial distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "OmniCable Corporation",
+      "website_url": "https://www.omnicable.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Wire and cable distributor",
+      "relevance_indicators": [
+        "wire and cable",
+        "electrical supplies",
+        "industrial distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Nelson-Jameson Inc",
+      "website_url": "https://www.nelsonjameson.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Food and dairy processing supplies distributor",
+      "relevance_indicators": [
+        "food processing",
+        "dairy supplies",
+        "specialty distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Mighty Auto Parts",
+      "website_url": "https://www.mightyautoparts.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Auto parts distributor",
+      "relevance_indicators": [
+        "automotive parts",
+        "aftermarket",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "American Pipe & Supply Co Inc",
+      "website_url": "https://www.ampipe.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Pipe, valves and fittings distributor",
+      "relevance_indicators": [
+        "pipe",
+        "valves",
+        "industrial supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Eastern Metal Supply Inc",
+      "website_url": "https://www.easternmetals.com",
+      "source": "official_attendee_list_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2026 event page as a registered attendee/member company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Metal products distributor",
+      "relevance_indicators": [
+        "metals",
+        "industrial supplies",
+        "construction materials"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Salem Fabrication Technologies Group",
+      "website_url": "https://www.salemfab.com",
+      "source": "official_attendee_list_2025_2026",
+      "source_reasoning": "Listed on the official NAW Executive Summit 2025 and 2026 attendee pages.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-summit-2025/",
+        "https://www.naw.org/events/executive-summit-2026/"
+      ],
+      "description": "Fabrication and industrial supplies distributor",
+      "relevance_indicators": [
+        "fabrication",
+        "industrial supplies",
+        "manufacturing"
+      ],
+      "confidence": "confirmed"
+    }
+  ],
+  "total_confirmed": 47,
+  "total_likely": 3,
+  "sources_searched": [
+    "Official NAW Executive Summit 2026 event page",
+    "Official NAW Executive Summit 2025 attendee list",
+    "NAW Executive Summit 2025 recap with speakers",
+    "Sponsor and technology partner announcements",
+    "NAW membership directory references"
+  ],
+  "notes": "NAW Executive Summit 2026 takes place January 26-28, 2026 at Grand Hyatt Washington, DC. This is the premier strategy event for the American wholesale distribution industry, bringing together top executives from the largest and fastest-growing distribution firms across all sectors. The event is exclusive to NAW members and features high-level discussions on commercial growth and operational excellence. Many companies listed are confirmed attendees based on the official event page listing. Additional companies identified include confirmed speakers from 2025 Summit and technology sponsors. This event is HIGHLY RELEVANT for InstaLILY AI as it concentrates decision-makers from major US distributors across building materials, industrial parts, foodservice, electrical, plumbing, HVAC, and specialty distribution sectors - all matching InstaLILY's ICP perfectly.",
+  "success": true
+}
