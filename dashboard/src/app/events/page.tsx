@@ -1,19 +1,25 @@
-import { getScoredEvents, getEventCompanies } from "@/lib/data";
+import { getScoredEvents, getEventCompanies, getDiscoveredEvents } from "@/lib/data";
 import EventsList from "@/components/EventsList";
 
 export const dynamic = "force-dynamic";
 
 export default function EventsPage() {
   const scoredEvents = getScoredEvents();
+  const discoveredEvents = getDiscoveredEvents();
   const eventCompanies = getEventCompanies();
 
-  // Combine scored events with their company data
-  const events = (scoredEvents?.scored_events || []).map((event) => {
-    const companyData = eventCompanies.find(
-      (ec) => ec.event_name === event.event_name
+  // Combine discovered events with scoring data and company data
+  const events = discoveredEvents.map((discoveredEvent) => {
+    const scoreData = scoredEvents?.scored_events?.find(
+      (scoredEvent) => scoredEvent.event_name === discoveredEvent.event_name
     );
+    const companyData = eventCompanies.find(
+      (ec) => ec.event_name === discoveredEvent.event_name
+    );
+
     return {
-      ...event,
+      ...discoveredEvent, // All the rich event details (dates, location, venue, cost, etc.)
+      ...scoreData,       // Scoring information (overall_score, scores)
       companies: companyData?.companies || [],
       totalConfirmed: companyData?.total_confirmed || 0,
       totalLikely: companyData?.total_likely || 0,

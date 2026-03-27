@@ -1,14 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Company } from "@/lib/data";
+import { Company, EventScores } from "@/lib/data";
 
 interface EventWithCompanies {
   event_name: string;
   event_url?: string;
   dates?: string;
   location?: string;
+  venue?: string;
+  cost?: string;
+  description?: string;
+  industry_vertical?: string;
+  exhibitor_mix?: string;
+  audience_mix?: string;
   overall_score?: number;
+  scores?: EventScores;
+  reasoning?: string;
   companies: Company[];
   totalConfirmed: number;
   totalLikely: number;
@@ -20,15 +28,80 @@ interface EventsListProps {
 
 export default function EventsList({ events }: EventsListProps) {
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
 
   // Sort by score (highest first)
   const sortedEvents = [...events].sort(
     (a, b) => (b.overall_score || 0) - (a.overall_score || 0)
   );
 
+  const getIndustryBadgeColor = (industry?: string) => {
+    switch (industry) {
+      case "distribution": return "bg-blue-100 text-blue-800";
+      case "construction_supply": return "bg-orange-100 text-orange-800";
+      case "industrial_parts": return "bg-gray-100 text-gray-800";
+      case "field_service": return "bg-purple-100 text-purple-800";
+      case "pool_spa": return "bg-cyan-100 text-cyan-800";
+      default: return "bg-gray-100 text-gray-600";
+    }
+  };
+
+  const formatIndustryLabel = (industry?: string) => {
+    if (!industry) return "General";
+    return industry.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+  };
+
+  const renderScoringBreakdown = (scores?: EventScores) => {
+    if (!scores) {
+      return (
+        <div className="text-center py-8 text-gray-500">
+          <p>Scoring breakdown not available yet.</p>
+          <p className="text-sm">Run the event scoring pipeline to see detailed scores and rationales.</p>
+        </div>
+      );
+    }
+
+    const scoreCategories = [
+      { key: "industry_alignment", label: "Industry Alignment", weight: "40%" },
+      { key: "scale_timing", label: "Scale & Timing", weight: "20%" },
+      { key: "buyer_quality", label: "Buyer Quality", weight: "20%" },
+      { key: "buyer_intent_alignment", label: "Buyer Intent", weight: "15%" },
+    ];
+
+    return (
+      <div className="space-y-4">
+        {scoreCategories.map(({ key, label, weight }) => {
+          const scoreData = scores[key as keyof EventScores];
+          if (!scoreData) return null;
+
+          const score = scoreData.score;
+          const getScoreColor = (s: number) => {
+            if (s >= 8) return "text-green-600 bg-green-50 border-green-200";
+            if (s >= 6) return "text-yellow-600 bg-yellow-50 border-yellow-200";
+            return "text-red-600 bg-red-50 border-red-200";
+          };
+
+          return (
+            <div key={key} className="border border-gray-200 rounded-lg p-4">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="font-medium text-gray-900">{label}</h4>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-500">{weight}</span>
+                  <span className={`px-2 py-1 rounded text-sm font-medium border ${getScoreColor(score)}`}>
+                    {score}/10
+                  </span>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 leading-relaxed">{scoreData.rationale}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div>
-      {/* Events */}
       <div className="space-y-4">
         {sortedEvents.map((event) => {
           const isExpanded = expandedEvent === event.event_name;
@@ -36,97 +109,223 @@ export default function EventsList({ events }: EventsListProps) {
           return (
             <div
               key={event.event_name}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
             >
-              {/* Event Header */}
+              {/* Enhanced Event Header */}
               <div
-                className="p-4 cursor-pointer hover:bg-gray-50 transition-colors"
-                onClick={() =>
-                  setExpandedEvent(isExpanded ? null : event.event_name)
-                }
+                className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                onClick={() => {
+                  setExpandedEvent(isExpanded ? null : event.event_name);
+                  if (!isExpanded) setActiveTab("details");
+                }}
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    {event.overall_score != null && (
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          event.overall_score >= 8
-                            ? "bg-green-100 text-green-800"
-                            : event.overall_score >= 5
-                            ? "bg-yellow-100 text-yellow-800"
-                            : "bg-red-100 text-red-800"
-                        }`}
-                      >
-                        {event.overall_score.toFixed(1)}
-                      </span>
-                    )}
-                    <h3 className="font-semibold text-gray-900">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      {event.overall_score != null && (
+                        <span
+                          className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                            event.overall_score >= 8
+                              ? "bg-green-100 text-green-800"
+                              : event.overall_score >= 6
+                              ? "bg-yellow-100 text-yellow-800"
+                              : "bg-red-100 text-red-800"
+                          }`}
+                        >
+                          {event.overall_score.toFixed(1)}
+                        </span>
+                      )}
+                      {event.industry_vertical && (
+                        <span className={`px-2 py-1 rounded text-xs font-medium ${getIndustryBadgeColor(event.industry_vertical)}`}>
+                          {formatIndustryLabel(event.industry_vertical)}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {event.event_name}
                     </h3>
+                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                      {event.dates && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-gray-400">📅</span>
+                          <span>{event.dates}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-400">🏢</span>
+                        <span>{event.companies.length} companies</span>
+                      </div>
+                    </div>
                   </div>
-                  <button className="text-gray-400 hover:text-gray-600">
+                  <button className="ml-4 text-gray-400 hover:text-gray-600 transition-colors">
                     {isExpanded ? "▲" : "▼"}
                   </button>
                 </div>
-                <div className="flex items-center gap-4 mt-2 text-sm text-gray-500">
-                  {event.dates && <span>{event.dates}</span>}
-                  {event.location && <span>• {event.location}</span>}
-                  <span>• {event.companies.length} companies</span>
-                </div>
               </div>
 
-              {/* Expanded Company List */}
-              {isExpanded && event.companies.length > 0 && (
+              {/* Expanded Content */}
+              {isExpanded && (
                 <div className="border-t border-gray-200">
-                  <table className="w-full">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="w-1/2 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                          Company
-                        </th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
-                          Type
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                      {event.companies.map((company, index) => {
-                        // Derive attendance type from confidence field
-                        const attendanceType = company.confidence === 'confirmed'
-                          ? 'Confirmed'
-                          : company.confidence === 'likely'
-                          ? 'Likely'
-                          : company.attendance_type || 'Unknown';
+                  {/* Tab Navigation */}
+                  <div className="flex border-b border-gray-200 bg-gray-50">
+                    <button
+                      onClick={() => setActiveTab("details")}
+                      className={`px-6 py-3 text-sm font-medium transition-colors ${
+                        activeTab === "details"
+                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
+                          : "text-gray-600 hover:text-gray-800"
+                      }`}
+                    >
+                      Event Details
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("scoring")}
+                      className={`px-6 py-3 text-sm font-medium transition-colors ${
+                        activeTab === "scoring"
+                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
+                          : "text-gray-600 hover:text-gray-800"
+                      }`}
+                    >
+                      Scoring Breakdown
+                    </button>
+                    <button
+                      onClick={() => setActiveTab("companies")}
+                      className={`px-6 py-3 text-sm font-medium transition-colors ${
+                        activeTab === "companies"
+                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
+                          : "text-gray-600 hover:text-gray-800"
+                      }`}
+                    >
+                      Companies ({event.companies.length})
+                    </button>
+                  </div>
 
-                        return (
-                          <tr key={index} className="hover:bg-gray-50">
-                            <td className="px-4 py-3 text-sm text-gray-900">
-                              {company.company_name}
-                            </td>
-                            <td className="px-4 py-3 text-sm">
-                              <span
-                                className={`px-2 py-1 rounded-full text-xs ${
-                                  attendanceType === "Confirmed"
-                                    ? "bg-green-100 text-green-700"
-                                    : attendanceType === "Likely"
-                                    ? "bg-blue-100 text-blue-700"
-                                    : "bg-gray-100 text-gray-600"
-                                }`}
-                              >
-                                {attendanceType}
-                              </span>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              )}
+                  {/* Tab Content */}
+                  <div className="p-6">
+                    {activeTab === "details" && (
+                      <div className="space-y-6">
+                        {/* All Event Information */}
+                        <div className="bg-gray-50 rounded-lg p-4">
+                          <h4 className="font-medium text-gray-900 mb-4">Event Information</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {event.dates && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Dates</span>
+                                <p className="text-gray-900">{event.dates}</p>
+                              </div>
+                            )}
+                            {event.location && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Location</span>
+                                <p className="text-gray-900">{event.location}</p>
+                              </div>
+                            )}
+                            {event.venue && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Venue</span>
+                                <p className="text-gray-900">{event.venue}</p>
+                              </div>
+                            )}
+                            {event.cost && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Cost</span>
+                                <p className="text-gray-900">{event.cost}</p>
+                              </div>
+                            )}
+                            {event.event_url && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Website</span>
+                                <br />
+                                <a
+                                  href={event.event_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-blue-600 hover:text-blue-800 underline break-all"
+                                >
+                                  {event.event_url}
+                                </a>
+                              </div>
+                            )}
+                            {event.industry_vertical && (
+                              <div>
+                                <span className="text-sm font-medium text-gray-500">Industry</span>
+                                <p className="text-gray-900">{formatIndustryLabel(event.industry_vertical)}</p>
+                              </div>
+                            )}
+                            {event.description && (
+                              <div className="col-span-full">
+                                <span className="text-sm font-medium text-gray-500">Description</span>
+                                <p className="text-gray-900 leading-relaxed">{event.description}</p>
+                              </div>
+                            )}
+                            {event.exhibitor_mix && (
+                              <div className="col-span-full md:col-span-1">
+                                <span className="text-sm font-medium text-gray-500">Exhibitor Mix</span>
+                                <p className="text-gray-900">{event.exhibitor_mix}</p>
+                              </div>
+                            )}
+                            {event.audience_mix && (
+                              <div className="col-span-full md:col-span-1">
+                                <span className="text-sm font-medium text-gray-500">Audience Mix</span>
+                                <p className="text-gray-900">{event.audience_mix}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
-              {isExpanded && event.companies.length === 0 && (
-                <div className="border-t border-gray-200 p-6 text-center text-gray-500">
-                  No companies discovered for this event yet.
+                    {activeTab === "scoring" && renderScoringBreakdown(event.scores)}
+
+                    {activeTab === "companies" && (
+                      <div>
+                        {event.companies.length > 0 ? (
+                          <table className="w-full">
+                            <thead>
+                              <tr className="border-b border-gray-200">
+                                <th className="text-left py-3 text-sm font-medium text-gray-500">Company</th>
+                                <th className="text-left py-3 text-sm font-medium text-gray-500">Type</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                              {event.companies.map((company, index) => {
+                                const attendanceType = company.confidence === 'confirmed'
+                                  ? 'Confirmed'
+                                  : company.confidence === 'likely'
+                                  ? 'Likely'
+                                  : company.attendance_type || 'Unknown';
+
+                                return (
+                                  <tr key={index} className="hover:bg-gray-50">
+                                    <td className="py-3 text-sm text-gray-900">
+                                      {company.company_name}
+                                    </td>
+                                    <td className="py-3">
+                                      <span
+                                        className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                          attendanceType === "Confirmed"
+                                            ? "bg-green-100 text-green-700"
+                                            : attendanceType === "Likely"
+                                            ? "bg-blue-100 text-blue-700"
+                                            : "bg-gray-100 text-gray-600"
+                                        }`}
+                                      >
+                                        {attendanceType}
+                                      </span>
+                                    </td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        ) : (
+                          <div className="text-center py-8 text-gray-500">
+                            No companies discovered for this event yet.
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

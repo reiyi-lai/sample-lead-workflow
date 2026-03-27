@@ -47,9 +47,7 @@ IDEAL CUSTOMER PROFILE (ICP):
     • Building materials & construction supply distributors
     • Industrial parts distributors and manufacturers
     • Commercial equipment distributors and service providers (e.g., restaurant equipment, HVAC)
-    • Pool & spa supply distributors
     • Fastener and specialty hardware distributors
-    • Insurance and healthcare services (claims operations)
     • Field service organizations (equipment maintenance, repair)
 
   Company Size:
@@ -96,10 +94,10 @@ KNOWN CUSTOMERS (for reference, do not mention in outreach unless publicly known
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {INSTALILY_CONTEXT}
 
-Based on the context provided above, identify events in 2026 that companies that match InstaLILY's ICP are likely to attend.
+Based on the context provided above, identify at LEAST 20 events in 2026 that companies that match InstaLILY's ICP are likely to attend.
 
 SEARCH STRATEGY:
-Use web search to find relevant trade shows and industry events coming up in 2026. Execute searches for:
+Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:
 1. Major known events in distribution, supply chain, industrial, and construction supply industries
 2. Industry association events and conferences
 3. PE/VC and digital transformation events with distribution focus
@@ -108,6 +106,7 @@ You can start with this list of major events first, and then continue to conduct
 - HARDI Annual Conference 2026
 - MDM SHIFT Conference 2026
 - NAW Executive Summit 2026
+- MODEX 2026 (Manufacturing & Logistics Expo)
 - ISA (Industrial Supply Association) Convention 2026
 - Distribution Strategy Summit 2026
 - STAFDA Annual Convention 2026
@@ -118,21 +117,27 @@ FOR EACH EVENT FOUND, EXTRACT:
 - Dates (or date range if exact dates unknown)
 - Location (city, venue if available)
 - Event website URL
+- Cost of attending (registration fees, if available)
 - Brief description of the event
-- Which industry vertical it serves (distribution, construction_supply, industrial_parts, field_service, insurance_healthcare, pool_spa)
+- Which industry vertical it serves (distribution, construction_supply, industrial_parts, field_service, others)
+- Exhibitor mix (types of companies that exhibit - e.g. "Software vendors, equipment manufacturers, service providers")
+- Audience mix (types of attendees/buyers - e.g. "Warehouse leaders, 3PL executives, logistics operators")
 
 OUTPUT FORMAT:
-Return a JSON array of events.
+Return a JSON array of at least 20 events.
 Example:
 [
   {{
     "event_name": "HARDI Annual Conference 2026",
     "dates": "December 5-8, 2026",
     "location": "Orlando, FL",
+    "cost": "$3,500 per attendee (all-in: sessions + expo + networking + Chairman's Dinner)",
     "venue": "Orlando Convention Center",
     "event_url": "https://hardinet.org",
     "description": "Premier event for HVACR distribution industry leaders",
-    "industry_vertical": "distribution"
+    "industry_vertical": "distribution",
+    "exhibitor_mix": "HVAC equipment manufacturers, refrigeration suppliers, distribution technology vendors, service providers",
+    "audience_mix": "HVAC distributors, warehouse managers, operations directors, procurement leaders, branch managers"
   }}
 ]
 """
@@ -145,27 +150,37 @@ Your job is to prioritize which events are worth investing resources to identify
 
 SCORING CRITERIA (each 0-10):
 
-1. INDUSTRY ALIGNMENT (weight: 50%)
-   • 10: Core InstaLILY verticals (distribution, construction supply, industrial parts, field service)
-   • 7-9: Adjacent industries (insurance/healthcare operations, PE portfolio companies, supply chain)
-   • 4-6: Tangentially related (general manufacturing, retail, logistics)
+1. INDUSTRY ALIGNMENT (weight: 0.4)
+   Look for events focused on supply chain operations.
+   • 10: Core supply chain verticals (distribution, 3PL, warehousing, field service)
+   • 7-9: Adjacent supply chain segments (manufacturing ops, retail fulfillment)
+   • 4-6: Broader business events with supply chain tracks
    • 0-3: Unrelated industries
 
-2. EXHIBITOR QUALITY SIGNALS (weight: 30%)
-   • 10: Known to have mid-market/enterprise distributors, suppliers, and field service companies as exhibitors
-   • 7-9: Industry-specific B2B event (likely relevant exhibitors with distribution focus)
-   • 4-6: Mixed B2B event with some distribution presence
-   • 0-3: Primarily B2C or unrelated exhibitor base
-
-3. EVENT SCALE & TIMING (weight: 20%)
-   • 10: Major annual event, 2025-2026, US-based
+2. EVENT SCALE & TIMING (weight: 0.25)
+   Prioritize larger, established events in 2026 that are accessible to US sales team.
+   • 10: Major annual event, US-based
    • 7-9: Significant regional event or international major event
    • 4-6: Smaller niche event or slightly outside date range
    • 0-3: Very small, past, or geographically inaccessible
 
+3. BUYER QUALITY (weight: 0.25)
+   Evaluate attendee seniority from speaker lists, past attendee profiles, and event descriptions.
+   • 10: High concentration of C-suite, VPs, and Head of Operations attendees (key decision makers)
+   • 7-9: Mix of senior executives with significant ops leadership presence
+   • 4-6: Mid-level management with some senior stakeholders
+   • 0-3: Primarily junior staff, technicians, or non-decision makers
+
+4. AUDIENCE/BUYER INTENT ALIGNMENT (weight: 0.1)
+   Evaluate whether attendees are actively seeking operational solutions or are in problem-aware/solution-seeking mode.
+   • 10: Operations-focused buyers actively seeking efficiency/automation solutions (ops directors, warehouse leaders evaluating tech)
+   • 7-9: Mix of solution-seeking and educational attendees (some looking to solve ops problems)
+   • 4-6: General industry attendees with moderate interest in operational improvements
+   • 0-3: Primarily educational/networking focused with minimal solution-seeking intent
+
 At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
 
-CALCULATE: overall_score = (industry * 0.5) + (exhibitor_quality * 0.3) + (scale_timing * 0.2)
+CALCULATE: overall_score = (industry * 0.45) + (scale_timing * 0.25) + (buyer_quality * 0.25) + (buyer_intent * 0.1)
 
 OUTPUT FORMAT:
 Return JSON with all scored events:
@@ -176,11 +191,24 @@ Return JSON with all scored events:
       "event_url": "...",
       "overall_score": 9.2,
       "scores": {{
-        "industry_alignment": 10,
-        "exhibitor_quality": 9,
-        "scale_timing": 8
+        "industry_alignment": {{
+          "score": 10,
+          "rationale": "Core distribution vertical - HVAC distributors are key InstaLILY ICP. Event serves building materials, construction supply, and commercial equipment distributors who face complex inventory management and multi-location operations challenges. Perfect alignment with InstaLILY's target verticals of distribution-heavy, operationally intensive businesses."
+        }},
+        "scale_timing": {{
+          "score": 8,
+          "rationale": "Major annual US event in 2026, well-established industry conference with strong attendance. Easily accessible to US sales team and occurs within optimal timing window. Significant industry presence and established reputation make it worth investment of resources."
+        }},
+        "buyer_quality": {{
+          "score": 9,
+          "rationale": "High concentration of distribution executives, ops directors, and branch managers attending. Speaker lineup includes C-suite leaders from major distributors and industry associations. Strong presence of decision-makers with budget authority for operational technology investments."
+        }},
+        "buyer_intent_alignment": {{
+          "score": 7,
+          "rationale": "Mix of operational improvement seekers and general industry networking attendees. Conference agenda includes sessions on technology adoption and operational efficiency. Some attendees actively seeking solutions while others attending primarily for industry education and relationship building."
+        }}
       }},
-      "reasoning": "ISA Sign Expo is the premier signage industry event..."
+      "reasoning": "HARDI is the premier HVAC distribution industry event with strong ICP alignment..."
     }}
   ],
   "summary": {{
@@ -206,7 +234,6 @@ WHAT TO LOOK FOR:
 • Building materials and construction supply distributors
 • Industrial parts distributors and manufacturers
 • Commercial equipment distributors and service providers
-• Pool & spa supply distributors
 • Fastener and specialty hardware distributors
 • Field service organizations
 • Insurance and healthcare services companies
