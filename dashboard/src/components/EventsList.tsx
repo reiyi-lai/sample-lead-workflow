@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Company, EventScores } from "@/lib/data";
+import EventsFilters from "./EventsFilters";
+import { isEventInDateRange } from "@/lib/dateUtils";
 
 interface EventWithCompanies {
   event_name: string;
@@ -17,6 +19,7 @@ interface EventWithCompanies {
   overall_score?: number;
   scores?: EventScores;
   reasoning?: string;
+  sales_brief?: string;
   companies: Company[];
   totalConfirmed: number;
   totalLikely: number;
@@ -26,14 +29,48 @@ interface EventsListProps {
   events: EventWithCompanies[];
 }
 
+interface DateRange {
+  start: string;
+  end: string;
+}
+
 export default function EventsList({ events }: EventsListProps) {
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
+  const [dateRange, setDateRange] = useState<DateRange | null>(null);
+  const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
 
-  // Sort by score (highest first)
-  const sortedEvents = [...events].sort(
-    (a, b) => (b.overall_score || 0) - (a.overall_score || 0)
-  );
+  // Get available industries for filter dropdown
+  const availableIndustries = useMemo(() => {
+    const industries = new Set(
+      events
+        .map(event => event.industry_vertical)
+        .filter(Boolean)
+        .filter((industry): industry is string => typeof industry === 'string')
+    );
+    return Array.from(industries).sort();
+  }, [events]);
+
+  // Filter and sort events
+  const filteredAndSortedEvents = useMemo(() => {
+    let filtered = [...events];
+
+    // Apply date range filter
+    if (dateRange && dateRange.start && dateRange.end) {
+      filtered = filtered.filter(event => {
+        if (!event.dates) return false;
+        return isEventInDateRange(event.dates, dateRange.start, dateRange.end);
+      });
+    }
+
+    // Apply industry filter
+    if (selectedIndustry) {
+      filtered = filtered.filter(event => event.industry_vertical === selectedIndustry);
+    }
+
+    // Sort by score (highest first)
+    return filtered.sort((a, b) => (b.overall_score || 0) - (a.overall_score || 0));
+  }, [events, dateRange, selectedIndustry]);
 
   const getIndustryBadgeColor = (industry?: string) => {
     switch (industry) {
@@ -42,12 +79,14 @@ export default function EventsList({ events }: EventsListProps) {
       case "industrial_parts": return "bg-gray-100 text-gray-800";
       case "field_service": return "bg-purple-100 text-purple-800";
       case "pool_spa": return "bg-cyan-100 text-cyan-800";
+      case "others": return "bg-green-100 text-green-800";
       default: return "bg-gray-100 text-gray-600";
     }
   };
 
   const formatIndustryLabel = (industry?: string) => {
     if (!industry) return "General";
+    if (industry === "others") return "Others";
     return industry.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
   };
 
@@ -102,8 +141,22 @@ export default function EventsList({ events }: EventsListProps) {
 
   return (
     <div>
+      {/* Filters */}
+      <EventsFilters
+        onDateRangeChange={setDateRange}
+        onIndustryChange={setSelectedIndustry}
+        availableIndustries={availableIndustries}
+      />
+
+      {/* Results Summary */}
+      {(dateRange || selectedIndustry) && (
+        <div className="mb-4 text-sm text-gray-600">
+          Showing {filteredAndSortedEvents.length} of {events.length} events
+        </div>
+      )}
+
       <div className="space-y-4">
-        {sortedEvents.map((event) => {
+        {filteredAndSortedEvents.map((event) => {
           const isExpanded = expandedEvent === event.event_name;
 
           return (
@@ -204,6 +257,17 @@ export default function EventsList({ events }: EventsListProps) {
                   <div className="p-6">
                     {activeTab === "details" && (
                       <div className="space-y-6">
+                        {/* Sales Brief */}
+                        {event.sales_brief && (
+                          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h4 className="font-medium text-blue-900 mb-3 flex items-center">
+                              <span className="mr-2">🎯</span>
+                              Sales Brief
+                            </h4>
+                            <p className="text-blue-800 leading-relaxed">{event.sales_brief}</p>
+                          </div>
+                        )}
+
                         {/* All Event Information */}
                         <div className="bg-gray-50 rounded-lg p-4">
                           <h4 className="font-medium text-gray-900 mb-4">Event Information</h4>
@@ -332,9 +396,12 @@ export default function EventsList({ events }: EventsListProps) {
           );
         })}
 
-        {sortedEvents.length === 0 && (
+        {filteredAndSortedEvents.length === 0 && (
           <div className="text-center py-12 text-gray-500">
-            No events found.
+            {events.length === 0
+              ? "No events found."
+              : "No events match the selected filters."
+            }
           </div>
         )}
       </div>

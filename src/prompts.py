@@ -48,7 +48,11 @@ IDEAL CUSTOMER PROFILE (ICP):
     • Industrial parts distributors and manufacturers
     • Commercial equipment distributors and service providers (e.g., restaurant equipment, HVAC)
     • Fastener and specialty hardware distributors
+    • Medical or healthcare equipment supply distributors
     • Field service organizations (equipment maintenance, repair)
+    • Chemicals and raw materials supply distributors
+    • Agriculture and food supply distributors
+    • Retail and consumer goods supply distributors
 
   Company Size:
     • Mid-market to Enterprise ($500M+ annual revenue preferred, $100M+ minimum)
@@ -94,7 +98,7 @@ KNOWN CUSTOMERS (for reference, do not mention in outreach unless publicly known
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {INSTALILY_CONTEXT}
 
-Based on the context provided above, identify at LEAST 20 events in 2026 that companies that match InstaLILY's ICP are likely to attend.
+Based on the context provided above, identify at LEAST 20 events in April - December 2026 (NO EARLIER THAN APRIL 2026) that companies that match InstaLILY's ICP are likely to attend.
 
 SEARCH STRATEGY:
 Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:
@@ -151,8 +155,8 @@ Your job is to prioritize which events are worth investing resources to identify
 SCORING CRITERIA (each 0-10):
 
 1. INDUSTRY ALIGNMENT (weight: 0.4)
-   Look for events focused on supply chain operations.
-   • 10: Core supply chain verticals (distribution, 3PL, warehousing, field service)
+   Look for verticals/themes focused on supply chain operations.
+   • 10: Core supply chain verticals (distribution, 3PL, warehousing, field service, construction supply, industrial parts, chemicals or other supply chain distributor)
    • 7-9: Adjacent supply chain segments (manufacturing ops, retail fulfillment)
    • 4-6: Broader business events with supply chain tracks
    • 0-3: Unrelated industries
@@ -310,13 +314,13 @@ RESEARCH APPROACH:
 
 SCORING CATEGORIES (each 1-10):
 1. INDUSTRY FIT — How closely does the company align with InstaLILY's target verticals?
-   • Direct match (distribution, construction supply, industrial parts, commercial equipment, field service) → 9-10
-   • Adjacent (manufacturing, insurance/healthcare, logistics, supply chain) → 6-8
-   • Tangential (retail, general services, software) → 3-5
+   • Direct match (distribution, construction supply, industrial parts, field service, chemicals or other supply chain distributor) → 9-10
+   • Adjacent industries that don't exactly match the ICP → 6-8
+   • Tangential (general services, software etc.) → 3-5
 
 2. SIZE/REVENUE FIT — Does the company meet the preferred size threshold?
-   • $500M+ revenue, 1000+ employees, multi-location national/global → 9-10
-   • $100M-500M, 200-1000 employees, national → 7-8
+   • $200M+ revenue, 1000+ employees, multi-location national/global → 9-10
+   • $100M-200M, 200-1000 employees, national → 7-8
    • $50M-100M, 100-200 employees, regional → 5-6
    • <$50M, <100 employees, local → 3-4
 

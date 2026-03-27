@@ -16,7 +16,7 @@ export default function Sidebar() {
     <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
       {/* Logo/Title */}
       <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-gray-900">Dupont Tedlar</h1>
+        <h1 className="text-xl font-bold text-gray-900">Instalily GTM Pipeline</h1>
         <p className="text-sm text-gray-500 mt-1">Lead Generation Pipeline</p>
       </div>
 
@@ -47,7 +47,7 @@ export default function Sidebar() {
       {/* Footer */}
       <div className="p-4 border-t border-gray-200">
         <p className="text-xs text-gray-400 text-center">
-          DuPont Tedlar Pipeline
+          Instalily GTM Pipeline
         </p>
       </div>
     </aside>

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dupont Tedlar",
+  title: "Instalily GTM",
   description: "DuPont Tedlar Lead Generation Pipeline Dashboard",
 };
 
