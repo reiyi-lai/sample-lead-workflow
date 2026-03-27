@@ -91,8 +91,8 @@ export default function EventsList({ events }: EventsListProps) {
                     </thead>
                     <tbody className="divide-y divide-gray-200">
                       {event.companies.map((company, index) => {
-                        // Derive attendance type from source or confidence fields
-                        const attendanceType = company.source?.includes('confirmed')
+                        // Derive attendance type from confidence field
+                        const attendanceType = company.confidence === 'confirmed'
                           ? 'Confirmed'
                           : company.confidence === 'likely'
                           ? 'Likely'
