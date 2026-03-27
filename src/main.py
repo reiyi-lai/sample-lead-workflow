@@ -1,4 +1,4 @@
-# Event-driven Pipeline Orchestrator for Tedlar GTM Lead Generation
+# Event-driven Pipeline Orchestrator for InstaLILY GTM Lead Generation
 # Async with callbacks, shared rate limiter, file-based resume capability
 
 import os
@@ -62,7 +62,7 @@ class PipelineOrchestrator:
     # Concurrency limits for parallel processing
     MAX_CONCURRENT_STAGE2 = 2  # Companies processed in parallel for research & scoring
     MAX_CONCURRENT_STAGE3 = 3  # Companies processed in parallel for target role identification
-    MAX_CONCURRENT_STAGE4 = 3  # Roles processed in parallel for outreach generation
+    MAX_CONCURRENT_STAGE4 = 1  # Roles processed in parallel for outreach generation
 
     def __init__(self, data_dir: str = "data", tokens_per_min: int = 30000):
         self.data_dir = Path(data_dir)
@@ -329,7 +329,7 @@ class PipelineOrchestrator:
 
     async def run_full_pipeline(self):
         """Run full pipeline: Stage 1 (events) -> Stage 2 (scoring) -> Stage 3 (roles) -> Stage 4 (outreach)."""
-        print(f"\nTEDLAR GTM PIPELINE ORCHESTRATOR")
+        print(f"\nINSTALILY GTM PIPELINE ORCHESTRATOR")
         print(f"  Data: {self.data_dir} | Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
         print(f"  Event cutoff: {EVENT_SCORE_CUTOFF} | Company cutoff: {COMPANY_SCORE_CUTOFF}")
 
@@ -402,7 +402,7 @@ class PipelineOrchestrator:
         print(f"\n  Total unique companies processed: {len(self._seen_urls)}")
         self._print_summary()
 
-        summary = {"pipeline": "tedlar_gtm_orchestrator", "timestamp": datetime.now().isoformat(), "stats": self.stats}
+        summary = {"pipeline": "instalily_gtm_orchestrator", "timestamp": datetime.now().isoformat(), "stats": self.stats}
         save_json(self.data_dir / "pipeline_summary.json", summary)
         return summary
 
@@ -413,7 +413,7 @@ class PipelineOrchestrator:
 def main():
     import argparse
 
-    parser = argparse.ArgumentParser(description="Tedlar GTM Pipeline Orchestrator")
+    parser = argparse.ArgumentParser(description="InstaLILY GTM Pipeline Orchestrator")
     parser.add_argument("--data-dir", default="data")
     parser.add_argument("--tokens-per-min", type=int, default=30000)
 
