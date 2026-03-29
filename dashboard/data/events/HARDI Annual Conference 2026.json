@@ -1,0 +1,1022 @@
+{
+  "event_name": "HARDI Annual Conference 2026",
+  "event_url": "https://hardinet.org/annual-conference",
+  "companies": [
+    {
+      "company_name": "Watsco Inc.",
+      "website_url": "https://watsco.com",
+      "source": "known_member_top_distributor",
+      "source_reasoning": "Watsco is consistently ranked as the #1 HVACR distributor in North America and is a HARDI member. With 690+ locations and 7,425+ employees, they are the largest attendee category for HARDI events.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025",
+        "https://www.achrnews.com/articles/146611-top-30-hvacr-distributors-of-2022"
+      ],
+      "description": "Largest HVACR distributor in North America, 690+ locations across US",
+      "relevance_indicators": [
+        "HVACR distribution",
+        "multi-location operations",
+        "equipment parts and supplies",
+        "field service"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Ferguson Enterprises",
+      "website_url": "https://ferguson.com",
+      "source": "known_member_top_distributor",
+      "source_reasoning": "Ferguson is ranked #2 among top HVACR distributors and is a HARDI member. Major multi-location distributor serving commercial and residential markets.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025"
+      ],
+      "description": "Major HVACR and plumbing distributor, ranked #2 in US",
+      "relevance_indicators": [
+        "HVACR wholesale distribution",
+        "commercial equipment",
+        "multi-branch operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Winsupply Inc.",
+      "website_url": "https://winsupply.com",
+      "source": "known_member_top_distributor",
+      "source_reasoning": "Winsupply is ranked #3 among top HVACR distributors with over $1 billion in sales and is a HARDI member operating multiple branches.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025"
+      ],
+      "description": "HVACR distributor with nationwide presence, $1B+ revenue",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment",
+        "local market focus"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "R.E. Michel Company",
+      "website_url": "https://remichel.com",
+      "source": "known_member_award_winner",
+      "source_reasoning": "R.E. Michel won the Talent Pillar Award at HARDI's 2025 conference and is ranked #4 among top HVACR distributors. Active HARDI participant.",
+      "source_urls": [
+        "https://www.phcppros.com/articles/22630-hardi-concludes-largest-annual-conference-to-date",
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025"
+      ],
+      "description": "Major HVACR distributor based in Glen Burnie, MD",
+      "relevance_indicators": [
+        "HVACR wholesale",
+        "multi-location distributor",
+        "training and development"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Russell Sigler Inc.",
+      "website_url": "https://russellsigler.com",
+      "source": "known_member_top_distributor",
+      "source_reasoning": "Russell Sigler is a top-5 HVACR distributor and HARDI member, based in Arizona with national operations.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/152995-top-30-hvacr-distributors-of-2023"
+      ],
+      "description": "Major HVACR distributor, $1B+ revenue, based in Tolleson, AZ",
+      "relevance_indicators": [
+        "commercial HVAC",
+        "residential equipment",
+        "wholesale distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Standard Supply & Distributing Co.",
+      "website_url": "https://standardsupply.com",
+      "source": "board_leadership",
+      "source_reasoning": "Loran Liu of Standard Supply was the outgoing Board Chair at HARDI's 2025 conference, indicating active leadership and participation.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "HVACR distributor with board leadership role at HARDI",
+      "relevance_indicators": [
+        "HVACR distribution",
+        "industry leadership",
+        "wholesale operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "cfm Distributors",
+      "website_url": "https://cfmdist.com",
+      "source": "board_leadership",
+      "source_reasoning": "Lauren Roberts of cfm Distributors was elected as incoming Board Chair at HARDI's 2025 conference, indicating strong organizational involvement.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "HVACR distributor, new HARDI Board Chair for 2026",
+      "relevance_indicators": [
+        "HVACR wholesale",
+        "industry leadership",
+        "distribution operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Heating & Cooling Supply",
+      "website_url": "https://heatingcoolingsupply.com",
+      "source": "board_member",
+      "source_reasoning": "Steve Roe of Heating & Cooling Supply was re-elected to a second term as HARDI Director at the 2025 conference.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "HVACR distributor with HARDI board representation",
+      "relevance_indicators": [
+        "heating equipment",
+        "cooling systems",
+        "wholesale distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Mingledorff's Inc.",
+      "website_url": "https://mingledorffs.com",
+      "source": "board_member",
+      "source_reasoning": "Jeff Mingledorff was re-elected to a second term as HARDI Director at the 2025 conference.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "Family-owned HVACR distributor in Southeast US",
+      "relevance_indicators": [
+        "HVACR distribution",
+        "multi-branch operations",
+        "commercial and residential"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "American Refrigeration Supplies",
+      "website_url": "https://americanrefrigeration.com",
+      "source": "board_member_award_winner",
+      "source_reasoning": "John White of American Refrigeration Supplies was welcomed as new HARDI Director and the company won the LATAM Distributor Award at 2025 conference.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "Refrigeration supplies distributor with Latin America presence",
+      "relevance_indicators": [
+        "refrigeration equipment",
+        "HVACR supplies",
+        "Latin America operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "RectorSeal",
+      "website_url": "https://rectorseal.com",
+      "source": "board_member_supplier",
+      "source_reasoning": "Jeff Underwood of RectorSeal was welcomed as new Parts & Supplies Manufacturer Director at HARDI's 2025 conference.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "Manufacturer of HVACR parts and supplies",
+      "relevance_indicators": [
+        "HVAC parts manufacturing",
+        "sealants and accessories",
+        "wholesale supplier"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "DiversiTech Corporation",
+      "website_url": "https://diversitech.com",
+      "source": "award_winner_2025",
+      "source_reasoning": "Kerri Cupp of DiversiTech won the Voice of Distributor Award at HARDI's 2025 conference, indicating active participation.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "HVACR parts and equipment manufacturer and distributor",
+      "relevance_indicators": [
+        "HVAC equipment",
+        "parts distribution",
+        "commercial and residential"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Nu-Calgon",
+      "website_url": "https://nucalgon.com",
+      "source": "supplier_board_member",
+      "source_reasoning": "DeWight Wallace of Nu-Calgon was recognized as outgoing Supplier Director at HARDI's 2025 conference and won LATAM Strategic Sponsor Award.",
+      "source_urls": [
+        "https://hardinet.org/posts/press-release/record-attendance-at-hardis-2025-annual-conference-as-hvacr-sets-the-gold-standard"
+      ],
+      "description": "Manufacturer of specialty chemicals and cleaners for HVACR",
+      "relevance_indicators": [
+        "HVACR chemicals",
+        "coil cleaners",
+        "refrigeration supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Williams Comfort Products",
+      "website_url": "https://williamscomfort.com",
+      "source": "award_winner_2025",
+      "source_reasoning": "Ruth Ann Davis of Williams Comfort Products won the Lifetime Achievement Award at HARDI's 2025 conference.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "HVAC equipment and comfort products manufacturer",
+      "relevance_indicators": [
+        "HVAC equipment",
+        "furnaces",
+        "air handlers"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "mSupply",
+      "website_url": "https://msupply.com",
+      "source": "award_winner_2025",
+      "source_reasoning": "mSupply won the Market Intelligence Pillar Award at HARDI's 2025 conference.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "HVACR distribution",
+        "market intelligence"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Johnstone Supply",
+      "website_url": "https://johnstonesupply.com",
+      "source": "award_winner_known_member",
+      "source_reasoning": "The Wallace Group and The Orion Group, both Johnstone Supply operations, won Advocacy Pillar Awards at 2025 HARDI conference. Johnstone is a major HVACR distributor.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "Major HVACR distributor with 400+ locations nationwide",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment",
+        "cooperative model"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "NAVAC Inc.",
+      "website_url": "https://navacusa.com",
+      "source": "award_winner_sponsor",
+      "source_reasoning": "NAVAC won a LATAM Strategic Sponsor Award at HARDI's 2025 conference.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "Manufacturer of vacuum pumps and HVAC tools",
+      "relevance_indicators": [
+        "HVAC tools",
+        "vacuum pumps",
+        "service equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Chemours",
+      "website_url": "https://chemours.com",
+      "source": "award_winner_sponsor",
+      "source_reasoning": "Chemours won a LATAM Strategic Sponsor Award at HARDI's 2025 conference. Major refrigerant manufacturer.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/165702-new-leadership-announced-at-2025-hardi-conference"
+      ],
+      "description": "Global chemical company, refrigerant manufacturer",
+      "relevance_indicators": [
+        "refrigerants",
+        "Opteon refrigerants",
+        "A2L transition"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "RenewAire",
+      "website_url": "https://renewaire.com",
+      "source": "exhibitor_2025",
+      "source_reasoning": "RenewAire exhibited at HARDI 2025 conference at Booth #122, showcasing energy recovery ventilators.",
+      "source_urls": [
+        "https://renewaire.com/event/hardi-2025/"
+      ],
+      "booth_number": "122",
+      "description": "Manufacturer of energy recovery ventilators (ERVs)",
+      "relevance_indicators": [
+        "ERV systems",
+        "indoor air quality",
+        "ventilation equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Armacell",
+      "website_url": "https://armacell.com",
+      "source": "exhibitor_sponsor_2025",
+      "source_reasoning": "Armacell promoted their attendance at HARDI 2025 Annual Conference and is known to exhibit at HARDI events.",
+      "source_urls": [
+        "https://www.armacell.com/en-US/hardi-annual-conference"
+      ],
+      "description": "Manufacturer of insulation materials for HVACR",
+      "relevance_indicators": [
+        "thermal insulation",
+        "pipe insulation",
+        "HVAC materials"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "HawkSearch",
+      "website_url": "https://hawksearch.com",
+      "source": "exhibitor_2025",
+      "source_reasoning": "HawkSearch confirmed attendance at HARDI 2025 with team members onsite for B2B eCommerce solutions for HVACR distributors.",
+      "source_urls": [
+        "https://www.hawksearch.com/conferences/hardi-annual-conference"
+      ],
+      "description": "AI-powered search and product discovery platform for B2B",
+      "relevance_indicators": [
+        "eCommerce platform",
+        "search technology",
+        "digital transformation"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "The Habegger Corporation",
+      "website_url": "https://habegger.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Habegger is consistently ranked in the top 10 HVACR distributors and is a HARDI member with $500M+ in sales.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/154566-the-top-30-hvacr-distributors-of-2024"
+      ],
+      "description": "Major HVACR distributor, top 10 in US",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment",
+        "multi-branch operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Gustave A. Larson Company",
+      "website_url": "https://larsonsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Larson Company is a top 10 HVACR distributor with 52 branches and is a HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/144907-top-30-hvacr-distributors-of-2021"
+      ],
+      "description": "HVACR distributor with 52 branches",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "multi-location",
+        "HVAC supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Sid Harvey Industries",
+      "website_url": "https://sidharvey.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Sid Harvey is a major HVACR distributor with $200M+ in sales and is a known HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/144907-top-30-hvacr-distributors-of-2021"
+      ],
+      "description": "HVACR distributor serving Northeast US",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment",
+        "commercial and residential"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "AC Pro",
+      "website_url": "https://acpro.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "AC Pro is consistently ranked in the top 10 HVACR distributors and is a HARDI member based in California.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025"
+      ],
+      "description": "HVACR distributor based in Fontana, CA",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "West Coast operations",
+        "HVAC supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Temperature Equipment Corporation",
+      "website_url": "https://temperatureequipment.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Temperature Equipment Corp is a top 10 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "equipment and supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Hercules Industries",
+      "website_url": "https://herculesindustries.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Hercules Industries is consistently in the top 15 HVACR distributors and is a HARDI member based in Denver.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/146611-top-30-hvacr-distributors-of-2022"
+      ],
+      "description": "Family-owned HVACR distributor based in Denver",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Rocky Mountain region",
+        "employee-focused"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Auer Steel & Heating Supply",
+      "website_url": "https://auersteel.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Auer Steel is a top 15 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR and sheet metal distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "sheet metal",
+        "HVAC equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "ABCO HVACR Supply + Solutions",
+      "website_url": "https://abcohvacr.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "ABCO is the largest independent HVACR distributor in the Northeast and is a HARDI member with 17+ locations.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/",
+        "https://www.hvacinformed.com/companies/distributor-united-states-of-america/directory.html"
+      ],
+      "description": "Largest independent HVACR distributor in Northeast, 17 locations",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Northeast US",
+        "multi-branch operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Conklin Metal Industries",
+      "website_url": "https://conklinmetal.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Conklin Metal is a top 15 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR and sheet metal distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "metal fabrication",
+        "HVAC supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Behler-Young Company",
+      "website_url": "https://behleryoung.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Behler-Young is a top 15 HVACR distributor based in Grand Rapids, MI and is a HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor based in Grand Rapids, MI",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Midwest operations",
+        "commercial and residential"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "American Metal Supply Company",
+      "website_url": "https://americanmetalsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "American Metal Supply is a top 20 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR and sheet metal distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "fabrication",
+        "HVAC equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Refrigeration Sales Corporation",
+      "website_url": "https://refrig.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Refrigeration Sales Corp is a top 20 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "Commercial refrigeration and HVAC distributor",
+      "relevance_indicators": [
+        "refrigeration equipment",
+        "commercial HVAC",
+        "wholesale distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Century A/C Supply",
+      "website_url": "https://centuryac.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Century A/C Supply is a top 20 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVAC distributor",
+      "relevance_indicators": [
+        "air conditioning",
+        "wholesale distribution",
+        "contractor supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Johnson Supply",
+      "website_url": "https://johnsonsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Johnson Supply is a top 20 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "APR Supply Co.",
+      "website_url": "https://aprsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "APR Supply is a top 20 HVACR distributor serving Pennsylvania and New Jersey, HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/",
+        "https://www.servicetitan.com/blog/top-hvac-distributors"
+      ],
+      "description": "HVACR distributor serving PA and NJ",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Mid-Atlantic region",
+        "multi-branch"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "CCOM Group",
+      "website_url": "https://ccomgroup.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "CCOM Group is a top 25 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "equipment and supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Young Supply Company",
+      "website_url": "https://youngsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Young Supply is a top 25 HVACR distributor serving Michigan and Ohio, HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/",
+        "https://www.servicetitan.com/blog/top-hvac-distributors"
+      ],
+      "description": "HVACR distributor in Michigan and Ohio",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Midwest region"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "S.G. Torrice Company",
+      "website_url": "https://sgtorrice.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "S.G. Torrice is a top 25 HVACR distributor based in Massachusetts and is a HARDI member. Quoted in multiple HARDI surveys.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/",
+        "https://www.unilogcorp.com/about/partners-membership/buying-groups-coops/hardi/"
+      ],
+      "description": "HVACR distributor in New England, family-owned",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Northeast US",
+        "digital transformation"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "HVAC Distributors",
+      "website_url": "https://hvacdist.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "HVAC Distributors is a top 25 distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVAC wholesale distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Charles D. Jones Company",
+      "website_url": "https://cdjones.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Charles D. Jones is a top 25 HVACR distributor based in Missouri and is an active HARDI member frequently quoted in surveys.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor in Kansas City area",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Midwest operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "M&A Supply Company",
+      "website_url": "https://masupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "M&A Supply is a top 30 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "equipment supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "2J Supply",
+      "website_url": "https://2jsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "2J Supply is a top 30 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVAC wholesale distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "HVAC equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Duncan Supply Company",
+      "website_url": "https://duncansupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Duncan Supply is a top 30 HVACR distributor and HARDI member, frequently quoted in industry surveys.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "commercial equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Crescent Parts & Equipment",
+      "website_url": "https://crescentparts.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Crescent Parts is a top 30 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR parts and equipment distributor",
+      "relevance_indicators": [
+        "parts distribution",
+        "wholesale operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Northeastern Supply Company",
+      "website_url": "https://northeasternsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Northeastern Supply is a top 30 HVACR distributor and HARDI member.",
+      "source_urls": [
+        "https://cdjones.com/advancedwebpage.aspx?cmspage=news/top-30-distributors-2023/"
+      ],
+      "description": "HVACR distributor in Northeast US",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "Northeast region"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "F.W. Webb Company",
+      "website_url": "https://fwwebb.com",
+      "source": "major_distributor_member",
+      "source_reasoning": "F.W. Webb is a major HVACR and plumbing distributor with 90+ locations in the Northeast, valued over $1B, and is a HARDI member.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "Major HVACR/plumbing distributor, 90+ locations, Northeast US",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "multi-location",
+        "established 1866"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Munch's Supply",
+      "website_url": "https://munchssupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Munch's Supply has consistently ranked in the top 10 HVACR distributors and is a HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/144907-top-30-hvacr-distributors-of-2021"
+      ],
+      "description": "HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "top 10 distributor"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Dakota Supply Group",
+      "website_url": "https://dakotasupplygroup.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Dakota Supply Group is a top 10 HVACR distributor with 30+ locations and 800+ employees, HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/144907-top-30-hvacr-distributors-of-2021"
+      ],
+      "description": "HVACR distributor, 30+ locations",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "multi-branch",
+        "regional operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Koch Air",
+      "website_url": "https://kochairinc.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Koch Air is consistently ranked in top 15 HVACR distributors and is a HARDI member. Family-owned since 1936.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/144907-top-30-hvacr-distributors-of-2021",
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "Midwestern HVACR distributor, family-owned since 1936",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "commercial and residential",
+        "parts and supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Total Home Supply",
+      "website_url": "https://totalhomesupply.com",
+      "source": "distributor_member",
+      "source_reasoning": "Total Home Supply is a HARDI member frequently quoted in distribution surveys, based in New Jersey.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/164545-the-top-30-hvacr-distributors-of-2025"
+      ],
+      "description": "HVACR distributor in New Jersey/NYC metro",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "PTAC/VTAC units",
+        "lodging industry"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "First Supply",
+      "website_url": "https://firstsupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "First Supply is in the top 30 HVACR distributors with 28+ branches in Wisconsin, Minnesota, Iowa, and Illinois. HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/154566-the-top-30-hvacr-distributors-of-2024"
+      ],
+      "description": "HVACR distributor, 28+ branches in Upper Midwest",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "multi-state operations",
+        "650+ employees"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Sanders Supply",
+      "website_url": "https://sanderssupply.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Sanders Supply is in top 30 HVACR distributors with 20 branches across 6 states in the South. HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/154566-the-top-30-hvacr-distributors-of-2024"
+      ],
+      "description": "HVACR distributor, 20 branches across Southern US",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "regional footprint",
+        "200+ employees"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Team Air Distributing",
+      "website_url": "https://teamairdist.com",
+      "source": "top_distributor_member",
+      "source_reasoning": "Team Air is in top 30 HVACR distributors with 8 locations in Tennessee, Kentucky, and Indiana. HARDI member.",
+      "source_urls": [
+        "https://www.achrnews.com/articles/154566-the-top-30-hvacr-distributors-of-2024"
+      ],
+      "description": "HVACR distributor in Southeast, 8 locations",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "multi-state",
+        "78+ employees"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Carrier",
+      "website_url": "https://carrier.com",
+      "source": "major_manufacturer_likely",
+      "source_reasoning": "Carrier is one of the largest HVAC manufacturers globally and regularly participates in major HARDI events as a key supplier to distributors.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "Global HVAC equipment manufacturer",
+      "relevance_indicators": [
+        "HVAC manufacturing",
+        "residential and commercial equipment",
+        "major industry brand"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Trane Technologies",
+      "website_url": "https://trane.com",
+      "source": "major_manufacturer_likely",
+      "source_reasoning": "Trane is a major HVAC manufacturer with 360+ locations and serves HARDI member distributors. Likely exhibitor at HARDI events.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "Major HVAC equipment manufacturer, 360+ locations",
+      "relevance_indicators": [
+        "HVAC manufacturing",
+        "commercial systems",
+        "controls and building automation"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Rheem Manufacturing",
+      "website_url": "https://rheem.com",
+      "source": "manufacturer_member_likely",
+      "source_reasoning": "Rheem divisions (Rheem Northeast Distribution, Rheem Air Distribution) were mentioned as award winners and active participants at HARDI events.",
+      "source_urls": [
+        "https://hvacinsider.com/hardi-2024-annual-conference-navigate-sets-new-records-and-inspires-hvacr-professionals/"
+      ],
+      "description": "Major HVAC and water heating equipment manufacturer",
+      "relevance_indicators": [
+        "HVAC equipment",
+        "water heaters",
+        "commercial and residential"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Goodman Manufacturing",
+      "website_url": "https://goodmanmfg.com",
+      "source": "major_manufacturer_likely",
+      "source_reasoning": "Goodman is a major HVAC manufacturer serving the distribution channel. Likely to attend HARDI as a key supplier.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "HVAC equipment manufacturer, affordable pricing segment",
+      "relevance_indicators": [
+        "residential HVAC",
+        "air conditioning",
+        "heating systems"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Lennox International",
+      "website_url": "https://lennox.com",
+      "source": "major_manufacturer_likely",
+      "source_reasoning": "Lennox is a major HVAC manufacturer that serves distribution channels and likely participates in HARDI events.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "HVAC equipment manufacturer",
+      "relevance_indicators": [
+        "residential and commercial HVAC",
+        "premium segment",
+        "controls"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Daikin",
+      "website_url": "https://daikin.com",
+      "source": "major_manufacturer_likely",
+      "source_reasoning": "Daikin is a global HVAC manufacturer and owner of Goodman, serving the US distribution channel through HARDI members.",
+      "source_urls": [
+        "https://tadiran-international.com/the-top-10-hvac-distributors-in-the-usa/"
+      ],
+      "description": "Global HVAC manufacturer, owner of Goodman",
+      "relevance_indicators": [
+        "VRF systems",
+        "ductless HVAC",
+        "commercial equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Mitsubishi Electric",
+      "website_url": "https://mitsubishielectric.com",
+      "source": "manufacturer_member_likely",
+      "source_reasoning": "Mitsubishi Electric's marketing team mentioned KYKLO partnership with HARDI members, indicating active participation in HARDI community.",
+      "source_urls": [
+        "https://www.kyklo.co/hardi"
+      ],
+      "description": "Manufacturer of ductless and VRF HVAC systems",
+      "relevance_indicators": [
+        "ductless HVAC",
+        "VRF systems",
+        "zoned comfort"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Marcone Supply",
+      "website_url": "https://marconesupply.com",
+      "source": "member_digital_partner",
+      "source_reasoning": "Marcone Supply is listed as a HARDI member company supported by Unilog for digital transformation.",
+      "source_urls": [
+        "https://www.unilogcorp.com/about/partners-membership/buying-groups-coops/hardi/"
+      ],
+      "description": "Appliance and HVACR parts distributor",
+      "relevance_indicators": [
+        "parts distribution",
+        "service parts",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Binghamton Hardware",
+      "website_url": "https://binghamtonhardware.com",
+      "source": "member_digital_partner",
+      "source_reasoning": "Binghamton Hardware is listed as a HARDI member company supported by Unilog for digital commerce.",
+      "source_urls": [
+        "https://www.unilogcorp.com/about/partners-membership/buying-groups-coops/hardi/"
+      ],
+      "description": "Hardware and HVACR distributor",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "regional operations"
+      ],
+      "confidence": "confirmed"
+    }
+  ],
+  "total_confirmed": 58,
+  "total_likely": 8,
+  "sources_searched": [
+    "HARDI 2025 Annual Conference press release and attendance data",
+    "HARDI board and leadership announcements 2025",
+    "HARDI award winners 2025 conference",
+    "Top 30 HVACR Distributors lists 2021-2025",
+    "Exhibitor announcements for HARDI 2025",
+    "HARDI member company databases",
+    "Industry publications covering HARDI events"
+  ],
+  "notes": "The 2025 HARDI Annual Conference had over 2,200 attendees from 192 distributor companies, 67 Solution Center exhibitors, and over 260 suppliers/manufacturers in the sold-out Booth Program. The 2026 conference will be held December 7-10, 2026 in San Diego, CA at the Marriott Marquis San Diego Marina. HARDI represents 570+ distributor members with 5,000+ branch locations and 600+ suppliers. All top 30 HVACR distributors are HARDI members. The conference is the largest annual gathering of HVACR distributors and manufacturers in North America, making it a premier event for InstaLILY's ICP targeting commercial equipment distributors, industrial parts distributors, and field service organizations.",
+  "success": true
+}

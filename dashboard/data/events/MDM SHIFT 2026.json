@@ -1,0 +1,528 @@
+{
+  "event_name": "MDM SHIFT 2026",
+  "event_url": "https://www.mdm.com/shift2026/",
+  "event_description": "MDM SHIFT 2026 is a change management and thought leadership conference for wholesale distribution executives, focused on sales transformation, digital strategy, data analytics, and organizational culture. It is NOT a traditional trade show with exhibitors, but rather a peer-learning conference where distribution companies attend to learn from industry leaders and each other.",
+  "event_dates": "May 12-14, 2026",
+  "event_location": "Denver, Colorado (The Inverness Denver, Englewood)",
+  "companies": [
+    {
+      "company_name": "ABC Supply Co Inc",
+      "website_url": "https://abcsupply.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 NAW website attendee roster.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Building materials distributor, one of the largest in North America",
+      "relevance_indicators": [
+        "building materials",
+        "construction supply",
+        "multi-location distributor",
+        "wholesale distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Wesco International",
+      "website_url": "https://wesco.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website and has been a regular participant/presenter at past SHIFT conferences.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/",
+        "https://electricaltrends.com/2024/09/18/thoughts-from-the-2024-naw-mdm-shift-conference/"
+      ],
+      "description": "Electrical, communications and utility distribution, supply chain services",
+      "relevance_indicators": [
+        "electrical distribution",
+        "industrial supply",
+        "multi-branch operations",
+        "digital transformation"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Graybar Electric Company",
+      "website_url": "https://graybar.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website and has been a regular participant/presenter at past SHIFT conferences.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://electricaltrends.com/2024/09/18/thoughts-from-the-2024-naw-mdm-shift-conference/"
+      ],
+      "description": "Electrical, communications and data networking products distributor",
+      "relevance_indicators": [
+        "electrical distribution",
+        "industrial parts",
+        "employee-owned",
+        "digital transformation"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "MSC Industrial Supply",
+      "website_url": "https://mscdirect.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Metalworking and MRO supplies distributor",
+      "relevance_indicators": [
+        "industrial distribution",
+        "MRO supplies",
+        "large SKU catalog",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Motion Industries",
+      "website_url": "https://motionindustries.com",
+      "source": "confirmed_attendee_presenter_2025",
+      "source_reasoning": "Confirmed as a presenter at MDM SHIFT 2025 and listed among regular attendee companies.",
+      "source_urls": [
+        "https://electricaltrends.com/2025/05/29/mdm-shift-delivers-thought-leadership-ideas/"
+      ],
+      "description": "Industrial parts and MRO distributor, subsidiary of Genuine Parts Company",
+      "relevance_indicators": [
+        "industrial distribution",
+        "bearings",
+        "power transmission",
+        "multi-branch network"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Sonepar USA",
+      "website_url": "https://sonepar.us",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Electrical and industrial distribution holding company",
+      "relevance_indicators": [
+        "electrical distribution",
+        "industrial supplies",
+        "multi-brand platform"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Border States Electric",
+      "website_url": "https://borderstates.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executives featured in 2026 Women in Distribution program at SHIFT 2026.",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/meet-naws-2026-women-in-distribution-pt-1/"
+      ],
+      "description": "Electrical and utility construction supply distributor",
+      "relevance_indicators": [
+        "electrical distribution",
+        "construction supply",
+        "760+ branches",
+        "employee-owned"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "McNaughton-McKay Electric Company",
+      "website_url": "https://mcnaughton-mckay.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website and has been a regular participant at past SHIFT conferences.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/",
+        "https://electricaltrends.com/2024/09/18/thoughts-from-the-2024-naw-mdm-shift-conference/"
+      ],
+      "description": "Electrical distribution and automation solutions",
+      "relevance_indicators": [
+        "electrical distribution",
+        "automation",
+        "industrial controls"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Ferguson Enterprises",
+      "website_url": "https://ferguson.com",
+      "source": "confirmed_presenter_2025",
+      "source_reasoning": "Confirmed as a presenter at MDM SHIFT 2025 event.",
+      "source_urls": [
+        "https://electricaltrends.com/2025/05/29/mdm-shift-delivers-thought-leadership-ideas/"
+      ],
+      "description": "Plumbing, HVAC, and industrial products distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "building materials",
+        "1,700+ locations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "ADI Global Distribution",
+      "website_url": "https://adiglobal.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executives featured as speakers and in Women in Distribution program at SHIFT 2026.",
+      "source_urls": [
+        "https://www.mdm.com/shift2026/shift-2026-agenda/",
+        "https://www.mdm.com/article/featured/featured-blog/meet-naws-2026-women-in-distribution-pt-3/"
+      ],
+      "description": "Security and low-voltage products distributor",
+      "relevance_indicators": [
+        "security distribution",
+        "electronic systems",
+        "multi-branch operations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Winsupply",
+      "website_url": "https://winsupply.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Plumbing, HVAC, electrical, and industrial supplies distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "electrical",
+        "700+ locations"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Valin Corporation",
+      "website_url": "https://valin.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Technical solutions and engineered products distributor",
+      "relevance_indicators": [
+        "industrial automation",
+        "fluid power",
+        "technical distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Global Industrial Company",
+      "website_url": "https://globalindustrial.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executive featured in 2026 Women in Distribution program at SHIFT 2026.",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/presenting-naws-2026-women-in-distribution-honorees/"
+      ],
+      "description": "Industrial equipment and supplies distributor",
+      "relevance_indicators": [
+        "industrial distribution",
+        "facilities maintenance",
+        "material handling"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Benco Dental",
+      "website_url": "https://benco.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executive featured in 2026 Women in Distribution program at SHIFT 2026 and listed as confirmed attendee.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/article/featured/featured-blog/presenting-naws-2026-women-in-distribution-honorees/"
+      ],
+      "description": "Dental products and equipment distributor",
+      "relevance_indicators": [
+        "dental distribution",
+        "healthcare products",
+        "family-owned"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Richelieu Hardware",
+      "website_url": "https://richelieu.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Specialty hardware and accessories distributor for furniture and building industries",
+      "relevance_indicators": [
+        "hardware distribution",
+        "building materials",
+        "furniture components"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "RelaDyne LLC",
+      "website_url": "https://reladyne.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Lubricants, fuel, and reliability services distributor",
+      "relevance_indicators": [
+        "industrial lubricants",
+        "fuel distribution",
+        "equipment services"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Lansing Building Products",
+      "website_url": "https://lansingbp.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Building materials distributor specializing in siding and accessories",
+      "relevance_indicators": [
+        "building materials",
+        "construction supply",
+        "siding distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Endries International",
+      "website_url": "https://endries.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executive featured in 2026 Women in Distribution program at SHIFT 2026 and listed as confirmed attendee.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/article/featured/featured-blog/presenting-naws-2026-women-in-distribution-honorees/"
+      ],
+      "description": "Fastener and industrial component distributor",
+      "relevance_indicators": [
+        "fastener distribution",
+        "industrial components",
+        "manufacturing supply"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Lawson Products",
+      "website_url": "https://lawsonproducts.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executive featured in 2026 Women in Distribution program at SHIFT 2026 (subsidiary of Distribution Solutions Group).",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/presenting-naws-2026-women-in-distribution-honorees/"
+      ],
+      "description": "MRO and fastener distributor, part of Distribution Solutions Group",
+      "relevance_indicators": [
+        "MRO distribution",
+        "fasteners",
+        "industrial supplies"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Kimball Midwest",
+      "website_url": "https://kimballmidwest.com",
+      "source": "confirmed_presenter_2025",
+      "source_reasoning": "Confirmed as a presenter at MDM SHIFT 2025 event.",
+      "source_urls": [
+        "https://electricaltrends.com/2025/05/29/mdm-shift-delivers-thought-leadership-ideas/"
+      ],
+      "description": "Maintenance and production products distributor",
+      "relevance_indicators": [
+        "MRO distribution",
+        "industrial supplies",
+        "family-owned"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Vallen Distribution",
+      "website_url": "https://vallen.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Company executive featured in 2026 Women in Distribution program at SHIFT 2026.",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/presenting-naws-2026-women-in-distribution-honorees/"
+      ],
+      "description": "MRO and safety products distributor",
+      "relevance_indicators": [
+        "MRO distribution",
+        "safety supplies",
+        "industrial distribution"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Reece USA",
+      "website_url": "https://reece.com",
+      "source": "confirmed_speaker_2026",
+      "source_reasoning": "Executive Chairman confirmed as keynote speaker at SHIFT 2026.",
+      "source_urls": [
+        "https://www.mdm.com/shift2026/shift-2026-agenda/"
+      ],
+      "description": "Plumbing and HVAC products distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "building materials"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Locke Supply Co.",
+      "website_url": "https://lockesupply.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Plumbing and HVAC distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "multi-location"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "First Supply LLC",
+      "website_url": "https://firstsupply.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/"
+      ],
+      "description": "Plumbing, HVAC, and industrial PVF distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "industrial pipes"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Famous Supply",
+      "website_url": "https://famoussupply.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/"
+      ],
+      "description": "Plumbing and HVAC distributor",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC",
+        "regional presence"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Field Fastener",
+      "website_url": "https://fieldfastener.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/"
+      ],
+      "description": "Fastener and construction supply distributor",
+      "relevance_indicators": [
+        "fastener distribution",
+        "construction supply",
+        "building materials"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Hydradyne LLC",
+      "website_url": "https://hydradyne.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Hydraulic and industrial hose and equipment distributor",
+      "relevance_indicators": [
+        "hydraulics",
+        "industrial equipment",
+        "fluid power"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Panduit Corp",
+      "website_url": "https://panduit.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Network infrastructure and electrical/fastening solutions manufacturer",
+      "relevance_indicators": [
+        "electrical infrastructure",
+        "network solutions",
+        "manufacturing"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "WD-40 Company",
+      "website_url": "https://wd40company.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Manufacturer of maintenance products and multi-purpose lubricants",
+      "relevance_indicators": [
+        "maintenance products",
+        "lubricants",
+        "consumer and industrial products"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Rocket Industrial",
+      "website_url": "https://rocketindustrial.com",
+      "source": "confirmed_attendee_2026",
+      "source_reasoning": "Listed as a confirmed attendee company on the official SHIFT 2026 website.",
+      "source_urls": [
+        "https://www.naw.org/events/shift-2026/",
+        "https://www.mdm.com/shift2026/"
+      ],
+      "description": "Industrial supplies and MRO distributor",
+      "relevance_indicators": [
+        "industrial distribution",
+        "MRO supplies"
+      ],
+      "confidence": "confirmed"
+    }
+  ],
+  "total_confirmed": 30,
+  "total_likely": 0,
+  "sources_searched": [
+    "Official MDM SHIFT 2026 website",
+    "NAW SHIFT 2026 event page",
+    "MDM SHIFT 2026 agenda and speaker resources",
+    "2026 Women in Distribution honorees featured at SHIFT",
+    "Past SHIFT 2024 and 2025 conference attendee reports"
+  ],
+  "notes": "IMPORTANT: MDM SHIFT 2026 is NOT a traditional trade show with exhibitors. It is a peer-learning and change management conference for wholesale distribution executives. The companies listed are ATTENDEES/PARTICIPANTS, not exhibitors. The event features a 'Solutions Hub' where service providers and consultants may showcase solutions, but the primary focus is on distribution companies learning from each other through cohort discussions, keynotes, and networking. All companies listed are wholesale distributors across various verticals (electrical, industrial, plumbing, HVAC, building materials, fasteners, MRO) who attend to learn about sales transformation, digital strategy, data analytics, and culture building. For InstaLILY's purposes, these are ideal target prospects - distribution companies actively seeking transformation and digital innovation solutions.",
+  "success": true
+}

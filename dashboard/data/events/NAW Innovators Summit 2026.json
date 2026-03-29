@@ -1,0 +1,545 @@
+{
+  "event_name": "NAW Innovators Summit 2026",
+  "event_url": "https://www.naw.org/events/2026-naw-innovators-summit/",
+  "companies": [
+    {
+      "company_name": "W.W. Grainger",
+      "website_url": "https://www.grainger.com",
+      "source": "past_attendee_speaker",
+      "source_reasoning": "Grainger's CEO D.G. Macpherson has been a speaker/panelist at past NAW Innovators Summit events and is an NAW member. Grainger is a major industrial supply distributor and Fortune 500 company that regularly participates in NAW events.",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/naw-innovators-summit-showcases-leading-tech/",
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Fortune 500 industrial supply and MRO distributor, $17B+ revenue, 20,000+ employees",
+      "relevance_indicators": [
+        "industrial parts distribution",
+        "MRO supplies",
+        "multi-location operations",
+        "digital transformation focus"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Graybar Electric Company",
+      "website_url": "https://www.graybar.com",
+      "source": "past_attendee_speaker",
+      "source_reasoning": "Graybar CEO Kathy Mazzarella has been a featured speaker at multiple NAW Innovators Summit events (2022, 2023) and is an active NAW member. Graybar is a Fortune 500 electrical distributor.",
+      "source_urls": [
+        "https://www.naw.org/bridging-the-gap-the-innovators-summit/",
+        "https://www.inddist.com/associations/news/22876146/graybar-chief-executive-to-join-naw-summits-ceo-panel",
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Fortune 500 employee-owned electrical and communications distributor, 300+ distribution facilities across North America",
+      "relevance_indicators": [
+        "electrical supply distribution",
+        "multi-location operations",
+        "employee-owned",
+        "300+ facilities"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "MSC Industrial Supply",
+      "website_url": "https://www.mscdirect.com",
+      "source": "past_attendee_speaker",
+      "source_reasoning": "MSC Industrial has been mentioned as a speaker/attendee at past NAW Innovators Summit events and is listed as an NAW billion-dollar roundtable member.",
+      "source_urls": [
+        "https://www.naw.org/bridging-the-gap-the-innovators-summit/",
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Fortune 500 industrial distributor, metalworking and MRO supplies",
+      "relevance_indicators": [
+        "industrial parts distribution",
+        "MRO supplies",
+        "manufacturing support"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Benco Dental",
+      "website_url": "https://www.benco.com",
+      "source": "past_attendee_speaker",
+      "source_reasoning": "Benco Dental has been mentioned as a speaker/attendee at past NAW Innovators Summit events and is listed as an NAW billion-dollar roundtable member.",
+      "source_urls": [
+        "https://www.naw.org/bridging-the-gap-the-innovators-summit/",
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Leading dental supply distributor in the United States",
+      "relevance_indicators": [
+        "healthcare distribution",
+        "specialty equipment distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "QXO Inc.",
+      "website_url": "https://www.qxo.com",
+      "source": "keynote_speaker_2025",
+      "source_reasoning": "Brad Jacobs, Chairman and CEO of QXO, was the keynote speaker at the 2025 NAW Innovators Summit. QXO is building a tech-enabled platform in the $800 billion building products distribution industry and recently acquired Beacon.",
+      "source_urls": [
+        "https://www.naw.org/brad-jacobs-to-keynote-2025-naw-innovators-summit/",
+        "https://www.mdm.com/article/featured/featured-blog/innovators-summit-headliner-shows-the-networking-pull-of-naw-mdm/"
+      ],
+      "description": "Building products distributor, recently acquired Beacon for $11B, pursuing tech-enabled distribution platform",
+      "relevance_indicators": [
+        "building materials distribution",
+        "PE-backed",
+        "aggressive growth strategy",
+        "technology focus"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Ferguson Enterprises",
+      "website_url": "https://www.ferguson.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Ferguson is listed as an NAW billion-dollar roundtable member and is one of the largest distributors in North America. NAW Innovators Summit is designed for top-tier distributors like Ferguson.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Largest U.S. distributor of plumbing, HVAC, and appliances, $28B+ revenue",
+      "relevance_indicators": [
+        "building materials distribution",
+        "HVAC distribution",
+        "multi-location operations",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "ABC Supply Co.",
+      "website_url": "https://www.abcsupply.com",
+      "source": "naw_award_recipient_2025",
+      "source_reasoning": "ABC Supply was selected as the recipient of the 2025 NAW Distributors Deliver Award and was formally recognized at the 2025 NAW Executive Summit. ABC Supply is also mentioned in context of NAW Innovators Summit.",
+      "source_urls": [
+        "https://www.naw.org/naw-honors-abc-supply-co-inc-with-the-naw-distributors-deliver-award-at-the-2025-executive-summit/",
+        "https://www.mdm.com/article/featured/featured-blog/the-future-of-distribution-on-display-at-naw-innovators-summit/"
+      ],
+      "description": "Nation's largest wholesale distributor of roofing, siding, and exterior/interior building products, headquartered in Beloit, WI",
+      "relevance_indicators": [
+        "building materials distribution",
+        "roofing supply",
+        "multi-location operations",
+        "innovation focus"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "The Home Depot (SRS Distribution)",
+      "website_url": "https://www.homedepot.com",
+      "source": "keynote_speaker_2024",
+      "source_reasoning": "Ted Decker, CEO of The Home Depot, was a keynote speaker at the 2024 NAW Innovators Summit. The Home Depot also acquired SRS Distribution, a major building products distributor.",
+      "source_urls": [
+        "https://www.naw.org/is-agenda/"
+      ],
+      "description": "Largest home improvement retailer in U.S., acquired SRS Distribution ($12B building products distributor with 760+ branches)",
+      "relevance_indicators": [
+        "building materials distribution",
+        "technology transformation",
+        "massive scale operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "UPS",
+      "website_url": "https://www.ups.com",
+      "source": "keynote_speaker_2025",
+      "source_reasoning": "Carol Tom\u00e9, CEO of UPS, was a keynote speaker at the 2025 NAW Innovators Summit, discussing technology and innovation in distribution logistics.",
+      "source_urls": [
+        "https://www.naw.org/events/2025-naw-innovators-summit/",
+        "https://distributiontechnology.substack.com/p/announcing-the-2025-naw-innovators"
+      ],
+      "description": "Global logistics and package delivery company with 117-year history, undergoing digital transformation with AI and automation",
+      "relevance_indicators": [
+        "logistics",
+        "supply chain",
+        "technology transformation",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "BlueLinx",
+      "website_url": "https://bluelinxco.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "BlueLinx is listed as an NAW billion-dollar roundtable member. They are the largest single-source distributor of building materials in North America.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Largest single-source distributor of building materials in North America",
+      "relevance_indicators": [
+        "building materials distribution",
+        "nationwide network",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Gypsum Management & Supply (GMS)",
+      "website_url": "https://www.gms.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "GMS is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Leading North American distributor of interior building products",
+      "relevance_indicators": [
+        "building materials distribution",
+        "drywall and ceilings",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Core & Main",
+      "website_url": "https://www.coreandmain.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Core & Main is listed as an NAW billion-dollar roundtable member, indicating they participate in NAW events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Largest distributor of water, wastewater, storm drainage, and fire protection products in the U.S.",
+      "relevance_indicators": [
+        "municipal infrastructure distribution",
+        "waterworks distribution",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Motion Industries (Genuine Parts Company)",
+      "website_url": "https://www.motionindustries.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Motion Industries is a subsidiary of Genuine Parts Company, which is listed as an NAW billion-dollar roundtable member and has been mentioned in NAW Summit contexts.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Leading industrial parts and MRO distributor, subsidiary of Fortune 500 Genuine Parts Company",
+      "relevance_indicators": [
+        "industrial parts distribution",
+        "MRO supplies",
+        "500+ locations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Border States Electric",
+      "website_url": "https://www.borderstates.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Border States Electric is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Employee-owned electrical and utility distributor",
+      "relevance_indicators": [
+        "electrical distribution",
+        "utility products",
+        "employee-owned",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "HD Supply",
+      "website_url": "https://www.hdsupply.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "HD Supply is listed as an NAW billion-dollar roundtable member and is a Fortune 500 distributor.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Specialty distributor of maintenance, repair, and operations products",
+      "relevance_indicators": [
+        "MRO distribution",
+        "facilities maintenance",
+        "multi-location operations",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Imperial Dade",
+      "website_url": "https://www.imperialdade.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Imperial Dade is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Leading distributor of foodservice disposables and janitorial supplies, PE-backed",
+      "relevance_indicators": [
+        "foodservice distribution",
+        "janitorial supplies",
+        "PE-backed",
+        "rapid growth through acquisition"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Hajoca Corporation",
+      "website_url": "https://www.hajoca.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Hajoca is listed as an NAW billion-dollar roundtable member.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Wholesale distributor of plumbing, heating, and industrial supplies, employee-owned",
+      "relevance_indicators": [
+        "plumbing distribution",
+        "HVAC distribution",
+        "employee-owned",
+        "100+ locations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "MRC Global",
+      "website_url": "https://www.mrcglobal.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "MRC Global is listed as an NAW billion-dollar roundtable member and is a Fortune 500 company.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Fortune 500 distributor of pipe, valves, and fittings to energy and industrial markets",
+      "relevance_indicators": [
+        "industrial distribution",
+        "oil and gas",
+        "global operations",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "WESCO International",
+      "website_url": "https://www.wesco.com",
+      "source": "naw_likely_member",
+      "source_reasoning": "WESCO is a Fortune 500 B2B distribution company and a major competitor to other NAW members like Grainger and Graybar. Given their size and industry position, they are highly likely to participate in NAW events.",
+      "source_urls": [
+        "https://craft.co/ww-grainger/competitors",
+        "https://bstrategyhub.com/grainger-competitors-and-alternatives/"
+      ],
+      "description": "Fortune 500 B2B distribution, logistics, and supply chain services company, 800+ locations in 50+ countries",
+      "relevance_indicators": [
+        "electrical distribution",
+        "communications solutions",
+        "global operations",
+        "Fortune 500"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Copper State Bolt & Nut Co.",
+      "website_url": "https://www.copperstate.com",
+      "source": "naw_member_executive_summit",
+      "source_reasoning": "Copper State Bolt & Nut is listed as an attendee at the 2024 NAW Executive Summit, indicating they are an NAW member likely to attend other NAW events.",
+      "source_urls": [
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Fastener distributor with 13 locations in Arizona",
+      "relevance_indicators": [
+        "fastener distribution",
+        "industrial supplies",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Do it Best Corp",
+      "website_url": "https://www.doitbest.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Do it Best Corp is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Hardware, lumber, and building materials buying cooperative",
+      "relevance_indicators": [
+        "hardware distribution",
+        "building materials",
+        "cooperative model"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Dot Foods",
+      "website_url": "https://www.dotfoods.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Dot Foods is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Nation's largest food industry redistributor",
+      "relevance_indicators": [
+        "food distribution",
+        "redistribution model",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Orgill Inc.",
+      "website_url": "https://www.orgill.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Orgill is listed as an NAW billion-dollar roundtable member.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "World's largest independent hardlines distributor",
+      "relevance_indicators": [
+        "hardware distribution",
+        "building materials",
+        "global operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "City Electric Supply",
+      "website_url": "https://www.cityelectricsupply.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "City Electric Supply is listed as an NAW billion-dollar roundtable member.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/"
+      ],
+      "description": "Electrical wholesale distributor with 600+ branches across the U.S.",
+      "relevance_indicators": [
+        "electrical distribution",
+        "multi-location operations",
+        "600+ branches"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Johnstone Supply",
+      "website_url": "https://www.johnstonesupply.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Johnstone Supply is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "HVACR distributor cooperative with 400+ locations",
+      "relevance_indicators": [
+        "HVAC distribution",
+        "cooperative model",
+        "400+ locations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Brenntag North America",
+      "website_url": "https://www.brenntag.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Brenntag North America is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Global chemical and ingredients distributor",
+      "relevance_indicators": [
+        "chemical distribution",
+        "specialty ingredients",
+        "global operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Bunzl Distribution USA",
+      "website_url": "https://www.bunzldistribution.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Bunzl Distribution USA is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Distributor of outsourced food packaging, disposable supplies, and cleaning products",
+      "relevance_indicators": [
+        "foodservice distribution",
+        "packaging supplies",
+        "multi-vertical distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Crescent Electric Supply",
+      "website_url": "https://www.cesco.com",
+      "source": "naw_member_billion_dollar_roundtable",
+      "source_reasoning": "Crescent Electric Supply is listed as an NAW billion-dollar roundtable member and participates in NAW Executive Summit events.",
+      "source_urls": [
+        "https://www.naw.org/events/executive-roundtable-billion-dollar-company/",
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Electrical distributor with locations across the U.S.",
+      "relevance_indicators": [
+        "electrical distribution",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Parksite Inc.",
+      "website_url": "https://www.parksite.com",
+      "source": "event_page_mention",
+      "source_reasoning": "Parksite Inc. is specifically mentioned on the 2026 NAW Innovators Summit event page, suggesting they are a past participant or confirmed attendee.",
+      "source_urls": [
+        "https://www.naw.org/events/2026-naw-innovators-summit/",
+        "https://www.naw.org/events/2025-naw-innovators-summit/"
+      ],
+      "description": "Supplier of commercial food equipment parts",
+      "relevance_indicators": [
+        "foodservice equipment parts",
+        "commercial equipment distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Ewing Outdoor Supply",
+      "website_url": "https://www.ewingirrigation.com",
+      "source": "naw_member_executive_summit",
+      "source_reasoning": "Ewing Outdoor Supply is listed as an attendee at the 2024 NAW Executive Summit.",
+      "source_urls": [
+        "https://www.naw.org/events/2024-executive-summit/"
+      ],
+      "description": "Distributor of irrigation, landscape, and outdoor living products",
+      "relevance_indicators": [
+        "irrigation distribution",
+        "landscape supplies",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Beacon Roofing Supply (now part of QXO)",
+      "website_url": "https://www.becn.com",
+      "source": "qxo_acquisition",
+      "source_reasoning": "Beacon was acquired by QXO in April 2024 for $11B. Given QXO's keynote presence at the 2025 NAW Innovators Summit, Beacon operations likely participate in NAW events.",
+      "source_urls": [
+        "https://www.mdm.com/article/featured/featured-blog/innovators-summit-headliner-shows-the-networking-pull-of-naw-mdm/"
+      ],
+      "description": "Leading distributor of roofing materials and complementary building products, now part of QXO",
+      "relevance_indicators": [
+        "roofing distribution",
+        "building materials",
+        "national footprint"
+      ],
+      "confidence": "likely"
+    }
+  ],
+  "total_confirmed": 0,
+  "total_likely": 30,
+  "sources_searched": [
+    "NAW 2026 Innovators Summit official page",
+    "NAW 2025 Innovators Summit attendee and speaker information",
+    "NAW 2024 Innovators Summit agenda and speakers",
+    "NAW 2023 Innovators Summit details",
+    "NAW Billion-Dollar Company Executive Roundtable member list",
+    "NAW Executive Summit 2024 and 2025 attendee lists",
+    "Modern Distribution Management coverage of NAW events"
+  ],
+  "notes": "IMPORTANT: The NAW Innovators Summit is NOT a traditional trade show with exhibitors. It is an invite-only matchmaking event where DISTRIBUTION COMPANY EXECUTIVES attend to meet technology vendors. The 'companies' listed above are the DISTRIBUTOR ATTENDEES (InstaLILY's target customers), not tech exhibitors. The 2026 event details are still preliminary as of March 2026 - full speaker and attendee announcements will be added as confirmed. Event takes place September 16-18, 2026 in Nashville, TN. Registration is restricted to wholesale distributors with $100M+ annual revenue. All companies listed are either confirmed past attendees/speakers, NAW billion-dollar roundtable members, or NAW Executive Summit participants, making them highly likely to attend the 2026 Innovators Summit.",
+  "success": true
+}
