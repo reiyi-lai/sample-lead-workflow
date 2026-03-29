@@ -13,8 +13,9 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# Python lib directories (not JS/React lib directories)
+# lib/
+# lib64/
 parts/
 sdist/
 var/
@@ -35,3 +36,4 @@ env/
 *.swp
 *.swo
 .DS_Store
+data_archive/
