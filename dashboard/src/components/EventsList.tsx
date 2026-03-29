@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { Company, EventScores } from "@/lib/data";
 import EventsFilters from "./EventsFilters";
 import { isEventInDateRange } from "@/lib/dateUtils";
+import { Calendar, Building, Target } from "lucide-react";
 
 interface EventWithCompanies {
   event_name: string;
@@ -39,6 +40,7 @@ export default function EventsList({ events }: EventsListProps) {
   const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+  const [sortBy, setSortBy] = useState<"score" | "date">("score");
 
   // Get available industries for filter dropdown
   const availableIndustries = useMemo(() => {
@@ -68,9 +70,41 @@ export default function EventsList({ events }: EventsListProps) {
       filtered = filtered.filter(event => event.industry_vertical === selectedIndustry);
     }
 
-    // Sort by score (highest first)
-    return filtered.sort((a, b) => (b.overall_score || 0) - (a.overall_score || 0));
-  }, [events, dateRange, selectedIndustry]);
+    // Sort events
+    return filtered.sort((a, b) => {
+      if (sortBy === "score") {
+        return (b.overall_score || 0) - (a.overall_score || 0);
+      } else if (sortBy === "date") {
+        // Sort by date (upcoming first)
+        if (!a.dates && !b.dates) return 0;
+        if (!a.dates) return 1;
+        if (!b.dates) return -1;
+
+        // Parse dates more carefully - handle "February 2-4, 2026" format
+        const parseDateString = (dateStr: string) => {
+          // Handle formats like "February 2-4, 2026" or "March 1-4, 2026"
+          const parts = dateStr.split(', ');
+          if (parts.length === 2) {
+            const year = parts[1];
+            const monthDay = parts[0];
+            const monthMatch = monthDay.match(/^(\w+)\s+(\d+)/);
+            if (monthMatch) {
+              const month = monthMatch[1];
+              const day = monthMatch[2];
+              return new Date(`${month} ${day}, ${year}`);
+            }
+          }
+          // Fallback to original parsing
+          return new Date(dateStr.split(' - ')[0] || dateStr);
+        };
+
+        const dateA = parseDateString(a.dates);
+        const dateB = parseDateString(b.dates);
+        return dateA.getTime() - dateB.getTime();
+      }
+      return 0;
+    });
+  }, [events, dateRange, selectedIndustry, sortBy]);
 
   const getIndustryBadgeColor = (industry?: string) => {
     switch (industry) {
@@ -148,6 +182,19 @@ export default function EventsList({ events }: EventsListProps) {
         availableIndustries={availableIndustries}
       />
 
+      {/* Sort Section */}
+      <div className="flex items-center gap-3 py-2 mb-4">
+        <h3 className="font-semibold text-lg text-white">Sort:</h3>
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value as "score" | "date")}
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
+        >
+          <option value="score">Score (High to Low)</option>
+          <option value="date">Date (Upcoming First)</option>
+        </select>
+      </div>
+
       {/* Results Summary */}
       {(dateRange || selectedIndustry) && (
         <div className="mb-4 text-sm text-gray-600">
@@ -200,12 +247,12 @@ export default function EventsList({ events }: EventsListProps) {
                     <div className="flex items-center gap-4 text-sm text-gray-600">
                       {event.dates && (
                         <div className="flex items-center gap-2">
-                          <span className="text-gray-400">📅</span>
+                          <Calendar className="w-4 h-4 text-gray-400" />
                           <span>{event.dates}</span>
                         </div>
                       )}
                       <div className="flex items-center gap-2">
-                        <span className="text-gray-400">🏢</span>
+                        <Building className="w-4 h-4 text-gray-400" />
                         <span>{event.companies.length} companies</span>
                       </div>
                     </div>
@@ -261,7 +308,7 @@ export default function EventsList({ events }: EventsListProps) {
                         {event.sales_brief && (
                           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                             <h4 className="font-medium text-blue-900 mb-3 flex items-center">
-                              <span className="mr-2">🎯</span>
+                              <Target className="w-4 h-4 mr-2" />
                               Sales Brief
                             </h4>
                             <p className="text-blue-800 leading-relaxed">{event.sales_brief}</p>

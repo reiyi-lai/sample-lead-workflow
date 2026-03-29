@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "Companies", icon: "🏢" },
-  { href: "/events", label: "Events", icon: "📅" },
+  { href: "/", label: "Events", icon: "📅" },
+  { href: "/companies", label: "Companies", icon: "🏢" },
   { href: "/outreach", label: "Outreach", icon: "📤" },
 ];
 
@@ -35,7 +35,7 @@ export default function Sidebar() {
                       : "text-gray-700 hover:bg-gray-100"
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  <span className="text-lg">{item.icon}</span>
                   <span>{item.label}</span>
                 </Link>
               </li>

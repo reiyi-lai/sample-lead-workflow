@@ -45,6 +45,7 @@ export default function EventsFilters({
     onIndustryChange(industry || null);
   };
 
+
   const clearDateFilter = () => {
     setStartDate("");
     setEndDate("");
