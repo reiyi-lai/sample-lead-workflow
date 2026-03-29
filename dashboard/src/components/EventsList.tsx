@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import { Company, EventScores } from "@/lib/data";
 import EventsFilters from "./EventsFilters";
 import { isEventInDateRange } from "@/lib/dateUtils";
-import { Calendar, Building, Target } from "lucide-react";
 
 interface EventWithCompanies {
   event_name: string;
@@ -247,12 +246,12 @@ export default function EventsList({ events }: EventsListProps) {
                     <div className="flex items-center gap-4 text-sm text-gray-600">
                       {event.dates && (
                         <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-400">📅</span>
                           <span>{event.dates}</span>
                         </div>
                       )}
                       <div className="flex items-center gap-2">
-                        <Building className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-400">🏢</span>
                         <span>{event.companies.length} companies</span>
                       </div>
                     </div>
@@ -308,7 +307,7 @@ export default function EventsList({ events }: EventsListProps) {
                         {event.sales_brief && (
                           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                             <h4 className="font-medium text-blue-900 mb-3 flex items-center">
-                              <Target className="w-4 h-4 mr-2" />
+                              <span className="mr-2">🎯</span>
                               Sales Brief
                             </h4>
                             <p className="text-blue-800 leading-relaxed">{event.sales_brief}</p>
