@@ -392,6 +392,48 @@ export function getAllOutreach(): ContactWithOutreach[] {
   return allContacts;
 }
 
+// Get enriched events with scoring and company data
+export function getEnrichedEvents() {
+  const scoredEvents = getScoredEvents();
+  const discoveredEvents = getDiscoveredEvents();
+  const eventCompanies = getEventCompanies();
+
+  console.log('[DATA] Processing events:', {
+    discovered: discoveredEvents.length,
+    scored: scoredEvents?.scored_events?.length || 0
+  });
+
+  const events = discoveredEvents.map((discoveredEvent) => {
+    const scoreData = scoredEvents?.scored_events?.find(
+      (scoredEvent) => scoredEvent.event_url === discoveredEvent.event_url
+    );
+    const companyData = eventCompanies.find(
+      (ec) => ec.event_url === discoveredEvent.event_url
+    );
+
+    // Debug Summer Fancy Food Show
+    if (discoveredEvent.event_name?.includes('Summer Fancy Food Show')) {
+      console.log('[DATA] Summer Fancy Food Show:', {
+        discoveredName: discoveredEvent.event_name,
+        discoveredURL: discoveredEvent.event_url,
+        foundScoreData: !!scoreData,
+        scoreDataName: scoreData?.event_name,
+        scoreDataScore: scoreData?.overall_score
+      });
+    }
+
+    return {
+      ...discoveredEvent,
+      ...scoreData,
+      companies: companyData?.companies || [],
+      totalConfirmed: companyData?.total_confirmed || 0,
+      totalLikely: companyData?.total_likely || 0,
+    };
+  });
+
+  return events;
+}
+
 // Get dashboard stats
 export function getDashboardStats() {
   const scoredEvents = getScoredEvents();

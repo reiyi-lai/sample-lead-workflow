@@ -98,7 +98,7 @@ KNOWN CUSTOMERS (for reference, do not mention in outreach unless publicly known
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {INSTALILY_CONTEXT}
 
-Based on the context provided above, identify at LEAST 20 events in April - December 2026 (NO EARLIER THAN APRIL 2026) that companies that match InstaLILY's ICP are likely to attend.
+Based on the context provided above, identify at LEAST 20 events in ((present day + 1 month)) - ((2 months after that)) (NO EARLIER THAN APRIL 2026) that companies that match InstaLILY's ICP are likely to attend.
 
 SEARCH STRATEGY:
 Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:
@@ -155,32 +155,25 @@ Your job is to prioritize which events are worth investing resources to identify
 SCORING CRITERIA (each 0-10):
 
 1. INDUSTRY ALIGNMENT (weight: 0.4)
-   Look for verticals/themes focused on supply chain operations.
-   • 10: Core supply chain verticals (distribution, 3PL, warehousing, field service, construction supply, industrial parts, chemicals or other supply chain distributor)
-   • 7-9: Adjacent supply chain segments (manufacturing ops, retail fulfillment)
-   • 4-6: Broader business events with supply chain tracks
+   Look for verticals/themes focused on manufacturers, distributors, and field service operators across the verticals of industrial parts, construction supplies, and commercial equipment.
+   • 10: Core distribution-heavy verticals (Building materials & construction supply distributors, Industrial parts distributors and manufacturers, Commercial equipment distributors and service providers, Fastener and specialty hardware distributors, Medical or healthcare equipment supply distributors, Field service organizations, Chemicals and raw materials supply distributors, Agriculture and food supply distributors, Retail and consumer goods supply distributors)
+   • 7-9: Adjacent segments
+   • 4-6: Broader business events with distribution-heavy and operationally intensive tracks
    • 0-3: Unrelated industries
 
-2. EVENT SCALE & TIMING (weight: 0.25)
+2. EVENT SCALE & TIMING (weight: 0.3)
    Prioritize larger, established events in 2026 that are accessible to US sales team.
    • 10: Major annual event, US-based
    • 7-9: Significant regional event or international major event
    • 4-6: Smaller niche event or slightly outside date range
    • 0-3: Very small, past, or geographically inaccessible
 
-3. BUYER QUALITY (weight: 0.25)
+3. BUYER QUALITY (weight: 0.3)
    Evaluate attendee seniority from speaker lists, past attendee profiles, and event descriptions.
-   • 10: High concentration of C-suite, VPs, and Head of Operations attendees (key decision makers)
-   • 7-9: Mix of senior executives with significant ops leadership presence
+   • 10: High concentration of C-suite, VPs, and other sales or operations executives attendees (key decision makers)
+   • 7-9: Mix of senior executives with significant leadership presence in C-suite, sales or operations teams
    • 4-6: Mid-level management with some senior stakeholders
    • 0-3: Primarily junior staff, technicians, or non-decision makers
-
-4. AUDIENCE/BUYER INTENT ALIGNMENT (weight: 0.1)
-   Evaluate whether attendees are actively seeking operational solutions or are in problem-aware/solution-seeking mode.
-   • 10: Operations-focused buyers actively seeking efficiency/automation solutions (ops directors, warehouse leaders evaluating tech)
-   • 7-9: Mix of solution-seeking and educational attendees (some looking to solve ops problems)
-   • 4-6: General industry attendees with moderate interest in operational improvements
-   • 0-3: Primarily educational/networking focused with minimal solution-seeking intent
 
 At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
 
@@ -194,7 +187,7 @@ For each event, also generate a concise "sales_brief" field - a tight, actionabl
 Keep it punchy and tactical - focus on what sales team needs to know to decide resource allocation.
 
 OUTPUT FORMAT:
-Return JSON with all scored events:
+Return JSON with all scored events. IMPORTANT: In all rationale and sales_brief fields, avoid using quotation marks (") and apostrophes ('). Use alternative phrasing to ensure valid JSON:
 {{
   "scored_events": [
     {{
@@ -204,7 +197,7 @@ Return JSON with all scored events:
       "scores": {{
         "industry_alignment": {{
           "score": 10,
-          "rationale": "Core distribution vertical - HVAC distributors are key InstaLILY ICP. Event serves building materials, construction supply, and commercial equipment distributors who face complex inventory management and multi-location operations challenges. Perfect alignment with InstaLILY's target verticals of distribution-heavy, operationally intensive businesses."
+          "rationale": "Core distribution vertical - HVAC distributors are key InstaLILY ICP. Event serves building materials, construction supply, and commercial equipment distributors who face complex inventory management and multi-location operations challenges. Perfect alignment with InstaLILY target verticals of distribution-heavy, operationally intensive businesses."
         }},
         "scale_timing": {{
           "score": 8,
@@ -220,7 +213,7 @@ Return JSON with all scored events:
         }}
       }},
       "reasoning": "HARDI is the premier HVAC distribution industry event with strong ICP alignment...",
-      "sales_brief": "🎯 Priority #1 Event for InstaLILY - HVAC distribution is proven vertical (SRS success). December timing perfect for year-end decisions. 4-day format with ops directors, warehouse managers, procurement leaders = high decision-maker concentration. Operations-focused education tracks indicate active solution-seeking. Risk: Large show format requires pre-booked meetings strategy."
+      "sales_brief": "Priority #1 Event for InstaLILY - HVAC distribution is proven vertical (SRS success). December timing perfect for year-end decisions. 4-day format with ops directors, warehouse managers, procurement leaders = high decision-maker concentration. Operations-focused education tracks indicate active solution-seeking. Risk: Large show format requires pre-booked meetings strategy."
     }}
   ],
   "summary": {{

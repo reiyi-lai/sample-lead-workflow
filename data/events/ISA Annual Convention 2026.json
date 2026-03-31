@@ -1,0 +1,219 @@
+{
+  "event_name": "ISA Annual Convention 2026 (ISA26)",
+  "event_url": "https://isa26.isapartners.org/",
+  "companies": [
+    {
+      "company_name": "Tungaloy-NTK America, Inc.",
+      "website_url": "https://tungaloy.com/us/",
+      "source": "confirmed_exhibitor_2026",
+      "source_reasoning": "Found official announcement on Tungaloy's website confirming booth space at ISA26",
+      "source_urls": [
+        "https://tungaloy.com/us/exhibition-us/isa26/"
+      ],
+      "booth_number": "1601",
+      "description": "Cutting tools and metalworking solutions manufacturer",
+      "relevance_indicators": [
+        "industrial manufacturing",
+        "cutting tools",
+        "MROP products"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "MSC Industrial Supply Co.",
+      "website_url": "https://www.mscdirect.com/",
+      "source": "emerging_leaders_committee_member",
+      "source_reasoning": "MSC Industrial Supply has a representative on ISA's Emerging Leaders Committee, indicating active ISA membership and likely attendance at annual conventions",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Large industrial distributor of MRO products, safety equipment, and metalworking tools - $3.6B+ revenue",
+      "relevance_indicators": [
+        "industrial distributor",
+        "MRO products",
+        "multi-location operations",
+        "ISA member"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Stanley Black & Decker",
+      "website_url": "https://www.stanleyblackanddecker.com/",
+      "source": "emerging_leaders_committee_chair",
+      "source_reasoning": "Stanley Black & Decker holds the Emerging Leaders Committee Chair position at ISA, indicating strong involvement and likely exhibition/sponsorship at ISA26",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Global diversified industrial manufacturer of tools, storage, and engineered fastening systems",
+      "relevance_indicators": [
+        "industrial tools manufacturer",
+        "fasteners",
+        "ISA leadership",
+        "MROP supplier"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Vallen",
+      "website_url": "https://www.vallen.com/",
+      "source": "emerging_leaders_committee_vice_chair",
+      "source_reasoning": "Vallen holds Vice Chair position on ISA's Emerging Leaders Committee, indicating active membership and likely attendance",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Major industrial distributor providing MRO and safety supplies",
+      "relevance_indicators": [
+        "industrial distributor",
+        "MRO supplies",
+        "safety products",
+        "ISA member"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Stellar Industrial",
+      "website_url": "https://stellarindustrial.com/",
+      "source": "emerging_leaders_committee_member",
+      "source_reasoning": "Representative serves on ISA Emerging Leaders Committee",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Industrial supply distributor",
+      "relevance_indicators": [
+        "industrial distributor",
+        "ISA member"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "INSIZE USA",
+      "website_url": "https://www.insizeusa.com/",
+      "source": "emerging_leaders_committee_member",
+      "source_reasoning": "Representative serves as Vice President of Sales and is on ISA Emerging Leaders Committee",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Precision measuring instruments manufacturer and distributor",
+      "relevance_indicators": [
+        "measuring instruments",
+        "industrial tools",
+        "ISA member"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Cutler Sales",
+      "website_url": "https://cutlersales.com/",
+      "source": "emerging_leaders_committee_member",
+      "source_reasoning": "Representative serves as Vice President of Sales and is on ISA Emerging Leaders Committee",
+      "source_urls": [
+        "https://www.isapartners.org/networks/el/"
+      ],
+      "description": "Independent manufacturers' representative (IMR) for industrial products",
+      "relevance_indicators": [
+        "manufacturers rep",
+        "industrial products",
+        "ISA member"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Grainger",
+      "website_url": "https://www.grainger.com/",
+      "source": "industry_leader_isa_likely_member",
+      "source_reasoning": "Grainger is the largest industrial distributor in North America with $16B+ revenue, multi-location operations, and heavy involvement in industrial supply associations. They are highly likely to attend major industry events like ISA26",
+      "source_urls": [
+        "https://isa26.isapartners.org/",
+        "https://www.isapartners.org/"
+      ],
+      "description": "Largest broad line distributor of MRO products and services in North America",
+      "relevance_indicators": [
+        "industrial distributor",
+        "MRO leader",
+        "multi-location",
+        "enterprise scale"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Fastenal",
+      "website_url": "https://www.fastenal.com/",
+      "source": "industry_leader_isa_likely_member",
+      "source_reasoning": "Fastenal is a $7B+ industrial distributor with 1,700+ branches, major player in fasteners and industrial supplies. Likely ISA member and annual convention attendee",
+      "source_urls": [
+        "https://isa26.isapartners.org/"
+      ],
+      "description": "Large industrial and construction supplies distributor specializing in fasteners",
+      "relevance_indicators": [
+        "fastener distributor",
+        "industrial supplies",
+        "multi-location",
+        "enterprise scale"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Applied Industrial Technologies",
+      "website_url": "https://www.applied.com/",
+      "source": "industry_leader_isa_likely_member",
+      "source_reasoning": "Applied Industrial is a $4B+ industrial distributor with 500+ locations, focusing on bearings, power transmission, and fluid power. Typical ISA member profile",
+      "source_urls": [
+        "https://isa26.isapartners.org/"
+      ],
+      "description": "Leading industrial distributor of bearings, power transmission, and fluid power products",
+      "relevance_indicators": [
+        "industrial distributor",
+        "bearings",
+        "power transmission",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Motion Industries",
+      "website_url": "https://www.motionindustries.com/",
+      "source": "industry_leader_isa_likely_member",
+      "source_reasoning": "Motion Industries is a $6B+ Genuine Parts Company subsidiary with 500+ locations, major industrial MRO distributor likely to be ISA member",
+      "source_urls": [
+        "https://isa26.isapartners.org/"
+      ],
+      "description": "Industrial parts distributor specializing in bearings, mechanical power transmission, electrical, and industrial automation",
+      "relevance_indicators": [
+        "industrial distributor",
+        "MRO products",
+        "bearings",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "W\u00fcrth Industry North America",
+      "website_url": "https://www.wurthindustry.com/",
+      "source": "industry_leader_isa_likely_member",
+      "source_reasoning": "W\u00fcrth is a global leader in fasteners and assembly products for industrial customers, with strong presence in North American industrial supply channel",
+      "source_urls": [
+        "https://isa26.isapartners.org/"
+      ],
+      "description": "Manufacturer and supplier of fasteners, assembly components, and chemical technical products",
+      "relevance_indicators": [
+        "fasteners",
+        "industrial supplies",
+        "manufacturer",
+        "assembly products"
+      ],
+      "confidence": "likely"
+    }
+  ],
+  "total_confirmed": 1,
+  "total_likely": 11,
+  "sources_searched": [
+    "ISA26 official website",
+    "ISA Emerging Leaders Committee members",
+    "Tungaloy exhibitor announcement",
+    "ISA member directory (access restricted)",
+    "ISA25 and ISA24 past event pages (exhibitor lists not publicly available)",
+    "Industry publications and press releases"
+  ],
+  "notes": "Official exhibitor list for ISA26 is not yet publicly available. The exhibitor portal opens January 12, 2026. Only one confirmed exhibitor (Tungaloy-NTK America) was found through public announcements. Additional companies listed are ISA committee members and major industry players highly likely to attend based on their profile matching ISA's target audience of industrial distributors, manufacturers, and IMRs in the MROP supply channel. The event targets mid-market to enterprise companies with $100M+ revenue in industrial distribution and manufacturing. Manufacturers are required to purchase booths. Event details: April 20-22, 2026 at Huntington Convention Center, Cleveland, OH.",
+  "success": true
+}
