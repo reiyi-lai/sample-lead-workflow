@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Reducing support calls on outdoor graphics",
+    "body": "Hi [Name],\n\nCongratulations on Agfa's recent Pinnacle Awards\u2014impressive recognition for the new printer lineup.\n\nI'm reaching out because we work with equipment manufacturers whose technical services teams get pulled into warranty conversations when outdoor graphics fade or crack, even though the print quality was perfect. It's often an overlaminate issue, not the printer.\n\nWe've developed a protective film that handles UV exposure and temperature extremes unusually well, which has helped similar teams reduce those frustrating support escalations.\n\nWould it be helpful if I sent over some technical specs and a couple case studies from other equipment manufacturers?\n\nBest,\n[Your name]",
+    "word_count": 108
+  },
+  "personalization_used": {
+    "hook": "Technical Services teams face support burden when graphics fail due to overlaminate issues despite excellent print quality",
+    "value_prop_emphasized": "UV protection and extreme temperature resistance that reduces field failures and support escalations"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Fleet graphics pitch objections",
+    "body": "Hi [Name],\n\nCongratulations on the Pinnacle Award for the JFX200\u2014well deserved given Mimaki's focus on outdoor performance.\n\nI'm reaching out because we work with several printer manufacturers whose sales teams were losing fleet graphics deals on total cost objections. They started positioning our protective film as part of a complete system, which shifted the conversation from equipment price to lifecycle value. The graffiti resistance piece has been particularly compelling for municipal fleet customers.\n\nWould it be helpful if I sent over how a few comparable manufacturers are using this approach to close deals they were previously losing?\n\nBest,\n[Your name]",
+    "word_count": 102
+  },
+  "personalization_used": {
+    "hook": "Mimaki's sales teams face constant total cost of ownership objections from vehicle wrap shops and signage companies evaluating eco-solvent printer purchases",
+    "value_prop_emphasized": "Graffiti resistance and total cost of ownership reduction for fleet graphics applications"
+  }
+}

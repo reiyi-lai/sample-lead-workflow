@@ -1,0 +1,44 @@
+{
+  "company_name": "HP Inc.",
+  "website_url": "https://www.hp.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "HP Inc. is a direct match for Tedlar's target verticals. The company manufactures and markets large-format printers specifically for signage, graphics, vehicle wraps, banners, building wraps, and architectural graphics applications. HP's product lines include the HP Latex series for outdoor/indoor signage and vehicle wraps, HP Stitch series for textile/soft signage, HP DesignJet for retail signage and graphics, and the HP Latex R Series for rigid and flexible printing applications. These products directly serve sign manufacturers, large-format print companies, vehicle wrap installers, and architectural graphics producers\u2014all core ICP verticals for Tedlar protective films."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "HP Inc. is a global Fortune 500 technology company with fiscal 2025 annual revenue of $55.3 billion, operating in more than 170-180 countries. The company reported approximately 50,000-60,000 employees globally as of 2025-2026, with plans to reduce headcount by 4,000-6,000 through fiscal 2028. HP's large-format printing division represents a significant business segment within the company's overall printing portfolio, which generated $4.3 billion in Q4 2025 alone. This places HP far above the preferred $100M+ revenue and 500+ employee threshold, representing an enterprise-scale prospect."
+    },
+    "strategic_relevance": {
+      "score": 8,
+      "rationale": "HP actively markets outdoor durability and longevity as key value propositions for its large-format printing solutions. The company emphasizes that HP Latex Inks enable outdoor signage that 'remains durable in outdoor conditions' and vehicle wraps with 'outdoor durability,' and promotes high-opacity white ink that 'resists yellowing over time.' HP's messaging around banners and building wraps that 'withstand the test of time' and graphics with 'lasting results' aligns well with Tedlar's durability and UV protection benefits. However, HP is a printer/equipment manufacturer rather than a user of protective overlaminates, so strategic fit centers on HP's customers (print service providers) who would apply Tedlar films to HP-printed graphics."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "HP demonstrates exceptional market activity in the target graphics and signage space. The company exhibited at FESPA Global Print Expo 2025 (May 6-9, Berlin) where it launched the HP Latex R530 hybrid printer, attended ISA Sign Expo 2025 in Las Vegas, and is confirmed for PRINTING United Expo 2025 (October 22-24, Orlando) with a 4,000-square-foot booth (#4249). HP also exhibited at The Sign Show 2025 (September 23-25, Birmingham UK) after a six-year absence from UK trade shows. Recent product launches include the HP Latex 700/800 series with white ink capability and the Latex R530 all-in-one rigid/flexible printer, demonstrating continued innovation in outdoor graphics applications."
+    }
+  },
+  "qualification_summary": "HP Inc. is an excellent strategic prospect for Tedlar, representing one of the largest and most influential players in the large-format printing ecosystem. While HP manufactures printers rather than consuming protective films directly, the company's massive customer base of print service providers, sign manufacturers, and vehicle wrap installers represents the exact end-user market for Tedlar overlaminates. HP's strong emphasis on outdoor durability, UV resistance, and long-lasting graphics aligns perfectly with Tedlar's value propositions, creating partnership opportunities for co-marketing, technical validation, or supply chain integration to position Tedlar as the preferred overlaminate for HP Latex-printed graphics.",
+  "icp_qualification": {
+    "weighted_score": 93.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 8,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

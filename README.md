@@ -70,7 +70,7 @@ Pipeline outputs are saved to `data/`:
 │       ├── llm.py          # Claude API wrapper
 │       └── scraping.py     # Web scraping utilities
 ├── dashboard/              # Next.js visualization dashboard
-└── data/                   # JSON output produced at each stage)
+└── data/                   # JSON output produced at each stage
 ```
 ## Documentation
 

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Partnership idea for P5 outdoor applications",
+    "body": "Hi [Name],\n\nCongrats on the P5 X and P5 SMP launches\u2014really impressive positioning in the outdoor segment.\n\nI'm reaching out because we work with printer manufacturers whose customers face a common problem: graphics produced on premium equipment still fail prematurely outdoors due to overlaminate issues. This creates downstream complaints that affect equipment repurchase decisions.\n\nWe've developed protective films specifically for outdoor signage, vehicle wraps, and architectural graphics that might complement Durst's outdoor durability story. Would it make sense to explore a partnership conversation?\n\nHappy to send over more info or jump on a brief call.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Durst's recent P5 X and P5 SMP launches target premium outdoor segments where protective film performance directly impacts customer ROI and competitive differentiation",
+    "value_prop_emphasized": "Protective films that solve downstream customer complaints about premature graphics failure, protecting Durst's brand promise and supporting competitive differentiation in outdoor applications"
+  }
+}

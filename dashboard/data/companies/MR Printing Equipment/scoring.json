@@ -1,0 +1,44 @@
+{
+  "company_name": "M&R Printing Equipment",
+  "website_url": "https://www.mrprint.com",
+  "scores": {
+    "industry_fit": {
+      "score": 3,
+      "rationale": "M&R manufactures screen printing equipment for textile and garment decoration, including automatic screen printing presses (Gauntlet 4, Cobra series), Direct-to-Film (DTF) systems (QUATRO), Direct-to-Garment (DTG) printers (POLARIS), and conveyor dryers. While they do produce graphics screen printing equipment like the Processor II E, Renegade flatbed presses, Conquest and Insignia carousel systems for substrates including posters, banners, vinyl, and fleet-marking, their primary focus (80%+ of business) is textile/apparel printing equipment manufacturing, not graphics production or sign fabrication. They are an equipment manufacturer selling to sign shops rather than a sign manufacturer themselves."
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "M&R reports annual revenue of $134M-$300M (sources vary, with LeadIQ citing $300M as of July 2025 and RocketReach citing $134M). The company employs 211-501 employees across headquarters in Roselle, Illinois and operations on 5 continents with distributors in over 40 countries. They operate a 320,000 sq ft manufacturing facility. Founded in 1985, M&R describes itself as the world's largest manufacturer of screen printing equipment, indicating strong mid-market to enterprise scale."
+    },
+    "strategic_relevance": {
+      "score": 2,
+      "rationale": "M&R's value proposition centers on innovation in printing equipment manufacturing, quality components, and customer support\u2014not on the durability or outdoor performance of printed output. Their equipment enables others to create graphics, but Tedlar's UV protection, graffiti resistance, and 12-20+ year outdoor lifespan benefits apply to the end-use graphics products, not the printing machinery itself. There is no evidence M&R's customers (screen printers, garment decorators) require protective overlaminates for their equipment or that M&R integrates films into their machines."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "M&R exhibits extremely high market activity, with major presence at PRINTING United Expo 2023, 2024, and 2025 (booth SL10028 in 2024 with 7,200 sq ft, second-largest exhibitor; CEO Danny Sweem reported selling everything in booth at 2023 show). They exhibited at Impressions Expo Long Beach 2026 (booth 1502) and celebrated their 40th anniversary in 2025 with multiple product launches including POLARIS S4 Industrial DTG Platform (partnership with Xaar), QUATRO DTF system, Gauntlet 4 press, and Orbiter automated DTF transfer machine."
+    }
+  },
+  "qualification_summary": "M&R Printing Equipment is a poor fit for Tedlar protective films despite being a large, highly active company in the printing industry. As an equipment manufacturer for the textile/apparel screen printing market (not a sign manufacturer or graphics producer), they do not create the outdoor graphics and signage products that would benefit from Tedlar overlaminates. Their customers print on garments, not architectural panels or vehicle wraps requiring long-term outdoor durability and graffiti resistance.",
+  "icp_qualification": {
+    "weighted_score": 55.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 3,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 2,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

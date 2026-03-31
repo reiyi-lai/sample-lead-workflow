@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "PRINTING United Expo booth idea",
+    "body": "Hi [Name],\n\nSaw MUTOH is exhibiting at PRINTING United Expo in October\u2014congrats on another year of strong show presence.\n\nI've been talking with other wide-format printer companies about showcasing complete application workflows at their booths (printer + protective overlaminate) rather than just hardware demos. It's been a strong differentiator for them, especially for outdoor signage and vehicle wrap applications where installers are looking for end-to-end solutions.\n\nWould you be open to a quick conversation about what a demo setup like that could look like for MUTOH's booth? Happy to share what's worked well for others.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "MUTOH exhibiting at PRINTING United Expo 2025 and planning trade show strategy",
+    "value_prop_emphasized": "Complete durability solutions for trade show differentiation and customer education"
+  }
+}

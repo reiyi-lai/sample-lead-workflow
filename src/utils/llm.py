@@ -84,6 +84,9 @@ def extract_json_from_response(response: str) -> dict:
     Extract JSON from a Claude response that may contain other text.
     Uses multiple strategies: direct parse, markdown blocks, balanced braces.
     """
+    import re
+    import json
+
     text = response.strip()
 
     # Strategy 1: Try parsing the whole response directly
@@ -210,6 +213,34 @@ def extract_json_from_response(response: str) -> dict:
                 return json.loads(repaired)
             except json.JSONDecodeError as e:
                 last_error = f"Strategy 5b: {e}"
+
+    # Strategy 6: Try to fix common JSON issues
+    if first_brace != -1:
+        partial = text[first_brace:]
+
+        # Try multiple fixes
+        fixes = [
+            # Fix 1: Remove trailing commas before } or ]
+            lambda s: re.sub(r',(\s*[}\]])', r'\1', s),
+
+            # Fix 2: Fix unescaped quotes in strings
+            lambda s: re.sub(r'(?<!\\)"(?=[^"]*"[^"]*:)', '\\"', s),
+
+            # Fix 3: Clean up malformed JSON structure
+            lambda s: re.sub(r',\s*}', '}', re.sub(r',\s*]', ']', s)),
+
+            # Fix 4: Remove any control characters or invalid JSON characters
+            lambda s: re.sub(r'[\x00-\x1f\x7f-\x9f]', '', s)
+        ]
+
+        for i, fix_func in enumerate(fixes):
+            try:
+                fixed = fix_func(partial)
+                result = json.loads(fixed)
+                return result
+            except (json.JSONDecodeError, re.error) as e:
+                last_error = f"Strategy 6.{i+1}: {e}"
+                continue
 
     error_msg = f"Failed to parse JSON - {last_error}" if last_error else "Failed to parse JSON"
     return {"error": error_msg, "raw_response": response[:2000]}

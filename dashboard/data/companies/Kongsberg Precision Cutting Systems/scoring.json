@@ -1,0 +1,44 @@
+{
+  "company_name": "Kongsberg Precision Cutting Systems",
+  "website_url": "https://www.kongsbergsystems.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "Kongsberg PCS delivers digital cutting solutions directly to wide format, packaging, signage, and display markets worldwide. Their Kongsberg C series is specifically marketed as 'a workhorse for signage production' handling rigid and flexible signage materials, vehicle wraps, window graphics, decals, and architectural graphics. The company explicitly serves sign manufacturers, large-format graphics producers, and vehicle wrap installers\u2014all core Tedlar ICP verticals."
+    },
+    "size_revenue_fit": {
+      "score": 4,
+      "rationale": "Limited public financial data available. LeadIQ reports approximately $35M annual revenue as of July 2024 with approximately 236 employees across 4 continents. When OpenGate Capital acquired the company in April 2021, approximately 400 employees transferred with the business. This places Kongsberg PCS below the preferred $50M+ revenue threshold, though their global footprint (Belgium HQ, Czech production, Norway R&D, Ohio USA headquarters) indicates mid-market scale."
+    },
+    "strategic_relevance": {
+      "score": 6,
+      "rationale": "Kongsberg PCS manufactures cutting equipment rather than protective films, making them an equipment supplier to Tedlar's target customers rather than a direct end-user. However, their cutting tables are used by sign shops and graphics producers who apply overlaminates to printed graphics\u2014the exact workflow where Tedlar films would be specified. They promote applications including 'vehicle wraps,' 'outdoor signage,' and 'window graphics' that require durable protective overlaminates, but as an OEM equipment manufacturer, they wouldn't directly purchase Tedlar films."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "Extremely active in target markets. Kongsberg exhibited at FESPA 2024 and FESPA 2025, ISA International Sign Expo 2025 (April 23-25, Las Vegas), and Graphics Canada 2025. They launched the Kongsberg Ultimate cutting system in November 2023, opened a new Customer Experience Center in Ohio in August 2023, and launched the Smart Material Handler in October 2025. The company reports over 13,000 C24 and MultiCam installations globally and maintains prominent presence at all major graphics and signage trade shows."
+    }
+  },
+  "qualification_summary": "Kongsberg PCS is a highly visible, globally active player in the sign and graphics equipment market, but represents a lower-priority prospect for Tedlar. As an OEM cutting table manufacturer serving sign shops and graphics producers, they are one step removed from being a direct film purchaser. Their customers (sign manufacturers, vehicle wrap installers) are the ideal Tedlar prospects. Revenue appears below preferred threshold at ~$35M. Consider as a strategic partner for joint demonstrations or referrals to their 13,000+ installation base rather than a direct sales target.",
+  "icp_qualification": {
+    "weighted_score": 74.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 4,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 6,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<svg width="520" height="700" viewBox="0 0 690 930" xmlns="http://www.w3.org/2000/svg">
+ <g style="font-family: system-ui, sans-serif">
+  <!-- Background -->
+  <rect fill="#ffffff" height="930" width="690" x="0" y="0"/>
+
+  <!-- ==================== STAGE HEADER ==================== -->
+  <rect fill="#e5e7eb" height="40" rx="6" stroke="#9ca3af" stroke-width="1.5" width="650" x="20" y="20"/>
+  <text fill="#374151" font-size="16" font-weight="bold" text-anchor="middle" x="345" y="46">STAGE 4: OUTREACH GENERATION</text>
+
+  <!-- ==================== INPUT FROM STAGE 3 ==================== -->
+  <rect fill="#e0e7ff" height="50" rx="6" stroke="#6366f1" stroke-width="1.5" width="400" x="145" y="80"/>
+  <text fill="#4338ca" font-size="11" font-weight="bold" text-anchor="middle" x="345" y="100">INPUT: Target Roles (from Stage 3)</text>
+  <text fill="#4338ca" font-size="10" text-anchor="middle" x="345" y="118">Triggered by on_target_roles_identified() callback</text>
+
+  <!-- Arrow down -->
+  <line stroke="#374151" stroke-width="2" x1="345" x2="345" y1="130" y2="165"/>
+  <polygon fill="#374151" points="340,160 345,170 350,160"/>
+
+  <!-- ==================== TWO-TURN LLM CONVERSATION BOX ==================== -->
+  <rect fill="#eff6ff" height="50" rx="8" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3" width="610" x="40" y="175"/>
+  <text fill="#1e40af" font-size="12" font-weight="bold" text-anchor="middle" x="345" y="205">TWO-TURN LLM CONVERSATION (Token Efficient)</text>
+
+  <!-- Arrow down -->
+  <line stroke="#374151" stroke-width="2" x1="345" x2="345" y1="225" y2="260"/>
+  <polygon fill="#374151" points="340,255 345,265 350,255"/>
+
+  <!-- ==================== STEP 4.1: CONTACT ANALYSIS ==================== -->
+  <rect fill="#ffffff" height="280" rx="6" stroke="#374151" stroke-width="1.5" width="610" x="40" y="270"/>
+
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" rx="6" stroke="#374151" width="610" x="40" y="270"/>
+  <text fill="#1f2937" font-size="11" font-weight="bold" x="52" y="290">Turn 1: Role Analysis &amp; Engagement Strategy</text>
+  <text fill="#6b7280" font-size="10" x="560" y="290">LLM</text>
+
+  <!-- System Prompt box -->
+  <rect fill="#fef9c3" height="195" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="270" x="52" y="312"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" x="62" y="328">System Prompt</text>
+  <text fill="#1f2937" font-size="9" x="62" y="345">- TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-size="9" x="62" y="358">- Analyze role in company context</text>
+  <text fill="#1f2937" font-size="9" x="62" y="374">- Develop engagement strategy:</text>
+  <text fill="#1f2937" font-size="9" x="70" y="387">• Scope of work &amp; decision authority</text>
+  <text fill="#1f2937" font-size="9" x="70" y="400">• Relevant Tedlar use cases</text>
+  <text fill="#1f2937" font-size="9" x="70" y="413">• Personal stakes &amp; motivations</text>
+  <text fill="#1f2937" font-size="9" x="70" y="426">• Timing factors (events, news)</text>
+  <text fill="#1f2937" font-size="9" x="62" y="442">- Identify personalization hooks</text>
+  <text fill="#1f2937" font-size="9" x="62" y="455">- Recommend channel (email/LinkedIn)</text>
+  <text fill="#1f2937" font-size="9" x="62" y="471">- Recommend messaging approach</text>
+  <text fill="#1f2937" font-size="9" x="62" y="497">Uses [Name] placeholder (no contact yet)</text>
+
+  <!-- Input box -->
+  <rect fill="#dbeafe" height="90" rx="4" stroke="#2563eb" width="260" x="340" y="312"/>
+  <text fill="#1e40af" font-size="10" font-weight="600" x="350" y="328">User Message (Turn 1)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="345">Develop engagement strategy for:</text>
+  <text fill="#1f2937" font-size="9" x="350" y="361">- Role: {role_title}</text>
+  <text fill="#1f2937" font-size="9" x="350" y="374">- Company: {company_name}</text>
+  <text fill="#1f2937" font-size="9" x="350" y="387">- Scoring data (from Stage 2)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="400">- Target roles (from Stage 3)</text>
+
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="95" rx="4" stroke="#16a34a" width="260" x="340" y="410"/>
+  <text fill="#166534" font-size="10" font-weight="600" x="350" y="426">Output Format</text>
+  <text fill="#1f2937" font-size="9" x="350" y="443">- role_match (priority, rationale)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="456">- engagement_strategy (4 areas)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="469">- personalization_hooks (up to 3)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="482">- recommended_channel</text>
+  <text fill="#1f2937" font-size="9" x="350" y="495">- recommended_approach</text>
+
+  <!-- JSON save indicator for analysis -->
+  <line stroke="#2563eb" stroke-width="1.5" x1="470" x2="470" y1="505" y2="535"/>
+  <line stroke="#2563eb" stroke-width="1.5" x1="470" x2="520" y1="535" y2="535"/>
+  <polygon fill="#2563eb" points="515,531 525,535 515,539"/>
+  <rect fill="#dbeafe" height="26" rx="3" stroke="#2563eb" width="185" x="465" y="522"/>
+  <text fill="#1e40af" font-size="9" x="475" y="539">{co}/contacts/{role}_analysis.json</text>
+
+  <!-- ==================== ARROW TO TURN 2 ==================== -->
+  <line stroke="#374151" stroke-width="2" x1="345" x2="345" y1="550" y2="590"/>
+  <polygon fill="#374151" points="340,585 345,595 350,585"/>
+  <text fill="#6b7280" font-size="9" text-anchor="middle" x="345" y="575">Context preserved</text>
+
+  <!-- ==================== STEP 4.2: OUTREACH MESSAGE ==================== -->
+  <rect fill="#ffffff" height="210" rx="6" stroke="#374151" stroke-width="1.5" width="610" x="40" y="600"/>
+
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" rx="6" stroke="#374151" width="610" x="40" y="600"/>
+  <text fill="#1f2937" font-size="11" font-weight="bold" x="52" y="620">Turn 2: Outreach Message Generation</text>
+  <text fill="#6b7280" font-size="10" x="560" y="620">LLM</text>
+
+  <!-- Channel selection -->
+  <rect fill="#fce7f3" height="30" rx="4" stroke="#db2777" width="580" x="55" y="640"/>
+  <text fill="#be185d" font-size="9" text-anchor="middle" x="345" y="659">Channel Selection: Use recommended_channel from Turn 1 (or force_channel override)</text>
+
+  <!-- Two column layout for prompts -->
+  <!-- Email prompt box -->
+  <rect fill="#fef9c3" height="100" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="270" x="52" y="680"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" x="62" y="696">Email System Prompt</text>
+  <text fill="#1f2937" font-size="9" x="62" y="713">- 80-150 words, conversational tone</text>
+  <text fill="#1f2937" font-size="9" x="62" y="726">- Specific opening (not generic)</text>
+  <text fill="#1f2937" font-size="9" x="62" y="739">- ONE Tedlar benefit → their pain</text>
+  <text fill="#1f2937" font-size="9" x="62" y="752">- Low-friction CTA</text>
+  <text fill="#1f2937" font-size="9" x="62" y="765">- Subject line &lt;50 chars</text>
+
+  <!-- LinkedIn prompt box -->
+  <rect fill="#fef9c3" height="100" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="260" x="340" y="680"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" x="350" y="696">LinkedIn System Prompt</text>
+  <text fill="#1f2937" font-size="9" x="350" y="713">- 200-300 chars (connection req)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="726">- OR 150-200 words (InMail)</text>
+  <text fill="#1f2937" font-size="9" x="350" y="739">- One hook, one value point</text>
+  <text fill="#1f2937" font-size="9" x="350" y="752">- Soft CTA: "Open to connecting?"</text>
+
+  <!-- JSON save indicator for outreach -->
+  <line stroke="#2563eb" stroke-width="1.5" x1="187" x2="187" y1="780" y2="800"/>
+  <line stroke="#2563eb" stroke-width="1.5" x1="187" x2="40" y1="800" y2="800"/>
+  <polygon fill="#2563eb" points="45,796 35,800 45,804"/>
+  <rect fill="#dbeafe" height="26" rx="3" stroke="#2563eb" width="190" x="40" y="787"/>
+  <text fill="#1e40af" font-size="9" x="50" y="804">{co}/contacts/{role}_outreach.json</text>
+
+  <!-- ==================== OUTPUT SUMMARY ==================== -->
+  <line stroke="#374151" stroke-width="2" x1="345" x2="345" y1="810" y2="850"/>
+  <polygon fill="#374151" points="340,845 345,855 350,845"/>
+
+  <!-- Output summary box -->
+  <rect fill="#dcfce7" height="55" rx="6" stroke="#16a34a" stroke-width="1.5" width="450" x="120" y="860"/>
+  <text fill="#166534" font-size="11" font-weight="bold" text-anchor="middle" x="345" y="882">STAGE 4 OUTPUT</text>
+  <text fill="#166534" font-size="10" text-anchor="middle" x="345" y="900">Personalized outreach (email or LinkedIn) per target role</text>
+
+ </g>
+</svg>

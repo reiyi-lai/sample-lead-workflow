@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Differentiation strategy for Agfa's sales teams",
+    "body": "Hi [Name],\n\nCongrats on the recent Pinnacle Awards\u2014impressive momentum for Agfa's product line.\n\nI've been talking with other equipment manufacturers who've found that bundling their printers with a premium protective film gives their sales teams a complete durability story that stands out against HP and Canon in competitive deals. Essentially helps justify premium pricing when specs alone don't differentiate.\n\nGiven your presence at FESPA and ISA, figured this might be worth a quick conversation. Would you be open to a brief call to discuss how other companies are approaching this?\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Agfa's sales teams compete directly against HP, Canon, and Epson at FESPA and ISA Sign Expo in markets where printer specifications have largely commoditized",
+    "value_prop_emphasized": "Complete durability solution that enables competitive differentiation and premium pricing justification"
+  }
+}

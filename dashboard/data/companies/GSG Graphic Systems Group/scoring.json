@@ -1,0 +1,44 @@
+{
+  "company_name": "GSG - Graphic Solutions Group Inc.",
+  "website_url": "https://www.gogsg.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "GSG is a wholesale distributor serving the electrical sign, digital print, and commercial markets with over 20,000 SKUs including vinyl, application tapes, and large-format printing supplies. They actively promote products like RTape Conform Application Tape for sign applications, decals, banners and wall graphics, and exhibit at ISA Sign Expo (Booth #3325 in 2025), demonstrating direct alignment with Tedlar's target verticals of sign manufacturers, large-format graphics companies, and protective film distributors."
+    },
+    "size_revenue_fit": {
+      "score": 9,
+      "rationale": "GSG reported $207.4 million in annual revenue (2025) with approximately 130-200 employees across 10 locations in 16 states including Dallas (HQ), Austin, Baton Rouge, Cincinnati, Houston, Oklahoma City, and Tulsa. Founded in 1950 with over 60 years of industry experience, GSG was acquired by Grimco in January 2025, signaling significant scale and market presence. This places them firmly in the $100M+ revenue tier with national distribution capabilities."
+    },
+    "strategic_relevance": {
+      "score": 7,
+      "rationale": "As a wholesale distributor, GSG supplies consumables and equipment to the graphics and sign industry, positioning them as a potential channel partner rather than direct end-user. They carry protective films, overlaminates, and application tapes for outdoor signage and vehicle wraps, showing product category alignment. However, limited evidence of specific emphasis on durability, UV protection, or premium positioning in their marketing. The recent Grimco acquisition (finalized January 2025) may create procurement consolidation opportunities."
+    },
+    "market_activity": {
+      "score": 8,
+      "rationale": "GSG actively exhibits at ISA Sign Expo (2025 presence at Booth #3325 confirmed via LinkedIn) and references PRINTING United Expo attendance. They maintain active social media presence promoting industry partnerships with 3M, RTape, HP (R530 printer launch), and ZSK embroidery equipment. Recent acquisition by Grimco (announced December 2024, closed January 2025) and recognition as Top Workplaces USA 2024 demonstrate strong industry engagement and market momentum."
+    }
+  },
+  "qualification_summary": "GSG is a strong ICP fit as a $207M wholesale distributor serving the sign and graphics industry with national reach across 16 states and active participation in key trade shows like ISA Sign Expo. While they align well with Tedlar's target verticals and have the scale/distribution network to be a significant channel partner, their role as a distributor rather than manufacturer means engagement should focus on adding Tedlar to their product portfolio to serve their sign manufacturer and graphics customer base. The recent Grimco acquisition (January 2025) presents both opportunity and complexity for new supplier relationships.",
+  "icp_qualification": {
+    "weighted_score": 83.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 9,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 7,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 8,
+        "weight": 0.25
+      }
+    }
+  }
+}

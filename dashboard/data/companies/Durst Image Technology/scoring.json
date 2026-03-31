@@ -1,0 +1,44 @@
+{
+  "company_name": "Durst Image Technology",
+  "website_url": "https://www.durst-group.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "Durst is a direct match for Tedlar's core ICP. The company manufactures large-format UV inkjet printers specifically for outdoor signage, billboards, posters, soft signage, and vehicle graphics applications. Their P5 series and other platforms target sign manufacturers, large-format print companies, and architectural graphics producers\u2014all key Tedlar verticals. Durst explicitly positions itself as a 'leading provider of large format printing systems for outdoor and indoor advertising.'"
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "Durst Group is a global technology company with 1,100+ employees worldwide and operations in over 40 countries. Revenue estimates vary by source (Datanyze reports $101M, though this appears conservative for a company of this scale), but the company is clearly mid-market to enterprise with a global footprint. Durst Image Technology US is based in Rochester, NY with established North American operations. The company's scale, global presence, and enterprise customer base align well with Tedlar's preferred ICP."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "Durst's value proposition centers on durability, reliability, and long-lasting performance\u2014directly aligned with Tedlar's strengths. The company emphasizes 'products designed for performance, reliability, flexibility and longevity' and outdoor applications requiring visibility, durability, and long-lasting characteristics. Their customers in outdoor signage, billboards, vehicle wraps, and architectural graphics all face UV degradation, fading, and weather exposure challenges that Tedlar's protective films solve. Durst's quality positioning and focus on premium solutions makes them an excellent strategic fit."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "Durst is highly active in the target market. The company exhibited at PRINTING United Expo 2024 and 2025 as a Platinum sponsor, attended ISA Expo 2024, and received eleven 2025 PRINTING United Alliance Pinnacle Awards. They launched the P5 X flatbed printer in late 2024 and the P5 SMP hybrid system at DRUPA 2024. Durst also exhibited at Labelexpo 2025 and maintains strong industry engagement. Their consistent trade show presence and product innovation demonstrate significant market leadership and activity."
+    }
+  },
+  "qualification_summary": "Durst Image Technology is an exceptionally strong prospect for Tedlar. As a global manufacturer of large-format printing systems for outdoor signage, vehicle wraps, and architectural graphics\u2014all core Tedlar markets\u2014they represent a direct ICP match. With 1,100+ employees, operations in 40+ countries, and active participation in major industry events like PRINTING United and ISA Expo, Durst combines the right industry focus, company scale, strategic alignment on durability and outdoor performance, and market leadership that makes them a top-tier qualification for Tedlar's protective film solutions.",
+  "icp_qualification": {
+    "weighted_score": 93.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

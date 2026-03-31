@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Completing EFI's outdoor durability story",
+    "body": "Hi [Name],\n\nCongrats on the Pro 30h+ and VUTEk M3h launches\u2014the outdoor durability positioning is strong.\n\nI'm reaching out because we work with printer manufacturers whose customers face a frustrating problem: their prints look great coming off the press, but outdoor graphics still fail prematurely when the protective overlaminate can't match the ink quality. It undermines the whole solution.\n\nWe make protective films specifically designed for extreme outdoor applications\u2014graffiti resistance, UV protection, no fading or cracking. Several equipment companies have found it strengthens their competitive story at shows like ISA and FESPA.\n\nWould it make sense to share how others are positioning this as part of their total solution? Happy to send over some examples.\n\nBest,\n[Your name]",
+    "word_count": 117
+  },
+  "personalization_used": {
+    "hook": "EFI's recent Pro 30h+ and VUTEk M3h launches emphasize outdoor durability claims, but EFI lacks a validated protective overlaminate recommendation to complete the solution",
+    "value_prop_emphasized": "Extreme durability and UV protection that completes EFI's outdoor durability positioning and prevents customer satisfaction issues when overlaminates fail"
+  }
+}

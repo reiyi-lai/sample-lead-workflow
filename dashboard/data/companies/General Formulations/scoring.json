@@ -1,0 +1,44 @@
+{
+  "company_name": "General Formulations",
+  "website_url": "https://www.generalformulations.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"1-1,8-5\">General Formulations is a global manufacturer of pressure-sensitive media, offering film and laminate solutions for windows, walls, floors, and outdoor, vehicle, fleet and transit applications.</cite> <cite index=\"1-14,1-16,1-23\">The company partners with PDAA for vehicle and fleet training certification classes featuring products like GF 830 AutoMark Cast and has wrapped over 120 LA Metro buses using GF 209 MetroMark.</cite> This is a direct match with all core Tedlar ICP verticals: sign manufacturing, large-format graphics, vehicle wraps, architectural graphics, and transit interiors."
+    },
+    "size_revenue_fit": {
+      "score": 6,
+      "rationale": "<cite index=\"22-1,22-4\">General Formulations has $63.9 million in revenue and 116 employees based in Sparta, Michigan.</cite> <cite index=\"1-4,1-8\">The company has over 400,000 square feet of manufacturing and converting space to service customers throughout the United States, Canada, Latin America, Asia Pacific, and Europe.</cite> Revenue is above $50M threshold with global presence, though employee count is on the lower end of the mid-market range at approximately 116-201 employees depending on source."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "<cite index=\"52-1,55-14,55-15\">General Formulations is described as a 'long-time customer' of DuPont Tedlar, with their GF 108 anti-graffiti laminate featuring Tedlar standing out as a top-performing solution, and the partnership allows them to bring durable and high-performing solutions to market.</cite> <cite index=\"32-3,32-4,32-5,32-6\">GF 108 Tedlar by DuPont is a PVF laminating film that defends against permanent markers and spray paints, withstands harsh cleaning chemicals and abrasion, helps graphics remain color stable during extended UV exposure, and lasts up to 10 years outdoors.</cite> General Formulations already manufactures and sells Tedlar-based products, making them an existing customer rather than a prospect\u2014they understand and market UV durability, graffiti resistance, and long-term outdoor performance."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "<cite index=\"31-1,35-1,35-9\">General Formulations showcased new Economy Film & Laminate Solutions at ISA International Sign Expo in Las Vegas, April 23-25, 2025, at Booth #725.</cite> <cite index=\"23-27,38-1,38-10\">The company will be attending PRINTING United Expo 2025 as an exhibitor, and previously exhibited at PRINTING United Expo in September 2024 introducing GF 767 Sparkle Holographic Film at Booth SL8184.</cite> <cite index=\"52-1,55-1\">DuPont Tedlar collaborated with General Formulations at ISA Expo 2025, featuring jointly developed innovative anti-graffiti products and engaging challenges between the two booth locations.</cite> Highly active at both major industry trade shows with recent product launches and co-exhibition with DuPont Tedlar."
+    }
+  },
+  "qualification_summary": "General Formulations is a PERFECT ICP match but is already an existing Tedlar customer, not a prospect. They manufacture and distribute GF 108, a Tedlar-based overlaminate, and have a long-standing strategic partnership with DuPont including joint exhibition at ISA Expo 2025 and co-development of anti-graffiti solutions. They operate in all target verticals (vehicle wraps, transit graphics, architectural films, signage) with strong market activity at ISA and PRINTING United trade shows. This is a key strategic account for retention and expansion, not new business development.",
+  "icp_qualification": {
+    "weighted_score": 85.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 6,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

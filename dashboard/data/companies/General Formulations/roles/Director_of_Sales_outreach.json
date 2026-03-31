@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Following up on ISA Expo collaboration",
+    "body": "Hi [Name],\n\nThe joint booth at ISA was great\u2014heard the anti-graffiti challenges between our teams really got people engaged.\n\nI wanted to follow up on something that came up in a few conversations: expanding beyond GF 108 into transit interiors and architectural wall protection. A lot of your customers in those segments are asking for extended performance guarantees, and I think there's an opportunity to give your team more premium SKUs to work with.\n\nWould it make sense to grab 15 minutes before PRINTING United to discuss what that could look like?\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Co-exhibition success at ISA Expo 2025 with interactive booth challenges",
+    "value_prop_emphasized": "Expanding Tedlar portfolio to give sales team more premium products for transit interior and architectural applications"
+  }
+}

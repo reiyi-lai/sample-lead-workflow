@@ -1,0 +1,44 @@
+{
+  "company_name": "Drytac",
+  "website_url": "https://www.drytac.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"2-1,2-6\">Drytac offers an extensive lineup of print media, laminating films and mounting adhesives for all sign & display needs</cite>, making them a direct match for Tedlar's target verticals. <cite index=\"1-2,1-3\">Various industries utilize Drytac solutions, including graphic design, signage, packaging, and photography, with products catering to printing, retail, and industrial markets</cite>. <cite index=\"12-1,12-5\">The company produces vehicle wrap materials like Polar Grip Air white polymeric self-adhesive PVC film used for snowmobile and vehicle wraps</cite>, and <cite index=\"7-1,7-17\">their Weathershield Matte overlaminating film is used for stunning exterior graphics</cite>, demonstrating perfect alignment with signs, vehicle wraps, architectural graphics, and protective film applications."
+    },
+    "size_revenue_fit": {
+      "score": 7,
+      "rationale": "<cite index=\"21-1,21-5\">Drytac's estimated annual revenue is currently $75M per year with 66 employees</cite>, though other sources cite <cite index=\"22-1,22-4\">$43 million in revenue and 58 employees in 2025</cite>. <cite index=\"25-1,25-2\">LinkedIn reports 51-200 employees with headquarters in Brampton, Ontario and a privately held company founded in 1976</cite>. <cite index=\"21-8,21-13\">With offices around the globe and manufacturing facilities in the United Kingdom and Canada, Drytac serves a truly international marketplace</cite>. While revenue estimates vary between $43M-$75M placing them solidly in the mid-market tier with international presence, they fall slightly below the $100M+ preferred enterprise tier."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "<cite index=\"20-1,41-6\">Weathershield films are outdoor durable for 5+ years</cite> and <cite index=\"43-1,43-6\">With an outdoor durability of 7 years, Weathershield boasts several fire ratings</cite>, demonstrating strong durability positioning. <cite index=\"41-1,41-3,41-4\">Weathershield Emerytex is a high performance polymeric PVC overlaminating film with UV stabilisers and absorbers, resulting in significantly improved durability and weatherability</cite>. <cite index=\"49-10,49-11,13-2\">Drytac offers anti-graffiti films including Interlam Eco Anti-Graffiti and Interlam Pro Anti-Graffiti with robust anti-stick and anti-graffiti features</cite>. The company's emphasis on outdoor durability (5-7+ years), UV protection, and graffiti resistance directly mirrors Tedlar's core value propositions, making them highly strategically relevant despite using different base chemistries (PVC vs. PVF)."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "<cite index=\"32-2,32-3,32-5\">Drytac exhibited at PRINTING United Expo 2024 from September 10-12 at the Las Vegas Convention Center, with Drytac being among exhibitors at Booth SL6089</cite>. <cite index=\"31-1,37-1,37-2\">The company exhibited at PRINTING United Expo 2025 from October 22-24 at Orange County Convention Center in Orlando at Booth #1224</cite>. <cite index=\"40-7,40-8,40-9\">Drytac featured at ISA Sign Expo 2025 from April 23-25 at the Mandalay Bay Convention Centre in Las Vegas</cite>. <cite index=\"33-10,35-12\">Drytac's Interlam Eco Anti-Graffiti product won the PRINTING United Pinnacle Product Award</cite>. The company demonstrates exceptional market activity with consistent presence at both ISA and PRINTING United, recent product awards, and active partnership demonstrations with major printer manufacturers."
+    }
+  },
+  "qualification_summary": "Drytac is an exceptionally strong prospect for Tedlar with near-perfect ICP alignment. As a 50-year-old international manufacturer with $43M-$75M revenue and global operations, they are a direct competitor in protective films for signs, graphics, and vehicle wraps, with proven expertise in outdoor durability (5-7 year products), UV protection, and anti-graffiti solutions. Their active presence at ISA and PRINTING United expos, recent product awards, and extensive distributor network make them a high-priority target, though their existing competitive product portfolio may require a differentiated value proposition emphasizing Tedlar's superior 12-20+ year durability advantage.",
+  "icp_qualification": {
+    "weighted_score": 88.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 7,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

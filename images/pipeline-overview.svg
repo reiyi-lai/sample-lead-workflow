@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" font-family="monospace" font-size="12">
+  <!-- Background -->
+  <rect width="800" height="120" fill="#ffffff"/>
+
+  <!-- Stage 1 -->
+  <rect x="20" y="30" width="150" height="60" rx="6" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="95" y="52" text-anchor="middle" font-weight="bold" fill="#1e40af">STAGE 1</text>
+  <text x="95" y="72" text-anchor="middle" fill="#1e1e1e">Event Discovery</text>
+
+  <!-- Arrow 1 -->
+  <line x1="175" y1="60" x2="205" y2="60" stroke="#374151" stroke-width="2"/>
+  <polygon points="205,55 215,60 205,65" fill="#374151"/>
+  <text x="195" y="50" text-anchor="middle" fill="#6b7280" font-size="9">22→11</text>
+
+  <!-- Stage 2 -->
+  <rect x="220" y="30" width="150" height="60" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="295" y="52" text-anchor="middle" font-weight="bold" fill="#7c3aed">STAGE 2</text>
+  <text x="295" y="72" text-anchor="middle" fill="#1e1e1e">Company Qual.</text>
+
+  <!-- Arrow 2 -->
+  <line x1="375" y1="60" x2="405" y2="60" stroke="#374151" stroke-width="2"/>
+  <polygon points="405,55 415,60 405,65" fill="#374151"/>
+  <text x="395" y="50" text-anchor="middle" fill="#6b7280" font-size="9">37→8</text>
+
+  <!-- Stage 3 -->
+  <rect x="420" y="30" width="150" height="60" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+  <text x="495" y="52" text-anchor="middle" font-weight="bold" fill="#ea580c">STAGE 3</text>
+  <text x="495" y="72" text-anchor="middle" fill="#1e1e1e">Target Roles</text>
+
+  <!-- Arrow 3 -->
+  <line x1="575" y1="60" x2="605" y2="60" stroke="#374151" stroke-width="2"/>
+  <polygon points="605,55 615,60 605,65" fill="#374151"/>
+  <text x="595" y="50" text-anchor="middle" fill="#6b7280" font-size="9">3/co</text>
+
+  <!-- Stage 4 -->
+  <rect x="620" y="30" width="150" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="695" y="52" text-anchor="middle" font-weight="bold" fill="#16a34a">STAGE 4</text>
+  <text x="695" y="72" text-anchor="middle" fill="#1e1e1e">Outreach</text>
+</svg>

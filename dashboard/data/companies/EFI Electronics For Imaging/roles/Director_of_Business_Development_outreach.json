@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Thought re: EFI's outdoor durability positioning",
+    "body": "Hi [Name],\n\nSaw EFI's Pro 30h+ launch at ISA and the outdoor durability messaging caught my attention. Strong positioning.\n\nOne gap I've noticed with your customers (sign shops, wrap installers) is that even when the print quality is perfect, premature graphic failures still hurt the overall solution reputation. We work with manufacturers facing similar challenges by providing a protective layer that keeps graphics looking new in harsh outdoor conditions.\n\nWould it make sense to explore how a partnership could strengthen your outdoor graphics story? Happy to share what we're seeing work with similar customer bases.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "EFI's recent Pro 30h+ debut at ISA Sign Expo 2025 and their outdoor durability positioning",
+    "value_prop_emphasized": "Protective layer that prevents premature graphic failures and supports EFI's outdoor durability brand promise"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "company_name": "Ricoh USA",
+  "website_url": "https://www.ricoh-usa.com",
+  "scores": {
+    "industry_fit": {
+      "score": 8,
+      "rationale": "<cite index=\"1-7,22-7\">Ricoh USA produces wide-format printers for banners, posters, POP displays, vehicle wraps, wall coverings, and interior decor</cite>, directly aligning with Tedlar's target verticals. <cite index=\"7-12,41-12\">Their Pro TF6251 printer produces signs, posters, backlit displays, exhibition graphics, and POP/POS displays for indoor and outdoor use</cite>. While Ricoh manufactures printing equipment rather than protective films, they serve the exact customer base that uses Tedlar products, making them an adjacent but highly relevant prospect as an OEM partner or for their own commercial printing operations."
+    },
+    "size_revenue_fit": {
+      "score": 9,
+      "rationale": "<cite index=\"16-1,16-3\">Ricoh USA generated $3.7 billion in revenue in 2026 with 18,430 employees</cite>, positioning them as a major enterprise well above the $100M+ threshold. <cite index=\"18-6\">The parent company Ricoh globally has trailing 12-month revenue of $17.1B as of September 2025</cite>. <cite index=\"15-17\">Ricoh USA creates competitive advantage for over 1.4 million businesses, including about 85% of the Fortune 500</cite>, demonstrating significant scale and market presence."
+    },
+    "strategic_relevance": {
+      "score": 7,
+      "rationale": "<cite index=\"1-1,22-3\">Ricoh's Pro L5160e latex printer delivers outstanding quality and durability for both indoor and outdoor applications</cite>, indicating awareness of durability needs. <cite index=\"50-5,50-6\">The Pro L5160e delivers outstanding color output, quality and durability for indoor and outdoor applications including exhibition graphics and vehicle wraps, opening doors to projects in retail, event planning, advertising, and transportation</cite>. However, Ricoh is a printer manufacturer selling to PSPs rather than a converter/fabricator with direct outdoor durability pain points, making the strategic fit moderate rather than perfect."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "<cite index=\"33-1,33-11\">Ricoh showcased at PRINTING United Expo 2025 in Orlando (October 22-24) at booth 5621 with technologies and solutions to streamline workflows and accelerate business growth</cite>. <cite index=\"32-1,32-8\">Ricoh exhibited at PRINTING United Expo 2024 in Las Vegas (Sept 10-12), where the RICOH Auto Color Adjuster was a star of the show</cite>. <cite index=\"5-1\">Ricoh provides Sign & Graphics Professional Services including hands-on training programs for traditional finishing, ADA compliant signage, and wayfinding signage</cite>. Strong and consistent presence at major industry trade shows demonstrates high market activity."
+    }
+  },
+  "qualification_summary": "Ricoh USA is a strong strategic prospect with excellent ICP fit as a $3.7B enterprise serving the large-format printing, signage, and graphics markets through equipment sales and professional services. While they manufacture printers rather than use protective films directly, they have deep relationships with the exact customer base (PSPs, sign manufacturers, vehicle wrap installers) that needs Tedlar overlaminates, making them a valuable partner for co-marketing, OEM integration, or channel development. Their active participation at PRINTING United and focus on outdoor durability positions them as a high-value target for strategic collaboration.",
+  "icp_qualification": {
+    "weighted_score": 83.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 8,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 9,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 7,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

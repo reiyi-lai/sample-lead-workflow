@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Warranty claims on outdoor graphics?",
+    "body": "Hi [Name],\n\nI've been following Ultraflex's expansion with the VorTex line\u2014congrats on the launch.\n\nI'm reaching out because we work with substrate manufacturers who've struggled with warranty claims when their outdoor products (building wraps, banners, fence graphics) don't hold up as long as expected in harsh weather. Many have found that adding a protective overlaminate drastically reduces those claims and the operational headache that comes with them.\n\nGiven your warehouse footprint and the volume you're moving, I'm curious if this is something you're dealing with. Would it be helpful to share how a few similar operations teams have tackled this?\n\nBest,\n[Your name]",
+    "word_count": 112
+  },
+  "personalization_used": {
+    "hook": "Recent VorTex product launch and operational scale (500,000 sq ft warehouse, five locations) suggests they're managing significant volume and associated warranty/quality challenges",
+    "value_prop_emphasized": "Reduced warranty claims and operational burden from weather-related product failures in outdoor applications"
+  }
+}

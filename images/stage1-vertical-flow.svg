@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<svg width="390" height="735" viewBox="0 0 520 980" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Background -->
+ <!-- ==================== STAGE HEADER ==================== -->
+ <!-- ==================== INPUT INTO STAGE ==================== -->
+ <!-- Arrow down to Step 1.1 -->
+ <!-- ==================== STEP 1.1: SEARCH FOR EVENTS ==================== -->
+ <!-- Step header -->
+ <!-- System Prompt box (dotted) -->
+ <!-- Output box -->
+ <!-- JSON save indicator -->
+ <!-- Step 1.1 output count -->
+ <!-- ==================== ARROW 1.1 → 1.2 ==================== -->
+ <!-- ==================== STEP 1.2: SCORE & FILTER ==================== -->
+ <!-- Step header -->
+ <!-- System Prompt box (dotted) -->
+ <!-- Output box -->
+ <!-- JSON save indicator -->
+ <!-- Tier breakdown -->
+ <!-- Step 1.2 output highlight -->
+ <!-- ==================== ARROW 1.2 → 1.3 ==================== -->
+ <!-- ==================== STEP 1.3: COMPANY DISCOVERY ==================== -->
+ <!-- Step header -->
+ <!-- System Prompt box (dotted) -->
+ <!-- Output box -->
+ <!-- JSON save indicators (two files) -->
+ <!-- Step 1.3 output count -->
+ <!-- ==================== OUTPUT TO STAGE 2 ==================== -->
+ <g class="layer" style="font-family: system-ui, sans-serif">
+  <title>Layer 1</title>
+  <rect fill="#ffffff" height="980" id="svg_1" transform="matrix(1 0 0 1 -6.33333 -1.33333)" width="520" x="3.33" y="-1.67"/>
+  <rect fill="#e5e7eb" height="40" id="svg_2" rx="6" stroke="#9ca3af" stroke-width="1.5" width="480" x="20" y="20"/>
+  <text fill="#374151" font-size="16" font-weight="bold" id="svg_3" text-anchor="middle" x="260" y="46">STAGE 1: EVENT DISCOVERY</text>
+  <rect fill="#ffffff" height="158" id="svg_7" rx="6" stroke="#374151" stroke-width="1.5" transform="matrix(1 0 0 1.20253 -1.42857 -77.7577)" width="440" x="40" y="130"/>
+  <rect fill="#f3f4f6" height="32" id="svg_8" rx="6" stroke="#374151" transform="matrix(1 0 0 1 0 0) matrix(1 0 0 1 -1.42857 -51.4286)" width="440" x="40" y="130"/>
+  <text fill="#1f2937" font-size="10.67" font-weight="bold" id="svg_9" transform="matrix(1 0 0 1 -8.42857 -51.4286)" x="60" y="150">Step 1.1: Search for Events</text>
+  <rect fill="#fef9c3" height="100" id="svg_11" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" transform="matrix(1 0 0 1 -1.42857 -51.4286)" width="200" x="55" y="172"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" id="svg_12" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="65" y="188">System Prompt</text>
+  <text fill="#1f2937" font-size="9" id="svg_13" transform="matrix(1 0 0 1 0 0) matrix(1 0 0 1 -1.42857 -51.4286)" x="65" y="205">• TEDLAR_CONTEXT (ICP definition)</text>
+  <text fill="#1f2937" font-size="9" id="svg_14" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="65" y="218">• Search: major events, associations</text>
+  <text fill="#1f2937" font-size="9" id="svg_15" style="cursor: move;" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="65" y="231">• Base list of events: ISA, PRINTING</text>
+  <text fill="#1f2937" font-size="9" id="svg_16" style="cursor: move;" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="65" y="244">United, FESPA, Graphics Pro, SEMA</text>
+  <rect fill="#dcfce7" height="100" id="svg_18" rx="4" stroke="#16a34a" transform="matrix(1 0 0 1 -1.42857 -51.4286)" width="195" x="270" y="172"/>
+  <text fill="#166534" font-size="10" font-weight="600" id="svg_19" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="280" y="188">Output Format</text>
+  <text fill="#1f2937" font-size="9" id="svg_20" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="280" y="205">Per event:</text>
+  <text fill="#1f2937" font-size="9" id="svg_21" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="280" y="218">• event_name, dates, location</text>
+  <text fill="#1f2937" font-size="9" id="svg_22" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="280" y="231">• event_url, description</text>
+  <text fill="#1f2937" font-size="9" id="svg_23" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x="280" y="244">• industry_vertical</text>
+  <line id="svg_24" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="285" x2="285" y1="273" y2="296"/>
+  <line id="svg_25" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="285" x2="338" y1="296" y2="296"/>
+  <polygon fill="#2563eb" id="svg_26" points="333,292 343,296 333,300" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <rect fill="#dbeafe" height="26" id="svg_27" rx="3" stroke="#2563eb" transform="matrix(0.944056 0 0 1 -58.7363 -49.4286)" width="140" x="425" y="282"/>
+  <text fill="#1e40af" font-size="9" id="svg_28" transform="matrix(1 0 0 1 -82.4286 -49.4286)" x="432" y="299">💾 discovered_events.json</text>
+  <line id="svg_31" stroke="#374151" stroke-width="2" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="263" x2="263" y1="321" y2="361"/>
+  <polygon fill="#374151" id="svg_32" points="258,360 263,370 268,360" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <rect fill="#ffffff" height="270" id="svg_34" rx="6" stroke="#374151" stroke-width="1.5" transform="matrix(1 0 0 0.740741 -2.42857 11.9784)" width="440" x="40" y="419.3">Tier 3 (&lt;5): 2 events</rect>
+  <rect fill="#f3f4f6" height="32" id="svg_35" rx="6" stroke="#374151" transform="matrix(1 0 0 1 -2.42857 -97.4286)" width="440" x="40" y="418"/>
+  <text fill="#1f2937" font-size="10.67" font-weight="bold" id="svg_36" transform="matrix(1 0 0 1 -9.42857 -97.4286)" x="60" y="438">Step 1.2: Score &amp; Filter</text>
+  <text fill="#6b7280" font-size="10" id="svg_37" transform="matrix(1 0 0 1 21.5714 -99.4286)" x="420" y="440">LLM</text>
+  <rect fill="#fef9c3" height="120" id="svg_38" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" transform="matrix(1 0 0 1.19843 -2.42857 -188.508)" width="200" x="55" y="460.33">Tier 3 (&lt;5): 2 events</rect>
+  <text fill="#854d0e" font-size="10" font-weight="600" id="svg_39" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="65" y="477">System Prompt</text>
+  <text fill="#1f2937" font-size="9" id="svg_41" style="cursor: move;" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="68" y="495">• Scoring criteria (each 0-10):</text>
+  <text fill="#1f2937" font-size="9" id="svg_42" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="73" y="508">- Industry Alignment (50%)</text>
+  <text fill="#1f2937" font-size="9" id="svg_43" style="cursor: move;" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="73" y="521">- Attendee Quality (30%)</text>
+  <text fill="#1f2937" font-size="9" id="svg_44" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="73" y="534">- Scale &amp; Timing (20%)</text>
+  <text fill="#1f2937" font-size="9" id="svg_45" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="68" y="552">• Tier thresholds:</text>
+  <rect fill="#dcfce7" height="120" id="svg_46" rx="4" stroke="#16a34a" transform="matrix(1 0 0 0.84875 -2.42857 -27.4761)" width="195" x="270" y="459.64"/>
+  <text fill="#166534" font-size="10" font-weight="600" id="svg_47" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280" y="476">Output Format</text>
+  <text fill="#1f2937" font-size="9" id="svg_48" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280" y="493">Per event:</text>
+  <text fill="#1f2937" font-size="9" id="svg_49" style="cursor: move;" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280" y="506">• overall_score</text>
+  <text fill="#1f2937" font-size="9" id="svg_50" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280" y="519">• scores breakdown</text>
+  <line id="svg_53" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="287" x2="287" y1="517" y2="540"/>
+  <line id="svg_54" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="287" x2="340" y1="540" y2="540"/>
+  <polygon fill="#2563eb" id="svg_55" points="335,536 345,540 335,544" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <rect fill="#dbeafe" height="26" id="svg_56" rx="3" stroke="#2563eb" transform="matrix(1 0 0 1 -2.42857 -97.4286)" width="130" x="346" y="573"/>
+  <text fill="#1e40af" font-size="9" id="svg_57" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="356" y="590">💾 scored_events.json</text>
+  <text fill="#16a34a" font-size="9" id="svg_60" style="cursor: move;" transform="matrix(1 0 0 1 9.57143 -154.429)" x="65" y="624">Tier 1 (8-10)</text>
+  <text fill="#ca8a04" font-size="9" id="svg_61" style="cursor: move;" transform="matrix(1 0 0 1 9.57143 -154.429)" x="65" y="637">Tier 2 (5-7.9)</text>
+  <text fill="#dc2626" font-size="9" id="svg_62" style="cursor: move;" transform="matrix(1 0 0 1 9.57143 -154.429)" x="65" y="652">Tier 3 (&lt;5)</text>
+  <line id="svg_65" stroke="#374151" stroke-width="2" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="263" x2="263" y1="574" y2="614">- AttendeeQuality (30%)</line>
+  <polygon fill="#374151" id="svg_66" points="258,614 263,624 268,614" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <text fill="#16a34a" font-size="10" font-weight="bold" id="svg_67" transform="matrix(1 0 0 1 3.7381 -167.929)" x="271.5" y="718.83">All Tier 1 events</text>
+  <rect fill="#ffffff" height="210" id="svg_68" rx="6" stroke="#374151" stroke-width="1.5" transform="matrix(1 0 0 1 -4.42857 -179.429)" width="440" x="41" y="754">All discovered companie</rect>
+  <rect fill="#f3f4f6" height="32" id="svg_69" rx="6" stroke="#374151" transform="matrix(1 0 0 1 -5.42857 -173.429)" width="440" x="42" y="748"/>
+  <text fill="#1f2937" font-size="10.67" font-weight="bold" id="svg_70" transform="matrix(1 0 0 1 -12.4286 -173.429)" x="62" y="768">Step 1.3: Company Identification</text>
+  <text fill="#6b7280" font-size="10" id="svg_71" transform="matrix(1 0 0 1 -89.4286 -175.429)" x="422" y="770">LLM (includes WebSearch)</text>
+  <rect fill="#fef9c3" height="95" id="svg_72" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" transform="matrix(1 0 0 1 -5.42857 -173.429)" width="200" x="57" y="790"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" id="svg_73" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="806">System Prompt</text>
+  <text fill="#1f2937" font-size="9" id="svg_74" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="823">• TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-size="9" id="svg_75" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="836">• Search: exhibitor lists, past years,</text>
+  <text fill="#1f2937" font-size="9" id="svg_76" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="849">press releases, sponsors</text>
+  <text fill="#1f2937" font-size="9" id="svg_77" style="cursor: move;" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="862">• Target: sign manufacturers, graphics,</text>
+  <text fill="#1f2937" font-size="9" id="svg_78" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="67" y="875">wrap installers, film converters</text>
+  <rect fill="#dcfce7" height="95" id="svg_79" rx="4" stroke="#16a34a" transform="matrix(1 0 0 1 -5.42857 -173.429)" width="195" x="272" y="790"/>
+  <text fill="#166534" font-size="10" font-weight="600" id="svg_80" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="806">Output Format</text>
+  <text fill="#1f2937" font-size="9" id="svg_81" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="823">Per company:</text>
+  <text fill="#1f2937" font-size="9" id="svg_82" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="836">• company_name, website_url</text>
+  <text fill="#1f2937" font-size="9" id="svg_83" style="cursor: move;" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="849">• source_urls</text>
+  <text fill="#1f2937" font-size="9" id="svg_84" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="862">• relevance_indicators</text>
+  <text fill="#1f2937" font-size="9" id="svg_85" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="282" y="875">• confidence: confirmed/likely</text>
+  <line id="svg_86" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="291" x2="291" y1="763" y2="781"/>
+  <line id="svg_87" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="291" x2="334" y1="781" y2="781"/>
+  <polygon fill="#2563eb" id="svg_88" points="329,777 339,781 329,785" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <rect fill="#dbeafe" height="26" id="svg_89" rx="3" stroke="#2563eb" transform="matrix(0.952381 0 0 1 10.8333 -173.429)" width="165" x="343" y="890"/>
+  <text fill="#1e40af" font-size="9" id="svg_90" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="353" y="907">💾 discovered_companies.json</text>
+  <line id="svg_91" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="291" x2="291" y1="781" y2="806"/>
+  <line id="svg_92" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="291" x2="334" y1="806" y2="806"/>
+  <polygon fill="#2563eb" id="svg_93" points="329,802 339,806 329,810" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <rect fill="#dbeafe" height="26" id="svg_94" rx="3" stroke="#2563eb" transform="matrix(0.952375 0 0 1 10.8359 -173.429)" width="165" x="343" y="915"/>
+  <text fill="#1e40af" font-size="9" id="svg_95" style="cursor: move;" transform="matrix(1 0 0 1 -5.42857 -173.429)" x="353" y="932">💾 events/{event}.json</text>
+  <text fill="#166534" font-size="10" font-weight="600" id="svg_97" text-anchor="middle" transform="matrix(1 0 0 1 217.571 -109.429)" x="126" y="917">All discovered companies</text>
+  <line id="svg_98" stroke="#374151" stroke-width="2" transform="matrix(1 0 0 1 -1.42857 -51.4286)" x1="259" x2="259" y1="836.61" y2="878.39"/>
+  <polygon fill="#374151" id="svg_99" points="254,874 259,884 264,874" transform="matrix(1 0 0 1 -1.42857 -51.4286)"/>
+  <text fill="#1f2937" font-size="9" id="svg_51" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280" y="532">• reasoning</text>
+  <text fill="#1f2937" font-size="9" id="svg_101" transform="matrix(1 0 0 1 -2.42857 -97.4286)" x="280.85" y="545.5">• tier</text>
+  <text fill="#6b7280" font-size="10" id="svg_33" style="cursor: move;" transform="matrix(1 0 0 1 0.571429 -95.4286)" x="277" y="390">Output per discovered event</text>
+  <text fill="#6b7280" font-size="10" id="svg_103" transform="matrix(1 0 0 1 57.5714 -74.429)" x="283.12" y="172.92">LLM (includes WebSearch)</text>
+ </g>
+</svg>

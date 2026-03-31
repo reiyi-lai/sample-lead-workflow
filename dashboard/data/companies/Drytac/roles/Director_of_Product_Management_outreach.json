@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Premium tier for Weathershield?",
+    "body": "Hi [Name],\n\nCongrats on the Pinnacle Award for your anti-graffiti film\u2014impressive work.\n\nI've been following Drytac's momentum and wanted to reach out about something relevant to your portfolio strategy. We work with film manufacturers looking to expand beyond their current outdoor performance ceiling, particularly for architectural graphics and fleet applications where clients are asking for longer warranties than traditional PVC can deliver.\n\nGiven your innovation focus and recent trade show activity, thought this might be worth a conversation. Would you be open to a brief call to discuss how some of your peers are approaching this premium segment?\n\nBest,\n[Your name]",
+    "word_count": 103
+  },
+  "personalization_used": {
+    "hook": "Pinnacle Award for anti-graffiti innovation positions Drytac as a technology leader, creating natural entry point to discuss premium product expansion",
+    "value_prop_emphasized": "Enabling premium tier expansion beyond current 5-7 year durability ceiling for architectural graphics and fleet applications where longer warranties are increasingly demanded"
+  }
+}

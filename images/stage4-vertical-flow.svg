@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<svg width="390" height="585" viewBox="0 0 520 780" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <!-- Background -->
+  <rect fill="#ffffff" height="780" id="svg_1" width="520" x="0" y="0"/>
+  <!-- ==================== STAGE HEADER ==================== -->
+  <rect fill="#e5e7eb" height="40" id="svg_2" rx="6" stroke="#9ca3af" stroke-width="1.5" width="480" x="20" y="20"/>
+  <text fill="#374151" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" id="svg_3" text-anchor="middle" x="260" y="46">STAGE 4: OUTREACH GENERATION</text>
+  <!-- ==================== INPUT ARROW ==================== -->
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_4" text-anchor="middle" x="260" y="80">Contact info + company research + target roles from Stage 3</text>
+  <line id="svg_5" stroke="#374151" stroke-width="2" x1="260" x2="260" y1="88" y2="108"/>
+  <polygon fill="#374151" id="svg_6" points="255,108 260,118 265,108"/>
+  <!-- ==================== STEP 4.1: CONTACT ANALYSIS ==================== -->
+  <rect fill="#ffffff" height="250" id="svg_7" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="125"/>
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" id="svg_8" rx="6" stroke="#374151" width="440" x="40" y="125"/>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" id="svg_9" x="52" y="146">Step 4.1: Contact Analysis</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_10" x="410" y="146">LLM</text>
+  <!-- System Prompt box (dotted) -->
+  <rect fill="#fef9c3" height="155" id="svg_11" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="167"/>
+  <text fill="#854d0e" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_12" x="62" y="183">System Prompt</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_13" x="62" y="198">• TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_14" x="62" y="211">• Match contact to target role</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_15" x="62" y="227">• Develop engagement strategy:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_16" x="67" y="240">- Scope of work &amp; authority</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_17" x="67" y="253">- Relevant Tedlar use cases</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_18" x="67" y="266">- Personal stakes &amp; KPIs</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_19" x="67" y="279">- Timing factors (events, news)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_20" x="62" y="295">• Identify up to 3 personalization hooks</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_21" x="62" y="308">• Recommend channel &amp; approach</text>
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="155" id="svg_22" rx="4" stroke="#16a34a" width="195" x="267" y="167"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_23" x="277" y="183">Output Format</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_24" x="277" y="198">Per contact:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_25" x="277" y="214">• role_match (title, priority)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_26" x="277" y="227">• engagement_strategy</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_27" x="282" y="240">- scope_and_authority</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_28" x="282" y="253">- relevant_use_cases</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_29" x="282" y="266">- personal_stakes</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_30" x="282" y="279">- timing_factors</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_31" x="277" y="295">• personalization_hooks[]</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_32" x="277" y="308">• recommended_channel &amp; approach</text>
+  <!-- JSON save indicator -->
+  <line id="svg_33" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 0)" x1="364" x2="364" y1="322" y2="350"/>
+  <line id="svg_34" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 0)" x1="364" x2="400" y1="350" y2="350"/>
+  <polygon fill="#2563eb" id="svg_35" points="395,346 405,350 395,354" transform="matrix(1 0 0 1 -86 0)"/>
+  <rect fill="#dbeafe" height="26" id="svg_36" rx="3" stroke="#2563eb" transform="matrix(1 0 0 1 -86 0)" width="175" x="408" y="337"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_37" transform="matrix(1 0 0 1 -86 0)" x="418" y="354">💾 {contact}_analysis.json</text>
+  <!-- ==================== ARROW 4.1 → 4.2 ==================== -->
+  <line id="svg_38" stroke="#374151" stroke-width="2" x1="260" x2="260" y1="380" y2="420"/>
+  <polygon fill="#374151" id="svg_39" points="255,420 260,430 265,420"/>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_40" x="275" y="405">Analysis + hooks per contact</text>
+  <!-- ==================== STEP 4.2: GENERATE OUTREACH ==================== -->
+  <rect fill="#ffffff" height="230" id="svg_41" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="435"/>
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" id="svg_42" rx="6" stroke="#374151" width="440" x="40" y="435"/>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" id="svg_43" x="52" y="456">Step 4.2: Generate Outreach Message</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_44" x="410" y="456">LLM</text>
+  <!-- System Prompt box (dotted) -->
+  <rect fill="#fef9c3" height="140" id="svg_45" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="477"/>
+  <text fill="#854d0e" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_46" x="62" y="493">System Prompt</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_47" x="62" y="508">• TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_48" x="62" y="521">• Email guidelines:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_49" x="67" y="534">- 80-150 words</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_50" x="67" y="547">- Consultative, not salesy</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_51" x="67" y="560">- Specific opening (not generic)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_52" x="67" y="573">- ONE pain point + Tedlar benefit</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_53" x="67" y="586">- Low-friction CTA</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_54" x="62" y="602">• LinkedIn: 200-300 chars max</text>
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="140" id="svg_55" rx="4" stroke="#16a34a" width="195" x="267" y="477"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_56" x="277" y="493">Output Format</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_57" x="277" y="508">Per contact:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_58" x="277" y="524">• channel (email or linkedin)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_59" x="277" y="537">• message:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_60" x="282" y="550">- subject (for email)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_61" x="282" y="563">- body</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_62" x="282" y="576">- word/character count</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_63" x="277" y="592">• personalization_used</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_64" x="282" y="605">(hook + value_prop)</text>
+  <!-- JSON save indicator -->
+  <line id="svg_65" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -88 1)" x1="364" x2="364" y1="617" y2="645"/>
+  <line id="svg_66" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -88 1)" x1="364" x2="400" y1="645" y2="645"/>
+  <polygon fill="#2563eb" id="svg_67" points="395,641 405,645 395,649" transform="matrix(1 0 0 1 -88 1)"/>
+  <rect fill="#dbeafe" height="26" id="svg_68" rx="3" stroke="#2563eb" transform="matrix(1 0 0 1 -88 1)" width="175" x="408" y="632"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_69" transform="matrix(1 0 0 1 -88 1)" x="418" y="649">💾 {contact}_outreach.json</text>
+  <!-- ==================== FINAL OUTPUT ==================== -->
+  <line id="svg_70" stroke="#374151" stroke-width="2" x1="260" x2="260" y1="670" y2="700"/>
+  <polygon fill="#374151" id="svg_71" points="255,700 260,710 265,700"/>
+  <rect fill="#dcfce7" height="50" id="svg_72" rx="6" stroke="#16a34a" stroke-width="2" width="420" x="50" y="720"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" id="svg_73" text-anchor="middle" x="260" y="743">✅ PIPELINE COMPLETE</text>
+  <text fill="#374151" font-family="system-ui, sans-serif" font-size="10" id="svg_74" text-anchor="middle" x="260" y="760">Personalized outreach ready for each qualified contact</text>
+ </g>
+</svg>

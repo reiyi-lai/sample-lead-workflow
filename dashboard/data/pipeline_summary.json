@@ -1,0 +1,82 @@
+{
+  "pipeline": "tedlar_gtm_orchestrator",
+  "timestamp": "2026-02-10T15:59:37.243684",
+  "stats": {
+    "stage1_events": 2,
+    "stage2": 30,
+    "stage3": 17,
+    "stage4_roles": 60,
+    "errors": [
+      {
+        "company": "Landa Digital Printing",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY13zvW4NdfLZBcTqdryQ'}"
+      },
+      {
+        "company": "ABI Tape (ScreenTransferRite)",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY145QWQebdiVg56Ts1k8'}"
+      },
+      {
+        "company": "ORAFOL",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY145RGYZT9CJKJPRPTN6'}"
+      },
+      {
+        "company": "X-Rite",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY149uQags1xH3NTh6yo5'}"
+      },
+      {
+        "company": "Legion Paper",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY149uSZYh4v3Smv1v85e'}"
+      },
+      {
+        "company": "Watchfire Signs",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY149vUpQcZcy2ufroZGc'}"
+      },
+      {
+        "company": "Northlight Color",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14EQJ1YnRkmnN4ZAnED'}"
+      },
+      {
+        "company": "Viscom Inc.",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14JttptHHV7d6FnA9TL'}"
+      },
+      {
+        "company": "Color-Dec",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14Jv2niSuNDhQqubQ4B'}"
+      },
+      {
+        "company": "4Ever Products",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14PPxB4ynD7YToT5Cb3'}"
+      },
+      {
+        "company": "Midland Paper Packaging + Supplies",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14PPxv3mQnz47Rz3Vfe'}"
+      },
+      {
+        "company": "Peleman Industries",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14PQdMMX3Y4QXvYhxqK'}"
+      },
+      {
+        "company": "Sign Systems & Supplies",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14Ttci26iJr2CFdezHc'}"
+      },
+      {
+        "company": "DNE Global (DNE Laser)",
+        "stage": 2,
+        "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'You have reached your specified API usage limits. You will regain access on 2026-03-01 at 00:00 UTC.'}, 'request_id': 'req_011CY14TteCQYdfY3ioS9umb'}"
+      }
+    ]
+  }
+}

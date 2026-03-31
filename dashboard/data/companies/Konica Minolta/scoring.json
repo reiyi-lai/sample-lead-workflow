@@ -1,0 +1,44 @@
+{
+  "company_name": "Konica Minolta",
+  "website_url": "https://www.konicaminolta.com",
+  "scores": {
+    "industry_fit": {
+      "score": 4,
+      "rationale": "Konica Minolta manufactures wide-format printing equipment (AccurioWide series) for signage, banners, vehicle graphics, and outdoor applications, but they are primarily an equipment OEM/manufacturer, not a direct buyer of protective films like Tedlar. Their customers (sign shops, commercial printers) are the actual end users who would apply protective overlaminates. While their AccurioWide 160/200/250 printers produce outdoor signage and vehicle wraps, Konica Minolta sells the printing equipment rather than being a sign fabricator or graphics producer themselves."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "Konica Minolta is a publicly traded global enterprise with $7.25-9 billion annual revenue and 34,000-44,000 employees worldwide. The US subsidiary (Konica Minolta Business Solutions USA) generates approximately $2.1 billion in revenue with nearly 7,000 employees. This significantly exceeds Tedlar's preferred enterprise-level customer profile."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "While Konica Minolta's AccurioWide printers feature UV LED inks for outdoor durability and are marketed for outdoor signage and vehicle graphics applications, the company's value proposition centers on printing equipment performance, not post-print protection. Their customers would be the ones applying protective overlaminates like Tedlar to finished prints. Limited strategic alignment exists unless pursuing an OEM partnership or co-marketing initiative with their customer base."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "Konica Minolta exhibits extremely high market activity, exhibiting at PRINTING United Expo 2025 (booth #5200), ISA International Sign Expo 2023 (booth 437), and launching the AccurioWide 250HS wide-format printer in 2025. The company celebrated its 20th anniversary in production print in 2025 and has installed over 1,700 label presses worldwide. They were named a Leader in IDC's 2025 MarketScape for High-Speed Digital Label Printers."
+    }
+  },
+  "qualification_summary": "Konica Minolta is a major global printing equipment manufacturer with exceptional size and strong market presence in the graphics/signage industry, but represents a poor direct ICP fit for Tedlar protective films. As an OEM equipment supplier rather than a sign fabricator or graphics producer, they would not purchase Tedlar as an end-user. However, their extensive customer base of sign shops, commercial printers, and vehicle wrap installers represents an excellent indirect channel opportunity for co-marketing or referral partnerships.",
+  "icp_qualification": {
+    "weighted_score": 65.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 4,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

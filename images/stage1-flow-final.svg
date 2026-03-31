@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<svg width="390" height="520" viewBox="0 0 520 690" xmlns="http://www.w3.org/2000/svg">
+ <g style="font-family: system-ui, sans-serif">
+  <!-- Background -->
+  <rect fill="#ffffff" height="690" width="520" x="0" y="0"/>
+
+  <!-- ==================== STAGE HEADER ==================== -->
+  <rect fill="#e5e7eb" height="40" rx="6" stroke="#9ca3af" stroke-width="1.5" width="480" x="20" y="20"/>
+  <text fill="#374151" font-size="16" font-weight="bold" text-anchor="middle" x="260" y="46">STAGE 1: EVENT DISCOVERY</text>
+
+  <!-- ==================== STEP 1.1: SEARCH FOR EVENTS ==================== -->
+  <rect fill="#ffffff" height="190" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="80"/>
+
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" rx="6" stroke="#374151" width="440" x="40" y="80"/>
+  <text fill="#1f2937" font-size="11" font-weight="bold" x="52" y="100">Step 1.1: Discover Events</text>
+  <text fill="#6b7280" font-size="10" x="340" y="100">LLM (WebSearch)</text>
+
+  <!-- System Prompt box -->
+  <rect fill="#fef9c3" height="100" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="122"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" x="62" y="138">System Prompt</text>
+  <text fill="#1f2937" font-size="9" x="62" y="155">- TEDLAR_CONTEXT (ICP definition)</text>
+  <text fill="#1f2937" font-size="9" x="62" y="168">- Search: major events, associations</text>
+  <text fill="#1f2937" font-size="9" x="62" y="181">- Base list: ISA, PRINTING United,</text>
+  <text fill="#1f2937" font-size="9" x="62" y="194">  FESPA, Graphics Pro, SEMA</text>
+
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="100" rx="4" stroke="#16a34a" width="195" x="268" y="122"/>
+  <text fill="#166534" font-size="10" font-weight="600" x="278" y="138">Output Format</text>
+  <text fill="#1f2937" font-size="9" x="278" y="155">Per event:</text>
+  <text fill="#1f2937" font-size="9" x="278" y="168">- event_name, dates, location</text>
+  <text fill="#1f2937" font-size="9" x="278" y="181">- event_url, description</text>
+  <text fill="#1f2937" font-size="9" x="278" y="194">- industry_vertical</text>
+
+  <!-- JSON save indicator -->
+  <line stroke="#2563eb" stroke-width="1.5" x1="365" x2="365" y1="222" y2="245"/>
+  <line stroke="#2563eb" stroke-width="1.5" x1="365" x2="408" y1="245" y2="245"/>
+  <polygon fill="#2563eb" points="403,241 413,245 403,249"/>
+  <rect fill="#dbeafe" height="26" rx="3" stroke="#2563eb" width="140" x="330" y="232"/>
+  <text fill="#1e40af" font-size="9" x="340" y="249">discovered_events.json</text>
+
+  <!-- ==================== ARROW 1.1 -> 1.2 ==================== -->
+  <line stroke="#374151" stroke-width="2" x1="260" x2="260" y1="270" y2="310"/>
+  <polygon fill="#374151" points="255,305 260,315 265,305"/>
+
+  <!-- ==================== STEP 1.2: SCORE & FILTER ==================== -->
+  <rect fill="#ffffff" height="230" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="320"/>
+
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" rx="6" stroke="#374151" width="440" x="40" y="320"/>
+  <text fill="#1f2937" font-size="11" font-weight="bold" x="52" y="340">Step 1.2: Score &amp; Filter Events</text>
+  <text fill="#6b7280" font-size="10" x="400" y="340">LLM</text>
+
+  <!-- Batch processing indicator -->
+  <rect fill="#eff6ff" height="26" rx="4" stroke="#2563eb" stroke-dasharray="4,2" width="410" x="55" y="358"/>
+  <text fill="#1e40af" font-size="9" font-weight="600" text-anchor="middle" x="260" y="375">BATCH: All events scored in single LLM call</text>
+
+  <!-- System Prompt box -->
+  <rect fill="#fef9c3" height="120" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="392"/>
+  <text fill="#854d0e" font-size="10" font-weight="600" x="62" y="408">System Prompt</text>
+  <text fill="#1f2937" font-size="9" x="62" y="425">- Scoring criteria (each 0-10):</text>
+  <text fill="#1f2937" font-size="9" x="70" y="438">- Industry Alignment (50%)</text>
+  <text fill="#1f2937" font-size="9" x="70" y="451">- Attendee Quality (30%)</text>
+  <text fill="#1f2937" font-size="9" x="70" y="464">- Scale &amp; Timing (20%)</text>
+  <text fill="#1f2937" font-size="9" x="62" y="482">- Cutoff: score >= 8 passes</text>
+
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="120" rx="4" stroke="#16a34a" width="195" x="268" y="392"/>
+  <text fill="#166534" font-size="10" font-weight="600" x="278" y="408">Output Format</text>
+  <text fill="#1f2937" font-size="9" x="278" y="425">Per event:</text>
+  <text fill="#1f2937" font-size="9" x="278" y="438">- overall_score (0-10)</text>
+  <text fill="#1f2937" font-size="9" x="278" y="451">- scores breakdown</text>
+  <text fill="#1f2937" font-size="9" x="278" y="464">- reasoning</text>
+  <text fill="#1f2937" font-size="9" x="278" y="477">- tier (1/2/3)</text>
+
+  <!-- JSON save indicator -->
+  <line stroke="#2563eb" stroke-width="1.5" x1="365" x2="365" y1="512" y2="530"/>
+  <line stroke="#2563eb" stroke-width="1.5" x1="365" x2="408" y1="530" y2="530"/>
+  <polygon fill="#2563eb" points="403,526 413,530 403,534"/>
+  <rect fill="#dbeafe" height="26" rx="3" stroke="#2563eb" width="130" x="340" y="517"/>
+  <text fill="#1e40af" font-size="9" x="350" y="534">scored_events.json</text>
+
+  <!-- ==================== OUTPUT TO STAGE 2 ==================== -->
+  <line stroke="#374151" stroke-width="2" x1="260" x2="260" y1="550" y2="590"/>
+  <polygon fill="#374151" points="255,585 260,595 265,585"/>
+
+  <!-- Output summary box -->
+  <rect fill="#e0e7ff" height="50" rx="6" stroke="#6366f1" stroke-width="1.5" width="350" x="85" y="600"/>
+  <text fill="#4338ca" font-size="11" font-weight="bold" text-anchor="middle" x="260" y="622">OUTPUT TO STAGE 2</text>
+  <text fill="#4338ca" font-size="10" text-anchor="middle" x="260" y="638">Qualified events (score >= 8)</text>
+
+ </g>
+</svg>

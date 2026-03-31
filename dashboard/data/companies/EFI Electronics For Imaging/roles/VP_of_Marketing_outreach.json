@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Completing EFI's outdoor durability story",
+    "body": "Hi [Name],\n\nSaw the Pro 30h+ debut at ISA\u2014congrats on the launch. EFI's messaging around durable inks for outdoor applications is strong, but I'm curious if you're getting questions from customers about what happens after the print leaves the press.\n\nWe work with printer manufacturers whose customers were experiencing UV damage and graffiti issues on outdoor installs, even when the print quality was perfect. Our protective films have helped those teams offer a complete durability solution that their sales teams can actually sell against.\n\nWould it be worth a quick conversation about how this might fit into your go-to-market materials? Happy to share how others have approached it.\n\nBest,\n[Your name]",
+    "word_count": 116
+  },
+  "personalization_used": {
+    "hook": "EFI's recent Pro 30h+ product launch at ISA Sign Expo and their outdoor durability messaging create an opening to discuss completing their solution story",
+    "value_prop_emphasized": "UV protection and graffiti resistance as competitive differentiators that strengthen EFI's brand promise and sales enablement"
+  }
+}

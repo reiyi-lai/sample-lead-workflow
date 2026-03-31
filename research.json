@@ -1,0 +1,113 @@
+{
+  "company_name": "Epson America, Inc.",
+  "website_url": "https://epson.com/proimaging",
+  "research_summary": "Epson America is the U.S. regional headquarters of Seiko Epson Corporation, a global technology leader manufacturing professional imaging printers, projectors, scanners, and related equipment. The company's professional imaging division focuses on wide-format printing solutions including solvent, resin, and UV printers for signage, graphics, photography, and industrial applications across diverse markets.",
+  "company_overview": {
+    "description": "Manufacturer of professional imaging solutions including wide-format printers (solvent, resin, UV), dye-sublimation printers, direct-to-garment/film printers, photographic printers, and related consumables for signage, graphics, textiles, photography, and industrial printing applications",
+    "headquarters": "Los Alamitos, California",
+    "geographic_presence": "global"
+  },
+  "size_indicators": {
+    "estimated_revenue": "$100M-500M|$1B+",
+    "estimated_employees": "1000-5000",
+    "revenue_confidence": "high",
+    "revenue_notes": "Epson America reported $386.7M-$750M revenue (sources vary). Parent company Seiko Epson Corporation reported 1.36 trillion JPY (~$9.1B USD) in FY2025. Epson America serves as regional headquarters for U.S., Canada, and Latin America."
+  },
+  "products_services": {
+    "primary_offerings": [
+      "SureColor S-Series solvent signage printers (64-inch models)",
+      "SureColor R-Series resin signage printers",
+      "SureColor V-Series UV flatbed printers",
+      "SureColor P-Series photographic/fine art printers",
+      "SureColor T-Series CAD/technical printers",
+      "SureColor F-Series dye-sublimation printers",
+      "Direct-to-garment and direct-to-film printers",
+      "UltraChrome ink systems (GS3, HD, HDX, PRO12, RS Resin)"
+    ],
+    "target_markets": [
+      "Sign shops and print service providers",
+      "Commercial printing operations",
+      "Photography studios and fine art",
+      "Textile and apparel decorators",
+      "Vehicle wrap installers",
+      "Promotional products manufacturers",
+      "Architecture/engineering/construction firms"
+    ],
+    "manufacturing_capabilities": [
+      "Wide-format roll-to-roll printing (up to 64 inches)",
+      "UV flatbed printing on rigid substrates",
+      "Solvent printing for outdoor signage",
+      "Water-based resin printing",
+      "Dye-sublimation for textiles",
+      "Print-and-cut workflow solutions"
+    ],
+    "notable_brands": [
+      "SureColor",
+      "UltraChrome",
+      "PrecisionCore",
+      "Epson Edge Print",
+      "Epson Cloud Solution PORT"
+    ],
+    "relevance_to_tedlar": "direct"
+  },
+  "market_activity": {
+    "industry_associations": [
+      "PRINTING United Alliance (exhibitor and participant)",
+      "ISA (International Sign Association)"
+    ],
+    "recent_news": [
+      {
+        "headline": "Epson at ISA Sign Expo 2025 showcasing wide-format printing solutions",
+        "date": "2025-04",
+        "relevance": "Major trade show presence demonstrating signage printer lineup including solvent, resin, UV, and dye-sub solutions"
+      },
+      {
+        "headline": "Epson acquired Fiery, LLC digital front-end software provider",
+        "date": "2024-12",
+        "relevance": "Strategic acquisition to enhance commercial and industrial printing workflow capabilities"
+      },
+      {
+        "headline": "Worldwide debut of SureColor S9170 solvent printer at PRINTING United 2024",
+        "date": "2024-09",
+        "relevance": "New 11-color solvent printer with 99% PMS coverage for demanding signage applications"
+      },
+      {
+        "headline": "Three PRINTING United Alliance 2024 Pinnacle Product Awards",
+        "date": "2024-08",
+        "relevance": "Industry recognition for printing innovation and product excellence"
+      }
+    ],
+    "awards_recognition": [
+      "PRINTING United Alliance 2024 Pinnacle Product Awards (3 products)",
+      "#1 dye-sublimation brand in North America",
+      "#1 selling UV flatbed printer in North America (SureColor V7000)",
+      "Multiple Good Design Awards for printers (2025)"
+    ],
+    "growth_signals": [
+      "Active participation at ISA Sign Expo annually (2024, 2025)",
+      "Consistent presence at PRINTING United Expo",
+      "Acquisition of Fiery for digital printing growth",
+      "Expansion of product lines across signage categories",
+      "Demo center network throughout North America"
+    ]
+  },
+  "strategic_indicators": {
+    "durability_focus": true,
+    "outdoor_applications": true,
+    "premium_positioning": true,
+    "quality_certifications": [
+      "UL GREENGUARD Gold certified inks (UltraChrome GS3)",
+      "3M MCS Warranty compatibility (Epson-3M UltraChrome GS3)",
+      "Wilhelm Imaging Research permanence ratings (200+ years for UltraChrome HD/HDX)"
+    ],
+    "sustainability_initiatives": [
+      "PrecisionCore Heat-Free Technology (reduced environmental impact)",
+      "GREENGUARD Gold certified inks (low VOC emissions)",
+      "Company goal: carbon negative by 2050",
+      "Eliminate exhaustible underground resources (oil, metal) by 2050",
+      "SmartWay Transport Partner"
+    ],
+    "outdoor_durability_details": "UltraChrome GS3 solvent inks rated 5+ years outdoor lifespan unlaminated. Inks provide resistance to fading, moisture, abrasion, and UV light. Same-day lamination capability (6 hours). Water-resistant and scratch-resistant outputs. 3M MCS Warranty available for outdoor graphics applications."
+  },
+  "research_notes": "Epson demonstrates strong market position in professional imaging with comprehensive product portfolio spanning all major signage printing technologies (solvent, resin, UV). Parent company Seiko Epson employs 81,000+ globally. Epson America founded 1975, serves as regional HQ covering U.S., Canada, Latin America. Company emphasizes proprietary PrecisionCore printhead technology and UltraChrome ink chemistry. Active exhibitor at major industry trade shows (ISA, PRINTING United) with consistent product launches. Offers 1-year limited warranty standard with Next-Business-Day On-Site Repair Service on professional printers, plus extended service plan options up to 5 years. Strong focus on outdoor durability, weather resistance, and print permanence aligns with protective film applications. LinkedIn shows 501-1,000 employees for Epson America. Company positions itself as premium brand with emphasis on quality, reliability, and color accuracy rather than budget positioning."
+}

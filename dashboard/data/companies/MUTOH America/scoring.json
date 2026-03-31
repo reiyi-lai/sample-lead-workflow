@@ -1,0 +1,44 @@
+{
+  "company_name": "MUTOH America",
+  "website_url": "https://www.mutoh.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"1-1,2-5\">MUTOH America manufactures wide-format printers, cutters, inks and accessories for UV-LED, dye-sublimation, direct-to-textile and eco-solvent applications, targeting clients in graphics, signage, textile, and printing industries.</cite> <cite index=\"44-4\">Their printers are used for vehicle wraps, banners, signage, ADA compliant, custom apparel, fabrics, and promotional items</cite> \u2014 all core verticals for Tedlar protective films. This is a direct match with Tedlar's target markets."
+    },
+    "size_revenue_fit": {
+      "score": 6,
+      "rationale": "<cite index=\"19-1,19-6\">MUTOH America has $157.8 million in revenue and 58 employees.</cite> However, multiple sources show conflicting data, with some indicating 51-200 employees and others suggesting <$100M revenue. The company meets the $50M+ threshold and has global operations (engineering/distribution centers in Japan, Belgium, and Phoenix), but employee count appears smaller than typical mid-market profile."
+    },
+    "strategic_relevance": {
+      "score": 8,
+      "rationale": "<cite index=\"39-10,42-9\">MUTOH's printers are used for banners, signage, stickers, car wraps, and large-scale graphics</cite> \u2014 applications that require durable outdoor overlaminates. <cite index=\"13-6,13-7\">Their eco-solvent inks allow installation into high sensitivity environments and produce durable graphics on substrates for vehicle graphics, floor graphics, and outdoor signage.</cite> The company demonstrates quality positioning and outdoor durability focus, though their pain points center on printing technology rather than overlaminate performance."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "<cite index=\"2-10,43-2,43-3\">MUTOH will be attending PRINTING United Expo 2025 (October 22-24, Orlando) and SEMA Show 2025 as an exhibitor.</cite> <cite index=\"29-1,48-2\">The company unveiled new eco-solvent printers at PRINTING United Expo 2024 and has been honored by PRINTING United Alliance for 13 consecutive years, winning four Pinnacle Product Awards in 2024.</cite> <cite index=\"30-2,30-7\">In 2025, they're launching the HydrAton printer which received a 2025 EDP Award for innovation in Europe.</cite> Extremely active in the target market."
+    }
+  },
+  "qualification_summary": "MUTOH America is a very strong ICP fit as a leading manufacturer of wide-format printers serving the exact markets where Tedlar protective films are used (vehicle wraps, signage, graphics). With $157.8M revenue, active presence at PRINTING United and ISA trade shows, and recent product launches focused on outdoor/durable applications, they represent a high-value prospect. Their end customers (sign manufacturers, vehicle wrap shops, graphics producers) are prime candidates for Tedlar overlaminates, making MUTOH a strategic channel partner or direct specifier.",
+  "icp_qualification": {
+    "weighted_score": 83.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 6,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 8,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "company_name": "Standard Finishing Systems",
+  "website_url": "https://www.standardfinishing.com",
+  "scores": {
+    "industry_fit": {
+      "score": 2,
+      "rationale": "Standard Finishing Systems is a North American distributor of post-press print finishing equipment (Horizon and Hunkeler brands) serving commercial print, trade bindery, direct mail, and in-plant markets. Their products include perfect binders, saddlestitchers, folders, die cutters, and paper handling systems\u2014none of which align with Tedlar's target verticals of sign manufacturing, large-format graphics, vehicle wraps, or architectural panels. This is equipment distribution for the commercial printing industry, not protective film applications."
+    },
+    "size_revenue_fit": {
+      "score": 6,
+      "rationale": "Revenue estimates vary significantly across sources: RocketReach reports $62.5M (2025), while other sources cite $15M-$35M range. Employee count is consistently reported at 101-112 employees. The company operates from Andover, MA with a 9,500 sq ft demonstration center and serves the US and Canadian markets. This places them in the mid-market tier, meeting the minimum ICP threshold but below the preferred $100M+ range."
+    },
+    "strategic_relevance": {
+      "score": 1,
+      "rationale": "Standard Finishing Systems focuses on post-press automation, binding efficiency, and workflow management for book production, direct mail, and transactional printing\u2014none of which relate to Tedlar's value propositions of outdoor durability, UV protection, graffiti resistance, or weather resistance. Their customers need faster book binding and automated finishing for printed materials, not protective overlaminates for outdoor graphics or signage. There is no strategic alignment with Tedlar's core benefits."
+    },
+    "market_activity": {
+      "score": 7,
+      "rationale": "The company exhibits consistently strong trade show presence at PRINTING United (2021, 2022, 2024, 2025) with their 'largest ever display' of 25+ solutions in a 5,000 sq ft booth. They were a Gold Sponsor for PRINTING United Expo 2025 and also exhibited at Dscoop Edge 2024. Standard hosts an annual customer event called 'Finishing 360' at their Andover facility. However, all activity is focused on the commercial printing/finishing industry, not the graphics and signage markets relevant to Tedlar."
+    }
+  },
+  "icp_qualification": {
+    "weighted_score": 40.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 2,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 6,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 1,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 7,
+        "weight": 0.25
+      }
+    }
+  }
+}

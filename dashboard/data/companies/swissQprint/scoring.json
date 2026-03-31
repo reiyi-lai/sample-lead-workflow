@@ -1,0 +1,44 @@
+{
+  "company_name": "swissQprint",
+  "website_url": "https://www.swissqprint.com",
+  "scores": {
+    "industry_fit": {
+      "score": 4,
+      "rationale": "swissQprint manufactures high-end UV-LED flatbed and roll-to-roll printers for large-format printing, not protective films. Their customers are sign manufacturers, large-format print shops, and graphics companies who would be the END USERS of protective films like Tedlar, not distributors or converters of protective films. While their customer base overlaps with Tedlar's target market (sign & display, vehicle wraps, architectural graphics), swissQprint is an equipment manufacturer, not a buyer of overlaminate films for resale or integration into products."
+    },
+    "size_revenue_fit": {
+      "score": 4,
+      "rationale": "swissQprint employs 220 people globally with 6 subsidiaries including swissQprint America. Estimated annual revenue ranges from $18.5M-$35M across various sources, well below the $50M+ preferred threshold. The company announced construction of a new US facility in West Dundee, IL (24,780 sq ft) in July 2025, indicating growth but still mid-market scale. They've sold over 2,000 machines worldwide as of recent reports."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "swissQprint emphasizes durability, reliability, and longevity with 36-month warranty and 10+ year service life claims for their printing equipment. However, these are equipment durability features, not protective film needs. Their printers produce graphics and signage that could benefit from Tedlar protection, but swissQprint itself doesn't manufacture, distribute, or apply protective films\u2014they sell the printing machines. The strategic alignment is indirect at best."
+    },
+    "market_activity": {
+      "score": 8,
+      "rationale": "Highly active in target trade shows: exhibited at FESPA Global Print Expo 2025 in Berlin, ISA International Sign Expo April 2024, and confirmed for PRINTING United Expo 2025. Launched Generation 5 flatbed printer platform in January 2025 with 23% productivity increase. The Nyala flatbed has been Europe's best-selling UV flatbed printer for 7-9 consecutive years per Infosource. Active product innovation with neon inks, Droptix 3D effects, and new Kudu, Nyala 5, Impala 5 models."
+    }
+  },
+  "qualification_summary": "swissQprint is NOT a qualified prospect for Tedlar protective films. While they are highly active in the graphics and signage industry and exhibit at the right trade shows, they are an equipment manufacturer selling printing machines TO the companies that would actually use Tedlar films. The appropriate Tedlar prospects would be swissQprint's customers (sign shops, print providers), not swissQprint itself. This represents a category mismatch rather than a viable lead.",
+  "icp_qualification": {
+    "weighted_score": 48.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 4,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 4,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 8,
+        "weight": 0.25
+      }
+    }
+  }
+}

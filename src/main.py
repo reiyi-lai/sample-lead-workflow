@@ -11,7 +11,7 @@ from typing import List
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from stage1_event_discovery import discover_events, score_events
+from stage1_event_discovery import discover_events, score_events, enrich_events
 from stage2_company_qualification import (
     research_and_score_company, calculate_icp_score, save_scoring_json,
 )
@@ -64,11 +64,14 @@ class PipelineOrchestrator:
     MAX_CONCURRENT_STAGE3 = 3  # Companies processed in parallel for target role identification
     MAX_CONCURRENT_STAGE4 = 1  # Roles processed in parallel for outreach generation
 
-    def __init__(self, data_dir: str = "data", tokens_per_min: int = 30000):
+    def __init__(self, data_dir: str = "data", tokens_per_min: int = 30000,
+                 event_source: str = "web", event_file_path: str = None):
         self.data_dir = Path(data_dir)
         self.companies_dir = self.data_dir / "companies"
         self.events_dir = self.data_dir / "events"
         self.rate_limiter = RateLimiter(tokens_per_min=tokens_per_min)
+        self.event_source = event_source
+        self.event_file_path = event_file_path
         self.stats = {"stage1_events": 0, "stage2": 0, "stage3": 0, "stage4_roles": 0, "errors": []}
         self._stage2_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE2)
         self._stage4_semaphore = asyncio.Semaphore(self.MAX_CONCURRENT_STAGE4)
@@ -330,13 +333,14 @@ class PipelineOrchestrator:
     async def run_full_pipeline(self):
         """Run full pipeline: Stage 1 (events) -> Stage 2 (scoring) -> Stage 3 (roles) -> Stage 4 (outreach)."""
         print(f"\nINSTALILY GTM PIPELINE ORCHESTRATOR")
-        print(f"  Data: {self.data_dir} | Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
+        print(f"  Data: {self.data_dir} | Event source: {self.event_source} | Rate limit: {self.rate_limiter.tokens_per_min} tokens/min")
         print(f"  Event cutoff: {EVENT_SCORE_CUTOFF} | Company cutoff: {COMPANY_SCORE_CUTOFF}")
 
         for subdir in [self.events_dir, self.companies_dir]:
             subdir.mkdir(parents=True, exist_ok=True)
 
         events_file = self.events_dir / "discovered_events.json"
+        enriched_file = self.events_dir / "enriched_events.json"
         scored_file = self.events_dir / "scored_events.json"
 
         # Step 1.1: Discover events
@@ -344,34 +348,53 @@ class PipelineOrchestrator:
             events = load_json(events_file)
             print(f"\n[Step 1.1] Event Discovery: {len(events)} events found in existing data")
         else:
-            print(f"\n[Step 1.1] Event Discovery: searching for trade shows...")
+            print(f"\n[Step 1.1] Event Discovery: using {self.event_source} source...")
             await self.rate_limiter.acquire(estimated_tokens=8000)
-            events = await asyncio.to_thread(discover_events)
+            events = await asyncio.to_thread(
+                discover_events,
+                source=self.event_source,
+                file_path=self.event_file_path
+            )
             save_json(events_file, events)
             print(f"  Discovered {len(events)} events")
 
-        # Step 1.2: Score events
+        # Step 1.2: Enrich events (for sheet imports)
+        final_events = events
+        if self.event_source == "sheet":
+            if enriched_file.exists():
+                final_events = load_json(enriched_file)
+                print(f"\n[Step 1.2] Event Enrichment: {len(final_events)} enriched events found in existing data")
+            else:
+                print(f"\n[Step 1.2] Event Enrichment: enriching {len(events)} events from sheet...")
+                # With batching: estimate 48k tokens per batch of 12 events (4k per event)
+                estimated_batches = (len(events) + 11) // 12  # Ceiling division
+                await self.rate_limiter.acquire(estimated_tokens=estimated_batches * 48000)
+                final_events = await asyncio.to_thread(enrich_events, events)
+                save_json(enriched_file, final_events)
+                print(f"  Enriched {len(final_events)} events")
+
+        # Step 1.3: Score events
         scored = load_json(scored_file)
-        if scored and (scored.get("scored_events") or not events):
-            print(f"\n[Step 1.2] Event Scoring: {len(scored.get('scored_events', []))} scored events found in existing data")
+        if scored and (scored.get("scored_events") or not final_events):
+            print(f"\n[Step 1.3] Event Scoring: {len(scored.get('scored_events', []))} scored events found in existing data")
         else:
-            print(f"\n[Step 1.2] Event Scoring: scoring {len(events)} events...")
+            print(f"\n[Step 1.3] Event Scoring: scoring {len(final_events)} events...")
             await self.rate_limiter.acquire(estimated_tokens=8000)
-            scored = await asyncio.to_thread(score_events, events)
+            scored = await asyncio.to_thread(score_events, final_events)
             save_json(scored_file, scored)
 
         all_scored = scored.get("scored_events", [])
         target_events = [e for e in all_scored if e.get("overall_score", 0) >= EVENT_SCORE_CUTOFF]
         print(f"  {len(target_events)}/{len(all_scored)} events above cutoff ({EVENT_SCORE_CUTOFF})")
 
-        # Step 1.3: Discover companies (EVENT-DRIVEN → triggers Stage 2 immediately)
+        # Step 1.4: Discover companies (EVENT-DRIVEN → triggers Stage 2 immediately)
         # Event company files are saved directly in events/ as {event_name}.json
-        excluded_files = {"discovered_events.json", "scored_events.json", "discovered_companies.json", "pipeline_summary.json"}
+        excluded_files = {"discovered_events.json", "enriched_events.json", "scored_events.json", "discovered_companies.json", "pipeline_summary.json"}
         existing_event_files = [f for f in self.events_dir.glob("*.json") if f.name not in excluded_files]
 
         if existing_event_files:
             # Resume: load existing event files and trigger Stage 2 for each
-            print(f"\n[Step 1.3] Company Discovery: loading {len(existing_event_files)} existing event files...")
+            print(f"\n[Step 1.4] Company Discovery: loading {len(existing_event_files)} existing event files...")
             for event_file in existing_event_files:
                 event_data = load_json(event_file)
                 if event_data and event_data.get("companies"):
@@ -379,7 +402,7 @@ class PipelineOrchestrator:
                     await self.on_event_companies_discovered(event_name, event_data.get("companies", []))
         else:
             # Fresh run: discover companies for each event and trigger Stage 2 immediately
-            print(f"\n[Step 1.3] Company Discovery: searching for companies at {len(target_events)} events (event-driven)...")
+            print(f"\n[Step 1.4] Company Discovery: searching for companies at {len(target_events)} events (event-driven)..."
             for i, event in enumerate(target_events):
                 event_name = event.get("event_name", "Unknown")
                 event_url = event.get("event_url", "")
@@ -416,10 +439,21 @@ def main():
     parser = argparse.ArgumentParser(description="InstaLILY GTM Pipeline Orchestrator")
     parser.add_argument("--data-dir", default="data")
     parser.add_argument("--tokens-per-min", type=int, default=30000)
+    parser.add_argument("--event-source", choices=["web", "sheet"], default="web",
+                       help="Event source: 'web' for web discovery, 'sheet' for CSV/sheet import")
+    parser.add_argument("--event-file", help="Path to CSV file for sheet import mode")
 
     args = parser.parse_args()
 
-    orchestrator = PipelineOrchestrator(data_dir=args.data_dir, tokens_per_min=args.tokens_per_min)
+    if args.event_source == "sheet" and not args.event_file:
+        print("Note: Using inline sheet data for sheet import mode")
+
+    orchestrator = PipelineOrchestrator(
+        data_dir=args.data_dir,
+        tokens_per_min=args.tokens_per_min,
+        event_source=args.event_source,
+        event_file_path=args.event_file
+    )
     asyncio.run(orchestrator.run_full_pipeline())
 
 

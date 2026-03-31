@@ -1,0 +1,44 @@
+{
+  "company_name": "STAHLS'",
+  "website_url": "https://www.stahls.com",
+  "scores": {
+    "industry_fit": {
+      "score": 3,
+      "rationale": "STAHLS' operates exclusively in apparel decoration and heat transfer materials, not in signs, graphics, vehicle wraps, or protective films for those applications. Their product portfolio focuses on CAD-CUT heat transfer vinyl, heat presses (Hotronix brand), DTF transfers, and custom screen-printed transfers for garment decoration\u2014serving athletic apparel, custom t-shirt businesses, and promotional products industries. While their Master Distributors include sign supply companies like Montroy Sign & Graphic Products and JDS Sign Supply, STAHLS' manufactures materials for textiles, not overlaminates or protective films for outdoor signage, vehicle graphics, or architectural applications."
+    },
+    "size_revenue_fit": {
+      "score": 7,
+      "rationale": "STAHLS' demonstrates solid mid-market scale with estimated annual revenue of $72.3-$750M (sources vary) and approximately 1,000 employees across 5 continents according to LeadIQ data from January 2025. LinkedIn lists the company size as 1,001-5,000 employees with headquarters in St. Clair Shores, Michigan. Part of GroupeSTAHL, the company operates 16 global facilities across 10 countries and partners with major sports leagues (NFL, NBA, MLB, NHL). This positions them in the $50M-100M+ revenue range with national and international presence, meeting Tedlar's preferred size threshold."
+    },
+    "strategic_relevance": {
+      "score": 2,
+      "rationale": "STAHLS' value propositions center on heat-applied customization for performance wear and apparel, with no emphasis on outdoor durability, UV protection, or graffiti resistance for graphics applications. Their products are designed for textile decoration with focus on low-temperature application, wash durability, and sports performance\u2014fundamentally different pain points than what Tedlar addresses. The company's expertise in DTF transfers, screen-printed transfers, and heat press technology does not align with the need for long-term outdoor graphic protection, weatherability, or anti-graffiti properties that define Tedlar's value proposition for signs and vehicle wraps."
+    },
+    "market_activity": {
+      "score": 8,
+      "rationale": "STAHLS' exhibits strong trade show presence at PRINTING United Expo 2024 in Las Vegas (September 10-12, 2024), where they showcased the Hotronix ProPlace IQ Retro Mount System and participated in the inaugural Media Day event. The company also attends FESPA in Amsterdam according to recent LinkedIn posts. Recent product launches include the AI artwork tool, Inktra Screen Printed Transfers, Flexbroidery heat-applied embroidery solution, and the LIQUID 3D dimensional finish system. They also host the Print on Demand Conference and operate the STAHLS' Fulfill Engine platform, demonstrating active market engagement in their vertical."
+    }
+  },
+  "qualification_summary": "STAHLS' is NOT a qualified prospect for DuPont Tedlar's Graphics & Signage initiative. While the company demonstrates strong market activity and appropriate size/scale, it operates exclusively in the apparel decoration and heat transfer materials industry\u2014a fundamentally different vertical from Tedlar's target markets of outdoor signage, vehicle wraps, and architectural graphics. STAHLS' manufactures materials for textile customization with heat presses, not protective overlaminates for outdoor graphics applications, making the strategic fit and industry alignment critically mismatched for Tedlar's value propositions around extreme durability, UV protection, and graffiti resistance.",
+  "icp_qualification": {
+    "weighted_score": 50.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 3,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 7,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 2,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 8,
+        "weight": 0.25
+      }
+    }
+  }
+}

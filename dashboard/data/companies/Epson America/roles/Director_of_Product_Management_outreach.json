@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "SureColor lamination workflows question",
+    "body": "Hi [Name],\n\nCongrats on the S9170 launch at PRINTING United\u2014saw the strong focus on same-day lamination for vehicle wraps.\n\nI'm reaching out because we've been working with several printer OEMs on developing validated overlaminate workflows that help their customers confidently bid on municipal and fleet contracts requiring extended outdoor performance. The common challenge we hear is that sign shops love the print quality but struggle to meet 10+ year durability requirements their end customers are asking for.\n\nWould you be open to a brief conversation about how other manufacturers are addressing this? Happy to share some technical data on lamination compatibility if that's useful for your application guides.\n\nBest,\n[Your name]",
+    "word_count": 118
+  },
+  "personalization_used": {
+    "hook": "Recent SureColor S9170 launch and Epson's emphasis on same-day lamination capability for vehicle wraps",
+    "value_prop_emphasized": "Enabling Epson customers to meet extended outdoor performance guarantees that municipalities and fleet operators demand"
+  }
+}

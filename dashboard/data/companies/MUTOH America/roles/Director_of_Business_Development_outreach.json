@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "MUTOH + protective films at PRINTING United?",
+    "body": "Hi [Name],\n\nSaw that MUTOH is exhibiting at PRINTING United Expo this October\u2014congrats on the recent Pinnacle Awards.\n\nI'm reaching out because we work with several printer manufacturers whose customers (wrap shops, sign makers) struggle with graphics degrading outdoors faster than expected. Our protective films have helped these partners reduce warranty callbacks and strengthen their customer relationships.\n\nWould you be open to a brief conversation about how a partnership might look for PRINTING United? Could even explore a booth collaboration if timing works.\n\nHappy to send some examples of what we've done with similar companies first if that's easier.\n\nBest,\n[Your name]",
+    "word_count": 105
+  },
+  "personalization_used": {
+    "hook": "MUTOH exhibiting at PRINTING United Expo 2025 with recent industry recognition (Pinnacle Awards)",
+    "value_prop_emphasized": "Reduced warranty callbacks and stronger customer relationships through durable protective films for outdoor graphics applications"
+  }
+}

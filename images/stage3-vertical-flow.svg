@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<svg width="520" height="620" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <!-- Background -->
+  <rect fill="#ffffff" height="620" id="svg_1" transform="matrix(1 0 0 1 1 4)" width="520" x="0" y="0"/>
+  <!-- ==================== STAGE HEADER ==================== -->
+  <rect fill="#e5e7eb" height="40" id="svg_2" rx="6" stroke="#9ca3af" stroke-width="1.5" width="480" x="20" y="20"/>
+  <text fill="#374151" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" id="svg_3" text-anchor="middle" x="260" y="46">STAGE 3: TARGET ROLE IDENTIFICATION</text>
+  <!-- ==================== INPUT ARROW ==================== -->
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_4" text-anchor="middle" transform="matrix(1 0 0 1 0 35)" x="260" y="80">Tier 1 &amp; 2 Companies from Stage 2</text>
+  <line id="svg_5" stroke="#374151" stroke-width="2" transform="matrix(1 0 0 1 0 35)" x1="260" x2="260" y1="88" y2="108"/>
+  <polygon fill="#374151" id="svg_6" points="255,108 260,118 265,108" transform="matrix(1 0 0 1 0 35)"/>
+  <!-- ==================== AUTO-TRIGGER NOTE ==================== -->
+  <!-- ==================== STEP 3.1: TARGET ROLES ==================== -->
+  <rect fill="#ffffff" height="230" id="svg_9" rx="6" stroke="#374151" stroke-width="1.5" transform="matrix(1 0 0 1 0 0)" width="440" x="40" y="160"/>
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" id="svg_10" rx="6" stroke="#374151" width="440" x="40" y="160"/>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" id="svg_11" x="52" y="181">Step 3.1: Identify Target Roles</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_12" transform="matrix(1 0 0 1 32 -1)" x="411" y="181">LLM</text>
+  <!-- System Prompt box (dotted) -->
+  <rect fill="#fef9c3" height="140" id="svg_13" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="202"/>
+  <text fill="#854d0e" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_14" x="62" y="218">System Prompt</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_15" x="62" y="233">• TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_16" x="62" y="246">• Analyze org structure based on</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_17" x="67" y="259">company size &amp; business model</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_18" x="62" y="275">• Identify up to 3 decision-makers</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_19" x="62" y="288">• Map Tedlar use cases to each role</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_20" x="62" y="301">• Why would THEY care about Tedlar?</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_21" x="62" y="317">• Use standard, searchable titles</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_22" x="67" y="330">(e.g., &quot;VP of Product Development&quot;)</text>
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="140" id="svg_23" rx="4" stroke="#16a34a" width="195" x="267" y="202"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_24" x="277" y="218">Output Format</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_25" x="277" y="233">Per company, up to 3 roles:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_26" x="277" y="249">• title (searchable format)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_27" x="277" y="262">• priority (1, 2, or 3)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_28" x="277" y="275">• rationale (why this role matters,</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_29" x="282" y="288">use cases, how Tedlar benefits</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_30" x="282" y="301">them specifically)</text>
+  <!-- JSON save indicators -->
+  <line id="svg_31" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 1)" x1="364" x2="364" y1="342" y2="360"/>
+  <line id="svg_32" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 1)" x1="364" x2="400" y1="360" y2="360"/>
+  <polygon fill="#2563eb" id="svg_33" points="395,356 405,360 395,364" transform="matrix(1 0 0 1 -86 1)"/>
+  <rect fill="#dbeafe" height="26" id="svg_34" rx="3" stroke="#2563eb" transform="matrix(1.08589 0 0 1 -120.914 1)" width="160" x="408" y="347"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_35" transform="matrix(1 0 0 1 -86 1)" x="418" y="364">💾 {company}/target_roles.json</text>
+  <line id="svg_36" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 1)" x1="364" x2="364" y1="360" y2="385"/>
+  <line id="svg_37" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -86 1)" x1="364" x2="400" y1="385" y2="385"/>
+  <polygon fill="#2563eb" id="svg_38" points="395,381 405,385 395,389" transform="matrix(1 0 0 1 -86 1)"/>
+  <rect fill="#dbeafe" height="26" id="svg_39" rx="3" stroke="#2563eb" transform="matrix(1.09202 0 0 1 -123.408 1)" width="160" x="408" y="372"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_40" transform="matrix(1 0 0 1 -86 1)" x="418" y="389">💾 linkedin_sales_nav_searches.json</text>
+  <!-- ==================== ARROW TO STAGE 4 ==================== -->
+  <line id="svg_41" stroke="#374151" stroke-width="2" transform="matrix(1 0 0 1.225 0 -99)" x1="260" x2="260" y1="400" y2="440"/>
+  <polygon fill="#374151" id="svg_42" points="255,440 260,450 265,440"/>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_43" x="273" y="417">3 Target roles per company</text>
+  <!-- ==================== OUTPUT SUMMARY ==================== -->
+  <!-- ==================== MANUAL STEP NOTE ==================== -->
+  <rect fill="#f3f4f6" height="70" id="svg_47" rx="6" stroke="#9ca3af" transform="matrix(1.05224 0 0 1 -4.08209 -54)" width="400" x="60" y="525"/>
+  <text fill="#374151" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_48" transform="matrix(1 0 0 1 -1 -54)" x="75" y="545">📋 Manual Step: Contact Discovery</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="9" id="svg_49" transform="matrix(1 0 0 1 -1 -54)" x="75" y="562">Use LinkedIn Sales Navigator URLs to find actual contacts</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="9" id="svg_50" transform="matrix(1 0 0 1 -1 -54)" x="75" y="575">Sent to Clay Webhook URL for enrichment (Company Name, Domain, Role Title to search)</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_51" transform="matrix(1 0 0 1 78 17)" x="195.96" y="416.75">- Each target role has LinkedIn Sales</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_52" transform="matrix(1 0 0 1 181 48)" x="95.76" y="399.75">Navigator URL</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="9" id="svg_7" transform="matrix(1 0 0 1 11 101)" x="57.37" y="465.25">Note: Clay People Search based on Role Title wasn&#x27;t as good as LinkedIn Sales Nav search</text>
+ </g>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Protective film gap for GSG post-Grimco",
+    "body": "Hi [Name],\n\nI know GSG just completed the Grimco acquisition\u2014congrats on that milestone. As you're evaluating your supplier portfolio across the combined network, I wanted to flag a gap I'm seeing in the market.\n\nYour sign and graphics customers are increasingly asking distributors for graffiti-resistant overlaminates for transit, architectural, and public signage work. Most distributors don't carry anything that actually works\u2014spray paint and markers still damage the graphics underneath.\n\nWe make a protective film where graffiti wipes clean without solvents or replacement. It's filling that exact portfolio gap for a few other distributors.\n\nWould a quick 15-minute call make sense to explore whether this fits your priorities post-acquisition? Happy to keep it brief.\n\nBest,\n[Your name]",
+    "word_count": 128
+  },
+  "personalization_used": {
+    "hook": "The Grimco acquisition just closed in January 2025, placing procurement in active supplier consolidation mode",
+    "value_prop_emphasized": "Graffiti resistance solving a portfolio gap that GSG's sign and graphics customers are asking about"
+  }
+}

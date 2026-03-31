@@ -35,6 +35,19 @@ interface DateRange {
 }
 
 export default function EventsList({ events }: EventsListProps) {
+  // Client-side debug logging
+  console.log('[CLIENT DEBUG] EventsList received events:', events.length);
+  const sffs = events.find(e => e.event_name?.includes('Summer Fancy Food Show'));
+  if (sffs) {
+    console.log('[CLIENT DEBUG] Summer Fancy Food Show data:', {
+      name: sffs.event_name,
+      overall_score: sffs.overall_score,
+      overall_score_type: typeof sffs.overall_score,
+      null_check: sffs.overall_score != null,
+      hasScores: !!sffs.scores
+    });
+  }
+
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
@@ -207,7 +220,7 @@ export default function EventsList({ events }: EventsListProps) {
 
           return (
             <div
-              key={event.event_name}
+              key={event.event_url}
               className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
             >
               {/* Enhanced Event Header */}

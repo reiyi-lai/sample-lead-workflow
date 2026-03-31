@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<svg width="390" height="615" viewBox="0 0 520 820" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <!-- Background -->
+  <!-- ==================== STAGE HEADER ==================== -->
+  <rect fill="#e5e7eb" height="40" id="svg_2" rx="6" stroke="#9ca3af" stroke-width="1.5" width="480" x="20" y="20"/>
+  <text fill="#374151" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" id="svg_3" text-anchor="middle" x="260" y="46">STAGE 2: COMPANY QUALIFICATION</text>
+  <!-- ==================== INPUT ARROW ==================== -->
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_4" style="cursor: move;" text-anchor="middle" x="260" y="80">All discovered companies from Stage 1</text>
+  <line id="svg_5" stroke="#374151" stroke-width="2" x1="260" x2="260" y1="88" y2="108"/>
+  <polygon fill="#374151" id="svg_6" points="255,108 260,118 265,108"/>
+  <!-- ==================== STEP 2.1: DEEP RESEARCH ==================== -->
+  <rect fill="#ffffff" height="200" id="svg_7" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="125"/>
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" id="svg_8" rx="6" stroke="#374151" width="440" x="40" y="125"/>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" id="svg_9" style="cursor: move;" x="52" y="146">Step 2.1: Company Research</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_10" x="340" y="145">LLM (includes WebSearch)</text>
+  <!-- System Prompt box (dotted) -->
+  <rect fill="#fef9c3" height="110" id="svg_11" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" width="200" x="52" y="167"/>
+  <text fill="#854d0e" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_12" x="62" y="183">System Prompt</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_14" transform="matrix(1 0 0 1 0 -12)" x="62" y="211">• Research objectives:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_15" transform="matrix(1 0 0 1 0 -12)" x="67" y="224">- What do they do?</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_16" transform="matrix(1 0 0 1 0 -12)" x="67" y="237">- How big are they?</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_17" transform="matrix(1 0 0 1 0 -12)" x="67" y="250">- Strategic relevance to Tedlar</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_18" transform="matrix(1 0 0 1 0 -12)" x="67" y="263">- Market activity &amp; pain points</text>
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="110" id="svg_19" rx="4" stroke="#16a34a" width="195" x="267" y="167"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_20" x="277" y="183">Output Format</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_21" x="277" y="198">Per company:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_22" x="277" y="211">• business_overview</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_23" x="277" y="224">• company_scale (revenue, size)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_24" x="277" y="237">• products_and_positioning</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_25" x="277" y="250">• strategic_relevance_to_tedlar</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_26" x="277" y="263">• potential_pain_points</text>
+  <!-- JSON save indicator -->
+  <line id="svg_27" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -88 2)" x1="364" x2="364" y1="277" y2="300"/>
+  <line id="svg_28" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -88 2)" x1="364" x2="400" y1="300" y2="300"/>
+  <polygon fill="#2563eb" id="svg_29" points="395,296 405,300 395,304" transform="matrix(1 0 0 1 -88 2)"/>
+  <rect fill="#dbeafe" height="26" id="svg_30" rx="3" stroke="#2563eb" transform="matrix(0.892405 0 0 1 -44.2627 2)" width="155" x="408" y="287"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_31" transform="matrix(1 0 0 1 -88 2)" x="418" y="304">💾 {company}/research.json</text>
+  <!-- ==================== ARROW 2.1 → 2.2 ==================== -->
+  <line id="svg_32" stroke="#374151" stroke-width="2" x1="260" x2="260" y1="330" y2="370"/>
+  <polygon fill="#374151" id="svg_33" points="255,370 260,380 265,370"/>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_34" style="cursor: move;" x="275" y="355">Research output per company</text>
+  <!-- ==================== STEP 2.2: ICP SCORING ==================== -->
+  <rect fill="#ffffff" height="240" id="svg_35" rx="6" stroke="#374151" stroke-width="1.5" width="440" x="40" y="385"/>
+  <!-- Step header -->
+  <rect fill="#f3f4f6" height="32" id="svg_36" rx="6" stroke="#374151" width="440" x="40" y="385"/>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" id="svg_37" x="52" y="406">Step 2.2: ICP Scoring</text>
+  <text fill="#6b7280" font-family="system-ui, sans-serif" font-size="10" id="svg_38" x="410" y="406">LLM</text>
+  <!-- System Prompt box (dotted) -->
+  <rect fill="#fef9c3" height="130" id="svg_39" rx="4" stroke="#ca8a04" stroke-dasharray="4,2" transform="matrix(1 0 0 1.27692 0 -118.246)" width="200" x="52" y="427"/>
+  <text fill="#854d0e" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_40" x="62" y="443">System Prompt</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_41" x="62" y="458">• TEDLAR_CONTEXT</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_42" x="62" y="471">• Scoring criteria (each 1-10):</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_43" x="67" y="484">- Industry Fit (30%)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_44" x="67" y="497">- Size/Revenue Fit (25%)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_45" x="67" y="510">- Strategic Relevance (20%)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_46" x="67" y="523">- Market Activity (25%)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_47" style="cursor: move;" x="62" y="543">• Tier thresholds:</text>
+  <!-- Output box -->
+  <rect fill="#dcfce7" height="105" id="svg_48" rx="4" stroke="#16a34a" width="195" x="267" y="427"/>
+  <text fill="#166534" font-family="system-ui, sans-serif" font-size="10" font-weight="600" id="svg_49" x="277" y="443">Output Format</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_50" x="277" y="458">Per company:</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_51" x="277" y="471">• scores (per category)</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_52" x="277" y="484">• rationale per score</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_53" x="277" y="497">• overall_score</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_54" style="cursor: move;" x="277" y="510">• tier</text>
+  <text fill="#1f2937" font-family="system-ui, sans-serif" font-size="9" id="svg_55" x="277" y="523">• qualification_summary</text>
+  <!-- JSON save indicator -->
+  <line id="svg_56" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -87 2)" x1="364" x2="364" y1="531" y2="554"/>
+  <line id="svg_57" stroke="#2563eb" stroke-width="1.5" transform="matrix(1 0 0 1 -87 2)" x1="364" x2="400" y1="554" y2="554"/>
+  <polygon fill="#2563eb" id="svg_58" points="395,550 405,554 395,558" transform="matrix(1 0 0 1 -87 2)"/>
+  <rect fill="#dbeafe" height="26" id="svg_59" rx="3" stroke="#2563eb" transform="matrix(0.85443 0 0 1 -27.8259 2)" width="155" x="408" y="541"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_60" transform="matrix(1 0 0 1 -87 2)" x="418" y="558">💾 {company}/scoring.json</text>
+  <!-- Tier breakdown -->
+  <text fill="#16a34a" font-family="system-ui, sans-serif" font-size="9" id="svg_61" style="cursor: move;" transform="matrix(1 0 0 1 7 -24)" x="62" y="581">Tier 1 (85+)</text>
+  <text fill="#ca8a04" font-family="system-ui, sans-serif" font-size="9" id="svg_62" style="cursor: move;" transform="matrix(1 0 0 1 7 -24)" x="62" y="594">Tier 2 (70-84)</text>
+  <text fill="#dc2626" font-family="system-ui, sans-serif" font-size="9" id="svg_63" transform="matrix(1 0 0 1 7 -24)" x="62" y="607">Tier 3 (55-69)</text>
+  <!-- ==================== ARROW TO STAGE 3 ==================== -->
+  <!-- ==================== OUTPUT TO STAGE 3 ==================== -->
+  <!-- ==================== ALSO SAVES ==================== -->
+  <line id="svg_70" stroke="#2563eb" stroke-width="1.5" x1="295" x2="295" y1="626" y2="650"/>
+  <line id="svg_71" stroke="#2563eb" stroke-width="1.5" x1="295" x2="345" y1="650" y2="650"/>
+  <polygon fill="#2563eb" id="svg_72" points="340,646 350,650 340,654"/>
+  <rect fill="#dbeafe" height="26" id="svg_73" rx="3" stroke="#2563eb" transform="matrix(0.868852 0 0 1 76.5082 -98)" width="180" x="318" y="735"/>
+  <text fill="#1e40af" font-family="system-ui, sans-serif" font-size="9" id="svg_79" transform="matrix(1 0 0 1 35 -123)" x="327" y="776">💾 all_qualified_companies.json</text>
+ </g>
+</svg>

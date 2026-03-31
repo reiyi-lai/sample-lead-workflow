@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "PRINTING United partnership opportunity",
+    "body": "Hi [Name],\n\nI saw HP has a major booth presence at PRINTING United in October\u2014congratulations on the investment.\n\nWe work with large-format printer manufacturers to help their customers solve outdoor durability challenges with graphics. Specifically, we've seen print service providers reduce replacement cycles and warranty issues by using our protective films on HP Latex-printed signage and vehicle wraps.\n\nGiven your focus on ecosystem partnerships, would it make sense to explore how we might collaborate around PRINTING United or your recent Latex launches?\n\nHappy to send over some information on how other printer OEMs have structured these partnerships.\n\nBest,\n[Your name]",
+    "word_count": 97
+  },
+  "personalization_used": {
+    "hook": "HP's 4,000-square-foot booth at PRINTING United Expo 2025 creates near-term partnership opportunity",
+    "value_prop_emphasized": "Durability and reduced warranty claims for HP's print service provider customers using Latex printers"
+  }
+}

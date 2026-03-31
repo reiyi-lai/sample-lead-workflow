@@ -1,0 +1,546 @@
+{
+  "event_name": "Graphics Pro Expo - Long Beach",
+  "event_url": "https://www.graphics-pro-expo.com",
+  "companies": [
+    {
+      "company_name": "Epilog Laser",
+      "website_url": "https://www.epiloglaser.com",
+      "source": "official_sponsor_2025",
+      "source_reasoning": "Epilog Laser is listed as a Gold Sponsor and exhibitor for Graphics Pro Expo Long Beach 2025, with booth demonstrations mentioned on the official event page.",
+      "source_urls": [
+        "https://www.graphics-pro-expo.com/event/long-beach-2025/",
+        "https://graphics-pro.com/feature/reg-gpx-long-beach-wrapscon/"
+      ],
+      "booth_number": "TBD",
+      "description": "Laser engraving and cutting equipment manufacturer",
+      "relevance_indicators": [
+        "laser equipment",
+        "engraving systems",
+        "awards and personalization"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "xTool",
+      "website_url": "https://www.xtool.com",
+      "source": "official_exhibitor_2025",
+      "source_reasoning": "xTool is featured on the official GPX Long Beach 2025 page showcasing their Apparel Printer and has a dedicated event page for Graphics Pro Expo.",
+      "source_urls": [
+        "https://www.graphics-pro-expo.com/event/long-beach-2025/",
+        "https://www.xtool.com/products/graphics-pro-expo"
+      ],
+      "booth_number": "TBD",
+      "description": "Apparel printing and laser equipment manufacturer",
+      "relevance_indicators": [
+        "apparel printing",
+        "DTG printing",
+        "laser equipment"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "SanMar",
+      "website_url": "https://www.sanmar.com",
+      "source": "official_sponsor_2025",
+      "source_reasoning": "SanMar is listed as the sponsor of The Mixer networking event at Graphics Pro Expo Long Beach 2025 on the official event page.",
+      "source_urls": [
+        "https://www.graphics-pro-expo.com/event/long-beach-2025/"
+      ],
+      "booth_number": "TBD",
+      "description": "Wholesale blank apparel supplier",
+      "relevance_indicators": [
+        "apparel blanks",
+        "t-shirts",
+        "promotional products"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "ITNH (Innovative Technology for New Horizons)",
+      "website_url": "https://itnh.com",
+      "source": "confirmed_exhibitor_2025_2026",
+      "source_reasoning": "ITNH confirmed participation for GPX Long Beach 2025 (Aug 21-23) showcasing Mimaki and Mutoh printers on their official company website.",
+      "source_urls": [
+        "https://itnh.com/graphics-pro-expo-gpx-long-beach-2026/"
+      ],
+      "booth_number": "TBD",
+      "description": "Digital printing solutions provider - Mimaki and Mutoh distributor",
+      "relevance_indicators": [
+        "inkjet printing",
+        "DTF printers",
+        "flatbed printers",
+        "textile printing"
+      ],
+      "confidence": "confirmed"
+    },
+    {
+      "company_name": "Procolored Technology Inc.",
+      "website_url": "https://www.procolored.com",
+      "source": "official_sponsor_2024",
+      "source_reasoning": "Procolored is listed as a Gold Sponsor for GPX Long Beach 2024 and announced participation with DTF printers in press releases.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/reg-gpx-long-beach-wrapscon/",
+        "https://www.prweb.com/releases/print-on-demand-solution-provider-procolored-showcases-latest-innovations-at-graphics-pro-expo-2024-302173632.html"
+      ],
+      "booth_number": "TBD",
+      "description": "DTF printer manufacturer and print-on-demand solutions",
+      "relevance_indicators": [
+        "DTF printing",
+        "direct to film",
+        "apparel printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Mimaki USA",
+      "website_url": "https://www.mimakiusa.com",
+      "source": "past_exhibitor_referenced_2024",
+      "source_reasoning": "Mimaki equipment showcased by distributor ITNH at GPX Long Beach, and Mimaki USA participates in major graphics industry trade shows including Graphics Pro Expo.",
+      "source_urls": [
+        "https://itnh.com/graphics-pro-expo-gpx-long-beach-2026/",
+        "https://www.mimakiusa.com/about-mimaki-usa/events/"
+      ],
+      "booth_number": "TBD",
+      "description": "Wide-format printer and UV printing equipment manufacturer",
+      "relevance_indicators": [
+        "wide-format printing",
+        "UV printing",
+        "sublimation",
+        "textile printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Mutoh America Inc.",
+      "website_url": "https://www.mutoh.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Mutoh America is listed in the June 2024 GPX Long Beach exhibitor directory and equipment showcased by distributor ITNH.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser",
+        "https://itnh.com/graphics-pro-expo-gpx-long-beach-2026/"
+      ],
+      "booth_number": "TBD",
+      "description": "Wide-format printing equipment manufacturer",
+      "relevance_indicators": [
+        "wide-format printers",
+        "flatbed printers",
+        "digital printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Rayzist Photomask",
+      "website_url": "https://www.rayzist.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Rayzist Photomask confirmed exhibiting at GPX Long Beach on their official events page and is mentioned in exhibitor testimonials.",
+      "source_urls": [
+        "https://www.rayzist.com/event/graphics-pro-expo-long-beach-ca-3/",
+        "https://www.graphics-pro-expo.com/exhibit-with-us/"
+      ],
+      "booth_number": "TBD",
+      "description": "Laser engraving and photomask systems manufacturer",
+      "relevance_indicators": [
+        "laser engraving",
+        "photomask systems",
+        "awards industry"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Tajima Group",
+      "website_url": "https://www.tajima.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Tajima Group listed Graphics Pro Expo Long Beach 2024 on their official exhibition information page.",
+      "source_urls": [
+        "https://www.tajima.com/exhibition/graphicsproexpolongbeach2024/"
+      ],
+      "booth_number": "TBD",
+      "description": "Commercial embroidery machine manufacturer",
+      "relevance_indicators": [
+        "embroidery machines",
+        "multi-head embroidery",
+        "apparel decoration"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Radian Laser Systems",
+      "website_url": "https://www.radianlaser.com",
+      "source": "past_exhibitor_sponsor_2024",
+      "source_reasoning": "Radian Laser Systems listed GPX Long Beach 2024 on their events page with discount code and was a sponsor of The Mixer networking event.",
+      "source_urls": [
+        "https://www.radianlaser.com/events/graphics-pro-expo-long-beach-2024",
+        "https://graphics-pro.com/feature/month-until-graphics-pro-expo-socal/"
+      ],
+      "booth_number": "TBD",
+      "description": "Laser cutting and engraving systems",
+      "relevance_indicators": [
+        "laser systems",
+        "cutting equipment",
+        "engraving"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "First Citizens Bank Equipment Finance (formerly CIT)",
+      "website_url": "https://www.firstcitizens.com",
+      "source": "official_sponsor_2024",
+      "source_reasoning": "First Citizens Bank Equipment Finance is listed as a Gold Sponsor for multiple Graphics Pro Expo events including Long Beach.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/month-until-graphics-pro-expo-socal/",
+        "https://graphics-pro.com/feature/countdown-graphics-pro-expo-indy/"
+      ],
+      "booth_number": "TBD",
+      "description": "Equipment financing and leasing services",
+      "relevance_indicators": [
+        "equipment financing",
+        "leasing",
+        "financial services"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "ORAFOL Americas",
+      "website_url": "https://www.orafol.com",
+      "source": "past_sponsor_2024",
+      "source_reasoning": "ORAFOL Americas listed as Silver Sponsor for GPX Long Beach 2024 and sponsor of The Mixer networking event.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/month-until-graphics-pro-expo-socal/",
+        "https://www.linkedin.com/showcase/graphicsproexpo/"
+      ],
+      "booth_number": "TBD",
+      "description": "Reflective and adhesive graphics materials manufacturer",
+      "relevance_indicators": [
+        "vinyl films",
+        "graphics materials",
+        "vehicle wraps",
+        "signage materials"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "JDS Industries",
+      "website_url": "https://www.jdsindustries.com",
+      "source": "past_sponsor_2024",
+      "source_reasoning": "JDS Industries and JDS Sign Supply listed as Silver Sponsor for GPX Long Beach 2024 and in exhibitor directory.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/month-until-graphics-pro-expo-socal/",
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Awards, engraving, and sign supplies distributor",
+      "relevance_indicators": [
+        "awards supplies",
+        "engraving materials",
+        "sign supplies"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "FlexiShield",
+      "website_url": "https://www.flexishieldppf.com",
+      "source": "past_sponsor_2023",
+      "source_reasoning": "FlexiShield listed as Gold Sponsor for GPX Long Beach 2023 and sponsor of WRAPSCON Meet the Masters panel.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/month-until-graphics-pro-expo-socal/",
+        "https://www.linkedin.com/showcase/graphicsproexpo/"
+      ],
+      "booth_number": "TBD",
+      "description": "Paint protection film manufacturer",
+      "relevance_indicators": [
+        "PPF",
+        "paint protection",
+        "vehicle wraps",
+        "automotive"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Hirsch Solutions Inc.",
+      "website_url": "https://www.hsi.us",
+      "source": "past_exhibitor_sponsor_2024",
+      "source_reasoning": "Hirsch Solutions sponsors DTG/DTF Revolution class at Graphics Pro Expo events and participates in major apparel decoration trade shows.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/apparel-decorator-panel-classes-gpx-cali/",
+        "https://www.hsi.us/events"
+      ],
+      "booth_number": "TBD",
+      "description": "Embroidery and DTG equipment distributor",
+      "relevance_indicators": [
+        "embroidery machines",
+        "DTG printers",
+        "apparel decoration equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Print & Finishing Solutions (PFS)",
+      "website_url": "https://www.pfsolutions.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Print & Finishing Solutions confirmed as exhibitor at booth 123 for GPX Long Beach 2024 featuring Cutworx finishing equipment.",
+      "source_urls": [
+        "https://cutworxusa.com/a/blog/post/graphics-pro-expo-long-beach-june13th-through-15th-2024"
+      ],
+      "booth_number": "123",
+      "description": "Commercial printing equipment distributor",
+      "relevance_indicators": [
+        "printing equipment",
+        "finishing equipment",
+        "pre-press solutions"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "GCC America Inc.",
+      "website_url": "https://www.gccworld.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "GCC America Inc. listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Laser engravers and vinyl cutters manufacturer",
+      "relevance_indicators": [
+        "laser engravers",
+        "vinyl cutters",
+        "signage equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Roland DGA Corporation",
+      "website_url": "https://www.rolanddga.com",
+      "source": "likely_past_exhibitor",
+      "source_reasoning": "Roland is a major player in graphics and printing equipment and typically exhibits at Graphics Pro Expo events based on industry patterns, though not explicitly confirmed in search results for this specific location.",
+      "source_urls": [
+        "https://10times.com/the-nbmshow-longbeach/exhibitors"
+      ],
+      "booth_number": "TBD",
+      "description": "Digital printing and cutting equipment manufacturer",
+      "relevance_indicators": [
+        "wide-format printers",
+        "vinyl cutters",
+        "UV printers",
+        "engravers"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "General Formulations",
+      "website_url": "https://www.generalformulations.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "General Formulations Inc. listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Pressure-sensitive films and graphics materials manufacturer",
+      "relevance_indicators": [
+        "vinyl films",
+        "graphics materials",
+        "sign supplies"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Transfer Express",
+      "website_url": "https://www.transferexpress.com",
+      "source": "past_exhibitor_sponsor_2023",
+      "source_reasoning": "Transfer Express sponsored classes at GPX Long Beach 2023 and is a major supplier to the apparel decoration industry.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/apparel-decorator-panel-classes-gpx-cali/"
+      ],
+      "booth_number": "TBD",
+      "description": "Heat transfer supplier for apparel decoration",
+      "relevance_indicators": [
+        "heat transfers",
+        "apparel decoration",
+        "custom printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "STAHLS'",
+      "website_url": "https://www.stahls.com",
+      "source": "past_exhibitor_sponsor_2023",
+      "source_reasoning": "STAHLS' sponsored 'Heat Press for Profit LIVE' class at GPX Long Beach 2023.",
+      "source_urls": [
+        "https://graphics-pro.com/feature/apparel-decorator-panel-classes-gpx-cali/"
+      ],
+      "booth_number": "TBD",
+      "description": "Heat press equipment and heat transfer materials supplier",
+      "relevance_indicators": [
+        "heat press equipment",
+        "heat transfer vinyl",
+        "apparel decoration"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Inktavo",
+      "website_url": "https://www.inktavo.com",
+      "source": "past_exhibitor_sponsor_2023_2024",
+      "source_reasoning": "Inktavo listed in GPX Long Beach June 2024 exhibitor directory and sponsored software education classes.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser",
+        "https://graphics-pro.com/feature/apparel-decorator-panel-classes-gpx-cali/"
+      ],
+      "booth_number": "TBD",
+      "description": "Order management and production software for apparel decorators",
+      "relevance_indicators": [
+        "software",
+        "order management",
+        "production management"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "DecoNetwork",
+      "website_url": "https://www.deconetwork.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "DecoNetwork listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Web-to-print and business management software for decorators",
+      "relevance_indicators": [
+        "software",
+        "e-commerce",
+        "business management"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Ricoma International Corporation",
+      "website_url": "https://www.ricoma.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Ricoma listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Embroidery and DTG equipment manufacturer",
+      "relevance_indicators": [
+        "embroidery machines",
+        "DTG printers",
+        "heat press equipment"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Nazdar SourceOne",
+      "website_url": "https://www.nazdarsourceoneonline.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Nazdar SourceOne listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Inks, coatings and supplies for graphics and printing",
+      "relevance_indicators": [
+        "printing inks",
+        "screen printing supplies",
+        "digital printing supplies"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "OmniPrint International",
+      "website_url": "https://www.omniprint.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "OmniPrint Intl listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Direct-to-substrate printing equipment",
+      "relevance_indicators": [
+        "direct printing",
+        "digital decoration",
+        "specialty printing"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Los Angeles Apparel",
+      "website_url": "https://losangelesapparel.net",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Los Angeles Apparel listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Blank apparel manufacturer",
+      "relevance_indicators": [
+        "blank apparel",
+        "t-shirts",
+        "wholesale apparel"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Next Level Apparel",
+      "website_url": "https://www.nextlevelapparel.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Next Level Apparel listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Wholesale blank apparel supplier",
+      "relevance_indicators": [
+        "blank apparel",
+        "fashion basics",
+        "wholesale"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "IKONICS Imaging",
+      "website_url": "https://www.ikonics.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "IKONICS Imaging listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Screen printing and imaging supplies",
+      "relevance_indicators": [
+        "screen printing",
+        "imaging films",
+        "emulsions"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Full Spectrum Laser",
+      "website_url": "https://fslaser.com",
+      "source": "past_exhibitor_2024",
+      "source_reasoning": "Full Spectrum Laser listed in the GPX Long Beach June 2024 exhibitor directory.",
+      "source_urls": [
+        "https://xdigital.spiweb.com/publication/?i=822549&article_id=4780143&view=articleBrowser"
+      ],
+      "booth_number": "TBD",
+      "description": "Laser cutting and engraving equipment manufacturer",
+      "relevance_indicators": [
+        "laser cutters",
+        "laser engravers",
+        "CO2 lasers"
+      ],
+      "confidence": "likely"
+    }
+  ],
+  "total_confirmed": 4,
+  "total_likely": 26,
+  "sources_searched": [
+    "Official Graphics Pro Expo website (2025/2026 events)",
+    "Graphics Pro Expo Long Beach 2024 exhibitor directory",
+    "Graphics Pro Magazine press releases and articles",
+    "Individual exhibitor company websites confirming participation",
+    "LinkedIn Graphics Pro Expo showcase page",
+    "Trade show directory 10times.com"
+  ],
+  "notes": "IMPORTANT: This event is NOT aligned with InstaLILY's ICP. Graphics Pro Expo focuses on small print shops, sign makers, embroidery businesses, and apparel decorators - not the distribution-heavy, multi-location operations (building materials, industrial parts, commercial equipment distributors) that InstaLILY targets. The 2026 exhibitor list is not yet published (registration opens May 15, 2026). Data compiled from 2023-2025 exhibitor lists and confirmed sponsors. Event scheduled for August 13-15, 2026 (per 2026 schedule) but also shows August 21-23, 2025 for the 2025 edition. Most exhibitors are equipment manufacturers and suppliers to the graphics/printing industry, not potential customers for InstaLILY's AI Teammates platform.",
+  "success": true
+}

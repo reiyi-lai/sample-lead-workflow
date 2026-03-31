@@ -1,0 +1,44 @@
+{
+  "company_name": "EFI (Electronics For Imaging)",
+  "website_url": "https://www.efi.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "<cite index=\"1-1,1-12\">EFI develops breakthrough technologies for manufacturing signage, packaging, and textiles with wide-format printers and inks, specifically targeting banners, billboards, building wraps, and outdoor applications with their VUTEk and EFI Wide Format printer portfolios.</cite> <cite index=\"2-10,12-21\">The EFI Inkjet business unit manufactures and sells UV, UV LED and dye-sublimation wide- and superwide-format printers for the signage/display graphics market, as well as industrial inkjet printers for building materials, ceramic tile, corrugated packaging and textile markets.</cite> This is a direct match with Tedlar's target verticals of sign manufacturing, large-format graphics, vehicle wraps (fleet graphics), and architectural panels."
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "<cite index=\"12-16\">EFI was acquired by Siris Capital Group in an all-cash transaction valued at approximately $1.7 billion in April 2019.</cite> <cite index=\"16-1,17-1\">Revenue estimates range from $353 million to $636.6M annually, with approximately 2,700-3,100 employees.</cite> <cite index=\"1-17,13-2\">EFI operates in more than 10 countries with printer and ink manufacturing facilities globally and a team of over 1,000 employees focused on customer success.</cite> The company meets the mid-market to enterprise criteria with significant global operations, though revenue estimates vary by source."
+    },
+    "strategic_relevance": {
+      "score": 8,
+      "rationale": "<cite index=\"1-12,22-3,42-3\">EFI explicitly markets its superwide roll-to-roll LED printers with 'durable Genuine EFI Inks' for producing banners, billboards, building wraps, and other outdoor applications.</cite> <cite index=\"44-7,44-21\">EFI printers support outdoor signage, billboards, fleet/vehicle graphics, floor graphics, and long-term outdoor graphics applications.</cite> <cite index=\"45-1,45-3\">EFI's advanced UV LED inks provide vibrant, high-resolution prints that are instantly cured, eco-friendly, and long-lasting\u2014ideal for both indoor and outdoor signage.</cite> While EFI emphasizes outdoor durability and quality positioning, their focus is primarily on printer/ink technology rather than protective film overlaminates, making them an adjacent rather than direct match for Tedlar's graffiti resistance and extreme longevity value propositions."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "<cite index=\"30-2,30-3\">EFI exhibited at ISA Sign Expo 2025 with the worldwide debut of their new EFI Pro 30h+ hybrid printer, with CRO Todd Zimmerman noting 'ISA Sign Expo is a staple show for our sign and display graphics customers.'</cite> <cite index=\"33-5,33-6\">EFI showcased its newest roll-to-roll, hybrid, and flatbed LED inkjet printers at FESPA Global Print Expo 2025 (May 6-9 in Berlin), demonstrating the EFI VUTEk M3h hybrid, EFI Pro 30f+ flatbed, and other models.</cite> <cite index=\"10-1\">EFI exhibited at PRINTING United Expo in October 2023, showcasing solutions for sign and display graphics, packaging and textile markets.</cite> EFI demonstrates exceptional market activity with regular presence at all three major industry trade shows (ISA, FESPA, PRINTING United) and frequent product launches in the graphics/signage space."
+    }
+  },
+  "qualification_summary": "EFI is a strong prospect for Tedlar with exceptional industry alignment and high market activity. As a global leader in wide- and superwide-format printers for signage, display graphics, vehicle wraps, and building applications, EFI serves the exact customer base that would specify protective overlaminates. Their active exhibition at ISA, FESPA, and PRINTING United, combined with continuous product launches emphasizing outdoor durability and quality, positions them as an ideal channel partner or end-user influencer for Tedlar films. The primary consideration is that EFI manufactures printing equipment and inks rather than being a sign fabricator themselves, but their extensive customer base and industry leadership make them a high-value strategic target for Tedlar's go-to-market strategy.",
+  "icp_qualification": {
+    "weighted_score": 88.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 8,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}
