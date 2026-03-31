@@ -1,0 +1,361 @@
+{
+  "event_name": "Fastener Fair USA 2026",
+  "event_url": "https://www.fastenerfairusa.com/",
+  "companies": [
+    {
+      "company_name": "Fastenal Company",
+      "website_url": "https://www.fastenal.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "Fastenal is ranked #1 on MDM's 2024 Top Fastener Distributors List with $7.4B in revenue and is the largest fastener distributor in North America. As the industry leader, they are very likely to attend the premier US fastener trade show.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/",
+        "https://www.fastenal.com/"
+      ],
+      "description": "Largest fastener distributor in North America with 3,000+ locations",
+      "relevance_indicators": [
+        "fastener distribution",
+        "MRO",
+        "construction",
+        "industrial supplies",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Birmingham Fastener",
+      "website_url": "https://bhamfast.com",
+      "source": "likely_major_manufacturer_distributor",
+      "source_reasoning": "Birmingham Fastener is a leading manufacturer and distributor of fasteners for structural steel fabrication, metal building manufacturers, transportation, and construction. They operate the highest volume distribution center of nuts and bolts in the U.S. and manufacture custom fasteners, making them highly relevant for this event.",
+      "source_urls": [
+        "https://bhamfast.com",
+        "https://www.powertelcom.com/best-fastener-manufacturer-usa/"
+      ],
+      "description": "Leading manufacturer and distributor of fasteners for structural steel, construction, and OEM",
+      "relevance_indicators": [
+        "fastener manufacturing",
+        "distribution",
+        "construction",
+        "structural steel",
+        "custom fasteners"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Copper State Bolt & Nut",
+      "website_url": "https://www.copperstatenut.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "Copper State Bolt & Nut is ranked #15 on MDM's 2024 Top Fastener Distributors List and operates 13 locations in Arizona. As a known InstaLILY customer and significant regional distributor, they would likely attend this premier industry event.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Fastener distributor with 13 locations in Arizona",
+      "relevance_indicators": [
+        "fastener distribution",
+        "multi-location operations",
+        "regional distributor"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "McMaster-Carr",
+      "website_url": "https://www.mcmaster.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "McMaster-Carr is ranked #3 on MDM's 2024 Top Fastener Distributors List. As one of the largest industrial supply distributors in North America with extensive fastener offerings, they are very likely to attend this industry-leading event.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Major industrial supply distributor with extensive fastener catalog",
+      "relevance_indicators": [
+        "industrial distribution",
+        "fasteners",
+        "MRO",
+        "online catalog"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "W\u00fcrth Industry North America",
+      "website_url": "https://www.wurthindustry.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "W\u00fcrth Industry North America is ranked #2 on MDM's 2024 Top Fastener Distributors List. As a global leader in fastening and assembly technology, they would be expected to exhibit at the premier US fastener fair.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Global fastening and assembly technology leader",
+      "relevance_indicators": [
+        "fastener distribution",
+        "assembly solutions",
+        "industrial supply",
+        "VMI programs"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "MSC Industrial Supply",
+      "website_url": "https://www.mscdirect.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "MSC Industrial Supply is ranked #4 on MDM's 2024 Top Fastener Distributors List. As a major industrial distributor with significant fastener offerings, they would likely participate in this key industry event.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Major industrial supply distributor",
+      "relevance_indicators": [
+        "industrial distribution",
+        "fasteners",
+        "MRO",
+        "metalworking"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Field Fastener",
+      "website_url": "https://www.fieldfastener.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "Field Fastener is ranked #17 on MDM's 2024 Top Fastener Distributors List. As a significant distributor of fasteners, C-commodities, and machined components, they would be expected to attend this industry trade show.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/",
+        "https://www.fieldfastener.com/blog/field-named-mdm-top-distributor"
+      ],
+      "description": "Distributor of fasteners, C-commodities, and machined components",
+      "relevance_indicators": [
+        "fastener distribution",
+        "machined components",
+        "industrial supply"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Motion Industries",
+      "website_url": "https://www.motionindustries.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "Motion Industries is ranked #16 on MDM's 2024 Top Fastener Distributors List with $8.8B in revenue. As a major industrial distributor with extensive fastener offerings, they would likely attend this key industry event.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Major industrial distributor with extensive product lines including fasteners",
+      "relevance_indicators": [
+        "industrial distribution",
+        "MRO",
+        "fasteners",
+        "multi-location operations"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Incora",
+      "website_url": "https://www.incora.com",
+      "source": "likely_top_distributor",
+      "source_reasoning": "Incora (formerly Wesco Aircraft) is ranked #18 on MDM's 2024 Top Fastener Distributors List. They specialize in aerospace fasteners and components, making them highly relevant for this industry event.",
+      "source_urls": [
+        "https://www.fastenernewsdesk.com/101089/mdms-2024-top-fastener-distributors-list/"
+      ],
+      "description": "Aerospace fastener and component distributor",
+      "relevance_indicators": [
+        "aerospace fasteners",
+        "specialty distribution",
+        "aviation"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "American Bolt Corporation",
+      "website_url": "https://americanboltcorp.com",
+      "source": "likely_regional_distributor",
+      "source_reasoning": "American Bolt has been distributing fasteners for over 60 years and serves construction, steel fabrication, OEM, and manufacturing industries. As an established regional distributor, they would likely attend this major industry event.",
+      "source_urls": [
+        "https://americanboltcorp.com/"
+      ],
+      "description": "Fastener distributor serving construction, steel fabrication, and OEM industries for 60+ years",
+      "relevance_indicators": [
+        "fastener distribution",
+        "construction",
+        "steel fabrication",
+        "OEM"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Bihler of America",
+      "website_url": "https://www.bihler.com",
+      "source": "confirmed_exhibitor_2025",
+      "source_reasoning": "Bihler of America was confirmed as an exhibitor at Fastener Fair USA 2025 in Nashville (Stand 322). As a provider of high-speed precision metal forming and assembly solutions for fastener manufacturing, they are very likely to return for the 2026 event.",
+      "source_urls": [
+        "https://www.bihler.com/blog/bihler-of-america-is-at-fastener-fair-usa-2025-in-nashville/"
+      ],
+      "booth_number": "322 (2025)",
+      "description": "Manufacturer of high-speed precision metal forming and assembly solutions",
+      "relevance_indicators": [
+        "metal forming",
+        "manufacturing equipment",
+        "automation",
+        "fastener production"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Fastener Solutions Inc",
+      "website_url": "https://www.fastenersolutions.com",
+      "source": "likely_wholesale_distributor",
+      "source_reasoning": "Fastener Solutions is a wholesale fastener supplier providing over 100 million fasteners in US and metric sizes with strategic distribution centers nationwide. As a major wholesale distributor, they would likely attend this premier industry event.",
+      "source_urls": [
+        "https://www.fastenersolutions.com/"
+      ],
+      "description": "Wholesale fastener supplier with 100+ million fasteners in stock",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "exotic alloys",
+        "custom fasteners",
+        "multi-location"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Intercorp",
+      "website_url": "https://intercorpusa.com",
+      "source": "likely_wholesale_distributor",
+      "source_reasoning": "Intercorp has been a wholesale fastener distributor for over 37 years, serving distributors from 9 locations across the U.S. They also manufacture the Strong-Point brand. As a major wholesale player, they would likely exhibit at this event.",
+      "source_urls": [
+        "https://intercorpusa.com/home/"
+      ],
+      "description": "Wholesale fastener distributor with 9 US locations and Strong-Point brand",
+      "relevance_indicators": [
+        "wholesale distribution",
+        "fastener manufacturing",
+        "multi-location",
+        "brand owner"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "American Fastener Technologies (AFT Fasteners)",
+      "website_url": "https://www.americanfastener.com",
+      "source": "likely_major_distributor",
+      "source_reasoning": "Founded in 1983, AFT Fasteners has over 100 million fasteners in stock and multiple locations across the US (Ohio, Texas, Georgia, California, Nevada). As an established multi-location distributor, they would likely attend this industry event.",
+      "source_urls": [
+        "https://www.americanfastener.com/",
+        "https://www.hbyppowerline.com/blog/the-10-best-fastener-manufacturers-and-company-in-the-usa.html"
+      ],
+      "description": "Industrial fastener distributor with 100+ million fasteners in stock",
+      "relevance_indicators": [
+        "industrial distribution",
+        "multi-location",
+        "custom fasteners"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "PennEngineering",
+      "website_url": "https://www.pemnet.com",
+      "source": "likely_major_manufacturer",
+      "source_reasoning": "PennEngineering (PEM brand) is a global leader in fastening technology since 1942, specializing in self-clinching fasteners and thin sheet fastening. As an industry leader in specialized fastening solutions, they would likely exhibit at this premier event.",
+      "source_urls": [
+        "https://www.thomasnet.com/articles/top-suppliers/fastener-manufacturers-and-suppliers/"
+      ],
+      "description": "Global leader in self-clinching fasteners and thin sheet fastening solutions",
+      "relevance_indicators": [
+        "fastener manufacturing",
+        "aerospace",
+        "automotive",
+        "specialty fasteners",
+        "ISO certified"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "STANLEY Engineered Fastening",
+      "website_url": "https://www.stanleyengineeredfastening.com",
+      "source": "likely_major_manufacturer",
+      "source_reasoning": "STANLEY Engineered Fastening, a division of Stanley Black & Decker, is the global leader in precision fastening and assembly solutions with nearly 100 years of experience. As a major industry player, they would be expected to exhibit.",
+      "source_urls": [
+        "https://www.powertelcom.com/best-fastener-manufacturer-usa/"
+      ],
+      "description": "Global leader in precision fastening and assembly solutions",
+      "relevance_indicators": [
+        "fastening technology",
+        "assembly solutions",
+        "automation",
+        "global manufacturer"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Bolt Products Inc",
+      "website_url": "https://www.boltproducts.com",
+      "source": "likely_specialty_distributor",
+      "source_reasoning": "Bolt Products is a stocking distributor of industrial standard and specialty fasteners for commercial applications, OEMs, and distributors. They provide design and engineering support for custom fastener applications, making them relevant for this industry event.",
+      "source_urls": [
+        "https://www.boltproducts.com/"
+      ],
+      "description": "Stocking distributor of standard and specialty fasteners with engineering support",
+      "relevance_indicators": [
+        "specialty fasteners",
+        "OEM supply",
+        "engineering support",
+        "custom applications"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Dale Fastener Supply",
+      "website_url": "https://www.dalefastener.com",
+      "source": "likely_manufacturer_distributor",
+      "source_reasoning": "Dale Fastener Supply is a wholesale fastener company and custom bolts manufacturer since 1959, specializing in custom U-Bolts, anchor bolts, and specialty bolts. As both a manufacturer and authorized distributor, they would be relevant for this industry event.",
+      "source_urls": [
+        "https://www.powertelcom.com/best-fastener-manufacturer-usa/"
+      ],
+      "description": "Wholesale fastener distributor and custom bolt manufacturer since 1959",
+      "relevance_indicators": [
+        "custom manufacturing",
+        "U-bolts",
+        "anchor bolts",
+        "wholesale distribution"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Portland Bolt & Manufacturing",
+      "website_url": "https://www.portlandbolt.com",
+      "source": "likely_manufacturer",
+      "source_reasoning": "Founded in 1912, Portland Bolt is a well-established manufacturer of anchor bolts and construction fasteners with an 85,000 sq ft facility. They specialize in custom-designed anchor bolts for construction projects, making them relevant for this industry event.",
+      "source_urls": [
+        "https://www.hbyppowerline.com/blog/the-10-best-fastener-manufacturers-and-company-in-the-usa.html"
+      ],
+      "description": "Manufacturer of anchor bolts and construction fasteners since 1912",
+      "relevance_indicators": [
+        "anchor bolts",
+        "construction fasteners",
+        "custom manufacturing",
+        "established manufacturer"
+      ],
+      "confidence": "likely"
+    },
+    {
+      "company_name": "Tower Fasteners",
+      "website_url": "https://www.towerfasteners.com",
+      "source": "likely_distributor",
+      "source_reasoning": "Tower Fasteners is a leading national fastener distributor with over 50 years of experience, offering standard, specialty, and custom industrial fasteners. They are ISO 9001-2008 certified and provide inventory management systems, making them highly relevant for this event.",
+      "source_urls": [
+        "https://ensun.io/search/fastener/united-states"
+      ],
+      "description": "National fastener distributor with 50+ years experience and ISO 9001 certification",
+      "relevance_indicators": [
+        "fastener distribution",
+        "inventory management",
+        "ISO certified",
+        "custom fasteners"
+      ],
+      "confidence": "likely"
+    }
+  ],
+  "total_confirmed": 0,
+  "total_likely": 20,
+  "sources_searched": [
+    "Fastener Fair USA 2026 official exhibitor list (not yet published)",
+    "Fastener Fair USA 2025 exhibitor references",
+    "MDM's 2024 Top Fastener Distributors List",
+    "Industry directories and manufacturer websites",
+    "Fastener industry news and press releases"
+  ],
+  "notes": "The official exhibitor list for Fastener Fair USA 2026 (May 5-6, Charlotte NC) is not yet publicly available. The companies listed are highly likely attendees based on: (1) their ranking as top fastener distributors in North America, (2) confirmed participation in recent editions (2024-2025), and (3) their market position as major manufacturers, distributors, or specialty providers in the fastener industry. The event description indicates it serves the full supply chain including distributors, manufacturers, OEMs, and wholesalers across automotive, aerospace, construction, HVAC, furniture, and appliances sectors. All companies listed meet InstaLILY's ICP criteria as they are US-based fastener distributors/manufacturers with significant operations, multi-location footprints, and serve industries requiring high-volume parts management and operational efficiency.",
+  "success": true
+}

@@ -1,0 +1,27 @@
+{
+  "event_name": "ISA Annual Convention 2026 (ISA26)",
+  "event_url": "https://isa26.isapartners.org/",
+  "event_details": {
+    "dates": "April 20-22, 2026",
+    "location": "Huntington Convention Center, Cleveland, OH",
+    "focus": "Industrial MROP (Maintenance, Repair, Operations, Production) supply channel",
+    "attendee_types": [
+      "Distributors",
+      "Manufacturers",
+      "Industrial Manufacturers Representatives (IMRs)",
+      "Service Providers"
+    ]
+  },
+  "companies": [],
+  "total_confirmed": 0,
+  "total_likely": 0,
+  "sources_searched": [
+    "ISA26 official website - no exhibitor list published yet",
+    "ISA25 Nashville (March 2025) - found exhibitor mentions but not comprehensive list",
+    "ISA member directory - access restricted to members only",
+    "Previous ISA convention archives - limited public information"
+  ],
+  "notes": "The ISA26 exhibitor list has not been publicly released as of March 27, 2026. The event website (https://isa26.isapartners.org/) indicates that booth registration is available but does not publish exhibitor names. The Industrial Supply Association serves the entire industrial MROP supply channel including distributors (tools, fasteners, safety equipment, industrial parts), manufacturers, IMRs, and service providers. Typical attendees include C-suite executives, sales teams, operations leaders from mid-market to enterprise industrial companies - highly aligned with InstaLILY AI's ICP. Based on the industry focus, likely attendees include major industrial distributors (MSC Industrial Supply, Grainger, Fastenal, Applied Industrial Technologies), fastener distributors, cutting tool distributors, safety equipment distributors, and industrial equipment manufacturers. The event explicitly requires manufacturers to purchase booth space, and service providers must either sponsor or exhibit. To obtain the exhibitor list, contact ISA directly at info@isapartners.org or jdibiaggio@isapartners.org (Jessica Di Biaggio, exhibitor contact), or monitor the website closer to the event date.",
+  "recommendation": "This event is HIGHLY RELEVANT for InstaLILY AI. The Industrial Supply Association convention is the premier networking event for the industrial parts distribution channel - a core vertical for InstaLILY's AI Teammates platform. Attendees face the exact pain points InstaLILY solves: tribal knowledge loss, complex SKU catalogs, manual quoting processes, legacy ERP/CRM systems, and scaling challenges. Consider: (1) Attending as a Service Provider with booth/sponsorship, (2) Reaching out to ISA to obtain early exhibitor list access, (3) Targeting ISA member companies through other channels pre-event, (4) Monitoring ISA25 Nashville exhibitors as proxy for likely ISA26 attendees.",
+  "success": true
+}
