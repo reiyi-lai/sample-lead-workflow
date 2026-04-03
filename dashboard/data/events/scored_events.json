@@ -289,30 +289,6 @@
       "reasoning": "ISA Leadership Development Experience is lower priority (#13). While ISA vertical is core, leadership development focus means attendees are emerging/mid-level managers not immediate budget holders. Better approach is targeting ISA Annual Convention where C-suite and operations directors attend. October timing suboptimal. Long sales cycle expected."
     },
     {
-      "event_name": "World of Concrete 2026",
-      "event_url": "https://www.worldofconcrete.com/",
-      "overall_score": 6.5,
-      "scores": {
-        "industry_alignment": {
-          "score": 8,
-          "rationale": "Construction and concrete supply is adjacent to core InstaLILY verticals (construction supply distribution, building materials). Event serves concrete contractors, masonry professionals, material suppliers. Some alignment with construction supply and materials distribution segments."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Premier international event for concrete/masonry construction in January 2026, optimal timing for Q1 enterprise sales cycle. Las Vegas location highly accessible. Established event with strong industry presence and hands-on demonstrations indicate quality attendance."
-        },
-        "buyer_quality": {
-          "score": 5,
-          "rationale": "Event audience dominated by concrete contractors, masonry professionals, and project managers - end-users of construction materials. Material suppliers and equipment buyers are present but minority of attendance. Lower concentration of distributor-level decision-makers compared to B2B wholesale events."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Construction professional focus means attendees primarily seeking materials, equipment, and services for projects. Distributor pain points around operations, quoting, and inventory management are secondary to equipment demonstrations and product research. Limited buyer intent for B2B operational technology solutions."
-        }
-      },
-      "reasoning": "World of Concrete is lower priority event (#14). While construction supply is adjacent to ICP, event audience is heavily weighted toward end-user contractors and professionals rather than distributors. Material suppliers present but not primary audience. January timing is good but precision of targeting is low. Better to focus on distribution-specific events with higher buyer quality."
-    },
-    {
       "event_name": "NFMT - National Facilities Management & Technology Conference 2026",
       "event_url": "https://www.nfmt.com/",
       "overall_score": 6.3,
@@ -335,78 +311,6 @@
         }
       },
       "reasoning": "NFMT is lower priority (#15). Facilities management is adjacent to field service but represents different buyer profile (institutional FM leaders vs. field service distributors). Building automation focus is different from InstaLILY's execution-focused AI Teammates. Better to focus on field service events that serve distributors and equipment service companies."
-    },
-    {
-      "event_name": "Advancing Prefabrication Summit 2026",
-      "event_url": "https://www.advancing-prefabrication.com/",
-      "overall_score": 6.1,
-      "scores": {
-        "industry_alignment": {
-          "score": 7,
-          "rationale": "Prefabrication and modular construction is adjacent to construction supply distribution. Supply chain management and digital transformation focus has some relevance. However, prefab manufacturing focus is different from wholesale distribution operations."
-        },
-        "scale_timing": {
-          "score": 6,
-          "rationale": "End-to-end prefab conference in February 2026, good timing for Q1 decisions. Dallas location accessible. However, niche focus suggests smaller event compared to major distribution conferences. Venue TBD suggests potential execution risk."
-        },
-        "buyer_quality": {
-          "score": 5,
-          "rationale": "Event audience dominated by general contractors, designers, builders, manufacturers, and project owners. Material suppliers present but not primary audience. Limited concentration of wholesale distribution decision-makers focused on operational efficiency."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Prefab manufacturing and construction technology focus means attendees seeking supply chain solutions for manufacturing operations, not wholesale distribution operations. Supply chain focus is on prefab production, not parts/materials distribution. Limited buyer intent for InstaLILY's distribution-focused solutions."
-        }
-      },
-      "reasoning": "Advancing Prefabrication Summit is lower priority (#16). Prefab manufacturing and modular construction is tangential to core distribution verticals. Event audience is primarily contractors, builders, and manufacturers - different buyer persona than wholesale distributors. February timing good but precision of targeting is very low. Recommend focusing on direct distribution events."
-    },
-    {
-      "event_name": "World of Modular 2026",
-      "event_url": "https://worldofmodular.org/",
-      "overall_score": 6.0,
-      "scores": {
-        "industry_alignment": {
-          "score": 7,
-          "rationale": "Modular/offsite construction and supply chain focus is adjacent to construction supply distribution. Event serves builders, developers, GCs, suppliers, manufacturers. Some alignment with construction supply and materials distribution."
-        },
-        "scale_timing": {
-          "score": 7,
-          "rationale": "Major event for offsite construction with 2,000+ industry leaders. April 2026 timing optimal for enterprise sales cycle. Las Vegas location highly accessible. Cornerstone event status indicates established credibility and strong attendance."
-        },
-        "buyer_quality": {
-          "score": 5,
-          "rationale": "Event audience dominated by modular builders, developers, GCs, architects, engineers - construction industry professionals. Suppliers and manufacturers present but focus is on construction execution, not wholesale distribution operations. Limited concentration of distributor-level decision-makers."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Modular construction and manufacturing innovation focus means attendees evaluating construction solutions and manufacturing processes, not wholesale distribution operations. Supply chain focus is on construction supply chain, not parts/materials distribution. Limited buyer intent for B2B distribution operations solutions."
-        }
-      },
-      "reasoning": "World of Modular is lower priority (#17). Modular/offsite construction is adjacent to construction supply but event audience is heavily weighted toward builders, developers, and construction professionals rather than distributors. April timing good but targeting precision is low. Better to focus on established distribution conferences."
-    },
-    {
-      "event_name": "TPM (Trans Pacific Maritime) 2026",
-      "event_url": "https://events.joc.com/tpm",
-      "overall_score": 5.2,
-      "scores": {
-        "industry_alignment": {
-          "score": 6,
-          "rationale": "Global supply chain and logistics focus is tangential to InstaLILY's core distribution verticals. Ocean freight and 3PL operations are adjacent but focus is import/export and maritime logistics, not wholesale distribution of physical goods."
-        },
-        "scale_timing": {
-          "score": 7,
-          "rationale": "Premier supply chain conference organized by Journal of Commerce indicates credibility. March 2026 timing good for enterprise cycle. Long Beach location accessible. However, global/maritime focus may limit relevance to US wholesale distribution companies."
-        },
-        "buyer_quality": {
-          "score": 6,
-          "rationale": "Fortune 500 supply chain executives, logistics directors, and shipping managers have significant budgets. However, focus is global supply chain operations and ocean freight, not wholesale distribution of physical goods. Different buyer persona than target distribution companies."
-        },
-        "buyer_intent_alignment": {
-          "score": 3,
-          "rationale": "Maritime logistics and ocean freight focus means attendees evaluating global supply chain solutions, visibility platforms, and freight forwarding services. Very different from InstaLILY's focus on operational execution for distributors. Limited buyer intent for distribution operations AI solutions."
-        }
-      },
-      "reasoning": "TPM is lowest priority event (#18). Global maritime logistics focus is tangential to core InstaLILY verticals. Ocean carriers, freight forwarders, and logistics service providers are different buyer personas than wholesale distributors. Supply chain focus is global import/export and freight management, not domestic distribution operations. Recommend deprioritizing unless pursuing 3PL segment specifically."
     },
     {
       "event_name": "Field Service Next West 2026",
@@ -484,181 +388,6 @@
       "sales_brief": "LOWER PRIORITY - Fleet management is adjacent, not core ICP. While attendees are operations decision-makers, pain points (telematics, fuel optimization, vehicle maintenance) diverge from InstaLILY strength areas (parts distribution, multi-location quoting, knowledge codification). Best pursued via account-based outreach rather than event allocation."
     },
     {
-      "event_name": "RAPID + TCT 2026",
-      "event_url": "https://www.rapid3devent.com/",
-      "overall_score": 3.8,
-      "scores": {
-        "industry_alignment": {
-          "score": 3,
-          "rationale": "Additive manufacturing and 3D printing is niche manufacturing vertical not aligned with InstaLILY ICP focus on distribution, multi-location operations, and field service. Attendees are product designers, engineers, and manufacturing specialists from aerospace, medical devices, and defense - not parts distributors, commercial equipment suppliers, or high-volume SKU catalog operators. No overlap with core target verticals."
-        },
-        "scale_timing": {
-          "score": 9,
-          "rationale": "North Americas largest additive manufacturing event with 450+ exhibitors and 170 sessions. April 13-16, 2026 dates confirmed in Boston at major convention center. Highly accessible, well-established, significant-scale event."
-        },
-        "buyer_quality": {
-          "score": 5,
-          "rationale": "Audience includes manufacturing executives and engineers, with some C-level presence. However, primary attendees are product designers, engineers, and technical specialists rather than operations, procurement, or sales leadership. Budget authority for enterprise software may be limited; decision-making likely involves engineering and R&D roles."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Event focused on 3D printing technology, materials, equipment, and manufacturing innovation. No relevance to order management, quoting workflows, parts validation, or knowledge codification. Attendees seeking advanced manufacturing capabilities, not AI workflow automation for distribution or field operations."
-        }
-      },
-      "reasoning": "RAPID + TCT is a premier manufacturing event but serves the wrong segment of manufacturing. InstaLILY targets distribution-heavy and operationally intensive businesses (parts suppliers, commercial equipment distributors); additive manufacturing and 3D printing is product innovation focused. Attendees are engineers and designers, not the operations, sales, or procurement executives who buy InstaLILY. Poor fit for resource investment.",
-      "sales_brief": "SKIP - Additive manufacturing vertical is specialized product innovation space, not distribution operations. Attendees are engineers and designers, not operations or sales leaders. No alignment with high-volume parts distribution, multi-location quoting, or field service workflows that drive InstaLILY adoption."
-    },
-    {
-      "event_name": "TIA Capital Ideas Conference 2026",
-      "event_url": "https://web.cvent.com/event/5fcaa2f1-f19b-4e81-a814-d17aa1a29d03/websitePage:fe4fb1cb-f5ba-4897-a32c-606d09490169",
-      "overall_score": 4.5,
-      "scores": {
-        "industry_alignment": {
-          "score": 4,
-          "rationale": "Logistics and third-party logistics is adjacent to but not core InstaLILY ICP. Freight brokers and 3PL providers operate differently from parts distributors, commercial equipment suppliers, and field service organizations. While supply chain optimization is relevant, the focus is transportation brokerage and capacity sourcing rather than parts distribution, quoting, and multi-location sales execution."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Significant event with 1,500+ brokerage professionals in April 15-18, 2026 at premium resort venue in Phoenix. Well-established TIA conference with strong industry reputation. Excellent timing and venue accessibility for US sales team."
-        },
-        "buyer_quality": {
-          "score": 7,
-          "rationale": "Audience includes COOs, logistics executives, and brokerage owners - senior decision-makers with budget authority for technology investments. Strong concentration of C-suite and VP-level attendees. Quality of attendee seniority is high for enterprise software sales."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Conference focused on brokerage operations, technology adoption, and logistics strategy. Some attendees actively seeking technology solutions for capacity management and operations efficiency. However, focus on freight brokerage and TMS rather than order management, parts distribution, or field service automation. Tangential relevance to InstaLILY use cases."
-        }
-      },
-      "reasoning": "TIA Capital Ideas serves logistics and freight brokers - a different segment than InstaLILY core ICP. While attendees are senior executives with budget authority, the pain points (capacity sourcing, freight brokerage optimization) do not align with InstaLILY strengths in parts distribution, quoting automation, and field service workflows. Consider only if targeting 3PL providers that support distribution operations, but ROI likely lower than core vertical events.",
-      "sales_brief": "LOWER PRIORITY - Logistics brokerage vertical is adjacent supply chain but not core ICP. Audience quality is strong (COOs, executives) but pain points (freight capacity, TMS integration) diverge from InstaLILY focus on parts distribution and multi-location quoting. Best reserved for account-based outreach to specific 3PL targets rather than event-wide prospecting."
-    },
-    {
-      "event_name": "North American Manufacturing Excellence Summit (NAMES) 2026",
-      "event_url": "https://www.executiveplatforms.com/names/",
-      "overall_score": 6.8,
-      "scores": {
-        "industry_alignment": {
-          "score": 6,
-          "rationale": "Manufacturing operations is adjacent to InstaLILY ICP but not core vertical. Event targets manufacturing plants, supply chain, operations, and quality functions - relevant to field service and operations-heavy businesses but not specifically distribution or commercial equipment supply. Manufacturing focus is product production rather than multi-location parts distribution or sales operations."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Significant executive event with 400+ manufacturing leaders and 40+ renowned speakers. April 20-22, 2026 in Houston with strong venue and timing. Well-established summit with premium attendee profile. Good accessibility for US sales team."
-        },
-        "buyer_quality": {
-          "score": 9,
-          "rationale": "Exceptional buyer quality with 91% of attendees at Director level and above. Audience includes SVPs, VPs, and Directors of Manufacturing, Supply Chain, Operations, Quality, and Plant Managers from 200+ global organizations. C-suite concentration and seniority make this high-quality decision-maker pool."
-        },
-        "buyer_intent_alignment": {
-          "score": 6,
-          "rationale": "Conference focused on operational excellence, automation, and digital transformation strategies. Some attendees actively seeking technology solutions for manufacturing optimization. However, focus is plant-floor manufacturing and lean operations rather than sales enablement, quoting, or field service automation that align with InstaLILY sweet spot."
-        }
-      },
-      "reasoning": "NAMES is a high-quality executive event but targets manufacturing operations rather than distribution or field service. The attendee caliber is excellent (Director+ level from global orgs), and digital transformation is a buying signal. However, the pain points are manufacturing-focused (plant efficiency, lean operations, quality management) rather than distribution-focused (quoting, order entry, parts validation). Consider targeting manufacturing companies with distribution arms or service operations, but core focus should remain on pure-play distributors and field service operators.",
-      "sales_brief": "MODERATE PRIORITY - Exceptional executive quality (91% Director+) and digital transformation focus, but manufacturing plant operations diverge from core ICP. Best leverage for targeting manufacturing companies with significant distribution or field service arms (e.g., OEM service networks). Risk: General manufacturing audience may have limited fit; requires pre-meeting research to identify distribution-focused attendees."
-    },
-    {
-      "event_name": "INTERPHEX 2026",
-      "event_url": "https://www.interphex.com/en-us/show-info.html",
-      "overall_score": 2.4,
-      "scores": {
-        "industry_alignment": {
-          "score": 2,
-          "rationale": "Pharmaceutical and biotechnology manufacturing is specialized vertical not aligned with InstaLILY ICP focus on distribution-heavy and operationally intensive businesses. Event targets drug development and bioprocess manufacturing - highly regulated, product-development focused industry. Does not overlap with parts distribution, commercial equipment supply, or multi-location field service operations."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Major global pharmaceutical event with 500+ exhibitors in April 21-23, 2026 at Javits Center in New York. Highly established, significant-scale event with strong industry presence. Excellent venue and timing accessibility."
-        },
-        "buyer_quality": {
-          "score": 6,
-          "rationale": "Audience includes engineers, C-level executives, and manufacturing professionals - decision-makers with budget authority. However, primary focus is on pharma manufacturing, quality, and regulatory compliance roles rather than sales operations or multi-location business management."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Event focused on pharmaceutical development, bioprocess technology, manufacturing processes, and regulatory compliance. No relevance to order management, parts distribution, sales quoting, or field service workflows. Attendees seeking pharma-specific equipment and compliance solutions, not enterprise AI Teammates for distribution operations."
-        }
-      },
-      "reasoning": "INTERPHEX is a premier pharmaceutical event but serves a specialized vertical outside InstaLILY ICP. Pharma and biotech manufacturing operates under different constraints (regulatory compliance, product development focus) than distribution-heavy businesses. While attendees include executives, they are focused on drug manufacturing and regulatory approval, not multi-location sales operations, parts management, or field service execution. Poor resource allocation fit.",
-      "sales_brief": "SKIP - Pharmaceutical manufacturing is specialized vertical outside InstaLILY focus. Attendees are engineers and pharma ops professionals, not distribution leaders or field service operations buyers. No alignment with multi-location quoting, parts distribution, or inventory management workflows."
-    },
-    {
-      "event_name": "Procurement & Supply Chain LIVE: The US Summit",
-      "event_url": "https://supplychaindigital.com/events/procurement-supply-chain-live/procurement-supply-chain-live-chicago-2026",
-      "overall_score": 6.1,
-      "scores": {
-        "industry_alignment": {
-          "score": 5,
-          "rationale": "Procurement and supply chain is adjacent to but not core InstaLILY ICP. Event serves supply chain leaders, procurement executives, and logistics professionals across enterprise organizations. While some attendees may be from distribution or manufacturing with field service operations, primary focus is procurement strategy and supplier management rather than multi-location sales execution and parts distribution."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Significant event with 2,000+ senior procurement and supply chain leaders. April 21-22, 2026 in Chicago at Navy Pier with strong venue and accessibility. Co-located with Sustainability LIVE and inaugural US Awards add credibility. Good timing for Q2 budget planning."
-        },
-        "buyer_quality": {
-          "score": 8,
-          "rationale": "Strong concentration of C/V/D-level procurement executives and supply chain leaders from enterprise organizations. High seniority attendee profile with budget authority for technology investments. Decision-makers present, though focus is procurement rather than sales operations."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Conference features 100+ expert speakers on procurement strategy, digital transformation, and supply chain optimization with 20 content tracks. Some attendees actively seeking technology solutions for procurement efficiency. However, focus is supplier relationship management, strategic sourcing, and procurement software rather than sales enablement, quoting automation, and field service workflows."
-        }
-      },
-      "reasoning": "Procurement & Supply Chain LIVE is a large-scale, high-quality executive event but targets procurement buyers rather than sales operations or field service buyers. Attendees (Chief Procurement Officers, category managers) manage supplier relationships and cost optimization, not internal sales team productivity or field technician efficiency. Some procurement buyers may oversee order management systems, but this event skews toward strategic sourcing rather than transactional order execution. Secondary priority unless targeting accounts with integrated procurement-operations budgets.",
-      "sales_brief": "SECONDARY PRIORITY - Large executive event (2K+ attendees) but procurement focus diverges from primary InstaLILY buyers. Chief Procurement Officers and category managers manage supplier relationships, not sales operations. Some overlap for order management and procurement automation, but core selling focus (sales enablement, field service) has limited relevance. Best used for account-based prospecting of identified targets rather than event-wide outreach."
-    },
-    {
-      "event_name": "ISM World 2026",
-      "event_url": "https://www.ismworld.org/events/conferences-and-events/annual-conference/",
-      "overall_score": 5.9,
-      "scores": {
-        "industry_alignment": {
-          "score": 5,
-          "rationale": "Procurement and supply chain focus is adjacent to but not core InstaLILY ICP. Event serves procurement professionals, supply chain executives, and category managers across various industries. While some attendees may be from distribution or field service companies, primary vertical is procurement operations and supplier relationship management rather than sales operations, parts distribution, or field service execution."
-        },
-        "scale_timing": {
-          "score": 9,
-          "rationale": "Major annual ISM conference with 2,000+ attendees. April 26-28, 2026 in Denver at Gaylord Rockies with premium venue and strong accessibility. Established, prestigious event with excellent timing and scale. Group discounts available indicate robust attendance."
-        },
-        "buyer_quality": {
-          "score": 8,
-          "rationale": "Attendee profile includes Chief Procurement Officers, procurement executives, category managers, and supplier relationship strategists. Strong seniority with budget authority for procurement and supply chain technology investments. Exclusive ExecIn event for senior leaders adds credibility to decision-maker concentration."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Conference features hands-on workshops, executive panels, and problem-solving labs on supply management strategy and procurement operations. Some attendees actively seeking technology solutions for procurement efficiency. However, focus is supplier management, category strategy, and sourcing rather than sales team productivity, quoting automation, or field service workflows."
-        }
-      },
-      "reasoning": "ISM World is a large, well-run, premium procurement event with strong attendee quality and seniority. However, the buyer persona (Chief Procurement Officers, category managers) focuses on supplier relationships and cost management, not sales operations or field service execution. Some CPOs may influence order management and supplier enablement decisions, but this is secondary to their procurement mandate. Better suited for account-based prospecting of identified targets rather than general event participation.",
-      "sales_brief": "SECONDARY PRIORITY - Premium procurement event with excellent scale (2K+) and attendee seniority, but focus on supplier relationship management diverges from sales operations and field service. Chief Procurement Officers and category managers manage inbound supplier performance, not internal team productivity. Consider only for account-based strategy targeting procurement-operations integrated budgets or distribution companies with significant procurement roles."
-    },
-    {
-      "event_name": "American Supply Chain Summit 2026",
-      "event_url": "https://supplychainus.com/",
-      "overall_score": 6.5,
-      "scores": {
-        "industry_alignment": {
-          "score": 6,
-          "rationale": "Supply chain and logistics leadership is adjacent to InstaLILY ICP. Event targets supply chain, logistics, procurement, and operations executives from diverse verticals including life sciences, aerospace, automotive, food & beverage, electronics, CPG, and retail. Some attendees from distribution and manufacturing with field service operations, but primary focus is supply chain optimization and logistics strategy rather than multi-location sales execution."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Established 10th annual summit with 250+ senior supply chain executives and 50+ expert speakers. April 27-28, 2026 in Dallas at Hilton Anatole. Well-known event with strong industry presence and accessibility. Timing aligns with Q2 budget planning and strategic decision-making."
-        },
-        "buyer_quality": {
-          "score": 8,
-          "rationale": "Strong attendee profile: C-Suite Executives, VPs, and Directors in supply chain, logistics, procurement, and operations. High concentration of decision-makers with budget authority for technology investments. Seniority and span of industries suggests robust executive presence."
-        },
-        "buyer_intent_alignment": {
-          "score": 6,
-          "rationale": "Conference themes on digital transformation, supply chain optimization, resilience, and disruption indicate active solution-seeking mindset. Attendees likely exploring technology for supply chain efficiency. However, focus is logistics optimization and supply chain strategy rather than sales enablement, quoting automation, and field service workflows."
-        }
-      },
-      "reasoning": "American Supply Chain Summit is a solid mid-sized executive event with high-quality attendees and digital transformation focus. While the primary buyer persona (supply chain VPs, logistics directors) is not InstaLILY core ICP, some attendees from distribution and manufacturing companies may oversee order management and operations. The conference includes diverse verticals (aerospace, automotive, F&B), creating opportunity for cross-vertical prospecting. Secondary priority unless targeting specific accounts with supply chain buyers involved in operations technology decisions.",
-      "sales_brief": "SECONDARY PRIORITY - Solid executive event with supply chain and operations leaders from diverse verticals. Digital transformation focus indicates active solution-seeking. Some overlap for distribution and manufacturing operations attendees, but primary focus (logistics optimization, supply chain resilience) diverges from sales operations and field service. Best leveraged for account-based prospecting of identified targets in distribution, manufacturing with service arms, or food & beverage supply."
-    },
-    {
       "event_name": "B2B Online Chicago 2026",
       "event_url": "https://b2bmarketing.wbresearch.com/",
       "overall_score": 1.2,
@@ -682,31 +411,6 @@
       },
       "reasoning": "B2B Online Chicago is outside InstaLILY ICP and enrichment was unsuccessful. Marketing leaders are not buyers for operational AI Teammates focused on quoting, parts validation, and field service execution. Additionally, the event information is incomplete with unconfirmed 2026 dates, missing venue details, and poor enrichment success rate. Not recommended for resource investment due to both misalignment and lack of event details.",
       "sales_brief": "SKIP - Marketing-focused event outside InstaLILY ICP. B2B marketing executives and CMOs focus on demand generation, not operational workflow automation. Event enrichment failed with unconfirmed 2026 dates and missing details; execution risk high. Not suitable for sales prospecting."
-    },
-    {
-      "event_name": "Offshore Technology Conference (OTC) 2026",
-      "event_url": "https://2026.otcnet.org/",
-      "overall_score": 2.3,
-      "scores": {
-        "industry_alignment": {
-          "score": 2,
-          "rationale": "Oil and gas / offshore energy is specialized vertical outside InstaLILY ICP focus on distribution-heavy and operationally intensive businesses. While offshore operations are complex and multi-location, the industry focus (exploration, drilling, subsea engineering, renewable energy) diverges from parts distribution, commercial equipment supply, and field service operations. No alignment with high-volume SKU catalog or parts distribution pain points."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Major international conference for offshore energy professionals. May 4-7, 2026 in Houston at NRG Park. Large-scale event with strong industry reputation and excellent venue. Good US accessibility, though dates are slightly beyond April focus window."
-        },
-        "buyer_quality": {
-          "score": 6,
-          "rationale": "Audience includes petroleum engineers, platform managers, drilling engineers, energy executives, and marine contractors. Decision-makers present with budget authority, but primary focus is on engineering, operations, and technical roles rather than sales operations or procurement management."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Event focused on offshore exploration, drilling technology, subsea engineering, renewable energy, and marine equipment. No relevance to order management, sales quoting, parts distribution, or field service automation. Attendees seeking offshore-specific technologies and engineering solutions, not enterprise AI Teammates for distribution operations."
-        }
-      },
-      "reasoning": "OTC is a major event in the wrong industry vertical for InstaLILY. Offshore energy is highly specialized and distinct from distribution, commercial equipment supply, and general field service operations. While offshore operations have complexity and multi-location elements, the pain points (subsea engineering, drilling optimization, renewable energy development) do not align with InstaLILY use cases. Poor resource allocation fit.",
-      "sales_brief": "SKIP - Offshore energy is specialized vertical outside InstaLILY focus. Attendees are petroleum engineers and drilling specialists, not parts distributors or commercial equipment suppliers. No alignment with order management, quoting, or parts distribution workflows that drive InstaLILY adoption."
     },
     {
       "event_name": "NAED National Meeting",
@@ -734,81 +438,6 @@
       "sales_brief": "Strong fit for electrical distribution expansion. Senior-level attendance from national distributors with multi-location operations and large sales teams mirrors core ICP pain points around manual quoting and tribal knowledge loss. Pre-booked executive meetings recommended given senior concentration. Risk: Event focuses on relationship-building over acute problem-solving, so targeting strategy should emphasize operational efficiency and scaling challenges."
     },
     {
-      "event_name": "CPHI Americas",
-      "event_url": "https://www.cphi.com/americas/en/home.html",
-      "overall_score": 4.9,
-      "scores": {
-        "industry_alignment": {
-          "score": 4,
-          "rationale": "CPHI targets contract manufacturing, CDMOs, APIs, and pharmaceutical supply chain but focuses on ingredient sourcing, manufacturing partnerships, and technical supply chain rather than distributor operations, sales execution, or field service. Event is B2B partnership and sourcing-oriented, not operations or sales-focused. Pharmaceutical supply chain is narrower and more specialized than core ICP distribution verticals."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Large, established event with 2,735 expected attendees in June 2026, US-based in Philadelphia. Strong industry reputation and proven draw. Timing is solid and venue is major convention center indicating scale and accessibility."
-        },
-        "buyer_quality": {
-          "score": 6,
-          "rationale": "Mix of decision-makers including pharmaceutical manufacturers, sourcing executives, supply chain professionals, and quality/regulatory leadership. Buyer seniority is present but audience includes mid-level sourcing and technical professionals alongside senior leadership. Not exclusively C-suite focused."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Event is centered on contract manufacturing partnerships, ingredient sourcing, and manufacturing capability matching rather than operational efficiency or sales automation. Attendees seeking manufacturing partners and supply chain visibility, not sales execution or field service solutions. Limited relevance to InstaLILY workflow automation."
-        }
-      },
-      "reasoning": "CPHI Americas does not align with InstaLILY ICP despite pharmaceutical industry connection. Event focuses on manufacturing partnerships, ingredient sourcing, and contract manufacturing selection rather than the distributor operations, sales team execution, field service, and inventory management that InstaLILY solves. Attendees are sourcing and supply chain professionals, not sales operations or field service leaders.",
-      "sales_brief": "Low priority. Pharmaceutical supply chain event, but wrong buyer persona and wrong problem set. Attendees are sourcing executives and manufacturing partners, not distributors or field service operators managing large sales teams or technician workflows. Skip unless pivoting to pharmaceutical equipment distribution vertical."
-    },
-    {
-      "event_name": "ChemE Show \u2013 Powered by ACHEMA",
-      "event_url": "https://www.achema.de/en/the-achema/cheme-show/short-profile",
-      "overall_score": 4.1,
-      "scores": {
-        "industry_alignment": {
-          "score": 4,
-          "rationale": "Chemical engineering and process innovation event targeting equipment manufacturers, engineers, and plant operators. While chemicals are listed as supply distributor vertical in ICP, this event focuses on manufacturing process technology, equipment innovation, and facility design rather than chemical distribution, supply chain operations, sales execution, or field service. Vertical alignment weak."
-        },
-        "scale_timing": {
-          "score": 7,
-          "rationale": "Brand new event in June 2026 Houston location with strong sponsorship opportunities and industry backing. Timing is good and Houston is accessible. However, being inaugural event carries risk of unknown attendance and impact. Venue is major convention center indicating credibility."
-        },
-        "buyer_quality": {
-          "score": 6,
-          "rationale": "Mix of CTOs, plant managers, process engineers, and EPC firms. Executive presence is moderate - emphasis on technical and engineering leadership rather than C-suite sales or operations decision-makers. Buyer seniority is present but skews toward technical rather than commercial operations leadership."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Focus is process engineering, biotechnology innovation, equipment advancement, and facility technology. Attendees seeking manufacturing process solutions and cutting-edge equipment, not sales team automation or field service workflows. Limited connection to InstaLILY value propositions around sales execution and operations scaling."
-        }
-      },
-      "reasoning": "ChemE Show is misaligned despite chemical industry connection. Event targets manufacturing process engineers and equipment innovators, not chemical distributors or supply chain operators. Attendees are seeking process technology solutions, not sales execution automation or field service scaling. Inaugural status adds execution risk.",
-      "sales_brief": "Low priority. Chemical industry event but wrong buyer focus: process engineers and equipment manufacturers, not chemical distributors or supply chain operators. InstaLILY value prop does not resonate with facility planning and process technology audiences. Skip in favor of chemical distribution-specific events."
-    },
-    {
-      "event_name": "BIO International Convention 2026",
-      "event_url": "https://convention.bio.org/",
-      "overall_score": 3.4,
-      "scores": {
-        "industry_alignment": {
-          "score": 2,
-          "rationale": "Biotechnology and pharmaceutical industry focus on R&D, drug development, scientific innovation, and clinical advancement. Event centers on research, therapeutics, gene therapy, and rare diseases rather than supply chain distribution, sales operations, or field service. Not a distribution-heavy or operationally intensive vertical aligned with ICP."
-        },
-        "scale_timing": {
-          "score": 9,
-          "rationale": "World's largest biotech event with 20,000 participants and 16,000+ attendees from 65+ countries in June 2026. Massive scale, San Diego location is US-accessible and prestigious. Established premier event with unmatched industry prominence and reach."
-        },
-        "buyer_quality": {
-          "score": 7,
-          "rationale": "C-suite executives, research directors, R&D leadership, business development professionals, and pharma dealmakers. High executive seniority and decision-making authority. Strong presence of innovation scouts and licensing experts with strategic authority."
-        },
-        "buyer_intent_alignment": {
-          "score": 1,
-          "rationale": "Event focus is scientific innovation, therapeutic development, licensing deals, partnership formation, and investment decisions. Attendees are solving biotech business model and scientific advancement challenges, not operational efficiency, sales team scaling, or field service automation. Completely misaligned buyer intent."
-        }
-      },
-      "reasoning": "BIO Convention is a prestige event but fundamentally misaligned with InstaLILY. Biotech companies are R&D-focused, not distribution-heavy operations. Attendees are dealmakers, scientists, and investors focused on therapeutic innovation and partnerships rather than sales team execution or field service scaling. Event design emphasizes networking and deal-making, not operational problem-solving.",
-      "sales_brief": "Skip. Prestige event with senior executives but wrong vertical and buyer intent. Biotech companies and pharma manufacturers are R&D and therapeutics-focused, not distribution or field service operators. InstaLILY value prop (sales execution, tribal knowledge, field service scaling) does not resonate with biotech business model. Better opportunities exist in distribution-focused events."
-    },
-    {
       "event_name": "Summer Fancy Food Show",
       "event_url": "https://www.specialtyfood.com/fancy-food-shows/summer/",
       "overall_score": 7.2,
@@ -832,31 +461,6 @@
       },
       "reasoning": "Summer Fancy Food Show provides excellent access to retail and specialty food distribution ecosystem with large, quality attendee base. Retail buyers and distributor executives manage complex multi-location operations with SKU complexity and sales coordination challenges InstaLILY solves. However, event design emphasizes product discovery over operational efficiency, requiring creative positioning around sales team and distributor productivity.",
       "sales_brief": "Strong secondary opportunity in retail and specialty food distribution vertical. 30,000+ attendees with 8,100+ registered buyers provide massive lead volume. Retail chain executives, specialty distributors, and foodservice operators manage multi-location ordering, inventory, and sales challenges. Event focus on product discovery requires non-traditional positioning: emphasize how AI teammates accelerate buyer decision-making and order processing speed for distributors attending. Risk: Product-centric event may limit receptivity to operational solutions outside exhibit floor interactions."
-    },
-    {
-      "event_name": "AIA Conference on Architecture 2026",
-      "event_url": "https://conferenceonarchitecture.com/",
-      "overall_score": 4.1,
-      "scores": {
-        "industry_alignment": {
-          "score": 5,
-          "rationale": "Building products and construction materials suppliers present, but audience is primarily architects, interior designers, and design-tech teams rather than distribution operations or field service buyers. Design and sustainability focus misaligned with InstaLILY core value proposition of execution automation in sales, operations, and service workflows. Building materials connection exists but secondary to design-centric agenda."
-        },
-        "scale_timing": {
-          "score": 8,
-          "rationale": "Major established national conference in June 2026, well-timed for US sales team engagement. San Diego Convention Center indicates significant scale with 600+ exhibitors. Strong venue and timing infrastructure make it logistically accessible and reputable industry event."
-        },
-        "buyer_quality": {
-          "score": 4,
-          "rationale": "Attendee base skews toward architects, designers, and specifiers rather than operations executives or distribution decision-makers. While some building product manufacturers attend, primary decision-makers for operational technology investments (VPs of Sales, Ops Directors, Warehouse Managers) underrepresented. Limited C-suite concentration in distribution operations space."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Design-focused conference with sustainability and digital workflow sessions targeting design processes rather than distribution operations or sales execution. Limited indication that attendees actively seeking solutions for sales acceleration, inventory management, or field service automation. Workflow sessions likely address design collaboration, not operational automation."
-        }
-      },
-      "reasoning": "While building products and construction materials suppliers participate as exhibitors, the AIA Conference targets architects and designers rather than the distribution operations and sales leadership that InstaLILY needs to reach. The design-centric agenda and specifier-heavy audience do not align with InstaLILY ICP buying signals around sales team automation, tribal knowledge codification, or multi-location operations scaling. Limited ROI for targeted outreach.",
-      "sales_brief": "Low priority. Event attracts building product suppliers and manufacturers but audience is primarily architects and designers, not distribution or operations decision-makers. Design-focused sessions and specifier concentration do not match InstaLILY buyer intent signals. Better opportunities exist in distribution-specific verticals."
     },
     {
       "event_name": "HARDI Regional Conferences Spring/Summer 2026",
@@ -959,56 +563,6 @@
       "sales_brief": "Low priority. CFMA targets finance executives (CFOs, controllers) with limited decision authority over sales execution or operations automation. Conference focus on accounting, financial management, and banking relationships misaligned with InstaLILY value proposition. Better ROI in operations and sales-focused vertical events."
     },
     {
-      "event_name": "Groundbreaking Women in Construction Conference 2026",
-      "event_url": "https://www.enr.com/groundbreaking-women-in-construction",
-      "overall_score": 3.2,
-      "scores": {
-        "industry_alignment": {
-          "score": 6,
-          "rationale": "Construction industry event with attendees from construction companies and supply side, relevant to InstaLILY building materials and construction supply verticals. However, conference framed as diversity and inclusion leadership event rather than distribution operations or technology-focused gathering. Construction supply industry connection exists but secondary to career development and mentorship agenda. Not specialized to distribution operations or field service verticals."
-        },
-        "scale_timing": {
-          "score": 7,
-          "rationale": "Established ENR (Engineering News-Record) conference June 14-16, 2026, well-timed 3-day event in San Diego. Credible industry publication backing provides audience quality assurance. Geographic accessibility for US sales team. However, niche focus on women in construction may limit total attendee pool and buyer diversity compared to general construction or distribution events."
-        },
-        "buyer_quality": {
-          "score": 3,
-          "rationale": "Attendees include women in construction across all roles plus HR leaders and executives championing diversity. While some construction company owners present, audience skews toward professional development and career advancement rather than operations decision-makers. Limited concentration of VP Sales, Operations Directors, Warehouse Managers, or other buyer personas with authority for technology purchasing. Diversity focus may not reflect attendee distribution across operational roles."
-        },
-        "buyer_intent_alignment": {
-          "score": 2,
-          "rationale": "Conference centered on leadership development, mentorship, networking, and career growth rather than technology solutions or operational challenges. Sessions focused on professional advancement and industry inclusion rather than sales acceleration, inventory management, or field service automation. Limited signal of attendees actively seeking operational technology solutions or evaluating sales and operations platforms."
-        }
-      },
-      "reasoning": "Groundbreaking Women in Construction Conference, while featuring construction industry attendees from InstaLILY ICP verticals, prioritizes diversity, leadership development, and career advancement over operational technology and business solutions. Attendee mix skews toward professional development rather than operations decision-makers. Limited buyer intent signals around sales execution, operations automation, or technology solutions. Niche focus on women in construction, while inclusive, narrows targeted buyer concentration compared to vertical-specific or operations-focused events.",
-      "sales_brief": "Low priority. Diversity-focused professional development conference, not operations-technology focused. Attendee value around career growth and mentorship rather than solution-seeking for sales and operations challenges. Limited concentration of decision-makers for technology purchasing. Better ROI in distribution operations-specific events."
-    },
-    {
-      "event_name": "Build Expo Nashville 2026",
-      "event_url": "https://buildexpousa.com/nashville-build-expo/",
-      "overall_score": 5.7,
-      "scores": {
-        "industry_alignment": {
-          "score": 7,
-          "rationale": "Build Expo serves building materials suppliers, specialty contractors, construction equipment dealers, and design professionals in rapidly expanding Middle Tennessee market. Building materials and construction supply verticals align with InstaLILY ICP. However, event focused on regional Middle Tennessee market rather than national multi-location distribution operations. Local/regional builder and contractor base may not represent enterprises with 1000+ salespeople across 700+ locations that InstaLILY scales."
-        },
-        "scale_timing": {
-          "score": 6,
-          "rationale": "July 1-2, 2026 represents 2-day compressed event window limiting relationship-building depth. Nashville location accessible to US sales team. Free attendance for qualified registrants lowers buyer barrier but may indicate lower-budget attendee base. Regional expo format suggests smaller scale than national conferences. Timing in July (mid-summer) may face scheduling conflicts for enterprise buyer attendance."
-        },
-        "buyer_quality": {
-          "score": 5,
-          "rationale": "General contractors, specialty subcontractors, builders, developers, architects, engineers, and property managers attend. Mix of operational decision-makers present but weighted toward construction execution and project delivery rather than distribution operations or multi-location sales leadership. Limited indication of VP-level or C-suite distribution executives. Regional contractor and builder base suggests smaller company concentration than enterprise ICP."
-        },
-        "buyer_intent_alignment": {
-          "score": 5,
-          "rationale": "Build Expo positions as connector event for regional market without strong signal of technology solution-seeking intent. Attendees likely focused on local supplier relationships, project sourcing, and regional contractor networking rather than enterprise platform evaluations. Free format may indicate buyer posture more transactional/relationship-based than actively evaluating operational technology investments."
-        }
-      },
-      "reasoning": "Build Expo Nashville serves construction supply verticals relevant to InstaLILY ICP but in regional rather than enterprise context. 2-day compressed event window in July limits relationship building. Attendee base skews toward local/regional general contractors, builders, and specialty trades rather than enterprise distribution operations with multi-location scaling challenges. Free attendance format suggests price-sensitive, project-focused buyer base rather than executives evaluating enterprise operational platforms. Regional expo positioning limits buyer concentration at scale InstaLILY targets.",
-      "sales_brief": "Lower priority. Regional 2-day expo targets local/regional builders and contractors, not enterprise distribution operations. July timing and compressed format limit relationship building. Free attendance suggests price-sensitive, project-focused buyers rather than technology platform evaluators. Better ROI in national or regionally dense distribution events."
-    },
-    {
       "event_name": "NAED Women In Industry Forum 2026",
       "event_url": "https://www.naed.org/womeninindustry",
       "overall_score": 8.6,
@@ -1034,33 +588,458 @@
       "sales_brief": "High priority adjacent vertical. NAED Forum serves $106 billion electrical distribution industry with 5,100+ locations. June 15-17 3-day format in Houston attracts operations managers, warehouse managers, sales leaders, and senior executives. Electrical distributors face InstaLILY pain points: high SKU volumes, tribal knowledge, multi-location scaling. Forum structure inclusive of all genders provides decision-maker access. Recommend targeted booth presence and pre-meeting strategy for electrical distribution outreach expansion."
     },
     {
-      "event_name": "Pharma Manufacturing World Summit 2026",
-      "event_url": "https://www.executiveplatforms.com/pmws/",
-      "overall_score": 2.1,
+      "event_name": "World of Concrete 2026",
+      "event_url": "https://www.worldofconcrete.com/",
+      "overall_score": 8.1,
       "scores": {
         "industry_alignment": {
-          "score": 2,
-          "rationale": "Pharma Manufacturing World Summit focuses on pharmaceutical manufacturing, operations, quality, supply chain for drug manufacturers and CDMOs. While manufacturing vertical adjacent to some industrial segments, pharmaceutical manufacturing represents specialized highly-regulated vertical distinctly different from InstaLILY core ICP of distributors, suppliers, and field service operations. Pharma lacks distribution operations, multi-location sales team scaling, high-SKU catalog challenges that drive InstaLILY value proposition."
+          "score": 9,
+          "rationale": "Strong alignment with InstaLILY ICP. Concrete and masonry construction is a core distribution vertical. Event serves material suppliers, equipment dealers, and contractors who manage complex inventories, multi-location operations, and face tribal knowledge challenges typical of construction distribution."
         },
         "scale_timing": {
-          "score": 7,
-          "rationale": "Established executive summit May 18-20, 2026, 3-day format with quality infrastructure. Boston location accessible to US sales team. 200 attendees with 52 speakers indicates meaningful scale and credible speaker content. Timing and venue quality professional. However, scale smaller than major industry conferences and specialized pharmaceutical focus limits broader applicability."
+          "score": 8,
+          "rationale": "Premier annual event in 2026 with established 40+ year history. Las Vegas venue is accessible to US sales team. January timing is ideal for Q1 budget planning and new-year digital transformation initiatives at construction firms."
         },
         "buyer_quality": {
           "score": 8,
-          "rationale": "High-quality attendee base of pharmaceutical manufacturing executives: SVPs, VPs, Directors of Manufacturing, Technical Operations, Quality, Supply Chain, and Technology Leaders. Plant, Site, Facility Managers also present. Executive-level concentration indicates senior decision-makers with budget authority. Quality of attendees from pharma industry is high, but vertical mismatch reduces relevance for InstaLILY."
+          "rationale": "Good concentration of decision-makers: concrete contractors, material suppliers, equipment dealers, and field supervisors with purchasing authority. Indoor and outdoor demonstrations suggest hands-on evaluation mindset. Mix of strategic operators and technical staff."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "Audience shows intent to evaluate new tools and methods. Demonstrations and education program indicate openness to operational improvements. However, primary focus is products/equipment rather than operational software, so solution-seeking intensity is moderate."
+        }
+      },
+      "reasoning": "World of Concrete targets construction distribution and material supply operations - core InstaLILY verticals. Material suppliers and contractors attending face high-volume SKU management, multi-location coordination, and field execution challenges that InstaWorkers can solve. January timing maximizes budget availability.",
+      "sales_brief": "Strong fit for construction supply vertical. Material suppliers and equipment dealers attending manage complex inventory across locations - perfect for InstaBrain tribal knowledge capture. January timing aligns with Q1 transformation budgets. Risk: Event emphasizes physical equipment and demonstrations; require strategy to shift conversation to AI execution vs. product evaluation."
+    },
+    {
+      "event_name": "AIA Conference on Architecture 2026",
+      "event_url": "https://conferenceonarchitecture.com/",
+      "overall_score": 3.2,
+      "scores": {
+        "industry_alignment": {
+          "score": 4,
+          "rationale": "Weak alignment with InstaLILY ICP. While some building product manufacturers and material suppliers exhibit, primary audience is architects and designers - not distribution, operations, or supply chain decision-makers. Event focuses on design, aesthetics, and sustainability rather than order fulfillment, inventory, or sales operations."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Major annual event with 600+ exhibitors in June 2026. San Diego Convention Center is accessible. Well-established conference with strong attendance."
+        },
+        "buyer_quality": {
+          "score": 2,
+          "rationale": "Attendee base is architects, interior designers, and specifiers - not procurement, operations, or sales leaders. Low concentration of C-suite executives from distribution or manufacturing operations with budget authority for operational software."
+        },
+        "buyer_intent_alignment": {
+          "score": 2,
+          "rationale": "Audience focus is on design innovation and building products for specification - not on solving distribution operations or sales execution challenges. Limited intent signal for procurement-side solutions."
+        }
+      },
+      "reasoning": "AIA Conference targets architects and designers, not distribution or supply chain operators. While building product manufacturers attend, they are exhibiting products, not seeking operational AI solutions. Wrong buyer persona and use case for InstaLILY.",
+      "sales_brief": "Low priority - wrong audience. Architects and designers do not control procurement operations or sales execution. Building product exhibitors may be vendors, not buyers of AI operational tools. Skip in favor of distribution-focused events."
+    },
+    {
+      "event_name": "World of Modular 2026",
+      "event_url": "https://worldofmodular.org/",
+      "overall_score": 6.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Solid alignment with InstaLILY ICP. Modular builders, prefab manufacturers, and component suppliers operate high-volume, complex supply chains with thousands of part configurations. Event exhibits fastener and connection systems suppliers - a core InstaLILY vertical. General contractors exploring off-site construction face operational scaling challenges."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Established event in 2026 with full-scale module demonstrations. Las Vegas venue is accessible. April timing is solid. Event is smaller and more niche than mega-conferences, but still substantial for modular segment."
+        },
+        "buyer_quality": {
+          "score": 6,
+          "rationale": "Attendee mix includes modular builders, general contractors, and developers - many with operational authority. However, primary focus is on construction methodology and fabrication efficiency rather than corporate operations software. Mix of strategic and technical staff."
+        },
+        "buyer_intent_alignment": {
+          "score": 6,
+          "rationale": "Modular builders and prefab strategists evaluating off-site delivery methods show interest in operational efficiency and scaling. However, intent is focused on physical construction processes rather than sales/order operations software adoption."
+        }
+      },
+      "reasoning": "World of Modular reaches niche but relevant audience: prefab manufacturers and modular builders with complex component sourcing and high-SKU operations. Fastener and connection systems suppliers are core ICP. However, event focus is construction methodology, not corporate operations transformation.",
+      "sales_brief": "Moderate opportunity in modular construction vertical. Prefab manufacturers struggle with part inventory, supplier coordination, and field execution - solvable by InstaWorkers. April timing is acceptable. Risk: Audience primary interest is fabrication efficiency and delivery methodology, not sales/operations software. Requires message reframing around supply chain execution vs. construction methods."
+    },
+    {
+      "event_name": "Groundbreaking Women in Construction Conference 2026",
+      "event_url": "https://www.enr.com/groundbreaking-women-in-construction",
+      "overall_score": 2.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 5,
+          "rationale": "Tangential to InstaLILY ICP. While construction-focused, event is centered on career development, leadership, and diversity initiatives - not on distribution operations, supply chain, or sales execution. Attendees may include construction company owners and HR leaders, but not primary procurement or operations decision-makers."
+        },
+        "scale_timing": {
+          "score": 6,
+          "rationale": "June 2026 timing is acceptable. San Diego location is accessible. Event is moderately sized for niche professional development conference, not a major industry gathering."
+        },
+        "buyer_quality": {
+          "score": 2,
+          "rationale": "While some construction executives and company owners attend, primary audience is focused on women in construction roles across all levels. HR leaders and D&I champions are not procurement/operations/sales decision-makers. Low concentration of technology decision-making authority."
         },
         "buyer_intent_alignment": {
           "score": 1,
-          "rationale": "Summit focuses on pharmaceutical manufacturing strategies, emerging trends, supply chain optimization within pharma context, and best practices specific to drug manufacturing. Solutions sought center on manufacturing automation, quality management systems, CDMOs partnerships, and pharma-specific supply chain. Limited signal of interest in sales team automation, distribution operations, or field service execution workflows that InstaLILY solves."
+          "rationale": "Event intent is career mentorship, leadership development, and networking - not operational problem-solving or technology adoption. Attendees are not actively seeking enterprise software solutions."
         }
       },
-      "reasoning": "Pharma Manufacturing World Summit, despite high-quality executive attendance, represents misaligned vertical for InstaLILY. Pharmaceutical manufacturing differs fundamentally from InstaLILY core ICP of distributors, suppliers, and field service operations. Pharma operations focus (manufacturing automation, quality systems, regulated compliance) diverges from sales execution, inventory management, and field service automation that drive InstaLILY ROI. Manufacturing executives attending seek pharma-specific supply chain and technical operations solutions, not sales team or distribution operations automation. Vertical mismatch outweighs attendee quality.",
-      "sales_brief": "Not recommended. Pharma manufacturing vertical misaligned with InstaLILY ICP. Executive-quality attendees (SVPs, VPs, Directors) present but seeking manufacturing automation and pharma supply chain solutions. InstaLILY sales execution, tribal knowledge, and field service value propositions not relevant to pharmaceutical operations. Better ROI in distribution and field service vertical events."
+      "reasoning": "Groundbreaking Women is a professional development conference, not a buying event. While some construction executives attend, primary focus is career growth and diversity initiatives, not operational software needs. Wrong intent signal and buyer persona for InstaLILY.",
+      "sales_brief": "Skip this event. Primary value is career mentorship and networking, not technology evaluation. Attendee intent is professional development, not procurement of operational AI. HR/D&I focus does not align with InstaLILY buying committee. Allocate resources to distribution-focused events instead."
+    },
+    {
+      "event_name": "Build Expo Nashville 2026",
+      "event_url": "https://buildexpousa.com/nashville-build-expo/",
+      "overall_score": 5.3,
+      "scores": {
+        "industry_alignment": {
+          "score": 7,
+          "rationale": "Moderate alignment with InstaLILY ICP. Event serves building materials suppliers, specialty contractors, construction equipment dealers, and general contractors - all relevant to construction distribution vertical. Regional focus on Tennessee middle market shows emerging supplier and contractor base."
+        },
+        "scale_timing": {
+          "score": 5,
+          "rationale": "Regional event in 2026 with free attendance for qualified builders. July timing is acceptable but not optimal for budget cycles. Nashville venue limits geographic reach compared to national events. Event is smaller and more localized than premier national conferences."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Attendee mix includes general contractors, developers, and architects with purchasing authority. However, regional/local scope likely attracts mid-market contractors rather than large enterprise operators. Concentration of senior decision-makers is lower than national events."
+        },
+        "buyer_intent_alignment": {
+          "score": 5,
+          "rationale": "Free-to-attend format suggests general business development and supplier evaluation mindset. Attendees are actively seeking new vendors and services, but event format (expo vs. education) may favor product relationships over software solutions."
+        }
+      },
+      "reasoning": "Build Expo Nashville targets growing regional construction market with relevant supplier and contractor mix. Free attendance model lowers barrier but may attract deal-seekers over strategic evaluators. Regional scope limits enterprise decision-maker concentration versus national events.",
+      "sales_brief": "Lower priority regional play. Building materials suppliers and local contractors attending face operational scaling challenges, but smaller regional event attracts mid-market rather than enterprise buyers. July timing is outside peak budget windows. Consider for prospecting if Nashville market identified as growth target, otherwise prioritize national conferences."
+    },
+    {
+      "event_name": "RAPID + TCT 2026",
+      "event_url": "https://www.rapid3devent.com/",
+      "overall_score": 2.4,
+      "scores": {
+        "industry_alignment": {
+          "score": 2,
+          "rationale": "Weak alignment with InstaLILY ICP. Event focuses on additive manufacturing and 3D printing technology - a specialized manufacturing segment not in core InstaLILY verticals. While aerospace, automotive, and medical industries are represented, focus is on 3D production equipment and materials, not distribution, supply chain, or field service operations."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "North America's largest additive manufacturing event in 2026. Boston location is accessible. April timing is good. 450+ exhibitors and 170+ conference sessions indicate substantial, well-established event."
+        },
+        "buyer_quality": {
+          "score": 3,
+          "rationale": "Engineers, manufacturers, and R&D professionals dominate. C-level executives present are focused on manufacturing innovation and technology investment in 3D printing. Limited concentration of procurement, supply chain, or operations decision-makers focused on sales/order execution."
+        },
+        "buyer_intent_alignment": {
+          "score": 2,
+          "rationale": "Event intent is technology evaluation for additive manufacturing production methods, not operational transformation of sales, quoting, or supply chain execution. Attendee focus is on 3D equipment and materials, not enterprise workflow automation."
+        }
+      },
+      "reasoning": "RAPID + TCT is a specialized additive manufacturing technology event. While aerospace, automotive, and medical sectors attend, focus is on 3D production innovation, not distribution operations or enterprise sales execution. Misaligned with InstaLILY verticals and use cases.",
+      "sales_brief": "Low priority - specialized manufacturing tech event. Audience evaluates 3D printing equipment and materials, not AI operational execution tools. Aerospace and automotive buyers present are focused on production methodology, not order processing or field execution. Skip in favor of broader distribution/supply chain events."
+    },
+    {
+      "event_name": "TIA Capital Ideas Conference 2026",
+      "event_url": "https://web.cvent.com/event/5fcaa2f1-f19b-4e81-a814-d17aa1a29d03/websitePage:fe4fb1cb-f5ba-4897-a32c-606d09490169",
+      "overall_score": 7.2,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Strong alignment with InstaLILY ICP. Third-party logistics, freight brokerage, and transportation intermediaries are core distribution/logistics verticals. 1,500+ attendees include freight brokers, 3PL operators, and logistics executives managing high-volume operations with complex routing, compliance, and execution challenges that InstaWorkers can solve."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Established annual conference for 3PL/logistics industry in 2026. Phoenix venue is accessible. April timing aligns well with Q2 planning cycles. 1,500+ attendees indicate substantial, well-respected event within logistics community."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "High concentration of decision-makers: COOs, logistics executives, brokerage company owners, and operations leaders. Attendees have budget authority for technology investments. Industry-focused event attracts serious practitioners with operational authority."
+        },
+        "buyer_intent_alignment": {
+          "score": 7,
+          "rationale": "TMS/ERP software providers and logistics tech vendors exhibit, signaling attendee intent to evaluate operational tools. Education sessions focus on technology, compliance, and operational efficiency - strong indicators of solution-seeking mindset."
+        }
+      },
+      "reasoning": "TIA Capital Ideas Conference is a premier gathering of 3PL operators, freight brokers, and logistics executives - a core InstaLILY vertical. Attendees manage high-volume order processing, exception handling, and multi-carrier coordination that InstaWorkers can automate. Private industry event ensures serious buyer focus.",
+      "sales_brief": "Strong fit - logistics/3PL is proven InstaLILY vertical. 1,500 freight brokers and 3PL operators attending manage repetitive quoting, load matching, exception routing - perfect InstaWorkers use cases. COOs and logistics executives present have budget authority. April timing is ideal for Q2 decisions. Private industry-only format ensures serious buyers. Strategy: Pre-booked meetings with top 3PLs and brokerage firms."
+    },
+    {
+      "event_name": "North American Manufacturing Excellence Summit (NAMES) 2026",
+      "event_url": "https://www.executiveplatforms.com/names/",
+      "overall_score": 6.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 6,
+          "rationale": "Moderate alignment with InstaLILY ICP. Manufacturing operations focus is not a core InstaLILY vertical, but event attracts supply chain, operations, and procurement leaders who may manage distribution or field service operations. Adjacent to ICP but not primary target."
+        },
+        "scale_timing": {
+          "score": 6,
+          "rationale": "2026 timing is correct, but single-day format on April 20 is limited. Houston venue is accessible. 400+ attendees from 200+ organizations is a solid gathering, though smaller than major conferences."
+        },
+        "buyer_quality": {
+          "score": 8,
+          "rationale": "91% director level and above from 200+ global organizations. SVPs, VPs, and Directors of Manufacturing, Supply Chain, Operations, and Quality dominate. High concentration of C-level and senior operational decision-makers with budget authority."
+        },
+        "buyer_intent_alignment": {
+          "score": 6,
+          "rationale": "Focus on operational excellence, quality management, and digital transformation signals some openness to technology solutions. However, event emphasis is on manufacturing production efficiency and lean methodology rather than sales/order execution or supply chain AI."
+        }
+      },
+      "reasoning": "NAMES attracts high-level operations and supply chain executives from diverse industries. While not specifically distribution-focused, attendees manage procurement, supply chain, and operations - potentially relevant to InstaLILY if they have field service or supply chain execution responsibilities.",
+      "sales_brief": "Moderate opportunity with caveat. Director+ level ops and supply chain executives present have seniority and budget. But event focus is manufacturing production efficiency, not sales operations or distribution execution. Best case: identify attendees managing supply chain execution or field operations. Risk: manufacturing-centric messaging may not resonate with audience solving production/quality problems vs. sales/order processing."
+    },
+    {
+      "event_name": "INTERPHEX 2026",
+      "event_url": "https://www.interphex.com/en-us/show-info.html",
+      "overall_score": 5.2,
+      "scores": {
+        "industry_alignment": {
+          "score": 7,
+          "rationale": "Moderate-to-good alignment with InstaLILY ICP. Pharmaceutical and biotech manufacturing is relevant vertical - high-volume, highly regulated industry with complex supply chains, critical inventory management, and field execution challenges. Pharma distributors and supply chain operators manage thousands of SKUs."
+        },
+        "scale_timing": {
+          "score": 7,
+          "rationale": "Major global event in 2026 with 500+ exhibitors. New York City venue is accessible. April timing is strong for Q2 budget cycles. Established, well-respected industry conference."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Attendee mix includes C-level executives and engineers, but primary focus is manufacturing engineers, process developers, and quality managers - not procurement or supply chain operations leaders. Decision-makers present are focused on manufacturing process and compliance, not supply chain execution."
+        },
+        "buyer_intent_alignment": {
+          "score": 4,
+          "rationale": "Event focus is pharmaceutical manufacturing equipment, processing systems, and compliance tools - not operational AI or supply chain automation. Attendee intent is manufacturing innovation and regulatory compliance, not sales or order execution transformation."
+        }
+      },
+      "reasoning": "INTERPHEX serves pharmaceutical manufacturing, a regulated industry with complex supply chains. However, event focus is manufacturing equipment and compliance - not procurement or supply chain operations. Pharma distributors are relevant ICP, but they are not primary INTERPHEX audience.",
+      "sales_brief": "Lower priority. INTERPHEX focuses on manufacturing equipment and regulatory compliance, not supply chain or sales operations. Pharma is relevant vertical, but event attracts process engineers and quality managers, not procurement/operations leaders. Consider only if pharma distribution segment identified as growth priority, and can identify supply chain operator attendees."
+    },
+    {
+      "event_name": "Procurement & Supply Chain LIVE: The US Summit 2026",
+      "event_url": "https://supplychaindigital.com/events/procurement-supply-chain-live/procurement-supply-chain-live-chicago-2026",
+      "overall_score": 8.6,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Strong alignment with InstaLILY ICP. Event targets procurement and supply chain leaders - core decision-makers for operational AI. Attendees represent manufacturing, retail, distribution, and logistics sectors - all InstaLILY verticals. Supply chain execution, supplier collaboration, and digital transformation are directly relevant to InstaLILY use cases."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Major US summit in 2026 with 2,000+ combined attendees (with co-located Sustainability LIVE). Chicago location is accessible. April timing is optimal for Q2/H1 budget planning. Two-day format allows deep engagement."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "High concentration of C-level, VP, and director-level executives from enterprise organizations. Senior procurement and supply chain leaders with procurement budget authority. 100+ expert speakers and strategic focus indicate serious buyer audience."
+        },
+        "buyer_intent_alignment": {
+          "score": 8,
+          "rationale": "Event explicitly focuses on innovation, strategy, and digital transformation. Procurement software platforms, supply chain management systems, and sourcing technology vendors exhibit - strong signal of attendee intent to evaluate operational solutions."
+        }
+      },
+      "reasoning": "Procurement & Supply Chain LIVE is a premier gathering of C-level and VP procurement and supply chain executives actively seeking digital transformation solutions. 2,000+ attendees from manufacturing, retail, distribution, and logistics - core InstaLILY verticals. April timing and Chicago venue are optimal.",
+      "sales_brief": "Priority #2 Event for InstaLILY. Procurement & supply chain is proven buying committee for operational AI. 2,000+ C/V/D level executives from manufacturing, retail, distribution across North America attending. April timing ideal for H1 budget cycles. Co-location with Sustainability LIVE adds attendee volume. Strategy: Focus on supply chain execution, procurement automation, and supplier collaboration use cases. Pre-booked meetings with enterprise distribution and manufacturing operators essential."
+    },
+    {
+      "event_name": "ISM World 2026",
+      "event_url": "https://www.ismworld.org/events/conferences-and-events/annual-conference/",
+      "overall_score": 8.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Strong alignment with InstaLILY ICP. Supply management and procurement leadership conference attracts buyers from manufacturing, distribution, retail, and logistics - all core InstaLILY verticals. Event focus on practical problem-solving and category management directly aligns with InstaLILY use cases."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Premier annual supply management conference in 2026 with 2,000+ practitioners. Denver location is accessible (15 mins from Denver International). April timing is optimal for budget cycles. Well-established, highly respected event in procurement community."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "2,000+ attendees ranging from emerging professionals to C-suite veterans. Strong concentration of supply chain professionals, procurement executives, category managers, sourcing directors - all with budget authority. Event explicitly caters to VP+ with ExecIn2026 track."
+        },
+        "buyer_intent_alignment": {
+          "score": 9,
+          "rationale": "Event built by practitioners for practitioners focusing on practical problem-solving and real-world use cases. Hands-on workshops and problem-solving labs indicate strong intent to evaluate and adopt new solutions. Innovation Park expo shows technology adoption intent."
+        }
+      },
+      "reasoning": "ISM World is the premier supply management conference attracting 2,000+ procurement and supply chain executives from manufacturing, distribution, and logistics. Hands-on workshop format and problem-solving focus indicate strong buyer intent. April timing in Denver is optimal.",
+      "sales_brief": "Priority #1 Event for InstaLILY. ISM World attracts supply chain and procurement decision-makers (2,000+ from emerging to C-suite) actively solving operational problems. Manufacturing, distribution, retail, and logistics sectors well-represented - all core verticals. April timing perfect for H1 budgets. Hands-on workshops and problem-solving labs indicate strong solution-seeking intent. Innovation Park expo is gold for demonstrating InstaWorkers execution. Strategy: Focus on category management automation, supplier collaboration, and procurement workflow execution. Target VP+ attendees in ExecIn2026 track and pre-book category manager meetings."
+    },
+    {
+      "event_name": "American Supply Chain Summit 2026",
+      "event_url": "https://supplychainus.com/",
+      "overall_score": 8.3,
+      "scores": {
+        "industry_alignment": {
+          "score": 8,
+          "rationale": "Strong alignment with InstaLILY ICP. Supply chain, logistics, procurement, and operations executives from manufacturing, retail, distribution, and logistics sectors. Event focus on supply chain disruption, resilience, and digital transformation directly addresses InstaLILY use cases."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Established 10th-year event in 2026 with 300+ senior-level attendees. Dallas venue is accessible. April timing is optimal for Q2 planning cycles. Two-day format allows for deep engagement and relationship building."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "300+ senior-level attendees: VPs, directors, and senior managers from supply chain, logistics, procurement, and operations. Exclusive leadership-focused platform attracts serious practitioners with significant budget authority. Executive case studies format emphasizes C-level and director participation."
+        },
+        "buyer_intent_alignment": {
+          "score": 8,
+          "rationale": "10-year event with consistent focus on what is working and strategic transformation. Supply chain automation, 3PL partnerships, warehouse optimization, and AI adoption are core themes. 50+ expert speakers indicate strong educational and solution-seeking intent."
+        }
+      },
+      "reasoning": "American Supply Chain Summit is an exclusive 10-year-running platform for senior supply chain and logistics executives actively discussing digital transformation, AI adoption, and operational resilience. 300 senior attendees with substantial budget authority. April timing in Dallas is accessible.",
+      "sales_brief": "Priority Event for InstaLILY. Exclusive senior-executive platform (VPs, directors, ops leaders) in year 10 demonstrates credibility and attendee loyalty. Manufacturing, retail, distribution, and logistics heavily represented. April timing ideal for H1 decisions. Explicit focus on AI, automation, and 3PL optimization directly addresses InstaWorkers value. Risk: Smaller (300) vs mega-conferences, so requires targeted outreach to maximize ROI. Strategy: Target supply chain and logistics VPs/directors; emphasize 3PL optimization, warehouse execution, and logistics automation use cases."
+    },
+    {
+      "event_name": "Offshore Technology Conference (OTC) 2026",
+      "event_url": "https://2026.otcnet.org/",
+      "overall_score": 2.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 1,
+          "rationale": "Oil and gas exploration, drilling, and offshore production are outside InstaLILY's target verticals. While energy is a broad sector, OTC focuses on subsea equipment, drilling contractors, and E&P operators - not distributors, manufacturers of consumables/parts, or field service organizations that InstaLILY serves. No alignment with construction supply, industrial parts, auto goods, commercial equipment, healthcare, chemicals supply, logistics, agriculture, or retail distribution."
+        },
+        "scale_timing": {
+          "score": 10,
+          "rationale": "Major annual US event with 50,000+ attendees, established globally recognized conference. Early May 2026 timing is within optimal window. Accessibility excellent for US sales team based in Houston, TX."
+        },
+        "buyer_quality": {
+          "score": 2,
+          "rationale": "Attendees are offshore operators, drilling contractors, engineers, and geoscientists - primarily technical roles and E&P decision-makers, not distribution operations leaders, supply chain executives, or parts/inventory management buyers that InstaLILY targets. Wrong buyer persona entirely."
+        },
+        "buyer_intent_alignment": {
+          "score": 0,
+          "rationale": "Event focused on offshore drilling technology, subsea systems, and exploration - zero relevance to InstaLILY's problem domain of sales automation, tribal knowledge codification, or multi-location distribution operations."
+        }
+      },
+      "reasoning": "Despite strong event scale and timing, OTC is fundamentally misaligned with InstaLILY's ICP. The oil and gas upstream sector operates in a completely different buying context than distribution, manufacturing, or field service. No evidence that attendees face the pain points InstaLILY solves (sales rep manual work, parts catalog complexity, legacy system integration). Investment would yield minimal qualified leads.",
+      "sales_brief": "Skip this event. Oil and gas upstream E&P is outside InstaLILY vertical focus. Attendees (drilling contractors, offshore operators, subsea engineers) do not match ICP. No distributor/supply chain/field service operations buyers. Large event scale does not compensate for complete industry misalignment."
+    },
+    {
+      "event_name": "CPHI Americas 2026",
+      "event_url": "https://www.cphi.com/americas/en/home.html",
+      "overall_score": 5.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 6,
+          "rationale": "Pharmaceutical manufacturing and contract development/manufacturing organizations (CDMOs) are adjacent to InstaLILY's healthcare/pharmaceuticals/medical supplies distributor vertical, but event is supplier-focused rather than distributor or supply chain operator-focused. CDMOs and contract manufacturers are B2B manufacturers, not the multi-location distribution networks or field service operations that represent InstaLILY's core strength. Partial alignment through pharmaceutical sector but misaligned on business model."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Well-established, significant event in Philadelphia, PA in June 2026 (confirmed dates June 2-4). Approximately 2,735 targeted attendees. US-based, accessible to sales team. Premium content-first format suggests engaged audience. Timing within optimal window."
+        },
+        "buyer_quality": {
+          "score": 7,
+          "rationale": "Supply chain leaders, development professionals, and decision-makers from pharmaceutical and biotech companies in attendance. Director+ level representation present. However, audience skews toward manufacturing/operations within pharma companies and CDMOs rather than pharma distributors or supply chain firms that would be InstaLILY ICP."
+        },
+        "buyer_intent_alignment": {
+          "score": 4,
+          "rationale": "Event focused on contract manufacturing partnerships and supply chain optimization for pharmaceutical production. While operations-focused, the buying intent centers on manufacturing efficiency and supplier relationships rather than sales enablement, parts distribution, or multi-location distribution operations that InstaLILY targets."
+        }
+      },
+      "reasoning": "CPHI Americas has moderate relevance through the pharmaceutical industry connection, but represents a tangential use case. The event targets CDMO/contract manufacturers and pharma production teams, not pharmaceutical distributors or supply chain operators managing multi-location inventory and sales operations. While buyer quality is solid and event scale is strong, the business model mismatch limits qualified prospect potential. Could work for healthcare supply distributor angle but unlikely to find core ICP targets here.",
+      "sales_brief": "Moderate priority event - pharma is InstaLILY vertical but audience misaligned. CPHI targets CDMOs and pharma manufacturers, not pharma distributors or healthcare supply chains. Buyer quality strong (director+ level) but wrong buyer persona. Would require specialized messaging around manufacturing operations automation rather than distribution sales/inventory workflows. Consider only if targeting pharma manufacturing supply chain optimization."
+    },
+    {
+      "event_name": "ChemE Show \u2013 Powered by ACHAMA",
+      "event_url": "https://www.achama.de/en/the-achema/cheme-show/short-profile",
+      "overall_score": 5.2,
+      "scores": {
+        "industry_alignment": {
+          "score": 5,
+          "rationale": "Chemical and pharmaceutical manufacturing with some chemical supply adjacency. Event targets chemical engineers, process engineers, and technology providers serving manufacturing plants. Chemicals and raw materials supply distributors are in InstaLILY ICP, but this event is focused on manufacturing equipment, process technology, and downstream processing solutions rather than distribution operations. Some relevance through chemical manufacturing supply chain but primary audience is production-side rather than supply/distribution-side."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Inaugural major global exhibition in June 2026 (June 9-10) hosted in Houston, TX. Strong positioning from ACHEMA and Hydrocarbon Processing. George R. Brown Convention Center is major venue. US-based with excellent accessibility. Timing appropriate for sales team outreach."
+        },
+        "buyer_quality": {
+          "score": 6,
+          "rationale": "CTOs, plant managers, process engineers, and project managers attending. Director+ representation present. However, audience skews technical (engineers, scientists) and manufacturing-side rather than distribution operations and sales leadership. Decision-maker concentration moderate but not ideal for InstaLILY's typical buyer personas (sales VPs, ops directors, supply chain leaders at distributors)."
+        },
+        "buyer_intent_alignment": {
+          "score": 4,
+          "rationale": "Event centered on manufacturing process technology, clean energy, hydrogen technologies, and equipment solutions. Attending companies seeking to optimize production processes and equipment capabilities, not distribution operations, sales enablement, or multi-location supply chain efficiency."
+        }
+      },
+      "reasoning": "ChemE Show has tangential relevance through chemical sector and manufacturing supply chain themes, but represents tangent rather than core ICP alignment. While chemicals/raw materials distributors are in InstaLILY's vertical, this event targets manufacturing technology buyers and process engineers rather than distribution operations teams. The inaugural status and strong technical program suggest quality attendees, but wrong buyer personas dominate. Limited prospect potential unless specifically targeting chemical equipment distributors with manufacturing process automation needs.",
+      "sales_brief": "Lower priority - chemicals sector is InstaLILY vertical but event audience misaligned. ChemE Show targets manufacturing engineers and plant managers, not chemical distributors or supply chain operators. Technical buyer focus (CTOs, process engineers) rather than sales/ops leadership. Inaugural event has uncertainty. Better to invest in distribution-focused events that directly serve ICP."
+    },
+    {
+      "event_name": "BIO International Convention 2026",
+      "event_url": "https://convention.bio.org/",
+      "overall_score": 4.1,
+      "scores": {
+        "industry_alignment": {
+          "score": 4,
+          "rationale": "Biotech and pharmaceutical manufacturing ecosystem event. Healthcare/pharmaceuticals are in InstaLILY ICP, but BIO Convention primarily targets biotech companies, pharmaceutical manufacturers, life sciences researchers, and investors rather than pharmaceutical/medical supply distributors or healthcare distribution operations. CDMO presence provides some relevance but audience is predominantly innovation/research-focused biotech ecosystem rather than distribution supply chain operators."
+        },
+        "scale_timing": {
+          "score": 9,
+          "rationale": "Largest and most comprehensive biotech industry event with 20,000 attendees from 70+ countries. June 22-25, 2026 in San Diego, CA. Premier event with global recognition. US-based, accessible to sales team. Strong timing in early summer."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "20,000 biotech leaders including executives, investors, researchers, scientists, and business development professionals. While C-suite and executive presence is strong, audience is heavily weighted toward research scientists, investors, and biotech founders/entrepreneurs rather than distribution operations executives and supply chain leaders that represent InstaLILY's typical buyer personas."
+        },
+        "buyer_intent_alignment": {
+          "score": 2,
+          "rationale": "Event centered on biotech innovation, research breakthroughs, investment opportunities, and partnership building within biotech ecosystem. Attending companies/individuals focused on drug development, life sciences research, and biotech ventures - not on optimizing distribution operations, sales workflows, or supply chain efficiency that InstaLILY addresses."
+        }
+      },
+      "reasoning": "BIO Convention is a world-class event with massive scale and impressive attendee quality, but represents a poor fit for InstaLILY. The biotech/pharmaceutical innovation ecosystem is far removed from distribution operations, sales enablement, and inventory management that comprise InstaLILY's value prop. While healthcare is in the vertical portfolio, this event attracts researchers, investors, and biotech entrepreneurs rather than pharmaceutical/medical distributors or supply chain operators. Investment would yield minimal qualified leads despite event prestige.",
+      "sales_brief": "Skip this event. BIO Convention is biotech/pharma innovation-focused, not distribution operations. 20,000 attendees are researchers, scientists, investors, entrepreneurs - not distribution executives or supply chain operators. Zero alignment with multi-location distribution, parts management, or sales automation use cases. Prestige of event does not compensate for fundamental ICP mismatch."
+    },
+    {
+      "event_name": "Pharma Manufacturing World Summit 2026",
+      "event_url": "https://www.executiveplatforms.com/pmws/",
+      "overall_score": 5.9,
+      "scores": {
+        "industry_alignment": {
+          "score": 6,
+          "rationale": "Pharmaceutical manufacturing operations-focused event targeting manufacturing executives. Healthcare/pharmaceuticals are in InstaLILY vertical, but event is manufacturing production-side (plant operations, quality, technical manufacturing) rather than distribution supply chain or supply-side operations. Some relevance through pharma sector but manufacturing operations optimization differs from distribution inventory, sales, and parts management workflows that InstaLILY targets."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Focused executive summit with approximately 200 senior attendees and 52 speakers. May 18-20, 2026 in Boston, MA at Marriott Copley Place. Boutique format suggests high attendee quality and engagement. US-based, accessible timing. Smaller scale but concentrated decision-maker audience."
+        },
+        "buyer_quality": {
+          "score": 9,
+          "rationale": "Director-level and above pharmaceutical manufacturing executives including SVPs, VPs, Directors of Manufacturing, Technical Operations, Quality, Supply Chain, and Technology Leaders. Plant/Site/Facility Managers in attendance. High concentration of C-suite and senior operations leadership with budget authority. Excellent buyer quality and seniority."
+        },
+        "buyer_intent_alignment": {
+          "score": 4,
+          "rationale": "Summit focused on innovative strategies and best practices for pharmaceutical manufacturing operations, production efficiency, and facility management. Attending companies seeking to optimize internal manufacturing processes, quality management, and operational excellence - not distribution supply chain, sales enablement, or multi-location inventory operations."
+        }
+      },
+      "reasoning": "Pharma Manufacturing World Summit delivers the highest buyer quality among these five events, with strong C-suite and operations leadership concentration. However, it remains misaligned with InstaLILY's core ICP. The event targets pharma manufacturing operations (production, quality, facility management) rather than pharma distributors or distribution supply chains. While healthcare is a vertical, manufacturing plant operations differ significantly from multi-location distribution networks and sales operations that InstaLILY optimizes. The boutique format and executive seniority are appealing, but wrong buyer personas. Better ROI available from distribution-specific events.",
+      "sales_brief": "Moderate-low priority despite strong buyer quality. Event targets pharma manufacturing operations (SVPs, plant managers, technical directors), not pharma distributors or healthcare supply chains. High seniority concentration is attractive but wrong use case context. Pharma manufacturing plant optimization differs from distribution inventory/sales workflows. Boutique format limits prospect volume. Skip unless specifically pursuing pharma manufacturing operations as new vertical expansion."
+    },
+    {
+      "event_name": "ChemE Show \u2013 Powered by ACHEMA",
+      "event_url": "https://www.achema.de/en/the-achema/cheme-show/short-profile",
+      "overall_score": 5.8,
+      "scores": {
+        "industry_alignment": {
+          "score": 6,
+          "rationale": "Chemicals and raw materials supply is within InstaLILY ICP verticals, but this event focuses on chemical engineering, process technology, and manufacturing equipment rather than distribution and supply chain operations. The exhibitor mix emphasizes equipment manufacturers, EPC firms, and technology licensors rather than distributors or field service operators who are InstaLILY core buyers. Event serves manufacturers and engineers more than the distributors and supply chain operatives InstaLILY targets."
+        },
+        "scale_timing": {
+          "score": 8,
+          "rationale": "Major global exhibition in 2026 with strong brand backing from ACHEMA and Hydrocarbon Processing. June timing is accessible to US sales team. George R. Brown Convention Center in Houston provides substantial venue and established event infrastructure. Timing within optimal 2026 window makes it logistically feasible for resource investment."
+        },
+        "buyer_quality": {
+          "score": 5,
+          "rationale": "Attendee mix includes plant managers and decision-makers, but audience skews heavily toward chemical engineers, CTOs, process engineers, and EPC firms rather than sales operations or supply chain executives. Limited concentration of buyer personas who control budgets for AI-driven sales and operations workflows. Decision-makers present are focused on manufacturing process optimization rather than distribution efficiency and sales velocity."
+        },
+        "buyer_intent_alignment": {
+          "score": 4,
+          "rationale": "Event positioning emphasizes technology and investment in chemical processing and manufacturing rather than operational efficiency in sales and distribution workflows. Digital transformation tools are mentioned but in context of process engineering and plant operations, not sales enablement or order management. Attendee intent appears oriented toward production technology and capital equipment decisions rather than sales team productivity or supply chain automation solutions."
+        }
+      },
+      "reasoning": "ChemE Show has industry adjacency through chemicals vertical but misses InstaLILY sweet spot. The event targets chemical manufacturers, equipment suppliers, and process engineers rather than the distribution, field service, and multi-location supply chain operators where InstaLILY drives highest ROI. While plant managers and CTOs attend, they are focused on manufacturing process optimization and capital equipment decisions, not the sales velocity, quoting automation, and tribal knowledge codification that InstaLILY solves. Better fit would be downstream chemical distributors or field service organizations serving chemical plants, but this event emphasizes upstream manufacturing and process technology.",
+      "sales_brief": "Lower priority event for InstaLILY. While chemicals supply is within ICP verticals, ChemE Show targets manufacturing engineers and process technology buyers rather than distribution and sales operations decision-makers. Attendee base skews toward CTOs, plant managers, and EPC firms focused on capital equipment and process optimization, not sales team productivity or supply chain automation. June 2026 timing and Houston location are accessible, but buyer intent and decision-maker concentration misaligned with InstaLILY use cases. Resource better spent on distribution-specific or field service industry events with higher concentration of VP Sales, operations directors, and branch leadership."
     }
   ],
   "summary": {
-    "total_events_scored": 43,
-    "last_updated": "2026-03-31T15:18:08.389758"
+    "total_events_scored": 42,
+    "last_updated": "2026-04-03T10:14:15.661492"
   }
 }

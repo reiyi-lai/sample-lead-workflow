@@ -43,14 +43,16 @@ VALUE PROPOSITIONS:
 
 IDEAL CUSTOMER PROFILE (ICP):
 
-  Industry Verticals (distribution-heavy and operationally intensive):
-    • Building materials & construction supply distributors
+  Industry Verticals:
+    • Construction supply distributors
     • Industrial parts distributors and manufacturers
+    • Auto goods distributors and manufacturers
     • Commercial equipment distributors and service providers (e.g., restaurant equipment, HVAC)
     • Fastener and specialty hardware distributors
-    • Medical or healthcare equipment supply distributors
+    • Healthcare/pharmaceuticals/medical supplies distributors
     • Field service organizations (equipment maintenance, repair)
     • Chemicals and raw materials supply distributors
+    • Logistics and transportation distributors
     • Agriculture and food supply distributors
     • Retail and consumer goods supply distributors
 
@@ -155,10 +157,10 @@ Your job is to prioritize which events are worth investing resources to identify
 SCORING CRITERIA (each 0-10):
 
 1. INDUSTRY ALIGNMENT (weight: 0.4)
-   Look for verticals/themes focused on manufacturers, distributors, and field service operators across the verticals of industrial parts, construction supplies, and commercial equipment.
-   • 10: Core distribution-heavy verticals (Building materials & construction supply distributors, Industrial parts distributors and manufacturers, Commercial equipment distributors and service providers, Fastener and specialty hardware distributors, Medical or healthcare equipment supply distributors, Field service organizations, Chemicals and raw materials supply distributors, Agriculture and food supply distributors, Retail and consumer goods supply distributors)
+   Look for verticals/themes focused on manufacturers, distributors, field service operators and supply chain across the verticals of industrial goods, construction supplies, auto goods, healthcare/pharmaceuticals/medical supplies, chemicals/raw materials, logistics, transportation, consumer goods, and commercial equipment.
+   • 10: Core distribution-heavy verticals (verticals mentioned above)
    • 7-9: Adjacent segments
-   • 4-6: Broader business events with distribution-heavy and operationally intensive tracks
+   • 4-6: Broader business events with distribution-heavy and/or operationally intensive tracks
    • 0-3: Unrelated industries
 
 2. EVENT SCALE & TIMING (weight: 0.3)
