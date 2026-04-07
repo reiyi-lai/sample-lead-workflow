@@ -43,18 +43,12 @@ VALUE PROPOSITIONS:
 
 IDEAL CUSTOMER PROFILE (ICP):
 
-  Industry Verticals:
-    • Construction supply distributors
-    • Industrial parts distributors and manufacturers
-    • Auto goods distributors and manufacturers
-    • Commercial equipment distributors and service providers (e.g., restaurant equipment, HVAC)
-    • Fastener and specialty hardware distributors
-    • Healthcare/pharmaceuticals/medical supplies distributors
-    • Field service organizations (equipment maintenance, repair)
-    • Chemicals and raw materials supply distributors
-    • Logistics and transportation distributors
-    • Agriculture and food supply distributors
-    • Retail and consumer goods supply distributors
+  Distributor, manufacturer, or field service organization in one of the following five industry verticals:
+    • Construction supply
+    • Industrial parts
+    • Healthcare/pharmaceuticals/medical supplies
+    • Automotive goods
+    • Food supply
 
   Company Size:
     • Mid-market to Enterprise ($500M+ annual revenue preferred, $100M+ minimum)
@@ -128,7 +122,7 @@ FOR EACH EVENT FOUND, EXTRACT:
 - Event website URL
 - Cost of attending (registration fees, if available)
 - Brief description of the event
-- Which industry vertical it serves - IMPORTANT: If the event's agenda is on a specific industry vertical, select ONE industry vertical from the following five verticals: construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply. If the event's agenda is on general supply chain and distribution in general, select ONLY "supply_chain_and_distribution".
+- Which industry vertical it serves - IMPORTANT: If the event's agenda is on general supply chain and distribution in general, select ONLY "supply_chain_and_distribution". If the event's agenda is on a specific industry vertical, select ONE industry vertical from the following five verticals, and if they don't fit into any of these, select "others": construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply, others.
 - Exhibitor mix (types of companies that exhibit - e.g. "Software vendors, equipment manufacturers, service providers")
 - Audience mix (types of attendees/buyers - e.g. "Warehouse leaders, 3PL executives, logistics operators")
 
@@ -157,7 +151,7 @@ EVENT_SCORING_SYSTEM_PROMPT = f"""
 TASK: Score and filter the discovered events based on relevance to InstaLILY's ICP.
 Your job is to prioritize which events are worth investing resources to identify attending companies that would be relevant to InstaLILY's ICP.
 
-Now, look at the event's industry_vertical field. If it is "supply_chain_and_distribution", evaluate according to criteria set B. If it is a specific industry vertical, evaluate according to criteria set A.  
+Now, look at the event's industry_vertical field. If it is "supply_chain_and_distribution", evaluate according to criteria set B. If it is a specific industry vertical, including if it is "logistics and transportation", evaluate according to criteria set A.  
 At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
 
 SCORING CRITERIA SET A (each 0-10):
