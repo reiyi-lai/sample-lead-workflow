@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: "/", label: "Events", icon: "📅" },
-  { href: "/companies", label: "Companies", icon: "🏢" },
-  { href: "/outreach", label: "Outreach", icon: "📤" },
 ];
 
 export default function Sidebar() {

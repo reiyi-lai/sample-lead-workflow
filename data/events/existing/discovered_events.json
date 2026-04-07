@@ -1,142 +1,38 @@
 [
   {
-    "event_name": "Field Service Palm Springs",
-    "event_url": "https://fieldserviceusa.wbresearch.com/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 2
-  },
-  {
-    "event_name": "Sign Expo",
-    "event_url": "https://signexpo.org/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 3
-  },
-  {
-    "event_name": "NAFA 2026 Institute & Expo",
-    "event_url": "https://www.nafainstitute.org/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 5
-  },
-  {
-    "event_name": "RAPID + TCT 2026",
-    "event_url": "https://www.rapid3devent.com/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 6
-  },
-  {
-    "event_name": "TIA Capital Ideas Conference",
-    "event_url": "https://web.cvent.com/event/5fcaa2f1-f19b-4e81-a814-d17aa1a29d03/websitePage:fe4fb1cb-f5ba-4897-a32c-606d09490169",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 7
-  },
-  {
     "event_name": "North American Manufacturing Excellence Summit (NAMES) 2026",
     "event_url": "https://www.executiveplatforms.com/names/",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 9
-  },
-  {
-    "event_name": "INTERPHEX 2026",
-    "event_url": "https://www.interphex.com/en-us/show-info.html",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 10
-  },
-  {
-    "event_name": "Procurement & Supply Chain LIVE",
-    "event_url": "https://supplychaindigital.com/events/procurement-supply-chain-live/procurement-supply-chain-live-chicago-2026?gad_source=1&gad_campaignid=23549191152&gbraid=0AAAAACjTaLHS9xINAcjnO6BuI_N_dMU5u&gclid=Cj0KCQjw7IjOBhDyARIsAFzrWQz5Tr3h3SK4Jc86xyclUeKlHAdaLBOIXKjoNa8fDfVPBxtuDNm5gksaAvlcEALw_wcB",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 11
-  },
-  {
-    "event_name": "ISM World",
-    "event_url": "https://www.ismworld.org/events/conferences-and-events/annual-conference/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 12
-  },
-  {
-    "event_name": "American Supply Chain Summit",
-    "event_url": "https://supplychainus.com/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 13
-  },
-  {
-    "event_name": "B2B Online Chicago",
-    "event_url": "https://b2bmarketing.wbresearch.com/opportunities?utm_campaign=23414.013%20B2B%20Online%20[\u2026]icago%202026%20-%20SPEX%20New%20ESLR%20Automation%20EM1",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 14
-  },
-  {
-    "event_name": "Offshore Technology Conference (OTC)",
-    "event_url": "https://2026.otcnet.org/attend/who-attends",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 15
+    "needs_enrichment": true
   },
   {
     "event_name": "Fastener Fair USA",
     "event_url": "https://www.fastenerfairusa.com/",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 16
+    "needs_enrichment": true
   },
   {
-    "event_name": "NAED",
-    "event_url": "https://www.naed.org/national-meeting",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 17
-  },
-  {
-    "event_name": "Pharma Manufacturing World Summit",
-    "event_url": "https://www.executiveplatforms.com/pmws/",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 18
-  },
-  {
-    "event_name": "CPHI Americas",
+    "event_name": "CPHI Americas 2026",
     "event_url": "https://www.cphi.com/americas/en/home.html",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 20
+    "needs_enrichment": true
   },
   {
     "event_name": "ChemE Show \u2013 Powered by ACHEMA",
     "event_url": "https://www.achema.de/en/the-achema/cheme-show/short-profile",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 21
-  },
-  {
-    "event_name": "FORUM",
-    "event_url": "https://www.naed.org/womeninindustry",
-    "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 23
+    "needs_enrichment": true
   },
   {
     "event_name": "BIO International Convention 2026",
     "event_url": "https://convention.bio.org/",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 24
+    "needs_enrichment": true
   },
   {
-    "event_name": "The SFA Summer Fancy Food Show",
-    "event_url": "https://www.specialtyfood.com/fancy-food-shows/summer/",
+    "event_name": "Pharma Manufacturing World Summit 2026",
+    "event_url": "https://www.executiveplatforms.com/pmws/",
     "source": "sheet_import",
-    "needs_enrichment": true,
-    "original_line": 25
+    "needs_enrichment": true
   }
 ]

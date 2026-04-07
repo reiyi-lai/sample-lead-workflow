@@ -1,0 +1,171 @@
+{
+  "scored_events": [
+    {
+      "event_name": "RAPID + TCT 2026",
+      "event_url": "https://www.rapid3devent.com/",
+      "overall_score": 3.1,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 2,
+          "rationale": "Audience is primarily engineers, designers, researchers, and technical professionals evaluating additive manufacturing technology. Very few attendees are in sales or operations decision-making roles typical of InstaLILY ICP. Focus is on manufacturing process technology, not distribution or sales operations automation."
+        },
+        "event_scale_timing": {
+          "score": 9,
+          "rationale": "Major established annual event with 10,000+ expected attendees. April 2026 timing is ideal and within optimal window. US-based in Boston with excellent accessibility. Four-day format with significant exhibit presence makes it easily accessible to sales team."
+        },
+        "buyer_seniority": {
+          "score": 2,
+          "rationale": "While some senior executives and decision-makers attend, the majority composition skews toward engineers, project managers, and technical professionals rather than sales or operations executives with P&L responsibility. Limited concentration of C-suite or VP-level buyer personas."
+        }
+      },
+      "reasoning": "Although RAPID + TCT is a large, well-established event in 2026, it does not align with InstaLILY ICP. Industrial parts/additive manufacturing is outside InstaLILY vertical focus. Attendees are primarily technical professionals evaluating manufacturing technology, not distribution, sales, or operations leaders from distributor or field-service companies. The event serves manufacturers and solution providers in the AM ecosystem rather than the multi-location distributors, suppliers, and field-service operations that InstaLILY targets. Buyer personas are misaligned with InstaLILY use cases of sales velocity, quoting automation, and tribal knowledge management.",
+      "sales_brief": "Low priority - wrong buyer persona. RAPID + TCT attracts engineers and technical professionals focused on manufacturing process innovation, not distribution/sales/operations leaders. Minimal overlap with InstaLILY ICP of multi-location distributors needing sales automation and knowledge management. Event does not surface companies facing InstaLILY pain points of manual order entry, tribal knowledge loss, or sales rep utilization."
+    },
+    {
+      "event_name": "NAED National Meeting 2026",
+      "event_url": "https://www.naed.org/national-meeting",
+      "overall_score": 8.6,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 10,
+          "rationale": "Electrical distributors are core InstaLILY ICP. Audience is explicitly senior-level executives, national account managers, CEOs, presidents, and high-level decision-makers from electrical distributors. These are exactly the buyer personas InstaLILY targets - sales leadership and executive management at multi-location distribution companies."
+        },
+        "event_scale_timing": {
+          "score": 9,
+          "rationale": "May 2026 timing is ideal for planning and budget cycles. Established annual conference for $70+ billion electrical distribution industry. Likely 2,000+ attendees based on sector size and NAED membership (5,100+ locations). Orlando location accessible to US sales team. Proven industry standard event."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "High concentration of C-suite and senior executives indicated by description emphasizing CEOs, presidents, and senior-level decision-makers. National account executives have budget authority for operational technology. Strong presence of buyers with decision-making power for large technology investments."
+        }
+      },
+      "reasoning": "NAED National Meeting is an excellent fit for InstaLILY. Electrical distribution is part of the industrial parts vertical and shares identical pain points as InstaLILY customers: large sales teams doing manual quoting and order entry, complex multi-location inventory management, and tribal knowledge concentration among veteran sales reps. The $70+ billion industry with 5,100+ locations indicates numerous mid-market to enterprise targets. Attendee profile of CEOs, presidents, and national account managers are direct buyer personas. May timing aligns with annual planning cycles and budget allocation decisions.",
+      "sales_brief": "Priority #2 Event - Perfect ICP alignment on electrical distribution vertical. Audience skews heavily toward C-suite and senior sales/operations executives with budget authority. May timing ideal for annual planning decisions. $70B industry size means abundant target accounts. Risk: Large conference format requires pre-planned outreach and account mapping strategy. Competition likely from adjacent tech solutions."
+    },
+    {
+      "event_name": "AHR Expo 2026",
+      "event_url": "https://www.ahrexpo.com/",
+      "overall_score": 8.9,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 10,
+          "rationale": "HVACR contractors and distributors are core InstaLILY ICP within construction supply vertical. Audience includes distributors and wholesalers explicitly mentioned - these are sales and operations-focused roles typical of InstaLILY customer base. Facility managers and building owners also present but distributors/wholesalers are majority."
+        },
+        "event_scale_timing": {
+          "score": 9,
+          "rationale": "One of the world's largest HVACR events with 40,000+ expected attendees. February 2026 timing is excellent for Q1 planning and budgeting. Las Vegas Convention Center is established, accessible venue. Annual event with proven track record. 1,600+ exhibitors indicate significant industry presence and investment."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "While audience includes technical professionals and engineers, significant concentration of facility managers, building owners, architects, and manufacturers/distributors who are decision-makers. Wholesalers and distributors attending are typically senior procurement and operations roles with budget authority for technology solutions."
+        }
+      },
+      "reasoning": "AHR Expo is an excellent strategic fit for InstaLILY. HVAC distribution is a proven vertical with existing customer success (SRS Distribution - now Home Depot - a major reference). Construction supply is core vertical. The event attracts 40,000+ professionals with strong representation from distributors and wholesalers managing complex multi-location operations and high-volume SKU catalogs. February timing aligns with planning cycles. Scale and brand recognition of co-sponsorship by ASHRAE and AHRI indicate high-quality attendee profile with buying authority.",
+      "sales_brief": "Priority #1 Event - Proven HVAC distribution vertical with existing customer success story (SRS). 40,000+ attendees with strong distributor/wholesaler presence = high-volume target base. February timing perfect for new-year budget decisions. Four-day format and exhibition scale create natural networking opportunities. Risk: Massive event requires sophisticated targeting and lead management. Significant competitor presence likely."
+    },
+    {
+      "event_name": "NAED Women In Industry Forum 2026",
+      "event_url": "https://www.naed.org/womeninindustry",
+      "overall_score": 5.2,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 8,
+          "rationale": "Electrical distribution industry is core vertical. Audience includes women professionals at all levels from entry to upper management in sales, operations, and management roles. Sales professionals and operations managers present represent relevant buyer functions, though attendee composition skews more toward development/networking vs. active solution-seeking."
+        },
+        "event_scale_timing": {
+          "score": 6,
+          "rationale": "June 2026 timing acceptable but later in planning cycle. Smaller niche event (women-focused subset of NAED community) vs. main NAED National Meeting. While vertical-relevant, attendance likely 500-1,000 vs. 2,000+ for main conference. Houston location accessible but requires targeted effort."
+        },
+        "buyer_seniority": {
+          "score": 4,
+          "rationale": "Attendees range from entry to upper management, but event design emphasizes career advancement and leadership development rather than product/solution evaluation. Upper management present but overall composition includes more mid-level and early-career professionals. Lower concentration of C-suite and P&L decision-makers vs. main NAED meeting."
+        }
+      },
+      "reasoning": "While NAED Women In Industry Forum serves the electrical distribution vertical which is InstaLILY ICP, the event is sub-optimal compared to main NAED National Meeting. The forum is explicitly designed for career development and networking within a demographic subset, not operational problem-solving or technology evaluation. Attendee seniority and buying authority skew lower than main conference. June timing is later in budget cycles. Smaller event size reduces addressable target volume. Better to invest in main NAED National Meeting (May) for higher ROI.",
+      "sales_brief": "Lower priority vs. main NAED meeting - Same electrical distribution vertical but smaller, more demographically-focused event. Attendees lean toward career development and leadership training vs. solution evaluation. June timing later in budget cycles. Recommend prioritizing main NAED National Meeting (May) for better concentration of decision-makers and larger target volume."
+    },
+    {
+      "event_name": "Field Service Next West 2026",
+      "event_url": "https://fieldserviceusa.wbresearch.com/",
+      "overall_score": 7.8,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 7,
+          "rationale": "Field service operations are adjacent to InstaLILY ICP. While not direct 3PL or traditional distribution, field service companies managing technician workforces operate similar multi-location, high-volume operational models. Manufacturing, HVAC, and industrial equipment sectors mentioned overlap with InstaLILY verticals. However, event does not focus on traditional wholesale distribution or parts supply chains."
+        },
+        "buyer_functional_alignment": {
+          "score": 9,
+          "rationale": "Audience is explicitly service directors, VP of services, field service managers, operations executives - all high-alignment with InstaLILY buyer personas. These roles manage complex workflows, technician utilization, work assignment, and operational efficiency. Perfect functional alignment for InstaLILY value proposition around execution and workflow automation."
+        },
+        "event_scale_timing": {
+          "score": 8,
+          "rationale": "April 2026 timing ideal for planning cycle. Established 20-year conference with 500+ senior service executives. San Diego Convention Center accessible venue. Three-day format focused on operational transformation. Proven event with strong industry adoption and attendance."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "High concentration of VPs, directors, and senior operations executives. Description indicates 60% service and support executive attendance rate. These are decision-makers with P&L responsibility and budget authority for digital transformation and workflow automation solutions."
+        }
+      },
+      "reasoning": "Field Service Next West is strong opportunity despite supply_chain_and_distribution vertical classification. InstaLILY has proven field service AI capability (undisclosed OEM equipment platform customer with field service specialists). Event attracts 500+ senior service operations leaders managing technician workforces, work assignment, and operational efficiency - directly aligned with InstaLILY use cases. Manufacturing, HVAC, industrial equipment sectors mentioned overlap with InstaLILY verticals. April timing and senior executive concentration indicate high-quality opportunity. Theme of transforming service to revenue driver aligns with InstaLILY value of execution vs. assistance.",
+      "sales_brief": "Strong secondary opportunity - Field service operations executives (VPs, directors) are strong buyer personas for InstaLILY AI execution model. 20-year event with 500+ senior attendees at 60% executive rate indicates decision-maker concentration. April timing optimal. HVAC and industrial equipment sectors covered align with InstaLILY verticals. Risk: Event audience may be more solutions-aware than sales ops audiences, indicating potentially more sophisticated buying process and competition."
+    },
+    {
+      "event_name": "NAFA 2026 Institute & Expo",
+      "event_url": "https://www.nafainstitute.org/",
+      "overall_score": 3.4,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 4,
+          "rationale": "Fleet management is distinct function from sales and operations. Fleet managers, directors of fleet operations, and transportation managers focus on vehicle acquisition, maintenance, fuel, and logistics optimization. While they manage operations, they are not in sales or distribution contexts that drive InstaLILY use cases. Procurement specialists present but not aligned with InstaLILY quoting, sales velocity, or parts knowledge problems."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "April 2026 timing ideal. Established annual event with 2,100+ fleet professionals. Cleveland venue accessible. Three-day format with 60+ sessions indicates substantial educational content. Proven industry standard with 60+ years of operation."
+        },
+        "buyer_seniority": {
+          "score": 6,
+          "rationale": "Directors and managers of fleet operations have decision-making authority but focus is fleet procurement and operations, not technology platform adoption for sales/operations workflows. Some sustainability officers and procurement specialists present. Mid-level management present but not concentrated in roles aligned with InstaLILY buying authority."
+        }
+      },
+      "reasoning": "NAFA 2026 does not align with InstaLILY ICP despite automotive vertical mention. Fleet management is operationally distinct from InstaLILY target customers (distributors, suppliers, field-service companies). Fleet managers deal with vehicle acquisition, maintenance contracts, fuel optimization, and telematics - not parts inventory management, sales quoting, or multi-location sales operations. Automotive vertical in InstaLILY context means automotive goods distributors (parts suppliers), not fleet operators. Event audience is not positioned to evaluate solutions for InstaLILY pain points.",
+      "sales_brief": "Low priority - Wrong buyer context. NAFA serves fleet operations (vehicle management), not automotive goods distributors or parts suppliers. Fleet managers buying fleet software is distinct from multi-location distribution executives managing sales teams and parts knowledge. Minimal overlap with InstaLILY ICP verticals and use cases."
+    },
+    {
+      "event_name": "Offshore Technology Conference (OTC) 2026",
+      "event_url": "https://2026.otcnet.org/",
+      "overall_score": 0,
+      "scores": {
+        "reason_zero_score": "Event industry vertical is others - does not align with InstaLILY ICP verticals (construction supply, industrial parts, healthcare/pharmaceuticals, automotive goods, food supply). Offshore energy and oil/gas operations are outside targeted distribution and supply verticals."
+      }
+    },
+    {
+      "event_name": "TIA Capital Ideas Conference 2026",
+      "event_url": "https://web.cvent.com/event/5fcaa2f1-f19b-4e81-a814-d17aa1a29d03/websitePage:fe4fb1cb-f5ba-4897-a32c-606d09490169",
+      "overall_score": 6.9,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 10,
+          "rationale": "TIA Capital Ideas Conference explicitly targets third-party logistics providers and freight brokers - exactly the asset-light 3PL and brokerage 3PL segment identified in Criteria Set B as highest-value supply chain vertical. Transportation intermediaries managing logistics operations and dispatch represent core supply chain audience alignment."
+        },
+        "buyer_functional_alignment": {
+          "score": 8,
+          "rationale": "Freight brokers, 3PL owners, senior managers, operations managers, and sales leaders all present. These are sales and operations-focused functions aligned with InstaLILY buyer personas. Audience manages high-volume, multi-stakeholder workflows (load matching, carrier assignment, customer management) analogous to distribution sales operations."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "April 2026 timing solid. 1,500+ attendees is substantial for vertical-specific event. Phoenix venue accessible. Four-day format with 5+ general sessions and 24+ education tracks indicates meaningful educational programming. TIA organization represents $343 billion industry, indicating established event credibility."
+        },
+        "buyer_seniority": {
+          "score": 7,
+          "rationale": "Attendees explicitly include owners and senior managers of logistics companies with buying authority. Most attendees described as owners and senior managers with decision power. Mix of operations managers and sales leaders present. Strong concentration of decision-makers vs. junior staff."
+        }
+      },
+      "reasoning": "TIA Capital Ideas Conference is meaningful opportunity despite outside traditional InstaLILY core verticals. The event targets asset-light 3PLs and freight brokers - exactly the supply chain vertical identified in Criteria Set B as highest alignment. These companies operate high-volume, multi-stakeholder workflows managing load assignment, carrier communication, and customer matching - operationally similar to InstaLILY distribution use cases around order routing and exception handling. However, InstaLILY has not demonstrated explicit freight brokerage or 3PL success stories. Event represents adjacent expansion opportunity rather than core vertical play. April timing and senior manager concentration (owners with buying authority) indicate quality attendees.",
+      "sales_brief": "Secondary expansion opportunity - Asset-light 3PLs and freight brokers face similar workflow complexity to InstaLILY distribution customers (high-volume, multi-step, exception-handling). 1,500+ attendees with owner and senior manager concentration = decision-maker density. April timing optimal. TIA represents $343B industry with mature buyer awareness. Risk: Vertical is adjacent to core InstaLILY verticals with no public customer reference. May require education on applicability of distribution-focused InstaWorkers platform to logistics workflows."
+    }
+  ],
+  "summary": {
+    "total_events_scored": 8
+  },
+  "last_updated": "2026-04-07T12:35:37.756828"
+}
