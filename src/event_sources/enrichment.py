@@ -30,7 +30,7 @@ REQUIRED OUTPUT FORMAT (JSON array):
     "venue": "string - venue name (e.g., 'Orlando Convention Center' or null)",
     "event_url": "string - main event website",
     "description": "string - brief description of the event",
-    "industry_vertical": "string - primary industry/vertical (e.g., 'distribution', 'manufacturing')",
+    "industry_vertical": "string - see industry_vertical rules below",
     "exhibitor_mix": "string - types of exhibitors/vendors at the event",
     "audience_mix": "string - types of attendees/audience at the event",
     "source": "string - always 'enriched'",
@@ -45,7 +45,7 @@ INSTRUCTIONS:
 1. Use web search to find detailed information about each event
 2. Focus on finding official event details from event websites and industry sources
 3. Look for dates, location, venue, cost, description, industry focus, exhibitor/audience info
-4. For industry_vertical, focus on: distribution, manufacturing, construction, HVAC, etc.
+4. For industry_vertical - IMPORTANT: If the event's agenda is on general supply chain and distribution in general, select ONLY "supply_chain_and_distribution". If the event's agenda is on a specific industry vertical, select ONE industry vertical from the following five verticals, and if they don't fit into any of these, select "others": construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply, others.
 5. For exhibitor_mix: describe types of companies/vendors that exhibit
 6. For audience_mix: describe types of professionals who attend
 7. If you cannot find certain information, set those fields to null (not empty strings)

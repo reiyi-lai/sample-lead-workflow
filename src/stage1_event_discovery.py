@@ -415,8 +415,8 @@ def sync_all_master_files_to_dashboard() -> None:
     print(f"\n[Dashboard Sync] Copying master files to dashboard/data/events/")
 
     master_files = [
-        "data/events/discovered_events.json",
-        "data/events/scored_events.json"
+        "dashboard/data/events/discovered_events.json",
+        "dashboard/data/events/scored_events.json"
     ]
 
     for file_path in master_files:
@@ -554,8 +554,8 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
         run_dir = "data/events/existing"
 
     # Master files (shared across all sources)
-    master_discovered_file = "data/events/discovered_events.json"
-    master_scored_file = "data/events/scored_events.json"
+    master_discovered_file = "dashboard/data/events/discovered_events.json"
+    master_scored_file = "dashboard/data/events/scored_events.json"
 
     print("")
     print("STAGE 1: EVENT DISCOVERY")
