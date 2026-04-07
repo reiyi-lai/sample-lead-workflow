@@ -19,7 +19,7 @@
     "venue": "Georgia World Congress Center",
     "event_url": "https://www.modexshow.com/",
     "description": "North America's largest manufacturing and supply chain trade show with over 1,000 exhibitors and 50,000+ attendees. Features warehouse automation, robotics, material handling, supply chain technology, and 200+ educational sessions",
-    "industry_vertical": "distribution, field_service, supply_chain, warehouse_operations",
+    "industry_vertical": "supply_chain_and_distribution",
     "exhibitor_mix": "Material handling equipment manufacturers, warehouse automation providers, robotics companies, WMS/TMS software vendors, conveyor and sortation systems, AGV/AMR manufacturers, supply chain analytics platforms",
     "audience_mix": "Warehouse leaders, 3PL executives, logistics operators, distribution center managers, supply chain directors, operations VPs, manufacturing plant managers, purchasing agents"
   },
@@ -31,7 +31,7 @@
     "venue": "200 Inverness Drive West, Englewood, Colorado 80112",
     "event_url": "https://www.mdm.com/shift2026/",
     "description": "The Future of Distribution conference focused on AI applications, hybrid sales transformation, digital transformation, data analytics, and culture change for wholesale distributors. Presented by Modern Distribution Management and NAW",
-    "industry_vertical": "distribution, wholesale",
+    "industry_vertical": "supply_chain_and_distribution",
     "exhibitor_mix": "Distribution technology vendors, AI/ML platforms, pricing intelligence tools, eCommerce platforms, data analytics providers, CRM/ERP systems, digital transformation consultants",
     "audience_mix": "Distribution CEOs, sales leaders, digital transformation officers, data analytics teams, HR directors, operations executives from wholesale distributors across all product verticals"
   },
@@ -67,7 +67,7 @@
     "venue": "Grand Hyatt Washington, 1000 H Street NW",
     "event_url": "https://www.naw.org/events/executive-summit-2026/",
     "description": "The leading strategy event for the American wholesale distribution industry for 50+ years. Features keynote conversation with President George W. Bush, national political and industry leaders, and collaborative Communities focused on best practices",
-    "industry_vertical": "distribution, wholesale",
+    "industry_vertical": "supply_chain_and_distribution",
     "exhibitor_mix": "Limited exhibitors - primarily a content and networking conference. Technology vendors, consultants, and service providers attend as sponsors",
     "audience_mix": "CEOs, presidents, and top executives from the largest and fastest-growing distribution firms across all sectors, board members, senior strategy officers"
   },
@@ -376,7 +376,7 @@
     "cost": null,
     "venue": "Hilton Anatole",
     "description": "In its 10th year, this exclusive leadership-focused platform brings together senior supply chain executives to share what's working now and what's next. Features 50+ expert speakers through executive case studies and strategic discussions on supply chain disruptions, resilience, and digital transformation.",
-    "industry_vertical": "supply chain and logistics",
+    "industry_vertical": "supply_chain_and_distribution",
     "exhibitor_mix": "Supply chain technology providers, warehouse automation solutions, 3PL/4PL service providers, transportation management systems, AI and robotics vendors, logistics software, and process optimization tools",
     "audience_mix": "Supply chain, logistics, procurement, and operations executives including VPs, directors, and senior managers. 300+ senior-level attendees from manufacturing, retail, distribution, and logistics sectors.",
     "enriched": true,

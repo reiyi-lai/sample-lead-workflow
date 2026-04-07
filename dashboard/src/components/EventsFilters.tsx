@@ -72,8 +72,7 @@ export default function EventsFilters({
 
   const formatIndustryLabel = (industry: string) => {
     if (!industry) return "All Industries";
-    if (industry === "others") return "Others";
-    return industry.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+    return industry.split(",")[0].trim().replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
   };
 
   return (

@@ -55,13 +55,16 @@ export default function EventsList({ events }: EventsListProps) {
   const [sortBy, setSortBy] = useState<"score" | "date">("score");
   const [selectedScoringType, setSelectedScoringType] = useState<string | null>(null);
 
-  // Get available industries for filter dropdown
+  // Get available industries for filter dropdown (grouped by primary vertical)
   const availableIndustries = useMemo(() => {
     const industries = new Set(
       events
-        .map(event => event.industry_vertical)
-        .filter(Boolean)
-        .filter((industry): industry is string => typeof industry === 'string')
+        .map(event => {
+          const raw = event.industry_vertical;
+          if (!raw || typeof raw !== 'string') return null;
+          return raw.split(",")[0].trim().toLowerCase().replace(/\s+/g, "_");
+        })
+        .filter((v): v is string => !!v)
     );
     return Array.from(industries).sort();
   }, [events]);
@@ -78,9 +81,13 @@ export default function EventsList({ events }: EventsListProps) {
       });
     }
 
-    // Apply industry filter
+    // Apply industry filter (match on primary vertical)
     if (selectedIndustry) {
-      filtered = filtered.filter(event => event.industry_vertical === selectedIndustry);
+      filtered = filtered.filter(event => {
+        if (!event.industry_vertical) return false;
+        const primary = event.industry_vertical.split(",")[0].trim().toLowerCase().replace(/\s+/g, "_");
+        return primary === selectedIndustry;
+      });
     }
 
     // Apply scoring type filter
@@ -127,22 +134,30 @@ export default function EventsList({ events }: EventsListProps) {
     });
   }, [events, dateRange, selectedIndustry, selectedScoringType, sortBy]);
 
+  const getPrimaryVertical = (industry?: string): string => {
+    if (!industry) return "";
+    return industry.split(",")[0].trim().toLowerCase().replace(/\s+/g, "_");
+  };
+
   const getIndustryBadgeColor = (industry?: string) => {
-    switch (industry) {
-      case "distribution": return "bg-blue-100 text-blue-800";
-      case "construction_supply": return "bg-orange-100 text-orange-800";
-      case "industrial_parts": return "bg-gray-100 text-gray-800";
-      case "field_service": return "bg-purple-100 text-purple-800";
-      case "pool_spa": return "bg-cyan-100 text-cyan-800";
-      case "others": return "bg-green-100 text-green-800";
-      default: return "bg-gray-100 text-gray-600";
-    }
+    const primary = getPrimaryVertical(industry);
+    if (primary.includes("distribution") || primary.includes("wholesale")) return "bg-blue-100 text-blue-800";
+    if (primary.includes("construction")) return "bg-orange-100 text-orange-800";
+    if (primary.includes("industrial")) return "bg-gray-100 text-gray-800";
+    if (primary.includes("field_service")) return "bg-purple-100 text-purple-800";
+    if (primary.includes("food")) return "bg-emerald-100 text-emerald-800";
+    if (primary.includes("supply_chain") || primary.includes("supply_management") || primary.includes("procurement") || primary.includes("logistics")) return "bg-indigo-100 text-indigo-800";
+    if (primary.includes("automotive") || primary.includes("automotives")) return "bg-red-100 text-red-800";
+    if (primary.includes("pharmaceutic") || primary.includes("healthcare")) return "bg-teal-100 text-teal-800";
+    if (primary.includes("manufacturing")) return "bg-amber-100 text-amber-800";
+    if (primary.includes("fleet")) return "bg-sky-100 text-sky-800";
+    return "bg-gray-100 text-gray-600";
   };
 
   const formatIndustryLabel = (industry?: string) => {
     if (!industry) return "General";
-    if (industry === "others") return "Others";
-    return industry.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+    const primary = industry.split(",")[0].trim();
+    return primary.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
   };
 
   const renderScoringBreakdown = (scores?: EventScores) => {
