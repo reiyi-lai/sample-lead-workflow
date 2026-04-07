@@ -128,7 +128,7 @@ FOR EACH EVENT FOUND, EXTRACT:
 - Event website URL
 - Cost of attending (registration fees, if available)
 - Brief description of the event
-- Which industry vertical it serves - IMPORTANT: If the event's agenda is on a specific industry vertical, select the industry vertical from the following five verticals: construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply. If the event's agenda is on general supply chain and distribution in general, select "supply_chain_and_distribution".
+- Which industry vertical it serves - IMPORTANT: If the event's agenda is on a specific industry vertical, select ONE industry vertical from the following five verticals: construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply. If the event's agenda is on general supply chain and distribution in general, select ONLY "supply_chain_and_distribution".
 - Exhibitor mix (types of companies that exhibit - e.g. "Software vendors, equipment manufacturers, service providers")
 - Audience mix (types of attendees/buyers - e.g. "Warehouse leaders, 3PL executives, logistics operators")
 
@@ -144,7 +144,7 @@ Example:
     "venue": "Orlando Convention Center",
     "event_url": "https://hardinet.org",
     "description": "Premier event for HVACR distribution industry leaders",
-    "industry_vertical": "distribution, construction_supply",
+    "industry_vertical": "construction_supply",
     "exhibitor_mix": "HVAC equipment manufacturers, refrigeration suppliers, distribution technology vendors, service providers",
     "audience_mix": "HVAC distributors, warehouse managers, operations directors, procurement leaders, branch managers"
   }}
@@ -157,8 +157,7 @@ EVENT_SCORING_SYSTEM_PROMPT = f"""
 TASK: Score and filter the discovered events based on relevance to InstaLILY's ICP.
 Your job is to prioritize which events are worth investing resources to identify attending companies that would be relevant to InstaLILY's ICP.
 
-If the event's agenda is on a specific industry vertical, evaluate according to criteria set A.
-If the event's agenda is on general supply chain and distribution in general, evaluate according to criteria set B.
+Now, look at the event's industry_vertical field. If it is "supply_chain_and_distribution", evaluate according to criteria set B. If it is a specific industry vertical, evaluate according to criteria set A.  
 At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
 
 SCORING CRITERIA SET A (each 0-10):
