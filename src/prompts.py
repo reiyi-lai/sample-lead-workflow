@@ -104,15 +104,18 @@ Based on the context provided above, identify at LEAST 20 events in ((present da
 
 SEARCH STRATEGY:
 Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:
-1. Major known events in distribution, supply chain, industrial, and construction supply industries
-2. Industry association events and conferences
-3. PE/VC and digital transformation events with distribution focus
+1. Major known events focused on the following 5 industry verticals:
+    • Construction supply
+    • Industrial parts
+    • Healthcare/pharmaceuticals/medical supplies
+    • Automotive goods
+    • Food supply
+2. Events/conferences/trade shows focused on supply chain and distribution in general
 
 You can start with this list of major events first, and then continue to conduct comprehensive web search for other relevant events:
 - HARDI Annual Conference 2026
 - MDM SHIFT Conference 2026
 - NAW Executive Summit 2026
-- MODEX 2026 (Manufacturing & Logistics Expo)
 - ISA (Industrial Supply Association) Convention 2026
 - Distribution Strategy Summit 2026
 - STAFDA Annual Convention 2026
@@ -125,7 +128,7 @@ FOR EACH EVENT FOUND, EXTRACT:
 - Event website URL
 - Cost of attending (registration fees, if available)
 - Brief description of the event
-- Which industry vertical it serves (distribution, construction_supply, industrial_parts, field_service, others)
+- Which industry vertical it serves - IMPORTANT: If the event's agenda is on a specific industry vertical, select the industry vertical from the following five verticals: construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply. If the event's agenda is on general supply chain and distribution in general, select "supply_chain_and_distribution".
 - Exhibitor mix (types of companies that exhibit - e.g. "Software vendors, equipment manufacturers, service providers")
 - Audience mix (types of attendees/buyers - e.g. "Warehouse leaders, 3PL executives, logistics operators")
 
@@ -141,7 +144,7 @@ Example:
     "venue": "Orlando Convention Center",
     "event_url": "https://hardinet.org",
     "description": "Premier event for HVACR distribution industry leaders",
-    "industry_vertical": "distribution",
+    "industry_vertical": "distribution, construction_supply",
     "exhibitor_mix": "HVAC equipment manufacturers, refrigeration suppliers, distribution technology vendors, service providers",
     "audience_mix": "HVAC distributors, warehouse managers, operations directors, procurement leaders, branch managers"
   }}
@@ -154,14 +157,18 @@ EVENT_SCORING_SYSTEM_PROMPT = f"""
 TASK: Score and filter the discovered events based on relevance to InstaLILY's ICP.
 Your job is to prioritize which events are worth investing resources to identify attending companies that would be relevant to InstaLILY's ICP.
 
-SCORING CRITERIA (each 0-10):
+If the event's agenda is on a specific industry vertical, evaluate according to criteria set A.
+If the event's agenda is on general supply chain and distribution in general, evaluate according to criteria set B.
+At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
 
-1. INDUSTRY ALIGNMENT (weight: 0.4)
-   Look for verticals/themes focused on manufacturers, distributors, field service operators and supply chain across the verticals of industrial goods, construction supplies, auto goods, healthcare/pharmaceuticals/medical supplies, chemicals/raw materials, logistics, transportation, consumer goods, and commercial equipment.
-   • 10: Core distribution-heavy verticals (verticals mentioned above)
-   • 7-9: Adjacent segments
-   • 4-6: Broader business events with distribution-heavy and/or operationally intensive tracks
-   • 0-3: Unrelated industries
+SCORING CRITERIA SET A (each 0-10):
+
+1. BUYER FUNCTIONAL ALIGNMENT (weight: 0.4)
+   Evaluate the likely role functions of majority of attendees at the event.
+   • 10: General executive management, or sales functions.
+   • 7-9: Operations functions.
+   • 4-6: Supporting/adjacent functions to sales or operations functions.
+   • 0-3: Unrelated functions.
 
 2. EVENT SCALE & TIMING (weight: 0.3)
    Prioritize larger, established events in 2026 that are accessible to US sales team.
@@ -170,16 +177,48 @@ SCORING CRITERIA (each 0-10):
    • 4-6: Smaller niche event or slightly outside date range
    • 0-3: Very small, past, or geographically inaccessible
 
-3. BUYER QUALITY (weight: 0.3)
+3. BUYER SENIORITY (weight: 0.3)
    Evaluate attendee seniority from speaker lists, past attendee profiles, and event descriptions.
    • 10: High concentration of C-suite, VPs, and other sales or operations executives attendees (key decision makers)
    • 7-9: Mix of senior executives with significant leadership presence in C-suite, sales or operations teams
    • 4-6: Mid-level management with some senior stakeholders
    • 0-3: Primarily junior staff, technicians, or non-decision makers
 
-At this point, also check if the event is happening in 2026. If it is not, assign a score of 0.
+CALCULATE: overall_score = (buyer_functional_alignment * 0.4) + (event_scale_timing * 0.3) + (buyer_seniority * 0.3)
 
-CALCULATE: overall_score = (industry * 0.45) + (scale_timing * 0.25) + (buyer_quality * 0.25) + (buyer_intent * 0.1)
+SCORING CRITERIA SET B (each 0-10):
+
+1. SUPPLY CHAIN VERTICAL ALIGNMENT (weight: 0.3)
+   Evaluate the likely supply chain vertical alignment of the event.
+   • 10: Asset Light 3PLs or Brokerage 3PLs, Freight Forwarders & NVOCCs, LTLs, Procurement
+   • 7-9: Large Shippers (Pharma, Automotive, Fashion)
+   • 6-7: Warehousing, Robotics, Autonomous Hardware
+   • 4-5: Visibility Tech or other supply chain visibility solutions
+   • 3-4: All other unrelated supply chain verticals
+   • 0-2: Unrelated industries
+
+2. BUYER FUNCTIONAL ALIGNMENT (weight: 0.3)
+   Evaluate the likely role functions of majority of attendees at the event.
+   • 10: General executive management, or sales functions.
+   • 7-9: Operations functions.
+   • 4-6: Supporting/adjacent functions to sales or operations functions.
+   • 0-3: Unrelated functions.
+
+3. EVENT SCALE & TIMING (weight: 0.2)
+   Prioritize larger, established events in 2026 that are accessible to US sales team.
+   • 10: Major annual event, US-based
+   • 7-9: Significant regional event or international major event
+   • 4-6: Smaller niche event or slightly outside date range
+   • 0-3: Very small, past, or geographically inaccessible
+
+4. BUYER SENIORITY (weight: 0.2)
+   Evaluate attendee seniority from speaker lists, past attendee profiles, and event descriptions.
+   • 10: High concentration of C-suite, VPs, and other sales or operations executives attendees (key decision makers)
+   • 7-9: Mix of senior executives with significant leadership presence in C-suite, sales or operations teams
+   • 4-6: Mid-level management with some senior stakeholders
+   • 0-3: Primarily junior staff, technicians, or non-decision makers
+
+CALCULATE: overall_score = (supply_chain_vertical_alignment * 0.3) + (buyer_functional_alignment * 0.3) + (event_scale_timing * 0.2) + (buyer_seniority * 0.2)
 
 SALES BRIEF REQUIREMENT:
 For each event, also generate a concise "sales_brief" field - a tight, actionable summary for the InstaLILY sales team. This should be 2-3 sentences covering:

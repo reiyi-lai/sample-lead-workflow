@@ -13,6 +13,11 @@ export interface EventScores {
   scale_timing?: EventScore;
   buyer_quality?: EventScore;
   buyer_intent_alignment?: EventScore;
+  buyer_functional_alignment?: EventScore;
+  event_scale_timing?: EventScore;
+  buyer_seniority?: EventScore;
+  supply_chain_vertical_alignment?: EventScore;
+  [key: string]: EventScore | undefined;
 }
 
 export interface Event {

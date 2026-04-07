@@ -682,6 +682,13 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
     # Final sync to ensure dashboard has latest data
     sync_all_master_files_to_dashboard()
 
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+        from sync_to_sheets import sync as sync_sheets
+        sync_sheets()
+    except Exception as e:
+        print(f"  Warning: Google Sheets sync failed (non-fatal): {e}")
+
     return {
         "pipeline": "stage1_event_discovery",
         "timestamp": datetime.now().isoformat(),

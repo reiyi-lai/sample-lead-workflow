@@ -53,6 +53,7 @@ export default function EventsList({ events }: EventsListProps) {
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"score" | "date">("score");
+  const [selectedScoringType, setSelectedScoringType] = useState<string | null>(null);
 
   // Get available industries for filter dropdown
   const availableIndustries = useMemo(() => {
@@ -80,6 +81,14 @@ export default function EventsList({ events }: EventsListProps) {
     // Apply industry filter
     if (selectedIndustry) {
       filtered = filtered.filter(event => event.industry_vertical === selectedIndustry);
+    }
+
+    // Apply scoring type filter
+    if (selectedScoringType) {
+      filtered = filtered.filter(event => {
+        const hasSupplyChain = event.scores && "supply_chain_vertical_alignment" in event.scores;
+        return selectedScoringType === "supply_chain" ? hasSupplyChain : !hasSupplyChain;
+      });
     }
 
     // Sort events
@@ -116,7 +125,7 @@ export default function EventsList({ events }: EventsListProps) {
       }
       return 0;
     });
-  }, [events, dateRange, selectedIndustry, sortBy]);
+  }, [events, dateRange, selectedIndustry, selectedScoringType, sortBy]);
 
   const getIndustryBadgeColor = (industry?: string) => {
     switch (industry) {
@@ -146,35 +155,77 @@ export default function EventsList({ events }: EventsListProps) {
       );
     }
 
-    const scoreCategories = [
-      { key: "industry_alignment", label: "Industry Alignment", weight: "45%" },
-      { key: "scale_timing", label: "Scale & Timing", weight: "25%" },
-      { key: "buyer_quality", label: "Buyer Quality", weight: "20%" },
-      { key: "buyer_intent_alignment", label: "Buyer Intent", weight: "10%" },
-    ];
+    const labelMap: Record<string, string> = {
+      supply_chain_vertical_alignment: "Supply Chain Vertical Alignment",
+      buyer_functional_alignment: "Buyer Functional Alignment",
+      event_scale_timing: "Event Scale & Timing",
+      buyer_seniority: "Buyer Seniority",
+      industry_alignment: "Industry Alignment",
+      scale_timing: "Scale & Timing",
+      buyer_quality: "Buyer Quality",
+      buyer_intent_alignment: "Buyer Intent",
+    };
+
+    const presentKeys = Object.keys(scores).filter(
+      (key) => scores[key] && typeof scores[key] === "object" && "score" in scores[key]!
+    );
+
+    const hasSupplyChain = presentKeys.includes("supply_chain_vertical_alignment");
+
+    const orderedKeys = hasSupplyChain
+      ? [
+          "supply_chain_vertical_alignment",
+          ...presentKeys.filter((k) => k !== "supply_chain_vertical_alignment"),
+        ]
+      : presentKeys;
 
     return (
       <div className="space-y-4">
-        {scoreCategories.map(({ key, label, weight }) => {
-          const scoreData = scores[key as keyof EventScores];
+        {hasSupplyChain && (
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-2 py-1 rounded text-xs font-medium bg-indigo-100 text-indigo-800">
+              Supply Chain Event
+            </span>
+          </div>
+        )}
+        {orderedKeys.map((key) => {
+          const scoreData = scores[key];
           if (!scoreData) return null;
 
-          const score = scoreData.score;
+          const score = typeof scoreData.score === "number" ? scoreData.score : null;
           const getScoreColor = (s: number) => {
             if (s >= 8) return "text-green-600 bg-green-50 border-green-200";
             if (s >= 6) return "text-yellow-600 bg-yellow-50 border-yellow-200";
             return "text-red-600 bg-red-50 border-red-200";
           };
 
+          const label =
+            labelMap[key] ||
+            key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+
           return (
-            <div key={key} className="border border-gray-200 rounded-lg p-4">
+            <div
+              key={key}
+              className={`border rounded-lg p-4 ${
+                key === "supply_chain_vertical_alignment"
+                  ? "border-indigo-200 bg-indigo-50/30"
+                  : "border-gray-200"
+              }`}
+            >
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-medium text-gray-900">{label}</h4>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">{weight}</span>
-                  <span className={`px-2 py-1 rounded text-sm font-medium border ${getScoreColor(score)}`}>
-                    {score}/10
-                  </span>
+                  {score !== null ? (
+                    <span
+                      className={`px-2 py-1 rounded text-sm font-medium border ${getScoreColor(score)}`}
+                    >
+                      {score}/10
+                    </span>
+                  ) : (
+                    <span className="px-2 py-1 rounded text-sm font-medium border border-gray-200 text-gray-500 bg-gray-50">
+                      N/A
+                    </span>
+                  )}
                 </div>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">{scoreData.rationale}</p>
@@ -191,6 +242,7 @@ export default function EventsList({ events }: EventsListProps) {
       <EventsFilters
         onDateRangeChange={setDateRange}
         onIndustryChange={setSelectedIndustry}
+        onScoringTypeChange={setSelectedScoringType}
         availableIndustries={availableIndustries}
       />
 
@@ -208,7 +260,7 @@ export default function EventsList({ events }: EventsListProps) {
       </div>
 
       {/* Results Summary */}
-      {(dateRange || selectedIndustry) && (
+      {(dateRange || selectedIndustry || selectedScoringType) && (
         <div className="mb-4 text-sm text-gray-600">
           Showing {filteredAndSortedEvents.length} of {events.length} events
         </div>
