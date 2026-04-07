@@ -36,30 +36,6 @@
     "audience_mix": "Distribution CEOs, sales leaders, digital transformation officers, data analytics teams, HR directors, operations executives from wholesale distributors across all product verticals"
   },
   {
-    "event_name": "World of Concrete 2026",
-    "dates": "January 19-22, 2026",
-    "location": "Las Vegas, NV",
-    "cost": "Registration details available at worldofconcrete.com",
-    "venue": "Las Vegas Convention Center",
-    "event_url": "https://www.worldofconcrete.com/",
-    "description": "The premier annual international event for concrete and masonry construction professionals with indoor and outdoor exhibits, demonstrations, competitions, and world-class education program",
-    "industry_vertical": "construction_supply, materials_distribution",
-    "exhibitor_mix": "Concrete and masonry equipment manufacturers, material suppliers, formwork systems, tools and accessories, admixtures and aggregates, construction technology vendors",
-    "audience_mix": "Concrete contractors, masonry professionals, material suppliers, construction equipment dealers, self-perform general contractors, field supervisors"
-  },
-  {
-    "event_name": "NAW Executive Summit 2026",
-    "dates": "January 26-28, 2026",
-    "location": "Washington, DC",
-    "cost": "NAW member and non-member rates available. Registration limited and expected to sell out",
-    "venue": "Grand Hyatt Washington, 1000 H Street NW",
-    "event_url": "https://www.naw.org/events/executive-summit-2026/",
-    "description": "The leading strategy event for the American wholesale distribution industry for 50+ years. Features keynote conversation with President George W. Bush, national political and industry leaders, and collaborative Communities focused on best practices",
-    "industry_vertical": "supply_chain_and_distribution",
-    "exhibitor_mix": "Limited exhibitors - primarily a content and networking conference. Technology vendors, consultants, and service providers attend as sponsors",
-    "audience_mix": "CEOs, presidents, and top executives from the largest and fastest-growing distribution firms across all sectors, board members, senior strategy officers"
-  },
-  {
     "event_name": "AIA Conference on Architecture 2026",
     "dates": "June 10-13, 2026",
     "location": "San Diego, CA",
@@ -484,27 +460,6 @@
     "original_event_url": "https://www.naed.org/national-meeting",
     "added_to_master": "2026-04-07T12:34:50.627165",
     "master_id": 41
-  },
-  {
-    "event_name": "AHR Expo 2026",
-    "event_url": "https://www.ahrexpo.com/",
-    "source": "enriched",
-    "needs_enrichment": true,
-    "dates": "February 2-4, 2026",
-    "location": "Las Vegas, NV",
-    "cost": null,
-    "venue": "Las Vegas Convention Center",
-    "description": "The world's largest HVACR event bringing together the entire heating, ventilation, air conditioning, and refrigeration industry. Features 1,600+ exhibitors, product exhibitions, educational seminars, and networking opportunities. Expected attendance of 40,000+ professionals.",
-    "industry_vertical": "construction_supply",
-    "exhibitor_mix": "HVAC equipment manufacturers, refrigeration system suppliers, air conditioning manufacturers, ventilation product companies, controls and automation vendors, tools and accessories suppliers, software providers, and service companies serving the HVACR industry",
-    "audience_mix": "HVACR contractors, mechanical engineers, facility managers, building owners, architects, consultants, manufacturers, distributors, wholesalers, and technical professionals involved in heating, cooling, and refrigeration systems",
-    "enriched": true,
-    "enrichment_success": true,
-    "enrichment_notes": "Complete information found. Co-sponsored by ASHRAE and AHRI. One of the world's largest HVACR exhibitions.",
-    "original_event_name": "AHR Expo 2026",
-    "original_event_url": "https://www.ahrexpo.com/",
-    "added_to_master": "2026-04-07T12:34:50.627168",
-    "master_id": 43
   },
   {
     "event_name": "NAED Women In Industry Forum 2026",

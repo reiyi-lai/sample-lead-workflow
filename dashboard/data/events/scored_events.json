@@ -72,73 +72,6 @@
       "sales_brief": "Tier-1 priority event for InstaLILY. SHIFT Conference attendees are distribution CEOs and digital transformation officers actively seeking AI and sales automation solutions. Multi-vertical wholesale distributor focus matches ICP perfectly. May timing supports transformation budgeting. Early bird discounts and group rates enable efficient team deployment. Recommendation: Secure booth, pre-book C-suite meetings, and position InstaWorkers as execution-focused alternative to horizontal AI platforms."
     },
     {
-      "event_name": "AHR Expo 2026",
-      "event_url": "https://www.ahrexpo.com/",
-      "overall_score": 8.9,
-      "scores": {
-        "buyer_functional_alignment": {
-          "score": 10,
-          "rationale": "HVACR contractors and distributors are core InstaLILY ICP within construction supply vertical. Audience includes distributors and wholesalers explicitly mentioned - these are sales and operations-focused roles typical of InstaLILY customer base. Facility managers and building owners also present but distributors/wholesalers are majority."
-        },
-        "event_scale_timing": {
-          "score": 9,
-          "rationale": "One of the world's largest HVACR events with 40,000+ expected attendees. February 2026 timing is excellent for Q1 planning and budgeting. Las Vegas Convention Center is established, accessible venue. Annual event with proven track record. 1,600+ exhibitors indicate significant industry presence and investment."
-        },
-        "buyer_seniority": {
-          "score": 8,
-          "rationale": "While audience includes technical professionals and engineers, significant concentration of facility managers, building owners, architects, and manufacturers/distributors who are decision-makers. Wholesalers and distributors attending are typically senior procurement and operations roles with budget authority for technology solutions."
-        }
-      },
-      "reasoning": "AHR Expo is an excellent strategic fit for InstaLILY. HVAC distribution is a proven vertical with existing customer success (SRS Distribution - now Home Depot - a major reference). Construction supply is core vertical. The event attracts 40,000+ professionals with strong representation from distributors and wholesalers managing complex multi-location operations and high-volume SKU catalogs. February timing aligns with planning cycles. Scale and brand recognition of co-sponsorship by ASHRAE and AHRI indicate high-quality attendee profile with buying authority.",
-      "sales_brief": "Priority #1 Event - Proven HVAC distribution vertical with existing customer success story (SRS). 40,000+ attendees with strong distributor/wholesaler presence = high-volume target base. February timing perfect for new-year budget decisions. Four-day format and exhibition scale create natural networking opportunities. Risk: Massive event requires sophisticated targeting and lead management. Significant competitor presence likely."
-    },
-    {
-      "event_name": "World of Concrete 2026",
-      "event_url": "https://www.worldofconcrete.com/",
-      "overall_score": 5.8,
-      "scores": {
-        "buyer_functional_alignment": {
-          "score": 6,
-          "rationale": "Audience includes concrete contractors, material suppliers, construction equipment dealers, and field supervisors. Mix is operationally-oriented but skews toward field-level professionals and trade contractors rather than sales and operations executives managing complex distribution networks."
-        },
-        "event_scale_timing": {
-          "score": 7,
-          "rationale": "Established annual event in January 2026 at Las Vegas Convention Center - major US event with good timing for year-start sales cycles and budgeting. Strong reputation and easy accessibility, though early January timing may create holiday planning friction."
-        },
-        "buyer_seniority": {
-          "score": 5,
-          "rationale": "Field supervisors, contractors, and equipment dealers represent mid-to-junior level operational staff. Limited C-suite or executive attendance noted. Material supplier representatives may attend but audience skews toward hands-on practitioners and trade professionals rather than strategic buyers."
-        }
-      },
-      "reasoning": "World of Concrete serves construction supply vertical that is on InstaLILY ICP, but event audience composition skews toward field contractors and equipment operators rather than distribution leadership and sales teams. Material suppliers attending are likely equipment/product vendors rather than distributors managing multi-location operations and complex sales processes. January timing is slightly early in fiscal year for budget availability. Event lacks clear indication of large distributor attendance with decision-making authority.",
-      "sales_brief": "Lower priority construction vertical event. WOC audience is heavily contractor and field-supervisor focused rather than distributor sales/ops leadership. Limited evidence of construction material distributors with multi-location complexity attending. January timing suboptimal for budget cycles. Recommendation: Lower investment priority versus MDM SHIFT, HARDI, and ISA events targeting distributor decision-makers directly. Consider only if specific large material distributors confirmed attending."
-    },
-    {
-      "event_name": "NAW Executive Summit 2026",
-      "event_url": "https://www.naw.org/events/executive-summit-2026/",
-      "overall_score": 9.4,
-      "scores": {
-        "supply_chain_vertical_alignment": {
-          "score": 10,
-          "rationale": "NAW represents wholesale distribution across all sectors - construction supply, industrial parts, automotive, HVAC, fastener, healthcare, chemicals, and more. Event explicitly serves the broadest distribution industry audience. Perfect vertical alignment with InstaLILY ICP across all verticals."
-        },
-        "buyer_functional_alignment": {
-          "score": 10,
-          "rationale": "CEOs, presidents, top executives, and senior strategy officers exclusively. This is the highest-level distribution leadership event. Attendees have direct authority over technology investments, operational transformation, and sales strategy decisions."
-        },
-        "event_scale_timing": {
-          "score": 9,
-          "rationale": "Established 50+ year strategy event in January 2026 in Washington DC. Limited attendance (expected to sell out) ensures intimacy and high-quality attendee filtering. US-based, easily accessible. January timing supports new-year strategic planning and budget allocation."
-        },
-        "buyer_seniority": {
-          "score": 10,
-          "rationale": "Explicit focus on CEOs, presidents, board members, and top executives from largest and fastest-growing distribution firms. No junior staff or mid-level attendees - purely C-suite and board-level decision-makers. Highest seniority concentration of any event."
-        }
-      },
-      "reasoning": "NAW Executive Summit is the premier US wholesale distribution leadership event. Limited attendance and C-suite-only focus ensure exceptional attendee quality and decision-making authority. Covers all distribution verticals that form InstaLILY ICP. January timing aligns with strategic planning cycles and new-year transformation initiatives. High-ticket nature and expected sell-out indicate PE-backed distributors and growth-focused leadership. Small event size means high ROI per interaction versus massive trade shows. Risk: Must secure sponsorship or pre-booked meetings - attendees are not browsing vendor floors.",
-      "sales_brief": "Tier-1 strategic priority event. NAW Summit is the only event gathering US distribution CEOs and board members across all verticals InstaLILY serves. January timing supports strategic planning cycles. Limited attendance maximizes quality and reduces lead-qualification waste. Risk: Sponsorship or pre-negotiated meetings required - not a typical vendor booth event. Recommendation: Pursue speaking slot, sponsor relevant session, or secure CEO-level introductions via NAW relationships. Expected ROI highest per dollar invested due to attendee caliber."
-    },
-    {
       "event_name": "AIA Conference on Architecture 2026",
       "event_url": "https://conferenceonarchitecture.com/",
       "overall_score": 2.1,
@@ -978,7 +911,7 @@
     }
   ],
   "summary": {
-    "total_events_scored": 45,
+    "total_events_scored": 42,
     "last_updated": "2026-04-07T13:07:08.771662"
   }
 }
