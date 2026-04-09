@@ -20,8 +20,25 @@ export function parseEventDate(dateString: string): ParsedDate {
     // Clean the string
     const cleaned = dateString.trim();
 
-    // Handle range formats like "January 26-28, 2026" or "February 2-4, 2026"
-    const rangeMatch = cleaned.match(/^(\w+)\s+(\d+)-(\d+),\s+(\d+)$/);
+    const parentheticalMatch = cleaned.match(/^(.+?)\s*\(.*\)$/);
+    if (parentheticalMatch) {
+      return parseEventDate(parentheticalMatch[1]);
+    }
+
+    if (cleaned.toLowerCase().startsWith('multiple dates:')) {
+      const firstDate = cleaned.replace(/^multiple dates:\s*/i, '').split(',')[0].trim();
+      return parseEventDate(firstDate);
+    }
+
+    const crossMonthMatch = cleaned.match(/^(\w+)\s+(\d+)\s*-\s*(\w+)\s+(\d+),\s+(\d{4})$/);
+    if (crossMonthMatch) {
+      const [, startMonth, startDay, endMonth, endDay, year] = crossMonthMatch;
+      const startDate = new Date(`${startMonth} ${startDay}, ${year}`);
+      const endDate = new Date(`${endMonth} ${endDay}, ${year}`);
+      return { start: startDate, end: endDate };
+    }
+
+    const rangeMatch = cleaned.match(/^(\w+)\s+(\d+)-(\d+),\s+(\d{4})$/);
     if (rangeMatch) {
       const [, month, startDay, endDay, year] = rangeMatch;
       const startDate = new Date(`${month} ${startDay}, ${year}`);
@@ -29,26 +46,10 @@ export function parseEventDate(dateString: string): ParsedDate {
       return { start: startDate, end: endDate };
     }
 
-    // Handle single date formats like "March 15, 2026"
-    const singleMatch = cleaned.match(/^(\w+)\s+(\d+),\s+(\d+)$/);
+    const singleMatch = cleaned.match(/^(\w+)\s+(\d+),\s+(\d{4})$/);
     if (singleMatch) {
       const date = new Date(cleaned);
       return { start: date, end: date };
-    }
-
-    // Handle multi-day formats like "April 13-16, 2026"
-    const multiDayMatch = cleaned.match(/^(\w+)\s+(\d+)-(\d+),\s+(\d+)$/);
-    if (multiDayMatch) {
-      const [, month, startDay, endDay, year] = multiDayMatch;
-      const startDate = new Date(`${month} ${startDay}, ${year}`);
-      const endDate = new Date(`${month} ${endDay}, ${year}`);
-      return { start: startDate, end: endDate };
-    }
-
-    // Handle formats with different months like "January 20-23, 2026 (typical timing)"
-    const parentheticalMatch = cleaned.match(/^(.+?)\s*\(.*\)$/);
-    if (parentheticalMatch) {
-      return parseEventDate(parentheticalMatch[1]);
     }
 
     // Try direct parsing as fallback

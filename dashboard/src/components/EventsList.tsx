@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { Company, EventScores } from "@/lib/data";
 import EventsFilters from "./EventsFilters";
-import { isEventInDateRange } from "@/lib/dateUtils";
+import { isEventInDateRange, parseEventDate } from "@/lib/dateUtils";
 
 interface EventWithCompanies {
   event_name: string;
@@ -103,32 +103,20 @@ export default function EventsList({ events }: EventsListProps) {
       if (sortBy === "score") {
         return (b.overall_score || 0) - (a.overall_score || 0);
       } else if (sortBy === "date") {
-        // Sort by date (upcoming first)
-        if (!a.dates && !b.dates) return 0;
-        if (!a.dates) return 1;
-        if (!b.dates) return -1;
+        // Sort by start date (upcoming first)
+        const parsedA = a.dates ? parseEventDate(a.dates) : { start: null, end: null };
+        const parsedB = b.dates ? parseEventDate(b.dates) : { start: null, end: null };
 
-        // Parse dates more carefully - handle "February 2-4, 2026" format
-        const parseDateString = (dateStr: string) => {
-          // Handle formats like "February 2-4, 2026" or "March 1-4, 2026"
-          const parts = dateStr.split(', ');
-          if (parts.length === 2) {
-            const year = parts[1];
-            const monthDay = parts[0];
-            const monthMatch = monthDay.match(/^(\w+)\s+(\d+)/);
-            if (monthMatch) {
-              const month = monthMatch[1];
-              const day = monthMatch[2];
-              return new Date(`${month} ${day}, ${year}`);
-            }
-          }
-          // Fallback to original parsing
-          return new Date(dateStr.split(' - ')[0] || dateStr);
-        };
+        if (!parsedA.start && !parsedB.start) return 0;
+        if (!parsedA.start) return 1;
+        if (!parsedB.start) return -1;
 
-        const dateA = parseDateString(a.dates);
-        const dateB = parseDateString(b.dates);
-        return dateA.getTime() - dateB.getTime();
+        const startDiff = parsedA.start.getTime() - parsedB.start.getTime();
+        if (startDiff !== 0) return startDiff;
+
+        const endA = (parsedA.end || parsedA.start).getTime();
+        const endB = (parsedB.end || parsedB.start).getTime();
+        return endA - endB;
       }
       return 0;
     });
