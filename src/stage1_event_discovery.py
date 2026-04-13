@@ -6,7 +6,6 @@
 
 import os
 import json
-import shutil
 from datetime import datetime
 from typing import List, Optional
 
@@ -380,47 +379,6 @@ def update_master_discovered_events(new_events: List[dict], master_discovered_fi
     save_json(master_discovered_file, master_data)
     print(f"  Master discovered events updated: {added_count} new events added (total: {len(master_data)})")
 
-    # Sync to dashboard
-    sync_to_dashboard(master_discovered_file)
-
-
-def sync_to_dashboard(src_file: str, dashboard_dir: str = "dashboard/data/events") -> None:
-    """
-    Copy master files to dashboard data directory for frontend access.
-
-    Args:
-        src_file: Source file path (e.g., "data/events/discovered_events.json")
-        dashboard_dir: Dashboard data directory path
-    """
-    if not os.path.exists(src_file):
-        print(f"  Warning: Source file {src_file} not found - skipping sync")
-        return
-
-    # Create dashboard data directory if it doesn't exist
-    os.makedirs(dashboard_dir, exist_ok=True)
-
-    # Get filename and create destination path
-    filename = os.path.basename(src_file)
-    dst_file = os.path.join(dashboard_dir, filename)
-
-    try:
-        shutil.copy2(src_file, dst_file)
-        print(f"  Synced {filename} to dashboard")
-    except Exception as e:
-        print(f"  Warning: Failed to sync {filename} to dashboard: {e}")
-
-
-def sync_all_master_files_to_dashboard() -> None:
-    """Sync all master files to dashboard data directory."""
-    print(f"\n[Dashboard Sync] Copying master files to dashboard/data/events/")
-
-    master_files = [
-        "dashboard/data/events/discovered_events.json",
-        "dashboard/data/events/scored_events.json"
-    ]
-
-    for file_path in master_files:
-        sync_to_dashboard(file_path)
 
 
 def update_master_scored_events(new_scored_data: dict, master_scored_file: str) -> None:
@@ -451,8 +409,6 @@ def update_master_scored_events(new_scored_data: dict, master_scored_file: str) 
     save_json(master_scored_file, master_data)
     print(f"  Master scoring file updated: {len(new_events)} new events added (total: {len(all_events)})")
 
-    # Sync to dashboard
-    sync_to_dashboard(master_scored_file)
 
 
 def discover_companies(events: List[dict], output_dir: str) -> List[dict]:
@@ -678,9 +634,6 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
 
     total_companies = sum(len(r.get("companies", [])) for r in discovery_results if r.get("success"))
     print(f"\n[Stage 1 Complete] {len(events)} events -> {len(qualified)} qualified -> {total_companies} companies")
-
-    # Final sync to ensure dashboard has latest data
-    sync_all_master_files_to_dashboard()
 
     try:
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))

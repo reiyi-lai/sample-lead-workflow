@@ -14,7 +14,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from stage1_event_discovery import (
     enrich_events, score_events,
     update_master_discovered_events, update_master_scored_events,
-    sync_to_dashboard,
 )
 from utils.io import load_json, save_json
 
