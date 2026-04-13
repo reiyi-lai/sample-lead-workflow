@@ -122,13 +122,16 @@ def get_attendance():
 @app.post("/api/events/attendance")
 def update_attendance(req: AttendanceUpdate):
     state = _load_state("attendance.json")
+    prev = state.get(req.event_url, {})
+    changed = prev.get("attending") != req.attending or prev.get("whos_going") != req.whos_going
     state[req.event_url] = {
         "attending": req.attending,
         "whos_going": req.whos_going,
         "updated_at": datetime.now().isoformat(),
     }
     _save_state("attendance.json", state)
-    sync_file_to_github(str(STATE_DIR / "attendance.json"), "auto-sync attendance.json")
+    if changed:
+        sync_file_to_github(str(STATE_DIR / "attendance.json"), "auto-sync attendance.json")
     return state[req.event_url]
 
 
