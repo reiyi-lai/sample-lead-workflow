@@ -691,5 +691,26 @@
     "original_event_url": "https://www.executiveplatforms.com/pmws/",
     "added_to_master": "2026-04-07T12:55:39.057138",
     "master_id": 49
+  },
+  {
+    "event_name": "International Fastener Expo 2026",
+    "event_url": "https://fastenershows.com/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "October 7-9, 2026",
+    "location": "Phoenix, AZ",
+    "cost": null,
+    "venue": "Phoenix Convention Center",
+    "description": "The International Fastener Expo is North America's largest B2B trade show for all types of fasteners, machinery & tooling, and other industrial products, catering to every level of the supply chain with a conference program and show floor featuring hundreds of exhibitors from around the world.",
+    "industry_vertical": "industrial_parts",
+    "exhibitor_mix": "Fastener manufacturers and suppliers, machinery and tooling companies, international factories, distributors, importers, fastener-related industrial product suppliers showcasing screws, bolts, nuts, washers, metric fasteners, structural bolts, inspection and testing equipment, packaging equipment, and specialty fastening solutions",
+    "audience_mix": "Fastener distributors, OEMs (original equipment manufacturers), suppliers, importers, sourcing professionals, mechanical and design engineers, purchasers, sales representatives, and industry professionals from construction, aerospace, military, automotive, electrical, and other industrial sectors; attracts over 4,000-5,000 attendees from 30+ countries",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Complete information found including dates (Conference: October 7-9, Expo: October 8-9), venue, and comprehensive details. Specific attendee registration pricing not publicly available on the website, though there are references to registration fees and pricing options pages. The event is moving to Phoenix for the first time in 2026 from its previous Las Vegas location.",
+    "original_event_name": "International Faster Expo 2026",
+    "original_event_url": "https://fastenershows.com/",
+    "added_to_master": "2026-04-13T08:43:26.190175",
+    "master_id": 42
   }
 ]
