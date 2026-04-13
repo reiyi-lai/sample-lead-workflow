@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Company, EventScores } from "@/lib/data";
 import EventsFilters from "./EventsFilters";
 import { isEventInDateRange, parseEventDate } from "@/lib/dateUtils";
+import { getAttendance, updateAttendance, getFeedback, updateFeedback } from "@/lib/api";
+import AddEventsModal from "./AddEventsForm";
 
 interface EventWithCompanies {
   event_name: string;
@@ -35,25 +37,58 @@ interface DateRange {
 }
 
 export default function EventsList({ events }: EventsListProps) {
-  // Client-side debug logging
-  console.log('[CLIENT DEBUG] EventsList received events:', events.length);
-  const sffs = events.find(e => e.event_name?.includes('Summer Fancy Food Show'));
-  if (sffs) {
-    console.log('[CLIENT DEBUG] Summer Fancy Food Show data:', {
-      name: sffs.event_name,
-      overall_score: sffs.overall_score,
-      overall_score_type: typeof sffs.overall_score,
-      null_check: sffs.overall_score != null,
-      hasScores: !!sffs.scores
-    });
-  }
-
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"score" | "date">("score");
   const [selectedScoringType, setSelectedScoringType] = useState<string | null>(null);
+
+  const [attendance, setAttendance] = useState<Record<string, { attending: boolean; whos_going: string }>>({});
+  const [feedback, setFeedback] = useState<Record<string, { would_attend_again: boolean | null; notes: string }>>({});
+  const [attendanceModal, setAttendanceModal] = useState<string | null>(null);
+  const [feedbackModal, setFeedbackModal] = useState<string | null>(null);
+  const [whosGoingDraft, setWhosGoingDraft] = useState("");
+  const [feedbackDraft, setFeedbackDraft] = useState<{ would_attend_again: boolean | null; notes: string }>({ would_attend_again: null, notes: "" });
+
+  useEffect(() => {
+    getAttendance().then(setAttendance).catch(() => {});
+    getFeedback().then(setFeedback).catch(() => {});
+  }, []);
+
+  const handleAttendingToggle = async (eventUrl: string) => {
+    const current = attendance[eventUrl];
+    const newAttending = !current?.attending;
+    const whos = current?.whos_going || "";
+    setAttendance((prev) => ({ ...prev, [eventUrl]: { attending: newAttending, whos_going: whos } }));
+    await updateAttendance(eventUrl, newAttending, whos).catch(() => {});
+  };
+
+  const openAttendanceModal = (eventUrl: string) => {
+    setWhosGoingDraft(attendance[eventUrl]?.whos_going || "");
+    setAttendanceModal(eventUrl);
+  };
+
+  const saveAttendanceModal = async () => {
+    if (!attendanceModal) return;
+    const current = attendance[attendanceModal];
+    setAttendance((prev) => ({ ...prev, [attendanceModal]: { attending: current?.attending ?? true, whos_going: whosGoingDraft } }));
+    await updateAttendance(attendanceModal, current?.attending ?? true, whosGoingDraft).catch(() => {});
+    setAttendanceModal(null);
+  };
+
+  const openFeedbackModal = (eventUrl: string) => {
+    const existing = feedback[eventUrl];
+    setFeedbackDraft({ would_attend_again: existing?.would_attend_again ?? true, notes: existing?.notes || "" });
+    setFeedbackModal(eventUrl);
+  };
+
+  const saveFeedbackModal = async () => {
+    if (!feedbackModal) return;
+    setFeedback((prev) => ({ ...prev, [feedbackModal]: feedbackDraft }));
+    await updateFeedback(feedbackModal, feedbackDraft.would_attend_again, feedbackDraft.notes).catch(() => {});
+    setFeedbackModal(null);
+  };
 
   // Get available industries for filter dropdown (grouped by primary vertical)
   const availableIndustries = useMemo(() => {
@@ -260,6 +295,9 @@ export default function EventsList({ events }: EventsListProps) {
           <option value="score">Score (High to Low)</option>
           <option value="date">Date (Upcoming First)</option>
         </select>
+        <div className="ml-auto">
+          <AddEventsModal />
+        </div>
       </div>
 
       {/* Results Summary */}
@@ -324,9 +362,34 @@ export default function EventsList({ events }: EventsListProps) {
                       </div>
                     </div>
                   </div>
-                  <button className="ml-4 text-gray-400 hover:text-gray-600 transition-colors">
-                    {isExpanded ? "▲" : "▼"}
-                  </button>
+                  <div className="flex items-center gap-3 ml-4">
+                    <label className="flex items-center gap-2 cursor-pointer" onClick={(e) => e.stopPropagation()}>
+                      <input
+                        type="checkbox"
+                        checked={attendance[event.event_url || ""]?.attending || false}
+                        onChange={() => event.event_url && handleAttendingToggle(event.event_url)}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600"
+                      />
+                      <span className="text-xs text-gray-500">Attending</span>
+                    </label>
+                    {attendance[event.event_url || ""]?.attending && (
+                      <button
+                        onClick={(e) => { e.stopPropagation(); event.event_url && openAttendanceModal(event.event_url); }}
+                        className="text-xs text-blue-600 hover:text-blue-800"
+                      >
+                        Who&apos;s going?
+                      </button>
+                    )}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); event.event_url && openFeedbackModal(event.event_url); }}
+                      className="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100"
+                    >
+                      Feedback
+                    </button>
+                    <span className="text-gray-400 hover:text-gray-600 transition-colors">
+                      {isExpanded ? "▲" : "▼"}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -519,6 +582,63 @@ export default function EventsList({ events }: EventsListProps) {
           </div>
         )}
       </div>
+
+      {attendanceModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setAttendanceModal(null)}>
+          <div className="bg-white rounded-xl p-6 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+            <h3 className="font-semibold text-gray-900 mb-4">Who&apos;s going?</h3>
+            <textarea
+              value={whosGoingDraft}
+              onChange={(e) => setWhosGoingDraft(e.target.value)}
+              placeholder="e.g. John, Sarah, Mike..."
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-900 h-24 resize-none"
+            />
+            <div className="flex justify-end gap-3 mt-4">
+              <button onClick={() => setAttendanceModal(null)} className="text-sm text-gray-600 hover:text-gray-800">Cancel</button>
+              <button onClick={saveAttendanceModal} className="text-sm px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Save</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {feedbackModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setFeedbackModal(null)}>
+          <div className="bg-white rounded-xl p-6 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+            <h3 className="font-semibold text-gray-900 mb-4">Post-Event Feedback</h3>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Would attend in future?</label>
+              <div className="flex gap-3">
+                {([true, false, null] as const).map((val) => (
+                  <button
+                    key={String(val)}
+                    onClick={() => setFeedbackDraft((d) => ({ ...d, would_attend_again: val }))}
+                    className={`px-3 py-1 rounded-md text-sm border ${
+                      feedbackDraft.would_attend_again === val
+                        ? val === true ? "bg-green-100 border-green-400 text-green-800" : val === false ? "bg-red-100 border-red-400 text-red-800" : "bg-gray-200 border-gray-400 text-gray-800"
+                        : "border-gray-300 text-gray-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    {val === true ? "Yes" : val === false ? "No" : "It depends"}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Notes</label>
+              <textarea
+                value={feedbackDraft.notes}
+                onChange={(e) => setFeedbackDraft((d) => ({ ...d, notes: e.target.value }))}
+                placeholder="How was the event? Any takeaways?"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-900 h-24 resize-none"
+              />
+            </div>
+            <div className="flex justify-end gap-3">
+              <button onClick={() => setFeedbackModal(null)} className="text-sm text-gray-600 hover:text-gray-800">Cancel</button>
+              <button onClick={saveFeedbackModal} className="text-sm px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Save</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
