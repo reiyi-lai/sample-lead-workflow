@@ -16,6 +16,7 @@ from stage1_event_discovery import (
     update_master_discovered_events, update_master_scored_events,
 )
 from utils.io import load_json, save_json
+from utils.github_sync import sync_file_to_github
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", "dashboard/data"))
 STATE_DIR = DATA_DIR / "state"
@@ -104,6 +105,9 @@ async def add_events(req: AddEventsRequest):
     update_master_discovered_events(enriched, MASTER_DISCOVERED)
     update_master_scored_events(scored_data, MASTER_SCORED)
 
+    sync_file_to_github(MASTER_DISCOVERED, "auto-sync discovered_events.json")
+    sync_file_to_github(MASTER_SCORED, "auto-sync scored_events.json")
+
     return {
         "added": len(enriched),
         "scored": len(scored_data.get("scored_events", [])),
@@ -124,6 +128,7 @@ def update_attendance(req: AttendanceUpdate):
         "updated_at": datetime.now().isoformat(),
     }
     _save_state("attendance.json", state)
+    sync_file_to_github(str(STATE_DIR / "attendance.json"), "auto-sync attendance.json")
     return state[req.event_url]
 
 
@@ -140,6 +145,7 @@ def update_feedback(req: FeedbackUpdate):
         "updated_at": datetime.now().isoformat(),
     }
     _save_state("feedback.json", state)
+    sync_file_to_github(str(STATE_DIR / "feedback.json"), "auto-sync feedback.json")
     return state[req.event_url]
 
 
