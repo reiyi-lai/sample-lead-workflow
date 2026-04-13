@@ -908,10 +908,32 @@
       },
       "reasoning": "ChemE Show falls outside InstaLILY ICP despite pharma industry overlap. The event is engineered for process engineers, equipment manufacturers, and plant operations professionals focused on chemical manufacturing workflows and upstream/downstream processing optimization. InstaLILY targets distributors, suppliers, and field-service organizations that handle order management, parts logistics, and sales velocity - functions not present at a manufacturing/engineering-focused event. While healthcare/pharma is in InstaLILY vertical list, this event serves manufacturing operations (pharma CMOs, plant managers) not pharmaceutical supply chain, medical device distribution, or healthcare supply distribution where InstaLILY creates measurable ROI. New event status adds execution risk.",
       "sales_brief": "Low priority - Not InstaLILY ICP alignment despite pharma industry presence. Event audience is process engineers, plant managers, and equipment vendors focused on manufacturing operations and production optimization, not the distributor/supplier/field-service buyer personas InstaLILY targets. No material presence of sales operations, inventory management, or multi-location supply chain attendees. Recommend passing unless pharmaceutical distribution companies are confirmed as exhibitors or major attendee sponsors. Risk: Brand new event with uncertain attendance quality and buyer composition - insufficient data to justify resource allocation."
+    },
+    {
+      "event_name": "International Fastener Expo 2026",
+      "event_url": "https://fastenershows.com/",
+      "overall_score": 8.1,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 9,
+          "rationale": "Strong alignment with InstaLILY ICP. Attendee mix includes fastener distributors, sourcing professionals, purchasers, and sales representatives - core buyer personas for AI-driven quoting and operations automation. OEMs and suppliers also present represent complementary buyer profiles. Heavy concentration on sales, procurement, and supply chain operations functions."
+        },
+        "event_scale_timing": {
+          "score": 8,
+          "rationale": "North Americas largest fastener B2B trade show with 4,000-5,000 attendees from 30+ countries. October 2026 timing is ideal for budget planning cycles. US-based event in Phoenix (accessible to US sales team). Well-established, reputable annual event with strong industry presence and credibility."
+        },
+        "buyer_seniority": {
+          "score": 7,
+          "rationale": "Mix of decision-maker levels present. Sourcing professionals, purchasers, and sales representatives indicate operational leaders with buying authority. OEM attendance suggests some C-suite/VP participation. Primarily mid to senior management rather than pure C-suite concentration, but sufficient seniority for solution discussions."
+        }
+      },
+      "reasoning": "International Fastener Expo 2026 represents a strong fit for InstaLILY. Fastener distribution directly aligns with InstaLILY's proven ICP - Copper State Bolt & Nut is an existing customer, validating this vertical. The event attracts 4,000-5,000 fastener distributors, importers, and OEMs across multiple industries (construction, aerospace, automotive, electrical) who manage complex multi-location operations with massive SKU catalogs. These distributors typically struggle with tribal knowledge, manual quoting workflows, and scaling operations without proportional headcount increases - exact pain points InstaLILY solves. October 2026 timing aligns with year-end budget decisions. New Phoenix location may indicate fresh attendee acquisition opportunity. Primary limitation is mixed buyer seniority - show attracts significant engineer and technician participation alongside decision-makers.",
+      "sales_brief": "Strong ICP alignment for InstaLILY - fastener distribution is proven vertical with existing Copper State customer. 4,000-5,000 attendees including fastener distributors, importers, and OEMs managing complex catalogs and multi-location operations. Sourcing professionals and purchasers indicate strong operational decision-maker presence. October timing ideal for budget cycles. Risk: Large expo format with mixed attendee levels (engineers, technicians, purchasers) requires targeted pre-show research and qualification strategy to identify highest-value distribution and OEM prospects."
     }
   ],
   "summary": {
-    "total_events_scored": 42,
+    "total_events_scored": 43,
     "last_updated": "2026-04-07T13:07:08.771662"
-  }
+  },
+  "last_updated": "2026-04-13T08:43:26.199279"
 }
