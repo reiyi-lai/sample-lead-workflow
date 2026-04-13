@@ -1,8 +1,8 @@
 {
   "https://fieldserviceusa.wbresearch.com/": {
-    "attending": true,
+    "attending": false,
     "whos_going": "Doris",
-    "updated_at": "2026-04-13T08:44:58.401622"
+    "updated_at": "2026-04-13T14:35:20.279831"
   },
   "https://www.mdm.com/shift2026/": {
     "attending": false,
@@ -10,8 +10,8 @@
     "updated_at": "2026-04-13T13:02:27.348418"
   },
   "https://hardinet.org/events": {
-    "attending": true,
+    "attending": false,
     "whos_going": "",
-    "updated_at": "2026-04-13T14:31:11.553963"
+    "updated_at": "2026-04-13T14:31:12.534101"
   }
 }
