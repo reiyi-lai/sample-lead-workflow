@@ -43,6 +43,7 @@ export default function EventsList({ events }: EventsListProps) {
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"score" | "date">("score");
   const [selectedScoringType, setSelectedScoringType] = useState<string | null>(null);
+  const [attendingFilter, setAttendingFilter] = useState<boolean | null>(null);
 
   const [attendance, setAttendance] = useState<Record<string, { attending: boolean; whos_going: string }>>({});
   const [feedback, setFeedback] = useState<Record<string, { would_attend_again: boolean | null; notes: string }>>({});
@@ -133,6 +134,14 @@ export default function EventsList({ events }: EventsListProps) {
       });
     }
 
+    // Apply attending filter
+    if (attendingFilter !== null) {
+      filtered = filtered.filter(event => {
+        const isAttending = attendance[event.event_url || ""]?.attending || false;
+        return attendingFilter ? isAttending : !isAttending;
+      });
+    }
+
     // Sort events
     return filtered.sort((a, b) => {
       if (sortBy === "score") {
@@ -155,7 +164,7 @@ export default function EventsList({ events }: EventsListProps) {
       }
       return 0;
     });
-  }, [events, dateRange, selectedIndustry, selectedScoringType, sortBy]);
+  }, [events, dateRange, selectedIndustry, selectedScoringType, sortBy, attendingFilter, attendance]);
 
   const getPrimaryVertical = (industry?: string): string => {
     if (!industry) return "";
@@ -281,6 +290,7 @@ export default function EventsList({ events }: EventsListProps) {
         onDateRangeChange={setDateRange}
         onIndustryChange={setSelectedIndustry}
         onScoringTypeChange={setSelectedScoringType}
+        onAttendingFilterChange={setAttendingFilter}
         availableIndustries={availableIndustries}
       />
 
@@ -301,7 +311,7 @@ export default function EventsList({ events }: EventsListProps) {
       </div>
 
       {/* Results Summary */}
-      {(dateRange || selectedIndustry || selectedScoringType) && (
+      {(dateRange || selectedIndustry || selectedScoringType || attendingFilter !== null) && (
         <div className="mb-4 text-sm text-gray-600">
           Showing {filteredAndSortedEvents.length} of {events.length} events
         </div>

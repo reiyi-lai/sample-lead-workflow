@@ -11,6 +11,7 @@ interface EventsFiltersProps {
   onDateRangeChange: (dateRange: DateRange | null) => void;
   onIndustryChange: (industry: string | null) => void;
   onScoringTypeChange: (scoringType: string | null) => void;
+  onAttendingFilterChange: (attending: boolean | null) => void;
   availableIndustries: string[];
 }
 
@@ -18,12 +19,14 @@ export default function EventsFilters({
   onDateRangeChange,
   onIndustryChange,
   onScoringTypeChange,
+  onAttendingFilterChange,
   availableIndustries
 }: EventsFiltersProps) {
   const [startDate, setStartDate] = useState<string>("");
   const [endDate, setEndDate] = useState<string>("");
   const [selectedIndustry, setSelectedIndustry] = useState<string>("");
   const [selectedScoringType, setSelectedScoringType] = useState<string>("");
+  const [selectedAttending, setSelectedAttending] = useState<string>("");
 
   const handleStartDateChange = (date: string) => {
     setStartDate(date);
@@ -48,26 +51,20 @@ export default function EventsFilters({
     onIndustryChange(industry || null);
   };
 
-
-  const clearDateFilter = () => {
-    setStartDate("");
-    setEndDate("");
-    onDateRangeChange(null);
-  };
-
-  const clearIndustryFilter = () => {
-    setSelectedIndustry("");
-    onIndustryChange(null);
-  };
-
   const handleScoringTypeChange = (type: string) => {
     setSelectedScoringType(type);
     onScoringTypeChange(type || null);
   };
 
-  const clearScoringTypeFilter = () => {
-    setSelectedScoringType("");
-    onScoringTypeChange(null);
+  const handleAttendingChange = (val: string) => {
+    setSelectedAttending(val);
+    onAttendingFilterChange(val === "" ? null : val === "yes");
+  };
+
+  const clearDateFilter = () => {
+    setStartDate("");
+    setEndDate("");
+    onDateRangeChange(null);
   };
 
   const formatIndustryLabel = (industry: string) => {
@@ -80,7 +77,7 @@ export default function EventsFilters({
       <h3 className="font-semibold text-gray-900 mb-4">Filters</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Date Range Filter */}
+        {/* Column 1: Date Range */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Event Date
@@ -119,7 +116,40 @@ export default function EventsFilters({
           </div>
         </div>
 
-        {/* Industry Filter */}
+        {/* Column 2: Event Type + Attending */}
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Event Type
+            </label>
+            <select
+              value={selectedScoringType}
+              onChange={(e) => handleScoringTypeChange(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
+            >
+              <option value="">All Types</option>
+              <option value="supply_chain">Supply Chain</option>
+              <option value="industry_specific">Industry-Specific</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Attending?
+            </label>
+            <select
+              value={selectedAttending}
+              onChange={(e) => handleAttendingChange(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
+            >
+              <option value="">All</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              <option value="it_depends">Depends</option>
+            </select>
+          </div>
+        </div>
+
+        {/* Column 3: Industry Vertical */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Industry Vertical
@@ -136,38 +166,6 @@ export default function EventsFilters({
               </option>
             ))}
           </select>
-          {selectedIndustry && (
-            <button
-              onClick={clearIndustryFilter}
-              className="text-xs text-blue-600 hover:text-blue-800 underline mt-1"
-            >
-              Clear industry filter
-            </button>
-          )}
-        </div>
-
-        {/* Scoring Type Filter */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Event Type
-          </label>
-          <select
-            value={selectedScoringType}
-            onChange={(e) => handleScoringTypeChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
-          >
-            <option value="">All Types</option>
-            <option value="supply_chain">Supply Chain</option>
-            <option value="industry_specific">Industry-Specific</option>
-          </select>
-          {selectedScoringType && (
-            <button
-              onClick={clearScoringTypeFilter}
-              className="text-xs text-blue-600 hover:text-blue-800 underline mt-1"
-            >
-              Clear type filter
-            </button>
-          )}
         </div>
       </div>
     </div>
