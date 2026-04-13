@@ -13,5 +13,10 @@
     "attending": false,
     "whos_going": "",
     "updated_at": "2026-04-13T14:31:12.534101"
+  },
+  "https://isa26.isapartners.org/": {
+    "attending": true,
+    "whos_going": "",
+    "updated_at": "2026-04-13T18:20:41.255107"
   }
 }
