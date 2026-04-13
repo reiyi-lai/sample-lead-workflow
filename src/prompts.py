@@ -46,7 +46,7 @@ IDEAL CUSTOMER PROFILE (ICP):
   Distributor, manufacturer, or field service organization in one of the following five industry verticals:
     • Construction supply
     • Industrial parts
-    • Healthcare/pharmaceuticals/medical supplies
+    • Healthcare/pharmaceuticals/medical supplies/equipment
     • Automotive goods
     • Food supply
 
@@ -101,7 +101,7 @@ Use web search to find relevant industry events and conferences/trade shows comi
 1. Major known events focused on the following 5 industry verticals:
     • Construction supply
     • Industrial parts
-    • Healthcare/pharmaceuticals/medical supplies
+    • Healthcare/pharmaceuticals/medical equipment supplies/equipment
     • Automotive goods
     • Food supply
 2. Events/conferences/trade shows focused on supply chain and distribution in general
@@ -158,16 +158,15 @@ SCORING CRITERIA SET A (each 0-10):
 
 1. BUYER FUNCTIONAL ALIGNMENT (weight: 0.4)
    Evaluate the likely role functions of majority of attendees at the event.
-   • 10: General executive management, or sales functions.
-   • 7-9: Operations functions.
-   • 4-6: Supporting/adjacent functions to sales or operations functions.
-   • 0-3: Unrelated functions.
+   • 10: General executive management (chief/managerial roles), or sales or operations functions.
+   • 7-9: Supporting/adjacent functions to sales or operations functions.
+   • 0-6: Unrelated functions.
 
 2. EVENT SCALE & TIMING (weight: 0.3)
-   Prioritize larger, established events in 2026 that are accessible to US sales team.
+   Prioritize larger, established events in 2026.
    • 10: Major annual event, US-based
    • 7-9: Significant regional event or international major event
-   • 4-6: Smaller niche event or slightly outside date range
+   • 4-6: Smaller niche event
    • 0-3: Very small, past, or geographically inaccessible
 
 3. BUYER SENIORITY (weight: 0.3)
