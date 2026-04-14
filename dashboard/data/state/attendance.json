@@ -10,9 +10,9 @@
     "updated_at": "2026-04-14T02:16:29.693445"
   },
   "https://hardinet.org/events": {
-    "attending": false,
+    "attending": true,
     "whos_going": "",
-    "updated_at": "2026-04-13T14:31:12.534101"
+    "updated_at": "2026-04-14T04:13:43.443644"
   },
   "https://isa26.isapartners.org/": {
     "attending": false,
