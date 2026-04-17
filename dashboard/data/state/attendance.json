@@ -33,5 +33,10 @@
     "attending": true,
     "whos_going": "roxie",
     "updated_at": "2026-04-17T01:34:31.020670"
+  },
+  "https://www.modexshow.com/": {
+    "attending": true,
+    "whos_going": "",
+    "updated_at": "2026-04-17T01:37:30.003230"
   }
 }
