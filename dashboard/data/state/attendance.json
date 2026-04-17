@@ -38,5 +38,10 @@
     "attending": true,
     "whos_going": "Tyler",
     "updated_at": "2026-04-17T01:37:33.238409"
+  },
+  "https://www.fastenerfairusa.com/": {
+    "attending": true,
+    "whos_going": "",
+    "updated_at": "2026-04-17T18:32:45.104711"
   }
 }
