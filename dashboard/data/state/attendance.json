@@ -20,9 +20,9 @@
     "updated_at": "2026-04-14T03:42:40.526280"
   },
   "https://www.ismworld.org/events/conferences-and-events/annual-conference/": {
-    "attending": false,
+    "attending": true,
     "whos_going": "",
-    "updated_at": "2026-04-15T16:08:00.674793"
+    "updated_at": "2026-04-17T18:32:35.056364"
   },
   "https://web.cvent.com/event/5fcaa2f1-f19b-4e81-a814-d17aa1a29d03/websitePage:fe4fb1cb-f5ba-4897-a32c-606d09490169": {
     "attending": true,
@@ -32,7 +32,7 @@
   "https://supplychaindigital.com/events/procurement-supply-chain-live/procurement-supply-chain-live-chicago-2026": {
     "attending": true,
     "whos_going": "roxie",
-    "updated_at": "2026-04-17T01:34:31.020670"
+    "updated_at": "2026-04-17T01:42:04.144426"
   },
   "https://www.modexshow.com/": {
     "attending": true,
