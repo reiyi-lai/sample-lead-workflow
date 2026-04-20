@@ -5,9 +5,9 @@
     "updated_at": "2026-04-13T14:35:20.279831"
   },
   "https://www.mdm.com/shift2026/": {
-    "attending": true,
+    "attending": false,
     "whos_going": "Tyler",
-    "updated_at": "2026-04-17T18:32:58.772501"
+    "updated_at": "2026-04-20T20:35:52.330942"
   },
   "https://hardinet.org/events": {
     "attending": false,
@@ -30,9 +30,9 @@
     "updated_at": "2026-04-17T01:34:47.486528"
   },
   "https://supplychaindigital.com/events/procurement-supply-chain-live/procurement-supply-chain-live-chicago-2026": {
-    "attending": false,
+    "attending": true,
     "whos_going": "roxie",
-    "updated_at": "2026-04-20T20:34:42.256488"
+    "updated_at": "2026-04-20T20:34:42.927837"
   },
   "https://www.modexshow.com/": {
     "attending": true,
