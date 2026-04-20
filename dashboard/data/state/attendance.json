@@ -43,5 +43,10 @@
     "attending": true,
     "whos_going": "Tyler",
     "updated_at": "2026-04-17T18:32:48.701825"
+  },
+  "https://www.nationalrestaurantshow.com/": {
+    "attending": true,
+    "whos_going": "",
+    "updated_at": "2026-04-20T20:36:48.073286"
   }
 }
