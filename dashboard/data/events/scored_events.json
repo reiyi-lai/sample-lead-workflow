@@ -954,11 +954,32 @@
       },
       "reasoning": "IEEE PES T&D Conference serves the power utility and electrical grid industry, which is not within InstaLILY's five target verticals (construction supply, industrial parts, healthcare/pharma/medical, automotive goods, food supply). While the event is prestigious and well-attended, utility companies operate fundamentally different business models than the distributor and field-service companies InstaLILY targets. There is minimal overlap in operational workflows, pain points, or buyer personas. This event should not be prioritized for InstaLILY's go-to-market efforts.",
       "sales_brief": "Not recommended for resource allocation. Power utility industry is outside InstaLILY ICP - utilities operate under different regulatory constraints, procurement processes, and operational workflows than target distribution and field-service verticals. No evidence of high-volume sales teams, tribal knowledge retention challenges, or legacy ERP scaling problems that drive InstaLILY demand. Better events available in construction supply, industrial distribution, and healthcare channels."
+    },
+    {
+      "event_name": "IEEE PES T&D 2026 - Transmission & Distribution Conference & Exposition",
+      "event_url": "https://ieeet-d.org/",
+      "overall_score": 1.8,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 2,
+          "rationale": "Attendee base is primarily power systems engineers, grid operators, electrical engineers, and utility operations teams. While operations-focused, these are infrastructure/engineering operations roles, not commercial distribution or sales operations that drive InstaLILY value. No sales enablement, quoting, order management, or field service execution functions represented. Audience skews heavily technical and regulatory rather than business operations."
+        },
+        "event_scale_timing": {
+          "score": 3,
+          "rationale": "Event is large and well-established (15,000+ attendees, 900+ exhibitors, biennial major conference) occurring in May 2026 within proper timeframe. However, geography and format are challenging for InstaLILY sales team resource allocation. Highly technical, engineering-focused conference format makes traditional enterprise sales outreach difficult."
+        },
+        "buyer_seniority": {
+          "score": 2,
+          "rationale": "Mix includes utility executives and decision-makers, but majority of attendees are engineers, technicians, system planners, and operational staff rather than C-suite or VP-level buyers with budget authority for enterprise software platforms. Decision-makers present are focused on infrastructure and grid modernization, not business process automation or sales/operations technology."
+        }
+      },
+      "reasoning": "IEEE PES T&D 2026 is fundamentally misaligned with InstaLILY ICP. The event serves the electric utility and power transmission/distribution infrastructure sector - a completely different industry vertical from InstaLILY target markets (construction supply, industrial parts, healthcare, automotive goods, food supply distributors). Attendees are power systems engineers, grid operators, and utility operations professionals managing electrical infrastructure, not commercial distributors managing inventory, quoting, or field service execution. The buying personas and use cases are entirely orthogonal to InstaLILY problem set. While the event is large and prestigious, it represents zero strategic fit for lead generation.",
+      "sales_brief": "Skip this event. IEEE PES T&D targets utility/power infrastructure sector with engineering and grid operations buyers - completely outside InstaLILY ICP of commercial distributors and field service companies. No sales, quoting, inventory, or order management buyers present. Investment would yield zero qualified leads."
     }
   ],
   "summary": {
-    "total_events_scored": 44,
+    "total_events_scored": 45,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-21T20:03:05.733769"
+  "last_updated": "2026-04-21T20:11:44.901452"
 }
