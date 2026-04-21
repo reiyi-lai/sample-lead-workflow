@@ -929,11 +929,36 @@
       },
       "reasoning": "International Fastener Expo 2026 represents a strong fit for InstaLILY. Fastener distribution directly aligns with InstaLILY's proven ICP - Copper State Bolt & Nut is an existing customer, validating this vertical. The event attracts 4,000-5,000 fastener distributors, importers, and OEMs across multiple industries (construction, aerospace, automotive, electrical) who manage complex multi-location operations with massive SKU catalogs. These distributors typically struggle with tribal knowledge, manual quoting workflows, and scaling operations without proportional headcount increases - exact pain points InstaLILY solves. October 2026 timing aligns with year-end budget decisions. New Phoenix location may indicate fresh attendee acquisition opportunity. Primary limitation is mixed buyer seniority - show attracts significant engineer and technician participation alongside decision-makers.",
       "sales_brief": "Strong ICP alignment for InstaLILY - fastener distribution is proven vertical with existing Copper State customer. 4,000-5,000 attendees including fastener distributors, importers, and OEMs managing complex catalogs and multi-location operations. Sourcing professionals and purchasers indicate strong operational decision-maker presence. October timing ideal for budget cycles. Risk: Large expo format with mixed attendee levels (engineers, technicians, purchasers) requires targeted pre-show research and qualification strategy to identify highest-value distribution and OEM prospects."
+    },
+    {
+      "event_name": "IEEE PES T&D Conference & Exposition 2026",
+      "event_url": "https://ieeet-d.org/",
+      "overall_score": 0,
+      "scores": {
+        "industry_alignment": {
+          "score": 0,
+          "rationale": "Power and energy utilities are outside InstaLILY's core ICP. The event serves electrical grid transmission/distribution professionals, utilities, policymakers, and researchers. This vertical does not align with InstaLILY's target distribution, manufacturing, field service, construction supply, industrial parts, healthcare, automotive goods, or food supply verticals."
+        },
+        "scale_timing": {
+          "score": 0,
+          "rationale": "Event does not receive a timing score due to industry vertical misalignment. While the event is major (15,000+ attendees, biennial, US-based in May 2026), it is not relevant to target markets."
+        },
+        "buyer_quality": {
+          "score": 0,
+          "rationale": "Audience consists primarily of utility engineers, grid operators, policymakers, and academic researchers. Decision-makers present (utility executives) lack purchasing authority for InstaLILY solutions and operate in fundamentally different operational workflows than distributors and field service organizations."
+        },
+        "buyer_intent_alignment": {
+          "score": 0,
+          "rationale": "No alignment with InstaLILY buyer intent. Event focuses on grid modernization, transmission infrastructure, and power systems engineering. Does not address pain points of multi-location distributors, sales teams doing manual quoting, or field service operations."
+        }
+      },
+      "reasoning": "IEEE PES T&D Conference serves the power utility and electrical grid industry, which is not within InstaLILY's five target verticals (construction supply, industrial parts, healthcare/pharma/medical, automotive goods, food supply). While the event is prestigious and well-attended, utility companies operate fundamentally different business models than the distributor and field-service companies InstaLILY targets. There is minimal overlap in operational workflows, pain points, or buyer personas. This event should not be prioritized for InstaLILY's go-to-market efforts.",
+      "sales_brief": "Not recommended for resource allocation. Power utility industry is outside InstaLILY ICP - utilities operate under different regulatory constraints, procurement processes, and operational workflows than target distribution and field-service verticals. No evidence of high-volume sales teams, tribal knowledge retention challenges, or legacy ERP scaling problems that drive InstaLILY demand. Better events available in construction supply, industrial distribution, and healthcare channels."
     }
   ],
   "summary": {
-    "total_events_scored": 43,
+    "total_events_scored": 44,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-13T08:43:26.199279"
+  "last_updated": "2026-04-21T20:03:05.733769"
 }
