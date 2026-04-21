@@ -712,5 +712,26 @@
     "original_event_url": "https://fastenershows.com/",
     "added_to_master": "2026-04-13T08:43:26.190175",
     "master_id": 42
+  },
+  {
+    "event_name": "IEEE PES T&D Conference & Exposition 2026",
+    "event_url": "https://ieeet-d.org/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "May 4-7, 2026",
+    "location": "Chicago, Illinois",
+    "cost": "Varies by package - early bird pricing available through April 2026; utility saver packages available for groups of 5 or 10",
+    "venue": "McCormick Place - South Building",
+    "description": "North America's leading Transmission & Distribution Conference and Exposition for power and energy professionals. A biennial event featuring technical sessions, world-class exhibition, and networking opportunities focused on the design, operation, and modernization of the electric grid.",
+    "industry_vertical": "others",
+    "exhibitor_mix": "Over 800 exhibiting companies including utilities, technology developers, equipment manufacturers, solution providers, and vendors offering transmission and distribution products, services, and innovations for the electric power industry",
+    "audience_mix": "Power and energy professionals including utility executives and engineers, grid operators, power systems and electrical engineers, policymakers and regulators, researchers and academic professionals, consultants, IT providers, and students/young professionals in the power and energy field",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Specific pricing amounts not publicly displayed on website; requires accessing registration portal. Event is held every two years and is recognized as the most prominent T&D conference in North America with expected attendance of 15,000+ professionals.",
+    "original_event_name": "IEEE",
+    "original_event_url": "https://ieeet-d.org/",
+    "added_to_master": "2026-04-21T20:03:05.714288",
+    "master_id": 43
   }
 ]
