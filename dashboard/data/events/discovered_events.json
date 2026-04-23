@@ -733,5 +733,26 @@
     "original_event_url": "https://ieeet-d.org/",
     "added_to_master": "2026-04-21T20:03:05.714288",
     "master_id": 43
+  },
+  {
+    "event_name": "NRF 2026: Retail's Big Show",
+    "event_url": "https://nrfbigshow.nrf.com/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "January 11-13, 2026",
+    "location": "New York City, NY",
+    "cost": "All-Access Pass: $900 (NRF Members) / $1,500 (Non-Members); Retail Expo Pass: $100",
+    "venue": "Jacob K. Javits Convention Center",
+    "description": "The world's leading retail exhibition and conference bringing together global retailers, technology innovators, and industry leaders to explore trends, technologies, and ideas shaping the future of commerce. Features 1,000+ exhibitors, 175+ sessions, and networking opportunities across three days.",
+    "industry_vertical": "others",
+    "exhibitor_mix": "Retail technology providers, AI and automation innovators, POS systems, supply chain and logistics platforms, ecommerce solutions, payment platforms, inventory management systems, customer experience tools, RFID technology, robotics companies, WMS providers, data analytics firms, omnichannel retail solutions, startup companies in retail tech innovation",
+    "audience_mix": "Senior retail executives (CEOs, C-suite leaders), merchandising leaders, digital transformation heads, IT directors, supply chain managers, store operations professionals, marketing strategists, warehouse operators, digital commerce managers, solution buyers from retailers and brands across apparel, food service, home goods, specialty retail, and various retail segments from 100+ countries",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Comprehensive information found including dates, venue, pricing, attendee demographics, and exhibitor types. Event had 40,000 attendees in 2025 with representation from 98+ countries. Theme for 2026 is 'The Next Now' focusing on AI, automation, and retail transformation.",
+    "original_event_name": "National Retail Federation",
+    "original_event_url": "https://nrfbigshow.nrf.com/",
+    "added_to_master": "2026-04-23T18:23:26.941372",
+    "master_id": 44
   }
 ]
