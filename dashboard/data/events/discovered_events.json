@@ -754,5 +754,26 @@
     "original_event_url": "https://nrfbigshow.nrf.com/",
     "added_to_master": "2026-04-23T18:23:26.941372",
     "master_id": 44
+  },
+  {
+    "event_name": "B2B Online Atlanta 2026",
+    "event_url": "https://b2bmarketingeast.wbresearch.com/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "November 9-11, 2026",
+    "location": "Atlanta, GA",
+    "cost": null,
+    "venue": "Grand Hyatt Atlanta in Buckhead",
+    "description": "B2B Online Atlanta is a premier three-day conference focused on B2B eCommerce, digital marketing, and sales transformation for manufacturers and distributors. The event brings together senior-level professionals to explore topics including omnichannel strategy, AI, SEO, customer experience, and digital innovation through keynotes, workshops, interactive panels, and networking sessions.",
+    "industry_vertical": "supply_chain_and_distribution",
+    "exhibitor_mix": "eCommerce technology providers, digital marketing platforms, AI and personalization solutions, customer experience tools, commerce platforms (including companies like commercetools, Hygraph, inriver PIM), MarTech and AdTech vendors, and B2B-specific software solutions focused on helping manufacturers and distributors with digital transformation",
+    "audience_mix": "Senior executives from manufacturing and distribution companies including CMOs, VPs of eCommerce, Directors of Digital Marketing, IT Directors, Customer Experience leaders, Digital Transformation officers, and eCommerce managers. Expected attendance of 300-600+ professionals primarily from enterprise and mid-market B2B organizations across North America focused on digital commerce strategy and implementation",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "All key information successfully found. Event registration/ticket pricing not publicly available on website (appears to require inquiry). The 2026 event dates and venue are confirmed. Hotel rate for attendees is $259 + $5 GA state fee + tax at Grand Hyatt Atlanta.",
+    "original_event_name": "B2B Online Atlanta",
+    "original_event_url": "https://b2bmarketingeast.wbresearch.com/",
+    "added_to_master": "2026-04-23T22:27:50.634050",
+    "master_id": 45
   }
 ]
