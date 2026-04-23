@@ -775,5 +775,26 @@
     "original_event_url": "https://b2bmarketingeast.wbresearch.com/",
     "added_to_master": "2026-04-23T22:27:50.634050",
     "master_id": 45
+  },
+  {
+    "event_name": "B2B Connect 2026",
+    "event_url": "https://b2bconnect.wbresearch.com/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "June 23-25, 2026",
+    "location": "San Diego, CA",
+    "cost": null,
+    "venue": "Rancho Bernardo Inn",
+    "description": "An intimate, invite-only resort retreat for senior B2B eCommerce, digital, and marketing leaders from manufacturers and distributors. The event features curated peer-to-peer discussions, pre-scheduled 1:1 meetings with technology partners, and interactive sessions focused on data, AI, omnichannel strategy, and digital transformation in a closed-door setting.",
+    "industry_vertical": "supply_chain_and_distribution",
+    "exhibitor_mix": "B2B eCommerce technology and solution providers including digital commerce platforms (OroCommerce, Spryker, VTEX), product experience and PIM solutions (Akeneo, Storyblok), digital consultancies (Argano, Perficient, Pivotree, TMG, Luminos Labs), AI product discovery platforms (Zoovu), and other enterprise technology vendors serving manufacturers and distributors",
+    "audience_mix": "Senior-level executives from US-based manufacturers and distributors with enterprise-level B2B eCommerce complexity. Attendees hold roles such as VP/Director of eCommerce, Chief Digital Officers, VP/Director of Digital Marketing, VP of Customer Experience, and leaders responsible for omnichannel strategy, data, AI, revenue growth, and digital transformation. Companies represented include J.J. Keller & Associates, Sunbelt Rentals, Sensata Technologies, and other leading B2B organizations.",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Event is invite-only with no public pricing information available. Hotel conference rate is $319/night. Event focuses on peer networking and curated solution provider meetings rather than traditional exhibition format.",
+    "original_event_name": "B2B Connect (Invite Only)",
+    "original_event_url": "https://b2bconnect.wbresearch.com/",
+    "added_to_master": "2026-04-23T22:31:05.276498",
+    "master_id": 46
   }
 ]
