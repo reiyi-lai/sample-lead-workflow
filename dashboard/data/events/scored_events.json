@@ -1021,11 +1021,36 @@
       },
       "reasoning": "B2B Online Atlanta 2026 is a well-timed, senior-executive-rich event in a target geography. However, it is fundamentally misaligned with InstaLILY go-to-market strategy. The conference is designed for B2B eCommerce and digital marketing transformation - customer-facing, front-office digital strategy. InstaLILY solves back-office operational problems: quoting automation, parts validation, sales rep workflow efficiency, tribal knowledge codification, high-volume claim processing. The attendee base (CMOs, eCommerce VPs, MarTech buyers) does not match InstaLILY buyer personas. While some attendees work at distributors in target verticals, they are not seeking AI Teammates for operational execution - they are seeking digital commerce, personalization, and marketing tools. Spending resources here would result in cold meetings with wrong functional buyers. Much better ROI exists at industry-specific distribution conferences (HARDI, NAFA, healthcare supply chain events) where operations, procurement, and sales execution leaders gather.",
       "sales_brief": "PASS - Wrong buyer functions despite right company types. Event is eCommerce and MarTech focused; attendees (CMOs, eCommerce VPs) are not InstaLILY buyers. We need operations, sales, and supply chain leaders who own execution workflows and face tribal knowledge/manual process pain. Better ROI at vertical-specific distribution conferences targeting procurement, operations, and field service functions."
+    },
+    {
+      "event_name": "B2B Connect 2026",
+      "event_url": "https://b2bconnect.wbresearch.com/",
+      "overall_score": 7.1,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 5,
+          "rationale": "Event targets B2B eCommerce and digital transformation in manufacturers and distributors, which touches supply chain but is not core to InstaLILY vertical alignment. Focus is on eCommerce platforms, PIM solutions, and digital consultancies rather than the execution-focused operational workflows (quoting, parts validation, triage) that InstaLILY solves. Not aligned with asset-light 3PLs, freight forwarding, LTLs, or procurement verticals that drive highest value for supply chain focus."
+        },
+        "buyer_functional_alignment": {
+          "score": 8,
+          "rationale": "Strong alignment with executive decision-makers. Attendees include VP/Director eCommerce, Chief Digital Officers, VP Digital Marketing, VP Customer Experience, and leaders owning omnichannel strategy and digital transformation. These are high-authority buyers involved in technology investment decisions. Some operations and sales leadership likely present, though primary focus leans toward digital/marketing functions rather than core sales or operations execution."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "3-day event in June 2026 at established resort venue. US-based and accessible to sales team. Smaller, more intimate format (invite-only, curated peer discussions) vs. large trade shows, but strong positioning as senior-level executive retreat. Established event by WBR Research with credible attendee base. Timing in June is acceptable though not peak buying season."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "High concentration of C-suite and VP-level executives. Invite-only format ensures attendee quality and decision-maker presence. Named companies (J.J. Keller, Sunbelt Rentals, Sensata) represent mid-market to enterprise organizations with budget authority. Format explicitly designed for peer discussions and 1:1 meetings with vendors, indicating serious buyer intent and seniority."
+        }
+      },
+      "reasoning": "B2B Connect 2026 presents a mixed-signal opportunity for InstaLILY. The event reaches senior executives at manufacturers and distributors (strong ICP), and the invite-only format with pre-scheduled 1:1 meetings creates ideal selling conditions with high-quality, decision-making attendees. However, the event is fundamentally focused on B2B eCommerce, digital marketing, and omnichannel strategy rather than the operational execution workflows InstaLILY targets. The attendee base skews toward Chief Digital Officers, eCommerce directors, and digital transformation leaders rather than sales operations, field service, or supply chain execution functions. The exhibitor mix (OroCommerce, Spryker, VTEX, Akeneo) represents direct competition in the digital transformation space but not InstaLILY competitors. Attendees may not be actively seeking AI-driven execution agents for quoting, parts validation, or triage workflows. The intimate format and pre-booked meeting structure is highly valuable for quality engagement, but InstaLILY would need to target this event only if companies invited are also managing high-volume, tribal-knowledge-dependent sales or operations processes. Best-fit use case: PE-backed distributors or manufacturers with aggressive digital transformation mandates who recognize that eCommerce alone is insufficient without AI-driven backend execution optimization.",
+      "sales_brief": "Invite-only executive event with strong decision-maker density (VP/CDO level) at 200+ US manufacturers and distributors - excellent attendee quality and 1:1 meeting format. However, audience skews heavily toward B2B eCommerce, digital marketing, and omnichannel strategy functions rather than sales operations, field service, or high-volume execution workflows InstaLILY targets. Best approach: Pre-identify invitees with complex sales operations or field service execution challenges (e.g., multi-location distributors still managing tribal knowledge), then secure 1:1 slots to position InstaLILY as operational backbone to their eCommerce transformation. Risk: High likelihood of attendee focus on checkout optimization, PIM, and marketing tech rather than AI-driven workflow execution."
     }
   ],
   "summary": {
-    "total_events_scored": 47,
+    "total_events_scored": 48,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-23T22:27:50.635543"
+  "last_updated": "2026-04-23T22:31:05.278104"
 }
