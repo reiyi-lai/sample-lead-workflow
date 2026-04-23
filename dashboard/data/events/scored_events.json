@@ -975,11 +975,32 @@
       },
       "reasoning": "IEEE PES T&D 2026 is fundamentally misaligned with InstaLILY ICP. The event serves the electric utility and power transmission/distribution infrastructure sector - a completely different industry vertical from InstaLILY target markets (construction supply, industrial parts, healthcare, automotive goods, food supply distributors). Attendees are power systems engineers, grid operators, and utility operations professionals managing electrical infrastructure, not commercial distributors managing inventory, quoting, or field service execution. The buying personas and use cases are entirely orthogonal to InstaLILY problem set. While the event is large and prestigious, it represents zero strategic fit for lead generation.",
       "sales_brief": "Skip this event. IEEE PES T&D targets utility/power infrastructure sector with engineering and grid operations buyers - completely outside InstaLILY ICP of commercial distributors and field service companies. No sales, quoting, inventory, or order management buyers present. Investment would yield zero qualified leads."
+    },
+    {
+      "event_name": "NRF 2026: Retail's Big Show",
+      "event_url": "https://nrfbigshow.nrf.com/",
+      "overall_score": 2.1,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 3,
+          "rationale": "While the event attracts senior retail executives and supply chain managers, the primary audience is retail merchants, digital commerce leaders, and merchandising teams. InstaLILY targets distributors, suppliers, and field-service operations - not retail end-buyers. Supply chain managers present are typically focused on inbound fulfillment and retail logistics rather than B2B distribution operations, quoting systems, or parts catalogs that drive InstaLILY value."
+        },
+        "event_scale_timing": {
+          "score": 9,
+          "rationale": "Major annual US event in January 2026 with 40,000+ attendees, established 30+ year reputation, and premium venue (Javits Center NYC). Easily accessible to US sales team and represents one of retail industrys largest gatherings. Timing is optimal for Q1 2026 outreach campaigns."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "High concentration of C-suite executives (CEOs, Chief Digital Officers, VP Supply Chain) with significant budget authority attending. Strong presence of senior decision-makers from major national and international retailers. Speaker lineup likely includes retail industry leaders with enterprise purchasing power."
+        }
+      },
+      "reasoning": "NRF 2026 is a world-class event with exceptional scale, timing, and executive seniority - but it is fundamentally misaligned with InstaLILY's ICP. The event serves retail merchants (Target, Walmart, etc.) and retail technology vendors, not B2B distributors or field-service organizations. InstaLILY's AI Teammates solve problems for wholesale distributors managing complex parts catalogs and multi-location sales operations - not retail store operations, merchandising, or consumer supply chains. While some supply chain professionals attend, they are retail supply chain focused, not distribution-facing. Attending would mean competing for retail CIOs attention when InstaLILY has no product-market fit with retail merchants. Better ROI exists in vertical-specific distribution events.",
+      "sales_brief": "Skip this event. NRF targets retail merchants and retail tech vendors, not B2B distributors or suppliers. InstaLILY solves wholesale distribution problems (parts quoting, multi-location sales ops, tribal knowledge), not retail store operations or consumer supply chains. Attending would waste resources on wrong buyer personas. Focus on HARDI, AED Summit, and automotive/industrial parts distribution events instead."
     }
   ],
   "summary": {
-    "total_events_scored": 45,
+    "total_events_scored": 46,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-21T20:11:44.901452"
+  "last_updated": "2026-04-23T18:23:26.947069"
 }
