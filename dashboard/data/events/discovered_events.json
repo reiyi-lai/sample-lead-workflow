@@ -796,5 +796,26 @@
     "original_event_url": "https://b2bconnect.wbresearch.com/",
     "added_to_master": "2026-04-23T22:31:05.276498",
     "master_id": 46
+  },
+  {
+    "event_name": "Home Delivery World USA 2026",
+    "event_url": "https://www.terrapinn.com/conference/home-delivery-world/index.stm",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "May 20-21, 2026",
+    "location": "Nashville, TN",
+    "cost": "Exhibition free to attend; booth costs typically $15k-$40k",
+    "venue": "Music City Center",
+    "description": "Home Delivery World USA 2026 is a premier conference and exhibition focused on retail logistics, e-commerce fulfillment, and last-mile delivery. Co-located with The Middle Mile, this 14-year running event covers the entire supply chain journey from warehouse to final customer delivery, including drayage, warehousing, inventory management, fulfillment, routing, dispatch, last-mile delivery, and returns.",
+    "industry_vertical": "supply_chain_and_distribution",
+    "exhibitor_mix": "Logistics providers (AIT Worldwide Logistics, Penske, J.B. Hunt, OneRail), technology companies (warehouse automation, robotics, AI-powered logistics, route optimization software, tracking systems), delivery service providers (last-mile carriers, autonomous delivery vehicles, electric fleet vehicles, drone technology), 3PLs, packaging solutions providers, freight management platforms, and e-commerce logistics technology vendors. Over 300+ exhibitors from across the e-commerce and logistics spectrum.",
+    "audience_mix": "Professionals from e-commerce, retail logistics, and supply chain sectors including retailers (Target, Wayfair, Williams-Sonoma, 7-Eleven, Kroger, IKEA), manufacturers, grocers, logistics managers, supply chain directors, distribution center operators, technology providers, delivery service managers, and transportation professionals. Typically draws 2,000-5,000 attendees with 250+ expert speakers.",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Comprehensive information found. Event features 100+ sessions, 75 startups, and 250+ speakers. Rated as Platinum tier conference by industry analysts. Exhibition is free to attend for attendees, with booth costs for exhibitors ranging $15k-$40k.",
+    "original_event_name": "Home Delivery World 2026",
+    "original_event_url": "https://www.terrapinn.com/conference/home-delivery-world/index.stm",
+    "added_to_master": "2026-04-27T14:51:36.965613",
+    "master_id": 47
   }
 ]
