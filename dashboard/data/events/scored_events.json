@@ -1071,11 +1071,36 @@
       },
       "reasoning": "Home Delivery World USA is a large, well-established supply chain event with strong execution in the last-mile logistics and e-commerce fulfillment space. However, it represents poor strategic fit for InstaLILY. The event serves asset-light 3PLs, freight forwarders, last-mile carriers, and e-commerce retailers - none of which are InstaLILY target verticals. InstaLILY solves for B2B distributors (construction, industrial parts, healthcare, automotive, food supply) and field service operations that need sales enablement, quoting automation, parts validation, and exception handling. Home Delivery World attendees operate in fundamentally different business models with different pain points (fulfillment speed, delivery optimization, warehouse robotics) rather than sales velocity, tribal knowledge, or multi-location branch management. While some supply chain functions overlap, the vertical misalignment and buyer functional mismatch make this a low-priority event for resource investment.",
       "sales_brief": "Low priority event for InstaLILY. While scale and timing are strong, vertical misalignment is critical - event serves e-commerce/3PL/last-mile logistics, not B2B distributors or field service operations. Attendees optimize for fulfillment and delivery, not sales enablement or quoting. Risk of wasted booth spend and poor lead quality. Better resource allocation exists in verticals like HARDI (HVAC), AED (electrical), or construction/industrial distribution events."
+    },
+    {
+      "event_name": "Broker Carrier Summit 2026",
+      "event_url": "https://brokercarriersummit.com/",
+      "overall_score": 3.1,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 2,
+          "rationale": "Broker-carrier summit focuses on freight brokerage and trucking carrier operations - asset-light 3PLs and logistics service providers. This vertical is fundamentally misaligned with InstaLILY ICP. InstaLILY targets distributors, manufacturers, and field-service operations that manage complex inventory, parts catalogs, and multi-branch sales operations. Freight brokerage is a pure logistics/transportation play with no product distribution, parts management, or field-service execution components. Wrong supply chain vertical entirely."
+        },
+        "buyer_functional_alignment": {
+          "score": 5,
+          "rationale": "Attendees are freight brokers, trucking carriers, 3PLs, and transportation logistics professionals. While some attendees hold operational roles, the dominant functions are logistics coordination, carrier relationship management, and load optimization - not sales operations, order management, or parts fulfillment that InstaLILY targets. Some supporting functions tangentially related to operations exist, but core buyer personas lack alignment with InstaLILY use cases."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "Well-established semiannual event with April 2026 dates falling squarely within target window. US-based in Kansas City metro (Overland Park, KS) making it geographically accessible to sales team. Moderate attendance event with strong industry reputation (though branded as 3 days despite being 2-day format). Represents meaningful industry gathering, though smaller than mega-conferences."
+        },
+        "buyer_seniority": {
+          "score": 3,
+          "rationale": "Attendee base skews toward operational practitioners - fleet owners, logistics coordinators, and carrier partnership managers - rather than C-suite decision-makers. Technology decision-makers present but likely focused on TMS and carrier verification tools rather than broader operational AI. Limited evidence of VP/C-level concentration typical of enterprise software buying committees. Attendee profile suggests transaction-oriented rather than strategic purchasing authority."
+        }
+      },
+      "reasoning": "Broker Carrier Summit 2026 is fundamentally misaligned with InstaLILY ICP on multiple dimensions. The event serves freight brokers and trucking carriers - a pure logistics/transportation vertical focused on shipment coordination and carrier relationships. InstaLILY targets distributors, manufacturers, and field-service organizations with complex inventory management, parts catalogs, and multi-branch sales execution. The buyer personas (logistics coordinators, fleet operators, carrier managers) lack the operational and sales execution challenges that InstaLILY solves (quoting workflows, parts validation, order entry automation, tribal knowledge codification). While some 3PL attendees represent adjacent verticals, the event concentration is wrong. The technology vendors exhibiting (TMS platforms, load boards, factoring services, fraud prevention) target logistics optimization, not the revenue-driving execution workflows InstaLILY addresses. Investment in this event would yield poor lead quality and mismatched conversations.",
+      "sales_brief": "Low priority - wrong supply chain vertical. Broker-carrier summits serve freight logistics operators (3PLs, trucking), not distributors or manufacturers in InstaLILY ICP. Attendee focus on shipment coordination and carrier relationships, not parts management or sales execution. Technology vendor mix targets TMS and logistics optimization, not operational AI for distribution/manufacturing. Skip this event; focus resources on vertical distribution conferences (construction supply, industrial parts, food, automotive, healthcare) where buyer personas and pain points directly align with InstaLILY use cases."
     }
   ],
   "summary": {
-    "total_events_scored": 49,
+    "total_events_scored": 50,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-27T14:51:36.969172"
+  "last_updated": "2026-04-27T17:42:58.364182"
 }
