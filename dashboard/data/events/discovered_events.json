@@ -817,5 +817,26 @@
     "original_event_url": "https://www.terrapinn.com/conference/home-delivery-world/index.stm",
     "added_to_master": "2026-04-27T14:51:36.965613",
     "master_id": 47
+  },
+  {
+    "event_name": "Broker Carrier Summit 2026",
+    "event_url": "https://brokercarriersummit.com/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "April 27-28, 2026",
+    "location": "Overland Park, KS",
+    "cost": "$900-$2,500 per attendee",
+    "venue": "Overland Park Convention Center",
+    "description": "A premier networking and professional development conference that brings together freight brokers and trucking carriers to build meaningful partnerships, featuring educational sessions, panel discussions, and workshops focused on fostering trust and collaboration in the freight and logistics industry.",
+    "industry_vertical": "supply_chain_and_distribution",
+    "exhibitor_mix": "Technology vendors and service providers including transportation management systems (TMS), factoring companies, freight validation services, load boards, logistics software platforms, carrier verification systems, freight technology startups, and freight fraud prevention solutions. Sponsors integrate into sessions rather than static exhibit booths.",
+    "audience_mix": "Freight brokers, trucking carriers (especially small to medium-sized operations), third-party logistics providers (3PLs), logistics professionals, fleet owners, and transportation technology decision-makers seeking to build reliable partnerships and industry relationships.",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Event dates confirmed as April 27-28, 2026 in Kansas City metro area (Overland Park, KS). Cost range based on typical broker-carrier summit pricing. The event is held semiannually with another event scheduled for Dallas, TX in October 2026. Known as 'The Best 3 Days in Freight' despite being a 2-day conference.",
+    "original_event_name": "Broker Carrier Summit 2026",
+    "original_event_url": "https://brokercarriersummit.com/",
+    "added_to_master": "2026-04-27T17:42:58.362682",
+    "master_id": 48
   }
 ]
