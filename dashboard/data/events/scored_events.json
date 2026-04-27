@@ -1046,11 +1046,36 @@
       },
       "reasoning": "B2B Connect 2026 presents a mixed-signal opportunity for InstaLILY. The event reaches senior executives at manufacturers and distributors (strong ICP), and the invite-only format with pre-scheduled 1:1 meetings creates ideal selling conditions with high-quality, decision-making attendees. However, the event is fundamentally focused on B2B eCommerce, digital marketing, and omnichannel strategy rather than the operational execution workflows InstaLILY targets. The attendee base skews toward Chief Digital Officers, eCommerce directors, and digital transformation leaders rather than sales operations, field service, or supply chain execution functions. The exhibitor mix (OroCommerce, Spryker, VTEX, Akeneo) represents direct competition in the digital transformation space but not InstaLILY competitors. Attendees may not be actively seeking AI-driven execution agents for quoting, parts validation, or triage workflows. The intimate format and pre-booked meeting structure is highly valuable for quality engagement, but InstaLILY would need to target this event only if companies invited are also managing high-volume, tribal-knowledge-dependent sales or operations processes. Best-fit use case: PE-backed distributors or manufacturers with aggressive digital transformation mandates who recognize that eCommerce alone is insufficient without AI-driven backend execution optimization.",
       "sales_brief": "Invite-only executive event with strong decision-maker density (VP/CDO level) at 200+ US manufacturers and distributors - excellent attendee quality and 1:1 meeting format. However, audience skews heavily toward B2B eCommerce, digital marketing, and omnichannel strategy functions rather than sales operations, field service, or high-volume execution workflows InstaLILY targets. Best approach: Pre-identify invitees with complex sales operations or field service execution challenges (e.g., multi-location distributors still managing tribal knowledge), then secure 1:1 slots to position InstaLILY as operational backbone to their eCommerce transformation. Risk: High likelihood of attendee focus on checkout optimization, PIM, and marketing tech rather than AI-driven workflow execution."
+    },
+    {
+      "event_name": "Home Delivery World USA 2026",
+      "event_url": "https://www.terrapinn.com/conference/home-delivery-world/index.stm",
+      "overall_score": 4.1,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 3,
+          "rationale": "Event focuses heavily on last-mile delivery, e-commerce fulfillment, and retail logistics optimization. This is asset-light 3PL, freight forwarding, and logistics technology space - not core InstaLILY verticals. While supply chain adjacent, the event does not serve InstaLILY target industries: construction supply, industrial parts, healthcare/pharma, automotive goods, or food supply distributors. E-commerce fulfillment and last-mile delivery represent different operational models than multi-branch distributors and field service operations InstaLILY targets."
+        },
+        "buyer_functional_alignment": {
+          "score": 6,
+          "rationale": "Audience includes logistics managers, supply chain directors, and distribution center operators - roles adjacent to InstaLILY target functions. However, buyer mix skews toward e-commerce retailers (Target, Walfair, Kroger) and 3PLs rather than B2B distributors and field service operations. These attendees prioritize fulfillment velocity and last-mile execution rather than sales enablement, quoting, or field technician workflows that InstaLILY solves."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "Major annual US event in 2026 with 2,000-5,000 attendees, 250+ speakers, and strong industry reputation (Platinum tier). Nashville location accessible to US sales team. May timing works within planning calendar. However, e-commerce/retail logistics focus means attendee quality for InstaLILY targeting is diluted despite overall event scale."
+        },
+        "buyer_seniority": {
+          "score": 4,
+          "rationale": "Mix of logistics managers, supply chain directors, and some C-suite retail/manufacturer leaders. However, the predominant attendee base skews toward logistics operations and technology roles rather than executive decision-makers at distributor or field service organizations. Lower concentration of sales leadership, procurement executives, or operations VPs at B2B distributors compared to pure supply chain/logistics roles."
+        }
+      },
+      "reasoning": "Home Delivery World USA is a large, well-established supply chain event with strong execution in the last-mile logistics and e-commerce fulfillment space. However, it represents poor strategic fit for InstaLILY. The event serves asset-light 3PLs, freight forwarders, last-mile carriers, and e-commerce retailers - none of which are InstaLILY target verticals. InstaLILY solves for B2B distributors (construction, industrial parts, healthcare, automotive, food supply) and field service operations that need sales enablement, quoting automation, parts validation, and exception handling. Home Delivery World attendees operate in fundamentally different business models with different pain points (fulfillment speed, delivery optimization, warehouse robotics) rather than sales velocity, tribal knowledge, or multi-location branch management. While some supply chain functions overlap, the vertical misalignment and buyer functional mismatch make this a low-priority event for resource investment.",
+      "sales_brief": "Low priority event for InstaLILY. While scale and timing are strong, vertical misalignment is critical - event serves e-commerce/3PL/last-mile logistics, not B2B distributors or field service operations. Attendees optimize for fulfillment and delivery, not sales enablement or quoting. Risk of wasted booth spend and poor lead quality. Better resource allocation exists in verticals like HARDI (HVAC), AED (electrical), or construction/industrial distribution events."
     }
   ],
   "summary": {
-    "total_events_scored": 48,
+    "total_events_scored": 49,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-23T22:31:05.278104"
+  "last_updated": "2026-04-27T14:51:36.969172"
 }
