@@ -1096,11 +1096,24 @@
       },
       "reasoning": "Broker Carrier Summit 2026 is fundamentally misaligned with InstaLILY ICP on multiple dimensions. The event serves freight brokers and trucking carriers - a pure logistics/transportation vertical focused on shipment coordination and carrier relationships. InstaLILY targets distributors, manufacturers, and field-service organizations with complex inventory management, parts catalogs, and multi-branch sales execution. The buyer personas (logistics coordinators, fleet operators, carrier managers) lack the operational and sales execution challenges that InstaLILY solves (quoting workflows, parts validation, order entry automation, tribal knowledge codification). While some 3PL attendees represent adjacent verticals, the event concentration is wrong. The technology vendors exhibiting (TMS platforms, load boards, factoring services, fraud prevention) target logistics optimization, not the revenue-driving execution workflows InstaLILY addresses. Investment in this event would yield poor lead quality and mismatched conversations.",
       "sales_brief": "Low priority - wrong supply chain vertical. Broker-carrier summits serve freight logistics operators (3PLs, trucking), not distributors or manufacturers in InstaLILY ICP. Attendee focus on shipment coordination and carrier relationships, not parts management or sales execution. Technology vendor mix targets TMS and logistics optimization, not operational AI for distribution/manufacturing. Skip this event; focus resources on vertical distribution conferences (construction supply, industrial parts, food, automotive, healthcare) where buyer personas and pain points directly align with InstaLILY use cases."
+    },
+    {
+      "event_name": "Analyticon",
+      "event_url": "https://analyticon.ai/",
+      "overall_score": 0,
+      "scores": {
+        "event_validity": {
+          "score": 0,
+          "rationale": "Event cannot be scored due to insufficient data. Enrichment failed to confirm event existence, dates, location, or attendee profile. The domain analyticon.ai does not host an active, publicly accessible conference. Historical references to Analyticon show either internal/private events (Amazon analytics conference) or discontinued conferences (United Scientific Group chemistry events last held in 2022). No 2026 event dates could be verified."
+        }
+      },
+      "reasoning": "This event cannot be evaluated against InstaLILY ICP criteria because fundamental event information is unavailable. Without confirmed dates, location, industry vertical, and attendee mix, meaningful scoring is impossible. The enrichment process determined the URL does not represent an active public conference in 2026. Recommend removing from prospect list until event details can be independently verified or the organization provides a corrected event reference.",
+      "sales_brief": "DO NOT PURSUE - Event details unverifiable. No active 2026 conference found at this URL. Appears to reference either discontinued events (UCS chemistry conferences ended 2022) or private/internal conferences (Amazon). Recommend validating event source with event discovery team before allocating any sales resources."
     }
   ],
   "summary": {
-    "total_events_scored": 50,
+    "total_events_scored": 51,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-27T17:42:58.364182"
+  "last_updated": "2026-04-28T15:13:20.448389"
 }
