@@ -838,5 +838,26 @@
     "original_event_url": "https://brokercarriersummit.com/",
     "added_to_master": "2026-04-27T17:42:58.362682",
     "master_id": 48
+  },
+  {
+    "event_name": "Analyticon",
+    "event_url": "https://analyticon.ai/",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": null,
+    "location": null,
+    "cost": null,
+    "venue": null,
+    "description": null,
+    "industry_vertical": null,
+    "exhibitor_mix": null,
+    "audience_mix": null,
+    "enriched": true,
+    "enrichment_success": false,
+    "enrichment_notes": "Unable to find any publicly accessible information about a conference or event at analyticon.ai. The URL does not appear to host an active conference website. Search results show 'Analyticon' has been used for: (1) Amazon's internal analytics conference (not public), (2) historical analytical chemistry conferences by United Scientific Group (last held in 2022), and (3) AWS partner events. The specific domain analyticon.ai does not have any discoverable conference details, event dates, or registration information available online as of April 2026.",
+    "original_event_name": "Analyticon",
+    "original_event_url": "https://analyticon.ai/",
+    "added_to_master": "2026-04-28T15:13:20.445145",
+    "master_id": 49
   }
 ]
