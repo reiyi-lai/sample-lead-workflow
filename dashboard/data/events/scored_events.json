@@ -1109,11 +1109,107 @@
       },
       "reasoning": "This event cannot be evaluated against InstaLILY ICP criteria because fundamental event information is unavailable. Without confirmed dates, location, industry vertical, and attendee mix, meaningful scoring is impossible. The enrichment process determined the URL does not represent an active public conference in 2026. Recommend removing from prospect list until event details can be independently verified or the organization provides a corrected event reference.",
       "sales_brief": "DO NOT PURSUE - Event details unverifiable. No active 2026 conference found at this URL. Appears to reference either discontinued events (UCS chemistry conferences ended 2022) or private/internal conferences (Amazon). Recommend validating event source with event discovery team before allocating any sales resources."
+    },
+    {
+      "event_name": "Total Supply Chain Summit London",
+      "event_url": "https://totalsupplychainsummit.co.uk/",
+      "overall_score": 4.2,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 4,
+          "rationale": "Event targets broad supply chain professionals across multiple verticals including manufacturing, retail, and logistics. While it includes some 3PLs and logistics operators, the audience mix is too generalized and skews toward European logistics infrastructure providers rather than InstaLILY target verticals of distributors, manufacturers, and field service operations in construction, industrial parts, healthcare, automotive, or food supply."
+        },
+        "buyer_functional_alignment": {
+          "score": 8,
+          "rationale": "Strong concentration of C-level executives, operations directors, and procurement heads with direct budgetary authority. These are decision-making roles aligned with InstaLILY buyer personas. However, the functional mix is broader than ideal, including general supply chain visibility seekers rather than execution-focused operations buyers."
+        },
+        "event_scale_timing": {
+          "score": 3,
+          "rationale": "Event is in 2026 which passes timing check, but location is London, UK with limited accessibility for US sales team. Small event format (60+ attendees) is significantly below InstaLILY investment threshold. International logistics-focused audience reduces relevance for US-centric distributor and manufacturer ICP."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "Explicitly targets C and D-level executives with direct budgetary authority. Free attendance model attracts serious decision-makers. Curated one-to-one meeting format indicates high-intent, senior buyer participation. Strong concentration of purchase authority."
+        }
+      },
+      "reasoning": "While buyer seniority and functional alignment are strong, this event suffers from poor geographic accessibility for US sales team, very small scale (60 attendees), and misaligned vertical focus. Event serves European supply chain infrastructure rather than the North American distributor and manufacturer base that represents InstaLILY core ICP. International location and limited attendee pool make resource investment unjustifiable despite decision-maker quality.",
+      "sales_brief": "Pass on this event. While senior buyers attend, the 60-person London audience, European supply chain focus, and geographic distance make this poor ROI for US-based sales team. Audience skews toward 3PLs and logistics operators, not the distributor/manufacturer verticals where InstaLILY has proven success."
+    },
+    {
+      "event_name": "DELIVER Europe Amsterdam",
+      "event_url": "https://www.deliver.events/europe",
+      "overall_score": 3.8,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 5,
+          "rationale": "Event targets retail and e-commerce supply chain leaders with focus on last-mile delivery, fulfillment, and returns management. While this includes some logistics technology and warehouse automation vendors, the overwhelming attendee concentration is retail and e-commerce operations. This vertical misalignment is significant - InstaLILY target distributors, manufacturers, and field service in construction, industrial, healthcare, automotive, and food. Retail fulfillment operations are outside core ICP."
+        },
+        "buyer_functional_alignment": {
+          "score": 9,
+          "rationale": "Excellent functional alignment with retail executives, e-commerce operations leaders, supply chain directors, and logistics decision-makers. C and D-level focus ensures high-intent, budget-holding attendees. These are exactly the operational and supply chain executive roles that drive buying decisions."
+        },
+        "event_scale_timing": {
+          "score": 2,
+          "rationale": "Event is in 2026 which passes date check, but location is Amsterdam, Netherlands. US sales team accessibility is problematic for European event. While attendance scale is impressive (1,500 attendees), geographic location and associated travel costs make this a poor investment for US-centric sales strategy."
+        },
+        "buyer_seniority": {
+          "score": 9,
+          "rationale": "Exceptional concentration of C and D-level retail executives with high budgetary authority. Event model provides fully hosted VIP experience for qualified decision-makers, indicating serious, intent-driven participation. 1,000+ senior retail decision-makers represent highest-level buyer concentration. Strong purchase authority and solution-seeking mentality evident from format."
+        }
+      },
+      "reasoning": "Despite outstanding buyer seniority and functional alignment, this event is a poor fit for InstaLILY due to fundamental vertical misalignment and geographic accessibility issues. The audience is 80% retail and e-commerce operations leaders focused on last-mile delivery, fulfillment, and warehouse automation. InstaLILY solves execution problems for B2B distributors, manufacturers, and field service - not retail fulfillment. International location in Netherlands makes US sales team participation impractical.",
+      "sales_brief": "Lower Priority - Wrong vertical mix. DELIVER Europe brings excellent decision-maker quality and seniority, but audience is retail/e-commerce fulfillment focused, not B2B distributors or manufacturers. Amsterdam location impractical for US team. Skip this event and prioritize North American distributor conferences instead."
+    },
+    {
+      "event_name": "NMBS All-Industry Conference Alicante",
+      "event_url": "https://nmbs-conference.co.uk/",
+      "overall_score": 3.6,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 7,
+          "rationale": "Event targets merchant professionals, supplier relationships, and business decision-makers in building, plumbing, heating, and hardware sectors. Functional mix includes independent merchants and supplier representatives. While these are operational and business leaders, the audience is less focused on high-volume, execution-oriented sales and operations than ideal InstaLILY buyers. More relationship-focused than transaction-process-focused."
+        },
+        "event_scale_timing": {
+          "score": 2,
+          "rationale": "Event is in 2026 which passes date check, but location is Alicante, Spain creating significant accessibility barrier for US sales team. Scale is moderate (420 delegates at 2024 edition), well below InstaLILY target investment threshold. Biennial frequency means lower predictability and consistency for ongoing event strategy. International location and travel requirements reduce practical feasibility."
+        },
+        "buyer_seniority": {
+          "score": 6,
+          "rationale": "Mix of independent merchant decision-makers and suppliers attending. While merchants likely hold purchase authority, the audience includes both buyers and sellers with mixed seniority levels. Not explicitly C-suite focused like premium events. Relationship-building focus suggests mid-level to senior merchant professionals rather than highest-level decision-making concentration."
+        }
+      },
+      "reasoning": "Construction supply vertical is within InstaLILY ICP and event serves building materials merchants with operational challenges. However, fundamental geographic barrier (Spain), small scale (420 attendees), biennial timing, and moderate buyer seniority concentration make this event a poor investment. Audience focus on independent European building merchants rather than large-scale, multi-location North American distributors limits ICP alignment. International travel costs and logistical complexity outweigh potential deal flow.",
+      "sales_brief": "Pass on this event. While construction supply vertical fits ICP, Alicante location makes execution impractical for US team. 420-person biennial European conference skews toward independent merchant relationships rather than large-scale, multi-location distributors where InstaLILY drives measurable ROI. Recommend investing in North American construction supply industry events instead."
+    },
+    {
+      "event_name": "Multimodal Birmingham",
+      "event_url": "https://www.multimodal.org.uk/",
+      "overall_score": 4.6,
+      "scores": {
+        "supply_chain_vertical_alignment": {
+          "score": 6,
+          "rationale": "Event serves freight, logistics, and supply chain management with 300+ exhibitors across modal transportation (road, rail, sea, air) and warehousing. Strong presence of carriers, logistics providers, warehouse automation, and technology vendors. However, audience is heavily weighted toward logistics operators, freight forwarders, and 3PLs rather than InstaLILY target verticals of product distributors, manufacturers, and field service. Logistics infrastructure focus rather than distribution operations focus."
+        },
+        "buyer_functional_alignment": {
+          "score": 8,
+          "rationale": "Excellent functional mix of supply chain professionals, logistics decision-makers, warehouse operators, and cargo owners with operational authority. These are operations and logistics management roles central to InstaLILY buyer personas. Large volume of shippers and manufacturers attendees increases relevance. However, significant portion of audience are carriers and logistics service providers outside core ICP."
+        },
+        "event_scale_timing": {
+          "score": 7,
+          "rationale": "Established major event (19th year) in 2026 with 13,500+ industry professionals attending. Free attendance removes barrier. Located in Birmingham, UK - while not US-based, it is UK which has reasonable accessibility for US sales team travel compared to continental Europe. June-July timing is appropriate for sales cycle. Large scale and established reputation indicate quality event, but UK location reduces accessibility versus US events."
+        },
+        "buyer_seniority": {
+          "score": 6,
+          "rationale": "Mix of senior supply chain professionals, decision-makers, and operators attending. Event features expert speakers and 80+ CPD-accredited conference sessions, attracting serious participants. However, attendee mix is broad across skill levels from junior logistics staff to senior decision-makers. Not explicitly C-suite focused. Logistics operator concentration suggests mid-level to senior management rather than highest executive authority."
+        }
+      },
+      "reasoning": "Multimodal is a major, established event with strong scale and free attendance that attracts legitimate supply chain decision-makers. However, it suffers from significant vertical misalignment - audience skews heavily toward logistics operators, freight forwarders, carriers, and 3PLs rather than InstaLILY target distributors and manufacturers. Geographic location in Birmingham, UK reduces US team accessibility versus domestic events. While some shippers and manufacturers attend, the event is infrastructure and modal-transport focused rather than execution-focused operational workflows that InstaLILY solves.",
+      "sales_brief": "Moderate priority - Large, established UK event with 13,500 attendees and strong operations/supply chain focus. However, vertical mix heavily weighted toward 3PLs, carriers, and freight forwarders rather than product distributors and manufacturers. UK location requires international travel. Consider only if sales team has existing European presence. Prioritize major North American distributor and manufacturing events over this logistics infrastructure event."
     }
   ],
   "summary": {
-    "total_events_scored": 51,
+    "total_events_scored": 55,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-28T15:13:20.448389"
+  "last_updated": "2026-04-30T12:08:52.602569"
 }
