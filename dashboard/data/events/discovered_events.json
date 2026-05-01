@@ -943,5 +943,26 @@
     "original_event_url": "https://www.multimodal.org.uk/",
     "added_to_master": "2026-04-30T12:08:52.587055",
     "master_id": 56
+  },
+  {
+    "event_name": "IAPD 70th Annual Convention + connecX",
+    "event_url": "https://iapd.org/IAPD/Events/Annual_Convention/2026-Convention-Save-the-Date.aspx",
+    "source": "enriched",
+    "needs_enrichment": true,
+    "dates": "September 28 - October 1, 2026",
+    "location": "Atlanta, GA",
+    "cost": "IAPD Members: $1,299 (early bird before September 15), $1,399 (after September 15); Nonmembers: $1,799 (early bird), $1,899 (after September 15)",
+    "venue": "The Starling Atlanta Midtown",
+    "description": "The IAPD Annual Convention brings together members of the performance plastics supply chain for four days of industry-focused education, insightful keynotes, valuable networking opportunities, IAPD committee meetings and the connecX Trade Show. The only event focused exclusively on the performance plastics distribution supply chain.",
+    "industry_vertical": "industrial_parts",
+    "exhibitor_mix": "Performance plastics manufacturers, resin suppliers, distributors, fabricators, manufacturers' representatives, and service providers. Exhibitors showcase performance plastics stock shapes, materials, equipment, and related products and technologies.",
+    "audience_mix": "Performance plastics distributors, fabricators, manufacturers, resin suppliers, manufacturers' representatives, service providers, and key decision-makers from across North America. Includes C-level executives, sales professionals, purchasing managers, and operations leaders in the performance plastics industry.",
+    "enriched": true,
+    "enrichment_success": true,
+    "enrichment_notes": "Full event details successfully found. Registration pricing is based on 2025 convention rates as 2026 specific pricing not yet published. Event focuses on performance plastics distribution supply chain with private supplier meetings, connecX trade show, and networking events.",
+    "original_event_name": "Performance Plastics Annual Convention",
+    "original_event_url": "https://iapd.org/IAPD/Events/Annual_Convention/2026-Convention-Save-the-Date.aspx",
+    "added_to_master": "2026-05-01T19:48:32.231047",
+    "master_id": 54
   }
 ]
