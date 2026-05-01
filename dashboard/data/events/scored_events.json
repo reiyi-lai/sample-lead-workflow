@@ -1205,11 +1205,32 @@
       },
       "reasoning": "Multimodal is a major, established event with strong scale and free attendance that attracts legitimate supply chain decision-makers. However, it suffers from significant vertical misalignment - audience skews heavily toward logistics operators, freight forwarders, carriers, and 3PLs rather than InstaLILY target distributors and manufacturers. Geographic location in Birmingham, UK reduces US team accessibility versus domestic events. While some shippers and manufacturers attend, the event is infrastructure and modal-transport focused rather than execution-focused operational workflows that InstaLILY solves.",
       "sales_brief": "Moderate priority - Large, established UK event with 13,500 attendees and strong operations/supply chain focus. However, vertical mix heavily weighted toward 3PLs, carriers, and freight forwarders rather than product distributors and manufacturers. UK location requires international travel. Consider only if sales team has existing European presence. Prioritize major North American distributor and manufacturing events over this logistics infrastructure event."
+    },
+    {
+      "event_name": "IAPD 70th Annual Convention + connecX",
+      "event_url": "https://iapd.org/IAPD/Events/Annual_Convention/2026-Convention-Save-the-Date.aspx",
+      "overall_score": 8.2,
+      "scores": {
+        "buyer_functional_alignment": {
+          "score": 9,
+          "rationale": "Strong alignment with InstaLILY ICP buyer functions. Audience explicitly includes C-level executives, sales professionals, purchasing managers, and operations leaders. Performance plastics distributors are multi-location, inventory-intensive operations with high SKU complexity - core pain points InstaLILY solves. Sales and operations functions dominate attendee profile."
+        },
+        "event_scale_timing": {
+          "score": 8,
+          "rationale": "Established 70th annual convention occurring September 28-October 1, 2026 within optimal timing window. Held in Atlanta, GA - easily accessible to US-based sales team. Four-day format with dedicated trade show (connecX) indicates mature, well-resourced event. Mid-sized niche event rather than mega-conference, which can actually improve targeting precision."
+        },
+        "buyer_seniority": {
+          "score": 8,
+          "rationale": "Explicitly states high concentration of C-level executives alongside sales professionals, purchasing managers, and operations leaders. Four-day event structure with committee meetings and private supplier meetings suggests senior decision-maker participation. Not a junior-heavy event - attendees have budget authority for operational technology investments."
+        }
+      },
+      "reasoning": "IAPD 70th Annual Convention is a strong fit for InstaLILY. Performance plastics distributors operate complex, multi-location supply chains with tribal knowledge challenges, high-volume SKU management (stock shapes, materials, equipment variants), and sales teams doing repetitive manual work. This vertical falls squarely within InstaLILY industrial parts ICP. The event brings together exactly the buyer personas InstaLILY targets: distribution executives, operations leaders, and purchasing managers with direct authority over operational technology spend. September 2026 timing allows for Q4 decision cycles. connecX trade show format provides built-in booth opportunity. Primary risk is vertical focus may be narrower than broader industrial distribution events, potentially reducing addressable prospect pool, though this also reduces competitive noise and improves targeting efficiency.",
+      "sales_brief": "Solid mid-market event for performance plastics distribution vertical - a sub-segment of industrial parts ICP. Four-day format with C-suite, ops, and purchasing leaders indicates high decision-maker density and solution-seeking intent. connecX trade show enables direct engagement. September timing aligns with Q4 buying cycles. Risk: Smaller niche vertical than construction or fasteners, so pipeline volume may be more constrained than mega-events. Recommend pre-qualifying attendee lists to identify branch operators and operations directors with 5+ locations."
     }
   ],
   "summary": {
-    "total_events_scored": 55,
+    "total_events_scored": 56,
     "last_updated": "2026-04-07T13:07:08.771662"
   },
-  "last_updated": "2026-04-30T12:08:52.602569"
+  "last_updated": "2026-05-01T19:48:32.234129"
 }
