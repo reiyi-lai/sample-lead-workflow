@@ -9,23 +9,21 @@ interface StatsCardsProps {
 
 export default function StatsCards({ stats }: StatsCardsProps) {
   const cards = [
-    { label: "Events", value: stats.events},
-    { label: "Companies", value: stats.companies},
-    { label: "Contacts", value: stats.contacts},
-    { label: "Messages", value: stats.messages},
+    { label: "Events", value: stats.events },
+    { label: "Companies", value: stats.companies },
+    { label: "Contacts", value: stats.contacts },
+    { label: "Messages", value: stats.messages },
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="grid grid-cols-4 gap-4">
       {cards.map((card) => (
         <div
           key={card.label}
-          className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm"
+          className="border border-neutral-200 rounded-lg p-5"
         >
-          <div className="mt-1">
-            <p className="text-3xl font-bold text-gray-900">{card.value}</p>
-            <p className="text-sm text-gray-500 mt-1">{card.label}</p>
-          </div>
+          <p className="text-3xl font-semibold text-neutral-950 tracking-tight">{card.value}</p>
+          <p className="text-xs text-neutral-600 mt-1 uppercase tracking-wide">{card.label}</p>
         </div>
       ))}
     </div>

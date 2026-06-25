@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CompanyWithDetails } from "@/lib/data";
 import TargetRolesModal from "./TargetRolesModal";
 import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface CompanyCardProps {
   company: CompanyWithDetails;
@@ -12,47 +13,41 @@ interface CompanyCardProps {
 export default function CompanyCard({ company }: CompanyCardProps) {
   const [showRoles, setShowRoles] = useState(false);
 
-  const draftCount = company.contacts.filter(
-    (c) => c.outreach && (!c.outreach.status || c.outreach.status === "draft")
-  ).length;
-
   return (
     <>
-      <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
-        {/* Header */}
+      <div className="border border-neutral-200 rounded-2xl p-5 hover:border-neutral-300 transition-colors">
         <div className="flex items-start justify-between">
-          <h3 className="text-lg font-semibold text-gray-900">{company.name}</h3>
+          <h3 className="text-base font-semibold text-neutral-950">{company.name}</h3>
           <div className="text-right">
-            <span className="text-2xl font-bold text-gray-900">
+            <span className="text-2xl font-semibold text-neutral-950 tracking-tight">
               {company.score > 0 ? Math.round(company.score) : "—"}
             </span>
             {company.score > 0 && (
-              <span className="text-sm text-gray-500 ml-1">/100</span>
+              <span className="text-xs text-neutral-500 ml-1">/100</span>
             )}
           </div>
         </div>
 
-        {/* Event & Website */}
-        <div className="flex items-center gap-2 mt-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2 mt-1.5 text-xs text-neutral-500">
           <span>{company.event}</span>
           {company.scoring?.website_url && (
             <>
-              <span>•</span>
+              <span>·</span>
               <a
                 href={company.scoring.website_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline truncate"
+                className="text-neutral-500 hover:text-neutral-950 inline-flex items-center gap-1"
               >
                 {company.scoring.website_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                <ExternalLink size={10} />
               </a>
             </>
           )}
         </div>
 
-        {/* Score Breakdown */}
         {company.scoring?.scores && (
-          <div className="mt-4 bg-gray-50 rounded-lg p-4 space-y-3">
+          <div className="mt-4 border border-neutral-100 rounded-lg p-4 space-y-2.5">
             {company.scoring.scores.industry_fit && (
               <ScoreRow
                 label="Industry Fit"
@@ -84,22 +79,19 @@ export default function CompanyCard({ company }: CompanyCardProps) {
           </div>
         )}
 
-        {/* Stats */}
-        <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
-          <span>👥 {company.contacts.length} contacts</span>
+        <div className="flex items-center gap-4 mt-4 text-xs text-neutral-500">
+          <span>{company.contacts.length} contacts</span>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-100 mt-4 pt-4">
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
+        <div className="border-t border-neutral-100 mt-4 pt-4">
+          <div className="flex items-center gap-2.5">
             <button
               onClick={() => setShowRoles(true)}
               disabled={!company.targetRoles}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+              className={`px-3.5 py-1.5 text-xs font-medium rounded-md transition-colors ${
                 company.targetRoles
-                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  : "bg-gray-50 text-gray-400 cursor-not-allowed"
+                  ? "border border-neutral-200 text-neutral-700 hover:bg-neutral-100"
+                  : "border border-neutral-100 text-neutral-300 cursor-not-allowed"
               }`}
             >
               Target Roles
@@ -107,16 +99,16 @@ export default function CompanyCard({ company }: CompanyCardProps) {
             {company.contacts.length > 0 && (
               <Link
                 href={`/outreach?company=${encodeURIComponent(company.name)}`}
-                className="px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors ml-auto"
+                className="px-3.5 py-1.5 text-xs font-medium rounded-md bg-neutral-950 text-white hover:bg-neutral-800 transition-colors ml-auto inline-flex items-center gap-1.5"
               >
-                View Outreach →
+                View Outreach
+                <ArrowRight size={12} />
               </Link>
             )}
           </div>
         </div>
       </div>
 
-      {/* Modals */}
       {showRoles && company.targetRoles && (
         <TargetRolesModal
           company={company}
@@ -136,23 +128,17 @@ function ScoreRow({
   score: number;
   rationale: string;
 }) {
-  const getScoreColor = (score: number) => {
-    if (score >= 8) return "text-green-600";
-    if (score >= 6) return "text-yellow-600";
-    return "text-gray-600";
-  };
-
   return (
     <div className="flex items-start gap-4">
-      <div className="flex items-center gap-2 min-w-[180px] shrink-0">
-        <span className={`font-semibold ${getScoreColor(score)} w-[45px]`}>
+      <div className="flex items-center gap-2 min-w-[170px] shrink-0">
+        <span className={`font-semibold text-sm w-[42px] ${
+          score >= 8 ? "text-emerald-700" : score >= 6 ? "text-amber-600" : "text-red-500"
+        }`}>
           {score}/10
         </span>
-        <span className="text-sm text-gray-500">{label}</span>
+        <span className="text-xs text-neutral-500">{label}</span>
       </div>
-      <p className="text-sm text-gray-600 leading-relaxed">
-        {rationale}
-      </p>
+      <p className="text-xs text-neutral-500 leading-relaxed">{rationale}</p>
     </div>
   );
 }
