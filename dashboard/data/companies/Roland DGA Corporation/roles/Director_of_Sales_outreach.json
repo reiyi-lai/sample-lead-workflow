@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Extending wrap lifespan beyond 3-4 years",
+    "body": "Hi [Name],\n\nSaw Roland's Cybertruck wrap demo at PRINTING United\u2014really smart way to showcase your TrueVIS capabilities for vehicle graphics.\n\nI'm reaching out because we work with printer manufacturers whose customers are looking to extend outdoor graphic lifespan well beyond standard laminate performance. Our overlaminate has helped similar sales teams differentiate on ROI when competing against Mimaki and HP Latex, especially for fleet and transportation applications where replacement costs matter.\n\nWould it make sense to send over some info on how other teams are positioning this with their customers?\n\nBest,\n[Your name]",
+    "word_count": 95
+  },
+  "personalization_used": {
+    "hook": "Live vehicle wrap demonstrations at PRINTING United 2024 show Roland's sales strategy emphasizes outdoor graphics applications",
+    "value_prop_emphasized": "Extended lifespan for vehicle wraps and outdoor graphics, competitive differentiation, and improved ROI positioning for sales team"
+  }
+}

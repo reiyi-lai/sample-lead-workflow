@@ -1,0 +1,44 @@
+{
+  "company_name": "M\u00fcller Martini",
+  "website_url": "https://www.mullermartini.com",
+  "scores": {
+    "industry_fit": {
+      "score": 1,
+      "rationale": "M\u00fcller Martini manufactures print finishing systems for book and magazine production, including perfect binders, saddle stitchers, and hardcover binding equipment. Their customers are commercial printers, publishers, and book manufacturers\u2014not sign manufacturers, graphics companies, or protective film users. This is a complete mismatch with Tedlar's target verticals of signage, vehicle wraps, architectural graphics, and protective films."
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "M\u00fcller Martini employs approximately 1,300 people globally with production facilities in Switzerland, Germany, and the USA. Estimated revenue is $188M according to third-party sources, with Glassdoor listing $50-100M for the U.S. subsidiary. This places them solidly in the mid-to-large enterprise category that Tedlar targets from a size perspective."
+    },
+    "strategic_relevance": {
+      "score": 1,
+      "rationale": "M\u00fcller Martini's products focus on digital transformation in book production, smart factory automation, and print finishing efficiency\u2014none of which relate to Tedlar's value propositions of outdoor durability, UV protection, graffiti resistance, or weather resistance for protective films. Their products bind books and magazines, not protect outdoor graphics or signage from environmental degradation."
+    },
+    "market_activity": {
+      "score": 4,
+      "rationale": "M\u00fcller Martini actively exhibits at drupa 2024 (the leading printing technology trade show) and Hunkeler Innovationdays 2025 (digital printing industry event). However, these are print production trade shows, not graphics and signage industry events like ISA Sign Expo, PRINTING United (graphics segment), or FESPA. Their market activity is entirely within book manufacturing, not outdoor graphics or protective film markets."
+    }
+  },
+  "qualification_summary": "M\u00fcller Martini is NOT a qualified prospect for Tedlar protective films. Despite being a well-established, mid-sized global manufacturer with strong market presence, they operate exclusively in the book and magazine print finishing equipment industry. Their products (perfect binders, saddle stitchers, hardcover binding machines) and customer base (publishers, commercial printers, book manufacturers) have zero overlap with Tedlar's target markets of signage, vehicle wraps, architectural graphics, or protective films. This is a fundamental industry mismatch.",
+  "icp_qualification": {
+    "weighted_score": 35.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 1,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 1,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 4,
+        "weight": 0.25
+      }
+    }
+  }
+}

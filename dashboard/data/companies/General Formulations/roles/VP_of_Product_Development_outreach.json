@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Following up from ISA - expanding Tedlar usage",
+    "body": "Hi [Name],\n\nGreat seeing the momentum from our ISA booth collaboration last month. The anti-graffiti demos really resonated with attendees.\n\nI've been thinking about our conversation around GF's architectural and wall protection lines. Several manufacturers we work with have found that the same UV resistance and cleanability advantages you're already leveraging in GF 108 translate really well to interior wall applications\u2014especially where scratch resistance and easy maintenance matter.\n\nWould it make sense to explore how we might expand Tedlar into those product lines? Happy to share what we've learned from similar portfolio expansions.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Recent ISA 2025 joint booth collaboration and existing GF 108 Tedlar partnership",
+    "value_prop_emphasized": "UV resistance, cleanability, and scratch resistance for architectural/wall protection applications beyond existing anti-graffiti use case"
+  }
+}

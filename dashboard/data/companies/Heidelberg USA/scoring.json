@@ -1,0 +1,44 @@
+{
+  "company_name": "Heidelberg USA",
+  "website_url": "https://www.heidelberg.com",
+  "scores": {
+    "industry_fit": {
+      "score": 4,
+      "rationale": "<cite index=\"1-11,2-4\">Heidelberg USA is the leading supplier to commercial, packaging and label printing companies in North America and manufactures offset printing presses.</cite> <cite index=\"21-3,21-8\">While customers use Versafire digital presses for signage business with synthetics crucial to signage applications,</cite> Heidelberg is primarily an equipment manufacturer selling printing presses to printers, not a sign manufacturer, large-format graphics producer, or vehicle wrap installer that would directly use Tedlar films. The company has limited presence in Tedlar's core target verticals."
+    },
+    "size_revenue_fit": {
+      "score": 9,
+      "rationale": "<cite index=\"2-32\">Parent company Heidelberger Druckmaschinen AG generated sales of around \u20ac2.4 billion ($2.6B USD) in financial year 2023-2024.</cite> <cite index=\"13-1,13-2,16-1\">Heidelberg USA has approximately 1,000 employees and $430M in annual revenue.</cite> <cite index=\"12-3\">The global Heidelberg organization has roughly 18,000 employees in 170 countries.</cite> This is a large, well-established enterprise significantly exceeding the $100M+ revenue threshold."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "Heidelberg's product portfolio focuses on commercial printing presses (Speedmaster offset, Versafire digital, Jetfire) for catalogs, packaging, and labels\u2014not outdoor durable graphics or protective film applications. <cite index=\"30-1\">While Heidelberg added wide-format VUTEk technology for posters, banners, backlit signage and displays,</cite> they sell the equipment to print shops rather than being end-users of protective films. The durability/UV protection value propositions of Tedlar don't align with Heidelberg's core business model as an equipment manufacturer."
+    },
+    "market_activity": {
+      "score": 7,
+      "rationale": "<cite index=\"37-1,40-2\">Heidelberg exhibited at drupa 2024 trade fair and unveiled the Jetfire 50 digital press developed with Canon.</cite> <cite index=\"36-1\">The company's 2025 event calendar shows participation in PRINTING United (October 2025 in Orlando) and Eurasia Packaging.</cite> <cite index=\"34-3,34-5\">Despite market challenges, Heidelberg achieved 7.1% adjusted EBITDA margin in FY 2024/25 with expenses for the drupa trade fair.</cite> The company is active in print industry trade shows but not in ISA Sign Expo or FESPA, which are Tedlar's primary target events."
+    }
+  },
+  "qualification_summary": "Heidelberg USA is a poor fit for Tedlar's ICP. While the company is a large, financially strong enterprise with $430M revenue and strong trade show activity, it operates as an equipment manufacturer selling printing presses to commercial printers rather than as a sign fabricator, graphics producer, or vehicle wrap installer. Heidelberg sells the machines that print graphics; they are not end-users of protective overlaminate films like Tedlar for outdoor durability applications. This is a supplier/vendor relationship mismatch\u2014Heidelberg's customers (print shops, sign manufacturers) would be better Tedlar prospects than Heidelberg itself.",
+  "icp_qualification": {
+    "weighted_score": 58.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 4,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 9,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 7,
+        "weight": 0.25
+      }
+    }
+  }
+}

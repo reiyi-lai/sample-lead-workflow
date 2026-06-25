@@ -1,0 +1,44 @@
+{
+  "company_name": "Agfa",
+  "website_url": "https://www.agfa.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "<cite index=\"1-1,9-1\">Agfa is a global leader in large-format inkjet printing solutions for the signage and display markets</cite>, manufacturing printers specifically for <cite index=\"1-1,4-4\">outdoor signage, vehicle wraps, retail displays, wall murals, and window graphics</cite>. Their product lines including the Jeti Tauro, Anapurna Ciervo, and Onset Grizzly serve sign manufacturers, wide-format print companies, and vehicle wrap installers\u2014direct matches to Tedlar's ICP verticals."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"12-3,12-2\">Agfa achieved peak revenue of $2.4B in 2023 with 10,177 employees</cite>, and <cite index=\"16-2\">the company has 5,001-10,000 employees globally</cite>. With <cite index=\"13-36\">commercial operations in more than 40 countries through wholly owned sales organizations</cite> and manufacturing facilities worldwide, Agfa far exceeds the $100M+ revenue and global presence criteria for enterprise accounts."
+    },
+    "strategic_relevance": {
+      "score": 7,
+      "rationale": "<cite index=\"4-6\">Agfa uses UV-curable and solvent-based inks that offer excellent weather resistance for outdoor signage</cite>, and their customers use <cite index=\"4-7\">protective coatings and laminates to further enhance durability</cite>. However, Agfa manufactures printers rather than the protective films themselves\u2014their customers (sign manufacturers and print service providers) are the actual users of overlaminate films like Tedlar. Agfa's UV LED technology and outdoor durability focus align with Tedlar's value propositions, but as an equipment manufacturer they are one step removed from direct film purchasing decisions."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "<cite index=\"31-1\">Agfa showcased its Anapurna Ciervo at ISA International Sign Expo 2024 in Orlando</cite>, and <cite index=\"33-1,34-2\">debuted three new inkjet printers at FESPA Global Print Expo with major presence alongside Canon, HP, Epson, and other industry leaders</cite>. <cite index=\"17-29\">Agfa secured three prestigious 2025 Pinnacle Product Awards from PRINTING United Alliance</cite>. The company demonstrates exceptional activity at all major graphics and signage trade shows with continuous product launches and industry recognition."
+    }
+  },
+  "qualification_summary": "Agfa is a highly visible, enterprise-scale player in the graphics and signage industry with $2.4B revenue and global reach. As a leading manufacturer of large-format printers for sign, display, and vehicle wrap applications, they are deeply embedded in Tedlar's target verticals and exhibit at all major industry trade shows. However, strategic fit is moderate because Agfa manufactures printing equipment rather than consuming protective films directly\u2014their customers (sign manufacturers, print service providers, vehicle wrap installers) are the actual end-users of overlaminate films like Tedlar. Agfa represents a strong channel partnership opportunity or influencer relationship rather than a direct end-customer prospect.",
+  "icp_qualification": {
+    "weighted_score": 91.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 7,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

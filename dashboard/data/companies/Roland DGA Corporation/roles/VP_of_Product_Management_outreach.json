@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Roland + extended outdoor durability question",
+    "body": "Hi [Name],\n\nI saw Roland's Tesla Cybertruck wrap demo at PRINTING United\u2014really impressive showcase of your vehicle graphics capabilities.\n\nI'm reaching out because we work with wide-format printer companies looking to extend their outdoor durability positioning beyond the typical 3-4 year range. Our overlaminate helps their customers get significantly longer lifespan on vehicle wraps and architectural graphics without changing printer or ink specs.\n\nGiven your product strategy role, would it make sense to send over a brief overview of how other printer OEMs have integrated this into their media recommendations? Happy to keep it high-level.\n\nBest,\n[Your name]",
+    "word_count": 102
+  },
+  "personalization_used": {
+    "hook": "Roland demonstrated a Tesla Cybertruck wrap at PRINTING United 2024, showcasing vehicle graphics as a strategic growth area",
+    "value_prop_emphasized": "Extended outdoor durability (12-20+ years) as a strategic product differentiation advantage beyond Roland's current 3-4 year positioning"
+  }
+}

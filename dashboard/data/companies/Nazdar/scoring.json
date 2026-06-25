@@ -1,0 +1,44 @@
+{
+  "company_name": "Nazdar",
+  "website_url": "https://www.nazdar.com",
+  "scores": {
+    "industry_fit": {
+      "score": 9,
+      "rationale": "Nazdar is a direct match for Tedlar's target verticals. The company manufactures inks and supplies specifically for Point of Purchase (POP), Banner, Sign, and wide-format digital printing markets. Nazdar SourceOne distributes screen and inkjet equipment and supplies to specialty graphic and textile printing industries across 14+ locations. Their products are used for outdoor graphics, banners, vehicle wraps, and durable decals\u2014all core applications for protective overlaminates."
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "Nazdar has ~500 employees globally with estimated revenue of $187-293M annually across multiple sources. The company operates facilities in the US, UK, Singapore, Central America, and Mexico, indicating strong national to global presence. Founded in 1922, Nazdar has grown into a major international manufacturer with over 100 years in business, placing them solidly in the mid-to-large enterprise category ideal for Tedlar partnership."
+    },
+    "strategic_relevance": {
+      "score": 10,
+      "rationale": "Extremely high alignment with Tedlar's value propositions. Nazdar actively markets outdoor durability in their product lines: the 2800 Series UV-LED inks emphasize 'outdoor durability for toughest decal projects,' the 3500 Series is designed for 'fleet graphics and durable decals,' and their DCA Topcoat Clear offers '36 months vertical outdoor exposure' protection. The company's 270 Series inks deliver 'long-term exterior performance with proven resistance to UV degradation' and are formulated for '2 years outdoor durability.' Nazdar's focus on outdoor performance, UV resistance, and durability directly mirrors Tedlar's core benefits."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "Highly active in target markets. Nazdar exhibited at PRINTING United Expo 2024 (September 10-12 in Las Vegas) showcasing UV-LED and solvent ink innovations. They also exhibited at ISA Sign Expo 2024 (confirmed via Fiery partnership listing Nazdar as exhibitor). Recently awarded 2024 TLMI Calvin Frost Trailhead Sustainability Award (October 2024) and 2024 Silver EcoVadis Medal for sustainability, placing them in top 15% globally. The company announced OEM partnership with M&R Printing Equipment in 2023 for DTG/DTF platforms, demonstrating strong industry engagement and innovation focus."
+    }
+  },
+  "qualification_summary": "Nazdar is an exceptionally strong prospect for Tedlar protective films. As a 100+ year-old ink and coating manufacturer with $187-293M revenue serving the sign, graphics, vehicle wrap, and outdoor printing markets, they align perfectly with Tedlar's ICP. Their explicit focus on outdoor durability, UV resistance, and long-term performance in product lines (2800 Series, 3500 Series, DCA Topcoat) creates natural synergy with Tedlar's value proposition. Active trade show presence at PRINTING United and ISA Sign Expo, combined with recent sustainability awards, signals a quality-focused, premium-positioned company ideal for partnership discussions around protective overlaminate solutions.",
+  "icp_qualification": {
+    "weighted_score": 89.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 9,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 10,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Validating outdoor durability claims",
+    "body": "Hi [Name],\n\nI saw HP's messaging around graphics that 'withstand the test of time' and white ink that resists yellowing\u2014great positioning for outdoor applications.\n\nWe work with print service providers who use our protective films on outdoor signage and vehicle wraps to back up those exact durability claims. They've been able to show customers measurable proof of extended lifespan and reduced maintenance versus standard overlaminates.\n\nWith PRINTING United coming up, would it make sense to explore how this could fit into HP's booth story or customer success content? Happy to send over some examples of what other equipment manufacturers have done.\n\nBest,\n[Your name]",
+    "word_count": 105
+  },
+  "personalization_used": {
+    "hook": "HP actively markets 'outdoor durability' and 'graphics that withstand the test of time,' but lacks validated finishing material recommendations to substantiate these claims",
+    "value_prop_emphasized": "Tedlar as validation partner for HP's existing durability messaging, enabling measurable proof points for customer success stories"
+  }
+}

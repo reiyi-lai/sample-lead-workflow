@@ -1,0 +1,44 @@
+{
+  "company_name": "Grimco, Inc.",
+  "website_url": "https://www.grimco.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"2-2,2-10\">Grimco is a wholesale sign supply distributor for digital, wide format, traffic & screen/garment needs, offering products including car wraps, vinyl, banner, substrates, digital media, and screen printing supplies.</cite> <cite index=\"21-1,21-3\">The company is a leading supplier of overlaminate films offering vinyl, polyester, polycarbonate and polypropylene materials from top brands including 3M, Avery Dennison, RTape, and Orafol.</cite> <cite index=\"11-16\">Their product portfolio includes vehicle wrap films, sign vinyl, digital print media, banner materials, and substrates.</cite> This is a perfect direct match with Tedlar's target verticals of sign manufacturing, large-format graphics, vehicle wraps, and protective film distribution."
+    },
+    "size_revenue_fit": {
+      "score": 8,
+      "rationale": "<cite index=\"11-1,11-4\">Grimco's annual revenue was $241.8 million in 2025 with 611 employees.</cite> <cite index=\"2-13,6-6\">The company has over 65 locations across the United States, Canada, and the U.K.</cite> <cite index=\"2-2\">Founded in 1875 in St. Louis, Missouri, Grimco has grown into a national wholesale distributor.</cite> This places them solidly in the $100M+ revenue category with a strong national and international footprint, though employee count is slightly below the 500+ ideal threshold for a perfect score."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "<cite index=\"21-4,21-5,21-6,21-9\">Grimco offers overlaminate films for a wide variety of applications with premium cast overlaminate films that enhance and protect graphic displays, and floor & sidewalk overlaminate films that offer protection and durability for indoor and outdoor displays.</cite> <cite index=\"42-1,42-7\">Their digital media offerings include films for creating vehicle graphics, signs, wall and floor graphics, banners and more.</cite> The company's focus on protective overlaminates for outdoor signage, vehicle wraps, and architectural graphics aligns strongly with Tedlar's durability, UV protection, and weather resistance value propositions. As a distributor, they actively seek premium protective film solutions for their customer base."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "<cite index=\"31-1,31-2\">Grimco exhibited at Printing United 2023 in Atlanta with three booths showcasing equipment, wide format print and laminating products.</cite> <cite index=\"32-2,32-8\">The company had a successful showcase at ISA 2024 highlighting innovations in electrical signage and partnered with Canon to display the Canon Colorado M5 printer.</cite> <cite index=\"51-4,51-6\">Grimco was presented the U.S. Vendor of the Year Award at the 2025 FASTSIGNS International Convention and has received this recognition since 2015.</cite> Grimco demonstrates exceptional market activity with consistent presence at major industry trade shows (ISA, Printing United, Impressions Expo) and repeated industry recognition."
+    }
+  },
+  "qualification_summary": "Grimco is an outstanding ICP match for Tedlar protective films. As a $241.8M national wholesale distributor with 65+ locations serving the sign, graphics, and vehicle wrap industries, they are a direct channel to Tedlar's target market. Their extensive overlaminate product portfolio from 3M, Avery Dennison, and other premium brands, combined with strong relationships in outdoor signage and vehicle graphics verticals, positions them as an ideal distribution partner. Their 10-year consecutive FASTSIGNS Vendor of the Year recognition and active trade show presence demonstrate market leadership and customer trust\u2014making them a high-priority strategic prospect.",
+  "icp_qualification": {
+    "weighted_score": 93.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 8,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

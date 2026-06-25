@@ -1,0 +1,44 @@
+{
+  "company_name": "Vanguard Digital Printing Systems",
+  "website_url": "https://www.vanguarddigital.com",
+  "scores": {
+    "industry_fit": {
+      "score": 4,
+      "rationale": "Vanguard Digital is a manufacturer of wide-format UV-LED flatbed, roll-to-roll, and hybrid printers serving signage, decoration, corporate, industrial, and packaging sectors. They manufacture printing equipment rather than produce printed graphics themselves, making them an equipment supplier to Tedlar's target customers rather than a direct end-user. Their customers (sign manufacturers, print service providers) are the actual ICP prospects for Tedlar protective films."
+    },
+    "size_revenue_fit": {
+      "score": 3,
+      "rationale": "Multiple sources indicate revenue estimates between $3.5M-$11M annually with 11-50 employees (LinkedIn states 11-50, various databases show 22-38 employees). Founded in 2015 and headquartered in Lawrenceville, GA (now Franklin, TN). This places them well below the preferred $50M+ revenue threshold, making them a small manufacturer rather than mid-market or enterprise scale."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "As a printer manufacturer, Vanguard Digital emphasizes quality, speed, and ROI for their equipment customers but does not produce finished graphics that would require protective overlaminates like Tedlar. Their value proposition focuses on print head technology, UV-LED curing, and production speed. While their end customers may need protective films, Vanguard itself would not be a buyer of Tedlar products for their manufacturing operations."
+    },
+    "market_activity": {
+      "score": 8,
+      "rationale": "Highly active in the target market with strong trade show presence. Exhibited at 2025 ISA Expo (booth #2624), 2024 PRINTING United Expo, 2024 FASTSIGNS Convention, 2023 ISA Expo, and FESPA 2024 in Europe. Won 9 out of 9 categories in 2024 PRINTING United Alliance Pinnacle Product Awards. Launched new Radnor printer in April 2025 and opened state-of-the-art Experience Center in February 2025, demonstrating significant market momentum and industry engagement."
+    }
+  },
+  "qualification_summary": "Vanguard Digital Printing Systems is NOT a qualified prospect for Tedlar protective films. While they demonstrate strong market activity and industry presence, they are an equipment manufacturer serving the signage and graphics industry rather than a producer of finished graphics products. The appropriate prospects would be Vanguard's customers (print service providers, sign manufacturers) who use their equipment to produce outdoor signage, vehicle wraps, and graphics that would benefit from Tedlar overlaminate protection. Vanguard could potentially be valuable as a channel partner or for co-marketing opportunities to reach their customer base.",
+  "icp_qualification": {
+    "weighted_score": 45.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 4,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 3,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 8,
+        "weight": 0.25
+      }
+    }
+  }
+}

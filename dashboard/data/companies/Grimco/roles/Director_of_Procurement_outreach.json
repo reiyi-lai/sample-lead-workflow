@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Portfolio gap question for Grimco",
+    "body": "Hi [Name],\n\nI've been following Grimco's growth across 65+ locations and your partnerships with 3M, Avery, and others. Impressive distribution footprint.\n\nQuick question: are you seeing demand from fabricators for overlaminates that go beyond what standard films can handle\u2014think architectural projects or municipal signage where extreme weather and graffiti are constant issues?\n\nWe work with distributors looking to add an ultra-premium tier for those specific applications. Would it make sense to send over some info on how other distributors are positioning this?\n\nBest,\n[Your name]",
+    "word_count": 89
+  },
+  "personalization_used": {
+    "hook": "Grimco may lack a true ultra-premium tier for customers demanding extreme outdoor performance beyond standard overlaminates",
+    "value_prop_emphasized": "Extreme durability for architectural and municipal applications where weather and graffiti resistance are critical"
+  }
+}

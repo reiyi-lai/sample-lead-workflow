@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Completing the durability story for Ricoh",
+    "body": "Hi [Name],\n\nI saw Ricoh at PRINTING United showcasing the Pro L5160e's outdoor capabilities \u2013 impressive work on the print quality side.\n\nI'm reaching out because we work with printer manufacturers whose customers face UV degradation issues downstream, even when the print itself is perfect. Our protective film helps ensure those outdoor graphics actually last as long as the printer promises they will.\n\nGiven your focus on Fortune 500 accounts where total cost of ownership matters, would it make sense to explore how this could strengthen Ricoh's positioning? Happy to share how other OEMs are approaching this.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Ricoh's presence at PRINTING United and focus on Pro L5160e outdoor durability capabilities",
+    "value_prop_emphasized": "UV protection and durability that completes the customer value proposition for Ricoh printers, addressing downstream degradation issues"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "PRINTING United booth idea",
+    "body": "Hi [Name],\n\nSaw you're building an 80s arcade experience for PRINTING United in October\u2014love the creative approach to standing out.\n\nQuick thought: we work with several substrate manufacturers who use our protective films as live booth demos. Watching spray paint wipe clean off graphics or seeing UV resistance tests in real-time tends to stop people in their aisles. Could be a natural fit with your experiential setup.\n\nIf you're still locking down booth content, happy to send over what others have done. No pressure either way.\n\nBest,\n[Your name]",
+    "word_count": 91
+  },
+  "personalization_used": {
+    "hook": "PRINTING United Expo 2025 with 80s arcade-themed booth investment",
+    "value_prop_emphasized": "Graffiti resistance and UV protection as experiential trade show demonstrations"
+  }
+}

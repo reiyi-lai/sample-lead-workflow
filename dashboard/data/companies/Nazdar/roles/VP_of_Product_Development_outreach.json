@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Outdoor durability beyond 2-3 years",
+    "body": "Hi [Name],\n\nI saw Nazdar's recent sustainability awards and your focus on outdoor durability across the 2800 and 3500 Series\u2014congrats on the recognition.\n\nWe work with ink manufacturers looking to push beyond the typical 2-3 year outdoor warranty ceiling, especially for fleet graphics and architectural applications where extended performance creates real competitive separation.\n\nWould it be worth a brief conversation about how some teams are positioning premium ink systems with significantly longer outdoor life? Happy to share what we're seeing work in similar applications.\n\nBest,\n[Your name]",
+    "word_count": 89
+  },
+  "personalization_used": {
+    "hook": "Nazdar's current outdoor durability warranties max out at 2-3 years, creating a gap in premium pricing power for fleet graphics and architectural applications",
+    "value_prop_emphasized": "Extreme durability enabling extended warranties and premium market positioning"
+  }
+}

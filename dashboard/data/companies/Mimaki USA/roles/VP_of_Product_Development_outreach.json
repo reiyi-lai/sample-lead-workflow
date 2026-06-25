@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Thought on your outdoor durability positioning",
+    "body": "Hi [Name],\n\nCongrats on the Pinnacle Award for the JFX200\u2014well deserved. I've been following Mimaki's push around outdoor color durability with the JV200 Series.\n\nWe work with printer manufacturers whose customers face constant warranty callbacks from UV degradation and graffiti on vehicle wraps and outdoor signage. Our protective film has helped some teams essentially eliminate those issues, which tends to make the premium pricing conversation much easier.\n\nGiven your new Flowery Branch showroom, would it make sense to send over some samples you could test alongside your printers? Could be a useful sales tool for your training centers.\n\nLet me know if you'd like me to ship a few.\n\nBest,\n[Your name]",
+    "word_count": 118
+  },
+  "personalization_used": {
+    "hook": "Recent Pinnacle Award win and new Flowery Branch showroom facility",
+    "value_prop_emphasized": "Eliminating warranty callbacks from UV degradation and graffiti damage, enabling premium pricing justification"
+  }
+}

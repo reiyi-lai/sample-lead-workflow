@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Portfolio gap for ISA Sign Expo?",
+    "body": "Hi [Name],\n\nSaw GSG is at ISA Sign Expo in a few weeks (Booth #3325) and noticed you're already promoting protective films through your RTape partnerships.\n\nI'm curious if you've identified a gap in the premium segment\u2014where your sign manufacturer customers deal with the most warranty headaches from UV damage and graffiti on outdoor installs. We work with distributors who've found adding a higher-end protective film helps them win those quality-focused accounts and reduce the service escalations that come back through their teams.\n\nWorth a quick conversation before the show? I can share how other distributors have positioned this in their portfolio.\n\nBest,\n[Your name]",
+    "word_count": 108
+  },
+  "personalization_used": {
+    "hook": "ISA Sign Expo timing combined with existing protective film portfolio focus",
+    "value_prop_emphasized": "Reducing warranty escalations and winning premium accounts through portfolio differentiation"
+  }
+}

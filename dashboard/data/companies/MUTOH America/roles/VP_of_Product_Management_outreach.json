@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Complete durability solutions for MUTOH customers",
+    "body": "Hi [Name],\n\nCongrats on the four Pinnacle Awards this year\u2014impressive momentum on the product side.\n\nI wanted to reach out because we work with wide-format printer manufacturers whose customers face a common issue: their printed graphics look perfect coming off the press, but fail prematurely outdoors due to UV damage or graffiti. This reflects poorly on the printer brand, even though it's an overlaminate problem.\n\nWe've developed protective films specifically for vehicle wraps and outdoor signage that eliminate this issue. Several printer OEMs now recommend our films as part of their complete solution, which has helped them differentiate and reduce customer churn.\n\nWould it make sense to send over some information on how this could fit into MUTOH's portfolio strategy?\n\nBest,\n[Your name]",
+    "word_count": 128
+  },
+  "personalization_used": {
+    "hook": "MUTOH won four Pinnacle Product Awards in 2024 and has launched multiple new printer models, showing aggressive product innovation strategy",
+    "value_prop_emphasized": "Protecting MUTOH's brand reputation by preventing premature graphics failure, enabling complete solution differentiation"
+  }
+}

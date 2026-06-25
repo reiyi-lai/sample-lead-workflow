@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Helping Ricoh customers maximize print durability",
+    "body": "Hi [Name],\n\nI saw Ricoh's been showcasing the Pro L5160e for outdoor applications at PRINTING United - vehicle wraps, outdoor signage, exhibition graphics.\n\nWe work with PSPs and sign manufacturers who use wide-format printers like yours, and a common challenge they face is protecting their printed output from UV damage and graffiti when installed outdoors. Our protective overlaminates have helped reduce their warranty callbacks significantly.\n\nWould it be useful to share how other printer manufacturers' sales teams have incorporated protective film recommendations into their customer conversations? Could be a way to differentiate your equipment sales.\n\nHappy to send over some examples if that's helpful.\n\nBest,\n[Your name]",
+    "word_count": 108
+  },
+  "personalization_used": {
+    "hook": "Ricoh's Pro L5160e customers face durability challenges with outdoor printed graphics, creating post-sale support issues and warranty concerns",
+    "value_prop_emphasized": "UV protection and graffiti resistance reducing warranty callbacks and strengthening customer relationships"
+  }
+}

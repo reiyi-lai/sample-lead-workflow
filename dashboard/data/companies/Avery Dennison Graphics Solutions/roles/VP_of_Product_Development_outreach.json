@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Extending wrapping film performance past 12 years",
+    "body": "Hi [Name],\n\nCongratulations on the DPD fleet project\u2014wrapping 30,000 vehicles is no small feat.\n\nI'm reaching out because we've been working with graphics companies looking to push outdoor film performance beyond their current ceilings. Our PVF overlaminate has been helping teams tackle two specific challenges: extending warranty windows into the 15-20 year range for architectural and transit applications, and addressing graffiti vandalism on high-visibility installations.\n\nGiven your focus on premium positioning in the architectural and fleet segments, would it make sense to share some technical specs and case studies? Happy to send over what we have.\n\nBest,\n[Your name]",
+    "word_count": 105
+  },
+  "personalization_used": {
+    "hook": "The 30,000-vehicle DPD fleet project and the 12-year performance ceiling for ultra-premium segments",
+    "value_prop_emphasized": "Extended warranty windows (15-20 years) and graffiti resistance for architectural and fleet applications"
+  }
+}

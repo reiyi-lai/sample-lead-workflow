@@ -1,0 +1,44 @@
+{
+  "company_name": "TVF Inc. (The Visual Factor)",
+  "website_url": "https://www.tvf.com",
+  "scores": {
+    "industry_fit": {
+      "score": 5,
+      "rationale": "TVF is a fabric and textile supplier to print media manufacturers, not an end-user graphics company. They supply large-format printable fabrics and vinyl to sign manufacturers, commercial printers, and print service providers. While they serve Tedlar's target verticals, they are a distributor/converter rather than a direct customer who would apply protective overlaminates to finished graphics."
+    },
+    "size_revenue_fit": {
+      "score": 7,
+      "rationale": "TVF is an established mid-market player founded in 1974 with approximately $35M annual revenue and 51-200 employees (305 per GrowJo). They operate from facilities in Carmel, IN and Carson, CA with a national footprint. 100% employee-owned (ESOP since 2010) with 50+ years in business, indicating financial stability and regional-to-national scale."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "As a substrate supplier (fabrics, vinyl) rather than a finished goods manufacturer, TVF's needs don't align well with Tedlar's protective overlaminate value propositions. They sell raw materials to printers who create graphics\u2014they don't produce outdoor signs, vehicle wraps, or architectural graphics that would benefit from Tedlar protection. Their focus is on printability and coating performance, not post-production durability enhancement."
+    },
+    "market_activity": {
+      "score": 6,
+      "rationale": "TVF exhibits at Advanced Textiles Expo (2023, 2024) and serves the print media segment actively. They won a 2025 Pinnacle Award from PRINTING United Alliance for their PureNight Pro fabric. Recent product launches include award-winning sustainable fabrics for signage applications. However, their activity is focused on textile/substrate innovation rather than finished graphics production."
+    }
+  },
+  "qualification_summary": "TVF is NOT a strong prospect for Tedlar protective films. They are a B2B fabric/vinyl supplier to the print media industry, not an end-user manufacturer of signs, vehicle wraps, or architectural graphics. TVF sells printable substrates to companies that would potentially use Tedlar, making them a distributor/converter channel partner opportunity rather than a direct customer for protective overlaminate films.",
+  "icp_qualification": {
+    "weighted_score": 53.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 5,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 7,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 6,
+        "weight": 0.25
+      }
+    }
+  }
+}

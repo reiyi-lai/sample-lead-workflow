@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Agfa + protective film partnership idea",
+    "body": "Hi [Name],\n\nCongrats on the recent Pinnacle Awards\u2014impressive recognition for the new printer lineup.\n\nI've been thinking about how printer manufacturers like Agfa differentiate when competing against HP and Canon at shows like FESPA. One gap I've noticed: even perfect prints fail when customers choose the wrong overlaminate, but that failure reflects back on the printer brand.\n\nWe work with several equipment manufacturers to become their validated overlaminate partner\u2014essentially extending your quality control beyond the print itself. Would you be open to a brief conversation about what a technical partnership might look like?\n\nHappy to share how others have structured this.\n\nBest,\n[Your name]",
+    "word_count": 108
+  },
+  "personalization_used": {
+    "hook": "Agfa recently won 2025 Pinnacle Product Awards and competes directly with HP, Canon, and Epson at major trade shows, signaling they compete on premium positioning and need clear differentiation",
+    "value_prop_emphasized": "Strategic partnership that extends Agfa's quality control through validated overlaminate recommendations, solving the problem that customer's poor material choices damage Agfa's brand reputation"
+  }
+}

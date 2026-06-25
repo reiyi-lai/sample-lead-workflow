@@ -1,0 +1,44 @@
+{
+  "company_name": "Birttani Display Inc.",
+  "website_url": "https://www.brittani.com",
+  "scores": {
+    "industry_fit": {
+      "score": 5,
+      "rationale": "Birttani Display is a trade-only manufacturer and supplier of portable trade show displays, banners, SEG frames, canopy tents, and event marketing products. While they operate in the graphics/signage space, their core focus is on temporary indoor trade show displays and event hardware rather than permanent outdoor signage, architectural graphics, or vehicle wraps where Tedlar films are primarily used. Their products include retractable banner stands, backlit displays, and fabric displays for conventions and events\u2014not the durable outdoor graphics applications that require protective overlaminates."
+    },
+    "size_revenue_fit": {
+      "score": 3,
+      "rationale": "Multiple sources indicate Birttani Display has approximately $4 million in annual revenue and 4-5 employees. The company operates three facilities (Baldwin Park CA, Sayreville NJ, and Dallas TX) but remains a small operation well below the preferred $50M+ revenue threshold. Founded in 2012, they've grown from a 1,000 sq ft facility to a current 25,000 sq ft headquarters, indicating growth but still qualifying as a small business significantly below the mid-market ICP target."
+    },
+    "strategic_relevance": {
+      "score": 2,
+      "rationale": "Birttani's product portfolio emphasizes portability, quick setup, and indoor event applications rather than outdoor durability or UV resistance. Their website highlights 'portable, branded, and built to impress' temporary displays, SEG fabric systems, and retractable banners\u2014products designed for short-term indoor use at trade shows and conventions. There is no evidence of focus on outdoor durability, weatherability, graffiti resistance, or long-term graphic protection that would align with Tedlar's core value propositions of 12-20+ year outdoor lifespan and extreme environmental resistance."
+    },
+    "market_activity": {
+      "score": 7,
+      "rationale": "Birttani demonstrates strong trade show engagement as a Gold Sponsor at PRINTING United Expo 2025 (Booth #1938, October 22-24, Orlando). They have exhibited at major industry events and developed proprietary products including patented SEG systems (Lucid, Ultralite). The company launched a dealer-focused mobile app in November 2024 and maintains active product development with recent innovations in backlit displays and modular showcase systems, showing solid industry involvement despite their smaller size."
+    }
+  },
+  "qualification_summary": "Birttani Display is NOT a strong prospect for Tedlar protective films. While they are active in the graphics industry and sponsor relevant trade shows, their business model focuses on temporary indoor trade show displays and portable event hardware rather than permanent outdoor signage, vehicle wraps, or architectural graphics where Tedlar's durability and UV protection provide value. Additionally, at approximately $4M revenue with 4-5 employees, they fall well below the preferred mid-market size threshold and lack the scale to be a strategic account.",
+  "icp_qualification": {
+    "weighted_score": 44.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 5,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 3,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 2,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 7,
+        "weight": 0.25
+      }
+    }
+  }
+}

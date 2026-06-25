@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Extending performance beyond 12 years",
+    "body": "Hi [Name],\n\nCongrats on the DPD fleet project\u2014wrapping 30,000 vehicles is no small feat.\n\nI'm reaching out because we're seeing more RFPs for architectural and transit projects requiring 15-20 year warranties, which seems to be pushing beyond what current cast vinyl can deliver. We work with protective overlaminates that help companies extend their product performance into those ultra-premium segments.\n\nWould it make sense to explore how this could fit into your innovation pipeline? Happy to share some technical details on the chemistry behind it.\n\nBest,\n[Your name]",
+    "word_count": 89
+  },
+  "personalization_used": {
+    "hook": "The 30,000-vehicle DPD fleet project represents both a success story and validates their scale in fleet graphics, while current 12-year lifespan limit creates opportunity gap for longer-warranty segments",
+    "value_prop_emphasized": "Extending product lifespan beyond current cast vinyl limitations to access ultra-premium architectural and transit segments requiring 15-20 year warranties"
+  }
+}

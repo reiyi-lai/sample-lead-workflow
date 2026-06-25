@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Reducing support tickets for outdoor graphics",
+    "body": "Hi [Name],\n\nI've been following Durst's recent P5 launches\u2014congrats on the momentum. I'm reaching out because we work with printer manufacturers whose customers face recurring support issues around outdoor graphic failures (fading, UV damage, etc.).\n\nWe've seen customer success teams reduce these types of tickets by recommending protective overlaminates that prevent the degradation issues before they hit the support queue. Given Durst's focus on outdoor signage and vehicle wraps, thought this might be relevant.\n\nWould it be helpful if I sent over a brief overview of how other manufacturers have integrated this into their customer onboarding? Happy to keep it brief.\n\nBest,\n[Your name]",
+    "word_count": 108
+  },
+  "personalization_used": {
+    "hook": "Durst's customers in outdoor signage and vehicle wraps commonly face UV degradation and fading issues that generate support tickets and warranty claims",
+    "value_prop_emphasized": "Preventative solution that reduces support ticket volume and improves customer satisfaction by addressing outdoor graphic degradation before it becomes a support issue"
+  }
+}

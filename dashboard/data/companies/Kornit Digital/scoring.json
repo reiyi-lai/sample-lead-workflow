@@ -1,0 +1,44 @@
+{
+  "company_name": "Kornit Digital",
+  "website_url": "https://www.kornit.com",
+  "scores": {
+    "industry_fit": {
+      "score": 3,
+      "rationale": "<cite index=\"1-7,42-4\">Kornit produces high-speed industrial inkjet printers and inks for the garment, apparel, home goods, and textile decorating industry</cite>, focusing on direct-to-garment (DTG) and direct-to-fabric textile printing. While <cite index=\"21-2,23-9\">soft signage (fabric banners and flags) is mentioned as a use case</cite>, the company's core business is fashion/apparel printing, not protective films for graphics and signage. This represents a tangential connection at best\u2014they're equipment manufacturers for textile printing, not producers or users of protective overlaminate films like Tedlar."
+    },
+    "size_revenue_fit": {
+      "score": 4,
+      "rationale": "<cite index=\"11-13,19-2\">Kornit Digital has trailing twelve-month revenue of approximately $210M</cite> and <cite index=\"11-1\">715 total employees</cite>. As a <cite index=\"11-3\">publicly traded company (NASDAQ: KRNT)</cite> with <cite index=\"18-5,18-6,18-8,18-10\">global operations including headquarters in Israel and offices in the US, Europe, and Asia-Pacific</cite>, they meet the mid-market size threshold. However, at $210M revenue, they're at the lower end of the preferred $50M+ range, meriting a mid-range score."
+    },
+    "strategic_relevance": {
+      "score": 2,
+      "rationale": "Kornit's value proposition centers on <cite index=\"4-1,41-5\">sustainable, on-demand fashion production</cite> and <cite index=\"42-11,42-12\">eco-friendly textile production with wash fastness</cite>. While they emphasize durability in textile printing, their focus is on garment decoration, not outdoor graphics protection. There is no evidence of need for UV protection, graffiti resistance, or extreme outdoor weatherability\u2014the core pain points Tedlar solves. Their customers are apparel decorators and fashion brands, not sign manufacturers or architectural graphics companies."
+    },
+    "market_activity": {
+      "score": 6,
+      "rationale": "<cite index=\"33-1,34-5\">Kornit participated in PRINTING United Expo 2024 and 2025</cite> and <cite index=\"6-18,49-9\">exhibited at FESPA 2024</cite>, demonstrating active engagement in the printing industry. However, these are textile/garment printing shows, not signage or graphics-focused events like ISA. <cite index=\"42-14,42-15\">In 2023, they introduced the Apollo platform for high-volume garment decoration</cite>. While they show solid trade show presence, it's in adjacent markets rather than Tedlar's core signage and protective film verticals."
+    }
+  },
+  "qualification_summary": "Kornit Digital is a weak fit for Tedlar's ICP. While they are a sizable public company ($210M revenue, 715 employees) active in the printing industry, their core business is digital textile printing equipment for apparel and fashion\u2014fundamentally different from protective film overlaminates for outdoor signage and graphics. Their customer base consists of garment decorators and fashion brands, not sign manufacturers or vehicle wrap installers. The strategic alignment is minimal, as Kornit's solutions address on-demand apparel production rather than long-term outdoor durability, UV protection, or graffiti resistance.",
+  "icp_qualification": {
+    "weighted_score": 38.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 3,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 4,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 2,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 6,
+        "weight": 0.25
+      }
+    }
+  }
+}

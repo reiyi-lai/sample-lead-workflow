@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Scaling what's working with GF 108",
+    "body": "Hi [Name],\n\nReally enjoyed seeing the joint booth activation with our team at ISA in April\u2014the anti-graffiti challenges were a hit.\n\nGiven how well GF 108 has performed in your manufacturing operations, I wanted to explore whether expanding Tedlar into some of your other product lines might make sense from an operational standpoint. A few of our manufacturing partners have found that standardizing on Tedlar across more SKUs actually simplifies their converting processes and reduces warranty exposure.\n\nWould you be open to a brief conversation about how this might fit into your production planning? Happy to work around your schedule.\n\nBest,\n[Your name]",
+    "word_count": 102
+  },
+  "personalization_used": {
+    "hook": "Recent co-exhibition with DuPont Tedlar at ISA 2025 with joint anti-graffiti product demonstrations",
+    "value_prop_emphasized": "Operational efficiency through supplier consolidation and reduced warranty exposure"
+  }
+}

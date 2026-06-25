@@ -1,0 +1,44 @@
+{
+  "company_name": "Mimaki USA",
+  "website_url": "https://mimakiusa.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"3-1,8-1\">Mimaki USA is a pioneer in manufacturing digital plotters and large-format printers for sign graphics, textile and apparel, and the industrial and 3D markets.</cite> <cite index=\"2-5,2-7,2-12\">Their product portfolio includes eco-solvent printers for indoor and outdoor durable printing, vehicle wraps, and print-and-cut systems.</cite> This is a perfect direct match with Tedlar's target verticals of sign manufacturers, large-format graphics, vehicle wraps, and architectural graphics applications."
+    },
+    "size_revenue_fit": {
+      "score": 5,
+      "rationale": "<cite index=\"11-1\">Revenue estimates range from approximately $28M to $90M annually with 179 employees.</cite> <cite index=\"14-1\">LinkedIn lists company size as 51-200 employees.</cite> <cite index=\"33-5\">Mimaki USA has more than 160 employees throughout North America with training centers in Atlanta, Los Angeles, New Jersey, Texas, and Canada.</cite> The company falls below the preferred $50M+ revenue threshold, placing them in the mid-to-lower range of the ICP size criteria, though their national presence and multi-location operations suggest meaningful scale."
+    },
+    "strategic_relevance": {
+      "score": 10,
+      "rationale": "<cite index=\"32-13,32-14\">The Mimaki JV200 Series produces indoor and outdoor display graphics and vehicle wraps with the industry's best outdoor color durability.</cite> <cite index=\"41-1,41-2\">Eco-solvent inks are most commonly used for long-term outdoor applications like signage and vehicle wraps and are the most durable ink type.</cite> <cite index=\"50-4,50-5\">Their UV-curable inks are approved for the 3M\u2122 MCS\u2122 Warranty Program, providing non-prorated warranty coverage including protection against fading, cracking, peeling, and discoloration.</cite> Mimaki's explicit focus on outdoor durability, UV resistance, and long-term performance directly aligns with Tedlar's core value propositions for protective films."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "<cite index=\"31-1,31-2\">Mimaki exhibited at ISA 2026 in Orlando, FL at booth #2322.</cite> <cite index=\"32-1,32-11\">The JV200-130 model was displayed at ISA Sign Expo, April 23-25, 2025, in Las Vegas at booth #3536.</cite> <cite index=\"36-1,36-3\">They exhibited at the 2025 PRINTING United Expo and celebrated 25 years of service to print service providers in the Americas in 2024.</cite> <cite index=\"39-2,39-3\">Their JFX200-1213 EX UV-LED flatbed printer won a 2025 Pinnacle Award from PRINTING United Alliance.</cite> <cite index=\"33-6\">In June 2025, Mimaki USA opened a new corporate office in Flowery Branch, GA with expanded showroom and warehouse.</cite> The company demonstrates exceptionally high market activity with consistent presence at major industry tradeshows, recent product launches, industry awards, and significant facility expansion."
+    }
+  },
+  "qualification_summary": "Mimaki USA is an exceptionally strong prospect for Tedlar protective films. As a leading manufacturer of wide-format printers specializing in outdoor signage, vehicle wraps, and graphics applications, they directly serve Tedlar's target market. Their explicit emphasis on outdoor durability, UV resistance, and partnership with 3M's warranty program demonstrates acute awareness of the exact pain points Tedlar solves. While revenue is below the preferred $50M+ threshold, their active participation in ISA and PRINTING United tradeshows, recent product launches emphasizing outdoor durability, and nationwide presence with 160+ employees make them a highly qualified target worth prioritizing for Tedlar overlaminate solutions.",
+  "icp_qualification": {
+    "weighted_score": 87.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 5,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 10,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

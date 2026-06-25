@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "HP Latex ecosystem thought",
+    "body": "Hi [Name],\n\nCongrats on the Latex 700/800 and R530 launches\u2014the white ink capabilities look impressive.\n\nI've been thinking about how HP positions outdoor durability as a key differentiator. We work with print service providers who layer our protective film over printed graphics to significantly extend outdoor lifespan, which helps equipment manufacturers like HP substantiate their durability messaging with measurable outcomes.\n\nWould it make sense to explore what a finishing solution partnership might look like for HP's large-format portfolio? Could be relevant for your PRINTING United presence in October.\n\nHappy to share what we're seeing in the market.\n\nBest,\n[Your name]",
+    "word_count": 103
+  },
+  "personalization_used": {
+    "hook": "Recent launches of Latex 700/800 with white ink and Latex R530 hybrid printer target premium outdoor applications where graphic lifespan directly impacts customer ROI",
+    "value_prop_emphasized": "Extended outdoor lifespan through protective overlaminate that substantiates HP's durability marketing claims with measurable performance data"
+  }
+}

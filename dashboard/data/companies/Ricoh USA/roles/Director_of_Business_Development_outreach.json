@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Partnership idea for Ricoh's training programs",
+    "body": "Hi [Name],\n\nI saw that Ricoh offers hands-on training programs for sign and graphics professionals\u2014really smart way to add value beyond the equipment sale.\n\nWe work with DuPont Tedlar protective films, and I'm wondering if there's an opportunity to integrate overlaminate education into your existing training curriculum. A lot of your customers printing vehicle wraps and outdoor signage are dealing with UV damage and graffiti issues that affect their ROI on Ricoh equipment.\n\nWould you be open to a brief call to explore what a partnership might look like? Could be as simple as adding a module to your current programs.\n\nBest,\n[Your name]",
+    "word_count": 103
+  },
+  "personalization_used": {
+    "hook": "Ricoh already provides Sign & Graphics Professional Services including hands-on training programs",
+    "value_prop_emphasized": "UV protection and graffiti resistance that solves post-sale customer pain points affecting Ricoh equipment ROI"
+  }
+}

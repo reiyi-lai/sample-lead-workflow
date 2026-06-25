@@ -1,0 +1,44 @@
+{
+  "company_name": "Ultraflex Systems",
+  "website_url": "https://www.ultraflexx.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"7-2,7-3\">Ultraflex Systems is a leading innovator in developing and supplying high-performing, digitally printable substrates</cite> including <cite index=\"3-7,41-12\">soft signage, banners, floor and wall coverings, tradeshow graphics</cite>, and <cite index=\"10-3,44-11\">building wraps</cite>. Their product lines include <cite index=\"7-6\">Ultima\u00ae and Normandy\u00ae Frontlit, VorTex\u2122 Soft Signage, EcoVantage\u00ae PVC-Free Media, Floorscapes\u00ae, and Wallscapes\u2122 Plus wallcoverings</cite>, along with <cite index=\"7-7\">Frontlit, Backlit, Block-Out, Mesh, Magnetic Receptive Media</cite>. This is a perfect match for Tedlar's target verticals in signs, graphics, and architectural applications."
+    },
+    "size_revenue_fit": {
+      "score": 4,
+      "rationale": "<cite index=\"22-2\">Ultraflex Systems Incorporated annual revenue was $27.2 million in 2024</cite> with <cite index=\"24-9,24-10\">51-200 employees in the industry of Business Services, Commercial Printing</cite>. The company operates <cite index=\"4-1\">through five North American warehouses</cite> and has <cite index=\"23-18\">over 500,000 square feet of global stock holding space</cite>. While they have significant infrastructure and national distribution, their revenue falls below Tedlar's preferred $50M+ threshold for mid-market to enterprise customers."
+    },
+    "strategic_relevance": {
+      "score": 7,
+      "rationale": "Ultraflex emphasizes outdoor durability in several product lines, with materials for <cite index=\"54-1,54-3\">building wraps, fence graphics, barricade graphics, and indoor and outdoor applications</cite> and <cite index=\"60-2\">outdoor applications, including building graphics, display systems, and truck-side applications</cite>. Their products feature <cite index=\"58-3,58-6\">additional strength and stability under harsh weather conditions</cite>. However, typical outdoor lifespan for their banner materials is <cite index=\"51-1,51-13\">1-3 years outdoors</cite>, which is substantially shorter than Tedlar's 12-20+ year lifespan\u2014presenting a clear opportunity for product enhancement and competitive differentiation through longer-lasting overlaminate protection."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "Ultraflex is highly active in target trade shows, including <cite index=\"44-3,44-4\">exhibiting at Printing United Expo 2025 from October 22nd to October 24th, 2025 in Orlando, FL</cite> with a <cite index=\"41-7,41-8\">fully built 80s-inspired arcade environment</cite>. They exhibited at <cite index=\"33-22,33-23\">ISA International Sign Expo 2023 on April 12-14 in Las Vegas</cite> and have been featured at multiple PRINTING United events. Recent product launches include <cite index=\"41-9,11-3\">VorTex\u2122 Soft Signage line expansion with four new ReSource\u2122 products in November 2025</cite>. Their consistent presence at ISA and PRINTING United demonstrates strong engagement with Tedlar's target market."
+    }
+  },
+  "qualification_summary": "Ultraflex Systems is a strong ICP match as a leading supplier of digitally printable substrates for signs, graphics, building wraps, and outdoor applications with extensive product lines and active participation in key trade shows (ISA, PRINTING United). However, their $27.2M revenue places them in the lower mid-market segment below Tedlar's preferred $50M+ threshold. The strategic opportunity is compelling: their outdoor banner materials typically last 1-3 years versus Tedlar's 12-20+ year durability, presenting a clear value proposition for extending product lifespan, reducing customer complaints, and enabling premium positioning in their outdoor graphics portfolio.",
+  "icp_qualification": {
+    "weighted_score": 76.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 4,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 7,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

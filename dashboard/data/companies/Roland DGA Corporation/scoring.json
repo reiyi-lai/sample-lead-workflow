@@ -1,0 +1,44 @@
+{
+  "company_name": "Roland DGA Corporation",
+  "website_url": "https://www.rolanddga.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "Roland DGA is a direct match for Tedlar's ICP as the North American distribution arm for Roland DG, a worldwide leader in wide-format inkjet printers specifically for signs, vehicle graphics, vehicle wraps, durable outdoor signage, and architectural graphics. The company's product portfolio includes TrueVIS printers/cutters, VersaCAMM series, UV flatbeds, and integrated printer/cutters used by sign manufacturers, large-format print shops, and vehicle wrap installers\u2014all core Tedlar target verticals."
+    },
+    "size_revenue_fit": {
+      "score": 6,
+      "rationale": "Roland DGA reported revenue of $119.4M in 2024 with approximately 150-175 employees according to multiple sources. The parent company Roland DG Corporation (Japan) reported $373.8M revenue in 2023 with 1,361 employees globally. As a mid-market U.S. distributor serving North and South America, Roland DGA falls into the $100M+ revenue range but with a smaller employee footprint than typical enterprise profiles, reflecting its role as a distribution and service arm rather than a manufacturer."
+    },
+    "strategic_relevance": {
+      "score": 9,
+      "rationale": "Roland DGA's products directly address outdoor durability needs with TR2 eco-solvent inks certified for 3-4 years outdoor durability without lamination, and the company emphasizes scratch resistance, UV resistance, and long-lasting vehicle wrap graphics. The TrueVIS line is certified by 3M MCS Warranty and Avery Dennison ICS Performance Guarantee for outdoor durability. Roland's positioning around durable graphics, vehicle wraps, outdoor signage, and quality/reliability aligns perfectly with Tedlar's value propositions for UV protection, durability, and reduced maintenance costs."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "Roland DGA exhibits extremely high market activity, with confirmed booth presence at PRINTING United Expo 2024 (Las Vegas), 2025 (Orlando), ISA International Sign Expo 2024, and Impressions Expo 2026. The company conducted live vehicle wrap demonstrations (Tesla Cybertruck wrap at PRINTING United 2024, NASCAR wrap at ISA 2024) and launched multiple new products including the TrueVIS VG3/SG3 series (2022), EU-1000MF UV flatbed, TY-300 DTF printer (2026), and VersaOBJECT series, demonstrating continuous innovation and deep industry engagement."
+    }
+  },
+  "qualification_summary": "Roland DGA is an exceptionally strong prospect for Tedlar protective films. As the leading North American distributor of wide-format printers for durable graphics, signs, and vehicle wraps, Roland serves the exact customer base that would benefit from Tedlar's superior outdoor durability and UV protection. Their emphasis on certified outdoor durability (3-4 years), vehicle graphics, and scratch-resistant outputs positions them as an ideal partner or customer who could integrate Tedlar overlaminates into their media recommendations to enhance their customers' graphic longevity from 3-4 years to 12-20+ years.",
+  "icp_qualification": {
+    "weighted_score": 88.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 6,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 9,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}

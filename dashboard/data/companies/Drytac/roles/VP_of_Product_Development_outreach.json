@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Premium tier above Weathershield?",
+    "body": "Hi [Name],\n\nCongrats on the Pinnacle Award for your anti-graffiti film\u2014saw that at PRINTING United.\n\nI'm reaching out because we're seeing more architectural and fleet customers asking for warranties beyond what PVC chemistry can deliver. Our PVF overlaminates are helping similar companies offer a premium tier for projects that need that kind of extended outdoor performance.\n\nGiven Drytac's focus on innovation, would it make sense to have a quick technical conversation about how this could fit above your Weathershield line?\n\nHappy to send over some technical specs first if that's easier.\n\nBest,\n[Your name]",
+    "word_count": 98
+  },
+  "personalization_used": {
+    "hook": "Recent PRINTING United Pinnacle Award for anti-graffiti innovation and focus on solving customer durability challenges",
+    "value_prop_emphasized": "Extended outdoor performance beyond PVC limitations enabling premium product tier expansion"
+  }
+}

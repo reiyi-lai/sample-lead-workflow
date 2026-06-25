@@ -1,0 +1,44 @@
+{
+  "company_name": "OmniPrint International",
+  "website_url": "https://www.omniprint.com",
+  "scores": {
+    "industry_fit": {
+      "score": 2,
+      "rationale": "OmniPrint International specializes in Direct-to-Garment (DTG) and Direct-to-Film (DTF) printers for apparel decoration, not large-format graphics, signage, vehicle wraps, or architectural applications. Their products include the Freejet 330TX DTG printer, OmniDTF Plus printer, pretreatment machines, and heat presses for custom t-shirt and garment printing businesses. This is a completely different vertical from Tedlar's target markets of sign manufacturing, large-format graphics, vehicle wraps, and architectural panels."
+    },
+    "size_revenue_fit": {
+      "score": 3,
+      "rationale": "Multiple sources report annual revenue of approximately $3.8M-$8M with 30-48 employees, well below the preferred $50M+ threshold. The company was recognized on the Inc. 5000 list in 2019-2021 with 152% three-year growth, and has offices in California with additional locations in Korea and Mexico, but remains a small manufacturing company founded in 2003."
+    },
+    "strategic_relevance": {
+      "score": 1,
+      "rationale": "OmniPrint's value proposition centers on garment decoration, DTG/DTF printing quality, and apparel production efficiency\u2014not outdoor durability, UV resistance, or weatherability. Their customers include t-shirt businesses, custom apparel shops, and promotional product companies. There is no alignment with Tedlar's core value propositions of extreme outdoor durability, graffiti resistance, or long-term weather protection for graphics and signage applications."
+    },
+    "market_activity": {
+      "score": 6,
+      "rationale": "OmniPrint exhibits actively at industry trade shows including ISA Sign Expo (April 2024), Impressions Expo Atlantic City (2023-2024), PRINTING United (2019, 2022), Graphics Pro Expo (2023), and FESPA (2019). They launched the OmniDTF Plus 36-inch DTF printer in July 2024 and sponsor the Apparel Zone Caf\u00e9 at PRINTING United. However, their presence is focused on apparel decoration segments, not graphics/signage markets relevant to Tedlar."
+    }
+  },
+  "qualification_summary": "OmniPrint International is NOT a qualified prospect for DuPont Tedlar protective films. The company manufactures DTG and DTF printers exclusively for the garment decoration and custom apparel industry\u2014a completely different market vertical from Tedlar's target segments of signage, large-format graphics, vehicle wraps, and architectural applications. Their small size ($3.8M-$8M revenue, 30-48 employees) and focus on textile printing equipment rather than durable outdoor graphics makes them irrelevant for Tedlar's value proposition.",
+  "icp_qualification": {
+    "weighted_score": 30.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 2,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 3,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 1,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 6,
+        "weight": 0.25
+      }
+    }
+  }
+}

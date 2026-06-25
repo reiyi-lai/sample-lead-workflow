@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Thought for PRINTING United 2025",
+    "body": "Hi [Name],\n\nSaw Roland is exhibiting at PRINTING United 2025\u2014your demos at past shows (like the Cybertruck wrap) always stand out.\n\nWe work with print companies looking to differentiate their outdoor graphics offerings. One thing that's been resonating: overlaminates that extend graphic lifespan well beyond typical outdoor durability specs. Could be an interesting angle for your booth messaging this year.\n\nHappy to share what we're seeing work for similar exhibitors if you're open to a quick conversation.\n\nBest,\n[Your name]",
+    "word_count": 79
+  },
+  "personalization_used": {
+    "hook": "Roland DGA is exhibiting at PRINTING United Expo 2025 (Orlando) and has a history of impactful live demonstrations like the Tesla Cybertruck wrap",
+    "value_prop_emphasized": "Extreme durability and trade show differentiation opportunity"
+  }
+}

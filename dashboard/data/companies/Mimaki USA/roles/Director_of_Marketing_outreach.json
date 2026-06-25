@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Showroom idea for Flowery Branch facility",
+    "body": "Hi [Name],\n\nCongrats on the new Flowery Branch showroom\u2014expanding the customer experience space is a smart move, especially with how active you've been at ISA and PRINTING United.\n\nI wanted to reach out because we work with printer manufacturers looking to demonstrate outdoor durability in a more tangible way. Our protective film has a unique feature: spray paint and permanent marker wipe clean in seconds. It's become a powerful demo piece for showrooms and trade show booths.\n\nGiven Mimaki's focus on outdoor graphics and vehicle wraps, this might be worth exploring for your facility. Would you be open to a quick call to discuss how others are using this as a differentiation tool?\n\nBest,\n[Your name]",
+    "word_count": 118
+  },
+  "personalization_used": {
+    "hook": "New Flowery Branch showroom expansion and need for demonstration content",
+    "value_prop_emphasized": "Graffiti resistance as experiential proof point for trade shows and showroom demonstrations"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Ultra-premium positioning for architectural",
+    "body": "Hi [Name],\n\nCongrats on the DPD fleet project\u2014that scale of execution is impressive.\n\nI'm reaching out because we're seeing more architectural and transit RFPs requiring 15-20 year warranties, and I thought you might be running into similar spec challenges. We work with companies looking to differentiate in that ultra-premium segment, particularly around graffiti resistance for high-visibility municipal installations.\n\nWould you be open to a brief call to discuss how some teams are approaching this? I have a few case studies that might be relevant to your positioning strategy.\n\nBest,\n[Your name]",
+    "word_count": 95
+  },
+  "personalization_used": {
+    "hook": "The 30,000-vehicle DPD fleet project and the performance gap between current products and emerging 15-20 year specification requirements",
+    "value_prop_emphasized": "Graffiti resistance and extended warranty capabilities for premium architectural and transit segments"
+  }
+}

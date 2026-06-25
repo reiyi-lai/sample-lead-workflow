@@ -1,0 +1,44 @@
+{
+  "company_name": "Fujifilm Holdings Corporation",
+  "website_url": "https://www.fujifilm.com",
+  "scores": {
+    "industry_fit": {
+      "score": 4,
+      "rationale": "Fujifilm manufactures wide-format inkjet printers (Acuity Ultra R2, Acuity Prime series) and inks for signage, banners, and displays, serving the graphics industry but as an equipment supplier rather than a sign fabricator or converter. They produce printable media and substrates, not protective overlaminates. This positions them adjacent to but not directly within Tedlar's target customer base of fabricators who apply protective films to finished graphics."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "Fujifilm is a global enterprise with $21.0-21.5 billion in annual revenue (FY2025), 72,593 employees worldwide, and operations across Americas, Europe, Asia-Pacific. This significantly exceeds the $50M+ revenue threshold. The company has 280+ subsidiaries globally and maintains major manufacturing and R&D facilities in multiple countries."
+    },
+    "strategic_relevance": {
+      "score": 3,
+      "rationale": "While Fujifilm's wide-format printers produce outdoor signage and banners that require durability, the company manufactures printing equipment and inks rather than end-use graphics products. Their customers print graphics that may need protective overlaminates, but Fujifilm itself does not fabricate signs or apply protective films. The strategic fit is indirect\u2014they enable the industry but don't face the durability, UV protection, or graffiti resistance challenges that Tedlar solves for fabricators."
+    },
+    "market_activity": {
+      "score": 9,
+      "rationale": "Fujifilm exhibits consistently at major industry events including ISA International Sign Expo (booth #2809 in 2024, showcasing Acuity Prime Hybrid and other wide-format presses), PRINTING United Expo 2025 (booth #3021), and FESPA Global Print Expo 2025. The company launched new wide-format products recently and maintains active engagement with the graphics and signage market through demonstrations, partnerships, and product innovation."
+    }
+  },
+  "qualification_summary": "Fujifilm is a poor fit for Tedlar's protective film products despite strong market presence and size. As a printer/equipment manufacturer selling wide-format presses, inks, and printable media to the graphics industry, Fujifilm operates upstream in the value chain\u2014they supply the tools that create graphics rather than fabricate finished signage or wraps that would benefit from Tedlar overlaminates. Their customers (sign shops, print providers) are better prospects than Fujifilm itself.",
+  "icp_qualification": {
+    "weighted_score": 65.5,
+    "category_scores": {
+      "industry_fit": {
+        "score": 4,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 3,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 9,
+        "weight": 0.25
+      }
+    }
+  }
+}

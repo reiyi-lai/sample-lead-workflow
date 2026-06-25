@@ -1,0 +1,12 @@
+{
+  "channel": "email",
+  "message": {
+    "subject": "Extending Weathershield's premium positioning",
+    "body": "Hi [Name],\n\nCongratulations on the Pinnacle Award for your anti-graffiti film\u2014that's impressive recognition.\n\nI'm reaching out because we work with protective film manufacturers who are looking to expand into ultra-premium segments where customers need extended outdoor performance guarantees. Given Weathershield's strong market position, I thought you might be interested in how some of your peers are using our overlaminate to compete in higher-value architectural and fleet projects that demand longer lifecycles.\n\nWould it be helpful if I sent over a brief overview of how this works? Happy to keep it focused on what's relevant for your distributor network.\n\nBest,\n[Your name]",
+    "word_count": 105
+  },
+  "personalization_used": {
+    "hook": "Drytac's recent Pinnacle Product Award for anti-graffiti technology demonstrates innovation momentum",
+    "value_prop_emphasized": "Extended outdoor performance enabling expansion into ultra-premium architectural and fleet segments that Drytac's current 5-7 year products cannot address"
+  }
+}

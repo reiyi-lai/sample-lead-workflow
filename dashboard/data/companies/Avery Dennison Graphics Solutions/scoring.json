@@ -1,0 +1,44 @@
+{
+  "company_name": "Avery Dennison Graphics Solutions",
+  "website_url": "https://graphics.averydennison.com",
+  "scores": {
+    "industry_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"1-1,4-1\">Avery Dennison Graphics Solutions manufactures vehicle wrapping films in over 500 colors, vinyl graphic films, automotive wrapping films, paint protection film, and architectural and automotive window film</cite>. <cite index=\"21-3,21-4\">The company produces vehicle wrapping films with features such as Easy Apply RS adhesive technology for faster and easier installation with reliable durability</cite>. This is a perfect direct match for Tedlar's ICP targeting sign manufacturers, large-format graphics, vehicle wraps, architectural panels, and protective films."
+    },
+    "size_revenue_fit": {
+      "score": 10,
+      "rationale": "<cite index=\"13-1,13-12\">Avery Dennison has 35,000 total employees with trailing 12-month revenue of $8.77B as of September 2025</cite>. <cite index=\"3-2,47-3\">The company operates in over 50 countries with approximately 35,000 employees worldwide, operating in over 180 locations</cite>. This substantially exceeds Tedlar's preferred size threshold of $50M+ revenue and represents a Fortune 500 global enterprise with massive scale."
+    },
+    "strategic_relevance": {
+      "score": 8,
+      "rationale": "<cite index=\"21-4,26-3,26-4\">Avery Dennison vehicle wrapping films feature reliable durability, with Supreme Wrapping Film using multi-layer cast vinyl technology for excellent dimensional stability and long-term outdoor performance with superior resistance to fading, cracking, and peeling</cite>. <cite index=\"24-2,24-3,26-23\">Colored vinyl applications can last up to five years without fading, while black or white wraps can retain color for up to 12 years, with films lasting 5-10+ years depending on the series</cite>. While Avery Dennison manufactures its own protective films rather than purchasing overlaminates, their focus on outdoor durability, UV protection, and long lifespan aligns well with Tedlar's value propositions, though as a materials manufacturer they are less likely to be a direct buyer."
+    },
+    "market_activity": {
+      "score": 10,
+      "rationale": "<cite index=\"34-1,34-3\">Avery Dennison exhibited at ISA International Sign Expo 2025 in booth #3837 from April 23-25 to celebrate 90 years of industry-leading vinyl graphic films</cite>. <cite index=\"32-1,35-1,35-6\">The company exhibited at FESPA Middle East 2024 alongside 3M, Brother, EPSON, HP and Mutoh, showcasing sign vinyl, adhesives and wrapping films</cite>. <cite index=\"31-9,31-10\">Avery Dennison completed a large-scale wrap project for DPD's European fleet, wrapping almost 30,000 vehicles and 4,500 trailers over three years</cite>. The company demonstrates exceptional market activity with major trade show presence and high-profile fleet projects."
+    }
+  },
+  "qualification_summary": "Avery Dennison Graphics Solutions is a top-tier prospect representing a Fortune 500 global materials manufacturer ($8.77B revenue, 35,000 employees) with perfect alignment in industry verticals\u2014producing vehicle wraps, architectural films, signage materials, and paint protection films. While they are a direct competitor to Tedlar as they manufacture their own protective film solutions rather than a potential customer, understanding their product positioning, durability claims (5-12 year outdoor life), and dominant market presence at ISA and FESPA events provides critical competitive intelligence for Tedlar's go-to-market strategy in the graphics and signage space.",
+  "icp_qualification": {
+    "weighted_score": 96.0,
+    "category_scores": {
+      "industry_fit": {
+        "score": 10,
+        "weight": 0.3
+      },
+      "size_revenue_fit": {
+        "score": 10,
+        "weight": 0.25
+      },
+      "strategic_relevance": {
+        "score": 8,
+        "weight": 0.2
+      },
+      "market_activity": {
+        "score": 10,
+        "weight": 0.25
+      }
+    }
+  }
+}
