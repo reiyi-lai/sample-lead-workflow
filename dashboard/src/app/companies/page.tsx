@@ -11,10 +11,7 @@ export default function CompaniesPage() {
 
   return (
     <div className="p-8">
-      {/* Stats Cards */}
       <StatsCards stats={stats} />
-
-      {/* Companies Section */}
       <div className="mt-8">
         <CompanyList companies={companies} events={events} />
       </div>

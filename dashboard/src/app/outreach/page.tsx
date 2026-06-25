@@ -8,7 +8,7 @@ export default function OutreachPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold text-white mb-6">Outreach</h1>
+      <h1 className="text-xl font-semibold text-neutral-950 mb-6">Outreach</h1>
       <OutreachList contacts={allOutreach} />
     </div>
   );
