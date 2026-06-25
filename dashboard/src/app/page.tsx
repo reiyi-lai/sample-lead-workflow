@@ -8,7 +8,7 @@ export default async function EventsPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold text-white mb-1">Events</h1>
+      <h1 className="text-xl font-semibold text-neutral-950 mb-6">Events</h1>
       <EventsList events={events} />
     </div>
   );
