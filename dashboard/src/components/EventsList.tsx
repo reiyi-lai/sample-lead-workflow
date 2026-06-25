@@ -403,8 +403,8 @@ export default function EventsList({ events }: EventsListProps) {
                           </div>
                         )}
 
-                        <div>
-                          <h4 className="text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wide">Event Information</h4>
+                        <div className="border border-neutral-200 rounded-lg p-4">
+                          <h4 className="text-xs font-medium text-blue-700 mb-3 uppercase tracking-wide">Event Information</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {event.dates && (
                               <div>
