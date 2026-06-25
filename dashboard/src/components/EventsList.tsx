@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { Company, EventScores } from "@/lib/data";
 import EventsFilters from "./EventsFilters";
 import { isEventInDateRange } from "@/lib/dateUtils";
+import { ChevronUp, ChevronDown, ExternalLink } from "lucide-react";
 
 interface EventWithCompanies {
   event_name: string;
@@ -35,26 +36,12 @@ interface DateRange {
 }
 
 export default function EventsList({ events }: EventsListProps) {
-  // Client-side debug logging
-  console.log('[CLIENT DEBUG] EventsList received events:', events.length);
-  const sffs = events.find(e => e.event_name?.includes('Summer Fancy Food Show'));
-  if (sffs) {
-    console.log('[CLIENT DEBUG] Summer Fancy Food Show data:', {
-      name: sffs.event_name,
-      overall_score: sffs.overall_score,
-      overall_score_type: typeof sffs.overall_score,
-      null_check: sffs.overall_score != null,
-      hasScores: !!sffs.scores
-    });
-  }
-
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"details" | "scoring" | "companies">("details");
   const [dateRange, setDateRange] = useState<DateRange | null>(null);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"score" | "date">("score");
 
-  // Get available industries for filter dropdown
   const availableIndustries = useMemo(() => {
     const industries = new Set(
       events
@@ -65,11 +52,9 @@ export default function EventsList({ events }: EventsListProps) {
     return Array.from(industries).sort();
   }, [events]);
 
-  // Filter and sort events
   const filteredAndSortedEvents = useMemo(() => {
     let filtered = [...events];
 
-    // Apply date range filter
     if (dateRange && dateRange.start && dateRange.end) {
       filtered = filtered.filter(event => {
         if (!event.dates) return false;
@@ -77,58 +62,36 @@ export default function EventsList({ events }: EventsListProps) {
       });
     }
 
-    // Apply industry filter
     if (selectedIndustry) {
       filtered = filtered.filter(event => event.industry_vertical === selectedIndustry);
     }
 
-    // Sort events
     return filtered.sort((a, b) => {
       if (sortBy === "score") {
         return (b.overall_score || 0) - (a.overall_score || 0);
       } else if (sortBy === "date") {
-        // Sort by date (upcoming first)
         if (!a.dates && !b.dates) return 0;
         if (!a.dates) return 1;
         if (!b.dates) return -1;
 
-        // Parse dates more carefully - handle "February 2-4, 2026" format
         const parseDateString = (dateStr: string) => {
-          // Handle formats like "February 2-4, 2026" or "March 1-4, 2026"
           const parts = dateStr.split(', ');
           if (parts.length === 2) {
             const year = parts[1];
             const monthDay = parts[0];
             const monthMatch = monthDay.match(/^(\w+)\s+(\d+)/);
             if (monthMatch) {
-              const month = monthMatch[1];
-              const day = monthMatch[2];
-              return new Date(`${month} ${day}, ${year}`);
+              return new Date(`${monthMatch[1]} ${monthMatch[2]}, ${year}`);
             }
           }
-          // Fallback to original parsing
           return new Date(dateStr.split(' - ')[0] || dateStr);
         };
 
-        const dateA = parseDateString(a.dates);
-        const dateB = parseDateString(b.dates);
-        return dateA.getTime() - dateB.getTime();
+        return parseDateString(a.dates).getTime() - parseDateString(b.dates).getTime();
       }
       return 0;
     });
   }, [events, dateRange, selectedIndustry, sortBy]);
-
-  const getIndustryBadgeColor = (industry?: string) => {
-    switch (industry) {
-      case "distribution": return "bg-blue-100 text-blue-800";
-      case "construction_supply": return "bg-orange-100 text-orange-800";
-      case "industrial_parts": return "bg-gray-100 text-gray-800";
-      case "field_service": return "bg-purple-100 text-purple-800";
-      case "pool_spa": return "bg-cyan-100 text-cyan-800";
-      case "others": return "bg-green-100 text-green-800";
-      default: return "bg-gray-100 text-gray-600";
-    }
-  };
 
   const formatIndustryLabel = (industry?: string) => {
     if (!industry) return "General";
@@ -136,12 +99,30 @@ export default function EventsList({ events }: EventsListProps) {
     return industry.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase());
   };
 
+  const getIndustryBadgeColor = (industry?: string) => {
+    switch (industry) {
+      case "distribution": return "border-blue-300 text-blue-700 bg-blue-50";
+      case "construction_supply": return "border-amber-300 text-amber-700 bg-amber-50";
+      case "industrial_parts": return "border-slate-300 text-slate-700 bg-slate-50";
+      case "field_service": return "border-violet-300 text-violet-700 bg-violet-50";
+      case "pool_spa": return "border-cyan-300 text-cyan-700 bg-cyan-50";
+      case "others": return "border-emerald-300 text-emerald-700 bg-emerald-50";
+      default: return "border-neutral-200 text-neutral-500 bg-neutral-50";
+    }
+  };
+
+  const getScoreColor = (score: number) => {
+    if (score >= 8) return "bg-emerald-100 text-emerald-800";
+    if (score >= 6) return "bg-amber-100 text-amber-800";
+    return "bg-red-100 text-red-800";
+  };
+
   const renderScoringBreakdown = (scores?: EventScores) => {
     if (!scores) {
       return (
-        <div className="text-center py-8 text-gray-500">
+        <div className="text-center py-8 text-neutral-500">
           <p>Scoring breakdown not available yet.</p>
-          <p className="text-sm">Run the event scoring pipeline to see detailed scores and rationales.</p>
+          <p className="text-sm mt-1">Run the event scoring pipeline to see detailed scores.</p>
         </div>
       );
     }
@@ -154,30 +135,25 @@ export default function EventsList({ events }: EventsListProps) {
     ];
 
     return (
-      <div className="space-y-4">
+      <div className="space-y-3">
         {scoreCategories.map(({ key, label, weight }) => {
           const scoreData = scores[key as keyof EventScores];
           if (!scoreData) return null;
 
           const score = scoreData.score;
-          const getScoreColor = (s: number) => {
-            if (s >= 8) return "text-green-600 bg-green-50 border-green-200";
-            if (s >= 6) return "text-yellow-600 bg-yellow-50 border-yellow-200";
-            return "text-red-600 bg-red-50 border-red-200";
-          };
 
           return (
-            <div key={key} className="border border-gray-200 rounded-lg p-4">
+            <div key={key} className="border border-neutral-200 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
-                <h4 className="font-medium text-gray-900">{label}</h4>
+                <h4 className="text-sm font-medium text-neutral-950">{label}</h4>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">{weight}</span>
-                  <span className={`px-2 py-1 rounded text-sm font-medium border ${getScoreColor(score)}`}>
+                  <span className="text-[10px] text-neutral-500 uppercase tracking-wide">{weight}</span>
+                  <span className={`px-2 py-0.5 rounded text-sm font-semibold ${getScoreColor(score)}`}>
                     {score}/10
                   </span>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed">{scoreData.rationale}</p>
+              <p className="text-sm text-neutral-500 leading-relaxed">{scoreData.rationale}</p>
             </div>
           );
         })}
@@ -187,45 +163,41 @@ export default function EventsList({ events }: EventsListProps) {
 
   return (
     <div>
-      {/* Filters */}
       <EventsFilters
         onDateRangeChange={setDateRange}
         onIndustryChange={setSelectedIndustry}
         availableIndustries={availableIndustries}
       />
 
-      {/* Sort Section */}
       <div className="flex items-center gap-3 py-2 mb-4">
-        <h3 className="font-semibold text-lg text-white">Sort:</h3>
+        <span className="text-xs text-neutral-500 uppercase tracking-wide">Sort by</span>
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as "score" | "date")}
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
+          className="px-3 py-1.5 border border-neutral-200 rounded-md text-sm text-neutral-900 bg-white focus:outline-none focus:ring-1 focus:ring-neutral-500"
         >
-          <option value="score">Score (High to Low)</option>
-          <option value="date">Date (Upcoming First)</option>
+          <option value="score">Score</option>
+          <option value="date">Date</option>
         </select>
       </div>
 
-      {/* Results Summary */}
       {(dateRange || selectedIndustry) && (
-        <div className="mb-4 text-sm text-gray-600">
-          Showing {filteredAndSortedEvents.length} of {events.length} events
+        <div className="mb-4 text-xs text-neutral-500">
+          {filteredAndSortedEvents.length} of {events.length} events
         </div>
       )}
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {filteredAndSortedEvents.map((event) => {
           const isExpanded = expandedEvent === event.event_name;
 
           return (
             <div
               key={event.event_url}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
+              className="border border-neutral-200 rounded-2xl overflow-hidden"
             >
-              {/* Enhanced Event Header */}
               <div
-                className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                className="p-5 cursor-pointer hover:bg-neutral-50 transition-colors"
                 onClick={() => {
                   setExpandedEvent(isExpanded ? null : event.event_name);
                   if (!isExpanded) setActiveTab("details");
@@ -233,164 +205,124 @@ export default function EventsList({ events }: EventsListProps) {
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-2.5 mb-2">
                       {event.overall_score != null && (
-                        <span
-                          className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                            event.overall_score >= 8
-                              ? "bg-green-100 text-green-800"
-                              : event.overall_score >= 6
-                              ? "bg-yellow-100 text-yellow-800"
-                              : "bg-red-100 text-red-800"
-                          }`}
-                        >
+                        <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${getScoreColor(event.overall_score)}`}>
                           {event.overall_score.toFixed(1)}
                         </span>
                       )}
                       {event.industry_vertical && (
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${getIndustryBadgeColor(event.industry_vertical)}`}>
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-medium uppercase tracking-wide border ${getIndustryBadgeColor(event.industry_vertical)}`}>
                           {formatIndustryLabel(event.industry_vertical)}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-base font-semibold text-neutral-950 mb-1.5">
                       {event.event_name}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
-                      {event.dates && (
-                        <div className="flex items-center gap-2">
-                          <span className="text-gray-400">📅</span>
-                          <span>{event.dates}</span>
-                        </div>
-                      )}
-                      <div className="flex items-center gap-2">
-                        <span className="text-gray-400">🏢</span>
-                        <span>{event.companies.length} companies</span>
-                      </div>
+                    <div className="flex items-center gap-4 text-xs text-neutral-500">
+                      {event.dates && <span>{event.dates}</span>}
+                      <span>{event.companies.length} companies</span>
                     </div>
                   </div>
-                  <button className="ml-4 text-gray-400 hover:text-gray-600 transition-colors">
-                    {isExpanded ? "▲" : "▼"}
+                  <button className="ml-4 text-neutral-300 hover:text-neutral-600 transition-colors">
+                    {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </button>
                 </div>
               </div>
 
-              {/* Expanded Content */}
               {isExpanded && (
-                <div className="border-t border-gray-200">
-                  {/* Tab Navigation */}
-                  <div className="flex border-b border-gray-200 bg-gray-50">
-                    <button
-                      onClick={() => setActiveTab("details")}
-                      className={`px-6 py-3 text-sm font-medium transition-colors ${
-                        activeTab === "details"
-                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
-                          : "text-gray-600 hover:text-gray-800"
-                      }`}
-                    >
-                      Event Details
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("scoring")}
-                      className={`px-6 py-3 text-sm font-medium transition-colors ${
-                        activeTab === "scoring"
-                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
-                          : "text-gray-600 hover:text-gray-800"
-                      }`}
-                    >
-                      Scoring Breakdown
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("companies")}
-                      className={`px-6 py-3 text-sm font-medium transition-colors ${
-                        activeTab === "companies"
-                          ? "bg-white text-blue-600 border-b-2 border-blue-600"
-                          : "text-gray-600 hover:text-gray-800"
-                      }`}
-                    >
-                      Companies ({event.companies.length})
-                    </button>
+                <div className="border-t border-neutral-200">
+                  <div className="flex border-b border-neutral-200">
+                    {(["details", "scoring", "companies"] as const).map((tab) => (
+                      <button
+                        key={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={`px-5 py-2.5 text-xs font-medium uppercase tracking-wide transition-colors ${
+                          activeTab === tab
+                            ? "text-neutral-950 border-b-2 border-neutral-950"
+                            : "text-neutral-500 hover:text-neutral-600"
+                        }`}
+                      >
+                        {tab === "companies" ? `Companies (${event.companies.length})` : tab === "details" ? "Details" : "Scoring"}
+                      </button>
+                    ))}
                   </div>
 
-                  {/* Tab Content */}
-                  <div className="p-6">
+                  <div className="p-5">
                     {activeTab === "details" && (
-                      <div className="space-y-6">
-                        {/* Sales Brief */}
+                      <div className="space-y-5">
                         {event.sales_brief && (
-                          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                            <h4 className="font-medium text-blue-900 mb-3 flex items-center">
-                              <span className="mr-2">🎯</span>
-                              Sales Brief
-                            </h4>
-                            <p className="text-blue-800 leading-relaxed">{event.sales_brief}</p>
+                          <div className="border border-neutral-200 rounded-lg p-4">
+                            <h4 className="text-xs font-medium text-neutral-500 mb-2 uppercase tracking-wide">Sales Brief</h4>
+                            <p className="text-sm text-neutral-700 leading-relaxed">{event.sales_brief}</p>
                           </div>
                         )}
 
-                        {/* All Event Information */}
-                        <div className="bg-gray-50 rounded-lg p-4">
-                          <h4 className="font-medium text-gray-900 mb-4">Event Information</h4>
+                        <div>
+                          <h4 className="text-xs font-medium text-neutral-500 mb-3 uppercase tracking-wide">Event Information</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {event.dates && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Dates</span>
-                                <p className="text-gray-900">{event.dates}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Dates</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.dates}</p>
                               </div>
                             )}
                             {event.location && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Location</span>
-                                <p className="text-gray-900">{event.location}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Location</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.location}</p>
                               </div>
                             )}
                             {event.venue && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Venue</span>
-                                <p className="text-gray-900">{event.venue}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Venue</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.venue}</p>
                               </div>
                             )}
                             {event.cost && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Cost</span>
-                                <p className="text-gray-900">{event.cost}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Cost</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.cost}</p>
                               </div>
                             )}
                             {event.event_url && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Website</span>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Website</span>
                                 <br />
                                 <a
                                   href={event.event_url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="text-blue-600 hover:text-blue-800 underline break-all"
+                                  className="text-sm text-neutral-900 hover:text-neutral-600 underline underline-offset-2 break-all inline-flex items-center gap-1"
                                 >
-                                  {event.event_url}
+                                  {event.event_url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}
+                                  <ExternalLink size={12} />
                                 </a>
                               </div>
                             )}
                             {event.industry_vertical && (
                               <div>
-                                <span className="text-sm font-medium text-gray-500">Industry</span>
-                                <p className="text-gray-900">{formatIndustryLabel(event.industry_vertical)}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Industry</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{formatIndustryLabel(event.industry_vertical)}</p>
                               </div>
                             )}
                             {event.description && (
                               <div className="col-span-full">
-                                <span className="text-sm font-medium text-gray-500">Description</span>
-                                <p className="text-gray-900 leading-relaxed">{event.description}</p>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Description</span>
+                                <p className="text-sm text-neutral-700 leading-relaxed mt-0.5">{event.description}</p>
                               </div>
                             )}
                             {event.exhibitor_mix && (
-                              <div className="col-span-full md:col-span-1">
-                                <span className="text-sm font-medium text-gray-500">Exhibitor Mix</span>
-                                <p className="text-gray-900">{event.exhibitor_mix}</p>
+                              <div>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Exhibitor Mix</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.exhibitor_mix}</p>
                               </div>
                             )}
                             {event.audience_mix && (
-                              <div className="col-span-full md:col-span-1">
-                                <span className="text-sm font-medium text-gray-500">Audience Mix</span>
-                                <p className="text-gray-900">{event.audience_mix}</p>
+                              <div>
+                                <span className="text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Audience Mix</span>
+                                <p className="text-sm text-neutral-900 mt-0.5">{event.audience_mix}</p>
                               </div>
                             )}
                           </div>
@@ -405,12 +337,12 @@ export default function EventsList({ events }: EventsListProps) {
                         {event.companies.length > 0 ? (
                           <table className="w-full">
                             <thead>
-                              <tr className="border-b border-gray-200">
-                                <th className="text-left py-3 text-sm font-medium text-gray-500">Company</th>
-                                <th className="text-left py-3 text-sm font-medium text-gray-500">Type</th>
+                              <tr className="border-b border-neutral-200">
+                                <th className="text-left py-2.5 text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Company</th>
+                                <th className="text-left py-2.5 text-[10px] font-medium text-neutral-500 uppercase tracking-wide">Type</th>
                               </tr>
                             </thead>
-                            <tbody className="divide-y divide-gray-100">
+                            <tbody className="divide-y divide-neutral-100">
                               {event.companies.map((company, index) => {
                                 const attendanceType = company.confidence === 'confirmed'
                                   ? 'Confirmed'
@@ -419,20 +351,18 @@ export default function EventsList({ events }: EventsListProps) {
                                   : company.attendance_type || 'Unknown';
 
                                 return (
-                                  <tr key={index} className="hover:bg-gray-50">
-                                    <td className="py-3 text-sm text-gray-900">
+                                  <tr key={index} className="hover:bg-neutral-50">
+                                    <td className="py-2.5 text-sm text-neutral-900">
                                       {company.company_name}
                                     </td>
-                                    <td className="py-3">
-                                      <span
-                                        className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                          attendanceType === "Confirmed"
-                                            ? "bg-green-100 text-green-700"
-                                            : attendanceType === "Likely"
-                                            ? "bg-blue-100 text-blue-700"
-                                            : "bg-gray-100 text-gray-600"
-                                        }`}
-                                      >
+                                    <td className="py-2.5">
+                                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wide ${
+                                        attendanceType === "Confirmed"
+                                          ? "bg-emerald-100 text-emerald-700"
+                                          : attendanceType === "Likely"
+                                          ? "bg-blue-100 text-blue-700"
+                                          : "bg-neutral-100 text-neutral-500"
+                                      }`}>
                                         {attendanceType}
                                       </span>
                                     </td>
@@ -442,7 +372,7 @@ export default function EventsList({ events }: EventsListProps) {
                             </tbody>
                           </table>
                         ) : (
-                          <div className="text-center py-8 text-gray-500">
+                          <div className="text-center py-8 text-neutral-500 text-sm">
                             No companies discovered for this event yet.
                           </div>
                         )}
@@ -456,7 +386,7 @@ export default function EventsList({ events }: EventsListProps) {
         })}
 
         {filteredAndSortedEvents.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-12 text-neutral-500 text-sm">
             {events.length === 0
               ? "No events found."
               : "No events match the selected filters."

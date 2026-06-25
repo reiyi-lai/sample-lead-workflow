@@ -65,59 +65,52 @@ export default function OutreachList({ contacts }: OutreachListProps) {
 
   return (
     <div>
-      {/* Table */}
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div className="border border-neutral-200 rounded-lg overflow-hidden">
         {contactsWithOutreach.length === 0 ? (
-          <div className="p-12 text-center text-gray-500">
+          <div className="p-12 text-center text-neutral-500 text-sm">
             No outreach messages found.
           </div>
         ) : (
           <table className="w-full">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="border-b border-neutral-200">
               <tr>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                <th className="px-4 py-3 text-left text-[10px] font-medium text-neutral-500 uppercase tracking-wide">
                   Role / Contact
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                <th className="px-4 py-3 text-left text-[10px] font-medium text-neutral-500 uppercase tracking-wide">
                   Company
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
+                <th className="px-4 py-3 text-left text-[10px] font-medium text-neutral-500 uppercase tracking-wide">
                   Channel
                 </th>
-                <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wide">
+                <th className="px-4 py-3 text-right text-[10px] font-medium text-neutral-500 uppercase tracking-wide">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-neutral-100">
               {contactsWithOutreach.map((contact, index) => {
                 const placeholder = isPlaceholder(contact.name);
 
                 return (
-                  <tr key={`${contact.company}-${contact.title}-${index}`} className="hover:bg-gray-50">
-                    <td className="px-4 py-4">
+                  <tr key={`${contact.company}-${contact.title}-${index}`} className="hover:bg-neutral-50">
+                    <td className="px-4 py-3.5">
                       <div>
-                        <p className="font-medium text-gray-900">{contact.title}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm font-medium text-neutral-900">{contact.title}</p>
+                        <p className="text-xs text-neutral-500 mt-0.5">
                           {placeholder ? "No contact assigned" : contact.name}
                         </p>
                       </div>
                     </td>
-                    <td className="px-4 py-4">
-                      <span className="text-gray-900">{contact.company}</span>
+                    <td className="px-4 py-3.5">
+                      <span className="text-sm text-neutral-900">{contact.company}</span>
                     </td>
-                    <td className="px-4 py-4">
-                      <span
-                        className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          contact.outreach?.channel === "email"
-                            ? "bg-blue-100 text-blue-700"
-                            : "bg-indigo-100 text-indigo-700"
-                        }`}
-                      >
+                    <td className="px-4 py-3.5">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-medium uppercase tracking-wide border border-neutral-200 text-neutral-500">
                         {contact.outreach?.channel || "Email"}
                       </span>
                     </td>
-                    <td className="px-4 py-4 text-right">
+                    <td className="px-4 py-3.5 text-right">
                       <div className="flex items-center justify-end gap-2">
                         {placeholder ? (
                           <button
@@ -126,7 +119,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                               setInput({ name: "", linkedinUrl: "", email: "" });
                               setError("");
                             }}
-                            className="px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
+                            className="px-3 py-1.5 text-xs font-medium text-neutral-950 border border-neutral-200 rounded-md hover:bg-neutral-100 transition-colors"
                           >
                             Add Contact
                           </button>
@@ -137,14 +130,14 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                               setInput({ name: contact.name, linkedinUrl: "", email: "" });
                               setError("");
                             }}
-                            className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                            className="px-3 py-1.5 text-xs font-medium text-neutral-600 border border-neutral-200 rounded-md hover:bg-neutral-100 transition-colors"
                           >
-                            Edit Contact
+                            Edit
                           </button>
                         )}
                         <button
                           onClick={() => setSelectedContact(contact)}
-                          className="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                          className="px-3 py-1.5 text-xs font-medium text-white bg-neutral-950 rounded-md hover:bg-neutral-800 transition-colors"
                         >
                           Preview
                         </button>
@@ -158,12 +151,10 @@ export default function OutreachList({ contacts }: OutreachListProps) {
         )}
       </div>
 
-      {/* Count */}
-      <div className="mt-4 text-sm text-gray-500">
+      <div className="mt-4 text-xs text-neutral-500">
         {contactsWithOutreach.length} outreach messages
       </div>
 
-      {/* Preview Modal */}
       {selectedContact && (
         <OutreachPreviewModal
           contact={selectedContact}
@@ -171,79 +162,78 @@ export default function OutreachList({ contacts }: OutreachListProps) {
         />
       )}
 
-      {/* Add Contact Modal */}
       {editingIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
-            className="absolute inset-0 bg-black/50"
+            className="absolute inset-0 bg-black/40"
             onClick={() => setEditingIndex(null)}
           />
-          <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-1">
+          <div className="relative bg-white rounded-lg border border-neutral-200 shadow-2xl max-w-md w-full mx-4 p-6">
+            <h3 className="text-base font-semibold text-neutral-950 mb-0.5">
               {editingIndex !== null && !isPlaceholder(contactsWithOutreach[editingIndex]?.name)
-                ? "Edit Contact Details"
-                : "Add Contact Details"}
+                ? "Edit Contact"
+                : "Add Contact"}
             </h3>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-xs text-neutral-500 mb-5">
               {contactsWithOutreach[editingIndex]?.title} at{" "}
               {contactsWithOutreach[editingIndex]?.company}
             </p>
 
             <div className="space-y-3">
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Contact Name *
+                <label className="block text-[10px] font-medium text-neutral-500 mb-1 uppercase tracking-wide">
+                  Name *
                 </label>
                 <input
                   type="text"
                   value={input.name}
                   onChange={(e) => setInput({ ...input, name: e.target.value })}
                   placeholder="e.g. Laura Noll"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  LinkedIn URL (optional)
+                <label className="block text-[10px] font-medium text-neutral-500 mb-1 uppercase tracking-wide">
+                  LinkedIn URL
                 </label>
                 <input
                   type="text"
                   value={input.linkedinUrl}
                   onChange={(e) => setInput({ ...input, linkedinUrl: e.target.value })}
                   placeholder="https://linkedin.com/in/..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
                 />
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-1">
-                  Email (optional)
+                <label className="block text-[10px] font-medium text-neutral-500 mb-1 uppercase tracking-wide">
+                  Email
                 </label>
                 <input
                   type="text"
                   value={input.email}
                   onChange={(e) => setInput({ ...input, email: e.target.value })}
                   placeholder="laura@company.com"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
                 />
               </div>
 
-              {error && <p className="text-sm text-red-600">{error}</p>}
+              {error && <p className="text-xs text-red-600">{error}</p>}
 
               <div className="flex items-center gap-2 pt-2">
                 <button
                   onClick={() => handleSave(contactsWithOutreach[editingIndex], editingIndex)}
                   disabled={!input.name.trim() || saving}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  className={`px-4 py-2 text-xs font-medium rounded-md transition-colors ${
                     input.name.trim() && !saving
-                      ? "bg-blue-600 text-white hover:bg-blue-700"
-                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                      ? "bg-neutral-950 text-white hover:bg-neutral-800"
+                      : "bg-neutral-100 text-neutral-300 cursor-not-allowed"
                   }`}
                 >
-                  {saving ? "Saving..." : "Save Contact"}
+                  {saving ? "Saving..." : "Save"}
                 </button>
                 <button
                   onClick={() => setEditingIndex(null)}
-                  className="px-4 py-2 text-sm text-gray-500 hover:text-gray-700"
+                  className="px-4 py-2 text-xs text-neutral-500 hover:text-neutral-600"
                 >
                   Cancel
                 </button>

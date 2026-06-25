@@ -45,7 +45,6 @@ export default function EventsFilters({
     onIndustryChange(industry || null);
   };
 
-
   const clearDateFilter = () => {
     setStartDate("");
     setEndDate("");
@@ -64,34 +63,33 @@ export default function EventsFilters({
   };
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 mb-4">
-      <h3 className="font-semibold text-gray-900 mb-4">Filters</h3>
+    <div className="border border-neutral-200 rounded-lg p-4 mb-4">
+      <h3 className="text-sm font-medium text-neutral-950 mb-4 uppercase tracking-wide">Filters</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Date Range Filter */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-xs font-medium text-neutral-500 mb-2">
             Event Date
           </label>
           <div className="space-y-2">
             <div>
-              <label className="block text-xs text-gray-500 mb-1">Start Date</label>
+              <label className="block text-[10px] text-neutral-500 mb-1 uppercase tracking-wide">Start</label>
               <input
                 type="date"
                 value={startDate}
                 onChange={(e) => handleStartDateChange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 placeholder-gray-500"
+                className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
                 min="2026-01-01"
                 max="2026-12-31"
               />
             </div>
             <div>
-              <label className="block text-xs text-gray-500 mb-1">End Date</label>
+              <label className="block text-[10px] text-neutral-500 mb-1 uppercase tracking-wide">End</label>
               <input
                 type="date"
                 value={endDate}
                 onChange={(e) => handleEndDateChange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 placeholder-gray-500"
+                className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
                 min="2026-01-01"
                 max="2026-12-31"
               />
@@ -99,23 +97,22 @@ export default function EventsFilters({
             {(startDate || endDate) && (
               <button
                 onClick={clearDateFilter}
-                className="text-xs text-blue-600 hover:text-blue-800 underline"
+                className="text-xs text-neutral-500 hover:text-neutral-950 underline underline-offset-2"
               >
-                Clear date filter
+                Clear
               </button>
             )}
           </div>
         </div>
 
-        {/* Industry Filter */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-xs font-medium text-neutral-500 mb-2">
             Industry Vertical
           </label>
           <select
             value={selectedIndustry}
             onChange={(e) => handleIndustryChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 bg-white"
+            className="w-full px-3 py-2 border border-neutral-200 rounded-md text-sm text-neutral-900 bg-white focus:outline-none focus:ring-1 focus:ring-neutral-500 focus:border-neutral-500"
           >
             <option value="">All Industries</option>
             {availableIndustries.map((industry) => (
@@ -127,9 +124,9 @@ export default function EventsFilters({
           {selectedIndustry && (
             <button
               onClick={clearIndustryFilter}
-              className="text-xs text-blue-600 hover:text-blue-800 underline mt-1"
+              className="text-xs text-neutral-500 hover:text-neutral-950 underline underline-offset-2 mt-1"
             >
-              Clear industry filter
+              Clear
             </button>
           )}
         </div>

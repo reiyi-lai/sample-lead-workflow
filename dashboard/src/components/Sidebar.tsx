@@ -2,40 +2,40 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CalendarDays, Building2, Send } from "lucide-react";
 
 const navItems = [
-  { href: "/", label: "Events", icon: "📅" },
-  { href: "/companies", label: "Companies", icon: "🏢" },
-  { href: "/outreach", label: "Outreach", icon: "📤" },
+  { href: "/", label: "Events", icon: CalendarDays },
+  { href: "/companies", label: "Companies", icon: Building2 },
+  { href: "/outreach", label: "Outreach", icon: Send },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
-      {/* Logo/Title */}
-      <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-gray-900">Instalily GTM Pipeline</h1>
-        <p className="text-sm text-gray-500 mt-1">Lead Generation Pipeline</p>
+    <aside className="fixed left-0 top-0 h-screen w-56 bg-neutral-950 flex flex-col">
+      <div className="px-6 py-8">
+        <h1 className="text-xl font-semibold text-white tracking-tight pb-1">Instalily</h1>
+        <p className="text-sm text-neutral-400 mt-0.5">GTM Pipeline</p>
       </div>
 
-      {/* Navigation */}
-      <nav className="flex-1 p-4">
-        <ul className="space-y-2">
+      <nav className="flex-1 px-3">
+        <ul className="space-y-1">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
+            const Icon = item.icon;
             return (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                     isActive
-                      ? "bg-blue-50 text-blue-700 font-medium"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? "bg-white text-neutral-950 font-medium"
+                      : "text-neutral-400 hover:text-white hover:bg-neutral-800/60"
                   }`}
                 >
-                  <span className="text-lg">{item.icon}</span>
+                  <Icon size={16} strokeWidth={isActive ? 2.5 : 1.5} />
                   <span>{item.label}</span>
                 </Link>
               </li>
@@ -44,10 +44,9 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      {/* Footer */}
-      <div className="p-4 border-t border-gray-200">
-        <p className="text-xs text-gray-400 text-center">
-          Instalily GTM Pipeline
+      <div className="px-6 py-4">
+        <p className="text-[10px] text-neutral-600 uppercase tracking-widest">
+          Instalily GTM
         </p>
       </div>
     </aside>
