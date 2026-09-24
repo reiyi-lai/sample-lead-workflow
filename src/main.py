@@ -402,7 +402,7 @@ class PipelineOrchestrator:
                     await self.on_event_companies_discovered(event_name, event_data.get("companies", []))
         else:
             # Fresh run: discover companies for each event and trigger Stage 2 immediately
-            print(f"\n[Step 1.4] Company Discovery: searching for companies at {len(target_events)} events (event-driven)..."
+            print(f"\n[Step 1.4] Company Discovery: searching for companies at {len(target_events)} events (event-driven)...")
             for i, event in enumerate(target_events):
                 event_name = event.get("event_name", "Unknown")
                 event_url = event.get("event_url", "")
