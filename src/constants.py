@@ -32,7 +32,7 @@ ICP_WEIGHTS = {
 # Minimum event score (0-10) to proceed to company discovery (Stage 1.3)
 EVENT_SCORE_CUTOFF = 8
 
-# Minimum company ICP score (0-100) to proceed to role identification (Stage 3)
+# Company ICP score (0-100) must exceed this value to proceed to Stage 3
 COMPANY_SCORE_CUTOFF = 70
 
 

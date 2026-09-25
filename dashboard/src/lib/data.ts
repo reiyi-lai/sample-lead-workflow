@@ -67,10 +67,10 @@ export interface CompanyScoring {
   company_name?: string;
   website_url?: string;
   scores: {
-    industry_fit?: { score: number; rationale: string };
-    size_revenue_fit?: { score: number; rationale: string };
-    strategic_relevance?: { score: number; rationale: string };
-    market_activity?: { score: number; rationale: string };
+    industry_fit?: { score: number; rationale: string | string[] };
+    size_revenue_fit?: { score: number; rationale: string | string[] };
+    strategic_relevance?: { score: number; rationale: string | string[] };
+    market_activity?: { score: number; rationale: string | string[] };
   };
   qualification_summary?: string;
   icp_qualification?: {
@@ -113,8 +113,10 @@ export interface OutreachMessage {
 }
 
 export interface CompanyWithDetails {
+  id?: string;
   name: string;
   event: string;
+  events?: string[];
   attendanceType: string;
   score: number;
   qualificationSummary: string;
@@ -125,6 +127,11 @@ export interface CompanyWithDetails {
 }
 
 export interface ContactWithOutreach {
+  companyId?: string;
+  roleId?: string;
+  contactId?: string;
+  email?: string;
+  linkedinUrl?: string;
   name: string;
   title: string;
   company: string;

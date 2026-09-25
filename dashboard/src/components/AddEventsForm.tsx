@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, Fragment } from "react";
+import { useRouter } from "next/navigation";
 import { addEvents } from "@/lib/api";
 
 const EMPTY_ROWS = () => Array.from({ length: 10 }, () => ({ event_name: "", event_url: "" }));
 
 export default function AddEventsModal() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [rows, setRows] = useState(EMPTY_ROWS);
   const [loading, setLoading] = useState(false);
@@ -27,6 +29,7 @@ export default function AddEventsModal() {
       const res = await addEvents(valid);
       setResult(`Added ${res.added} event(s), ${res.scored} scored.`);
       setRows(EMPTY_ROWS());
+      router.refresh();
     } catch (e: unknown) {
       setResult(`Error: ${e instanceof Error ? e.message : "Unknown error"}`);
     } finally {

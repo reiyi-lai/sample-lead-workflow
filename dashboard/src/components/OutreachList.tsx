@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ContactWithOutreach } from "@/lib/data";
 import OutreachPreviewModal from "./OutreachPreviewModal";
 
@@ -15,14 +16,15 @@ interface OutreachListProps {
 }
 
 export default function OutreachList({ contacts }: OutreachListProps) {
-  const [contactsWithOutreach, setContactsWithOutreach] = useState(
-    () => contacts.filter((c) => c.outreach)
-  );
+  const router = useRouter();
+  const [contactsWithOutreach, setContactsWithOutreach] = useState(contacts);
   const [selectedContact, setSelectedContact] = useState<ContactWithOutreach | null>(null);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [input, setInput] = useState<ContactInput>({ name: "", linkedinUrl: "", email: "" });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => setContactsWithOutreach(contacts), [contacts]);
 
   const isPlaceholder = (name: string) => !name || name === "[Name]";
 
@@ -39,6 +41,9 @@ export default function OutreachList({ contacts }: OutreachListProps) {
         body: JSON.stringify({
           companyName: contact.company,
           roleTitle: contact.title,
+          companyId: contact.companyId,
+          roleId: contact.roleId,
+          contactId: contact.contactId,
           contactName: input.name.trim(),
           linkedinUrl: input.linkedinUrl.trim() || undefined,
           email: input.email.trim() || undefined,
@@ -48,11 +53,12 @@ export default function OutreachList({ contacts }: OutreachListProps) {
       const data = await res.json();
 
       if (data.success) {
-        setContactsWithOutreach((prev) =>
-          prev.map((c, i) => i === index ? { ...c, name: input.name.trim() } : c)
-        );
+        setContactsWithOutreach((prev) => prev.map((c, i) =>
+          i === index ? { ...c, name: input.name.trim(), contactId: data.contact.id, email: input.email, linkedinUrl: input.linkedinUrl } : c
+        ));
         setEditingIndex(null);
         setInput({ name: "", linkedinUrl: "", email: "" });
+        router.refresh();
       } else {
         setError(data.error || "Failed to save");
       }
@@ -68,7 +74,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
       <div className="border border-neutral-200 rounded-lg overflow-hidden">
         {contactsWithOutreach.length === 0 ? (
           <div className="p-12 text-center text-neutral-500 text-sm">
-            No outreach messages found.
+            No contacts or target roles found.
           </div>
         ) : (
           <table className="w-full">
@@ -127,7 +133,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                           <button
                             onClick={() => {
                               setEditingIndex(index);
-                              setInput({ name: contact.name, linkedinUrl: "", email: "" });
+                              setInput({ name: contact.name, linkedinUrl: contact.linkedinUrl || "", email: contact.email || "" });
                               setError("");
                             }}
                             className="px-3 py-1.5 text-xs font-medium text-neutral-600 border border-neutral-200 rounded-md hover:bg-neutral-100 transition-colors"
@@ -137,7 +143,8 @@ export default function OutreachList({ contacts }: OutreachListProps) {
                         )}
                         <button
                           onClick={() => setSelectedContact(contact)}
-                          className="px-3 py-1.5 text-xs font-medium text-white bg-neutral-950 rounded-md hover:bg-neutral-800 transition-colors"
+                          disabled={!contact.outreach}
+                          className="px-3 py-1.5 text-xs font-medium text-white bg-neutral-950 rounded-md hover:bg-neutral-800 transition-colors disabled:bg-neutral-200 disabled:text-neutral-400"
                         >
                           Preview
                         </button>
@@ -152,7 +159,7 @@ export default function OutreachList({ contacts }: OutreachListProps) {
       </div>
 
       <div className="mt-4 text-xs text-neutral-500">
-        {contactsWithOutreach.length} outreach messages
+        {contactsWithOutreach.filter((contact) => contact.contactId).length} contacts · {contactsWithOutreach.filter((contact) => contact.outreach).length} outreach drafts
       </div>
 
       {selectedContact && (

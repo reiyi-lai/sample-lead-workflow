@@ -7,7 +7,7 @@ import { CalendarDays, Building2, Send } from "lucide-react";
 const navItems = [
   { href: "/", label: "Events", icon: CalendarDays },
   { href: "/companies", label: "Companies", icon: Building2 },
-  { href: "/outreach", label: "Outreach", icon: Send },
+  { href: "/contacts", label: "Contacts", icon: Send },
 ];
 
 export default function Sidebar() {

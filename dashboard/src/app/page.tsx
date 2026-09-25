@@ -1,10 +1,10 @@
-import { getEnrichedEvents } from "@/lib/data";
+import { getSupabaseEvents } from "@/lib/supabaseData";
 import EventsList from "@/components/EventsList";
 
 export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
-  const events = getEnrichedEvents();
+  const events = await getSupabaseEvents();
 
   return (
     <div className="p-8">

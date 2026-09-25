@@ -1,71 +1,77 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-const DATA_DIR = path.join(process.cwd(), '..', 'data');
-
-function sanitizeName(name: string): string {
-  return name.replace(/[^\w\s-]/g, '').replace(/\s+/g, ' ').trim();
-}
-
-function roleFilePrefix(title: string): string {
-  return sanitizeName(title).replace(/ /g, '_');
-}
+import { getSupabaseAdmin } from "@/lib/supabaseServer";
 
 export async function POST(request: Request) {
   try {
-    const { companyName, roleTitle, contactName, linkedinUrl, email } = await request.json();
+    const body = await request.json();
+    const companyId = String(body.companyId || "");
+    const roleId = body.roleId ? String(body.roleId) : null;
+    const contactId = body.contactId ? String(body.contactId) : null;
+    const fullName = String(body.contactName || "").trim();
+    const email = String(body.email || "").trim() || null;
+    const linkedinUrl = String(body.linkedinUrl || "").trim() || null;
 
-    if (!companyName || !roleTitle || !contactName) {
-      return NextResponse.json(
-        { success: false, error: 'companyName, roleTitle, and contactName are required' },
-        { status: 400 }
-      );
+    if (!companyId || !fullName || (!roleId && !contactId)) {
+      return NextResponse.json({ success: false, error: "Company, role, and contact name are required" }, { status: 400 });
     }
 
-    const companyFolder = sanitizeName(companyName);
-    const prefix = roleFilePrefix(roleTitle);
-    const contactsDir = path.join(DATA_DIR, 'contacts', companyFolder);
-
-    const analysisPath = path.join(contactsDir, `${prefix}_analysis.json`);
-    const outreachPath = path.join(contactsDir, `${prefix}_outreach.json`);
-
-    // Check that role-based outreach exists
-    if (!fs.existsSync(analysisPath) || !fs.existsSync(outreachPath)) {
-      return NextResponse.json(
-        { success: false, error: 'Role outreach not yet generated. Run the pipeline first.' },
-        { status: 404 }
-      );
+    const supabase = getSupabaseAdmin();
+    if (roleId) {
+      const { data: role, error: roleError } = await supabase
+        .from("target_roles")
+        .select("id")
+        .eq("id", roleId)
+        .eq("company_id", companyId)
+        .maybeSingle();
+      if (roleError) throw roleError;
+      if (!role) return NextResponse.json({ success: false, error: "Target role not found" }, { status: 404 });
     }
 
-    // Read and update analysis
-    const analysis = JSON.parse(fs.readFileSync(analysisPath, 'utf-8'));
-    const analysisStr = JSON.stringify(analysis);
-    const updatedAnalysis = JSON.parse(analysisStr.replace(/\[Name\]/g, contactName));
-    updatedAnalysis.contact_details = {
-      contact_name: contactName,
-      linkedin_url: linkedinUrl || null,
-      email: email || null,
-      assigned_at: new Date().toISOString(),
+    let existingId = contactId;
+    if (existingId) {
+      const { data: existing, error } = await supabase
+        .from("contacts")
+        .select("id")
+        .eq("id", existingId)
+        .eq("company_id", companyId)
+        .maybeSingle();
+      if (error) throw error;
+      if (!existing) return NextResponse.json({ success: false, error: "Contact not found" }, { status: 404 });
+    } else if (roleId) {
+      const { data: existing, error } = await supabase
+        .from("contacts")
+        .select("id")
+        .eq("company_id", companyId)
+        .eq("target_role_id", roleId)
+        .ilike("full_name", fullName)
+        .limit(1)
+        .maybeSingle();
+      if (error) throw error;
+      existingId = existing?.id || null;
+    }
+
+    const values = {
+      company_id: companyId,
+      ...(roleId ? { target_role_id: roleId } : {}),
+      full_name: fullName,
+      email,
+      linkedin_url: linkedinUrl,
+      source: "manual_assignment",
     };
-    fs.writeFileSync(analysisPath, JSON.stringify(updatedAnalysis, null, 2));
+    const query = existingId
+      ? supabase.from("contacts").update(values).eq("id", existingId)
+      : supabase.from("contacts").insert(values);
+    const { data: contact, error } = await query.select("id,full_name,email,linkedin_url").single();
+    if (error) throw error;
 
-    // Read and update outreach
-    const outreach = JSON.parse(fs.readFileSync(outreachPath, 'utf-8'));
-    const outreachStr = JSON.stringify(outreach);
-    const updatedOutreach = JSON.parse(outreachStr.replace(/\[Name\]/g, contactName));
-    fs.writeFileSync(outreachPath, JSON.stringify(updatedOutreach, null, 2));
-
-    return NextResponse.json({
-      success: true,
-      analysis: updatedAnalysis,
-      outreach: updatedOutreach,
-    });
+    revalidatePath("/companies");
+    revalidatePath("/contacts");
+    revalidatePath("/outreach");
+    return NextResponse.json({ success: true, contact });
   } catch (error) {
-    console.error('Error assigning contact:', error);
-    return NextResponse.json(
-      { success: false, error: String(error) },
-      { status: 500 }
-    );
+    console.error("Error assigning contact:", error);
+    return NextResponse.json({ success: false, error: "Failed to save contact" }, { status: 500 });
   }
 }

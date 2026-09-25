@@ -29,7 +29,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
         </div>
 
         <div className="flex items-center gap-2 mt-1.5 text-xs text-neutral-500">
-          <span>{company.event}</span>
+          <span>{company.events?.join(", ") || company.event || "No associated event"}</span>
           {company.scoring?.website_url && (
             <>
               <span>·</span>
@@ -80,7 +80,7 @@ export default function CompanyCard({ company }: CompanyCardProps) {
         )}
 
         <div className="flex items-center gap-4 mt-4 text-xs text-neutral-500">
-          <span>{company.contacts.length} contacts</span>
+          <span>{company.contacts.filter((contact) => contact.contactId).length} contacts</span>
         </div>
 
         <div className="border-t border-neutral-100 mt-4 pt-4">
@@ -98,10 +98,10 @@ export default function CompanyCard({ company }: CompanyCardProps) {
             </button>
             {company.contacts.length > 0 && (
               <Link
-                href={`/outreach?company=${encodeURIComponent(company.name)}`}
+                href={`/contacts?company=${encodeURIComponent(company.name)}`}
                 className="px-3.5 py-1.5 text-xs font-medium rounded-md bg-neutral-950 text-white hover:bg-neutral-800 transition-colors ml-auto inline-flex items-center gap-1.5"
               >
-                View Outreach
+                View Contacts
                 <ArrowRight size={12} />
               </Link>
             )}
@@ -126,7 +126,7 @@ function ScoreRow({
 }: {
   label: string;
   score: number;
-  rationale: string;
+  rationale: string | string[];
 }) {
   return (
     <div className="flex items-start gap-4">
@@ -138,7 +138,13 @@ function ScoreRow({
         </span>
         <span className="text-xs text-neutral-500">{label}</span>
       </div>
-      <p className="text-xs text-neutral-500 leading-relaxed">{rationale}</p>
+      {Array.isArray(rationale) ? (
+        <ul className="list-disc pl-4 space-y-1 text-xs text-neutral-500 leading-relaxed">
+          {rationale.map((bullet, index) => <li key={index}>{bullet}</li>)}
+        </ul>
+      ) : (
+        <p className="text-xs text-neutral-500 leading-relaxed">{rationale}</p>
+      )}
     </div>
   );
 }

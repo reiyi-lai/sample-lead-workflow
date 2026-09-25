@@ -19,7 +19,7 @@ export default function CompanyList({ companies, events }: CompanyListProps) {
     if (search && !company.name.toLowerCase().includes(search.toLowerCase())) {
       return false;
     }
-    if (eventFilter !== "all" && company.event !== eventFilter) {
+    if (eventFilter !== "all" && !(company.events || [company.event]).includes(eventFilter)) {
       return false;
     }
     if (scoreFilter === "high" && company.score < 80) return false;

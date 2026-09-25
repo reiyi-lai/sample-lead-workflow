@@ -94,7 +94,7 @@ KNOWN CUSTOMERS (for reference, do not mention in outreach unless publicly known
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {INSTALILY_CONTEXT}
 
-Based on the context provided above, identify at LEAST 20 events in ((present day + 1 month)) - ((2 months after that)) (NO EARLIER THAN APRIL 2026) that companies that match InstaLILY's ICP are likely to attend.
+Based on the context provided above, identify at LEAST 20 events in ((present day + 1 month)) - ((2 months after that)) that InstaLILY's ICP is likely to attend.
 
 SEARCH STRATEGY:
 Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:
@@ -111,9 +111,6 @@ You can start with this list of major events first, and then continue to conduct
 - MDM SHIFT Conference 2026
 - NAW Executive Summit 2026
 - ISA (Industrial Supply Association) Convention 2026
-- Distribution Strategy Summit 2026
-- STAFDA Annual Convention 2026
-- AHR Expo 2026
 
 FOR EACH EVENT FOUND, EXTRACT:
 - Event name
@@ -124,7 +121,7 @@ FOR EACH EVENT FOUND, EXTRACT:
 - Brief description of the event
 - Which industry vertical it serves - IMPORTANT: If the event's agenda is on general supply chain and distribution in general, select ONLY "supply_chain_and_distribution". If the event's agenda is on a specific industry vertical, select ONE industry vertical from the following five verticals, and if they don't fit into any of these, select "others": construction_supply, industrial_parts, pharmaceuticals, automotives, food_supply, others.
 - Exhibitor mix (types of companies that exhibit - e.g. "Software vendors, equipment manufacturers, service providers")
-- Audience mix (types of attendees/buyers - e.g. "Warehouse leaders, 3PL executives, logistics operators")
+- Audience mix (types of attendees/buyers)
 
 OUTPUT FORMAT:
 Return a JSON array of at least 20 events.
@@ -369,30 +366,44 @@ Return ONLY a JSON object:
   "scores": {{
     "industry_fit": {{
       "score": 8,
-      "rationale": "Evidence-based explanation citing specific products, verticals, or capabilities found during research. 2-3 sentences."
+      "rationale": [
+        "Line about the company products, verticals, or capabilities.",
+        "Line about how those details align with InstaLILY target industries."
+      ]
     }},
     "size_revenue_fit": {{
       "score": 7,
-      "rationale": "Evidence-based explanation citing revenue signals, employee count, geographic footprint. 2-3 sentences."
+      "rationale": [
+        "Revenue figure per year",
+        "Employee count, and operations/claims/service headcount if findable",
+        "Geographic footprint - headquarters, major regions etc."
+      ]
     }},
     "strategic_relevance": {{
       "score": 9,
-      "rationale": "Evidence-based explanation citing durability focus, outdoor applications, quality positioning, pain points. 2-3 sentences."
+      "rationale": [
+        "Operational pain point or workflow relevant to InstaLILY.",
+        "Company needs connected to an InstaLILY capability."
+      ]
     }},
     "market_activity": {{
       "score": 8,
-      "rationale": "Evidence-based explanation citing trade shows, recent news, product launches, awards. 2-3 sentences."
+      "rationale": [
+        "Recent growth, hiring, funding, or transformation activity.",
+        "Recent news, launch, event, or product activity."
+      ]
     }}
   }},
 
-  "qualification_summary": "2-3 sentence overall assessment of ICP fit and why this company is or isn't a strong prospect for InstaLILY.
+  "qualification_summary": "2-3 sentence overall assessment of ICP fit and why this company is or isn't a strong prospect for InstaLILY."
 }}
 
 IMPORTANT:
-- Each rationale IS the research — cite specific findings (product names, revenue figures, trade shows attended, news headlines)
+- Each rationale MUST be an array of exactly 2-3 bullet strings, not a paragraph or a single string
+- Keep each bullet to one line
+- The rationale bullets ARE the research — cite specific findings (product names, revenue figures, trade shows attended, news headlines)
 - If information is sparse, say so explicitly (e.g., "Limited public financial data available")
 - Focus on WHAT YOU ACTUALLY FOUND, not generic assumptions
-- These rationales replace a separate research report, so be specific and thorough in each one
 
 CRITICAL: Return ONLY the JSON object. No text before or after.
 """

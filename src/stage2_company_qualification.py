@@ -14,11 +14,13 @@ from constants import MODELS, ICP_WEIGHTS
 from prompts import COMPANY_RESEARCH_AND_SCORING_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json, company_path
+from utils.supabase_sync import sync_company_to_supabase, hydrate_company_from_supabase
 
 
 def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, icp_result: dict):
     """Save scoring data and ICP qualification to company folder."""
     save_json(company_path(output_dir, company_name, "scoring.json"), {**scoring_data, "icp_qualification": icp_result})
+    sync_company_to_supabase(company_name, output_dir)
 
 
 # STEP 2.1: RESEARCH AND SCORE COMPANY
@@ -26,8 +28,11 @@ def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, ic
 def research_and_score_company(company_name: str, website_url: str, output_dir: str = "data/companies") -> dict:
     """Research and score a company in a single web search call. Skips if scoring.json exists."""
     existing = load_json(company_path(output_dir, company_name, "scoring.json"))
+    if not existing and hydrate_company_from_supabase(company_name, website_url, output_dir):
+        existing = load_json(company_path(output_dir, company_name, "scoring.json"))
     if existing:
         print(f"  Scoring found in existing data")
+        sync_company_to_supabase(company_name, output_dir)
         return existing
 
     print(f"  Researching and scoring via web search...")
@@ -122,7 +127,8 @@ def run_stage2_pipeline(events_dir: str = "data/events", output_dir: str = "data
     discovery_results = []
     for filepath in sorted(glob.glob(os.path.join(events_dir, "*.json"))):
         data = load_json(filepath)
-        if data:
+        # Skip master files: discovered_events.json is a list, scored_events.json has no companies
+        if isinstance(data, dict) and data.get("companies"):
             discovery_results.append(data)
 
     print(f"  Loaded {len(discovery_results)} event files")

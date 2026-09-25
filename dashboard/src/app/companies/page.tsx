@@ -1,13 +1,13 @@
-import { getDashboardStats, getAllCompaniesWithDetails, getUniqueEvents } from "@/lib/data";
+import { getSupabaseCompaniesWithDetails, getSupabaseCompanyStats } from "@/lib/supabaseCompanies";
 import StatsCards from "@/components/StatsCards";
 import CompanyList from "@/components/CompanyList";
 
 export const dynamic = "force-dynamic";
 
-export default function CompaniesPage() {
-  const stats = getDashboardStats();
-  const companies = getAllCompaniesWithDetails();
-  const events = getUniqueEvents();
+export default async function CompaniesPage() {
+  const companies = await getSupabaseCompaniesWithDetails();
+  const stats = await getSupabaseCompanyStats(companies);
+  const events = [...new Set(companies.flatMap((company) => company.events || []))].sort();
 
   return (
     <div className="p-8">

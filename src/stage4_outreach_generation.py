@@ -11,6 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json, company_path
+from utils.supabase_sync import sync_company_to_supabase
 from prompts import (
     CONTACT_ANALYSIS_SYSTEM_PROMPT,
     OUTREACH_EMAIL_SYSTEM_PROMPT,
@@ -95,6 +96,7 @@ def process_role(role_title: str, company_name: str, base_dir: str = "data/compa
 
     if os.path.exists(analysis_path) and os.path.exists(outreach_path):
         print(f"    Outreach found in existing data")
+        sync_company_to_supabase(company_name, base_dir)
         return load_json(analysis_path), None
 
     scoring, target_roles = _load_company_data(base_dir, company_name)
@@ -109,6 +111,8 @@ def process_role(role_title: str, company_name: str, base_dir: str = "data/compa
         save_json(analysis_path, analysis)
     if outreach:
         save_json(outreach_path, outreach)
+
+    sync_company_to_supabase(company_name, base_dir)
 
     return analysis, outreach
 

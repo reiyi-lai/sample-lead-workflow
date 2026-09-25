@@ -16,6 +16,7 @@ from constants import CLAY_WEBHOOK_URL, MODELS, COMPANY_SCORE_CUTOFF
 from prompts import TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json, company_path
+from utils.supabase_sync import sync_company_to_supabase
 
 
 def load_target_roles_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
@@ -45,7 +46,7 @@ def load_qualified_companies(base_dir: str = "data/companies") -> List[dict]:
             scoring = json.load(f)
 
         icp = scoring.get("icp_qualification", {})
-        if icp.get("weighted_score", 0) >= COMPANY_SCORE_CUTOFF:
+        if icp.get("weighted_score", 0) > COMPANY_SCORE_CUTOFF:
             companies.append({
                 "company_name": scoring.get("company_name", folder),
                 "website_url": scoring.get("website_url", ""),
@@ -65,6 +66,7 @@ def identify_target_roles(company_name: str, website_url: str, base_dir: str = "
     existing = load_target_roles_json(company_name, base_dir)
     if existing:
         print(f"    Target roles found in existing data ({len(existing.get('target_roles', []))} roles)")
+        sync_company_to_supabase(company_name, base_dir)
         return existing
 
     scoring_data = load_json(company_path(base_dir, company_name, "scoring.json"))
@@ -88,6 +90,7 @@ def identify_target_roles(company_name: str, website_url: str, base_dir: str = "
 
     num_roles = len(target_roles_data.get("target_roles", []))
     save_json(company_path(base_dir, company_name, "target_roles.json"), target_roles_data)
+    sync_company_to_supabase(company_name, base_dir)
     print(f"    Step 3.1 complete: {num_roles} target roles identified")
 
     return target_roles_data
@@ -149,7 +152,7 @@ def run_stage3_linkedin_search(base_dir: str = "data/companies", max_companies: 
     print("\nSTAGE 3: IDENTIFY ROLES & GENERATE LINKEDIN SEARCHES\n")
 
     companies = load_qualified_companies(base_dir)
-    print(f"  {len(companies)} qualified companies (score >= {COMPANY_SCORE_CUTOFF})")
+    print(f"  {len(companies)} qualified companies (score > {COMPANY_SCORE_CUTOFF})")
 
     if max_companies:
         companies = companies[:max_companies]
@@ -180,6 +183,8 @@ def run_stage3_linkedin_search(base_dir: str = "data/companies", max_companies: 
 
         print(f"  [Step 3.2] Generating Sales Navigator URLs for {len(target_roles)} roles...")
         searches = generate_sales_navigator_searches(company_name, extract_domain(website_url), target_roles)
+        save_json(company_path(base_dir, company_name, "linkedin_searches.json"), searches)
+        sync_company_to_supabase(company_name, base_dir)
         all_searches.extend(searches)
         print(f"  Step 3.2 complete: {len(searches)} search URLs generated")
         successful += 1

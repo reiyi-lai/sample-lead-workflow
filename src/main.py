@@ -21,6 +21,7 @@ from stage3_contact_finding import (
 from stage4_outreach_generation import process_role
 from constants import EVENT_SCORE_CUTOFF, COMPANY_SCORE_CUTOFF
 from utils.io import load_json, save_json, company_path
+from utils.supabase_sync import sync_company_to_supabase, sync_discovered_companies_to_supabase
 
 
 # RATE LIMITER
@@ -84,10 +85,17 @@ class PipelineOrchestrator:
 
     # EVENT HANDLERS (Callbacks)
 
-    async def on_event_companies_discovered(self, event_name: str, companies: List[dict]):
+    async def on_event_companies_discovered(self, event_name: str, companies: List[dict], event_url: str = ""):
         """Stage 1.3 complete for an event → trigger Stage 2 for each unique company."""
         print(f"\n[Event] Companies discovered at {event_name} -> {len(companies)} companies")
         self.stats["stage1_events"] += 1
+
+        # Publish names and event membership immediately, before scoring or cutoff checks.
+        await asyncio.to_thread(sync_discovered_companies_to_supabase, [{
+            "event_name": event_name,
+            "event_url": event_url,
+            "companies": companies,
+        }])
 
         # Incremental deduplication and Stage 2 triggering
         unique_for_event = []
@@ -120,10 +128,10 @@ class PipelineOrchestrator:
         """Stage 2 complete → trigger Stage 3 if score meets cutoff."""
         print(f"\n[Event] Company scored: {company_name} -> ICP Score: {icp_score}")
 
-        if icp_score >= COMPANY_SCORE_CUTOFF:
+        if icp_score > COMPANY_SCORE_CUTOFF:
             await self._process_company_stage3(company_name, website_url)
         else:
-            print(f"  Skipping Stage 3 (score {icp_score} < cutoff {COMPANY_SCORE_CUTOFF})")
+            print(f"  Skipping Stage 3 (score {icp_score} <= cutoff {COMPANY_SCORE_CUTOFF})")
 
     async def on_target_roles_identified(self, company_name: str, website_url: str, target_roles: List[dict]):
         """Stage 3 complete → auto-trigger Stage 4 parallel processing + generate Sales Nav URLs & push to Clay"""
@@ -142,6 +150,7 @@ class PipelineOrchestrator:
         # Generate and save Sales Navigator URLs
         searches = generate_sales_navigator_searches(company_name, company_domain, target_roles)
         save_json(company_path(str(self.companies_dir), company_name, "linkedin_searches.json"), searches)
+        sync_company_to_supabase(company_name, str(self.companies_dir))
         print(f"  Generated {len(searches)} LinkedIn search URLs")
 
         # Push to Clay webhook
@@ -284,7 +293,7 @@ class PipelineOrchestrator:
                 result.append(company)
             elif stage == 3 and scoring and not has_stage3:
                 score = scoring.get("icp_qualification", {}).get("weighted_score", 0)
-                if score >= COMPANY_SCORE_CUTOFF:
+                if score > COMPANY_SCORE_CUTOFF:
                     result.append(company)
 
         return result
@@ -399,7 +408,7 @@ class PipelineOrchestrator:
                 event_data = load_json(event_file)
                 if event_data and event_data.get("companies"):
                     event_name = event_data.get("event_name", event_file.stem)
-                    await self.on_event_companies_discovered(event_name, event_data.get("companies", []))
+                    await self.on_event_companies_discovered(event_name, event_data.get("companies", []), event_data.get("event_url", ""))
         else:
             # Fresh run: discover companies for each event and trigger Stage 2 immediately
             print(f"\n[Step 1.4] Company Discovery: searching for companies at {len(target_events)} events (event-driven)...")
@@ -420,7 +429,7 @@ class PipelineOrchestrator:
                     save_json(event_filepath, event_result)
 
                     # Trigger Stage 2 immediately for this event's companies
-                    await self.on_event_companies_discovered(event_name, event_result.get("companies", []))
+                    await self.on_event_companies_discovered(event_name, event_result.get("companies", []), event_url)
 
         print(f"\n  Total unique companies processed: {len(self._seen_urls)}")
         self._print_summary()

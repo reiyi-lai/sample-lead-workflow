@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CompanyWithDetails, LinkedInSearch } from "@/lib/data";
 import { X, ExternalLink } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface ContactInput {
   name: string;
@@ -16,6 +17,7 @@ interface TargetRolesModalProps {
 }
 
 export default function TargetRolesModal({ company, onClose }: TargetRolesModalProps) {
+  const router = useRouter();
   const targetRoles = company.targetRoles;
 
   const [expandedRole, setExpandedRole] = useState<string | null>(null);
@@ -29,8 +31,7 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
   const getContactForRole = (roleTitle: string) => {
     return company.contacts.find(
       (c) =>
-        c.title.toLowerCase().includes(roleTitle.toLowerCase()) ||
-        roleTitle.toLowerCase().includes(c.title.toLowerCase())
+        c.contactId && c.title.toLowerCase() === roleTitle.toLowerCase()
     );
   };
 
@@ -65,6 +66,8 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
         body: JSON.stringify({
           companyName: company.name,
           roleTitle,
+          companyId: company.id,
+          roleId: company.contacts.find((contact) => contact.title === roleTitle)?.roleId,
           contactName: input.name.trim(),
           linkedinUrl: input.linkedinUrl.trim() || undefined,
           email: input.email.trim() || undefined,
@@ -76,6 +79,7 @@ export default function TargetRolesModal({ company, onClose }: TargetRolesModalP
       if (data.success) {
         setSaved((prev) => ({ ...prev, [roleTitle]: true }));
         setExpandedRole(null);
+        router.refresh();
       } else {
         setErrors((prev) => ({ ...prev, [roleTitle]: data.error || "Failed to save" }));
       }
