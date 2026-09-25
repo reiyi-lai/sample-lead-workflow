@@ -16,6 +16,9 @@ from constants import MODELS, EVENT_SCORE_CUTOFF, sanitize_name
 from prompts import EVENT_SCORING_SYSTEM_PROMPT, COMPANY_DISCOVERY_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json
+from utils.supabase_sync import (
+    check_events_against_supabase, sync_events_to_supabase, fetch_unscored_events_from_supabase,
+)
 
 # Import the new event sources
 from event_sources import (
@@ -500,7 +503,8 @@ def enrich_events(events: List[dict]) -> List[dict]:
     return final_events
 
 
-def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, events_text: Optional[str] = None) -> dict:
+def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, events_text: Optional[str] = None,
+                       discover_first: bool = False) -> dict:
     """Run the complete Stage 1 pipeline with configurable input source."""
 
     # Determine directories based on source
@@ -531,27 +535,31 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
     # Remove the old run-specific scored file since we use master now
     # scored_file = os.path.join(run_dir, "scored_events.json")  # OLD
 
-    # 1.1 Discover events (with early deduplication for sheets, post-discovery for web)
-    events = load_json(events_file)
-    if events:
+    # 1.1 Clear Supabase's scoring backlog before spending calls on new discovery
+    pending = [] if (discover_first or source != "web") else fetch_unscored_events_from_supabase()
+    if pending:
+        print(f"\n[Step 1.1] Scoring Backlog: {len(pending)} unscored events already in Supabase")
+        print("  Skipping discovery; pass --discover to search for new events instead")
+        events = pending
+    elif not discover_first and (existing := load_json(events_file)):
+        events = existing
         print(f"\n[Step 1.1] Event Discovery")
         print(f"  {len(events)} events found in existing data")
-        events_to_process = events  # Use existing events
     else:
         # Discover events (sheet import already deduplicates against master discovered)
         events = discover_events(source=source, file_path=file_path, events_text=events_text,
                                output_dir=run_dir, master_discovered_file=master_discovered_file)
         save_json(events_file, events)
         print(f"  Saved {len(events)} events to {events_file}")
-        events_to_process = events
+    events_to_process = events
 
-    # 1.2 Deduplicate against master discovered events (for web discovery)
-    if source == "web":
-        print(f"\n[Step 1.2] Deduplicate Against Master Discovered Events")
-        events_to_process, already_discovered = check_events_against_master_discovered(events, master_discovered_file)
+    # 1.2 Deduplicate against Supabase (backlog events are already known, so skip the check)
+    if source == "web" and not pending:
+        print(f"\n[Step 1.2] Deduplicate Against Supabase")
+        events_to_process, already_discovered = check_events_against_supabase(events)
 
         if already_discovered:
-            print(f"  Found {len(already_discovered)} events already in master discovered file")
+            print(f"  Found {len(already_discovered)} events already in Supabase")
 
         # Update master with new web events
         if events_to_process:
@@ -560,8 +568,12 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
 
     # For sheets, events_to_process already deduplicated during import
 
-    # 1.3/1.4 Enrich events (only for new events from sheet imports)
+    # 1.3/1.4 Enrich events (sheet imports, plus Supabase stubs that carry only a name and URL)
     final_events = events_to_process
+
+    if pending and any(event.get("needs_enrichment") for event in events_to_process):
+        print(f"\n[Step 1.3] Enriching backlog events missing dates or description...")
+        final_events = enrich_events(events_to_process)
 
     if source == "sheet" and events_to_process:
         enriched = load_json(enriched_file)
@@ -610,6 +622,13 @@ def run_stage1_pipeline(source: str = "web", file_path: Optional[str] = None, ev
 
             # Update master scored events file
             update_master_scored_events(new_scored_data, master_scored_file)
+
+            # score_events returns scoring fields only, so merge the event detail back in
+            detail_by_url = {normalize_event_url(e.get("event_url", "")): e for e in final_events_to_score}
+            sync_events_to_supabase([
+                {**detail_by_url.get(normalize_event_url(scored.get("event_url", "")), {}), **scored}
+                for scored in new_scored_data.get("scored_events", [])
+            ])
 
             # For sheets, combine with already scored events from safety check
             if source == "sheet" and already_scored_final:
@@ -666,6 +685,8 @@ if __name__ == "__main__":
     parser.add_argument("--file", help="Path to CSV file for sheet import mode")
     parser.add_argument("--use-inline", action="store_true",
                        help="Use inline events data for sheet import mode")
+    parser.add_argument("--discover", action="store_true",
+                       help="Search for new events first, even if Supabase still has unscored ones")
     args = parser.parse_args()
 
     if args.source == "sheet" and not args.file and not args.use_inline:
@@ -674,5 +695,6 @@ if __name__ == "__main__":
 
     run_stage1_pipeline(
         source=args.source,
-        file_path=args.file
+        file_path=args.file,
+        discover_first=args.discover,
     )

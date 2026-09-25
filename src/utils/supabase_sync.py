@@ -1,6 +1,8 @@
 """Persist generated company stages to Supabase without creating fictitious contacts."""
 
 import os
+import re
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -90,6 +92,161 @@ def _all_rows(config, table, select):
         if len(page) < 1000:
             return rows
         offset += len(page)
+
+
+def _parse_event_dates(label):
+    """Best-effort start/end dates from a free-text label like "March 16-19, 2026"."""
+    label = (label or "").strip()
+    if not label or label.startswith("Multiple dates"):
+        return None, None
+
+    def day(month, number, year):
+        return datetime.strptime(f"{month} {number} {year}", "%B %d %Y").date().isoformat()
+
+    try:
+        single = re.fullmatch(r"([A-Za-z]+) (\d{1,2}), (\d{4})", label)
+        if single:
+            only = day(*single.groups())
+            return only, only
+        same_month = re.fullmatch(r"([A-Za-z]+) (\d{1,2})\s*[-\u2013]\s*(\d{1,2}), (\d{4})", label)
+        if same_month:
+            month, start, end, year = same_month.groups()
+            return day(month, start, year), day(month, end, year)
+        cross_month = re.fullmatch(r"([A-Za-z]+) (\d{1,2})\s*[-\u2013]\s*([A-Za-z]+) (\d{1,2}), (\d{4})", label)
+        if cross_month:
+            start_month, start, end_month, end, year = cross_month.groups()
+            return day(start_month, start, year), day(end_month, end, year)
+    except ValueError:
+        pass
+    return None, None
+
+
+def check_events_against_supabase(events):
+    """Split discovered events into new vs already known, keyed on normalized event URL."""
+    config = _config()
+    if not config:
+        print("  Supabase is not configured; treating every event as new")
+        return events, []
+
+    rows = _request(config, "GET", "events", params={"select": "normalized_event_url", "limit": 10000})
+    known = {row["normalized_event_url"] for row in rows if row.get("normalized_event_url")}
+
+    new_events, already_known = [], []
+    for event in events:
+        url = _normalized_event_url(str(event.get("event_url") or ""))
+        if url and url in known:
+            already_known.append(event)
+            continue
+        new_events.append(event)
+        if url:
+            known.add(url)  # also collapses duplicates inside this batch
+
+    print(f"  Checked {len(events)} events against {len(rows)} in Supabase: {len(new_events)} new, {len(already_known)} known")
+    return new_events, already_known
+
+
+def fetch_unscored_events_from_supabase():
+    """Events already in Supabase that still need scoring.
+
+    Rows created by company discovery carry only a name and URL, so anything missing
+    detail is flagged for enrichment before it reaches the scorer.
+    """
+    config = _config()
+    if not config:
+        return []
+
+    rows = _request(config, "GET", "events", params={
+        "select": "event_name,event_url,dates,location,venue,cost,description,"
+                  "industry_vertical,exhibitor_mix,audience_mix,raw_data",
+        "overall_score": "is.null",
+        "limit": 10000,
+    })
+
+    events = []
+    for row in rows:
+        event = dict(row.pop("raw_data", None) or {})
+        event.update({key: value for key, value in row.items() if value is not None})
+        if not event.get("dates") or not event.get("description"):
+            event["needs_enrichment"] = True
+        events.append(event)
+
+    needs = sum(1 for event in events if event.get("needs_enrichment"))
+    print(f"  {len(events)} events in Supabase still need scoring ({needs} also need enrichment)")
+    return events
+
+
+def sync_events_to_supabase(events):
+    """Upsert events and their score factors. Identity is the normalized URL, matching the unique index."""
+    config = _config()
+    if not config:
+        return {"skipped": "Supabase is not configured"}
+
+    rows, skipped = [], 0
+    for event in events:
+        event_url = str(event.get("event_url") or "").strip()
+        normalized = _normalized_event_url(event_url) if event_url else ""
+        if not normalized or not event.get("event_name"):
+            skipped += 1
+            continue
+        start_date, end_date = _parse_event_dates(event.get("dates"))
+        rows.append({
+            "event_name": event["event_name"],
+            "event_url": event_url,
+            "normalized_event_url": normalized,
+            "dates": event.get("dates"),
+            "start_date": start_date,
+            "end_date": end_date,
+            "location": event.get("location"),
+            "venue": event.get("venue"),
+            "cost": event.get("cost"),
+            "description": event.get("description"),
+            "industry_vertical": event.get("industry_vertical"),
+            "exhibitor_mix": event.get("exhibitor_mix"),
+            "audience_mix": event.get("audience_mix"),
+            "source": event.get("source") or "web_discovery",
+            "overall_score": event.get("overall_score"),
+            "reasoning": event.get("reasoning"),
+            "sales_brief": event.get("sales_brief"),
+            "raw_data": event,
+        })
+
+    saved = []
+    for batch in _chunks(rows):
+        saved.extend(_request(
+            config, "POST", "events",
+            params={"on_conflict": "normalized_event_url"},
+            body=batch,
+            prefer="resolution=merge-duplicates,return=representation",
+        ))
+
+    id_by_url = {row["normalized_event_url"]: row["id"] for row in saved}
+    factors = []
+    for event in events:
+        event_id = id_by_url.get(_normalized_event_url(str(event.get("event_url") or "")))
+        if not event_id:
+            continue
+        for factor_key, factor in (event.get("scores") or {}).items():
+            if not isinstance(factor, dict) or factor.get("score") is None:
+                continue
+            rationale = factor.get("rationale") or ""
+            factors.append({
+                "event_id": event_id,
+                "factor_key": factor_key,
+                "score": factor["score"],
+                "rationale": "\n".join(rationale) if isinstance(rationale, list) else str(rationale),
+            })
+
+    for batch in _chunks(factors):
+        _request(
+            config, "POST", "event_score_factors",
+            params={"on_conflict": "event_id,factor_key"},
+            body=batch,
+            prefer="resolution=merge-duplicates,return=representation",
+        )
+
+    result = {"events": len(saved), "score_factors": len(factors), "skipped_no_url": skipped}
+    print(f"  Synced events to Supabase: {result}", flush=True)
+    return result
 
 
 def sync_discovered_companies_to_supabase(events):
