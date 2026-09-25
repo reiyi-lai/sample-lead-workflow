@@ -71,7 +71,7 @@ Pipeline outputs are saved to `data/`:
 │       ├── llm.py          # Claude API wrapper
 │       └── scraping.py     # Web scraping utilities
 ├── dashboard/              # Next.js visualization dashboard
-└── data/                   # JSON output produced at each stage)
+└── supabase/               # Structured data output produced at each stage - stored in PostgreSQL tables on Supabase
 ```
 ## Documentation
 
