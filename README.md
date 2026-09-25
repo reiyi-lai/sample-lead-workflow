@@ -30,6 +30,7 @@ Each stage can be run independently, but note that Stages 2-4 depend on output f
 
 ```bash
 python src/stage1_event_discovery.py
+python src/stage1_event_discovery.py --discover
 
 python src/stage2_company_qualification.py
 
