@@ -399,7 +399,7 @@ Return ONLY a JSON object:
 }}
 
 IMPORTANT:
-- Each rationale MUST be an array of exactly 2-3 bullet strings, not a paragraph or a single string
+- Each rationale MUST be an array of 2 bullet strings, not a paragraph or a single string. For market_activity, there can be 3 bullet strings if deemed necessary.
 - Keep each bullet to one line
 - The rationale bullets ARE the research — cite specific findings (product names, revenue figures, trade shows attended, news headlines)
 - If information is sparse, say so explicitly (e.g., "Limited public financial data available")
