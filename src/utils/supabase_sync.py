@@ -232,19 +232,31 @@ def _search_url(role):
     return (found or {}).get("search_url")
 
 
-def hydrate_company_from_supabase(company_name, website_url, base_dir="data/companies"):
+_hydrated = {}
+
+
+def hydrate_company_from_supabase(company_name, website_url=None, base_dir="data/companies"):
     """Restore local stage artifacts from Supabase so the existing resume checks skip re-running.
 
     Identity is the normalized domain, matching the unique index, because Supabase stores the
     canonical company name from scoring rather than the name event discovery found.
+    Results are memoized so every stage can call this without repeating the round trip.
     """
+    cache_key = (company_name, base_dir)
+    if cache_key in _hydrated:
+        return _hydrated[cache_key]
+
     config = _config()
     if not config:
         return False
 
+    # Stage 4 has no URL to hand; fall back to whatever scoring already recorded.
+    if not website_url:
+        website_url = (load_json(company_path(base_dir, company_name, "scoring.json")) or {}).get("website_url", "")
     domain = _normalized_domain(website_url) if website_url else ""
     company = _first(config, "companies", normalized_domain=domain) if domain else None
     if not company or company.get("overall_score") is None:
+        _hydrated[cache_key] = False
         return False
 
     restored = []
@@ -299,6 +311,7 @@ def hydrate_company_from_supabase(company_name, website_url, base_dir="data/comp
 
     if restored:
         print(f"  Restored {company_name} from Supabase: {', '.join(restored)}", flush=True)
+    _hydrated[cache_key] = True
     return True
 
 

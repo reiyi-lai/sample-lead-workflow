@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json, company_path
-from utils.supabase_sync import sync_company_to_supabase
+from utils.supabase_sync import sync_company_to_supabase, hydrate_company_from_supabase
 from prompts import (
     CONTACT_ANALYSIS_SYSTEM_PROMPT,
     OUTREACH_EMAIL_SYSTEM_PROMPT,
@@ -84,17 +84,19 @@ def _run_two_turn_outreach(analysis_user_message: str, force_channel: Optional[s
     return analysis, outreach
 
 
-def process_role(role_title: str, company_name: str, base_dir: str = "data/companies", force_channel: Optional[str] = None) -> Tuple[Optional[dict], Optional[dict]]:
+def process_role(role_title: str, company_name: str, base_dir: str = "data/companies", force_channel: Optional[str] = None, force: bool = False) -> Tuple[Optional[dict], Optional[dict]]:
     """Generate analysis and outreach for a target role using [Name] placeholder."""
     prefix = sanitize_name(role_title).replace(" ", "_")
 
     print(f"\n  [Stage 4] Outreach for {role_title} at {company_name}")
 
+    hydrate_company_from_supabase(company_name, base_dir=base_dir)
+
     # Check existing
     analysis_path = _role_path(base_dir, company_name, prefix, "analysis")
     outreach_path = _role_path(base_dir, company_name, prefix, "outreach")
 
-    if os.path.exists(analysis_path) and os.path.exists(outreach_path):
+    if not force and os.path.exists(analysis_path) and os.path.exists(outreach_path):
         print(f"    Outreach found in existing data")
         sync_company_to_supabase(company_name, base_dir)
         return load_json(analysis_path), None

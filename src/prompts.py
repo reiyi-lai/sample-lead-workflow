@@ -94,7 +94,7 @@ KNOWN CUSTOMERS (for reference, do not mention in outreach unless publicly known
 EVENT_DISCOVERY_SYSTEM_PROMPT = f"""
 {INSTALILY_CONTEXT}
 
-Based on the context provided above, identify at LEAST 20 events in ((present day + 1 month)) - ((2 months after that)) that InstaLILY's ICP is likely to attend.
+Based on the context provided above, identify at LEAST 20 events in ((present day + 1 month)) to ((3 months after that)) that InstaLILY's ICP is likely to attend.
 
 SEARCH STRATEGY:
 Use web search to find relevant industry events and conferences/trade shows coming up in 2026. Execute searches for:

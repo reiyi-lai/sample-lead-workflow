@@ -16,7 +16,7 @@ from constants import CLAY_WEBHOOK_URL, MODELS, COMPANY_SCORE_CUTOFF
 from prompts import TARGET_ROLES_IDENTIFICATION_SYSTEM_PROMPT
 from utils.llm import call_claude, extract_json_from_response
 from utils.io import load_json, save_json, company_path
-from utils.supabase_sync import sync_company_to_supabase
+from utils.supabase_sync import sync_company_to_supabase, hydrate_company_from_supabase
 
 
 def load_target_roles_json(company_name: str, base_dir: str = "data/companies") -> Optional[dict]:
@@ -59,11 +59,12 @@ def load_qualified_companies(base_dir: str = "data/companies") -> List[dict]:
 
 # STEP 3.1: IDENTIFY TARGET ROLES
 
-def identify_target_roles(company_name: str, website_url: str, base_dir: str = "data/companies") -> dict:
+def identify_target_roles(company_name: str, website_url: str, base_dir: str = "data/companies", force: bool = False) -> dict:
     """Identify target decision-makers from scoring data. Skips if target_roles.json exists."""
     print(f"\n  [Step 3.1] Target Role Identification for {company_name}")
 
-    existing = load_target_roles_json(company_name, base_dir)
+    hydrate_company_from_supabase(company_name, website_url, base_dir)
+    existing = None if force else load_target_roles_json(company_name, base_dir)
     if existing:
         print(f"    Target roles found in existing data ({len(existing.get('target_roles', []))} roles)")
         sync_company_to_supabase(company_name, base_dir)

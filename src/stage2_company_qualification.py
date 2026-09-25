@@ -25,10 +25,10 @@ def save_scoring_json(output_dir: str, company_name: str, scoring_data: dict, ic
 
 # STEP 2.1: RESEARCH AND SCORE COMPANY
 
-def research_and_score_company(company_name: str, website_url: str, output_dir: str = "data/companies") -> dict:
+def research_and_score_company(company_name: str, website_url: str, output_dir: str = "data/companies", force: bool = False) -> dict:
     """Research and score a company in a single web search call. Skips if scoring.json exists."""
-    existing = load_json(company_path(output_dir, company_name, "scoring.json"))
-    if not existing and hydrate_company_from_supabase(company_name, website_url, output_dir):
+    existing = None if force else load_json(company_path(output_dir, company_name, "scoring.json"))
+    if not force and not existing and hydrate_company_from_supabase(company_name, website_url, output_dir):
         existing = load_json(company_path(output_dir, company_name, "scoring.json"))
     if existing:
         print(f"  Scoring found in existing data")
